@@ -7,12 +7,14 @@
 #include "groups/groups.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
+#include <grpcpp/impl/codegen/message_allocator.h>
 #include <grpcpp/impl/codegen/method_handler.h>
 #include <grpcpp/impl/codegen/proto_utils.h>
 #include <grpcpp/impl/codegen/rpc_method.h>
@@ -23,19 +25,6 @@
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
-
-namespace grpc_impl {
-class CompletionQueue;
-class ServerCompletionQueue;
-class ServerContext;
-}  // namespace grpc_impl
-
-namespace grpc {
-namespace experimental {
-template <typename RequestT, typename ResponseT>
-class MessageAllocator;
-}  // namespace experimental
-}  // namespace grpc
 
 namespace mruv {
 
@@ -111,38 +100,108 @@ class MruVGroupsService final {
       // CRUD
       virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetGroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetGroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetGroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Service status
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GroupID>* AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::Group& request, ::grpc::CompletionQueue* cq) = 0;
@@ -226,36 +285,100 @@ class MruVGroupsService final {
      public:
       void CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) override;
       void CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, std::function<void(::grpc::Status)>) override;
       void GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) override;
       void DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetGroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetGroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetGroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, std::function<void(::grpc::Status)>) override;
       void AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, std::function<void(::grpc::Status)>) override;
       void RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -476,13 +599,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_CreateGroup() {
-      ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Group, ::mruv::GroupID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::Group* request, ::mruv::GroupID* response) { return this->CreateGroup(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Group, ::mruv::GroupID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::Group* request, ::mruv::GroupID* response) { return this->CreateGroup(context, request, response); }));}
     void SetMessageAllocatorFor_CreateGroup(
         ::grpc::experimental::MessageAllocator< ::mruv::Group, ::mruv::GroupID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Group, ::mruv::GroupID>*>(
-          ::grpc::Service::experimental().GetHandler(0))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Group, ::mruv::GroupID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateGroup() override {
@@ -493,7 +631,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateGroup(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Group* /*request*/, ::mruv::GroupID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateGroup(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::Group* /*request*/, ::mruv::GroupID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateGroup(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Group* /*request*/, ::mruv::GroupID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetGroup : public BaseClass {
@@ -501,13 +646,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetGroup() {
-      ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::Group>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GroupID* request, ::mruv::Group* response) { return this->GetGroup(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::Group>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GroupID* request, ::mruv::Group* response) { return this->GetGroup(context, request, response); }));}
     void SetMessageAllocatorFor_GetGroup(
         ::grpc::experimental::MessageAllocator< ::mruv::GroupID, ::mruv::Group>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::Group>*>(
-          ::grpc::Service::experimental().GetHandler(1))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::Group>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetGroup() override {
@@ -518,7 +678,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetGroup(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GroupID* /*request*/, ::mruv::Group* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetGroup(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GroupID* /*request*/, ::mruv::Group* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetGroup(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GroupID* /*request*/, ::mruv::Group* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeleteGroup : public BaseClass {
@@ -526,13 +693,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_DeleteGroup() {
-      ::grpc::Service::experimental().MarkMethodCallback(2,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::GroupID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response) { return this->DeleteGroup(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::GroupID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GroupID* request, ::mruv::GroupID* response) { return this->DeleteGroup(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteGroup(
         ::grpc::experimental::MessageAllocator< ::mruv::GroupID, ::mruv::GroupID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::GroupID>*>(
-          ::grpc::Service::experimental().GetHandler(2))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GroupID, ::mruv::GroupID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteGroup() override {
@@ -543,7 +725,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteGroup(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GroupID* /*request*/, ::mruv::GroupID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteGroup(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GroupID* /*request*/, ::mruv::GroupID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteGroup(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GroupID* /*request*/, ::mruv::GroupID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetGroups : public BaseClass {
@@ -551,13 +740,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetGroups() {
-      ::grpc::Service::experimental().MarkMethodCallback(3,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response) { return this->GetGroups(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response) { return this->GetGroups(context, request, response); }));}
     void SetMessageAllocatorFor_GetGroups(
         ::grpc::experimental::MessageAllocator< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(3))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetGroups() override {
@@ -568,7 +772,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetGroups(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetGroups(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetGroups(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_AddGroupMember : public BaseClass {
@@ -576,13 +787,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_AddGroupMember() {
-      ::grpc::Service::experimental().MarkMethodCallback(4,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AddGroupMemberRequest, ::mruv::AddGroupMemberResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response) { return this->AddGroupMember(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AddGroupMemberRequest, ::mruv::AddGroupMemberResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response) { return this->AddGroupMember(context, request, response); }));}
     void SetMessageAllocatorFor_AddGroupMember(
         ::grpc::experimental::MessageAllocator< ::mruv::AddGroupMemberRequest, ::mruv::AddGroupMemberResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AddGroupMemberRequest, ::mruv::AddGroupMemberResponse>*>(
-          ::grpc::Service::experimental().GetHandler(4))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AddGroupMemberRequest, ::mruv::AddGroupMemberResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AddGroupMember() override {
@@ -593,7 +819,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* AddGroupMember(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AddGroupMemberRequest* /*request*/, ::mruv::AddGroupMemberResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* AddGroupMember(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AddGroupMemberRequest* /*request*/, ::mruv::AddGroupMemberResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* AddGroupMember(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AddGroupMemberRequest* /*request*/, ::mruv::AddGroupMemberResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_RemoveGroupMember : public BaseClass {
@@ -601,13 +834,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_RemoveGroupMember() {
-      ::grpc::Service::experimental().MarkMethodCallback(5,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::RemoveGroupMemberRequest, ::mruv::RemoveGroupMemberResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response) { return this->RemoveGroupMember(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::RemoveGroupMemberRequest, ::mruv::RemoveGroupMemberResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response) { return this->RemoveGroupMember(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveGroupMember(
         ::grpc::experimental::MessageAllocator< ::mruv::RemoveGroupMemberRequest, ::mruv::RemoveGroupMemberResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::RemoveGroupMemberRequest, ::mruv::RemoveGroupMemberResponse>*>(
-          ::grpc::Service::experimental().GetHandler(5))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::RemoveGroupMemberRequest, ::mruv::RemoveGroupMemberResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemoveGroupMember() override {
@@ -618,7 +866,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* RemoveGroupMember(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::RemoveGroupMemberRequest* /*request*/, ::mruv::RemoveGroupMemberResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RemoveGroupMember(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::RemoveGroupMemberRequest* /*request*/, ::mruv::RemoveGroupMemberResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RemoveGroupMember(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::RemoveGroupMemberRequest* /*request*/, ::mruv::RemoveGroupMemberResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetServiceStatus : public BaseClass {
@@ -626,13 +881,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetServiceStatus() {
-      ::grpc::Service::experimental().MarkMethodCallback(6,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceStatus(
         ::grpc::experimental::MessageAllocator< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(
-          ::grpc::Service::experimental().GetHandler(6))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceStatus() override {
@@ -643,7 +913,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetServiceVersion : public BaseClass {
@@ -651,13 +928,28 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetServiceVersion() {
-      ::grpc::Service::experimental().MarkMethodCallback(7,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceVersion(
         ::grpc::experimental::MessageAllocator< ::mruv::VersionRequest, ::mruv::VersionResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(
-          ::grpc::Service::experimental().GetHandler(7))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceVersion() override {
@@ -668,8 +960,19 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_CreateGroup<ExperimentalWithCallbackMethod_GetGroup<ExperimentalWithCallbackMethod_DeleteGroup<ExperimentalWithCallbackMethod_GetGroups<ExperimentalWithCallbackMethod_AddGroupMember<ExperimentalWithCallbackMethod_RemoveGroupMember<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > CallbackService;
+  #endif
+
   typedef ExperimentalWithCallbackMethod_CreateGroup<ExperimentalWithCallbackMethod_GetGroup<ExperimentalWithCallbackMethod_DeleteGroup<ExperimentalWithCallbackMethod_GetGroups<ExperimentalWithCallbackMethod_AddGroupMember<ExperimentalWithCallbackMethod_RemoveGroupMember<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateGroup : public BaseClass {
@@ -973,9 +1276,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_CreateGroup() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateGroup(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateGroup(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_CreateGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -985,7 +1299,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateGroup(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateGroup(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateGroup(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetGroup : public BaseClass {
@@ -993,9 +1314,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetGroup() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(1,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetGroup(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetGroup(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1005,7 +1337,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetGroup(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetGroup(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetGroup(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeleteGroup : public BaseClass {
@@ -1013,9 +1352,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_DeleteGroup() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(2,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteGroup(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteGroup(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_DeleteGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1025,7 +1375,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteGroup(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteGroup(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteGroup(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetGroups : public BaseClass {
@@ -1033,9 +1390,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetGroups() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(3,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetGroups(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetGroups(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetGroups() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1045,7 +1413,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetGroups(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetGroups(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetGroups(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_AddGroupMember : public BaseClass {
@@ -1053,9 +1428,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_AddGroupMember() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(4,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddGroupMember(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddGroupMember(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_AddGroupMember() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1065,7 +1451,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* AddGroupMember(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* AddGroupMember(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* AddGroupMember(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_RemoveGroupMember : public BaseClass {
@@ -1073,9 +1466,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_RemoveGroupMember() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(5,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveGroupMember(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveGroupMember(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_RemoveGroupMember() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1085,7 +1489,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* RemoveGroupMember(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RemoveGroupMember(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RemoveGroupMember(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetServiceStatus : public BaseClass {
@@ -1093,9 +1504,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetServiceStatus() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(6,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceStatus(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceStatus(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1105,7 +1527,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetServiceVersion : public BaseClass {
@@ -1113,9 +1542,20 @@ class MruVGroupsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetServiceVersion() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(7,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceVersion(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceVersion(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1125,7 +1565,14 @@ class MruVGroupsService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateGroup : public BaseClass {
