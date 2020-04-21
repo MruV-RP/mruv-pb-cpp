@@ -5,7 +5,6 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/extension_set.h>
 #include <google/protobuf/wire_format_lite.h>
@@ -38,7 +37,7 @@ static void InitDefaultsscc_info_DeathStreamRequest_characters_2fcharacters_2epr
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeathStreamRequest_characters_2fcharacters_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_DeathStreamRequest_characters_2fcharacters_2eproto}, {}};
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeathStreamRequest_characters_2fcharacters_2eproto}, {}};
 
 static void InitDefaultsscc_info_DeathStreamResponse_characters_2fcharacters_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -52,7 +51,7 @@ static void InitDefaultsscc_info_DeathStreamResponse_characters_2fcharacters_2ep
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeathStreamResponse_characters_2fcharacters_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_DeathStreamResponse_characters_2fcharacters_2eproto}, {
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_DeathStreamResponse_characters_2fcharacters_2eproto}, {
       &scc_info_Character_characters_2fcharacters_5fmodel_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_characters_2fcharacters_2eproto[2];
@@ -84,7 +83,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeathStreamResponse_default_instance_),
 };
 
-const char descriptor_table_protodef_characters_2fcharacters_2eproto[] =
+const char descriptor_table_protodef_characters_2fcharacters_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033characters/characters.proto\022\004mruv\032\034goo"
   "gle/api/annotations.proto\032\023common/health"
   ".proto\032!characters/characters_model.prot"
@@ -137,13 +136,9 @@ namespace mruv {
 
 void DeathStreamRequest::InitAsDefaultInstance() {
 }
-class DeathStreamRequest::HasBitSetters {
+class DeathStreamRequest::_Internal {
  public:
 };
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DeathStreamRequest::kDeathTypesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 DeathStreamRequest::DeathStreamRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
@@ -188,7 +183,6 @@ void DeathStreamRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* DeathStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -199,12 +193,12 @@ const char* DeathStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // repeated .mruv.DeathType death_types = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(mutable_death_types(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_death_types(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          add_death_types(static_cast<::mruv::DeathType>(val));
+          _internal_add_death_types(static_cast<::mruv::DeathType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -226,112 +220,25 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool DeathStreamRequest::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:mruv.DeathStreamRequest)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .mruv.DeathType death_types = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          ::PROTOBUF_NAMESPACE_ID::uint32 length;
-          DO_(input->ReadVarint32(&length));
-          ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream::Limit limit = input->PushLimit(static_cast<int>(length));
-          while (input->BytesUntilLimit() > 0) {
-            int value = 0;
-            DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-            add_death_types(static_cast< ::mruv::DeathType >(value));
-          }
-          input->PopLimit(limit);
-        } else if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          add_death_types(static_cast< ::mruv::DeathType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:mruv.DeathStreamRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:mruv.DeathStreamRequest)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void DeathStreamRequest::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:mruv.DeathStreamRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .mruv.DeathType death_types = 1;
-  if (this->death_types_size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteTag(
-      1,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      output);
-    output->WriteVarint32(_death_types_cached_byte_size_.load(
-        std::memory_order_relaxed));
-  }
-  for (int i = 0, n = this->death_types_size(); i < n; i++) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumNoTag(
-      this->death_types(i), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:mruv.DeathStreamRequest)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* DeathStreamRequest::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* DeathStreamRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mruv.DeathStreamRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .mruv.DeathType death_types = 1;
-  if (this->death_types_size() > 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteTagToArray(
-      1,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream::WriteVarint32ToArray(      _death_types_cached_byte_size_.load(std::memory_order_relaxed),
-        target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumNoTagToArray(
-      this->death_types_, target);
+  {
+    int byte_size = _death_types_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteEnumPacked(
+          1, death_types_, byte_size, target);
+    }
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.DeathStreamRequest)
   return target;
@@ -341,11 +248,6 @@ size_t DeathStreamRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mruv.DeathStreamRequest)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -353,9 +255,9 @@ size_t DeathStreamRequest::ByteSizeLong() const {
   // repeated .mruv.DeathType death_types = 1;
   {
     size_t data_size = 0;
-    unsigned int count = static_cast<unsigned int>(this->death_types_size());for (unsigned int i = 0; i < count; i++) {
+    unsigned int count = static_cast<unsigned int>(this->_internal_death_types_size());for (unsigned int i = 0; i < count; i++) {
       data_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
-        this->death_types(static_cast<int>(i)));
+        this->_internal_death_types(static_cast<int>(i)));
     }
     if (data_size > 0) {
       total_size += 1 +
@@ -368,6 +270,10 @@ size_t DeathStreamRequest::ByteSizeLong() const {
     total_size += data_size;
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -416,10 +322,6 @@ bool DeathStreamRequest::IsInitialized() const {
   return true;
 }
 
-void DeathStreamRequest::Swap(DeathStreamRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void DeathStreamRequest::InternalSwap(DeathStreamRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -437,13 +339,13 @@ void DeathStreamResponse::InitAsDefaultInstance() {
   ::mruv::_DeathStreamResponse_default_instance_._instance.get_mutable()->character_ = const_cast< ::mruv::Character*>(
       ::mruv::Character::internal_default_instance());
 }
-class DeathStreamResponse::HasBitSetters {
+class DeathStreamResponse::_Internal {
  public:
   static const ::mruv::Character& character(const DeathStreamResponse* msg);
 };
 
 const ::mruv::Character&
-DeathStreamResponse::HasBitSetters::character(const DeathStreamResponse* msg) {
+DeathStreamResponse::_Internal::character(const DeathStreamResponse* msg) {
   return *msg->character_;
 }
 void DeathStreamResponse::clear_character() {
@@ -452,11 +354,6 @@ void DeathStreamResponse::clear_character() {
   }
   character_ = nullptr;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int DeathStreamResponse::kCharacterFieldNumber;
-const int DeathStreamResponse::kDeathTypeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
 DeathStreamResponse::DeathStreamResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -466,7 +363,7 @@ DeathStreamResponse::DeathStreamResponse(const DeathStreamResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_character()) {
+  if (from._internal_has_character()) {
     character_ = new ::mruv::Character(*from.character_);
   } else {
     character_ = nullptr;
@@ -514,7 +411,6 @@ void DeathStreamResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 const char* DeathStreamResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
@@ -525,7 +421,7 @@ const char* DeathStreamResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // .mruv.Character character = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(mutable_character(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_character(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -534,7 +430,7 @@ const char* DeathStreamResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          set_death_type(static_cast<::mruv::DeathType>(val));
+          _internal_set_death_type(static_cast<::mruv::DeathType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -556,110 +452,31 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool DeathStreamResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:mruv.DeathStreamResponse)
-  for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .mruv.Character character = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_character()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
 
-      // .mruv.DeathType death_type = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_death_type(static_cast< ::mruv::DeathType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:mruv.DeathStreamResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:mruv.DeathStreamResponse)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void DeathStreamResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:mruv.DeathStreamResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .mruv.Character character = 1;
-  if (this->has_character()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::character(this), output);
-  }
-
-  // .mruv.DeathType death_type = 2;
-  if (this->death_type() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
-      2, this->death_type(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:mruv.DeathStreamResponse)
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* DeathStreamResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8* DeathStreamResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:mruv.DeathStreamResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // .mruv.Character character = 1;
   if (this->has_character()) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::character(this), target);
+      InternalWriteMessage(
+        1, _Internal::character(this), target, stream);
   }
 
   // .mruv.DeathType death_type = 2;
   if (this->death_type() != 0) {
+    target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->death_type(), target);
+      2, this->_internal_death_type(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.DeathStreamResponse)
   return target;
@@ -669,11 +486,6 @@ size_t DeathStreamResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:mruv.DeathStreamResponse)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -688,9 +500,13 @@ size_t DeathStreamResponse::ByteSizeLong() const {
   // .mruv.DeathType death_type = 2;
   if (this->death_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->death_type());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_death_type());
   }
 
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -719,10 +535,10 @@ void DeathStreamResponse::MergeFrom(const DeathStreamResponse& from) {
   (void) cached_has_bits;
 
   if (from.has_character()) {
-    mutable_character()->::mruv::Character::MergeFrom(from.character());
+    _internal_mutable_character()->::mruv::Character::MergeFrom(from._internal_character());
   }
   if (from.death_type() != 0) {
-    set_death_type(from.death_type());
+    _internal_set_death_type(from._internal_death_type());
   }
 }
 
@@ -744,10 +560,6 @@ bool DeathStreamResponse::IsInitialized() const {
   return true;
 }
 
-void DeathStreamResponse::Swap(DeathStreamResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void DeathStreamResponse::InternalSwap(DeathStreamResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);

@@ -7,12 +7,14 @@
 #include "items/items.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
+#include <grpcpp/impl/codegen/message_allocator.h>
 #include <grpcpp/impl/codegen/method_handler.h>
 #include <grpcpp/impl/codegen/proto_utils.h>
 #include <grpcpp/impl/codegen/rpc_method.h>
@@ -23,19 +25,6 @@
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
-
-namespace grpc_impl {
-class CompletionQueue;
-class ServerCompletionQueue;
-class ServerContext;
-}  // namespace grpc_impl
-
-namespace grpc {
-namespace experimental {
-template <typename RequestT, typename ResponseT>
-class MessageAllocator;
-}  // namespace experimental
-}  // namespace grpc
 
 namespace mruv {
 
@@ -247,125 +236,323 @@ class MruVItemService final {
       // Create new item.
       virtual void CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get item by id.
       virtual void GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Delete item by id.
       virtual void DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Gets all items.
       virtual void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Create item type.
       virtual void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get item type by id.
       virtual void GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemType* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemType* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemType* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Delete item type by id.
       virtual void DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Gets all item types.
       virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Create container.
       virtual void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get container by id.
       virtual void GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Container* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Container* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Container* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Delete container by id.
       virtual void DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get all containers.
       virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Create container type.
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get container type by id.
       virtual void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Detele container type by id.
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get all container types.
       virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get items inside a container.
       virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Pull item from container.
       virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Put item into container.
       virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Sort items inside container.
       // This procedure change order of items inside container.
       virtual void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Retrieves from the container the list of items nearest to the given position.
       virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Trigger action associated with the item usage.
       virtual void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get service health status.
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Get service current version.
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemID>* AsyncCreateItemRaw(::grpc::ClientContext* context, const ::mruv::Item& request, ::grpc::CompletionQueue* cq) = 0;
@@ -593,100 +780,292 @@ class MruVItemService final {
      public:
       void CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) override;
       void CreateItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
       void GetItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) override;
       void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) override;
       void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, std::function<void(::grpc::Status)>) override;
       void GetItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemType* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemType* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemType* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) override;
       void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) override;
       void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) override;
       void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, std::function<void(::grpc::Status)>) override;
       void GetContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Container* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Container* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Container* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) override;
       void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) override;
       void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) override;
       void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)>) override;
       void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) override;
       void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) override;
       void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
       void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) override;
       void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) override;
       void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) override;
       void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -1314,13 +1693,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_CreateItem() {
-      ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Item, ::mruv::ItemID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::Item* request, ::mruv::ItemID* response) { return this->CreateItem(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Item, ::mruv::ItemID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::Item* request, ::mruv::ItemID* response) { return this->CreateItem(context, request, response); }));}
     void SetMessageAllocatorFor_CreateItem(
         ::grpc::experimental::MessageAllocator< ::mruv::Item, ::mruv::ItemID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Item, ::mruv::ItemID>*>(
-          ::grpc::Service::experimental().GetHandler(0))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Item, ::mruv::ItemID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateItem() override {
@@ -1331,7 +1725,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Item* /*request*/, ::mruv::ItemID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::Item* /*request*/, ::mruv::ItemID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Item* /*request*/, ::mruv::ItemID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetItem : public BaseClass {
@@ -1339,13 +1740,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetItem() {
-      ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::Item>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ItemID* request, ::mruv::Item* response) { return this->GetItem(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::Item>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ItemID* request, ::mruv::Item* response) { return this->GetItem(context, request, response); }));}
     void SetMessageAllocatorFor_GetItem(
         ::grpc::experimental::MessageAllocator< ::mruv::ItemID, ::mruv::Item>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::Item>*>(
-          ::grpc::Service::experimental().GetHandler(1))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::Item>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetItem() override {
@@ -1356,7 +1772,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemID* /*request*/, ::mruv::Item* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ItemID* /*request*/, ::mruv::Item* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemID* /*request*/, ::mruv::Item* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeleteItem : public BaseClass {
@@ -1364,13 +1787,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_DeleteItem() {
-      ::grpc::Service::experimental().MarkMethodCallback(2,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::ItemID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response) { return this->DeleteItem(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::ItemID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ItemID* request, ::mruv::ItemID* response) { return this->DeleteItem(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteItem(
         ::grpc::experimental::MessageAllocator< ::mruv::ItemID, ::mruv::ItemID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::ItemID>*>(
-          ::grpc::Service::experimental().GetHandler(2))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemID, ::mruv::ItemID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteItem() override {
@@ -1381,7 +1819,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemID* /*request*/, ::mruv::ItemID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ItemID* /*request*/, ::mruv::ItemID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemID* /*request*/, ::mruv::ItemID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetItems : public BaseClass {
@@ -1389,13 +1834,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetItems() {
-      ::grpc::Service::experimental().MarkMethodCallback(3,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response) { return this->GetItems(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response) { return this->GetItems(context, request, response); }));}
     void SetMessageAllocatorFor_GetItems(
         ::grpc::experimental::MessageAllocator< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(3))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetItems() override {
@@ -1406,7 +1866,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateItemType : public BaseClass {
@@ -1414,13 +1881,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_CreateItemType() {
-      ::grpc::Service::experimental().MarkMethodCallback(4,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemType, ::mruv::ItemTypeID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response) { return this->CreateItemType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemType, ::mruv::ItemTypeID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response) { return this->CreateItemType(context, request, response); }));}
     void SetMessageAllocatorFor_CreateItemType(
         ::grpc::experimental::MessageAllocator< ::mruv::ItemType, ::mruv::ItemTypeID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemType, ::mruv::ItemTypeID>*>(
-          ::grpc::Service::experimental().GetHandler(4))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemType, ::mruv::ItemTypeID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateItemType() override {
@@ -1431,7 +1913,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateItemType(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemType* /*request*/, ::mruv::ItemTypeID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateItemType(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ItemType* /*request*/, ::mruv::ItemTypeID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateItemType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemType* /*request*/, ::mruv::ItemTypeID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetItemType : public BaseClass {
@@ -1439,13 +1928,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetItemType() {
-      ::grpc::Service::experimental().MarkMethodCallback(5,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemType>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response) { return this->GetItemType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemType>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response) { return this->GetItemType(context, request, response); }));}
     void SetMessageAllocatorFor_GetItemType(
         ::grpc::experimental::MessageAllocator< ::mruv::ItemTypeID, ::mruv::ItemType>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemType>*>(
-          ::grpc::Service::experimental().GetHandler(5))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemType>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetItemType() override {
@@ -1456,7 +1960,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItemType(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemTypeID* /*request*/, ::mruv::ItemType* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItemType(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ItemTypeID* /*request*/, ::mruv::ItemType* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItemType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemTypeID* /*request*/, ::mruv::ItemType* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeleteItemType : public BaseClass {
@@ -1464,13 +1975,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_DeleteItemType() {
-      ::grpc::Service::experimental().MarkMethodCallback(6,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemTypeID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response) { return this->DeleteItemType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemTypeID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response) { return this->DeleteItemType(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteItemType(
         ::grpc::experimental::MessageAllocator< ::mruv::ItemTypeID, ::mruv::ItemTypeID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemTypeID>*>(
-          ::grpc::Service::experimental().GetHandler(6))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemTypeID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteItemType() override {
@@ -1481,7 +2007,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItemType(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemTypeID* /*request*/, ::mruv::ItemTypeID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteItemType(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ItemTypeID* /*request*/, ::mruv::ItemTypeID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItemType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ItemTypeID* /*request*/, ::mruv::ItemTypeID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetItemTypes : public BaseClass {
@@ -1489,13 +2022,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetItemTypes() {
-      ::grpc::Service::experimental().MarkMethodCallback(7,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response) { return this->GetItemTypes(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response) { return this->GetItemTypes(context, request, response); }));}
     void SetMessageAllocatorFor_GetItemTypes(
         ::grpc::experimental::MessageAllocator< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>*>(
-          ::grpc::Service::experimental().GetHandler(7))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetItemTypes() override {
@@ -1506,7 +2054,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItemTypes(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItemTypes(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItemTypes(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateContainer : public BaseClass {
@@ -1514,13 +2069,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_CreateContainer() {
-      ::grpc::Service::experimental().MarkMethodCallback(8,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Container, ::mruv::ContainerID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response) { return this->CreateContainer(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Container, ::mruv::ContainerID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::Container* request, ::mruv::ContainerID* response) { return this->CreateContainer(context, request, response); }));}
     void SetMessageAllocatorFor_CreateContainer(
         ::grpc::experimental::MessageAllocator< ::mruv::Container, ::mruv::ContainerID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Container, ::mruv::ContainerID>*>(
-          ::grpc::Service::experimental().GetHandler(8))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Container, ::mruv::ContainerID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateContainer() override {
@@ -1531,7 +2101,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainer(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Container* /*request*/, ::mruv::ContainerID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateContainer(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::Container* /*request*/, ::mruv::ContainerID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Container* /*request*/, ::mruv::ContainerID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetContainer : public BaseClass {
@@ -1539,13 +2116,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetContainer() {
-      ::grpc::Service::experimental().MarkMethodCallback(9,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::Container>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response) { return this->GetContainer(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::Container>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ContainerID* request, ::mruv::Container* response) { return this->GetContainer(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainer(
         ::grpc::experimental::MessageAllocator< ::mruv::ContainerID, ::mruv::Container>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::Container>*>(
-          ::grpc::Service::experimental().GetHandler(9))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::Container>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainer() override {
@@ -1556,7 +2148,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainer(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerID* /*request*/, ::mruv::Container* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainer(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ContainerID* /*request*/, ::mruv::Container* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerID* /*request*/, ::mruv::Container* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeleteContainer : public BaseClass {
@@ -1564,13 +2163,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_DeleteContainer() {
-      ::grpc::Service::experimental().MarkMethodCallback(10,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::ContainerID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response) { return this->DeleteContainer(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(10,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::ContainerID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response) { return this->DeleteContainer(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteContainer(
         ::grpc::experimental::MessageAllocator< ::mruv::ContainerID, ::mruv::ContainerID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::ContainerID>*>(
-          ::grpc::Service::experimental().GetHandler(10))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerID, ::mruv::ContainerID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteContainer() override {
@@ -1581,7 +2195,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainer(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerID* /*request*/, ::mruv::ContainerID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteContainer(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ContainerID* /*request*/, ::mruv::ContainerID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerID* /*request*/, ::mruv::ContainerID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetContainers : public BaseClass {
@@ -1589,13 +2210,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetContainers() {
-      ::grpc::Service::experimental().MarkMethodCallback(11,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response) { return this->GetContainers(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(11,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response) { return this->GetContainers(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainers(
         ::grpc::experimental::MessageAllocator< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>*>(
-          ::grpc::Service::experimental().GetHandler(11))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainers() override {
@@ -1606,7 +2242,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainers(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainers(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainers(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateContainerType : public BaseClass {
@@ -1614,13 +2257,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_CreateContainerType() {
-      ::grpc::Service::experimental().MarkMethodCallback(12,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerType, ::mruv::ContainerTypeID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response) { return this->CreateContainerType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(12,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerType, ::mruv::ContainerTypeID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response) { return this->CreateContainerType(context, request, response); }));}
     void SetMessageAllocatorFor_CreateContainerType(
         ::grpc::experimental::MessageAllocator< ::mruv::ContainerType, ::mruv::ContainerTypeID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerType, ::mruv::ContainerTypeID>*>(
-          ::grpc::Service::experimental().GetHandler(12))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerType, ::mruv::ContainerTypeID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateContainerType() override {
@@ -1631,7 +2289,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainerType(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerType* /*request*/, ::mruv::ContainerTypeID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateContainerType(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ContainerType* /*request*/, ::mruv::ContainerTypeID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainerType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerType* /*request*/, ::mruv::ContainerTypeID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetContainerType : public BaseClass {
@@ -1639,13 +2304,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetContainerType() {
-      ::grpc::Service::experimental().MarkMethodCallback(13,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerType>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response) { return this->GetContainerType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(13,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerType>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response) { return this->GetContainerType(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainerType(
         ::grpc::experimental::MessageAllocator< ::mruv::ContainerTypeID, ::mruv::ContainerType>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerType>*>(
-          ::grpc::Service::experimental().GetHandler(13))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerType>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainerType() override {
@@ -1656,7 +2336,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerType(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerTypeID* /*request*/, ::mruv::ContainerType* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainerType(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ContainerTypeID* /*request*/, ::mruv::ContainerType* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerTypeID* /*request*/, ::mruv::ContainerType* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeleteContainerType : public BaseClass {
@@ -1664,13 +2351,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_DeleteContainerType() {
-      ::grpc::Service::experimental().MarkMethodCallback(14,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response) { return this->DeleteContainerType(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(14,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response) { return this->DeleteContainerType(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteContainerType(
         ::grpc::experimental::MessageAllocator< ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>*>(
-          ::grpc::Service::experimental().GetHandler(14))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteContainerType() override {
@@ -1681,7 +2383,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainerType(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerTypeID* /*request*/, ::mruv::ContainerTypeID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteContainerType(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ContainerTypeID* /*request*/, ::mruv::ContainerTypeID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainerType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ContainerTypeID* /*request*/, ::mruv::ContainerTypeID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetContainerTypes : public BaseClass {
@@ -1689,13 +2398,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetContainerTypes() {
-      ::grpc::Service::experimental().MarkMethodCallback(15,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response) { return this->GetContainerTypes(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(15,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response) { return this->GetContainerTypes(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainerTypes(
         ::grpc::experimental::MessageAllocator< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>*>(
-          ::grpc::Service::experimental().GetHandler(15))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainerTypes() override {
@@ -1706,7 +2430,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerTypes(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainerTypes(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerTypes(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetContainerItems : public BaseClass {
@@ -1714,13 +2445,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetContainerItems() {
-      ::grpc::Service::experimental().MarkMethodCallback(16,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response) { return this->GetContainerItems(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(16,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response) { return this->GetContainerItems(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainerItems(
         ::grpc::experimental::MessageAllocator< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(16))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainerItems() override {
@@ -1731,7 +2477,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainerItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_PullItem : public BaseClass {
@@ -1739,13 +2492,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_PullItem() {
-      ::grpc::Service::experimental().MarkMethodCallback(17,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response) { return this->PullItem(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(17,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::PullItemRequest* request, ::mruv::Item* response) { return this->PullItem(context, request, response); }));}
     void SetMessageAllocatorFor_PullItem(
         ::grpc::experimental::MessageAllocator< ::mruv::PullItemRequest, ::mruv::Item>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>*>(
-          ::grpc::Service::experimental().GetHandler(17))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_PullItem() override {
@@ -1756,7 +2524,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* PullItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* PullItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* PullItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_PutItem : public BaseClass {
@@ -1764,13 +2539,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_PutItem() {
-      ::grpc::Service::experimental().MarkMethodCallback(18,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response) { return this->PutItem(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(18,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response) { return this->PutItem(context, request, response); }));}
     void SetMessageAllocatorFor_PutItem(
         ::grpc::experimental::MessageAllocator< ::mruv::PutItemRequest, ::mruv::PutItemResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>*>(
-          ::grpc::Service::experimental().GetHandler(18))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_PutItem() override {
@@ -1781,7 +2571,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* PutItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* PutItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* PutItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_SortItems : public BaseClass {
@@ -1789,13 +2586,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_SortItems() {
-      ::grpc::Service::experimental().MarkMethodCallback(19,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response) { return this->SortItems(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response) { return this->SortItems(context, request, response); }));}
     void SetMessageAllocatorFor_SortItems(
         ::grpc::experimental::MessageAllocator< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(19))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SortItems() override {
@@ -1806,7 +2618,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* SortItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* SortItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* SortItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetNearestItems : public BaseClass {
@@ -1814,13 +2633,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetNearestItems() {
-      ::grpc::Service::experimental().MarkMethodCallback(20,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response) { return this->GetNearestItems(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(20,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response) { return this->GetNearestItems(context, request, response); }));}
     void SetMessageAllocatorFor_GetNearestItems(
         ::grpc::experimental::MessageAllocator< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>*>(
-          ::grpc::Service::experimental().GetHandler(20))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(20);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetNearestItems() override {
@@ -1831,7 +2665,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetNearestItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetNearestItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetNearestItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_UseItem : public BaseClass {
@@ -1839,13 +2680,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_UseItem() {
-      ::grpc::Service::experimental().MarkMethodCallback(21,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response) { return this->UseItem(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(21,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response) { return this->UseItem(context, request, response); }));}
     void SetMessageAllocatorFor_UseItem(
         ::grpc::experimental::MessageAllocator< ::mruv::UseItemRequest, ::mruv::UseItemResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>*>(
-          ::grpc::Service::experimental().GetHandler(21))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(21);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UseItem() override {
@@ -1856,7 +2712,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* UseItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* UseItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* UseItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetServiceStatus : public BaseClass {
@@ -1864,13 +2727,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetServiceStatus() {
-      ::grpc::Service::experimental().MarkMethodCallback(22,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(22,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceStatus(
         ::grpc::experimental::MessageAllocator< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(
-          ::grpc::Service::experimental().GetHandler(22))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(22);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceStatus() override {
@@ -1881,7 +2759,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetServiceVersion : public BaseClass {
@@ -1889,13 +2774,28 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetServiceVersion() {
-      ::grpc::Service::experimental().MarkMethodCallback(23,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(23,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceVersion(
         ::grpc::experimental::MessageAllocator< ::mruv::VersionRequest, ::mruv::VersionResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(
-          ::grpc::Service::experimental().GetHandler(23))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(23);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceVersion() override {
@@ -1906,8 +2806,19 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_CreateItem<ExperimentalWithCallbackMethod_GetItem<ExperimentalWithCallbackMethod_DeleteItem<ExperimentalWithCallbackMethod_GetItems<ExperimentalWithCallbackMethod_CreateItemType<ExperimentalWithCallbackMethod_GetItemType<ExperimentalWithCallbackMethod_DeleteItemType<ExperimentalWithCallbackMethod_GetItemTypes<ExperimentalWithCallbackMethod_CreateContainer<ExperimentalWithCallbackMethod_GetContainer<ExperimentalWithCallbackMethod_DeleteContainer<ExperimentalWithCallbackMethod_GetContainers<ExperimentalWithCallbackMethod_CreateContainerType<ExperimentalWithCallbackMethod_GetContainerType<ExperimentalWithCallbackMethod_DeleteContainerType<ExperimentalWithCallbackMethod_GetContainerTypes<ExperimentalWithCallbackMethod_GetContainerItems<ExperimentalWithCallbackMethod_PullItem<ExperimentalWithCallbackMethod_PutItem<ExperimentalWithCallbackMethod_SortItems<ExperimentalWithCallbackMethod_GetNearestItems<ExperimentalWithCallbackMethod_UseItem<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  #endif
+
   typedef ExperimentalWithCallbackMethod_CreateItem<ExperimentalWithCallbackMethod_GetItem<ExperimentalWithCallbackMethod_DeleteItem<ExperimentalWithCallbackMethod_GetItems<ExperimentalWithCallbackMethod_CreateItemType<ExperimentalWithCallbackMethod_GetItemType<ExperimentalWithCallbackMethod_DeleteItemType<ExperimentalWithCallbackMethod_GetItemTypes<ExperimentalWithCallbackMethod_CreateContainer<ExperimentalWithCallbackMethod_GetContainer<ExperimentalWithCallbackMethod_DeleteContainer<ExperimentalWithCallbackMethod_GetContainers<ExperimentalWithCallbackMethod_CreateContainerType<ExperimentalWithCallbackMethod_GetContainerType<ExperimentalWithCallbackMethod_DeleteContainerType<ExperimentalWithCallbackMethod_GetContainerTypes<ExperimentalWithCallbackMethod_GetContainerItems<ExperimentalWithCallbackMethod_PullItem<ExperimentalWithCallbackMethod_PutItem<ExperimentalWithCallbackMethod_SortItems<ExperimentalWithCallbackMethod_GetNearestItems<ExperimentalWithCallbackMethod_UseItem<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateItem : public BaseClass {
@@ -2803,9 +3714,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_CreateItem() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateItem(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateItem(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_CreateItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2815,7 +3737,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetItem : public BaseClass {
@@ -2823,9 +3752,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetItem() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(1,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItem(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItem(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2835,7 +3775,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeleteItem : public BaseClass {
@@ -2843,9 +3790,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_DeleteItem() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(2,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteItem(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteItem(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_DeleteItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2855,7 +3813,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetItems : public BaseClass {
@@ -2863,9 +3828,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetItems() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(3,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItems(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItems(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2875,7 +3851,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_CreateItemType : public BaseClass {
@@ -2883,9 +3866,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_CreateItemType() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(4,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateItemType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateItemType(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_CreateItemType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2895,7 +3889,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateItemType(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateItemType(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateItemType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetItemType : public BaseClass {
@@ -2903,9 +3904,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetItemType() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(5,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItemType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItemType(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetItemType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2915,7 +3927,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItemType(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItemType(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItemType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeleteItemType : public BaseClass {
@@ -2923,9 +3942,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_DeleteItemType() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(6,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteItemType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteItemType(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_DeleteItemType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2935,7 +3965,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItemType(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteItemType(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteItemType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetItemTypes : public BaseClass {
@@ -2943,9 +3980,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetItemTypes() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(7,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItemTypes(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetItemTypes(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetItemTypes() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2955,7 +4003,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetItemTypes(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetItemTypes(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetItemTypes(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_CreateContainer : public BaseClass {
@@ -2963,9 +4018,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_CreateContainer() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(8,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateContainer(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateContainer(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_CreateContainer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2975,7 +4041,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainer(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateContainer(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetContainer : public BaseClass {
@@ -2983,9 +4056,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetContainer() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(9,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainer(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainer(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetContainer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2995,7 +4079,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainer(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainer(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeleteContainer : public BaseClass {
@@ -3003,9 +4094,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_DeleteContainer() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(10,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteContainer(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(10,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteContainer(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_DeleteContainer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3015,7 +4117,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainer(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteContainer(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainer(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetContainers : public BaseClass {
@@ -3023,9 +4132,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetContainers() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(11,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainers(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(11,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainers(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetContainers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3035,7 +4155,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainers(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainers(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainers(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_CreateContainerType : public BaseClass {
@@ -3043,9 +4170,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_CreateContainerType() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(12,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateContainerType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(12,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateContainerType(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_CreateContainerType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3055,7 +4193,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainerType(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateContainerType(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateContainerType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetContainerType : public BaseClass {
@@ -3063,9 +4208,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetContainerType() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(13,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainerType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(13,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainerType(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetContainerType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3075,7 +4231,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerType(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainerType(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeleteContainerType : public BaseClass {
@@ -3083,9 +4246,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_DeleteContainerType() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(14,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteContainerType(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(14,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteContainerType(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_DeleteContainerType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3095,7 +4269,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainerType(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteContainerType(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteContainerType(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetContainerTypes : public BaseClass {
@@ -3103,9 +4284,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetContainerTypes() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(15,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainerTypes(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(15,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainerTypes(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetContainerTypes() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3115,7 +4307,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerTypes(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainerTypes(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerTypes(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetContainerItems : public BaseClass {
@@ -3123,9 +4322,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetContainerItems() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(16,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainerItems(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(16,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetContainerItems(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetContainerItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3135,7 +4345,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetContainerItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetContainerItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_PullItem : public BaseClass {
@@ -3143,9 +4360,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_PullItem() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(17,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PullItem(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(17,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PullItem(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_PullItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3155,7 +4383,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* PullItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* PullItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* PullItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_PutItem : public BaseClass {
@@ -3163,9 +4398,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_PutItem() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(18,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PutItem(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(18,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PutItem(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_PutItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3175,7 +4421,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* PutItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* PutItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* PutItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_SortItems : public BaseClass {
@@ -3183,9 +4436,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_SortItems() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(19,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SortItems(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SortItems(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_SortItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3195,7 +4459,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* SortItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* SortItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* SortItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetNearestItems : public BaseClass {
@@ -3203,9 +4474,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetNearestItems() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(20,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetNearestItems(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(20,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetNearestItems(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetNearestItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3215,7 +4497,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetNearestItems(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetNearestItems(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetNearestItems(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_UseItem : public BaseClass {
@@ -3223,9 +4512,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_UseItem() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(21,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UseItem(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(21,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UseItem(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_UseItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3235,7 +4535,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* UseItem(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* UseItem(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* UseItem(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetServiceStatus : public BaseClass {
@@ -3243,9 +4550,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetServiceStatus() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(22,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceStatus(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(22,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceStatus(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3255,7 +4573,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetServiceVersion : public BaseClass {
@@ -3263,9 +4588,20 @@ class MruVItemService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetServiceVersion() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(23,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceVersion(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(23,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceVersion(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3275,7 +4611,14 @@ class MruVItemService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateItem : public BaseClass {

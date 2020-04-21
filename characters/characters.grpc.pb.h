@@ -7,12 +7,14 @@
 #include "characters/characters.pb.h"
 
 #include <functional>
+#include <grpc/impl/codegen/port_platform.h>
 #include <grpcpp/impl/codegen/async_generic_service.h>
 #include <grpcpp/impl/codegen/async_stream.h>
 #include <grpcpp/impl/codegen/async_unary_call.h>
 #include <grpcpp/impl/codegen/client_callback.h>
 #include <grpcpp/impl/codegen/client_context.h>
 #include <grpcpp/impl/codegen/completion_queue.h>
+#include <grpcpp/impl/codegen/message_allocator.h>
 #include <grpcpp/impl/codegen/method_handler.h>
 #include <grpcpp/impl/codegen/proto_utils.h>
 #include <grpcpp/impl/codegen/rpc_method.h>
@@ -23,19 +25,6 @@
 #include <grpcpp/impl/codegen/status.h>
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
-
-namespace grpc_impl {
-class CompletionQueue;
-class ServerCompletionQueue;
-class ServerContext;
-}  // namespace grpc_impl
-
-namespace grpc {
-namespace experimental {
-template <typename RequestT, typename ResponseT>
-class MessageAllocator;
-}  // namespace experimental
-}  // namespace grpc
 
 namespace mruv {
 
@@ -107,32 +96,90 @@ class MruVCharactersService final {
       // CRUD
       virtual void CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Deaths
       virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeathsStream(::grpc::ClientContext* context, ::mruv::DeathStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::DeathStreamResponse>* reactor) = 0;
+      #else
       virtual void DeathsStream(::grpc::ClientContext* context, ::mruv::DeathStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::DeathStreamResponse>* reactor) = 0;
+      #endif
       // Service status
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    typedef class experimental_async_interface async_interface;
+    #endif
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    async_interface* async() { return experimental_async(); }
+    #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CharacterID>* AsyncCreateCharacterRaw(::grpc::ClientContext* context, const ::mruv::Character& request, ::grpc::CompletionQueue* cq) = 0;
@@ -210,29 +257,81 @@ class MruVCharactersService final {
      public:
       void CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) override;
       void CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, std::function<void(::grpc::Status)>) override;
       void GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) override;
       void RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) override;
       void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeathsStream(::grpc::ClientContext* context, ::mruv::DeathStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::DeathStreamResponse>* reactor) override;
+      #else
       void DeathsStream(::grpc::ClientContext* context, ::mruv::DeathStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::DeathStreamResponse>* reactor) override;
+      #endif
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -431,13 +530,28 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_CreateCharacter() {
-      ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Character, ::mruv::CharacterID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response) { return this->CreateCharacter(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Character, ::mruv::CharacterID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::Character* request, ::mruv::CharacterID* response) { return this->CreateCharacter(context, request, response); }));}
     void SetMessageAllocatorFor_CreateCharacter(
         ::grpc::experimental::MessageAllocator< ::mruv::Character, ::mruv::CharacterID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Character, ::mruv::CharacterID>*>(
-          ::grpc::Service::experimental().GetHandler(0))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::Character, ::mruv::CharacterID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateCharacter() override {
@@ -448,7 +562,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateCharacter(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Character* /*request*/, ::mruv::CharacterID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateCharacter(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::Character* /*request*/, ::mruv::CharacterID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateCharacter(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::Character* /*request*/, ::mruv::CharacterID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetCharacter : public BaseClass {
@@ -456,13 +577,28 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetCharacter() {
-      ::grpc::Service::experimental().MarkMethodCallback(1,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::Character>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response) { return this->GetCharacter(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::Character>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::CharacterID* request, ::mruv::Character* response) { return this->GetCharacter(context, request, response); }));}
     void SetMessageAllocatorFor_GetCharacter(
         ::grpc::experimental::MessageAllocator< ::mruv::CharacterID, ::mruv::Character>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::Character>*>(
-          ::grpc::Service::experimental().GetHandler(1))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::Character>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetCharacter() override {
@@ -473,7 +609,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetCharacter(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::Character* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetCharacter(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::Character* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetCharacter(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::Character* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_RemoveCharacter : public BaseClass {
@@ -481,13 +624,28 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_RemoveCharacter() {
-      ::grpc::Service::experimental().MarkMethodCallback(2,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response) { return this->RemoveCharacter(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response) { return this->RemoveCharacter(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveCharacter(
         ::grpc::experimental::MessageAllocator< ::mruv::CharacterID, ::mruv::CharacterID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>*>(
-          ::grpc::Service::experimental().GetHandler(2))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemoveCharacter() override {
@@ -498,7 +656,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* RemoveCharacter(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::CharacterID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RemoveCharacter(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::CharacterID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RemoveCharacter(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::CharacterID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_PermanentCharacterKill : public BaseClass {
@@ -506,13 +671,28 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_PermanentCharacterKill() {
-      ::grpc::Service::experimental().MarkMethodCallback(3,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response) { return this->PermanentCharacterKill(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response) { return this->PermanentCharacterKill(context, request, response); }));}
     void SetMessageAllocatorFor_PermanentCharacterKill(
         ::grpc::experimental::MessageAllocator< ::mruv::CharacterID, ::mruv::CharacterID>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>*>(
-          ::grpc::Service::experimental().GetHandler(3))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_PermanentCharacterKill() override {
@@ -523,7 +703,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* PermanentCharacterKill(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::CharacterID* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* PermanentCharacterKill(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::CharacterID* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* PermanentCharacterKill(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CharacterID* /*request*/, ::mruv::CharacterID* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeathsStream : public BaseClass {
@@ -531,9 +718,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_DeathsStream() {
-      ::grpc::Service::experimental().MarkMethodCallback(4,
-        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::DeathStreamRequest* request) { return this->DeathsStream(context, request); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::DeathStreamRequest* request) { return this->DeathsStream(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_DeathsStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -543,7 +741,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::DeathStreamResponse>* DeathsStream(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::DeathStreamRequest* /*request*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::mruv::DeathStreamResponse>* DeathsStream(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::DeathStreamRequest* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::DeathStreamResponse>* DeathsStream(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::DeathStreamRequest* /*request*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetServiceStatus : public BaseClass {
@@ -551,13 +756,28 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetServiceStatus() {
-      ::grpc::Service::experimental().MarkMethodCallback(5,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceStatus(
         ::grpc::experimental::MessageAllocator< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(
-          ::grpc::Service::experimental().GetHandler(5))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceStatus() override {
@@ -568,7 +788,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_GetServiceVersion : public BaseClass {
@@ -576,13 +803,28 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithCallbackMethod_GetServiceVersion() {
-      ::grpc::Service::experimental().MarkMethodCallback(6,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceVersion(
         ::grpc::experimental::MessageAllocator< ::mruv::VersionRequest, ::mruv::VersionResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(
-          ::grpc::Service::experimental().GetHandler(6))
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceVersion() override {
@@ -593,8 +835,19 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+    #endif
+      { return nullptr; }
   };
+  #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+  typedef ExperimentalWithCallbackMethod_CreateCharacter<ExperimentalWithCallbackMethod_GetCharacter<ExperimentalWithCallbackMethod_RemoveCharacter<ExperimentalWithCallbackMethod_PermanentCharacterKill<ExperimentalWithCallbackMethod_DeathsStream<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > CallbackService;
+  #endif
+
   typedef ExperimentalWithCallbackMethod_CreateCharacter<ExperimentalWithCallbackMethod_GetCharacter<ExperimentalWithCallbackMethod_RemoveCharacter<ExperimentalWithCallbackMethod_PermanentCharacterKill<ExperimentalWithCallbackMethod_DeathsStream<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateCharacter : public BaseClass {
@@ -861,9 +1114,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_CreateCharacter() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateCharacter(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateCharacter(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_CreateCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -873,7 +1137,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* CreateCharacter(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* CreateCharacter(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* CreateCharacter(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetCharacter : public BaseClass {
@@ -881,9 +1152,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetCharacter() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(1,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCharacter(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCharacter(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -893,7 +1175,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetCharacter(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetCharacter(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetCharacter(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_RemoveCharacter : public BaseClass {
@@ -901,9 +1190,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_RemoveCharacter() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(2,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveCharacter(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveCharacter(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_RemoveCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -913,7 +1213,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* RemoveCharacter(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* RemoveCharacter(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* RemoveCharacter(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_PermanentCharacterKill : public BaseClass {
@@ -921,9 +1228,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_PermanentCharacterKill() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(3,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PermanentCharacterKill(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->PermanentCharacterKill(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_PermanentCharacterKill() override {
       BaseClassMustBeDerivedFromService(this);
@@ -933,7 +1251,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* PermanentCharacterKill(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* PermanentCharacterKill(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* PermanentCharacterKill(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeathsStream : public BaseClass {
@@ -941,9 +1266,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_DeathsStream() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(4,
-        new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const::grpc::ByteBuffer* request) { return this->DeathsStream(context, request); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->DeathsStream(context, request); }));
     }
     ~ExperimentalWithRawCallbackMethod_DeathsStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -953,7 +1289,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* DeathsStream(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* DeathsStream(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* DeathsStream(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetServiceStatus : public BaseClass {
@@ -961,9 +1304,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetServiceStatus() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(5,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceStatus(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceStatus(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -973,7 +1327,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_GetServiceVersion : public BaseClass {
@@ -981,9 +1342,20 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     ExperimentalWithRawCallbackMethod_GetServiceVersion() {
-      ::grpc::Service::experimental().MarkMethodRawCallback(6,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-          [this](::grpc::experimental::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceVersion(context, request, response); }));
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServiceVersion(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -993,7 +1365,14 @@ class MruVCharactersService final {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/) { return nullptr; }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateCharacter : public BaseClass {
