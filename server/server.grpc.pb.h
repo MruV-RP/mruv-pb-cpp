@@ -27,60 +27,119 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace mruv {
+namespace server {
 
-// The MruV server service provides procedures for managing game platform server actions
+// The MruV server service provides procedures for managing game platform server actions.
 class MruVServerService final {
  public:
   static constexpr char const* service_full_name() {
-    return "mruv.MruVServerService";
+    return "mruv.server.MruVServerService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Register instance of server for further managing
-    virtual ::grpc::Status RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::mruv::RegisterServerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterServerResponse>> AsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterServerResponse>>(AsyncRegisterServerRaw(context, request, cq));
+    // Register instance of server for further managing.
+    virtual ::grpc::Status RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::mruv::server::ServerID* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerID>> AsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerID>>(AsyncRegisterServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterServerResponse>> PrepareAsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterServerResponse>>(PrepareAsyncRegisterServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerID>> PrepareAsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerID>>(PrepareAsyncRegisterServerRaw(context, request, cq));
     }
-    // Get game server status
-    virtual ::grpc::Status GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::mruv::ServerStatus* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServerStatus>> AsyncGetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServerStatus>>(AsyncGetServerStatusRaw(context, request, cq));
+    // Get all registered servers.
+    virtual ::grpc::Status GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::mruv::server::GetRegisteredServersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::GetRegisteredServersResponse>> AsyncGetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::GetRegisteredServersResponse>>(AsyncGetRegisteredServersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServerStatus>> PrepareAsyncGetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServerStatus>>(PrepareAsyncGetServerStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::GetRegisteredServersResponse>> PrepareAsyncGetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::GetRegisteredServersResponse>>(PrepareAsyncGetRegisteredServersRaw(context, request, cq));
+    }
+    // Get game server status.
+    virtual ::grpc::Status GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::mruv::server::ServerInfo* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerInfo>> AsyncGetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerInfo>>(AsyncGetServerInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerInfo>> PrepareAsyncGetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerInfo>>(PrepareAsyncGetServerInfoRaw(context, request, cq));
+    }
+    // Update game server status.
+    virtual ::grpc::Status UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::mruv::server::UpdateServerStatusResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>> AsyncUpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>>(AsyncUpdateServerStatusRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>> PrepareAsyncUpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>>(PrepareAsyncUpdateServerStatusRaw(context, request, cq));
+    }
+    // Stream of server events. Events are streamed back in real-time for chosen server.
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::server::ServerEvent>> ServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::server::ServerEvent>>(ServerEventsStreamRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::server::ServerEvent>> AsyncServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::server::ServerEvent>>(AsyncServerEventsStreamRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::server::ServerEvent>> PrepareAsyncServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::server::ServerEvent>>(PrepareAsyncServerEventsStreamRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      // Register instance of server for further managing
-      virtual void RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Register instance of server for further managing.
+      virtual void RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Get game server status
-      virtual void GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServerStatus* response, std::function<void(::grpc::Status)>) = 0;
+      // Get all registered servers.
+      virtual void GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServerStatus* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServerStatus* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Get game server status.
+      virtual void GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Update game server status.
+      virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Stream of server events. Events are streamed back in real-time for chosen server.
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ServerEventsStream(::grpc::ClientContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::server::ServerEvent>* reactor) = 0;
+      #else
+      virtual void ServerEventsStream(::grpc::ClientContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::server::ServerEvent>* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -91,54 +150,113 @@ class MruVServerService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterServerResponse>* AsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterServerResponse>* PrepareAsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServerStatus>* AsyncGetServerStatusRaw(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServerStatus>* PrepareAsyncGetServerStatusRaw(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerID>* AsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerID>* PrepareAsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::GetRegisteredServersResponse>* AsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::GetRegisteredServersResponse>* PrepareAsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerInfo>* AsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::ServerInfo>* PrepareAsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>* AsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>* PrepareAsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::server::ServerEvent>* ServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::server::ServerEvent>* AsyncServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::server::ServerEvent>* PrepareAsyncServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::mruv::RegisterServerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RegisterServerResponse>> AsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RegisterServerResponse>>(AsyncRegisterServerRaw(context, request, cq));
+    ::grpc::Status RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::mruv::server::ServerID* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>> AsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>>(AsyncRegisterServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RegisterServerResponse>> PrepareAsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RegisterServerResponse>>(PrepareAsyncRegisterServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>> PrepareAsyncRegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>>(PrepareAsyncRegisterServerRaw(context, request, cq));
     }
-    ::grpc::Status GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::mruv::ServerStatus* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServerStatus>> AsyncGetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServerStatus>>(AsyncGetServerStatusRaw(context, request, cq));
+    ::grpc::Status GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::mruv::server::GetRegisteredServersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>> AsyncGetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>>(AsyncGetRegisteredServersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServerStatus>> PrepareAsyncGetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServerStatus>>(PrepareAsyncGetServerStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>> PrepareAsyncGetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>>(PrepareAsyncGetRegisteredServersRaw(context, request, cq));
+    }
+    ::grpc::Status GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::mruv::server::ServerInfo* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>> AsyncGetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>>(AsyncGetServerInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>> PrepareAsyncGetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>>(PrepareAsyncGetServerInfoRaw(context, request, cq));
+    }
+    ::grpc::Status UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::mruv::server::UpdateServerStatusResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>> AsyncUpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>>(AsyncUpdateServerStatusRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>> PrepareAsyncUpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>>(PrepareAsyncUpdateServerStatusRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::server::ServerEvent>> ServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::server::ServerEvent>>(ServerEventsStreamRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>> AsyncServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>>(AsyncServerEventsStreamRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>> PrepareAsyncServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>>(PrepareAsyncServerEventsStreamRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response, std::function<void(::grpc::Status)>) override;
-      void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterServerResponse* response, std::function<void(::grpc::Status)>) override;
+      void RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, std::function<void(::grpc::Status)>) override;
+      void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void RegisterServer(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response, std::function<void(::grpc::Status)>) override;
-      void GetServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServerStatus* response, std::function<void(::grpc::Status)>) override;
+      void GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServerStatus(::grpc::ClientContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServerStatus* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServerStatus* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, std::function<void(::grpc::Status)>) override;
+      void GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ServerEventsStream(::grpc::ClientContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::server::ServerEvent>* reactor) override;
+      #else
+      void ServerEventsStream(::grpc::ClientContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::server::ServerEvent>* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -151,12 +269,22 @@ class MruVServerService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::mruv::RegisterServerResponse>* AsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RegisterServerResponse>* PrepareAsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::RegisterServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::ServerStatus>* AsyncGetServerStatusRaw(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::ServerStatus>* PrepareAsyncGetServerStatusRaw(::grpc::ClientContext* context, const ::mruv::ServerID& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>* AsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>* PrepareAsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>* AsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>* PrepareAsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>* AsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>* PrepareAsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>* AsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>* PrepareAsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::server::ServerEvent>* ServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>* AsyncServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>* PrepareAsyncServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_RegisterServer_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetServerStatus_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetRegisteredServers_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetServerInfo_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateServerStatus_;
+    const ::grpc::internal::RpcMethod rpcmethod_ServerEventsStream_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -164,10 +292,16 @@ class MruVServerService final {
    public:
     Service();
     virtual ~Service();
-    // Register instance of server for further managing
-    virtual ::grpc::Status RegisterServer(::grpc::ServerContext* context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response);
-    // Get game server status
-    virtual ::grpc::Status GetServerStatus(::grpc::ServerContext* context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response);
+    // Register instance of server for further managing.
+    virtual ::grpc::Status RegisterServer(::grpc::ServerContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response);
+    // Get all registered servers.
+    virtual ::grpc::Status GetRegisteredServers(::grpc::ServerContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response);
+    // Get game server status.
+    virtual ::grpc::Status GetServerInfo(::grpc::ServerContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response);
+    // Update game server status.
+    virtual ::grpc::Status UpdateServerStatus(::grpc::ServerContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response);
+    // Stream of server events. Events are streamed back in real-time for chosen server.
+    virtual ::grpc::Status ServerEventsStream(::grpc::ServerContext* context, const ::mruv::server::ServerEventsStreamRequest* request, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_RegisterServer : public BaseClass {
@@ -181,35 +315,95 @@ class MruVServerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/) override {
+    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRegisterServer(::grpc::ServerContext* context, ::mruv::RegisterServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::RegisterServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRegisterServer(::grpc::ServerContext* context, ::mruv::server::ServerInfo* request, ::grpc::ServerAsyncResponseWriter< ::mruv::server::ServerID>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_GetServerStatus : public BaseClass {
+  class WithAsyncMethod_GetRegisteredServers : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_GetServerStatus() {
+    WithAsyncMethod_GetRegisteredServers() {
       ::grpc::Service::MarkMethodAsync(1);
     }
-    ~WithAsyncMethod_GetServerStatus() override {
+    ~WithAsyncMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/) override {
+    ::grpc::Status GetRegisteredServers(::grpc::ServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServerStatus(::grpc::ServerContext* context, ::mruv::ServerID* request, ::grpc::ServerAsyncResponseWriter< ::mruv::ServerStatus>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetRegisteredServers(::grpc::ServerContext* context, ::mruv::server::GetRegisteredServersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::server::GetRegisteredServersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_RegisterServer<WithAsyncMethod_GetServerStatus<Service > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetServerInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetServerInfo() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_GetServerInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetServerInfo(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetServerInfo(::grpc::ServerContext* context, ::mruv::server::ServerID* request, ::grpc::ServerAsyncResponseWriter< ::mruv::server::ServerInfo>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateServerStatus : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateServerStatus() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_UpdateServerStatus() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateServerStatus(::grpc::ServerContext* context, ::mruv::server::UpdateServerStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::server::UpdateServerStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ServerEventsStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ServerEventsStream() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_ServerEventsStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServerEventsStream(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestServerEventsStream(::grpc::ServerContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::ServerAsyncWriter< ::mruv::server::ServerEvent>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_RegisterServer<WithAsyncMethod_GetRegisteredServers<WithAsyncMethod_GetServerInfo<WithAsyncMethod_UpdateServerStatus<WithAsyncMethod_ServerEventsStream<Service > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_RegisterServer : public BaseClass {
    private:
@@ -222,93 +416,225 @@ class MruVServerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::RegisterServerRequest, ::mruv::RegisterServerResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::ServerInfo, ::mruv::server::ServerID>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::RegisterServerRequest* request, ::mruv::RegisterServerResponse* response) { return this->RegisterServer(context, request, response); }));}
+                     context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response) { return this->RegisterServer(context, request, response); }));}
     void SetMessageAllocatorFor_RegisterServer(
-        ::grpc::experimental::MessageAllocator< ::mruv::RegisterServerRequest, ::mruv::RegisterServerResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::server::ServerInfo, ::mruv::server::ServerID>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::RegisterServerRequest, ::mruv::RegisterServerResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::ServerInfo, ::mruv::server::ServerID>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RegisterServer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/) override {
+    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* RegisterServer(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* RegisterServer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/)
     #endif
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetServerStatus : public BaseClass {
+  class ExperimentalWithCallbackMethod_GetRegisteredServers : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetServerStatus() {
+    ExperimentalWithCallbackMethod_GetRegisteredServers() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServerID, ::mruv::ServerStatus>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::ServerID* request, ::mruv::ServerStatus* response) { return this->GetServerStatus(context, request, response); }));}
-    void SetMessageAllocatorFor_GetServerStatus(
-        ::grpc::experimental::MessageAllocator< ::mruv::ServerID, ::mruv::ServerStatus>* allocator) {
+                     context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response) { return this->GetRegisteredServers(context, request, response); }));}
+    void SetMessageAllocatorFor_GetRegisteredServers(
+        ::grpc::experimental::MessageAllocator< ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServerID, ::mruv::ServerStatus>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetServerStatus() override {
+    ~ExperimentalWithCallbackMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/) override {
+    ::grpc::Status GetRegisteredServers(::grpc::ServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetServerStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* GetRegisteredServers(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServerStatus(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* GetRegisteredServers(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetServerInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_GetServerInfo() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::ServerID, ::mruv::server::ServerInfo>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response) { return this->GetServerInfo(context, request, response); }));}
+    void SetMessageAllocatorFor_GetServerInfo(
+        ::grpc::experimental::MessageAllocator< ::mruv::server::ServerID, ::mruv::server::ServerInfo>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::ServerID, ::mruv::server::ServerInfo>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetServerInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetServerInfo(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServerInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServerInfo(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_UpdateServerStatus : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_UpdateServerStatus() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response) { return this->UpdateServerStatus(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateServerStatus(
+        ::grpc::experimental::MessageAllocator< ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_UpdateServerStatus() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* UpdateServerStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* UpdateServerStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ServerEventsStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ServerEventsStream() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::server::ServerEventsStreamRequest* request) { return this->ServerEventsStream(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_ServerEventsStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServerEventsStream(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::mruv::server::ServerEvent>* ServerEventsStream(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::server::ServerEvent>* ServerEventsStream(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_RegisterServer<ExperimentalWithCallbackMethod_GetServerStatus<Service > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_RegisterServer<ExperimentalWithCallbackMethod_GetRegisteredServers<ExperimentalWithCallbackMethod_GetServerInfo<ExperimentalWithCallbackMethod_UpdateServerStatus<ExperimentalWithCallbackMethod_ServerEventsStream<Service > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_RegisterServer<ExperimentalWithCallbackMethod_GetServerStatus<Service > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_RegisterServer<ExperimentalWithCallbackMethod_GetRegisteredServers<ExperimentalWithCallbackMethod_GetServerInfo<ExperimentalWithCallbackMethod_UpdateServerStatus<ExperimentalWithCallbackMethod_ServerEventsStream<Service > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_RegisterServer : public BaseClass {
    private:
@@ -321,24 +647,75 @@ class MruVServerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/) override {
+    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_GetServerStatus : public BaseClass {
+  class WithGenericMethod_GetRegisteredServers : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_GetServerStatus() {
+    WithGenericMethod_GetRegisteredServers() {
       ::grpc::Service::MarkMethodGeneric(1);
     }
-    ~WithGenericMethod_GetServerStatus() override {
+    ~WithGenericMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/) override {
+    ::grpc::Status GetRegisteredServers(::grpc::ServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetServerInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetServerInfo() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_GetServerInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetServerInfo(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateServerStatus : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateServerStatus() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_UpdateServerStatus() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_ServerEventsStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ServerEventsStream() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_ServerEventsStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServerEventsStream(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -355,7 +732,7 @@ class MruVServerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/) override {
+    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -364,23 +741,83 @@ class MruVServerService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_GetServerStatus : public BaseClass {
+  class WithRawMethod_GetRegisteredServers : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_GetServerStatus() {
+    WithRawMethod_GetRegisteredServers() {
       ::grpc::Service::MarkMethodRaw(1);
     }
-    ~WithRawMethod_GetServerStatus() override {
+    ~WithRawMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/) override {
+    ::grpc::Status GetRegisteredServers(::grpc::ServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServerStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetRegisteredServers(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetServerInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetServerInfo() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_GetServerInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetServerInfo(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetServerInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateServerStatus : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateServerStatus() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_UpdateServerStatus() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateServerStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ServerEventsStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ServerEventsStream() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_ServerEventsStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServerEventsStream(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestServerEventsStream(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -408,7 +845,7 @@ class MruVServerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/) override {
+    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -422,11 +859,11 @@ class MruVServerService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetServerStatus : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_GetRegisteredServers : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetServerStatus() {
+    ExperimentalWithRawCallbackMethod_GetRegisteredServers() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -440,22 +877,136 @@ class MruVServerService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServerStatus(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetRegisteredServers(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetServerStatus() override {
+    ~ExperimentalWithRawCallbackMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/) override {
+    ::grpc::Status GetRegisteredServers(::grpc::ServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetServerStatus(
+    virtual ::grpc::ServerUnaryReactor* GetRegisteredServers(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetServerStatus(
+    virtual ::grpc::experimental::ServerUnaryReactor* GetRegisteredServers(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetServerInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetServerInfo() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetServerInfo(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetServerInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetServerInfo(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetServerInfo(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetServerInfo(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_UpdateServerStatus : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_UpdateServerStatus() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateServerStatus(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_UpdateServerStatus() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* UpdateServerStatus(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* UpdateServerStatus(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ServerEventsStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ServerEventsStream() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->ServerEventsStream(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ServerEventsStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ServerEventsStream(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* ServerEventsStream(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* ServerEventsStream(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -466,44 +1017,105 @@ class MruVServerService final {
    public:
     WithStreamedUnaryMethod_RegisterServer() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::RegisterServerRequest, ::mruv::RegisterServerResponse>(std::bind(&WithStreamedUnaryMethod_RegisterServer<BaseClass>::StreamedRegisterServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::ServerInfo, ::mruv::server::ServerID>(std::bind(&WithStreamedUnaryMethod_RegisterServer<BaseClass>::StreamedRegisterServer, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_RegisterServer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::RegisterServerRequest* /*request*/, ::mruv::RegisterServerResponse* /*response*/) override {
+    ::grpc::Status RegisterServer(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerInfo* /*request*/, ::mruv::server::ServerID* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRegisterServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::RegisterServerRequest,::mruv::RegisterServerResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRegisterServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::server::ServerInfo,::mruv::server::ServerID>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_GetServerStatus : public BaseClass {
+  class WithStreamedUnaryMethod_GetRegisteredServers : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_GetServerStatus() {
+    WithStreamedUnaryMethod_GetRegisteredServers() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ServerID, ::mruv::ServerStatus>(std::bind(&WithStreamedUnaryMethod_GetServerStatus<BaseClass>::StreamedGetServerStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>(std::bind(&WithStreamedUnaryMethod_GetRegisteredServers<BaseClass>::StreamedGetRegisteredServers, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_GetServerStatus() override {
+    ~WithStreamedUnaryMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServerID* /*request*/, ::mruv::ServerStatus* /*response*/) override {
+    ::grpc::Status GetRegisteredServers(::grpc::ServerContext* /*context*/, const ::mruv::server::GetRegisteredServersRequest* /*request*/, ::mruv::server::GetRegisteredServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetServerStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::ServerID,::mruv::ServerStatus>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetRegisteredServers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::server::GetRegisteredServersRequest,::mruv::server::GetRegisteredServersResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_RegisterServer<WithStreamedUnaryMethod_GetServerStatus<Service > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_RegisterServer<WithStreamedUnaryMethod_GetServerStatus<Service > > StreamedService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetServerInfo : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetServerInfo() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::ServerID, ::mruv::server::ServerInfo>(std::bind(&WithStreamedUnaryMethod_GetServerInfo<BaseClass>::StreamedGetServerInfo, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GetServerInfo() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetServerInfo(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerID* /*request*/, ::mruv::server::ServerInfo* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetServerInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::server::ServerID,::mruv::server::ServerInfo>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateServerStatus : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateServerStatus() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>(std::bind(&WithStreamedUnaryMethod_UpdateServerStatus<BaseClass>::StreamedUpdateServerStatus, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_UpdateServerStatus() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateServerStatus(::grpc::ServerContext* /*context*/, const ::mruv::server::UpdateServerStatusRequest* /*request*/, ::mruv::server::UpdateServerStatusResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateServerStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::server::UpdateServerStatusRequest,::mruv::server::UpdateServerStatusResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_RegisterServer<WithStreamedUnaryMethod_GetRegisteredServers<WithStreamedUnaryMethod_GetServerInfo<WithStreamedUnaryMethod_UpdateServerStatus<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_ServerEventsStream : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_ServerEventsStream() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>(std::bind(&WithSplitStreamingMethod_ServerEventsStream<BaseClass>::StreamedServerEventsStream, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithSplitStreamingMethod_ServerEventsStream() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ServerEventsStream(::grpc::ServerContext* /*context*/, const ::mruv::server::ServerEventsStreamRequest* /*request*/, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedServerEventsStream(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::server::ServerEventsStreamRequest,::mruv::server::ServerEvent>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_ServerEventsStream<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_RegisterServer<WithStreamedUnaryMethod_GetRegisteredServers<WithStreamedUnaryMethod_GetServerInfo<WithStreamedUnaryMethod_UpdateServerStatus<WithSplitStreamingMethod_ServerEventsStream<Service > > > > > StreamedService;
 };
 
+}  // namespace server
 }  // namespace mruv
 
 

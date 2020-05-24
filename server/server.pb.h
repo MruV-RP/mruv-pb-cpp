@@ -31,6 +31,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
 #include "server/server_model.pb.h"
@@ -49,7 +50,7 @@ struct TableStruct_server_2fserver_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,38 +58,85 @@ struct TableStruct_server_2fserver_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_2fserver_2eproto;
 namespace mruv {
-class RegisterServerRequest;
-class RegisterServerRequestDefaultTypeInternal;
-extern RegisterServerRequestDefaultTypeInternal _RegisterServerRequest_default_instance_;
-class RegisterServerResponse;
-class RegisterServerResponseDefaultTypeInternal;
-extern RegisterServerResponseDefaultTypeInternal _RegisterServerResponse_default_instance_;
+namespace server {
+class GetRegisteredServersRequest;
+class GetRegisteredServersRequestDefaultTypeInternal;
+extern GetRegisteredServersRequestDefaultTypeInternal _GetRegisteredServersRequest_default_instance_;
+class GetRegisteredServersResponse;
+class GetRegisteredServersResponseDefaultTypeInternal;
+extern GetRegisteredServersResponseDefaultTypeInternal _GetRegisteredServersResponse_default_instance_;
+class ServerEvent;
+class ServerEventDefaultTypeInternal;
+extern ServerEventDefaultTypeInternal _ServerEvent_default_instance_;
+class ServerEventsStreamRequest;
+class ServerEventsStreamRequestDefaultTypeInternal;
+extern ServerEventsStreamRequestDefaultTypeInternal _ServerEventsStreamRequest_default_instance_;
+class UpdateServerStatusRequest;
+class UpdateServerStatusRequestDefaultTypeInternal;
+extern UpdateServerStatusRequestDefaultTypeInternal _UpdateServerStatusRequest_default_instance_;
+class UpdateServerStatusResponse;
+class UpdateServerStatusResponseDefaultTypeInternal;
+extern UpdateServerStatusResponseDefaultTypeInternal _UpdateServerStatusResponse_default_instance_;
+}  // namespace server
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::RegisterServerRequest* Arena::CreateMaybeMessage<::mruv::RegisterServerRequest>(Arena*);
-template<> ::mruv::RegisterServerResponse* Arena::CreateMaybeMessage<::mruv::RegisterServerResponse>(Arena*);
+template<> ::mruv::server::GetRegisteredServersRequest* Arena::CreateMaybeMessage<::mruv::server::GetRegisteredServersRequest>(Arena*);
+template<> ::mruv::server::GetRegisteredServersResponse* Arena::CreateMaybeMessage<::mruv::server::GetRegisteredServersResponse>(Arena*);
+template<> ::mruv::server::ServerEvent* Arena::CreateMaybeMessage<::mruv::server::ServerEvent>(Arena*);
+template<> ::mruv::server::ServerEventsStreamRequest* Arena::CreateMaybeMessage<::mruv::server::ServerEventsStreamRequest>(Arena*);
+template<> ::mruv::server::UpdateServerStatusRequest* Arena::CreateMaybeMessage<::mruv::server::UpdateServerStatusRequest>(Arena*);
+template<> ::mruv::server::UpdateServerStatusResponse* Arena::CreateMaybeMessage<::mruv::server::UpdateServerStatusResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace server {
 
+enum ServerEvent_ServerEventType : int {
+  ServerEvent_ServerEventType_UNKNOWN = 0,
+  ServerEvent_ServerEventType_REGISTERED = 1,
+  ServerEvent_ServerEventType_SERVER_DOWN = 2,
+  ServerEvent_ServerEventType_SERVER_UP = 3,
+  ServerEvent_ServerEventType_PLAYERS_CHANGED = 4,
+  ServerEvent_ServerEventType_ServerEvent_ServerEventType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ServerEvent_ServerEventType_ServerEvent_ServerEventType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool ServerEvent_ServerEventType_IsValid(int value);
+constexpr ServerEvent_ServerEventType ServerEvent_ServerEventType_ServerEventType_MIN = ServerEvent_ServerEventType_UNKNOWN;
+constexpr ServerEvent_ServerEventType ServerEvent_ServerEventType_ServerEventType_MAX = ServerEvent_ServerEventType_PLAYERS_CHANGED;
+constexpr int ServerEvent_ServerEventType_ServerEventType_ARRAYSIZE = ServerEvent_ServerEventType_ServerEventType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ServerEvent_ServerEventType_descriptor();
+template<typename T>
+inline const std::string& ServerEvent_ServerEventType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ServerEvent_ServerEventType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function ServerEvent_ServerEventType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    ServerEvent_ServerEventType_descriptor(), enum_t_value);
+}
+inline bool ServerEvent_ServerEventType_Parse(
+    const std::string& name, ServerEvent_ServerEventType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ServerEvent_ServerEventType>(
+    ServerEvent_ServerEventType_descriptor(), name, value);
+}
 // ===================================================================
 
-class RegisterServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.RegisterServerRequest) */ {
+class GetRegisteredServersRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.GetRegisteredServersRequest) */ {
  public:
-  RegisterServerRequest();
-  virtual ~RegisterServerRequest();
+  GetRegisteredServersRequest();
+  virtual ~GetRegisteredServersRequest();
 
-  RegisterServerRequest(const RegisterServerRequest& from);
-  RegisterServerRequest(RegisterServerRequest&& from) noexcept
-    : RegisterServerRequest() {
+  GetRegisteredServersRequest(const GetRegisteredServersRequest& from);
+  GetRegisteredServersRequest(GetRegisteredServersRequest&& from) noexcept
+    : GetRegisteredServersRequest() {
     *this = ::std::move(from);
   }
 
-  inline RegisterServerRequest& operator=(const RegisterServerRequest& from) {
+  inline GetRegisteredServersRequest& operator=(const GetRegisteredServersRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline RegisterServerRequest& operator=(RegisterServerRequest&& from) noexcept {
+  inline GetRegisteredServersRequest& operator=(GetRegisteredServersRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -106,37 +154,37 @@ class RegisterServerRequest :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const RegisterServerRequest& default_instance();
+  static const GetRegisteredServersRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RegisterServerRequest* internal_default_instance() {
-    return reinterpret_cast<const RegisterServerRequest*>(
-               &_RegisterServerRequest_default_instance_);
+  static inline const GetRegisteredServersRequest* internal_default_instance() {
+    return reinterpret_cast<const GetRegisteredServersRequest*>(
+               &_GetRegisteredServersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(RegisterServerRequest& a, RegisterServerRequest& b) {
+  friend void swap(GetRegisteredServersRequest& a, GetRegisteredServersRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(RegisterServerRequest* other) {
+  inline void Swap(GetRegisteredServersRequest* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline RegisterServerRequest* New() const final {
-    return CreateMaybeMessage<RegisterServerRequest>(nullptr);
+  inline GetRegisteredServersRequest* New() const final {
+    return CreateMaybeMessage<GetRegisteredServersRequest>(nullptr);
   }
 
-  RegisterServerRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<RegisterServerRequest>(arena);
+  GetRegisteredServersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetRegisteredServersRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const RegisterServerRequest& from);
-  void MergeFrom(const RegisterServerRequest& from);
+  void CopyFrom(const GetRegisteredServersRequest& from);
+  void MergeFrom(const GetRegisteredServersRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -150,10 +198,10 @@ class RegisterServerRequest :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(RegisterServerRequest* other);
+  void InternalSwap(GetRegisteredServersRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.RegisterServerRequest";
+    return "mruv.server.GetRegisteredServersRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -177,7 +225,7 @@ class RegisterServerRequest :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.server.GetRegisteredServersRequest)
  private:
   class _Internal;
 
@@ -187,23 +235,23 @@ class RegisterServerRequest :
 };
 // -------------------------------------------------------------------
 
-class RegisterServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.RegisterServerResponse) */ {
+class GetRegisteredServersResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.GetRegisteredServersResponse) */ {
  public:
-  RegisterServerResponse();
-  virtual ~RegisterServerResponse();
+  GetRegisteredServersResponse();
+  virtual ~GetRegisteredServersResponse();
 
-  RegisterServerResponse(const RegisterServerResponse& from);
-  RegisterServerResponse(RegisterServerResponse&& from) noexcept
-    : RegisterServerResponse() {
+  GetRegisteredServersResponse(const GetRegisteredServersResponse& from);
+  GetRegisteredServersResponse(GetRegisteredServersResponse&& from) noexcept
+    : GetRegisteredServersResponse() {
     *this = ::std::move(from);
   }
 
-  inline RegisterServerResponse& operator=(const RegisterServerResponse& from) {
+  inline GetRegisteredServersResponse& operator=(const GetRegisteredServersResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline RegisterServerResponse& operator=(RegisterServerResponse&& from) noexcept {
+  inline GetRegisteredServersResponse& operator=(GetRegisteredServersResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -221,37 +269,37 @@ class RegisterServerResponse :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const RegisterServerResponse& default_instance();
+  static const GetRegisteredServersResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RegisterServerResponse* internal_default_instance() {
-    return reinterpret_cast<const RegisterServerResponse*>(
-               &_RegisterServerResponse_default_instance_);
+  static inline const GetRegisteredServersResponse* internal_default_instance() {
+    return reinterpret_cast<const GetRegisteredServersResponse*>(
+               &_GetRegisteredServersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(RegisterServerResponse& a, RegisterServerResponse& b) {
+  friend void swap(GetRegisteredServersResponse& a, GetRegisteredServersResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(RegisterServerResponse* other) {
+  inline void Swap(GetRegisteredServersResponse* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline RegisterServerResponse* New() const final {
-    return CreateMaybeMessage<RegisterServerResponse>(nullptr);
+  inline GetRegisteredServersResponse* New() const final {
+    return CreateMaybeMessage<GetRegisteredServersResponse>(nullptr);
   }
 
-  RegisterServerResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<RegisterServerResponse>(arena);
+  GetRegisteredServersResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetRegisteredServersResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const RegisterServerResponse& from);
-  void MergeFrom(const RegisterServerResponse& from);
+  void CopyFrom(const GetRegisteredServersResponse& from);
+  void MergeFrom(const GetRegisteredServersResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -265,10 +313,10 @@ class RegisterServerResponse :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(RegisterServerResponse* other);
+  void InternalSwap(GetRegisteredServersResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.RegisterServerResponse";
+    return "mruv.server.GetRegisteredServersResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -292,11 +340,590 @@ class RegisterServerResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.RegisterServerResponse)
+  enum : int {
+    kServersFieldNumber = 1,
+  };
+  // repeated .mruv.server.ServerInfo servers = 1;
+  int servers_size() const;
+  private:
+  int _internal_servers_size() const;
+  public:
+  void clear_servers();
+  ::mruv::server::ServerInfo* mutable_servers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::server::ServerInfo >*
+      mutable_servers();
+  private:
+  const ::mruv::server::ServerInfo& _internal_servers(int index) const;
+  ::mruv::server::ServerInfo* _internal_add_servers();
+  public:
+  const ::mruv::server::ServerInfo& servers(int index) const;
+  ::mruv::server::ServerInfo* add_servers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::server::ServerInfo >&
+      servers() const;
+
+  // @@protoc_insertion_point(class_scope:mruv.server.GetRegisteredServersResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::server::ServerInfo > servers_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_server_2fserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateServerStatusRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.UpdateServerStatusRequest) */ {
+ public:
+  UpdateServerStatusRequest();
+  virtual ~UpdateServerStatusRequest();
+
+  UpdateServerStatusRequest(const UpdateServerStatusRequest& from);
+  UpdateServerStatusRequest(UpdateServerStatusRequest&& from) noexcept
+    : UpdateServerStatusRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateServerStatusRequest& operator=(const UpdateServerStatusRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateServerStatusRequest& operator=(UpdateServerStatusRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const UpdateServerStatusRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UpdateServerStatusRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateServerStatusRequest*>(
+               &_UpdateServerStatusRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(UpdateServerStatusRequest& a, UpdateServerStatusRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateServerStatusRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateServerStatusRequest* New() const final {
+    return CreateMaybeMessage<UpdateServerStatusRequest>(nullptr);
+  }
+
+  UpdateServerStatusRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateServerStatusRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const UpdateServerStatusRequest& from);
+  void MergeFrom(const UpdateServerStatusRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateServerStatusRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.server.UpdateServerStatusRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_server_2fserver_2eproto);
+    return ::descriptor_table_server_2fserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kPlayersFieldNumber = 3,
+  };
+  // int64 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // .mruv.server.ServerStatus status = 2;
+  void clear_status();
+  ::mruv::server::ServerStatus status() const;
+  void set_status(::mruv::server::ServerStatus value);
+  private:
+  ::mruv::server::ServerStatus _internal_status() const;
+  void _internal_set_status(::mruv::server::ServerStatus value);
+  public:
+
+  // int32 players = 3;
+  void clear_players();
+  ::PROTOBUF_NAMESPACE_ID::int32 players() const;
+  void set_players(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_players() const;
+  void _internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.server.UpdateServerStatusRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::int64 id_;
+  int status_;
+  ::PROTOBUF_NAMESPACE_ID::int32 players_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_server_2fserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateServerStatusResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.UpdateServerStatusResponse) */ {
+ public:
+  UpdateServerStatusResponse();
+  virtual ~UpdateServerStatusResponse();
+
+  UpdateServerStatusResponse(const UpdateServerStatusResponse& from);
+  UpdateServerStatusResponse(UpdateServerStatusResponse&& from) noexcept
+    : UpdateServerStatusResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateServerStatusResponse& operator=(const UpdateServerStatusResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateServerStatusResponse& operator=(UpdateServerStatusResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const UpdateServerStatusResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UpdateServerStatusResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateServerStatusResponse*>(
+               &_UpdateServerStatusResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(UpdateServerStatusResponse& a, UpdateServerStatusResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UpdateServerStatusResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateServerStatusResponse* New() const final {
+    return CreateMaybeMessage<UpdateServerStatusResponse>(nullptr);
+  }
+
+  UpdateServerStatusResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateServerStatusResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const UpdateServerStatusResponse& from);
+  void MergeFrom(const UpdateServerStatusResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateServerStatusResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.server.UpdateServerStatusResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_server_2fserver_2eproto);
+    return ::descriptor_table_server_2fserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.server.UpdateServerStatusResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_server_2fserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ServerEventsStreamRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.ServerEventsStreamRequest) */ {
+ public:
+  ServerEventsStreamRequest();
+  virtual ~ServerEventsStreamRequest();
+
+  ServerEventsStreamRequest(const ServerEventsStreamRequest& from);
+  ServerEventsStreamRequest(ServerEventsStreamRequest&& from) noexcept
+    : ServerEventsStreamRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ServerEventsStreamRequest& operator=(const ServerEventsStreamRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServerEventsStreamRequest& operator=(ServerEventsStreamRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServerEventsStreamRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServerEventsStreamRequest* internal_default_instance() {
+    return reinterpret_cast<const ServerEventsStreamRequest*>(
+               &_ServerEventsStreamRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(ServerEventsStreamRequest& a, ServerEventsStreamRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServerEventsStreamRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServerEventsStreamRequest* New() const final {
+    return CreateMaybeMessage<ServerEventsStreamRequest>(nullptr);
+  }
+
+  ServerEventsStreamRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServerEventsStreamRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServerEventsStreamRequest& from);
+  void MergeFrom(const ServerEventsStreamRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServerEventsStreamRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.server.ServerEventsStreamRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_server_2fserver_2eproto);
+    return ::descriptor_table_server_2fserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // int64 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.server.ServerEventsStreamRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::int64 id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_server_2fserver_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ServerEvent :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.ServerEvent) */ {
+ public:
+  ServerEvent();
+  virtual ~ServerEvent();
+
+  ServerEvent(const ServerEvent& from);
+  ServerEvent(ServerEvent&& from) noexcept
+    : ServerEvent() {
+    *this = ::std::move(from);
+  }
+
+  inline ServerEvent& operator=(const ServerEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServerEvent& operator=(ServerEvent&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServerEvent& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServerEvent* internal_default_instance() {
+    return reinterpret_cast<const ServerEvent*>(
+               &_ServerEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(ServerEvent& a, ServerEvent& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServerEvent* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServerEvent* New() const final {
+    return CreateMaybeMessage<ServerEvent>(nullptr);
+  }
+
+  ServerEvent* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServerEvent>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServerEvent& from);
+  void MergeFrom(const ServerEvent& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServerEvent* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.server.ServerEvent";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_server_2fserver_2eproto);
+    return ::descriptor_table_server_2fserver_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef ServerEvent_ServerEventType ServerEventType;
+  static constexpr ServerEventType UNKNOWN =
+    ServerEvent_ServerEventType_UNKNOWN;
+  static constexpr ServerEventType REGISTERED =
+    ServerEvent_ServerEventType_REGISTERED;
+  static constexpr ServerEventType SERVER_DOWN =
+    ServerEvent_ServerEventType_SERVER_DOWN;
+  static constexpr ServerEventType SERVER_UP =
+    ServerEvent_ServerEventType_SERVER_UP;
+  static constexpr ServerEventType PLAYERS_CHANGED =
+    ServerEvent_ServerEventType_PLAYERS_CHANGED;
+  static inline bool ServerEventType_IsValid(int value) {
+    return ServerEvent_ServerEventType_IsValid(value);
+  }
+  static constexpr ServerEventType ServerEventType_MIN =
+    ServerEvent_ServerEventType_ServerEventType_MIN;
+  static constexpr ServerEventType ServerEventType_MAX =
+    ServerEvent_ServerEventType_ServerEventType_MAX;
+  static constexpr int ServerEventType_ARRAYSIZE =
+    ServerEvent_ServerEventType_ServerEventType_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  ServerEventType_descriptor() {
+    return ServerEvent_ServerEventType_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& ServerEventType_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, ServerEventType>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function ServerEventType_Name.");
+    return ServerEvent_ServerEventType_Name(enum_t_value);
+  }
+  static inline bool ServerEventType_Parse(const std::string& name,
+      ServerEventType* value) {
+    return ServerEvent_ServerEventType_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTypeFieldNumber = 1,
+  };
+  // .mruv.server.ServerEvent.ServerEventType type = 1;
+  void clear_type();
+  ::mruv::server::ServerEvent_ServerEventType type() const;
+  void set_type(::mruv::server::ServerEvent_ServerEventType value);
+  private:
+  ::mruv::server::ServerEvent_ServerEventType _internal_type() const;
+  void _internal_set_type(::mruv::server::ServerEvent_ServerEventType value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.server.ServerEvent)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_server_2fserver_2eproto;
 };
@@ -309,21 +936,192 @@ class RegisterServerResponse :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// RegisterServerRequest
+// GetRegisteredServersRequest
 
 // -------------------------------------------------------------------
 
-// RegisterServerResponse
+// GetRegisteredServersResponse
+
+// repeated .mruv.server.ServerInfo servers = 1;
+inline int GetRegisteredServersResponse::_internal_servers_size() const {
+  return servers_.size();
+}
+inline int GetRegisteredServersResponse::servers_size() const {
+  return _internal_servers_size();
+}
+inline ::mruv::server::ServerInfo* GetRegisteredServersResponse::mutable_servers(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.server.GetRegisteredServersResponse.servers)
+  return servers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::server::ServerInfo >*
+GetRegisteredServersResponse::mutable_servers() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.server.GetRegisteredServersResponse.servers)
+  return &servers_;
+}
+inline const ::mruv::server::ServerInfo& GetRegisteredServersResponse::_internal_servers(int index) const {
+  return servers_.Get(index);
+}
+inline const ::mruv::server::ServerInfo& GetRegisteredServersResponse::servers(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.server.GetRegisteredServersResponse.servers)
+  return _internal_servers(index);
+}
+inline ::mruv::server::ServerInfo* GetRegisteredServersResponse::_internal_add_servers() {
+  return servers_.Add();
+}
+inline ::mruv::server::ServerInfo* GetRegisteredServersResponse::add_servers() {
+  // @@protoc_insertion_point(field_add:mruv.server.GetRegisteredServersResponse.servers)
+  return _internal_add_servers();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::server::ServerInfo >&
+GetRegisteredServersResponse::servers() const {
+  // @@protoc_insertion_point(field_list:mruv.server.GetRegisteredServersResponse.servers)
+  return servers_;
+}
+
+// -------------------------------------------------------------------
+
+// UpdateServerStatusRequest
+
+// int64 id = 1;
+inline void UpdateServerStatusRequest::clear_id() {
+  id_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 UpdateServerStatusRequest::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 UpdateServerStatusRequest::id() const {
+  // @@protoc_insertion_point(field_get:mruv.server.UpdateServerStatusRequest.id)
+  return _internal_id();
+}
+inline void UpdateServerStatusRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  id_ = value;
+}
+inline void UpdateServerStatusRequest::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.server.UpdateServerStatusRequest.id)
+}
+
+// .mruv.server.ServerStatus status = 2;
+inline void UpdateServerStatusRequest::clear_status() {
+  status_ = 0;
+}
+inline ::mruv::server::ServerStatus UpdateServerStatusRequest::_internal_status() const {
+  return static_cast< ::mruv::server::ServerStatus >(status_);
+}
+inline ::mruv::server::ServerStatus UpdateServerStatusRequest::status() const {
+  // @@protoc_insertion_point(field_get:mruv.server.UpdateServerStatusRequest.status)
+  return _internal_status();
+}
+inline void UpdateServerStatusRequest::_internal_set_status(::mruv::server::ServerStatus value) {
+  
+  status_ = value;
+}
+inline void UpdateServerStatusRequest::set_status(::mruv::server::ServerStatus value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:mruv.server.UpdateServerStatusRequest.status)
+}
+
+// int32 players = 3;
+inline void UpdateServerStatusRequest::clear_players() {
+  players_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UpdateServerStatusRequest::_internal_players() const {
+  return players_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 UpdateServerStatusRequest::players() const {
+  // @@protoc_insertion_point(field_get:mruv.server.UpdateServerStatusRequest.players)
+  return _internal_players();
+}
+inline void UpdateServerStatusRequest::_internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  players_ = value;
+}
+inline void UpdateServerStatusRequest::set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_players(value);
+  // @@protoc_insertion_point(field_set:mruv.server.UpdateServerStatusRequest.players)
+}
+
+// -------------------------------------------------------------------
+
+// UpdateServerStatusResponse
+
+// -------------------------------------------------------------------
+
+// ServerEventsStreamRequest
+
+// int64 id = 1;
+inline void ServerEventsStreamRequest::clear_id() {
+  id_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ServerEventsStreamRequest::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ServerEventsStreamRequest::id() const {
+  // @@protoc_insertion_point(field_get:mruv.server.ServerEventsStreamRequest.id)
+  return _internal_id();
+}
+inline void ServerEventsStreamRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  id_ = value;
+}
+inline void ServerEventsStreamRequest::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.server.ServerEventsStreamRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// ServerEvent
+
+// .mruv.server.ServerEvent.ServerEventType type = 1;
+inline void ServerEvent::clear_type() {
+  type_ = 0;
+}
+inline ::mruv::server::ServerEvent_ServerEventType ServerEvent::_internal_type() const {
+  return static_cast< ::mruv::server::ServerEvent_ServerEventType >(type_);
+}
+inline ::mruv::server::ServerEvent_ServerEventType ServerEvent::type() const {
+  // @@protoc_insertion_point(field_get:mruv.server.ServerEvent.type)
+  return _internal_type();
+}
+inline void ServerEvent::_internal_set_type(::mruv::server::ServerEvent_ServerEventType value) {
+  
+  type_ = value;
+}
+inline void ServerEvent::set_type(::mruv::server::ServerEvent_ServerEventType value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:mruv.server.ServerEvent.type)
+}
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace server
 }  // namespace mruv
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::mruv::server::ServerEvent_ServerEventType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::mruv::server::ServerEvent_ServerEventType>() {
+  return ::mruv::server::ServerEvent_ServerEventType_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

@@ -31,6 +31,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -47,7 +48,7 @@ struct TableStruct_server_2fserver_5fmodel_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -55,27 +56,52 @@ struct TableStruct_server_2fserver_5fmodel_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_2fserver_5fmodel_2eproto;
 namespace mruv {
+namespace server {
 class ServerID;
 class ServerIDDefaultTypeInternal;
 extern ServerIDDefaultTypeInternal _ServerID_default_instance_;
 class ServerInfo;
 class ServerInfoDefaultTypeInternal;
 extern ServerInfoDefaultTypeInternal _ServerInfo_default_instance_;
-class ServerStatus;
-class ServerStatusDefaultTypeInternal;
-extern ServerStatusDefaultTypeInternal _ServerStatus_default_instance_;
+}  // namespace server
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::ServerID* Arena::CreateMaybeMessage<::mruv::ServerID>(Arena*);
-template<> ::mruv::ServerInfo* Arena::CreateMaybeMessage<::mruv::ServerInfo>(Arena*);
-template<> ::mruv::ServerStatus* Arena::CreateMaybeMessage<::mruv::ServerStatus>(Arena*);
+template<> ::mruv::server::ServerID* Arena::CreateMaybeMessage<::mruv::server::ServerID>(Arena*);
+template<> ::mruv::server::ServerInfo* Arena::CreateMaybeMessage<::mruv::server::ServerInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace server {
 
+enum ServerStatus : int {
+  UNKNOWN = 0,
+  ON = 1,
+  OFF = 2,
+  ServerStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  ServerStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool ServerStatus_IsValid(int value);
+constexpr ServerStatus ServerStatus_MIN = UNKNOWN;
+constexpr ServerStatus ServerStatus_MAX = OFF;
+constexpr int ServerStatus_ARRAYSIZE = ServerStatus_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ServerStatus_descriptor();
+template<typename T>
+inline const std::string& ServerStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, ServerStatus>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function ServerStatus_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    ServerStatus_descriptor(), enum_t_value);
+}
+inline bool ServerStatus_Parse(
+    const std::string& name, ServerStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<ServerStatus>(
+    ServerStatus_descriptor(), name, value);
+}
 // ===================================================================
 
 class ServerID :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ServerID) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.ServerID) */ {
  public:
   ServerID();
   virtual ~ServerID();
@@ -155,7 +181,7 @@ class ServerID :
   void InternalSwap(ServerID* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ServerID";
+    return "mruv.server.ServerID";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -191,7 +217,7 @@ class ServerID :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ServerID)
+  // @@protoc_insertion_point(class_scope:mruv.server.ServerID)
  private:
   class _Internal;
 
@@ -203,7 +229,7 @@ class ServerID :
 // -------------------------------------------------------------------
 
 class ServerInfo :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ServerInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.server.ServerInfo) */ {
  public:
   ServerInfo();
   virtual ~ServerInfo();
@@ -283,7 +309,7 @@ class ServerInfo :
   void InternalSwap(ServerInfo* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ServerInfo";
+    return "mruv.server.ServerInfo";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -308,12 +334,15 @@ class ServerInfo :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kHostFieldNumber = 2,
-    kPortFieldNumber = 3,
-    kPlatformFieldNumber = 4,
+    kNameFieldNumber = 2,
+    kHostFieldNumber = 3,
+    kPortFieldNumber = 4,
+    kPlatformFieldNumber = 5,
+    kIdFieldNumber = 1,
+    kStatusFieldNumber = 6,
+    kPlayersFieldNumber = 7,
   };
-  // string name = 1;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   void set_name(const std::string& value);
@@ -329,7 +358,7 @@ class ServerInfo :
   std::string* _internal_mutable_name();
   public:
 
-  // string host = 2;
+  // string host = 3;
   void clear_host();
   const std::string& host() const;
   void set_host(const std::string& value);
@@ -345,7 +374,7 @@ class ServerInfo :
   std::string* _internal_mutable_host();
   public:
 
-  // string port = 3;
+  // string port = 4;
   void clear_port();
   const std::string& port() const;
   void set_port(const std::string& value);
@@ -361,7 +390,7 @@ class ServerInfo :
   std::string* _internal_mutable_port();
   public:
 
-  // string platform = 4;
+  // string platform = 5;
   void clear_platform();
   const std::string& platform() const;
   void set_platform(const std::string& value);
@@ -377,139 +406,25 @@ class ServerInfo :
   std::string* _internal_mutable_platform();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ServerInfo)
- private:
-  class _Internal;
-
-  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr platform_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_server_2fserver_5fmodel_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ServerStatus :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ServerStatus) */ {
- public:
-  ServerStatus();
-  virtual ~ServerStatus();
-
-  ServerStatus(const ServerStatus& from);
-  ServerStatus(ServerStatus&& from) noexcept
-    : ServerStatus() {
-    *this = ::std::move(from);
-  }
-
-  inline ServerStatus& operator=(const ServerStatus& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ServerStatus& operator=(ServerStatus&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const ServerStatus& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ServerStatus* internal_default_instance() {
-    return reinterpret_cast<const ServerStatus*>(
-               &_ServerStatus_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(ServerStatus& a, ServerStatus& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ServerStatus* other) {
-    if (other == this) return;
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ServerStatus* New() const final {
-    return CreateMaybeMessage<ServerStatus>(nullptr);
-  }
-
-  ServerStatus* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ServerStatus>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const ServerStatus& from);
-  void MergeFrom(const ServerStatus& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
+  // int64 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ServerStatus* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ServerStatus";
-  }
-  private:
-  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  // .mruv.server.ServerStatus status = 6;
+  void clear_status();
+  ::mruv::server::ServerStatus status() const;
+  void set_status(::mruv::server::ServerStatus value);
   private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_server_2fserver_5fmodel_2eproto);
-    return ::descriptor_table_server_2fserver_5fmodel_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
+  ::mruv::server::ServerStatus _internal_status() const;
+  void _internal_set_status(::mruv::server::ServerStatus value);
   public:
 
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kActiveFieldNumber = 1,
-    kPlayersFieldNumber = 2,
-  };
-  // bool active = 1;
-  void clear_active();
-  bool active() const;
-  void set_active(bool value);
-  private:
-  bool _internal_active() const;
-  void _internal_set_active(bool value);
-  public:
-
-  // int32 players = 2;
+  // int32 players = 7;
   void clear_players();
   ::PROTOBUF_NAMESPACE_ID::int32 players() const;
   void set_players(::PROTOBUF_NAMESPACE_ID::int32 value);
@@ -518,12 +433,17 @@ class ServerStatus :
   void _internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ServerStatus)
+  // @@protoc_insertion_point(class_scope:mruv.server.ServerInfo)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  bool active_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr platform_;
+  ::PROTOBUF_NAMESPACE_ID::int64 id_;
+  int status_;
   ::PROTOBUF_NAMESPACE_ID::int32 players_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_server_2fserver_5fmodel_2eproto;
@@ -547,7 +467,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int64 ServerID::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int64 ServerID::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerID.id)
+  // @@protoc_insertion_point(field_get:mruv.server.ServerID.id)
   return _internal_id();
 }
 inline void ServerID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
@@ -556,27 +476,47 @@ inline void ServerID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
 }
 inline void ServerID::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerID.id)
+  // @@protoc_insertion_point(field_set:mruv.server.ServerID.id)
 }
 
 // -------------------------------------------------------------------
 
 // ServerInfo
 
-// string name = 1;
+// int64 id = 1;
+inline void ServerInfo::clear_id() {
+  id_ = PROTOBUF_LONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ServerInfo::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 ServerInfo::id() const {
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.id)
+  return _internal_id();
+}
+inline void ServerInfo::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  
+  id_ = value;
+}
+inline void ServerInfo::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.id)
+}
+
+// string name = 2;
 inline void ServerInfo::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ServerInfo::name() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.name)
   return _internal_name();
 }
 inline void ServerInfo::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.name)
 }
 inline std::string* ServerInfo::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_mutable:mruv.server.ServerInfo.name)
   return _internal_mutable_name();
 }
 inline const std::string& ServerInfo::_internal_name() const {
@@ -590,26 +530,26 @@ inline void ServerInfo::set_name(std::string&& value) {
   
   name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.server.ServerInfo.name)
 }
 inline void ServerInfo::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_set_char:mruv.server.ServerInfo.name)
 }
 inline void ServerInfo::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.server.ServerInfo.name)
 }
 inline std::string* ServerInfo::_internal_mutable_name() {
   
   return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ServerInfo::release_name() {
-  // @@protoc_insertion_point(field_release:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_release:mruv.server.ServerInfo.name)
   
   return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -620,23 +560,23 @@ inline void ServerInfo::set_allocated_name(std::string* name) {
     
   }
   name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:mruv.ServerInfo.name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.server.ServerInfo.name)
 }
 
-// string host = 2;
+// string host = 3;
 inline void ServerInfo::clear_host() {
   host_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ServerInfo::host() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.host)
   return _internal_host();
 }
 inline void ServerInfo::set_host(const std::string& value) {
   _internal_set_host(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.host)
 }
 inline std::string* ServerInfo::mutable_host() {
-  // @@protoc_insertion_point(field_mutable:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_mutable:mruv.server.ServerInfo.host)
   return _internal_mutable_host();
 }
 inline const std::string& ServerInfo::_internal_host() const {
@@ -650,26 +590,26 @@ inline void ServerInfo::set_host(std::string&& value) {
   
   host_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.server.ServerInfo.host)
 }
 inline void ServerInfo::set_host(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   host_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_set_char:mruv.server.ServerInfo.host)
 }
 inline void ServerInfo::set_host(const char* value, size_t size) {
   
   host_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_set_pointer:mruv.server.ServerInfo.host)
 }
 inline std::string* ServerInfo::_internal_mutable_host() {
   
   return host_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ServerInfo::release_host() {
-  // @@protoc_insertion_point(field_release:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_release:mruv.server.ServerInfo.host)
   
   return host_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -680,23 +620,23 @@ inline void ServerInfo::set_allocated_host(std::string* host) {
     
   }
   host_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), host);
-  // @@protoc_insertion_point(field_set_allocated:mruv.ServerInfo.host)
+  // @@protoc_insertion_point(field_set_allocated:mruv.server.ServerInfo.host)
 }
 
-// string port = 3;
+// string port = 4;
 inline void ServerInfo::clear_port() {
   port_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ServerInfo::port() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.port)
   return _internal_port();
 }
 inline void ServerInfo::set_port(const std::string& value) {
   _internal_set_port(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.port)
 }
 inline std::string* ServerInfo::mutable_port() {
-  // @@protoc_insertion_point(field_mutable:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_mutable:mruv.server.ServerInfo.port)
   return _internal_mutable_port();
 }
 inline const std::string& ServerInfo::_internal_port() const {
@@ -710,26 +650,26 @@ inline void ServerInfo::set_port(std::string&& value) {
   
   port_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.server.ServerInfo.port)
 }
 inline void ServerInfo::set_port(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   port_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_set_char:mruv.server.ServerInfo.port)
 }
 inline void ServerInfo::set_port(const char* value, size_t size) {
   
   port_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_set_pointer:mruv.server.ServerInfo.port)
 }
 inline std::string* ServerInfo::_internal_mutable_port() {
   
   return port_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ServerInfo::release_port() {
-  // @@protoc_insertion_point(field_release:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_release:mruv.server.ServerInfo.port)
   
   return port_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -740,23 +680,23 @@ inline void ServerInfo::set_allocated_port(std::string* port) {
     
   }
   port_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), port);
-  // @@protoc_insertion_point(field_set_allocated:mruv.ServerInfo.port)
+  // @@protoc_insertion_point(field_set_allocated:mruv.server.ServerInfo.port)
 }
 
-// string platform = 4;
+// string platform = 5;
 inline void ServerInfo::clear_platform() {
   platform_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ServerInfo::platform() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.platform)
   return _internal_platform();
 }
 inline void ServerInfo::set_platform(const std::string& value) {
   _internal_set_platform(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.platform)
 }
 inline std::string* ServerInfo::mutable_platform() {
-  // @@protoc_insertion_point(field_mutable:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_mutable:mruv.server.ServerInfo.platform)
   return _internal_mutable_platform();
 }
 inline const std::string& ServerInfo::_internal_platform() const {
@@ -770,26 +710,26 @@ inline void ServerInfo::set_platform(std::string&& value) {
   
   platform_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.server.ServerInfo.platform)
 }
 inline void ServerInfo::set_platform(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   platform_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_set_char:mruv.server.ServerInfo.platform)
 }
 inline void ServerInfo::set_platform(const char* value, size_t size) {
   
   platform_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_set_pointer:mruv.server.ServerInfo.platform)
 }
 inline std::string* ServerInfo::_internal_mutable_platform() {
   
   return platform_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ServerInfo::release_platform() {
-  // @@protoc_insertion_point(field_release:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_release:mruv.server.ServerInfo.platform)
   
   return platform_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -800,51 +740,47 @@ inline void ServerInfo::set_allocated_platform(std::string* platform) {
     
   }
   platform_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), platform);
-  // @@protoc_insertion_point(field_set_allocated:mruv.ServerInfo.platform)
+  // @@protoc_insertion_point(field_set_allocated:mruv.server.ServerInfo.platform)
 }
 
-// -------------------------------------------------------------------
-
-// ServerStatus
-
-// bool active = 1;
-inline void ServerStatus::clear_active() {
-  active_ = false;
+// .mruv.server.ServerStatus status = 6;
+inline void ServerInfo::clear_status() {
+  status_ = 0;
 }
-inline bool ServerStatus::_internal_active() const {
-  return active_;
+inline ::mruv::server::ServerStatus ServerInfo::_internal_status() const {
+  return static_cast< ::mruv::server::ServerStatus >(status_);
 }
-inline bool ServerStatus::active() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerStatus.active)
-  return _internal_active();
+inline ::mruv::server::ServerStatus ServerInfo::status() const {
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.status)
+  return _internal_status();
 }
-inline void ServerStatus::_internal_set_active(bool value) {
+inline void ServerInfo::_internal_set_status(::mruv::server::ServerStatus value) {
   
-  active_ = value;
+  status_ = value;
 }
-inline void ServerStatus::set_active(bool value) {
-  _internal_set_active(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerStatus.active)
+inline void ServerInfo::set_status(::mruv::server::ServerStatus value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.status)
 }
 
-// int32 players = 2;
-inline void ServerStatus::clear_players() {
+// int32 players = 7;
+inline void ServerInfo::clear_players() {
   players_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ServerStatus::_internal_players() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 ServerInfo::_internal_players() const {
   return players_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ServerStatus::players() const {
-  // @@protoc_insertion_point(field_get:mruv.ServerStatus.players)
+inline ::PROTOBUF_NAMESPACE_ID::int32 ServerInfo::players() const {
+  // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.players)
   return _internal_players();
 }
-inline void ServerStatus::_internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ServerInfo::_internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   players_ = value;
 }
-inline void ServerStatus::set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ServerInfo::set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_players(value);
-  // @@protoc_insertion_point(field_set:mruv.ServerStatus.players)
+  // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.players)
 }
 
 #ifdef __GNUC__
@@ -852,12 +788,21 @@ inline void ServerStatus::set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
 #endif  // __GNUC__
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace server
 }  // namespace mruv
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::mruv::server::ServerStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::mruv::server::ServerStatus>() {
+  return ::mruv::server::ServerStatus_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

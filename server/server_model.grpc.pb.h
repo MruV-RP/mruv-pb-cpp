@@ -27,7 +27,9 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace mruv {
+namespace server {
 
+}  // namespace server
 }  // namespace mruv
 
 

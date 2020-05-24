@@ -14,144 +14,306 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_server_2fserver_5fmodel_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServerInfo_server_2fserver_5fmodel_2eproto;
 namespace mruv {
-class RegisterServerRequestDefaultTypeInternal {
+namespace server {
+class GetRegisteredServersRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegisterServerRequest> _instance;
-} _RegisterServerRequest_default_instance_;
-class RegisterServerResponseDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetRegisteredServersRequest> _instance;
+} _GetRegisteredServersRequest_default_instance_;
+class GetRegisteredServersResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegisterServerResponse> _instance;
-} _RegisterServerResponse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetRegisteredServersResponse> _instance;
+} _GetRegisteredServersResponse_default_instance_;
+class UpdateServerStatusRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateServerStatusRequest> _instance;
+} _UpdateServerStatusRequest_default_instance_;
+class UpdateServerStatusResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateServerStatusResponse> _instance;
+} _UpdateServerStatusResponse_default_instance_;
+class ServerEventsStreamRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServerEventsStreamRequest> _instance;
+} _ServerEventsStreamRequest_default_instance_;
+class ServerEventDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServerEvent> _instance;
+} _ServerEvent_default_instance_;
+}  // namespace server
 }  // namespace mruv
-static void InitDefaultsscc_info_RegisterServerRequest_server_2fserver_2eproto() {
+static void InitDefaultsscc_info_GetRegisteredServersRequest_server_2fserver_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_RegisterServerRequest_default_instance_;
-    new (ptr) ::mruv::RegisterServerRequest();
+    void* ptr = &::mruv::server::_GetRegisteredServersRequest_default_instance_;
+    new (ptr) ::mruv::server::GetRegisteredServersRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::RegisterServerRequest::InitAsDefaultInstance();
+  ::mruv::server::GetRegisteredServersRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisterServerRequest_server_2fserver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegisterServerRequest_server_2fserver_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetRegisteredServersRequest_server_2fserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetRegisteredServersRequest_server_2fserver_2eproto}, {}};
 
-static void InitDefaultsscc_info_RegisterServerResponse_server_2fserver_2eproto() {
+static void InitDefaultsscc_info_GetRegisteredServersResponse_server_2fserver_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_RegisterServerResponse_default_instance_;
-    new (ptr) ::mruv::RegisterServerResponse();
+    void* ptr = &::mruv::server::_GetRegisteredServersResponse_default_instance_;
+    new (ptr) ::mruv::server::GetRegisteredServersResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::RegisterServerResponse::InitAsDefaultInstance();
+  ::mruv::server::GetRegisteredServersResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisterServerResponse_server_2fserver_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegisterServerResponse_server_2fserver_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetRegisteredServersResponse_server_2fserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetRegisteredServersResponse_server_2fserver_2eproto}, {
+      &scc_info_ServerInfo_server_2fserver_5fmodel_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_server_2fserver_2eproto[2];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_server_2fserver_2eproto = nullptr;
+static void InitDefaultsscc_info_ServerEvent_server_2fserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::server::_ServerEvent_default_instance_;
+    new (ptr) ::mruv::server::ServerEvent();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::server::ServerEvent::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServerEvent_server_2fserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ServerEvent_server_2fserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_ServerEventsStreamRequest_server_2fserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::server::_ServerEventsStreamRequest_default_instance_;
+    new (ptr) ::mruv::server::ServerEventsStreamRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::server::ServerEventsStreamRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServerEventsStreamRequest_server_2fserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ServerEventsStreamRequest_server_2fserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_UpdateServerStatusRequest_server_2fserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::server::_UpdateServerStatusRequest_default_instance_;
+    new (ptr) ::mruv::server::UpdateServerStatusRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::server::UpdateServerStatusRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateServerStatusRequest_server_2fserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateServerStatusRequest_server_2fserver_2eproto}, {}};
+
+static void InitDefaultsscc_info_UpdateServerStatusResponse_server_2fserver_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::server::_UpdateServerStatusResponse_default_instance_;
+    new (ptr) ::mruv::server::UpdateServerStatusResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::server::UpdateServerStatusResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateServerStatusResponse_server_2fserver_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateServerStatusResponse_server_2fserver_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_server_2fserver_2eproto[6];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_server_2fserver_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_server_2fserver_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_server_2fserver_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::RegisterServerRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::server::GetRegisteredServersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::RegisterServerResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::server::GetRegisteredServersResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::GetRegisteredServersResponse, servers_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::UpdateServerStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::UpdateServerStatusRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::server::UpdateServerStatusRequest, status_),
+  PROTOBUF_FIELD_OFFSET(::mruv::server::UpdateServerStatusRequest, players_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::UpdateServerStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::ServerEventsStreamRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::ServerEventsStreamRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::ServerEvent, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::server::ServerEvent, type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::RegisterServerRequest)},
-  { 5, -1, sizeof(::mruv::RegisterServerResponse)},
+  { 0, -1, sizeof(::mruv::server::GetRegisteredServersRequest)},
+  { 5, -1, sizeof(::mruv::server::GetRegisteredServersResponse)},
+  { 11, -1, sizeof(::mruv::server::UpdateServerStatusRequest)},
+  { 19, -1, sizeof(::mruv::server::UpdateServerStatusResponse)},
+  { 24, -1, sizeof(::mruv::server::ServerEventsStreamRequest)},
+  { 30, -1, sizeof(::mruv::server::ServerEvent)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RegisterServerRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RegisterServerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::server::_GetRegisteredServersRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::server::_GetRegisteredServersResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::server::_UpdateServerStatusRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::server::_UpdateServerStatusResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::server::_ServerEventsStreamRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::server::_ServerEvent_default_instance_),
 };
 
 const char descriptor_table_protodef_server_2fserver_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\023server/server.proto\022\004mruv\032\034google/api/"
-  "annotations.proto\032\031server/server_model.p"
-  "roto\"\027\n\025RegisterServerRequest\"\030\n\026Registe"
-  "rServerResponse2\227\001\n\021MruVServerService\022K\n"
-  "\016RegisterServer\022\033.mruv.RegisterServerReq"
-  "uest\032\034.mruv.RegisterServerResponse\0225\n\017Ge"
-  "tServerStatus\022\016.mruv.ServerID\032\022.mruv.Ser"
-  "verStatusB&Z$github.com/MruV-RP/mruv-pb-"
-  "go/serverb\006proto3"
+  "\n\023server/server.proto\022\013mruv.server\032\034goog"
+  "le/api/annotations.proto\032\031server/server_"
+  "model.proto\"\035\n\033GetRegisteredServersReque"
+  "st\"H\n\034GetRegisteredServersResponse\022(\n\007se"
+  "rvers\030\001 \003(\0132\027.mruv.server.ServerInfo\"c\n\031"
+  "UpdateServerStatusRequest\022\n\n\002id\030\001 \001(\003\022)\n"
+  "\006status\030\002 \001(\0162\031.mruv.server.ServerStatus"
+  "\022\017\n\007players\030\003 \001(\005\"\034\n\032UpdateServerStatusR"
+  "esponse\"\'\n\031ServerEventsStreamRequest\022\n\n\002"
+  "id\030\001 \001(\003\"\252\001\n\013ServerEvent\0226\n\004type\030\001 \001(\0162("
+  ".mruv.server.ServerEvent.ServerEventType"
+  "\"c\n\017ServerEventType\022\013\n\007UNKNOWN\020\000\022\016\n\nREGI"
+  "STERED\020\001\022\017\n\013SERVER_DOWN\020\002\022\r\n\tSERVER_UP\020\003"
+  "\022\023\n\017PLAYERS_CHANGED\020\0042\255\004\n\021MruVServerServ"
+  "ice\022U\n\016RegisterServer\022\027.mruv.server.Serv"
+  "erInfo\032\025.mruv.server.ServerID\"\023\202\323\344\223\002\r\"\013/"
+  "v1/servers\022\200\001\n\024GetRegisteredServers\022(.mr"
+  "uv.server.GetRegisteredServersRequest\032)."
+  "mruv.server.GetRegisteredServersResponse"
+  "\"\023\202\323\344\223\002\r\022\013/v1/servers\022Y\n\rGetServerInfo\022\025"
+  ".mruv.server.ServerID\032\027.mruv.server.Serv"
+  "erInfo\"\030\202\323\344\223\002\022\022\020/v1/servers/{id}\022\206\001\n\022Upd"
+  "ateServerStatus\022&.mruv.server.UpdateServ"
+  "erStatusRequest\032\'.mruv.server.UpdateServ"
+  "erStatusResponse\"\037\202\323\344\223\002\0312\027/v1/servers/{i"
+  "d}/status\022Z\n\022ServerEventsStream\022&.mruv.s"
+  "erver.ServerEventsStreamRequest\032\030.mruv.s"
+  "erver.ServerEvent\"\0000\001B&Z$github.com/MruV"
+  "-RP/mruv-pb-go/serverb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_server_2fserver_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
   &::descriptor_table_server_2fserver_5fmodel_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_server_2fserver_2eproto_sccs[2] = {
-  &scc_info_RegisterServerRequest_server_2fserver_2eproto.base,
-  &scc_info_RegisterServerResponse_server_2fserver_2eproto.base,
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_server_2fserver_2eproto_sccs[6] = {
+  &scc_info_GetRegisteredServersRequest_server_2fserver_2eproto.base,
+  &scc_info_GetRegisteredServersResponse_server_2fserver_2eproto.base,
+  &scc_info_ServerEvent_server_2fserver_2eproto.base,
+  &scc_info_ServerEventsStreamRequest_server_2fserver_2eproto.base,
+  &scc_info_UpdateServerStatusRequest_server_2fserver_2eproto.base,
+  &scc_info_UpdateServerStatusResponse_server_2fserver_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_server_2fserver_2eproto_once;
 static bool descriptor_table_server_2fserver_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_2fserver_2eproto = {
-  &descriptor_table_server_2fserver_2eproto_initialized, descriptor_table_protodef_server_2fserver_2eproto, "server/server.proto", 337,
-  &descriptor_table_server_2fserver_2eproto_once, descriptor_table_server_2fserver_2eproto_sccs, descriptor_table_server_2fserver_2eproto_deps, 2, 2,
+  &descriptor_table_server_2fserver_2eproto_initialized, descriptor_table_protodef_server_2fserver_2eproto, "server/server.proto", 1149,
+  &descriptor_table_server_2fserver_2eproto_once, descriptor_table_server_2fserver_2eproto_sccs, descriptor_table_server_2fserver_2eproto_deps, 6, 2,
   schemas, file_default_instances, TableStruct_server_2fserver_2eproto::offsets,
-  file_level_metadata_server_2fserver_2eproto, 2, file_level_enum_descriptors_server_2fserver_2eproto, file_level_service_descriptors_server_2fserver_2eproto,
+  file_level_metadata_server_2fserver_2eproto, 6, file_level_enum_descriptors_server_2fserver_2eproto, file_level_service_descriptors_server_2fserver_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_server_2fserver_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_server_2fserver_2eproto), true);
 namespace mruv {
+namespace server {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ServerEvent_ServerEventType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_server_2fserver_2eproto);
+  return file_level_enum_descriptors_server_2fserver_2eproto[0];
+}
+bool ServerEvent_ServerEventType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr ServerEvent_ServerEventType ServerEvent::UNKNOWN;
+constexpr ServerEvent_ServerEventType ServerEvent::REGISTERED;
+constexpr ServerEvent_ServerEventType ServerEvent::SERVER_DOWN;
+constexpr ServerEvent_ServerEventType ServerEvent::SERVER_UP;
+constexpr ServerEvent_ServerEventType ServerEvent::PLAYERS_CHANGED;
+constexpr ServerEvent_ServerEventType ServerEvent::ServerEventType_MIN;
+constexpr ServerEvent_ServerEventType ServerEvent::ServerEventType_MAX;
+constexpr int ServerEvent::ServerEventType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
-void RegisterServerRequest::InitAsDefaultInstance() {
+void GetRegisteredServersRequest::InitAsDefaultInstance() {
 }
-class RegisterServerRequest::_Internal {
+class GetRegisteredServersRequest::_Internal {
  public:
 };
 
-RegisterServerRequest::RegisterServerRequest()
+GetRegisteredServersRequest::GetRegisteredServersRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(constructor:mruv.server.GetRegisteredServersRequest)
 }
-RegisterServerRequest::RegisterServerRequest(const RegisterServerRequest& from)
+GetRegisteredServersRequest::GetRegisteredServersRequest(const GetRegisteredServersRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.server.GetRegisteredServersRequest)
 }
 
-void RegisterServerRequest::SharedCtor() {
+void GetRegisteredServersRequest::SharedCtor() {
 }
 
-RegisterServerRequest::~RegisterServerRequest() {
-  // @@protoc_insertion_point(destructor:mruv.RegisterServerRequest)
+GetRegisteredServersRequest::~GetRegisteredServersRequest() {
+  // @@protoc_insertion_point(destructor:mruv.server.GetRegisteredServersRequest)
   SharedDtor();
 }
 
-void RegisterServerRequest::SharedDtor() {
+void GetRegisteredServersRequest::SharedDtor() {
 }
 
-void RegisterServerRequest::SetCachedSize(int size) const {
+void GetRegisteredServersRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RegisterServerRequest& RegisterServerRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RegisterServerRequest_server_2fserver_2eproto.base);
+const GetRegisteredServersRequest& GetRegisteredServersRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetRegisteredServersRequest_server_2fserver_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void RegisterServerRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.RegisterServerRequest)
+void GetRegisteredServersRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.server.GetRegisteredServersRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -159,7 +321,7 @@ void RegisterServerRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* RegisterServerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetRegisteredServersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -181,9 +343,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RegisterServerRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* GetRegisteredServersRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.server.GetRegisteredServersRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -191,12 +353,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.server.GetRegisteredServersRequest)
   return target;
 }
 
-size_t RegisterServerRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.RegisterServerRequest)
+size_t GetRegisteredServersRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.server.GetRegisteredServersRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -212,23 +374,23 @@ size_t RegisterServerRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void RegisterServerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.RegisterServerRequest)
+void GetRegisteredServersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.server.GetRegisteredServersRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const RegisterServerRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RegisterServerRequest>(
+  const GetRegisteredServersRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetRegisteredServersRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.server.GetRegisteredServersRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RegisterServerRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.server.GetRegisteredServersRequest)
     MergeFrom(*source);
   }
 }
 
-void RegisterServerRequest::MergeFrom(const RegisterServerRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RegisterServerRequest)
+void GetRegisteredServersRequest::MergeFrom(const GetRegisteredServersRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.GetRegisteredServersRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -236,76 +398,511 @@ void RegisterServerRequest::MergeFrom(const RegisterServerRequest& from) {
 
 }
 
-void RegisterServerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.RegisterServerRequest)
+void GetRegisteredServersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.server.GetRegisteredServersRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void RegisterServerRequest::CopyFrom(const RegisterServerRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RegisterServerRequest)
+void GetRegisteredServersRequest::CopyFrom(const GetRegisteredServersRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.server.GetRegisteredServersRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool RegisterServerRequest::IsInitialized() const {
+bool GetRegisteredServersRequest::IsInitialized() const {
   return true;
 }
 
-void RegisterServerRequest::InternalSwap(RegisterServerRequest* other) {
+void GetRegisteredServersRequest::InternalSwap(GetRegisteredServersRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RegisterServerRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRegisteredServersRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RegisterServerResponse::InitAsDefaultInstance() {
+void GetRegisteredServersResponse::InitAsDefaultInstance() {
 }
-class RegisterServerResponse::_Internal {
+class GetRegisteredServersResponse::_Internal {
  public:
 };
 
-RegisterServerResponse::RegisterServerResponse()
+void GetRegisteredServersResponse::clear_servers() {
+  servers_.Clear();
+}
+GetRegisteredServersResponse::GetRegisteredServersResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.RegisterServerResponse)
+  // @@protoc_insertion_point(constructor:mruv.server.GetRegisteredServersResponse)
 }
-RegisterServerResponse::RegisterServerResponse(const RegisterServerResponse& from)
+GetRegisteredServersResponse::GetRegisteredServersResponse(const GetRegisteredServersResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      servers_(from.servers_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.RegisterServerResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.server.GetRegisteredServersResponse)
 }
 
-void RegisterServerResponse::SharedCtor() {
+void GetRegisteredServersResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetRegisteredServersResponse_server_2fserver_2eproto.base);
 }
 
-RegisterServerResponse::~RegisterServerResponse() {
-  // @@protoc_insertion_point(destructor:mruv.RegisterServerResponse)
+GetRegisteredServersResponse::~GetRegisteredServersResponse() {
+  // @@protoc_insertion_point(destructor:mruv.server.GetRegisteredServersResponse)
   SharedDtor();
 }
 
-void RegisterServerResponse::SharedDtor() {
+void GetRegisteredServersResponse::SharedDtor() {
 }
 
-void RegisterServerResponse::SetCachedSize(int size) const {
+void GetRegisteredServersResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RegisterServerResponse& RegisterServerResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RegisterServerResponse_server_2fserver_2eproto.base);
+const GetRegisteredServersResponse& GetRegisteredServersResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetRegisteredServersResponse_server_2fserver_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void RegisterServerResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.RegisterServerResponse)
+void GetRegisteredServersResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.server.GetRegisteredServersResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  servers_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* GetRegisteredServersResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .mruv.server.ServerInfo servers = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_servers(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetRegisteredServersResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.server.GetRegisteredServersResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mruv.server.ServerInfo servers = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_servers_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_servers(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.server.GetRegisteredServersResponse)
+  return target;
+}
+
+size_t GetRegisteredServersResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.server.GetRegisteredServersResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mruv.server.ServerInfo servers = 1;
+  total_size += 1UL * this->_internal_servers_size();
+  for (const auto& msg : this->servers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetRegisteredServersResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.server.GetRegisteredServersResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetRegisteredServersResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetRegisteredServersResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.server.GetRegisteredServersResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.server.GetRegisteredServersResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetRegisteredServersResponse::MergeFrom(const GetRegisteredServersResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.GetRegisteredServersResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  servers_.MergeFrom(from.servers_);
+}
+
+void GetRegisteredServersResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.server.GetRegisteredServersResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetRegisteredServersResponse::CopyFrom(const GetRegisteredServersResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.server.GetRegisteredServersResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRegisteredServersResponse::IsInitialized() const {
+  return true;
+}
+
+void GetRegisteredServersResponse::InternalSwap(GetRegisteredServersResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  servers_.InternalSwap(&other->servers_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRegisteredServersResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void UpdateServerStatusRequest::InitAsDefaultInstance() {
+}
+class UpdateServerStatusRequest::_Internal {
+ public:
+};
+
+UpdateServerStatusRequest::UpdateServerStatusRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.server.UpdateServerStatusRequest)
+}
+UpdateServerStatusRequest::UpdateServerStatusRequest(const UpdateServerStatusRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&id_, &from.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&players_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(players_));
+  // @@protoc_insertion_point(copy_constructor:mruv.server.UpdateServerStatusRequest)
+}
+
+void UpdateServerStatusRequest::SharedCtor() {
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&players_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(players_));
+}
+
+UpdateServerStatusRequest::~UpdateServerStatusRequest() {
+  // @@protoc_insertion_point(destructor:mruv.server.UpdateServerStatusRequest)
+  SharedDtor();
+}
+
+void UpdateServerStatusRequest::SharedDtor() {
+}
+
+void UpdateServerStatusRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UpdateServerStatusRequest& UpdateServerStatusRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateServerStatusRequest_server_2fserver_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void UpdateServerStatusRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.server.UpdateServerStatusRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&players_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(players_));
+  _internal_metadata_.Clear();
+}
+
+const char* UpdateServerStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int64 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.server.ServerStatus status = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::mruv::server::ServerStatus>(val));
+        } else goto handle_unusual;
+        continue;
+      // int32 players = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          players_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateServerStatusRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.server.UpdateServerStatusRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
+  }
+
+  // .mruv.server.ServerStatus status = 2;
+  if (this->status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_status(), target);
+  }
+
+  // int32 players = 3;
+  if (this->players() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_players(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.server.UpdateServerStatusRequest)
+  return target;
+}
+
+size_t UpdateServerStatusRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.server.UpdateServerStatusRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int64 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_id());
+  }
+
+  // .mruv.server.ServerStatus status = 2;
+  if (this->status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
+  // int32 players = 3;
+  if (this->players() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_players());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void UpdateServerStatusRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.server.UpdateServerStatusRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UpdateServerStatusRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateServerStatusRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.server.UpdateServerStatusRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.server.UpdateServerStatusRequest)
+    MergeFrom(*source);
+  }
+}
+
+void UpdateServerStatusRequest::MergeFrom(const UpdateServerStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.UpdateServerStatusRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+  if (from.status() != 0) {
+    _internal_set_status(from._internal_status());
+  }
+  if (from.players() != 0) {
+    _internal_set_players(from._internal_players());
+  }
+}
+
+void UpdateServerStatusRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.server.UpdateServerStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UpdateServerStatusRequest::CopyFrom(const UpdateServerStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.server.UpdateServerStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UpdateServerStatusRequest::IsInitialized() const {
+  return true;
+}
+
+void UpdateServerStatusRequest::InternalSwap(UpdateServerStatusRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(id_, other->id_);
+  swap(status_, other->status_);
+  swap(players_, other->players_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateServerStatusRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void UpdateServerStatusResponse::InitAsDefaultInstance() {
+}
+class UpdateServerStatusResponse::_Internal {
+ public:
+};
+
+UpdateServerStatusResponse::UpdateServerStatusResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.server.UpdateServerStatusResponse)
+}
+UpdateServerStatusResponse::UpdateServerStatusResponse(const UpdateServerStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.server.UpdateServerStatusResponse)
+}
+
+void UpdateServerStatusResponse::SharedCtor() {
+}
+
+UpdateServerStatusResponse::~UpdateServerStatusResponse() {
+  // @@protoc_insertion_point(destructor:mruv.server.UpdateServerStatusResponse)
+  SharedDtor();
+}
+
+void UpdateServerStatusResponse::SharedDtor() {
+}
+
+void UpdateServerStatusResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UpdateServerStatusResponse& UpdateServerStatusResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateServerStatusResponse_server_2fserver_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void UpdateServerStatusResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.server.UpdateServerStatusResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -313,7 +910,7 @@ void RegisterServerResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* RegisterServerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* UpdateServerStatusResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -335,9 +932,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RegisterServerResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateServerStatusResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.RegisterServerResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.server.UpdateServerStatusResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -345,12 +942,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.RegisterServerResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.server.UpdateServerStatusResponse)
   return target;
 }
 
-size_t RegisterServerResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.RegisterServerResponse)
+size_t UpdateServerStatusResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.server.UpdateServerStatusResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -366,23 +963,23 @@ size_t RegisterServerResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void RegisterServerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.RegisterServerResponse)
+void UpdateServerStatusResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.server.UpdateServerStatusResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const RegisterServerResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RegisterServerResponse>(
+  const UpdateServerStatusResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateServerStatusResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RegisterServerResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.server.UpdateServerStatusResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RegisterServerResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.server.UpdateServerStatusResponse)
     MergeFrom(*source);
   }
 }
 
-void RegisterServerResponse::MergeFrom(const RegisterServerResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RegisterServerResponse)
+void UpdateServerStatusResponse::MergeFrom(const UpdateServerStatusResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.UpdateServerStatusResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -390,42 +987,428 @@ void RegisterServerResponse::MergeFrom(const RegisterServerResponse& from) {
 
 }
 
-void RegisterServerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.RegisterServerResponse)
+void UpdateServerStatusResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.server.UpdateServerStatusResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void RegisterServerResponse::CopyFrom(const RegisterServerResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RegisterServerResponse)
+void UpdateServerStatusResponse::CopyFrom(const UpdateServerStatusResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.server.UpdateServerStatusResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool RegisterServerResponse::IsInitialized() const {
+bool UpdateServerStatusResponse::IsInitialized() const {
   return true;
 }
 
-void RegisterServerResponse::InternalSwap(RegisterServerResponse* other) {
+void UpdateServerStatusResponse::InternalSwap(UpdateServerStatusResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RegisterServerResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateServerStatusResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void ServerEventsStreamRequest::InitAsDefaultInstance() {
+}
+class ServerEventsStreamRequest::_Internal {
+ public:
+};
+
+ServerEventsStreamRequest::ServerEventsStreamRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.server.ServerEventsStreamRequest)
+}
+ServerEventsStreamRequest::ServerEventsStreamRequest(const ServerEventsStreamRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_ = from.id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.server.ServerEventsStreamRequest)
+}
+
+void ServerEventsStreamRequest::SharedCtor() {
+  id_ = PROTOBUF_LONGLONG(0);
+}
+
+ServerEventsStreamRequest::~ServerEventsStreamRequest() {
+  // @@protoc_insertion_point(destructor:mruv.server.ServerEventsStreamRequest)
+  SharedDtor();
+}
+
+void ServerEventsStreamRequest::SharedDtor() {
+}
+
+void ServerEventsStreamRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ServerEventsStreamRequest& ServerEventsStreamRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServerEventsStreamRequest_server_2fserver_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ServerEventsStreamRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.server.ServerEventsStreamRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_ = PROTOBUF_LONGLONG(0);
+  _internal_metadata_.Clear();
+}
+
+const char* ServerEventsStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int64 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ServerEventsStreamRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.server.ServerEventsStreamRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.server.ServerEventsStreamRequest)
+  return target;
+}
+
+size_t ServerEventsStreamRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.server.ServerEventsStreamRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int64 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ServerEventsStreamRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.server.ServerEventsStreamRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ServerEventsStreamRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServerEventsStreamRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.server.ServerEventsStreamRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.server.ServerEventsStreamRequest)
+    MergeFrom(*source);
+  }
+}
+
+void ServerEventsStreamRequest::MergeFrom(const ServerEventsStreamRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.ServerEventsStreamRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void ServerEventsStreamRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.server.ServerEventsStreamRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ServerEventsStreamRequest::CopyFrom(const ServerEventsStreamRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.server.ServerEventsStreamRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ServerEventsStreamRequest::IsInitialized() const {
+  return true;
+}
+
+void ServerEventsStreamRequest::InternalSwap(ServerEventsStreamRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ServerEventsStreamRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void ServerEvent::InitAsDefaultInstance() {
+}
+class ServerEvent::_Internal {
+ public:
+};
+
+ServerEvent::ServerEvent()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.server.ServerEvent)
+}
+ServerEvent::ServerEvent(const ServerEvent& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  type_ = from.type_;
+  // @@protoc_insertion_point(copy_constructor:mruv.server.ServerEvent)
+}
+
+void ServerEvent::SharedCtor() {
+  type_ = 0;
+}
+
+ServerEvent::~ServerEvent() {
+  // @@protoc_insertion_point(destructor:mruv.server.ServerEvent)
+  SharedDtor();
+}
+
+void ServerEvent::SharedDtor() {
+}
+
+void ServerEvent::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ServerEvent& ServerEvent::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ServerEvent_server_2fserver_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void ServerEvent::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.server.ServerEvent)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  type_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* ServerEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .mruv.server.ServerEvent.ServerEventType type = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::mruv::server::ServerEvent_ServerEventType>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* ServerEvent::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.server.ServerEvent)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mruv.server.ServerEvent.ServerEventType type = 1;
+  if (this->type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.server.ServerEvent)
+  return target;
+}
+
+size_t ServerEvent::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.server.ServerEvent)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .mruv.server.ServerEvent.ServerEventType type = 1;
+  if (this->type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ServerEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.server.ServerEvent)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ServerEvent* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServerEvent>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.server.ServerEvent)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.server.ServerEvent)
+    MergeFrom(*source);
+  }
+}
+
+void ServerEvent::MergeFrom(const ServerEvent& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.ServerEvent)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.type() != 0) {
+    _internal_set_type(from._internal_type());
+  }
+}
+
+void ServerEvent::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.server.ServerEvent)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ServerEvent::CopyFrom(const ServerEvent& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.server.ServerEvent)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ServerEvent::IsInitialized() const {
+  return true;
+}
+
+void ServerEvent::InternalSwap(ServerEvent* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(type_, other->type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ServerEvent::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace server
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::RegisterServerRequest* Arena::CreateMaybeMessage< ::mruv::RegisterServerRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::RegisterServerRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::server::GetRegisteredServersRequest* Arena::CreateMaybeMessage< ::mruv::server::GetRegisteredServersRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::server::GetRegisteredServersRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::RegisterServerResponse* Arena::CreateMaybeMessage< ::mruv::RegisterServerResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::RegisterServerResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::server::GetRegisteredServersResponse* Arena::CreateMaybeMessage< ::mruv::server::GetRegisteredServersResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::server::GetRegisteredServersResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::server::UpdateServerStatusRequest* Arena::CreateMaybeMessage< ::mruv::server::UpdateServerStatusRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::server::UpdateServerStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::server::UpdateServerStatusResponse* Arena::CreateMaybeMessage< ::mruv::server::UpdateServerStatusResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::server::UpdateServerStatusResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::server::ServerEventsStreamRequest* Arena::CreateMaybeMessage< ::mruv::server::ServerEventsStreamRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::server::ServerEventsStreamRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::server::ServerEvent* Arena::CreateMaybeMessage< ::mruv::server::ServerEvent >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::server::ServerEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
