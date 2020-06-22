@@ -28,6 +28,7 @@
 
 namespace mruv {
 
+// The MruV groups service provides procedures for managing groups.
 class MruVGroupsService final {
  public:
   static constexpr char const* service_full_name() {

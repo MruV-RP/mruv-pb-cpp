@@ -71,6 +71,7 @@ class MruVServerService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::server::UpdateServerStatusResponse>>(PrepareAsyncUpdateServerStatusRaw(context, request, cq));
     }
     // Stream of server events. Events are streamed back in real-time for chosen server.
+    // TODO: Change name to: SubscribeServerEvents
     std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::server::ServerEvent>> ServerEventsStream(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::server::ServerEvent>>(ServerEventsStreamRaw(context, request));
     }
@@ -136,6 +137,7 @@ class MruVServerService final {
       virtual void UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Stream of server events. Events are streamed back in real-time for chosen server.
+      // TODO: Change name to: SubscribeServerEvents
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void ServerEventsStream(::grpc::ClientContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::server::ServerEvent>* reactor) = 0;
       #else
@@ -301,6 +303,7 @@ class MruVServerService final {
     // Update game server status.
     virtual ::grpc::Status UpdateServerStatus(::grpc::ServerContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response);
     // Stream of server events. Events are streamed back in real-time for chosen server.
+    // TODO: Change name to: SubscribeServerEvents
     virtual ::grpc::Status ServerEventsStream(::grpc::ServerContext* context, const ::mruv::server::ServerEventsStreamRequest* request, ::grpc::ServerWriter< ::mruv::server::ServerEvent>* writer);
   };
   template <class BaseClass>

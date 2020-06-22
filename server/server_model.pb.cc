@@ -90,11 +90,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_server_2fserver_5fmodel_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031server/server_model.proto\022\013mruv.server"
-  "\"\026\n\010ServerID\022\n\n\002id\030\001 \001(\003\"\220\001\n\nServerInfo\022"
-  "\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022"
+  "\"\026\n\010ServerID\022\n\n\002id\030\001 \001(\r\"\220\001\n\nServerInfo\022"
+  "\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\014\n\004host\030\003 \001(\t\022"
   "\014\n\004port\030\004 \001(\t\022\020\n\010platform\030\005 \001(\t\022)\n\006statu"
   "s\030\006 \001(\0162\031.mruv.server.ServerStatus\022\017\n\007pl"
-  "ayers\030\007 \001(\005*,\n\014ServerStatus\022\013\n\007UNKNOWN\020\000"
+  "ayers\030\007 \001(\r*,\n\014ServerStatus\022\013\n\007UNKNOWN\020\000"
   "\022\006\n\002ON\020\001\022\007\n\003OFF\020\002B&Z$github.com/MruV-RP/"
   "mruv-pb-go/serverb\006proto3"
   ;
@@ -155,7 +155,7 @@ ServerID::ServerID(const ServerID& from)
 }
 
 void ServerID::SharedCtor() {
-  id_ = PROTOBUF_LONGLONG(0);
+  id_ = 0u;
 }
 
 ServerID::~ServerID() {
@@ -181,7 +181,7 @@ void ServerID::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = PROTOBUF_LONGLONG(0);
+  id_ = 0u;
   _internal_metadata_.Clear();
 }
 
@@ -192,7 +192,7 @@ const char* ServerID::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
@@ -225,10 +225,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 id = 1;
+  // uint32 id = 1;
   if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -247,10 +247,10 @@ size_t ServerID::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 id = 1;
+  // uint32 id = 1;
   if (this->id() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_id());
   }
 
@@ -413,7 +413,7 @@ const char* ServerInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // int64 id = 1;
+      // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
@@ -464,7 +464,7 @@ const char* ServerInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           _internal_set_status(static_cast<::mruv::server::ServerStatus>(val));
         } else goto handle_unusual;
         continue;
-      // int32 players = 7;
+      // uint32 players = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           players_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
@@ -497,10 +497,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 id = 1;
+  // uint32 id = 1;
   if (this->id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
   // string name = 2;
@@ -550,10 +550,10 @@ failure:
       6, this->_internal_status(), target);
   }
 
-  // int32 players = 7;
+  // uint32 players = 7;
   if (this->players() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_players(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_players(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -600,10 +600,10 @@ size_t ServerInfo::ByteSizeLong() const {
         this->_internal_platform());
   }
 
-  // int64 id = 1;
+  // uint32 id = 1;
   if (this->id() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_id());
   }
 
@@ -613,10 +613,10 @@ size_t ServerInfo::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
   }
 
-  // int32 players = 7;
+  // uint32 players = 7;
   if (this->players() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_players());
   }
 

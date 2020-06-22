@@ -24,7 +24,8 @@ namespace mruv {
 static const char* MruVCharactersService_method_names[] = {
   "/mruv.MruVCharactersService/CreateCharacter",
   "/mruv.MruVCharactersService/GetCharacter",
-  "/mruv.MruVCharactersService/RemoveCharacter",
+  "/mruv.MruVCharactersService/UpdateCharacter",
+  "/mruv.MruVCharactersService/DeleteCharacter",
   "/mruv.MruVCharactersService/PermanentCharacterKill",
   "/mruv.MruVCharactersService/DeathsStream",
   "/mruv.MruVCharactersService/GetServiceStatus",
@@ -40,95 +41,124 @@ std::unique_ptr< MruVCharactersService::Stub> MruVCharactersService::NewStub(con
 MruVCharactersService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateCharacter_(MruVCharactersService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetCharacter_(MruVCharactersService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RemoveCharacter_(MruVCharactersService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_PermanentCharacterKill_(MruVCharactersService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeathsStream_(MruVCharactersService_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetServiceStatus_(MruVCharactersService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetServiceVersion_(MruVCharactersService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateCharacter_(MruVCharactersService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteCharacter_(MruVCharactersService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_PermanentCharacterKill_(MruVCharactersService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeathsStream_(MruVCharactersService_method_names[5], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetServiceStatus_(MruVCharactersService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetServiceVersion_(MruVCharactersService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MruVCharactersService::Stub::CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character& request, ::mruv::CharacterID* response) {
+::grpc::Status MruVCharactersService::Stub::CreateCharacter(::grpc::ClientContext* context, const ::mruv::CreateCharacterRequest& request, ::mruv::CreateCharacterResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateCharacter_, context, request, response);
 }
 
-void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)> f) {
+void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::mruv::CreateCharacterRequest* request, ::mruv::CreateCharacterResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateCharacter_, context, request, response, std::move(f));
 }
 
-void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)> f) {
+void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CreateCharacterResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateCharacter_, context, request, response, std::move(f));
 }
 
-void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::mruv::CreateCharacterRequest* request, ::mruv::CreateCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateCharacter_, context, request, response, reactor);
 }
 
-void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVCharactersService::Stub::experimental_async::CreateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CreateCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateCharacter_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>* MruVCharactersService::Stub::AsyncCreateCharacterRaw(::grpc::ClientContext* context, const ::mruv::Character& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CharacterID>::Create(channel_.get(), cq, rpcmethod_CreateCharacter_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::CreateCharacterResponse>* MruVCharactersService::Stub::AsyncCreateCharacterRaw(::grpc::ClientContext* context, const ::mruv::CreateCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CreateCharacterResponse>::Create(channel_.get(), cq, rpcmethod_CreateCharacter_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>* MruVCharactersService::Stub::PrepareAsyncCreateCharacterRaw(::grpc::ClientContext* context, const ::mruv::Character& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CharacterID>::Create(channel_.get(), cq, rpcmethod_CreateCharacter_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::CreateCharacterResponse>* MruVCharactersService::Stub::PrepareAsyncCreateCharacterRaw(::grpc::ClientContext* context, const ::mruv::CreateCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CreateCharacterResponse>::Create(channel_.get(), cq, rpcmethod_CreateCharacter_, context, request, false);
 }
 
-::grpc::Status MruVCharactersService::Stub::GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::mruv::Character* response) {
+::grpc::Status MruVCharactersService::Stub::GetCharacter(::grpc::ClientContext* context, const ::mruv::GetCharacterRequest& request, ::mruv::GetCharacterResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetCharacter_, context, request, response);
 }
 
-void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, std::function<void(::grpc::Status)> f) {
+void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::mruv::GetCharacterRequest* request, ::mruv::GetCharacterResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetCharacter_, context, request, response, std::move(f));
 }
 
-void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, std::function<void(::grpc::Status)> f) {
+void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetCharacterResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetCharacter_, context, request, response, std::move(f));
 }
 
-void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::mruv::GetCharacterRequest* request, ::mruv::GetCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetCharacter_, context, request, response, reactor);
 }
 
-void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Character* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVCharactersService::Stub::experimental_async::GetCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetCharacter_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Character>* MruVCharactersService::Stub::AsyncGetCharacterRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::Character>::Create(channel_.get(), cq, rpcmethod_GetCharacter_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::GetCharacterResponse>* MruVCharactersService::Stub::AsyncGetCharacterRaw(::grpc::ClientContext* context, const ::mruv::GetCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetCharacterResponse>::Create(channel_.get(), cq, rpcmethod_GetCharacter_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Character>* MruVCharactersService::Stub::PrepareAsyncGetCharacterRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::Character>::Create(channel_.get(), cq, rpcmethod_GetCharacter_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::GetCharacterResponse>* MruVCharactersService::Stub::PrepareAsyncGetCharacterRaw(::grpc::ClientContext* context, const ::mruv::GetCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetCharacterResponse>::Create(channel_.get(), cq, rpcmethod_GetCharacter_, context, request, false);
 }
 
-::grpc::Status MruVCharactersService::Stub::RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::mruv::CharacterID* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemoveCharacter_, context, request, response);
+::grpc::Status MruVCharactersService::Stub::UpdateCharacter(::grpc::ClientContext* context, const ::mruv::UpdateCharacterRequest& request, ::mruv::UpdateCharacterResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateCharacter_, context, request, response);
 }
 
-void MruVCharactersService::Stub::experimental_async::RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveCharacter_, context, request, response, std::move(f));
+void MruVCharactersService::Stub::experimental_async::UpdateCharacter(::grpc::ClientContext* context, const ::mruv::UpdateCharacterRequest* request, ::mruv::UpdateCharacterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateCharacter_, context, request, response, std::move(f));
 }
 
-void MruVCharactersService::Stub::experimental_async::RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveCharacter_, context, request, response, std::move(f));
+void MruVCharactersService::Stub::experimental_async::UpdateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UpdateCharacterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateCharacter_, context, request, response, std::move(f));
 }
 
-void MruVCharactersService::Stub::experimental_async::RemoveCharacter(::grpc::ClientContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveCharacter_, context, request, response, reactor);
+void MruVCharactersService::Stub::experimental_async::UpdateCharacter(::grpc::ClientContext* context, const ::mruv::UpdateCharacterRequest* request, ::mruv::UpdateCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateCharacter_, context, request, response, reactor);
 }
 
-void MruVCharactersService::Stub::experimental_async::RemoveCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveCharacter_, context, request, response, reactor);
+void MruVCharactersService::Stub::experimental_async::UpdateCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UpdateCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateCharacter_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>* MruVCharactersService::Stub::AsyncRemoveCharacterRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CharacterID>::Create(channel_.get(), cq, rpcmethod_RemoveCharacter_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::UpdateCharacterResponse>* MruVCharactersService::Stub::AsyncUpdateCharacterRaw(::grpc::ClientContext* context, const ::mruv::UpdateCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::UpdateCharacterResponse>::Create(channel_.get(), cq, rpcmethod_UpdateCharacter_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>* MruVCharactersService::Stub::PrepareAsyncRemoveCharacterRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CharacterID>::Create(channel_.get(), cq, rpcmethod_RemoveCharacter_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::UpdateCharacterResponse>* MruVCharactersService::Stub::PrepareAsyncUpdateCharacterRaw(::grpc::ClientContext* context, const ::mruv::UpdateCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::UpdateCharacterResponse>::Create(channel_.get(), cq, rpcmethod_UpdateCharacter_, context, request, false);
+}
+
+::grpc::Status MruVCharactersService::Stub::DeleteCharacter(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest& request, ::mruv::DeleteCharacterResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteCharacter_, context, request, response);
+}
+
+void MruVCharactersService::Stub::experimental_async::DeleteCharacter(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest* request, ::mruv::DeleteCharacterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteCharacter_, context, request, response, std::move(f));
+}
+
+void MruVCharactersService::Stub::experimental_async::DeleteCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::DeleteCharacterResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteCharacter_, context, request, response, std::move(f));
+}
+
+void MruVCharactersService::Stub::experimental_async::DeleteCharacter(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest* request, ::mruv::DeleteCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteCharacter_, context, request, response, reactor);
+}
+
+void MruVCharactersService::Stub::experimental_async::DeleteCharacter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::DeleteCharacterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteCharacter_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::DeleteCharacterResponse>* MruVCharactersService::Stub::AsyncDeleteCharacterRaw(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::DeleteCharacterResponse>::Create(channel_.get(), cq, rpcmethod_DeleteCharacter_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::DeleteCharacterResponse>* MruVCharactersService::Stub::PrepareAsyncDeleteCharacterRaw(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::DeleteCharacterResponse>::Create(channel_.get(), cq, rpcmethod_DeleteCharacter_, context, request, false);
 }
 
 ::grpc::Status MruVCharactersService::Stub::PermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::mruv::CharacterID* response) {
@@ -235,35 +265,40 @@ MruVCharactersService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::Character, ::mruv::CharacterID>(
+      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::CreateCharacterRequest, ::mruv::CreateCharacterResponse>(
           std::mem_fn(&MruVCharactersService::Service::CreateCharacter), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::CharacterID, ::mruv::Character>(
+      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::GetCharacterRequest, ::mruv::GetCharacterResponse>(
           std::mem_fn(&MruVCharactersService::Service::GetCharacter), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::CharacterID, ::mruv::CharacterID>(
-          std::mem_fn(&MruVCharactersService::Service::RemoveCharacter), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::UpdateCharacterRequest, ::mruv::UpdateCharacterResponse>(
+          std::mem_fn(&MruVCharactersService::Service::UpdateCharacter), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::DeleteCharacterRequest, ::mruv::DeleteCharacterResponse>(
+          std::mem_fn(&MruVCharactersService::Service::DeleteCharacter), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVCharactersService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::CharacterID, ::mruv::CharacterID>(
           std::mem_fn(&MruVCharactersService::Service::PermanentCharacterKill), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVCharactersService_method_names[4],
+      MruVCharactersService_method_names[5],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVCharactersService::Service, ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
           std::mem_fn(&MruVCharactersService::Service::DeathsStream), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVCharactersService_method_names[5],
+      MruVCharactersService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
           std::mem_fn(&MruVCharactersService::Service::GetServiceStatus), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVCharactersService_method_names[6],
+      MruVCharactersService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
           std::mem_fn(&MruVCharactersService::Service::GetServiceVersion), this)));
@@ -272,21 +307,28 @@ MruVCharactersService::Service::Service() {
 MruVCharactersService::Service::~Service() {
 }
 
-::grpc::Status MruVCharactersService::Service::CreateCharacter(::grpc::ServerContext* context, const ::mruv::Character* request, ::mruv::CharacterID* response) {
+::grpc::Status MruVCharactersService::Service::CreateCharacter(::grpc::ServerContext* context, const ::mruv::CreateCharacterRequest* request, ::mruv::CreateCharacterResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVCharactersService::Service::GetCharacter(::grpc::ServerContext* context, const ::mruv::CharacterID* request, ::mruv::Character* response) {
+::grpc::Status MruVCharactersService::Service::GetCharacter(::grpc::ServerContext* context, const ::mruv::GetCharacterRequest* request, ::mruv::GetCharacterResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVCharactersService::Service::RemoveCharacter(::grpc::ServerContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response) {
+::grpc::Status MruVCharactersService::Service::UpdateCharacter(::grpc::ServerContext* context, const ::mruv::UpdateCharacterRequest* request, ::mruv::UpdateCharacterResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVCharactersService::Service::DeleteCharacter(::grpc::ServerContext* context, const ::mruv::DeleteCharacterRequest* request, ::mruv::DeleteCharacterResponse* response) {
   (void) context;
   (void) request;
   (void) response;

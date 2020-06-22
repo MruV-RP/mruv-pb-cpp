@@ -28,6 +28,8 @@
 
 namespace mruv {
 
+// The MruV accounts service provides procedures for managing players accounts.
+// This service is an additional/intermediary service between the ORY Kratos & ORY Hydra service.
 class MruVAccountsService final {
  public:
   static constexpr char const* service_full_name() {

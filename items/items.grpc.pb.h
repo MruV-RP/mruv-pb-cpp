@@ -133,7 +133,7 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>> PrepareAsyncGetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>>(PrepareAsyncGetContainersRaw(context, request, cq));
     }
-    // Create container type.
+    // Create a container type.
     virtual ::grpc::Status CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::mruv::ContainerTypeID* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>> AsyncCreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>>(AsyncCreateContainerTypeRaw(context, request, cq));
@@ -141,7 +141,7 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>> PrepareAsyncCreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>>(PrepareAsyncCreateContainerTypeRaw(context, request, cq));
     }
-    // Get container type by id.
+    // Get a container type by id.
     virtual ::grpc::Status GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::mruv::ContainerType* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerType>> AsyncGetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerType>>(AsyncGetContainerTypeRaw(context, request, cq));
@@ -149,7 +149,7 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerType>> PrepareAsyncGetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerType>>(PrepareAsyncGetContainerTypeRaw(context, request, cq));
     }
-    // Detele container type by id.
+    // Delete a container type by id.
     virtual ::grpc::Status DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::mruv::ContainerTypeID* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>> AsyncDeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>>(AsyncDeleteContainerTypeRaw(context, request, cq));
@@ -173,7 +173,7 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>> PrepareAsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>>(PrepareAsyncGetContainerItemsRaw(context, request, cq));
     }
-    // Pull item from container.
+    // Pull an item from container.
     virtual ::grpc::Status PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::mruv::Item* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>> AsyncPullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>>(AsyncPullItemRaw(context, request, cq));
@@ -181,7 +181,7 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>> PrepareAsyncPullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>>(PrepareAsyncPullItemRaw(context, request, cq));
     }
-    // Put item into container.
+    // Put an item into container.
     virtual ::grpc::Status PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::mruv::PutItemResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>> AsyncPutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>>(AsyncPutItemRaw(context, request, cq));
@@ -389,7 +389,7 @@ class MruVItemService final {
       #else
       virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Create container type.
+      // Create a container type.
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -402,7 +402,7 @@ class MruVItemService final {
       #else
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Get container type by id.
+      // Get a container type by id.
       virtual void GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -415,7 +415,7 @@ class MruVItemService final {
       #else
       virtual void GetContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Detele container type by id.
+      // Delete a container type by id.
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -454,7 +454,7 @@ class MruVItemService final {
       #else
       virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Pull item from container.
+      // Pull an item from container.
       virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -467,7 +467,7 @@ class MruVItemService final {
       #else
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Put item into container.
+      // Put an item into container.
       virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1180,19 +1180,19 @@ class MruVItemService final {
     virtual ::grpc::Status DeleteContainer(::grpc::ServerContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response);
     // Get all containers.
     virtual ::grpc::Status GetContainers(::grpc::ServerContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response);
-    // Create container type.
+    // Create a container type.
     virtual ::grpc::Status CreateContainerType(::grpc::ServerContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response);
-    // Get container type by id.
+    // Get a container type by id.
     virtual ::grpc::Status GetContainerType(::grpc::ServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response);
-    // Detele container type by id.
+    // Delete a container type by id.
     virtual ::grpc::Status DeleteContainerType(::grpc::ServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response);
     // Get all container types.
     virtual ::grpc::Status GetContainerTypes(::grpc::ServerContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response);
     // Get items inside a container.
     virtual ::grpc::Status GetContainerItems(::grpc::ServerContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response);
-    // Pull item from container.
+    // Pull an item from container.
     virtual ::grpc::Status PullItem(::grpc::ServerContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response);
-    // Put item into container.
+    // Put an item into container.
     virtual ::grpc::Status PutItem(::grpc::ServerContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response);
     // Sort items inside container.
     // This procedure change order of items inside container.

@@ -208,13 +208,13 @@ class ServerID :
   enum : int {
     kIdFieldNumber = 1,
   };
-  // int64 id = 1;
+  // uint32 id = 1;
   void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:mruv.server.ServerID)
@@ -222,7 +222,7 @@ class ServerID :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::int64 id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_server_2fserver_5fmodel_2eproto;
 };
@@ -406,13 +406,13 @@ class ServerInfo :
   std::string* _internal_mutable_platform();
   public:
 
-  // int64 id = 1;
+  // uint32 id = 1;
   void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // .mruv.server.ServerStatus status = 6;
@@ -424,13 +424,13 @@ class ServerInfo :
   void _internal_set_status(::mruv::server::ServerStatus value);
   public:
 
-  // int32 players = 7;
+  // uint32 players = 7;
   void clear_players();
-  ::PROTOBUF_NAMESPACE_ID::int32 players() const;
-  void set_players(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 players() const;
+  void set_players(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_players() const;
-  void _internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_players() const;
+  void _internal_set_players(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:mruv.server.ServerInfo)
@@ -442,9 +442,9 @@ class ServerInfo :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr host_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr port_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr platform_;
-  ::PROTOBUF_NAMESPACE_ID::int64 id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   int status_;
-  ::PROTOBUF_NAMESPACE_ID::int32 players_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 players_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_server_2fserver_5fmodel_2eproto;
 };
@@ -459,22 +459,22 @@ class ServerInfo :
 #endif  // __GNUC__
 // ServerID
 
-// int64 id = 1;
+// uint32 id = 1;
 inline void ServerID::clear_id() {
-  id_ = PROTOBUF_LONGLONG(0);
+  id_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 ServerID::_internal_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerID::_internal_id() const {
   return id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 ServerID::id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerID::id() const {
   // @@protoc_insertion_point(field_get:mruv.server.ServerID.id)
   return _internal_id();
 }
-inline void ServerID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void ServerID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   id_ = value;
 }
-inline void ServerID::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void ServerID::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:mruv.server.ServerID.id)
 }
@@ -483,22 +483,22 @@ inline void ServerID::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
 
 // ServerInfo
 
-// int64 id = 1;
+// uint32 id = 1;
 inline void ServerInfo::clear_id() {
-  id_ = PROTOBUF_LONGLONG(0);
+  id_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 ServerInfo::_internal_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerInfo::_internal_id() const {
   return id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int64 ServerInfo::id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerInfo::id() const {
   // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.id)
   return _internal_id();
 }
-inline void ServerInfo::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void ServerInfo::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   id_ = value;
 }
-inline void ServerInfo::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+inline void ServerInfo::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
   // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.id)
 }
@@ -763,22 +763,22 @@ inline void ServerInfo::set_status(::mruv::server::ServerStatus value) {
   // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.status)
 }
 
-// int32 players = 7;
+// uint32 players = 7;
 inline void ServerInfo::clear_players() {
-  players_ = 0;
+  players_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ServerInfo::_internal_players() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerInfo::_internal_players() const {
   return players_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 ServerInfo::players() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerInfo::players() const {
   // @@protoc_insertion_point(field_get:mruv.server.ServerInfo.players)
   return _internal_players();
 }
-inline void ServerInfo::_internal_set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ServerInfo::_internal_set_players(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   players_ = value;
 }
-inline void ServerInfo::set_players(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void ServerInfo::set_players(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_players(value);
   // @@protoc_insertion_point(field_set:mruv.server.ServerInfo.players)
 }
