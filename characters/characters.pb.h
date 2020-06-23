@@ -785,11 +785,24 @@ class CreateCharacterResponse :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // uint32 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.CreateCharacterResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_characters_2fcharacters_2eproto;
 };
@@ -1028,11 +1041,110 @@ class GetCharacterResponse :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kFirstNameFieldNumber = 3,
+    kSecondNameFieldNumber = 4,
+    kPositionFieldNumber = 7,
+    kIdFieldNumber = 1,
+    kOwnerIdFieldNumber = 2,
+    kAgeFieldNumber = 5,
+    kSexFieldNumber = 6,
+  };
+  // string first_name = 3;
+  void clear_first_name();
+  const std::string& first_name() const;
+  void set_first_name(const std::string& value);
+  void set_first_name(std::string&& value);
+  void set_first_name(const char* value);
+  void set_first_name(const char* value, size_t size);
+  std::string* mutable_first_name();
+  std::string* release_first_name();
+  void set_allocated_first_name(std::string* first_name);
+  private:
+  const std::string& _internal_first_name() const;
+  void _internal_set_first_name(const std::string& value);
+  std::string* _internal_mutable_first_name();
+  public:
+
+  // string second_name = 4;
+  void clear_second_name();
+  const std::string& second_name() const;
+  void set_second_name(const std::string& value);
+  void set_second_name(std::string&& value);
+  void set_second_name(const char* value);
+  void set_second_name(const char* value, size_t size);
+  std::string* mutable_second_name();
+  std::string* release_second_name();
+  void set_allocated_second_name(std::string* second_name);
+  private:
+  const std::string& _internal_second_name() const;
+  void _internal_set_second_name(const std::string& value);
+  std::string* _internal_mutable_second_name();
+  public:
+
+  // .mruv.Position position = 7;
+  bool has_position() const;
+  private:
+  bool _internal_has_position() const;
+  public:
+  void clear_position();
+  const ::mruv::Position& position() const;
+  ::mruv::Position* release_position();
+  ::mruv::Position* mutable_position();
+  void set_allocated_position(::mruv::Position* position);
+  private:
+  const ::mruv::Position& _internal_position() const;
+  ::mruv::Position* _internal_mutable_position();
+  public:
+
+  // uint32 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 owner_id = 2;
+  void clear_owner_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 owner_id() const;
+  void set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_owner_id() const;
+  void _internal_set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 age = 5;
+  void clear_age();
+  ::PROTOBUF_NAMESPACE_ID::uint32 age() const;
+  void set_age(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_age() const;
+  void _internal_set_age(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 sex = 6;
+  void clear_sex();
+  ::PROTOBUF_NAMESPACE_ID::uint32 sex() const;
+  void set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_sex() const;
+  void _internal_set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.GetCharacterResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr second_name_;
+  ::mruv::Position* position_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 owner_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 age_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 sex_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_characters_2fcharacters_2eproto;
 };
@@ -2301,6 +2413,26 @@ inline void CreateCharacterRequest::set_sex(::PROTOBUF_NAMESPACE_ID::uint32 valu
 
 // CreateCharacterResponse
 
+// uint32 id = 1;
+inline void CreateCharacterResponse::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateCharacterResponse::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateCharacterResponse::id() const {
+  // @@protoc_insertion_point(field_get:mruv.CreateCharacterResponse.id)
+  return _internal_id();
+}
+inline void CreateCharacterResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void CreateCharacterResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.CreateCharacterResponse.id)
+}
+
 // -------------------------------------------------------------------
 
 // GetCharacterRequest
@@ -2328,6 +2460,260 @@ inline void GetCharacterRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 // -------------------------------------------------------------------
 
 // GetCharacterResponse
+
+// uint32 id = 1;
+inline void GetCharacterResponse::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::id() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.id)
+  return _internal_id();
+}
+inline void GetCharacterResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void GetCharacterResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.id)
+}
+
+// uint32 owner_id = 2;
+inline void GetCharacterResponse::clear_owner_id() {
+  owner_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::_internal_owner_id() const {
+  return owner_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::owner_id() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.owner_id)
+  return _internal_owner_id();
+}
+inline void GetCharacterResponse::_internal_set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  owner_id_ = value;
+}
+inline void GetCharacterResponse::set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_owner_id(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.owner_id)
+}
+
+// string first_name = 3;
+inline void GetCharacterResponse::clear_first_name() {
+  first_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetCharacterResponse::first_name() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.first_name)
+  return _internal_first_name();
+}
+inline void GetCharacterResponse::set_first_name(const std::string& value) {
+  _internal_set_first_name(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.first_name)
+}
+inline std::string* GetCharacterResponse::mutable_first_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetCharacterResponse.first_name)
+  return _internal_mutable_first_name();
+}
+inline const std::string& GetCharacterResponse::_internal_first_name() const {
+  return first_name_.GetNoArena();
+}
+inline void GetCharacterResponse::_internal_set_first_name(const std::string& value) {
+  
+  first_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void GetCharacterResponse::set_first_name(std::string&& value) {
+  
+  first_name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.GetCharacterResponse.first_name)
+}
+inline void GetCharacterResponse::set_first_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  first_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.GetCharacterResponse.first_name)
+}
+inline void GetCharacterResponse::set_first_name(const char* value, size_t size) {
+  
+  first_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.GetCharacterResponse.first_name)
+}
+inline std::string* GetCharacterResponse::_internal_mutable_first_name() {
+  
+  return first_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetCharacterResponse::release_first_name() {
+  // @@protoc_insertion_point(field_release:mruv.GetCharacterResponse.first_name)
+  
+  return first_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetCharacterResponse::set_allocated_first_name(std::string* first_name) {
+  if (first_name != nullptr) {
+    
+  } else {
+    
+  }
+  first_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), first_name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetCharacterResponse.first_name)
+}
+
+// string second_name = 4;
+inline void GetCharacterResponse::clear_second_name() {
+  second_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetCharacterResponse::second_name() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.second_name)
+  return _internal_second_name();
+}
+inline void GetCharacterResponse::set_second_name(const std::string& value) {
+  _internal_set_second_name(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.second_name)
+}
+inline std::string* GetCharacterResponse::mutable_second_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetCharacterResponse.second_name)
+  return _internal_mutable_second_name();
+}
+inline const std::string& GetCharacterResponse::_internal_second_name() const {
+  return second_name_.GetNoArena();
+}
+inline void GetCharacterResponse::_internal_set_second_name(const std::string& value) {
+  
+  second_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void GetCharacterResponse::set_second_name(std::string&& value) {
+  
+  second_name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.GetCharacterResponse.second_name)
+}
+inline void GetCharacterResponse::set_second_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  second_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.GetCharacterResponse.second_name)
+}
+inline void GetCharacterResponse::set_second_name(const char* value, size_t size) {
+  
+  second_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.GetCharacterResponse.second_name)
+}
+inline std::string* GetCharacterResponse::_internal_mutable_second_name() {
+  
+  return second_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetCharacterResponse::release_second_name() {
+  // @@protoc_insertion_point(field_release:mruv.GetCharacterResponse.second_name)
+  
+  return second_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetCharacterResponse::set_allocated_second_name(std::string* second_name) {
+  if (second_name != nullptr) {
+    
+  } else {
+    
+  }
+  second_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), second_name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetCharacterResponse.second_name)
+}
+
+// uint32 age = 5;
+inline void GetCharacterResponse::clear_age() {
+  age_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::_internal_age() const {
+  return age_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::age() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.age)
+  return _internal_age();
+}
+inline void GetCharacterResponse::_internal_set_age(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  age_ = value;
+}
+inline void GetCharacterResponse::set_age(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_age(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.age)
+}
+
+// uint32 sex = 6;
+inline void GetCharacterResponse::clear_sex() {
+  sex_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::_internal_sex() const {
+  return sex_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::sex() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.sex)
+  return _internal_sex();
+}
+inline void GetCharacterResponse::_internal_set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  sex_ = value;
+}
+inline void GetCharacterResponse::set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_sex(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.sex)
+}
+
+// .mruv.Position position = 7;
+inline bool GetCharacterResponse::_internal_has_position() const {
+  return this != internal_default_instance() && position_ != nullptr;
+}
+inline bool GetCharacterResponse::has_position() const {
+  return _internal_has_position();
+}
+inline const ::mruv::Position& GetCharacterResponse::_internal_position() const {
+  const ::mruv::Position* p = position_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::Position*>(
+      &::mruv::_Position_default_instance_);
+}
+inline const ::mruv::Position& GetCharacterResponse::position() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.position)
+  return _internal_position();
+}
+inline ::mruv::Position* GetCharacterResponse::release_position() {
+  // @@protoc_insertion_point(field_release:mruv.GetCharacterResponse.position)
+  
+  ::mruv::Position* temp = position_;
+  position_ = nullptr;
+  return temp;
+}
+inline ::mruv::Position* GetCharacterResponse::_internal_mutable_position() {
+  
+  if (position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::Position>(GetArenaNoVirtual());
+    position_ = p;
+  }
+  return position_;
+}
+inline ::mruv::Position* GetCharacterResponse::mutable_position() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetCharacterResponse.position)
+  return _internal_mutable_position();
+}
+inline void GetCharacterResponse::set_allocated_position(::mruv::Position* position) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(position_);
+  }
+  if (position) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, position, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  position_ = position;
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetCharacterResponse.position)
+}
 
 // -------------------------------------------------------------------
 
