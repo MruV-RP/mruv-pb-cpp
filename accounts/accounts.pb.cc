@@ -45,6 +45,14 @@ class GetAccountCharactersResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetAccountCharactersResponse> _instance;
 } _GetAccountCharactersResponse_default_instance_;
+class IsAccountExistsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IsAccountExistsRequest> _instance;
+} _IsAccountExistsRequest_default_instance_;
+class IsAccountExistsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IsAccountExistsResponse> _instance;
+} _IsAccountExistsResponse_default_instance_;
 }  // namespace mruv
 static void InitDefaultsscc_info_Account_accounts_2faccounts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -88,6 +96,34 @@ static void InitDefaultsscc_info_GetAccountCharactersResponse_accounts_2faccount
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetAccountCharactersResponse_accounts_2faccounts_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetAccountCharactersResponse_accounts_2faccounts_2eproto}, {
       &scc_info_Character_characters_2fcharacters_2eproto.base,}};
+
+static void InitDefaultsscc_info_IsAccountExistsRequest_accounts_2faccounts_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_IsAccountExistsRequest_default_instance_;
+    new (ptr) ::mruv::IsAccountExistsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::IsAccountExistsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsAccountExistsRequest_accounts_2faccounts_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_IsAccountExistsRequest_accounts_2faccounts_2eproto}, {}};
+
+static void InitDefaultsscc_info_IsAccountExistsResponse_accounts_2faccounts_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_IsAccountExistsResponse_default_instance_;
+    new (ptr) ::mruv::IsAccountExistsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::IsAccountExistsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsAccountExistsResponse_accounts_2faccounts_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_IsAccountExistsResponse_accounts_2faccounts_2eproto}, {}};
 
 static void InitDefaultsscc_info_LogInRequest_accounts_2faccounts_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -146,7 +182,7 @@ static void InitDefaultsscc_info_RegisterAccountResponse_accounts_2faccounts_2ep
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisterAccountResponse_accounts_2faccounts_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RegisterAccountResponse_accounts_2faccounts_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_accounts_2faccounts_2eproto[7];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_accounts_2faccounts_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_accounts_2faccounts_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_accounts_2faccounts_2eproto = nullptr;
 
@@ -200,6 +236,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_accounts_2faccounts_2eproto::o
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::GetAccountCharactersResponse, characters_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsAccountExistsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsAccountExistsRequest, login_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsAccountExistsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsAccountExistsResponse, exists_),
+  PROTOBUF_FIELD_OFFSET(::mruv::IsAccountExistsResponse, id_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::AccountID)},
@@ -209,6 +258,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 29, -1, sizeof(::mruv::LogInRequest)},
   { 36, -1, sizeof(::mruv::LogInResponse)},
   { 43, -1, sizeof(::mruv::GetAccountCharactersResponse)},
+  { 49, -1, sizeof(::mruv::IsAccountExistsRequest)},
+  { 55, -1, sizeof(::mruv::IsAccountExistsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -219,6 +270,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_LogInRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_LogInResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetAccountCharactersResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_IsAccountExistsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_IsAccountExistsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_accounts_2faccounts_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -234,24 +287,31 @@ const char descriptor_table_protodef_accounts_2faccounts_2eproto[] PROTOBUF_SECT
   "sword\030\002 \001(\t\"4\n\rLogInResponse\022\017\n\007success\030"
   "\001 \001(\010\022\022\n\naccount_id\030\002 \001(\r\"C\n\034GetAccountC"
   "haractersResponse\022#\n\ncharacters\030\001 \003(\0132\017."
-  "mruv.Character2\222\002\n\023MruVAccountsService\022N"
-  "\n\017RegisterAccount\022\034.mruv.RegisterAccount"
-  "Request\032\035.mruv.RegisterAccountResponse\0220"
-  "\n\005LogIn\022\022.mruv.LogInRequest\032\023.mruv.LogIn"
-  "Response\022,\n\nGetAccount\022\017.mruv.AccountID\032"
-  "\r.mruv.Account\022K\n\024GetAccountCharacters\022\017"
-  ".mruv.AccountID\032\".mruv.GetAccountCharact"
-  "ersResponseB(Z&github.com/MruV-RP/mruv-p"
-  "b-go/accountsb\006proto3"
+  "mruv.Character\"\'\n\026IsAccountExistsRequest"
+  "\022\r\n\005login\030\001 \001(\t\"5\n\027IsAccountExistsRespon"
+  "se\022\016\n\006exists\030\001 \001(\010\022\n\n\002id\030\002 \001(\r2\213\003\n\023MruVA"
+  "ccountsService\022N\n\017RegisterAccount\022\034.mruv"
+  ".RegisterAccountRequest\032\035.mruv.RegisterA"
+  "ccountResponse\0220\n\005LogIn\022\022.mruv.LogInRequ"
+  "est\032\023.mruv.LogInResponse\022w\n\017IsAccountExi"
+  "sts\022\034.mruv.IsAccountExistsRequest\032\035.mruv"
+  ".IsAccountExistsResponse\"\'\202\323\344\223\002!\022\037/v1/ac"
+  "counts/{login}/registered\022,\n\nGetAccount\022"
+  "\017.mruv.AccountID\032\r.mruv.Account\022K\n\024GetAc"
+  "countCharacters\022\017.mruv.AccountID\032\".mruv."
+  "GetAccountCharactersResponseB(Z&github.c"
+  "om/MruV-RP/mruv-pb-go/accountsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2faccounts_2eproto_deps[2] = {
   &::descriptor_table_characters_2fcharacters_2eproto,
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_accounts_2faccounts_2eproto_sccs[7] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_accounts_2faccounts_2eproto_sccs[9] = {
   &scc_info_Account_accounts_2faccounts_2eproto.base,
   &scc_info_AccountID_accounts_2faccounts_2eproto.base,
   &scc_info_GetAccountCharactersResponse_accounts_2faccounts_2eproto.base,
+  &scc_info_IsAccountExistsRequest_accounts_2faccounts_2eproto.base,
+  &scc_info_IsAccountExistsResponse_accounts_2faccounts_2eproto.base,
   &scc_info_LogInRequest_accounts_2faccounts_2eproto.base,
   &scc_info_LogInResponse_accounts_2faccounts_2eproto.base,
   &scc_info_RegisterAccountRequest_accounts_2faccounts_2eproto.base,
@@ -260,10 +320,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_acc
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2faccounts_2eproto_once;
 static bool descriptor_table_accounts_2faccounts_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2faccounts_2eproto = {
-  &descriptor_table_accounts_2faccounts_2eproto_initialized, descriptor_table_protodef_accounts_2faccounts_2eproto, "accounts/accounts.proto", 821,
-  &descriptor_table_accounts_2faccounts_2eproto_once, descriptor_table_accounts_2faccounts_2eproto_sccs, descriptor_table_accounts_2faccounts_2eproto_deps, 7, 2,
+  &descriptor_table_accounts_2faccounts_2eproto_initialized, descriptor_table_protodef_accounts_2faccounts_2eproto, "accounts/accounts.proto", 1038,
+  &descriptor_table_accounts_2faccounts_2eproto_once, descriptor_table_accounts_2faccounts_2eproto_sccs, descriptor_table_accounts_2faccounts_2eproto_deps, 9, 2,
   schemas, file_default_instances, TableStruct_accounts_2faccounts_2eproto::offsets,
-  file_level_metadata_accounts_2faccounts_2eproto, 7, file_level_enum_descriptors_accounts_2faccounts_2eproto, file_level_service_descriptors_accounts_2faccounts_2eproto,
+  file_level_metadata_accounts_2faccounts_2eproto, 9, file_level_enum_descriptors_accounts_2faccounts_2eproto, file_level_service_descriptors_accounts_2faccounts_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1863,6 +1923,419 @@ void GetAccountCharactersResponse::InternalSwap(GetAccountCharactersResponse* ot
 }
 
 
+// ===================================================================
+
+void IsAccountExistsRequest::InitAsDefaultInstance() {
+}
+class IsAccountExistsRequest::_Internal {
+ public:
+};
+
+IsAccountExistsRequest::IsAccountExistsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.IsAccountExistsRequest)
+}
+IsAccountExistsRequest::IsAccountExistsRequest(const IsAccountExistsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  login_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_login().empty()) {
+    login_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.login_);
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.IsAccountExistsRequest)
+}
+
+void IsAccountExistsRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_IsAccountExistsRequest_accounts_2faccounts_2eproto.base);
+  login_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+IsAccountExistsRequest::~IsAccountExistsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.IsAccountExistsRequest)
+  SharedDtor();
+}
+
+void IsAccountExistsRequest::SharedDtor() {
+  login_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void IsAccountExistsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const IsAccountExistsRequest& IsAccountExistsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IsAccountExistsRequest_accounts_2faccounts_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void IsAccountExistsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.IsAccountExistsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  login_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+const char* IsAccountExistsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string login = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_login();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.IsAccountExistsRequest.login"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* IsAccountExistsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.IsAccountExistsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string login = 1;
+  if (this->login().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_login().data(), static_cast<int>(this->_internal_login().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.IsAccountExistsRequest.login");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_login(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.IsAccountExistsRequest)
+  return target;
+}
+
+size_t IsAccountExistsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.IsAccountExistsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string login = 1;
+  if (this->login().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_login());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void IsAccountExistsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.IsAccountExistsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IsAccountExistsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsAccountExistsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.IsAccountExistsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.IsAccountExistsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void IsAccountExistsRequest::MergeFrom(const IsAccountExistsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.IsAccountExistsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.login().size() > 0) {
+
+    login_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.login_);
+  }
+}
+
+void IsAccountExistsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.IsAccountExistsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void IsAccountExistsRequest::CopyFrom(const IsAccountExistsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.IsAccountExistsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IsAccountExistsRequest::IsInitialized() const {
+  return true;
+}
+
+void IsAccountExistsRequest::InternalSwap(IsAccountExistsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  login_.Swap(&other->login_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata IsAccountExistsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void IsAccountExistsResponse::InitAsDefaultInstance() {
+}
+class IsAccountExistsResponse::_Internal {
+ public:
+};
+
+IsAccountExistsResponse::IsAccountExistsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.IsAccountExistsResponse)
+}
+IsAccountExistsResponse::IsAccountExistsResponse(const IsAccountExistsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&exists_, &from.exists_,
+    static_cast<size_t>(reinterpret_cast<char*>(&id_) -
+    reinterpret_cast<char*>(&exists_)) + sizeof(id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.IsAccountExistsResponse)
+}
+
+void IsAccountExistsResponse::SharedCtor() {
+  ::memset(&exists_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&exists_)) + sizeof(id_));
+}
+
+IsAccountExistsResponse::~IsAccountExistsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.IsAccountExistsResponse)
+  SharedDtor();
+}
+
+void IsAccountExistsResponse::SharedDtor() {
+}
+
+void IsAccountExistsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const IsAccountExistsResponse& IsAccountExistsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IsAccountExistsResponse_accounts_2faccounts_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void IsAccountExistsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.IsAccountExistsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&exists_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&id_) -
+      reinterpret_cast<char*>(&exists_)) + sizeof(id_));
+  _internal_metadata_.Clear();
+}
+
+const char* IsAccountExistsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bool exists = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          exists_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* IsAccountExistsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.IsAccountExistsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool exists = 1;
+  if (this->exists() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_exists(), target);
+  }
+
+  // uint32 id = 2;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.IsAccountExistsResponse)
+  return target;
+}
+
+size_t IsAccountExistsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.IsAccountExistsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool exists = 1;
+  if (this->exists() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // uint32 id = 2;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void IsAccountExistsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.IsAccountExistsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IsAccountExistsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsAccountExistsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.IsAccountExistsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.IsAccountExistsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void IsAccountExistsResponse::MergeFrom(const IsAccountExistsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.IsAccountExistsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.exists() != 0) {
+    _internal_set_exists(from._internal_exists());
+  }
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void IsAccountExistsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.IsAccountExistsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void IsAccountExistsResponse::CopyFrom(const IsAccountExistsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.IsAccountExistsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IsAccountExistsResponse::IsInitialized() const {
+  return true;
+}
+
+void IsAccountExistsResponse::InternalSwap(IsAccountExistsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(exists_, other->exists_);
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata IsAccountExistsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
@@ -1886,6 +2359,12 @@ template<> PROTOBUF_NOINLINE ::mruv::LogInResponse* Arena::CreateMaybeMessage< :
 }
 template<> PROTOBUF_NOINLINE ::mruv::GetAccountCharactersResponse* Arena::CreateMaybeMessage< ::mruv::GetAccountCharactersResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::GetAccountCharactersResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::IsAccountExistsRequest* Arena::CreateMaybeMessage< ::mruv::IsAccountExistsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::IsAccountExistsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::IsAccountExistsResponse* Arena::CreateMaybeMessage< ::mruv::IsAccountExistsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::IsAccountExistsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
