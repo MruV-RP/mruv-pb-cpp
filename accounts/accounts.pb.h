@@ -33,7 +33,6 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
-#include "characters/characters.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_accounts_2faccounts_2eproto
@@ -49,7 +48,7 @@ struct TableStruct_accounts_2faccounts_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[10]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,21 +56,24 @@ struct TableStruct_accounts_2faccounts_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2faccounts_2eproto;
 namespace mruv {
-class Account;
-class AccountDefaultTypeInternal;
-extern AccountDefaultTypeInternal _Account_default_instance_;
-class AccountID;
-class AccountIDDefaultTypeInternal;
-extern AccountIDDefaultTypeInternal _AccountID_default_instance_;
+class GetAccountCharactersRequest;
+class GetAccountCharactersRequestDefaultTypeInternal;
+extern GetAccountCharactersRequestDefaultTypeInternal _GetAccountCharactersRequest_default_instance_;
 class GetAccountCharactersResponse;
 class GetAccountCharactersResponseDefaultTypeInternal;
 extern GetAccountCharactersResponseDefaultTypeInternal _GetAccountCharactersResponse_default_instance_;
-class IsAccountExistsRequest;
-class IsAccountExistsRequestDefaultTypeInternal;
-extern IsAccountExistsRequestDefaultTypeInternal _IsAccountExistsRequest_default_instance_;
-class IsAccountExistsResponse;
-class IsAccountExistsResponseDefaultTypeInternal;
-extern IsAccountExistsResponseDefaultTypeInternal _IsAccountExistsResponse_default_instance_;
+class GetAccountRequest;
+class GetAccountRequestDefaultTypeInternal;
+extern GetAccountRequestDefaultTypeInternal _GetAccountRequest_default_instance_;
+class GetAccountResponse;
+class GetAccountResponseDefaultTypeInternal;
+extern GetAccountResponseDefaultTypeInternal _GetAccountResponse_default_instance_;
+class IsAccountExistRequest;
+class IsAccountExistRequestDefaultTypeInternal;
+extern IsAccountExistRequestDefaultTypeInternal _IsAccountExistRequest_default_instance_;
+class IsAccountExistResponse;
+class IsAccountExistResponseDefaultTypeInternal;
+extern IsAccountExistResponseDefaultTypeInternal _IsAccountExistResponse_default_instance_;
 class LogInRequest;
 class LogInRequestDefaultTypeInternal;
 extern LogInRequestDefaultTypeInternal _LogInRequest_default_instance_;
@@ -86,11 +88,12 @@ class RegisterAccountResponseDefaultTypeInternal;
 extern RegisterAccountResponseDefaultTypeInternal _RegisterAccountResponse_default_instance_;
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::Account* Arena::CreateMaybeMessage<::mruv::Account>(Arena*);
-template<> ::mruv::AccountID* Arena::CreateMaybeMessage<::mruv::AccountID>(Arena*);
+template<> ::mruv::GetAccountCharactersRequest* Arena::CreateMaybeMessage<::mruv::GetAccountCharactersRequest>(Arena*);
 template<> ::mruv::GetAccountCharactersResponse* Arena::CreateMaybeMessage<::mruv::GetAccountCharactersResponse>(Arena*);
-template<> ::mruv::IsAccountExistsRequest* Arena::CreateMaybeMessage<::mruv::IsAccountExistsRequest>(Arena*);
-template<> ::mruv::IsAccountExistsResponse* Arena::CreateMaybeMessage<::mruv::IsAccountExistsResponse>(Arena*);
+template<> ::mruv::GetAccountRequest* Arena::CreateMaybeMessage<::mruv::GetAccountRequest>(Arena*);
+template<> ::mruv::GetAccountResponse* Arena::CreateMaybeMessage<::mruv::GetAccountResponse>(Arena*);
+template<> ::mruv::IsAccountExistRequest* Arena::CreateMaybeMessage<::mruv::IsAccountExistRequest>(Arena*);
+template<> ::mruv::IsAccountExistResponse* Arena::CreateMaybeMessage<::mruv::IsAccountExistResponse>(Arena*);
 template<> ::mruv::LogInRequest* Arena::CreateMaybeMessage<::mruv::LogInRequest>(Arena*);
 template<> ::mruv::LogInResponse* Arena::CreateMaybeMessage<::mruv::LogInResponse>(Arena*);
 template<> ::mruv::RegisterAccountRequest* Arena::CreateMaybeMessage<::mruv::RegisterAccountRequest>(Arena*);
@@ -99,316 +102,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
 
 // ===================================================================
-
-class AccountID :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.AccountID) */ {
- public:
-  AccountID();
-  virtual ~AccountID();
-
-  AccountID(const AccountID& from);
-  AccountID(AccountID&& from) noexcept
-    : AccountID() {
-    *this = ::std::move(from);
-  }
-
-  inline AccountID& operator=(const AccountID& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline AccountID& operator=(AccountID&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const AccountID& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AccountID* internal_default_instance() {
-    return reinterpret_cast<const AccountID*>(
-               &_AccountID_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(AccountID& a, AccountID& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(AccountID* other) {
-    if (other == this) return;
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AccountID* New() const final {
-    return CreateMaybeMessage<AccountID>(nullptr);
-  }
-
-  AccountID* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<AccountID>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const AccountID& from);
-  void MergeFrom(const AccountID& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AccountID* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.AccountID";
-  }
-  private:
-  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_accounts_2faccounts_2eproto);
-    return ::descriptor_table_accounts_2faccounts_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kIdFieldNumber = 1,
-  };
-  // uint32 id = 1;
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:mruv.AccountID)
- private:
-  class _Internal;
-
-  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_accounts_2faccounts_2eproto;
-};
-// -------------------------------------------------------------------
-
-class Account :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.Account) */ {
- public:
-  Account();
-  virtual ~Account();
-
-  Account(const Account& from);
-  Account(Account&& from) noexcept
-    : Account() {
-    *this = ::std::move(from);
-  }
-
-  inline Account& operator=(const Account& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Account& operator=(Account&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const Account& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Account* internal_default_instance() {
-    return reinterpret_cast<const Account*>(
-               &_Account_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(Account& a, Account& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Account* other) {
-    if (other == this) return;
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Account* New() const final {
-    return CreateMaybeMessage<Account>(nullptr);
-  }
-
-  Account* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Account>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Account& from);
-  void MergeFrom(const Account& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Account* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.Account";
-  }
-  private:
-  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_accounts_2faccounts_2eproto);
-    return ::descriptor_table_accounts_2faccounts_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kLoginFieldNumber = 2,
-    kNickFieldNumber = 3,
-    kEmailFieldNumber = 4,
-    kIdFieldNumber = 1,
-  };
-  // string login = 2;
-  void clear_login();
-  const std::string& login() const;
-  void set_login(const std::string& value);
-  void set_login(std::string&& value);
-  void set_login(const char* value);
-  void set_login(const char* value, size_t size);
-  std::string* mutable_login();
-  std::string* release_login();
-  void set_allocated_login(std::string* login);
-  private:
-  const std::string& _internal_login() const;
-  void _internal_set_login(const std::string& value);
-  std::string* _internal_mutable_login();
-  public:
-
-  // string nick = 3;
-  void clear_nick();
-  const std::string& nick() const;
-  void set_nick(const std::string& value);
-  void set_nick(std::string&& value);
-  void set_nick(const char* value);
-  void set_nick(const char* value, size_t size);
-  std::string* mutable_nick();
-  std::string* release_nick();
-  void set_allocated_nick(std::string* nick);
-  private:
-  const std::string& _internal_nick() const;
-  void _internal_set_nick(const std::string& value);
-  std::string* _internal_mutable_nick();
-  public:
-
-  // string email = 4;
-  void clear_email();
-  const std::string& email() const;
-  void set_email(const std::string& value);
-  void set_email(std::string&& value);
-  void set_email(const char* value);
-  void set_email(const char* value, size_t size);
-  std::string* mutable_email();
-  std::string* release_email();
-  void set_allocated_email(std::string* email);
-  private:
-  const std::string& _internal_email() const;
-  void _internal_set_email(const std::string& value);
-  std::string* _internal_mutable_email();
-  public:
-
-  // uint32 id = 1;
-  void clear_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
-  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
-  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:mruv.Account)
- private:
-  class _Internal;
-
-  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nick_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_accounts_2faccounts_2eproto;
-};
-// -------------------------------------------------------------------
 
 class RegisterAccountRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.RegisterAccountRequest) */ {
@@ -452,7 +145,7 @@ class RegisterAccountRequest :
                &_RegisterAccountRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    0;
 
   friend void swap(RegisterAccountRequest& a, RegisterAccountRequest& b) {
     a.Swap(&b);
@@ -516,9 +209,26 @@ class RegisterAccountRequest :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kLoginFieldNumber = 1,
     kPasswordFieldNumber = 2,
-    kAccountFieldNumber = 1,
+    kEmailFieldNumber = 3,
   };
+  // string login = 1;
+  void clear_login();
+  const std::string& login() const;
+  void set_login(const std::string& value);
+  void set_login(std::string&& value);
+  void set_login(const char* value);
+  void set_login(const char* value, size_t size);
+  std::string* mutable_login();
+  std::string* release_login();
+  void set_allocated_login(std::string* login);
+  private:
+  const std::string& _internal_login() const;
+  void _internal_set_login(const std::string& value);
+  std::string* _internal_mutable_login();
+  public:
+
   // string password = 2;
   void clear_password();
   const std::string& password() const;
@@ -535,19 +245,20 @@ class RegisterAccountRequest :
   std::string* _internal_mutable_password();
   public:
 
-  // .mruv.Account account = 1;
-  bool has_account() const;
+  // string email = 3;
+  void clear_email();
+  const std::string& email() const;
+  void set_email(const std::string& value);
+  void set_email(std::string&& value);
+  void set_email(const char* value);
+  void set_email(const char* value, size_t size);
+  std::string* mutable_email();
+  std::string* release_email();
+  void set_allocated_email(std::string* email);
   private:
-  bool _internal_has_account() const;
-  public:
-  void clear_account();
-  const ::mruv::Account& account() const;
-  ::mruv::Account* release_account();
-  ::mruv::Account* mutable_account();
-  void set_allocated_account(::mruv::Account* account);
-  private:
-  const ::mruv::Account& _internal_account() const;
-  ::mruv::Account* _internal_mutable_account();
+  const std::string& _internal_email() const;
+  void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
   public:
 
   // @@protoc_insertion_point(class_scope:mruv.RegisterAccountRequest)
@@ -555,8 +266,9 @@ class RegisterAccountRequest :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr password_;
-  ::mruv::Account* account_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2faccounts_2eproto;
 };
@@ -604,7 +316,7 @@ class RegisterAccountResponse :
                &_RegisterAccountResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    1;
 
   friend void swap(RegisterAccountResponse& a, RegisterAccountResponse& b) {
     a.Swap(&b);
@@ -743,7 +455,7 @@ class LogInRequest :
                &_LogInRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    2;
 
   friend void swap(LogInRequest& a, LogInRequest& b) {
     a.Swap(&b);
@@ -896,7 +608,7 @@ class LogInResponse :
                &_LogInResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    3;
 
   friend void swap(LogInResponse& a, LogInResponse& b) {
     a.Swap(&b);
@@ -993,6 +705,429 @@ class LogInResponse :
 };
 // -------------------------------------------------------------------
 
+class GetAccountRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountRequest) */ {
+ public:
+  GetAccountRequest();
+  virtual ~GetAccountRequest();
+
+  GetAccountRequest(const GetAccountRequest& from);
+  GetAccountRequest(GetAccountRequest&& from) noexcept
+    : GetAccountRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAccountRequest& operator=(const GetAccountRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAccountRequest& operator=(GetAccountRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetAccountRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetAccountRequest* internal_default_instance() {
+    return reinterpret_cast<const GetAccountRequest*>(
+               &_GetAccountRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(GetAccountRequest& a, GetAccountRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAccountRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetAccountRequest* New() const final {
+    return CreateMaybeMessage<GetAccountRequest>(nullptr);
+  }
+
+  GetAccountRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetAccountRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetAccountRequest& from);
+  void MergeFrom(const GetAccountRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetAccountRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.GetAccountRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_accounts_2faccounts_2eproto);
+    return ::descriptor_table_accounts_2faccounts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLoginFieldNumber = 1,
+  };
+  // string login = 1;
+  void clear_login();
+  const std::string& login() const;
+  void set_login(const std::string& value);
+  void set_login(std::string&& value);
+  void set_login(const char* value);
+  void set_login(const char* value, size_t size);
+  std::string* mutable_login();
+  std::string* release_login();
+  void set_allocated_login(std::string* login);
+  private:
+  const std::string& _internal_login() const;
+  void _internal_set_login(const std::string& value);
+  std::string* _internal_mutable_login();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.GetAccountRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetAccountResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountResponse) */ {
+ public:
+  GetAccountResponse();
+  virtual ~GetAccountResponse();
+
+  GetAccountResponse(const GetAccountResponse& from);
+  GetAccountResponse(GetAccountResponse&& from) noexcept
+    : GetAccountResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAccountResponse& operator=(const GetAccountResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAccountResponse& operator=(GetAccountResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetAccountResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetAccountResponse* internal_default_instance() {
+    return reinterpret_cast<const GetAccountResponse*>(
+               &_GetAccountResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(GetAccountResponse& a, GetAccountResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAccountResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetAccountResponse* New() const final {
+    return CreateMaybeMessage<GetAccountResponse>(nullptr);
+  }
+
+  GetAccountResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetAccountResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetAccountResponse& from);
+  void MergeFrom(const GetAccountResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetAccountResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.GetAccountResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_accounts_2faccounts_2eproto);
+    return ::descriptor_table_accounts_2faccounts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLoginFieldNumber = 1,
+    kEmailFieldNumber = 2,
+  };
+  // string login = 1;
+  void clear_login();
+  const std::string& login() const;
+  void set_login(const std::string& value);
+  void set_login(std::string&& value);
+  void set_login(const char* value);
+  void set_login(const char* value, size_t size);
+  std::string* mutable_login();
+  std::string* release_login();
+  void set_allocated_login(std::string* login);
+  private:
+  const std::string& _internal_login() const;
+  void _internal_set_login(const std::string& value);
+  std::string* _internal_mutable_login();
+  public:
+
+  // string email = 2;
+  void clear_email();
+  const std::string& email() const;
+  void set_email(const std::string& value);
+  void set_email(std::string&& value);
+  void set_email(const char* value);
+  void set_email(const char* value, size_t size);
+  std::string* mutable_email();
+  std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.GetAccountResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetAccountCharactersRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountCharactersRequest) */ {
+ public:
+  GetAccountCharactersRequest();
+  virtual ~GetAccountCharactersRequest();
+
+  GetAccountCharactersRequest(const GetAccountCharactersRequest& from);
+  GetAccountCharactersRequest(GetAccountCharactersRequest&& from) noexcept
+    : GetAccountCharactersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAccountCharactersRequest& operator=(const GetAccountCharactersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAccountCharactersRequest& operator=(GetAccountCharactersRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetAccountCharactersRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetAccountCharactersRequest* internal_default_instance() {
+    return reinterpret_cast<const GetAccountCharactersRequest*>(
+               &_GetAccountCharactersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(GetAccountCharactersRequest& a, GetAccountCharactersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAccountCharactersRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetAccountCharactersRequest* New() const final {
+    return CreateMaybeMessage<GetAccountCharactersRequest>(nullptr);
+  }
+
+  GetAccountCharactersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetAccountCharactersRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetAccountCharactersRequest& from);
+  void MergeFrom(const GetAccountCharactersRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetAccountCharactersRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.GetAccountCharactersRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_accounts_2faccounts_2eproto);
+    return ::descriptor_table_accounts_2faccounts_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLoginFieldNumber = 1,
+  };
+  // string login = 1;
+  void clear_login();
+  const std::string& login() const;
+  void set_login(const std::string& value);
+  void set_login(std::string&& value);
+  void set_login(const char* value);
+  void set_login(const char* value, size_t size);
+  std::string* mutable_login();
+  std::string* release_login();
+  void set_allocated_login(std::string* login);
+  private:
+  const std::string& _internal_login() const;
+  void _internal_set_login(const std::string& value);
+  std::string* _internal_mutable_login();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.GetAccountCharactersRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_accounts_2faccounts_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetAccountCharactersResponse :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountCharactersResponse) */ {
  public:
@@ -1035,7 +1170,7 @@ class GetAccountCharactersResponse :
                &_GetAccountCharactersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(GetAccountCharactersResponse& a, GetAccountCharactersResponse& b) {
     a.Swap(&b);
@@ -1099,54 +1234,59 @@ class GetAccountCharactersResponse :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCharactersFieldNumber = 1,
+    kCharacterIdsFieldNumber = 1,
   };
-  // repeated .mruv.Character characters = 1;
-  int characters_size() const;
+  // repeated uint32 character_ids = 1;
+  int character_ids_size() const;
   private:
-  int _internal_characters_size() const;
+  int _internal_character_ids_size() const;
   public:
-  void clear_characters();
-  ::mruv::Character* mutable_characters(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Character >*
-      mutable_characters();
+  void clear_character_ids();
   private:
-  const ::mruv::Character& _internal_characters(int index) const;
-  ::mruv::Character* _internal_add_characters();
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_character_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
+      _internal_character_ids() const;
+  void _internal_add_character_ids(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
+      _internal_mutable_character_ids();
   public:
-  const ::mruv::Character& characters(int index) const;
-  ::mruv::Character* add_characters();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Character >&
-      characters() const;
+  ::PROTOBUF_NAMESPACE_ID::uint32 character_ids(int index) const;
+  void set_character_ids(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value);
+  void add_character_ids(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
+      character_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
+      mutable_character_ids();
 
   // @@protoc_insertion_point(class_scope:mruv.GetAccountCharactersResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Character > characters_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 > character_ids_;
+  mutable std::atomic<int> _character_ids_cached_byte_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_accounts_2faccounts_2eproto;
 };
 // -------------------------------------------------------------------
 
-class IsAccountExistsRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.IsAccountExistsRequest) */ {
+class IsAccountExistRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.IsAccountExistRequest) */ {
  public:
-  IsAccountExistsRequest();
-  virtual ~IsAccountExistsRequest();
+  IsAccountExistRequest();
+  virtual ~IsAccountExistRequest();
 
-  IsAccountExistsRequest(const IsAccountExistsRequest& from);
-  IsAccountExistsRequest(IsAccountExistsRequest&& from) noexcept
-    : IsAccountExistsRequest() {
+  IsAccountExistRequest(const IsAccountExistRequest& from);
+  IsAccountExistRequest(IsAccountExistRequest&& from) noexcept
+    : IsAccountExistRequest() {
     *this = ::std::move(from);
   }
 
-  inline IsAccountExistsRequest& operator=(const IsAccountExistsRequest& from) {
+  inline IsAccountExistRequest& operator=(const IsAccountExistRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IsAccountExistsRequest& operator=(IsAccountExistsRequest&& from) noexcept {
+  inline IsAccountExistRequest& operator=(IsAccountExistRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1164,37 +1304,37 @@ class IsAccountExistsRequest :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const IsAccountExistsRequest& default_instance();
+  static const IsAccountExistRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const IsAccountExistsRequest* internal_default_instance() {
-    return reinterpret_cast<const IsAccountExistsRequest*>(
-               &_IsAccountExistsRequest_default_instance_);
+  static inline const IsAccountExistRequest* internal_default_instance() {
+    return reinterpret_cast<const IsAccountExistRequest*>(
+               &_IsAccountExistRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
-  friend void swap(IsAccountExistsRequest& a, IsAccountExistsRequest& b) {
+  friend void swap(IsAccountExistRequest& a, IsAccountExistRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(IsAccountExistsRequest* other) {
+  inline void Swap(IsAccountExistRequest* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline IsAccountExistsRequest* New() const final {
-    return CreateMaybeMessage<IsAccountExistsRequest>(nullptr);
+  inline IsAccountExistRequest* New() const final {
+    return CreateMaybeMessage<IsAccountExistRequest>(nullptr);
   }
 
-  IsAccountExistsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<IsAccountExistsRequest>(arena);
+  IsAccountExistRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<IsAccountExistRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const IsAccountExistsRequest& from);
-  void MergeFrom(const IsAccountExistsRequest& from);
+  void CopyFrom(const IsAccountExistRequest& from);
+  void MergeFrom(const IsAccountExistRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1208,10 +1348,10 @@ class IsAccountExistsRequest :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IsAccountExistsRequest* other);
+  void InternalSwap(IsAccountExistRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.IsAccountExistsRequest";
+    return "mruv.IsAccountExistRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1254,7 +1394,7 @@ class IsAccountExistsRequest :
   std::string* _internal_mutable_login();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.IsAccountExistsRequest)
+  // @@protoc_insertion_point(class_scope:mruv.IsAccountExistRequest)
  private:
   class _Internal;
 
@@ -1265,23 +1405,23 @@ class IsAccountExistsRequest :
 };
 // -------------------------------------------------------------------
 
-class IsAccountExistsResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.IsAccountExistsResponse) */ {
+class IsAccountExistResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.IsAccountExistResponse) */ {
  public:
-  IsAccountExistsResponse();
-  virtual ~IsAccountExistsResponse();
+  IsAccountExistResponse();
+  virtual ~IsAccountExistResponse();
 
-  IsAccountExistsResponse(const IsAccountExistsResponse& from);
-  IsAccountExistsResponse(IsAccountExistsResponse&& from) noexcept
-    : IsAccountExistsResponse() {
+  IsAccountExistResponse(const IsAccountExistResponse& from);
+  IsAccountExistResponse(IsAccountExistResponse&& from) noexcept
+    : IsAccountExistResponse() {
     *this = ::std::move(from);
   }
 
-  inline IsAccountExistsResponse& operator=(const IsAccountExistsResponse& from) {
+  inline IsAccountExistResponse& operator=(const IsAccountExistResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline IsAccountExistsResponse& operator=(IsAccountExistsResponse&& from) noexcept {
+  inline IsAccountExistResponse& operator=(IsAccountExistResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1299,37 +1439,37 @@ class IsAccountExistsResponse :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const IsAccountExistsResponse& default_instance();
+  static const IsAccountExistResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const IsAccountExistsResponse* internal_default_instance() {
-    return reinterpret_cast<const IsAccountExistsResponse*>(
-               &_IsAccountExistsResponse_default_instance_);
+  static inline const IsAccountExistResponse* internal_default_instance() {
+    return reinterpret_cast<const IsAccountExistResponse*>(
+               &_IsAccountExistResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
-  friend void swap(IsAccountExistsResponse& a, IsAccountExistsResponse& b) {
+  friend void swap(IsAccountExistResponse& a, IsAccountExistResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(IsAccountExistsResponse* other) {
+  inline void Swap(IsAccountExistResponse* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline IsAccountExistsResponse* New() const final {
-    return CreateMaybeMessage<IsAccountExistsResponse>(nullptr);
+  inline IsAccountExistResponse* New() const final {
+    return CreateMaybeMessage<IsAccountExistResponse>(nullptr);
   }
 
-  IsAccountExistsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<IsAccountExistsResponse>(arena);
+  IsAccountExistResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<IsAccountExistResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const IsAccountExistsResponse& from);
-  void MergeFrom(const IsAccountExistsResponse& from);
+  void CopyFrom(const IsAccountExistResponse& from);
+  void MergeFrom(const IsAccountExistResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -1343,10 +1483,10 @@ class IsAccountExistsResponse :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(IsAccountExistsResponse* other);
+  void InternalSwap(IsAccountExistResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.IsAccountExistsResponse";
+    return "mruv.IsAccountExistResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1392,7 +1532,7 @@ class IsAccountExistsResponse :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.IsAccountExistsResponse)
+  // @@protoc_insertion_point(class_scope:mruv.IsAccountExistResponse)
  private:
   class _Internal;
 
@@ -1411,294 +1551,66 @@ class IsAccountExistsResponse :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// AccountID
+// RegisterAccountRequest
 
-// uint32 id = 1;
-inline void AccountID::clear_id() {
-  id_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountID::_internal_id() const {
-  return id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 AccountID::id() const {
-  // @@protoc_insertion_point(field_get:mruv.AccountID.id)
-  return _internal_id();
-}
-inline void AccountID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  id_ = value;
-}
-inline void AccountID::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.AccountID.id)
-}
-
-// -------------------------------------------------------------------
-
-// Account
-
-// uint32 id = 1;
-inline void Account::clear_id() {
-  id_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Account::_internal_id() const {
-  return id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Account::id() const {
-  // @@protoc_insertion_point(field_get:mruv.Account.id)
-  return _internal_id();
-}
-inline void Account::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  id_ = value;
-}
-inline void Account::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.Account.id)
-}
-
-// string login = 2;
-inline void Account::clear_login() {
+// string login = 1;
+inline void RegisterAccountRequest::clear_login() {
   login_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& Account::login() const {
-  // @@protoc_insertion_point(field_get:mruv.Account.login)
+inline const std::string& RegisterAccountRequest::login() const {
+  // @@protoc_insertion_point(field_get:mruv.RegisterAccountRequest.login)
   return _internal_login();
 }
-inline void Account::set_login(const std::string& value) {
+inline void RegisterAccountRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.Account.login)
+  // @@protoc_insertion_point(field_set:mruv.RegisterAccountRequest.login)
 }
-inline std::string* Account::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.Account.login)
+inline std::string* RegisterAccountRequest::mutable_login() {
+  // @@protoc_insertion_point(field_mutable:mruv.RegisterAccountRequest.login)
   return _internal_mutable_login();
 }
-inline const std::string& Account::_internal_login() const {
+inline const std::string& RegisterAccountRequest::_internal_login() const {
   return login_.GetNoArena();
 }
-inline void Account::_internal_set_login(const std::string& value) {
+inline void RegisterAccountRequest::_internal_set_login(const std::string& value) {
   
   login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void Account::set_login(std::string&& value) {
+inline void RegisterAccountRequest::set_login(std::string&& value) {
   
   login_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.Account.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.RegisterAccountRequest.login)
 }
-inline void Account::set_login(const char* value) {
+inline void RegisterAccountRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.Account.login)
+  // @@protoc_insertion_point(field_set_char:mruv.RegisterAccountRequest.login)
 }
-inline void Account::set_login(const char* value, size_t size) {
+inline void RegisterAccountRequest::set_login(const char* value, size_t size) {
   
   login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.Account.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.RegisterAccountRequest.login)
 }
-inline std::string* Account::_internal_mutable_login() {
+inline std::string* RegisterAccountRequest::_internal_mutable_login() {
   
   return login_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* Account::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.Account.login)
+inline std::string* RegisterAccountRequest::release_login() {
+  // @@protoc_insertion_point(field_release:mruv.RegisterAccountRequest.login)
   
   return login_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void Account::set_allocated_login(std::string* login) {
+inline void RegisterAccountRequest::set_allocated_login(std::string* login) {
   if (login != nullptr) {
     
   } else {
     
   }
   login_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login);
-  // @@protoc_insertion_point(field_set_allocated:mruv.Account.login)
-}
-
-// string nick = 3;
-inline void Account::clear_nick() {
-  nick_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline const std::string& Account::nick() const {
-  // @@protoc_insertion_point(field_get:mruv.Account.nick)
-  return _internal_nick();
-}
-inline void Account::set_nick(const std::string& value) {
-  _internal_set_nick(value);
-  // @@protoc_insertion_point(field_set:mruv.Account.nick)
-}
-inline std::string* Account::mutable_nick() {
-  // @@protoc_insertion_point(field_mutable:mruv.Account.nick)
-  return _internal_mutable_nick();
-}
-inline const std::string& Account::_internal_nick() const {
-  return nick_.GetNoArena();
-}
-inline void Account::_internal_set_nick(const std::string& value) {
-  
-  nick_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void Account::set_nick(std::string&& value) {
-  
-  nick_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.Account.nick)
-}
-inline void Account::set_nick(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  nick_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.Account.nick)
-}
-inline void Account::set_nick(const char* value, size_t size) {
-  
-  nick_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.Account.nick)
-}
-inline std::string* Account::_internal_mutable_nick() {
-  
-  return nick_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* Account::release_nick() {
-  // @@protoc_insertion_point(field_release:mruv.Account.nick)
-  
-  return nick_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void Account::set_allocated_nick(std::string* nick) {
-  if (nick != nullptr) {
-    
-  } else {
-    
-  }
-  nick_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), nick);
-  // @@protoc_insertion_point(field_set_allocated:mruv.Account.nick)
-}
-
-// string email = 4;
-inline void Account::clear_email() {
-  email_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline const std::string& Account::email() const {
-  // @@protoc_insertion_point(field_get:mruv.Account.email)
-  return _internal_email();
-}
-inline void Account::set_email(const std::string& value) {
-  _internal_set_email(value);
-  // @@protoc_insertion_point(field_set:mruv.Account.email)
-}
-inline std::string* Account::mutable_email() {
-  // @@protoc_insertion_point(field_mutable:mruv.Account.email)
-  return _internal_mutable_email();
-}
-inline const std::string& Account::_internal_email() const {
-  return email_.GetNoArena();
-}
-inline void Account::_internal_set_email(const std::string& value) {
-  
-  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void Account::set_email(std::string&& value) {
-  
-  email_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.Account.email)
-}
-inline void Account::set_email(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.Account.email)
-}
-inline void Account::set_email(const char* value, size_t size) {
-  
-  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.Account.email)
-}
-inline std::string* Account::_internal_mutable_email() {
-  
-  return email_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* Account::release_email() {
-  // @@protoc_insertion_point(field_release:mruv.Account.email)
-  
-  return email_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void Account::set_allocated_email(std::string* email) {
-  if (email != nullptr) {
-    
-  } else {
-    
-  }
-  email_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email);
-  // @@protoc_insertion_point(field_set_allocated:mruv.Account.email)
-}
-
-// -------------------------------------------------------------------
-
-// RegisterAccountRequest
-
-// .mruv.Account account = 1;
-inline bool RegisterAccountRequest::_internal_has_account() const {
-  return this != internal_default_instance() && account_ != nullptr;
-}
-inline bool RegisterAccountRequest::has_account() const {
-  return _internal_has_account();
-}
-inline void RegisterAccountRequest::clear_account() {
-  if (GetArenaNoVirtual() == nullptr && account_ != nullptr) {
-    delete account_;
-  }
-  account_ = nullptr;
-}
-inline const ::mruv::Account& RegisterAccountRequest::_internal_account() const {
-  const ::mruv::Account* p = account_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::Account*>(
-      &::mruv::_Account_default_instance_);
-}
-inline const ::mruv::Account& RegisterAccountRequest::account() const {
-  // @@protoc_insertion_point(field_get:mruv.RegisterAccountRequest.account)
-  return _internal_account();
-}
-inline ::mruv::Account* RegisterAccountRequest::release_account() {
-  // @@protoc_insertion_point(field_release:mruv.RegisterAccountRequest.account)
-  
-  ::mruv::Account* temp = account_;
-  account_ = nullptr;
-  return temp;
-}
-inline ::mruv::Account* RegisterAccountRequest::_internal_mutable_account() {
-  
-  if (account_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::Account>(GetArenaNoVirtual());
-    account_ = p;
-  }
-  return account_;
-}
-inline ::mruv::Account* RegisterAccountRequest::mutable_account() {
-  // @@protoc_insertion_point(field_mutable:mruv.RegisterAccountRequest.account)
-  return _internal_mutable_account();
-}
-inline void RegisterAccountRequest::set_allocated_account(::mruv::Account* account) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete account_;
-  }
-  if (account) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      account = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, account, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  account_ = account;
-  // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.account)
+  // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.login)
 }
 
 // string password = 2;
@@ -1759,6 +1671,66 @@ inline void RegisterAccountRequest::set_allocated_password(std::string* password
   }
   password_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), password);
   // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.password)
+}
+
+// string email = 3;
+inline void RegisterAccountRequest::clear_email() {
+  email_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& RegisterAccountRequest::email() const {
+  // @@protoc_insertion_point(field_get:mruv.RegisterAccountRequest.email)
+  return _internal_email();
+}
+inline void RegisterAccountRequest::set_email(const std::string& value) {
+  _internal_set_email(value);
+  // @@protoc_insertion_point(field_set:mruv.RegisterAccountRequest.email)
+}
+inline std::string* RegisterAccountRequest::mutable_email() {
+  // @@protoc_insertion_point(field_mutable:mruv.RegisterAccountRequest.email)
+  return _internal_mutable_email();
+}
+inline const std::string& RegisterAccountRequest::_internal_email() const {
+  return email_.GetNoArena();
+}
+inline void RegisterAccountRequest::_internal_set_email(const std::string& value) {
+  
+  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void RegisterAccountRequest::set_email(std::string&& value) {
+  
+  email_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.RegisterAccountRequest.email)
+}
+inline void RegisterAccountRequest::set_email(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.RegisterAccountRequest.email)
+}
+inline void RegisterAccountRequest::set_email(const char* value, size_t size) {
+  
+  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.RegisterAccountRequest.email)
+}
+inline std::string* RegisterAccountRequest::_internal_mutable_email() {
+  
+  return email_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* RegisterAccountRequest::release_email() {
+  // @@protoc_insertion_point(field_release:mruv.RegisterAccountRequest.email)
+  
+  return email_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void RegisterAccountRequest::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.email)
 }
 
 // -------------------------------------------------------------------
@@ -1975,155 +1947,420 @@ inline void LogInResponse::set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value)
 
 // -------------------------------------------------------------------
 
-// GetAccountCharactersResponse
-
-// repeated .mruv.Character characters = 1;
-inline int GetAccountCharactersResponse::_internal_characters_size() const {
-  return characters_.size();
-}
-inline int GetAccountCharactersResponse::characters_size() const {
-  return _internal_characters_size();
-}
-inline ::mruv::Character* GetAccountCharactersResponse::mutable_characters(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetAccountCharactersResponse.characters)
-  return characters_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Character >*
-GetAccountCharactersResponse::mutable_characters() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetAccountCharactersResponse.characters)
-  return &characters_;
-}
-inline const ::mruv::Character& GetAccountCharactersResponse::_internal_characters(int index) const {
-  return characters_.Get(index);
-}
-inline const ::mruv::Character& GetAccountCharactersResponse::characters(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetAccountCharactersResponse.characters)
-  return _internal_characters(index);
-}
-inline ::mruv::Character* GetAccountCharactersResponse::_internal_add_characters() {
-  return characters_.Add();
-}
-inline ::mruv::Character* GetAccountCharactersResponse::add_characters() {
-  // @@protoc_insertion_point(field_add:mruv.GetAccountCharactersResponse.characters)
-  return _internal_add_characters();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Character >&
-GetAccountCharactersResponse::characters() const {
-  // @@protoc_insertion_point(field_list:mruv.GetAccountCharactersResponse.characters)
-  return characters_;
-}
-
-// -------------------------------------------------------------------
-
-// IsAccountExistsRequest
+// GetAccountRequest
 
 // string login = 1;
-inline void IsAccountExistsRequest::clear_login() {
+inline void GetAccountRequest::clear_login() {
   login_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline const std::string& IsAccountExistsRequest::login() const {
-  // @@protoc_insertion_point(field_get:mruv.IsAccountExistsRequest.login)
+inline const std::string& GetAccountRequest::login() const {
+  // @@protoc_insertion_point(field_get:mruv.GetAccountRequest.login)
   return _internal_login();
 }
-inline void IsAccountExistsRequest::set_login(const std::string& value) {
+inline void GetAccountRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.IsAccountExistsRequest.login)
+  // @@protoc_insertion_point(field_set:mruv.GetAccountRequest.login)
 }
-inline std::string* IsAccountExistsRequest::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.IsAccountExistsRequest.login)
+inline std::string* GetAccountRequest::mutable_login() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetAccountRequest.login)
   return _internal_mutable_login();
 }
-inline const std::string& IsAccountExistsRequest::_internal_login() const {
+inline const std::string& GetAccountRequest::_internal_login() const {
   return login_.GetNoArena();
 }
-inline void IsAccountExistsRequest::_internal_set_login(const std::string& value) {
+inline void GetAccountRequest::_internal_set_login(const std::string& value) {
   
   login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
-inline void IsAccountExistsRequest::set_login(std::string&& value) {
+inline void GetAccountRequest::set_login(std::string&& value) {
   
   login_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.IsAccountExistsRequest.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountRequest.login)
 }
-inline void IsAccountExistsRequest::set_login(const char* value) {
+inline void GetAccountRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.IsAccountExistsRequest.login)
+  // @@protoc_insertion_point(field_set_char:mruv.GetAccountRequest.login)
 }
-inline void IsAccountExistsRequest::set_login(const char* value, size_t size) {
+inline void GetAccountRequest::set_login(const char* value, size_t size) {
   
   login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.IsAccountExistsRequest.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountRequest.login)
 }
-inline std::string* IsAccountExistsRequest::_internal_mutable_login() {
+inline std::string* GetAccountRequest::_internal_mutable_login() {
   
   return login_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline std::string* IsAccountExistsRequest::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.IsAccountExistsRequest.login)
+inline std::string* GetAccountRequest::release_login() {
+  // @@protoc_insertion_point(field_release:mruv.GetAccountRequest.login)
   
   return login_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
-inline void IsAccountExistsRequest::set_allocated_login(std::string* login) {
+inline void GetAccountRequest::set_allocated_login(std::string* login) {
   if (login != nullptr) {
     
   } else {
     
   }
   login_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login);
-  // @@protoc_insertion_point(field_set_allocated:mruv.IsAccountExistsRequest.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountRequest.login)
 }
 
 // -------------------------------------------------------------------
 
-// IsAccountExistsResponse
+// GetAccountResponse
+
+// string login = 1;
+inline void GetAccountResponse::clear_login() {
+  login_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetAccountResponse::login() const {
+  // @@protoc_insertion_point(field_get:mruv.GetAccountResponse.login)
+  return _internal_login();
+}
+inline void GetAccountResponse::set_login(const std::string& value) {
+  _internal_set_login(value);
+  // @@protoc_insertion_point(field_set:mruv.GetAccountResponse.login)
+}
+inline std::string* GetAccountResponse::mutable_login() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetAccountResponse.login)
+  return _internal_mutable_login();
+}
+inline const std::string& GetAccountResponse::_internal_login() const {
+  return login_.GetNoArena();
+}
+inline void GetAccountResponse::_internal_set_login(const std::string& value) {
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void GetAccountResponse::set_login(std::string&& value) {
+  
+  login_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountResponse.login)
+}
+inline void GetAccountResponse::set_login(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.GetAccountResponse.login)
+}
+inline void GetAccountResponse::set_login(const char* value, size_t size) {
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountResponse.login)
+}
+inline std::string* GetAccountResponse::_internal_mutable_login() {
+  
+  return login_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetAccountResponse::release_login() {
+  // @@protoc_insertion_point(field_release:mruv.GetAccountResponse.login)
+  
+  return login_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetAccountResponse::set_allocated_login(std::string* login) {
+  if (login != nullptr) {
+    
+  } else {
+    
+  }
+  login_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login);
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountResponse.login)
+}
+
+// string email = 2;
+inline void GetAccountResponse::clear_email() {
+  email_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetAccountResponse::email() const {
+  // @@protoc_insertion_point(field_get:mruv.GetAccountResponse.email)
+  return _internal_email();
+}
+inline void GetAccountResponse::set_email(const std::string& value) {
+  _internal_set_email(value);
+  // @@protoc_insertion_point(field_set:mruv.GetAccountResponse.email)
+}
+inline std::string* GetAccountResponse::mutable_email() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetAccountResponse.email)
+  return _internal_mutable_email();
+}
+inline const std::string& GetAccountResponse::_internal_email() const {
+  return email_.GetNoArena();
+}
+inline void GetAccountResponse::_internal_set_email(const std::string& value) {
+  
+  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void GetAccountResponse::set_email(std::string&& value) {
+  
+  email_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountResponse.email)
+}
+inline void GetAccountResponse::set_email(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.GetAccountResponse.email)
+}
+inline void GetAccountResponse::set_email(const char* value, size_t size) {
+  
+  email_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountResponse.email)
+}
+inline std::string* GetAccountResponse::_internal_mutable_email() {
+  
+  return email_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetAccountResponse::release_email() {
+  // @@protoc_insertion_point(field_release:mruv.GetAccountResponse.email)
+  
+  return email_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetAccountResponse::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  email_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountResponse.email)
+}
+
+// -------------------------------------------------------------------
+
+// GetAccountCharactersRequest
+
+// string login = 1;
+inline void GetAccountCharactersRequest::clear_login() {
+  login_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& GetAccountCharactersRequest::login() const {
+  // @@protoc_insertion_point(field_get:mruv.GetAccountCharactersRequest.login)
+  return _internal_login();
+}
+inline void GetAccountCharactersRequest::set_login(const std::string& value) {
+  _internal_set_login(value);
+  // @@protoc_insertion_point(field_set:mruv.GetAccountCharactersRequest.login)
+}
+inline std::string* GetAccountCharactersRequest::mutable_login() {
+  // @@protoc_insertion_point(field_mutable:mruv.GetAccountCharactersRequest.login)
+  return _internal_mutable_login();
+}
+inline const std::string& GetAccountCharactersRequest::_internal_login() const {
+  return login_.GetNoArena();
+}
+inline void GetAccountCharactersRequest::_internal_set_login(const std::string& value) {
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void GetAccountCharactersRequest::set_login(std::string&& value) {
+  
+  login_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountCharactersRequest.login)
+}
+inline void GetAccountCharactersRequest::set_login(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.GetAccountCharactersRequest.login)
+}
+inline void GetAccountCharactersRequest::set_login(const char* value, size_t size) {
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountCharactersRequest.login)
+}
+inline std::string* GetAccountCharactersRequest::_internal_mutable_login() {
+  
+  return login_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* GetAccountCharactersRequest::release_login() {
+  // @@protoc_insertion_point(field_release:mruv.GetAccountCharactersRequest.login)
+  
+  return login_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void GetAccountCharactersRequest::set_allocated_login(std::string* login) {
+  if (login != nullptr) {
+    
+  } else {
+    
+  }
+  login_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login);
+  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountCharactersRequest.login)
+}
+
+// -------------------------------------------------------------------
+
+// GetAccountCharactersResponse
+
+// repeated uint32 character_ids = 1;
+inline int GetAccountCharactersResponse::_internal_character_ids_size() const {
+  return character_ids_.size();
+}
+inline int GetAccountCharactersResponse::character_ids_size() const {
+  return _internal_character_ids_size();
+}
+inline void GetAccountCharactersResponse::clear_character_ids() {
+  character_ids_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetAccountCharactersResponse::_internal_character_ids(int index) const {
+  return character_ids_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetAccountCharactersResponse::character_ids(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.GetAccountCharactersResponse.character_ids)
+  return _internal_character_ids(index);
+}
+inline void GetAccountCharactersResponse::set_character_ids(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  character_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:mruv.GetAccountCharactersResponse.character_ids)
+}
+inline void GetAccountCharactersResponse::_internal_add_character_ids(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  character_ids_.Add(value);
+}
+inline void GetAccountCharactersResponse::add_character_ids(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_add_character_ids(value);
+  // @@protoc_insertion_point(field_add:mruv.GetAccountCharactersResponse.character_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
+GetAccountCharactersResponse::_internal_character_ids() const {
+  return character_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
+GetAccountCharactersResponse::character_ids() const {
+  // @@protoc_insertion_point(field_list:mruv.GetAccountCharactersResponse.character_ids)
+  return _internal_character_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
+GetAccountCharactersResponse::_internal_mutable_character_ids() {
+  return &character_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
+GetAccountCharactersResponse::mutable_character_ids() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.GetAccountCharactersResponse.character_ids)
+  return _internal_mutable_character_ids();
+}
+
+// -------------------------------------------------------------------
+
+// IsAccountExistRequest
+
+// string login = 1;
+inline void IsAccountExistRequest::clear_login() {
+  login_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& IsAccountExistRequest::login() const {
+  // @@protoc_insertion_point(field_get:mruv.IsAccountExistRequest.login)
+  return _internal_login();
+}
+inline void IsAccountExistRequest::set_login(const std::string& value) {
+  _internal_set_login(value);
+  // @@protoc_insertion_point(field_set:mruv.IsAccountExistRequest.login)
+}
+inline std::string* IsAccountExistRequest::mutable_login() {
+  // @@protoc_insertion_point(field_mutable:mruv.IsAccountExistRequest.login)
+  return _internal_mutable_login();
+}
+inline const std::string& IsAccountExistRequest::_internal_login() const {
+  return login_.GetNoArena();
+}
+inline void IsAccountExistRequest::_internal_set_login(const std::string& value) {
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void IsAccountExistRequest::set_login(std::string&& value) {
+  
+  login_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.IsAccountExistRequest.login)
+}
+inline void IsAccountExistRequest::set_login(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.IsAccountExistRequest.login)
+}
+inline void IsAccountExistRequest::set_login(const char* value, size_t size) {
+  
+  login_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.IsAccountExistRequest.login)
+}
+inline std::string* IsAccountExistRequest::_internal_mutable_login() {
+  
+  return login_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* IsAccountExistRequest::release_login() {
+  // @@protoc_insertion_point(field_release:mruv.IsAccountExistRequest.login)
+  
+  return login_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void IsAccountExistRequest::set_allocated_login(std::string* login) {
+  if (login != nullptr) {
+    
+  } else {
+    
+  }
+  login_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login);
+  // @@protoc_insertion_point(field_set_allocated:mruv.IsAccountExistRequest.login)
+}
+
+// -------------------------------------------------------------------
+
+// IsAccountExistResponse
 
 // bool exists = 1;
-inline void IsAccountExistsResponse::clear_exists() {
+inline void IsAccountExistResponse::clear_exists() {
   exists_ = false;
 }
-inline bool IsAccountExistsResponse::_internal_exists() const {
+inline bool IsAccountExistResponse::_internal_exists() const {
   return exists_;
 }
-inline bool IsAccountExistsResponse::exists() const {
-  // @@protoc_insertion_point(field_get:mruv.IsAccountExistsResponse.exists)
+inline bool IsAccountExistResponse::exists() const {
+  // @@protoc_insertion_point(field_get:mruv.IsAccountExistResponse.exists)
   return _internal_exists();
 }
-inline void IsAccountExistsResponse::_internal_set_exists(bool value) {
+inline void IsAccountExistResponse::_internal_set_exists(bool value) {
   
   exists_ = value;
 }
-inline void IsAccountExistsResponse::set_exists(bool value) {
+inline void IsAccountExistResponse::set_exists(bool value) {
   _internal_set_exists(value);
-  // @@protoc_insertion_point(field_set:mruv.IsAccountExistsResponse.exists)
+  // @@protoc_insertion_point(field_set:mruv.IsAccountExistResponse.exists)
 }
 
 // uint32 id = 2;
-inline void IsAccountExistsResponse::clear_id() {
+inline void IsAccountExistResponse::clear_id() {
   id_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IsAccountExistsResponse::_internal_id() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 IsAccountExistResponse::_internal_id() const {
   return id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IsAccountExistsResponse::id() const {
-  // @@protoc_insertion_point(field_get:mruv.IsAccountExistsResponse.id)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 IsAccountExistResponse::id() const {
+  // @@protoc_insertion_point(field_get:mruv.IsAccountExistResponse.id)
   return _internal_id();
 }
-inline void IsAccountExistsResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IsAccountExistResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   id_ = value;
 }
-inline void IsAccountExistsResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IsAccountExistResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.IsAccountExistsResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.IsAccountExistResponse.id)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

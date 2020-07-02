@@ -38,6 +38,7 @@ class MruVAccountsService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Register a new account.
     virtual ::grpc::Status RegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::mruv::RegisterAccountResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterAccountResponse>> AsyncRegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterAccountResponse>>(AsyncRegisterAccountRaw(context, request, cq));
@@ -45,6 +46,7 @@ class MruVAccountsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterAccountResponse>> PrepareAsyncRegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterAccountResponse>>(PrepareAsyncRegisterAccountRaw(context, request, cq));
     }
+    // Sign into an existing account.
     virtual ::grpc::Status LogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::mruv::LogInResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::LogInResponse>> AsyncLogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::LogInResponse>>(AsyncLogInRaw(context, request, cq));
@@ -52,31 +54,34 @@ class MruVAccountsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::LogInResponse>> PrepareAsyncLogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::LogInResponse>>(PrepareAsyncLogInRaw(context, request, cq));
     }
-    // Check, is account with specified login exists. If yes, it returns account id.
-    virtual ::grpc::Status IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::mruv::IsAccountExistsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistsResponse>> AsyncIsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistsResponse>>(AsyncIsAccountExistsRaw(context, request, cq));
+    // Check, is account with specified login exist. If yes, it returns account id.
+    virtual ::grpc::Status IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::mruv::IsAccountExistResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistResponse>> AsyncIsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistResponse>>(AsyncIsAccountExistRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistsResponse>> PrepareAsyncIsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistsResponse>>(PrepareAsyncIsAccountExistsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistResponse>> PrepareAsyncIsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistResponse>>(PrepareAsyncIsAccountExistRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::mruv::Account* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Account>> AsyncGetAccount(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Account>>(AsyncGetAccountRaw(context, request, cq));
+    // Get an account.
+    virtual ::grpc::Status GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::mruv::GetAccountResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountResponse>> AsyncGetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountResponse>>(AsyncGetAccountRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Account>> PrepareAsyncGetAccount(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Account>>(PrepareAsyncGetAccountRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountResponse>> PrepareAsyncGetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountResponse>>(PrepareAsyncGetAccountRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::mruv::GetAccountCharactersResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>> AsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
+    // Get an account characters.
+    virtual ::grpc::Status GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::mruv::GetAccountCharactersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>> AsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>>(AsyncGetAccountCharactersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>> PrepareAsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>> PrepareAsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>>(PrepareAsyncGetAccountCharactersRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
+      // Register a new account.
       virtual void RegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest* request, ::mruv::RegisterAccountResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RegisterAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterAccountResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -89,6 +94,7 @@ class MruVAccountsService final {
       #else
       virtual void RegisterAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Sign into an existing account.
       virtual void LogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest* request, ::mruv::LogInResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::LogInResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -101,37 +107,39 @@ class MruVAccountsService final {
       #else
       virtual void LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::LogInResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Check, is account with specified login exists. If yes, it returns account id.
-      virtual void IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void IsAccountExists(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Check, is account with specified login exist. If yes, it returns account id.
+      virtual void IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsAccountExists(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsAccountExists(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::Account* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Account* response, std::function<void(::grpc::Status)>) = 0;
+      // Get an account.
+      virtual void GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::Account* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::Account* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Account* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Account* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      // Get an account characters.
+      virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -151,12 +159,12 @@ class MruVAccountsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RegisterAccountResponse>* PrepareAsyncRegisterAccountRaw(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::LogInResponse>* AsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::LogInResponse>* PrepareAsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistsResponse>* AsyncIsAccountExistsRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistsResponse>* PrepareAsyncIsAccountExistsRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Account>* AsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Account>* PrepareAsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>* AsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>* PrepareAsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistResponse>* AsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsAccountExistResponse>* PrepareAsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountResponse>* AsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountResponse>* PrepareAsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>* AsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetAccountCharactersResponse>* PrepareAsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -175,25 +183,25 @@ class MruVAccountsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::LogInResponse>> PrepareAsyncLogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::LogInResponse>>(PrepareAsyncLogInRaw(context, request, cq));
     }
-    ::grpc::Status IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::mruv::IsAccountExistsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistsResponse>> AsyncIsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistsResponse>>(AsyncIsAccountExistsRaw(context, request, cq));
+    ::grpc::Status IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::mruv::IsAccountExistResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>> AsyncIsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>>(AsyncIsAccountExistRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistsResponse>> PrepareAsyncIsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistsResponse>>(PrepareAsyncIsAccountExistsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>> PrepareAsyncIsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>>(PrepareAsyncIsAccountExistRaw(context, request, cq));
     }
-    ::grpc::Status GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::mruv::Account* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Account>> AsyncGetAccount(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Account>>(AsyncGetAccountRaw(context, request, cq));
+    ::grpc::Status GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::mruv::GetAccountResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>> AsyncGetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>>(AsyncGetAccountRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Account>> PrepareAsyncGetAccount(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Account>>(PrepareAsyncGetAccountRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>> PrepareAsyncGetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>>(PrepareAsyncGetAccountRaw(context, request, cq));
     }
-    ::grpc::Status GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::mruv::GetAccountCharactersResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>> AsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::mruv::GetAccountCharactersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>> AsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>>(AsyncGetAccountCharactersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>> PrepareAsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>> PrepareAsyncGetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>>(PrepareAsyncGetAccountCharactersRaw(context, request, cq));
     }
     class experimental_async final :
@@ -223,36 +231,36 @@ class MruVAccountsService final {
       #else
       void LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::LogInResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response, std::function<void(::grpc::Status)>) override;
-      void IsAccountExists(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistsResponse* response, std::function<void(::grpc::Status)>) override;
+      void IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, std::function<void(::grpc::Status)>) override;
+      void IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void IsAccountExists(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsAccountExists(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void IsAccountExists(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::Account* response, std::function<void(::grpc::Status)>) override;
-      void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Account* response, std::function<void(::grpc::Status)>) override;
+      void GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::Account* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetAccount(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::Account* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Account* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Account* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)>) override;
       void GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
@@ -274,15 +282,15 @@ class MruVAccountsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::RegisterAccountResponse>* PrepareAsyncRegisterAccountRaw(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::LogInResponse>* AsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::LogInResponse>* PrepareAsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistsResponse>* AsyncIsAccountExistsRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistsResponse>* PrepareAsyncIsAccountExistsRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::Account>* AsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::Account>* PrepareAsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>* AsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>* PrepareAsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::AccountID& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>* AsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>* PrepareAsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>* AsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>* PrepareAsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>* AsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>* PrepareAsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_RegisterAccount_;
     const ::grpc::internal::RpcMethod rpcmethod_LogIn_;
-    const ::grpc::internal::RpcMethod rpcmethod_IsAccountExists_;
+    const ::grpc::internal::RpcMethod rpcmethod_IsAccountExist_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAccount_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAccountCharacters_;
   };
@@ -292,12 +300,16 @@ class MruVAccountsService final {
    public:
     Service();
     virtual ~Service();
+    // Register a new account.
     virtual ::grpc::Status RegisterAccount(::grpc::ServerContext* context, const ::mruv::RegisterAccountRequest* request, ::mruv::RegisterAccountResponse* response);
+    // Sign into an existing account.
     virtual ::grpc::Status LogIn(::grpc::ServerContext* context, const ::mruv::LogInRequest* request, ::mruv::LogInResponse* response);
-    // Check, is account with specified login exists. If yes, it returns account id.
-    virtual ::grpc::Status IsAccountExists(::grpc::ServerContext* context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response);
-    virtual ::grpc::Status GetAccount(::grpc::ServerContext* context, const ::mruv::AccountID* request, ::mruv::Account* response);
-    virtual ::grpc::Status GetAccountCharacters(::grpc::ServerContext* context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response);
+    // Check, is account with specified login exist. If yes, it returns account id.
+    virtual ::grpc::Status IsAccountExist(::grpc::ServerContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response);
+    // Get an account.
+    virtual ::grpc::Status GetAccount(::grpc::ServerContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response);
+    // Get an account characters.
+    virtual ::grpc::Status GetAccountCharacters(::grpc::ServerContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_RegisterAccount : public BaseClass {
@@ -340,22 +352,22 @@ class MruVAccountsService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_IsAccountExists : public BaseClass {
+  class WithAsyncMethod_IsAccountExist : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_IsAccountExists() {
+    WithAsyncMethod_IsAccountExist() {
       ::grpc::Service::MarkMethodAsync(2);
     }
-    ~WithAsyncMethod_IsAccountExists() override {
+    ~WithAsyncMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsAccountExists(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/) override {
+    ::grpc::Status IsAccountExist(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestIsAccountExists(::grpc::ServerContext* context, ::mruv::IsAccountExistsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::IsAccountExistsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestIsAccountExist(::grpc::ServerContext* context, ::mruv::IsAccountExistRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::IsAccountExistResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -371,11 +383,11 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/) override {
+    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetAccount(::grpc::ServerContext* context, ::mruv::AccountID* request, ::grpc::ServerAsyncResponseWriter< ::mruv::Account>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetAccount(::grpc::ServerContext* context, ::mruv::GetAccountRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetAccountResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -391,15 +403,15 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
+    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetAccountCharacters(::grpc::ServerContext* context, ::mruv::AccountID* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetAccountCharactersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetAccountCharacters(::grpc::ServerContext* context, ::mruv::GetAccountCharactersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetAccountCharactersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_RegisterAccount<WithAsyncMethod_LogIn<WithAsyncMethod_IsAccountExists<WithAsyncMethod_GetAccount<WithAsyncMethod_GetAccountCharacters<Service > > > > > AsyncService;
+  typedef WithAsyncMethod_RegisterAccount<WithAsyncMethod_LogIn<WithAsyncMethod_IsAccountExist<WithAsyncMethod_GetAccount<WithAsyncMethod_GetAccountCharacters<Service > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_RegisterAccount : public BaseClass {
    private:
@@ -495,49 +507,49 @@ class MruVAccountsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_IsAccountExists : public BaseClass {
+  class ExperimentalWithCallbackMethod_IsAccountExist : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_IsAccountExists() {
+    ExperimentalWithCallbackMethod_IsAccountExist() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::IsAccountExistsRequest, ::mruv::IsAccountExistsResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::IsAccountExistsRequest* request, ::mruv::IsAccountExistsResponse* response) { return this->IsAccountExists(context, request, response); }));}
-    void SetMessageAllocatorFor_IsAccountExists(
-        ::grpc::experimental::MessageAllocator< ::mruv::IsAccountExistsRequest, ::mruv::IsAccountExistsResponse>* allocator) {
+                     context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response) { return this->IsAccountExist(context, request, response); }));}
+    void SetMessageAllocatorFor_IsAccountExist(
+        ::grpc::experimental::MessageAllocator< ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::IsAccountExistsRequest, ::mruv::IsAccountExistsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_IsAccountExists() override {
+    ~ExperimentalWithCallbackMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsAccountExists(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/) override {
+    ::grpc::Status IsAccountExist(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* IsAccountExists(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* IsAccountExist(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* IsAccountExists(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* IsAccountExist(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -553,38 +565,38 @@ class MruVAccountsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AccountID, ::mruv::Account>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::AccountID* request, ::mruv::Account* response) { return this->GetAccount(context, request, response); }));}
+                     context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response) { return this->GetAccount(context, request, response); }));}
     void SetMessageAllocatorFor_GetAccount(
-        ::grpc::experimental::MessageAllocator< ::mruv::AccountID, ::mruv::Account>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AccountID, ::mruv::Account>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetAccount() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/) override {
+    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetAccount(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetAccount(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -600,46 +612,46 @@ class MruVAccountsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AccountID, ::mruv::GetAccountCharactersResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::AccountID* request, ::mruv::GetAccountCharactersResponse* response) { return this->GetAccountCharacters(context, request, response); }));}
+                     context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response) { return this->GetAccountCharacters(context, request, response); }));}
     void SetMessageAllocatorFor_GetAccountCharacters(
-        ::grpc::experimental::MessageAllocator< ::mruv::AccountID, ::mruv::GetAccountCharactersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::AccountID, ::mruv::GetAccountCharactersResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetAccountCharacters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
+    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetAccountCharacters(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetAccountCharacters(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_RegisterAccount<ExperimentalWithCallbackMethod_LogIn<ExperimentalWithCallbackMethod_IsAccountExists<ExperimentalWithCallbackMethod_GetAccount<ExperimentalWithCallbackMethod_GetAccountCharacters<Service > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_RegisterAccount<ExperimentalWithCallbackMethod_LogIn<ExperimentalWithCallbackMethod_IsAccountExist<ExperimentalWithCallbackMethod_GetAccount<ExperimentalWithCallbackMethod_GetAccountCharacters<Service > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_RegisterAccount<ExperimentalWithCallbackMethod_LogIn<ExperimentalWithCallbackMethod_IsAccountExists<ExperimentalWithCallbackMethod_GetAccount<ExperimentalWithCallbackMethod_GetAccountCharacters<Service > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_RegisterAccount<ExperimentalWithCallbackMethod_LogIn<ExperimentalWithCallbackMethod_IsAccountExist<ExperimentalWithCallbackMethod_GetAccount<ExperimentalWithCallbackMethod_GetAccountCharacters<Service > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_RegisterAccount : public BaseClass {
    private:
@@ -675,18 +687,18 @@ class MruVAccountsService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_IsAccountExists : public BaseClass {
+  class WithGenericMethod_IsAccountExist : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_IsAccountExists() {
+    WithGenericMethod_IsAccountExist() {
       ::grpc::Service::MarkMethodGeneric(2);
     }
-    ~WithGenericMethod_IsAccountExists() override {
+    ~WithGenericMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsAccountExists(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/) override {
+    ::grpc::Status IsAccountExist(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -703,7 +715,7 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/) override {
+    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -720,7 +732,7 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
+    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -766,22 +778,22 @@ class MruVAccountsService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_IsAccountExists : public BaseClass {
+  class WithRawMethod_IsAccountExist : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_IsAccountExists() {
+    WithRawMethod_IsAccountExist() {
       ::grpc::Service::MarkMethodRaw(2);
     }
-    ~WithRawMethod_IsAccountExists() override {
+    ~WithRawMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsAccountExists(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/) override {
+    ::grpc::Status IsAccountExist(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestIsAccountExists(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestIsAccountExist(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -797,7 +809,7 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/) override {
+    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -817,7 +829,7 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
+    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -902,11 +914,11 @@ class MruVAccountsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_IsAccountExists : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_IsAccountExist : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_IsAccountExists() {
+    ExperimentalWithRawCallbackMethod_IsAccountExist() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -920,21 +932,21 @@ class MruVAccountsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->IsAccountExists(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->IsAccountExist(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_IsAccountExists() override {
+    ~ExperimentalWithRawCallbackMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsAccountExists(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/) override {
+    ::grpc::Status IsAccountExist(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* IsAccountExists(
+    virtual ::grpc::ServerUnaryReactor* IsAccountExist(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* IsAccountExists(
+    virtual ::grpc::experimental::ServerUnaryReactor* IsAccountExist(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -964,7 +976,7 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/) override {
+    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1002,7 +1014,7 @@ class MruVAccountsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
+    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1056,24 +1068,24 @@ class MruVAccountsService final {
     virtual ::grpc::Status StreamedLogIn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::LogInRequest,::mruv::LogInResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_IsAccountExists : public BaseClass {
+  class WithStreamedUnaryMethod_IsAccountExist : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_IsAccountExists() {
+    WithStreamedUnaryMethod_IsAccountExist() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::IsAccountExistsRequest, ::mruv::IsAccountExistsResponse>(std::bind(&WithStreamedUnaryMethod_IsAccountExists<BaseClass>::StreamedIsAccountExists, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>(std::bind(&WithStreamedUnaryMethod_IsAccountExist<BaseClass>::StreamedIsAccountExist, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_IsAccountExists() override {
+    ~WithStreamedUnaryMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status IsAccountExists(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistsRequest* /*request*/, ::mruv::IsAccountExistsResponse* /*response*/) override {
+    ::grpc::Status IsAccountExist(::grpc::ServerContext* /*context*/, const ::mruv::IsAccountExistRequest* /*request*/, ::mruv::IsAccountExistResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedIsAccountExists(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::IsAccountExistsRequest,::mruv::IsAccountExistsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedIsAccountExist(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::IsAccountExistRequest,::mruv::IsAccountExistResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetAccount : public BaseClass {
@@ -1082,18 +1094,18 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_GetAccount() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::AccountID, ::mruv::Account>(std::bind(&WithStreamedUnaryMethod_GetAccount<BaseClass>::StreamedGetAccount, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>(std::bind(&WithStreamedUnaryMethod_GetAccount<BaseClass>::StreamedGetAccount, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetAccount() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::Account* /*response*/) override {
+    ::grpc::Status GetAccount(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountRequest* /*request*/, ::mruv::GetAccountResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetAccount(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::AccountID,::mruv::Account>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetAccount(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetAccountRequest,::mruv::GetAccountResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetAccountCharacters : public BaseClass {
@@ -1102,22 +1114,22 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_GetAccountCharacters() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::AccountID, ::mruv::GetAccountCharactersResponse>(std::bind(&WithStreamedUnaryMethod_GetAccountCharacters<BaseClass>::StreamedGetAccountCharacters, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>(std::bind(&WithStreamedUnaryMethod_GetAccountCharacters<BaseClass>::StreamedGetAccountCharacters, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetAccountCharacters() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::AccountID* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
+    ::grpc::Status GetAccountCharacters(::grpc::ServerContext* /*context*/, const ::mruv::GetAccountCharactersRequest* /*request*/, ::mruv::GetAccountCharactersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetAccountCharacters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::AccountID,::mruv::GetAccountCharactersResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetAccountCharacters(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetAccountCharactersRequest,::mruv::GetAccountCharactersResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_RegisterAccount<WithStreamedUnaryMethod_LogIn<WithStreamedUnaryMethod_IsAccountExists<WithStreamedUnaryMethod_GetAccount<WithStreamedUnaryMethod_GetAccountCharacters<Service > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_RegisterAccount<WithStreamedUnaryMethod_LogIn<WithStreamedUnaryMethod_IsAccountExist<WithStreamedUnaryMethod_GetAccount<WithStreamedUnaryMethod_GetAccountCharacters<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_RegisterAccount<WithStreamedUnaryMethod_LogIn<WithStreamedUnaryMethod_IsAccountExists<WithStreamedUnaryMethod_GetAccount<WithStreamedUnaryMethod_GetAccountCharacters<Service > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_RegisterAccount<WithStreamedUnaryMethod_LogIn<WithStreamedUnaryMethod_IsAccountExist<WithStreamedUnaryMethod_GetAccount<WithStreamedUnaryMethod_GetAccountCharacters<Service > > > > > StreamedService;
 };
 
 }  // namespace mruv
