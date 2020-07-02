@@ -27,6 +27,7 @@ static const char* MruVCharactersService_method_names[] = {
   "/mruv.MruVCharactersService/UpdateCharacter",
   "/mruv.MruVCharactersService/DeleteCharacter",
   "/mruv.MruVCharactersService/PermanentCharacterKill",
+  "/mruv.MruVCharactersService/ChangeClothes",
   "/mruv.MruVCharactersService/DeathsStream",
   "/mruv.MruVCharactersService/GetServiceStatus",
   "/mruv.MruVCharactersService/GetServiceVersion",
@@ -44,9 +45,10 @@ MruVCharactersService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterfac
   , rpcmethod_UpdateCharacter_(MruVCharactersService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteCharacter_(MruVCharactersService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_PermanentCharacterKill_(MruVCharactersService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeathsStream_(MruVCharactersService_method_names[5], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_GetServiceStatus_(MruVCharactersService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetServiceVersion_(MruVCharactersService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ChangeClothes_(MruVCharactersService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeathsStream_(MruVCharactersService_method_names[6], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_GetServiceStatus_(MruVCharactersService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetServiceVersion_(MruVCharactersService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MruVCharactersService::Stub::CreateCharacter(::grpc::ClientContext* context, const ::mruv::CreateCharacterRequest& request, ::mruv::CreateCharacterResponse* response) {
@@ -189,6 +191,34 @@ void MruVCharactersService::Stub::experimental_async::PermanentCharacterKill(::g
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CharacterID>::Create(channel_.get(), cq, rpcmethod_PermanentCharacterKill_, context, request, false);
 }
 
+::grpc::Status MruVCharactersService::Stub::ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::mruv::ChangeClothesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ChangeClothes_, context, request, response);
+}
+
+void MruVCharactersService::Stub::experimental_async::ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ChangeClothes_, context, request, response, std::move(f));
+}
+
+void MruVCharactersService::Stub::experimental_async::ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ChangeClothes_, context, request, response, std::move(f));
+}
+
+void MruVCharactersService::Stub::experimental_async::ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ChangeClothes_, context, request, response, reactor);
+}
+
+void MruVCharactersService::Stub::experimental_async::ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ChangeClothes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>* MruVCharactersService::Stub::AsyncChangeClothesRaw(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::ChangeClothesResponse>::Create(channel_.get(), cq, rpcmethod_ChangeClothes_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>* MruVCharactersService::Stub::PrepareAsyncChangeClothesRaw(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::ChangeClothesResponse>::Create(channel_.get(), cq, rpcmethod_ChangeClothes_, context, request, false);
+}
+
 ::grpc::ClientReader< ::mruv::DeathStreamResponse>* MruVCharactersService::Stub::DeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request) {
   return ::grpc_impl::internal::ClientReaderFactory< ::mruv::DeathStreamResponse>::Create(channel_.get(), rpcmethod_DeathsStream_, context, request);
 }
@@ -289,16 +319,21 @@ MruVCharactersService::Service::Service() {
           std::mem_fn(&MruVCharactersService::Service::PermanentCharacterKill), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>(
+          std::mem_fn(&MruVCharactersService::Service::ChangeClothes), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVCharactersService_method_names[6],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVCharactersService::Service, ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
           std::mem_fn(&MruVCharactersService::Service::DeathsStream), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVCharactersService_method_names[6],
+      MruVCharactersService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
           std::mem_fn(&MruVCharactersService::Service::GetServiceStatus), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVCharactersService_method_names[7],
+      MruVCharactersService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
           std::mem_fn(&MruVCharactersService::Service::GetServiceVersion), this)));
@@ -336,6 +371,13 @@ MruVCharactersService::Service::~Service() {
 }
 
 ::grpc::Status MruVCharactersService::Service::PermanentCharacterKill(::grpc::ServerContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVCharactersService::Service::ChangeClothes(::grpc::ServerContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response) {
   (void) context;
   (void) request;
   (void) response;

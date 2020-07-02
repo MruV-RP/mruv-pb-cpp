@@ -35,7 +35,6 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
 #include "common/health.pb.h"
-#include "common/spatial.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_characters_2fcharacters_2eproto
@@ -51,7 +50,7 @@ struct TableStruct_characters_2fcharacters_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,6 +58,12 @@ struct TableStruct_characters_2fcharacters_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_characters_2fcharacters_2eproto;
 namespace mruv {
+class ChangeClothesRequest;
+class ChangeClothesRequestDefaultTypeInternal;
+extern ChangeClothesRequestDefaultTypeInternal _ChangeClothesRequest_default_instance_;
+class ChangeClothesResponse;
+class ChangeClothesResponseDefaultTypeInternal;
+extern ChangeClothesResponseDefaultTypeInternal _ChangeClothesResponse_default_instance_;
 class Character;
 class CharacterDefaultTypeInternal;
 extern CharacterDefaultTypeInternal _Character_default_instance_;
@@ -97,6 +102,8 @@ class UpdateCharacterResponseDefaultTypeInternal;
 extern UpdateCharacterResponseDefaultTypeInternal _UpdateCharacterResponse_default_instance_;
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
+template<> ::mruv::ChangeClothesRequest* Arena::CreateMaybeMessage<::mruv::ChangeClothesRequest>(Arena*);
+template<> ::mruv::ChangeClothesResponse* Arena::CreateMaybeMessage<::mruv::ChangeClothesResponse>(Arena*);
 template<> ::mruv::Character* Arena::CreateMaybeMessage<::mruv::Character>(Arena*);
 template<> ::mruv::CharacterID* Arena::CreateMaybeMessage<::mruv::CharacterID>(Arena*);
 template<> ::mruv::CreateCharacterRequest* Arena::CreateMaybeMessage<::mruv::CreateCharacterRequest>(Arena*);
@@ -249,11 +256,14 @@ class Character :
   enum : int {
     kFirstNameFieldNumber = 3,
     kSecondNameFieldNumber = 4,
-    kPositionFieldNumber = 7,
     kIdFieldNumber = 1,
     kOwnerIdFieldNumber = 2,
     kAgeFieldNumber = 5,
     kSexFieldNumber = 6,
+    kClothesIdFieldNumber = 7,
+    kXFieldNumber = 8,
+    kYFieldNumber = 9,
+    kZFieldNumber = 10,
   };
   // string first_name = 3;
   void clear_first_name();
@@ -285,21 +295,6 @@ class Character :
   const std::string& _internal_second_name() const;
   void _internal_set_second_name(const std::string& value);
   std::string* _internal_mutable_second_name();
-  public:
-
-  // .mruv.Position position = 7;
-  bool has_position() const;
-  private:
-  bool _internal_has_position() const;
-  public:
-  void clear_position();
-  const ::mruv::Position& position() const;
-  ::mruv::Position* release_position();
-  ::mruv::Position* mutable_position();
-  void set_allocated_position(::mruv::Position* position);
-  private:
-  const ::mruv::Position& _internal_position() const;
-  ::mruv::Position* _internal_mutable_position();
   public:
 
   // uint32 id = 1;
@@ -338,6 +333,42 @@ class Character :
   void _internal_set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // uint32 clothes_id = 7;
+  void clear_clothes_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 clothes_id() const;
+  void set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_clothes_id() const;
+  void _internal_set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // float x = 8;
+  void clear_x();
+  float x() const;
+  void set_x(float value);
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+  public:
+
+  // float y = 9;
+  void clear_y();
+  float y() const;
+  void set_y(float value);
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+  public:
+
+  // float z = 10;
+  void clear_z();
+  float z() const;
+  void set_z(float value);
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.Character)
  private:
   class _Internal;
@@ -345,11 +376,14 @@ class Character :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr second_name_;
-  ::mruv::Position* position_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 owner_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 age_;
   ::PROTOBUF_NAMESPACE_ID::uint32 sex_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 clothes_id_;
+  float x_;
+  float y_;
+  float z_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_characters_2fcharacters_2eproto;
 };
@@ -1044,11 +1078,14 @@ class GetCharacterResponse :
   enum : int {
     kFirstNameFieldNumber = 3,
     kSecondNameFieldNumber = 4,
-    kPositionFieldNumber = 7,
     kIdFieldNumber = 1,
     kOwnerIdFieldNumber = 2,
     kAgeFieldNumber = 5,
     kSexFieldNumber = 6,
+    kClothesIdFieldNumber = 7,
+    kXFieldNumber = 8,
+    kYFieldNumber = 9,
+    kZFieldNumber = 10,
   };
   // string first_name = 3;
   void clear_first_name();
@@ -1080,21 +1117,6 @@ class GetCharacterResponse :
   const std::string& _internal_second_name() const;
   void _internal_set_second_name(const std::string& value);
   std::string* _internal_mutable_second_name();
-  public:
-
-  // .mruv.Position position = 7;
-  bool has_position() const;
-  private:
-  bool _internal_has_position() const;
-  public:
-  void clear_position();
-  const ::mruv::Position& position() const;
-  ::mruv::Position* release_position();
-  ::mruv::Position* mutable_position();
-  void set_allocated_position(::mruv::Position* position);
-  private:
-  const ::mruv::Position& _internal_position() const;
-  ::mruv::Position* _internal_mutable_position();
   public:
 
   // uint32 id = 1;
@@ -1133,6 +1155,42 @@ class GetCharacterResponse :
   void _internal_set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // uint32 clothes_id = 7;
+  void clear_clothes_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 clothes_id() const;
+  void set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_clothes_id() const;
+  void _internal_set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // float x = 8;
+  void clear_x();
+  float x() const;
+  void set_x(float value);
+  private:
+  float _internal_x() const;
+  void _internal_set_x(float value);
+  public:
+
+  // float y = 9;
+  void clear_y();
+  float y() const;
+  void set_y(float value);
+  private:
+  float _internal_y() const;
+  void _internal_set_y(float value);
+  public:
+
+  // float z = 10;
+  void clear_z();
+  float z() const;
+  void set_z(float value);
+  private:
+  float _internal_z() const;
+  void _internal_set_z(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.GetCharacterResponse)
  private:
   class _Internal;
@@ -1140,11 +1198,14 @@ class GetCharacterResponse :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr second_name_;
-  ::mruv::Position* position_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 owner_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 age_;
   ::PROTOBUF_NAMESPACE_ID::uint32 sex_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 clothes_id_;
+  float x_;
+  float y_;
+  float z_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_characters_2fcharacters_2eproto;
 };
@@ -1636,6 +1697,260 @@ class DeleteCharacterResponse :
 };
 // -------------------------------------------------------------------
 
+class ChangeClothesRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ChangeClothesRequest) */ {
+ public:
+  ChangeClothesRequest();
+  virtual ~ChangeClothesRequest();
+
+  ChangeClothesRequest(const ChangeClothesRequest& from);
+  ChangeClothesRequest(ChangeClothesRequest&& from) noexcept
+    : ChangeClothesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ChangeClothesRequest& operator=(const ChangeClothesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ChangeClothesRequest& operator=(ChangeClothesRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ChangeClothesRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ChangeClothesRequest* internal_default_instance() {
+    return reinterpret_cast<const ChangeClothesRequest*>(
+               &_ChangeClothesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(ChangeClothesRequest& a, ChangeClothesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ChangeClothesRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ChangeClothesRequest* New() const final {
+    return CreateMaybeMessage<ChangeClothesRequest>(nullptr);
+  }
+
+  ChangeClothesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ChangeClothesRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ChangeClothesRequest& from);
+  void MergeFrom(const ChangeClothesRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ChangeClothesRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.ChangeClothesRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_characters_2fcharacters_2eproto);
+    return ::descriptor_table_characters_2fcharacters_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+    kClothesIdFieldNumber = 2,
+  };
+  // uint32 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 clothes_id = 2;
+  void clear_clothes_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 clothes_id() const;
+  void set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_clothes_id() const;
+  void _internal_set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.ChangeClothesRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 clothes_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_characters_2fcharacters_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ChangeClothesResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ChangeClothesResponse) */ {
+ public:
+  ChangeClothesResponse();
+  virtual ~ChangeClothesResponse();
+
+  ChangeClothesResponse(const ChangeClothesResponse& from);
+  ChangeClothesResponse(ChangeClothesResponse&& from) noexcept
+    : ChangeClothesResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ChangeClothesResponse& operator=(const ChangeClothesResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ChangeClothesResponse& operator=(ChangeClothesResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ChangeClothesResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ChangeClothesResponse* internal_default_instance() {
+    return reinterpret_cast<const ChangeClothesResponse*>(
+               &_ChangeClothesResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(ChangeClothesResponse& a, ChangeClothesResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ChangeClothesResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ChangeClothesResponse* New() const final {
+    return CreateMaybeMessage<ChangeClothesResponse>(nullptr);
+  }
+
+  ChangeClothesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ChangeClothesResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ChangeClothesResponse& from);
+  void MergeFrom(const ChangeClothesResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ChangeClothesResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.ChangeClothesResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_characters_2fcharacters_2eproto);
+    return ::descriptor_table_characters_2fcharacters_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.ChangeClothesResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_characters_2fcharacters_2eproto;
+};
+// -------------------------------------------------------------------
+
 class DeathStreamRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.DeathStreamRequest) */ {
  public:
@@ -1678,7 +1993,7 @@ class DeathStreamRequest :
                &_DeathStreamRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(DeathStreamRequest& a, DeathStreamRequest& b) {
     a.Swap(&b);
@@ -1815,7 +2130,7 @@ class DeathStreamResponse :
                &_DeathStreamResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(DeathStreamResponse& a, DeathStreamResponse& b) {
     a.Swap(&b);
@@ -2127,58 +2442,84 @@ inline void Character::set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:mruv.Character.sex)
 }
 
-// .mruv.Position position = 7;
-inline bool Character::_internal_has_position() const {
-  return this != internal_default_instance() && position_ != nullptr;
+// uint32 clothes_id = 7;
+inline void Character::clear_clothes_id() {
+  clothes_id_ = 0u;
 }
-inline bool Character::has_position() const {
-  return _internal_has_position();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Character::_internal_clothes_id() const {
+  return clothes_id_;
 }
-inline const ::mruv::Position& Character::_internal_position() const {
-  const ::mruv::Position* p = position_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::Position*>(
-      &::mruv::_Position_default_instance_);
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Character::clothes_id() const {
+  // @@protoc_insertion_point(field_get:mruv.Character.clothes_id)
+  return _internal_clothes_id();
 }
-inline const ::mruv::Position& Character::position() const {
-  // @@protoc_insertion_point(field_get:mruv.Character.position)
-  return _internal_position();
-}
-inline ::mruv::Position* Character::release_position() {
-  // @@protoc_insertion_point(field_release:mruv.Character.position)
+inline void Character::_internal_set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  ::mruv::Position* temp = position_;
-  position_ = nullptr;
-  return temp;
+  clothes_id_ = value;
 }
-inline ::mruv::Position* Character::_internal_mutable_position() {
+inline void Character::set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_clothes_id(value);
+  // @@protoc_insertion_point(field_set:mruv.Character.clothes_id)
+}
+
+// float x = 8;
+inline void Character::clear_x() {
+  x_ = 0;
+}
+inline float Character::_internal_x() const {
+  return x_;
+}
+inline float Character::x() const {
+  // @@protoc_insertion_point(field_get:mruv.Character.x)
+  return _internal_x();
+}
+inline void Character::_internal_set_x(float value) {
   
-  if (position_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::Position>(GetArenaNoVirtual());
-    position_ = p;
-  }
-  return position_;
+  x_ = value;
 }
-inline ::mruv::Position* Character::mutable_position() {
-  // @@protoc_insertion_point(field_mutable:mruv.Character.position)
-  return _internal_mutable_position();
+inline void Character::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:mruv.Character.x)
 }
-inline void Character::set_allocated_position(::mruv::Position* position) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(position_);
-  }
-  if (position) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, position, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  position_ = position;
-  // @@protoc_insertion_point(field_set_allocated:mruv.Character.position)
+
+// float y = 9;
+inline void Character::clear_y() {
+  y_ = 0;
+}
+inline float Character::_internal_y() const {
+  return y_;
+}
+inline float Character::y() const {
+  // @@protoc_insertion_point(field_get:mruv.Character.y)
+  return _internal_y();
+}
+inline void Character::_internal_set_y(float value) {
+  
+  y_ = value;
+}
+inline void Character::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:mruv.Character.y)
+}
+
+// float z = 10;
+inline void Character::clear_z() {
+  z_ = 0;
+}
+inline float Character::_internal_z() const {
+  return z_;
+}
+inline float Character::z() const {
+  // @@protoc_insertion_point(field_get:mruv.Character.z)
+  return _internal_z();
+}
+inline void Character::_internal_set_z(float value) {
+  
+  z_ = value;
+}
+inline void Character::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:mruv.Character.z)
 }
 
 // -------------------------------------------------------------------
@@ -2661,58 +3002,84 @@ inline void GetCharacterResponse::set_sex(::PROTOBUF_NAMESPACE_ID::uint32 value)
   // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.sex)
 }
 
-// .mruv.Position position = 7;
-inline bool GetCharacterResponse::_internal_has_position() const {
-  return this != internal_default_instance() && position_ != nullptr;
+// uint32 clothes_id = 7;
+inline void GetCharacterResponse::clear_clothes_id() {
+  clothes_id_ = 0u;
 }
-inline bool GetCharacterResponse::has_position() const {
-  return _internal_has_position();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::_internal_clothes_id() const {
+  return clothes_id_;
 }
-inline const ::mruv::Position& GetCharacterResponse::_internal_position() const {
-  const ::mruv::Position* p = position_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::Position*>(
-      &::mruv::_Position_default_instance_);
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetCharacterResponse::clothes_id() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.clothes_id)
+  return _internal_clothes_id();
 }
-inline const ::mruv::Position& GetCharacterResponse::position() const {
-  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.position)
-  return _internal_position();
-}
-inline ::mruv::Position* GetCharacterResponse::release_position() {
-  // @@protoc_insertion_point(field_release:mruv.GetCharacterResponse.position)
+inline void GetCharacterResponse::_internal_set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  ::mruv::Position* temp = position_;
-  position_ = nullptr;
-  return temp;
+  clothes_id_ = value;
 }
-inline ::mruv::Position* GetCharacterResponse::_internal_mutable_position() {
+inline void GetCharacterResponse::set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_clothes_id(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.clothes_id)
+}
+
+// float x = 8;
+inline void GetCharacterResponse::clear_x() {
+  x_ = 0;
+}
+inline float GetCharacterResponse::_internal_x() const {
+  return x_;
+}
+inline float GetCharacterResponse::x() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.x)
+  return _internal_x();
+}
+inline void GetCharacterResponse::_internal_set_x(float value) {
   
-  if (position_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::Position>(GetArenaNoVirtual());
-    position_ = p;
-  }
-  return position_;
+  x_ = value;
 }
-inline ::mruv::Position* GetCharacterResponse::mutable_position() {
-  // @@protoc_insertion_point(field_mutable:mruv.GetCharacterResponse.position)
-  return _internal_mutable_position();
+inline void GetCharacterResponse::set_x(float value) {
+  _internal_set_x(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.x)
 }
-inline void GetCharacterResponse::set_allocated_position(::mruv::Position* position) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(position_);
-  }
-  if (position) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
-    if (message_arena != submessage_arena) {
-      position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, position, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  position_ = position;
-  // @@protoc_insertion_point(field_set_allocated:mruv.GetCharacterResponse.position)
+
+// float y = 9;
+inline void GetCharacterResponse::clear_y() {
+  y_ = 0;
+}
+inline float GetCharacterResponse::_internal_y() const {
+  return y_;
+}
+inline float GetCharacterResponse::y() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.y)
+  return _internal_y();
+}
+inline void GetCharacterResponse::_internal_set_y(float value) {
+  
+  y_ = value;
+}
+inline void GetCharacterResponse::set_y(float value) {
+  _internal_set_y(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.y)
+}
+
+// float z = 10;
+inline void GetCharacterResponse::clear_z() {
+  z_ = 0;
+}
+inline float GetCharacterResponse::_internal_z() const {
+  return z_;
+}
+inline float GetCharacterResponse::z() const {
+  // @@protoc_insertion_point(field_get:mruv.GetCharacterResponse.z)
+  return _internal_z();
+}
+inline void GetCharacterResponse::_internal_set_z(float value) {
+  
+  z_ = value;
+}
+inline void GetCharacterResponse::set_z(float value) {
+  _internal_set_z(value);
+  // @@protoc_insertion_point(field_set:mruv.GetCharacterResponse.z)
 }
 
 // -------------------------------------------------------------------
@@ -2770,6 +3137,54 @@ inline void DeleteCharacterRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value
 // -------------------------------------------------------------------
 
 // DeleteCharacterResponse
+
+// -------------------------------------------------------------------
+
+// ChangeClothesRequest
+
+// uint32 id = 1;
+inline void ChangeClothesRequest::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ChangeClothesRequest::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ChangeClothesRequest::id() const {
+  // @@protoc_insertion_point(field_get:mruv.ChangeClothesRequest.id)
+  return _internal_id();
+}
+inline void ChangeClothesRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void ChangeClothesRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.ChangeClothesRequest.id)
+}
+
+// uint32 clothes_id = 2;
+inline void ChangeClothesRequest::clear_clothes_id() {
+  clothes_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ChangeClothesRequest::_internal_clothes_id() const {
+  return clothes_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ChangeClothesRequest::clothes_id() const {
+  // @@protoc_insertion_point(field_get:mruv.ChangeClothesRequest.clothes_id)
+  return _internal_clothes_id();
+}
+inline void ChangeClothesRequest::_internal_set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  clothes_id_ = value;
+}
+inline void ChangeClothesRequest::set_clothes_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_clothes_id(value);
+  // @@protoc_insertion_point(field_set:mruv.ChangeClothesRequest.clothes_id)
+}
+
+// -------------------------------------------------------------------
+
+// ChangeClothesResponse
 
 // -------------------------------------------------------------------
 
@@ -2905,6 +3320,10 @@ inline void DeathStreamResponse::set_death_type(::mruv::DeathType value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

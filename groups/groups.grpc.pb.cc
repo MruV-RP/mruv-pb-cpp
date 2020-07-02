@@ -24,10 +24,21 @@ namespace mruv {
 static const char* MruVGroupsService_method_names[] = {
   "/mruv.MruVGroupsService/CreateGroup",
   "/mruv.MruVGroupsService/GetGroup",
+  "/mruv.MruVGroupsService/UpdateGroup",
   "/mruv.MruVGroupsService/DeleteGroup",
   "/mruv.MruVGroupsService/GetGroups",
-  "/mruv.MruVGroupsService/AddGroupMember",
-  "/mruv.MruVGroupsService/RemoveGroupMember",
+  "/mruv.MruVGroupsService/AssignOwner",
+  "/mruv.MruVGroupsService/GetOwner",
+  "/mruv.MruVGroupsService/AddMember",
+  "/mruv.MruVGroupsService/GetMembers",
+  "/mruv.MruVGroupsService/RemoveMember",
+  "/mruv.MruVGroupsService/AddPermission",
+  "/mruv.MruVGroupsService/GetPermissions",
+  "/mruv.MruVGroupsService/RemovePermission",
+  "/mruv.MruVGroupsService/AddSubgroup",
+  "/mruv.MruVGroupsService/GetSubgroups",
+  "/mruv.MruVGroupsService/RemoveSubgroup",
+  "/mruv.MruVGroupsService/IsPermitted",
   "/mruv.MruVGroupsService/GetServiceStatus",
   "/mruv.MruVGroupsService/GetServiceVersion",
 };
@@ -41,96 +52,135 @@ std::unique_ptr< MruVGroupsService::Stub> MruVGroupsService::NewStub(const std::
 MruVGroupsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_CreateGroup_(MruVGroupsService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetGroup_(MruVGroupsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteGroup_(MruVGroupsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetGroups_(MruVGroupsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddGroupMember_(MruVGroupsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RemoveGroupMember_(MruVGroupsService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetServiceStatus_(MruVGroupsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetServiceVersion_(MruVGroupsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateGroup_(MruVGroupsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteGroup_(MruVGroupsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetGroups_(MruVGroupsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AssignOwner_(MruVGroupsService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOwner_(MruVGroupsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddMember_(MruVGroupsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetMembers_(MruVGroupsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RemoveMember_(MruVGroupsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddPermission_(MruVGroupsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPermissions_(MruVGroupsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RemovePermission_(MruVGroupsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddSubgroup_(MruVGroupsService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetSubgroups_(MruVGroupsService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_RemoveSubgroup_(MruVGroupsService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsPermitted_(MruVGroupsService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetServiceStatus_(MruVGroupsService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetServiceVersion_(MruVGroupsService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MruVGroupsService::Stub::CreateGroup(::grpc::ClientContext* context, const ::mruv::Group& request, ::mruv::GroupID* response) {
+::grpc::Status MruVGroupsService::Stub::CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::mruv::CreateGroupResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateGroup_, context, request, response);
 }
 
-void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)> f) {
+void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateGroup_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)> f) {
+void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CreateGroupResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateGroup_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::mruv::Group* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateGroup_, context, request, response, reactor);
 }
 
-void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVGroupsService::Stub::experimental_async::CreateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CreateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateGroup_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GroupID>* MruVGroupsService::Stub::AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::Group& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GroupID>::Create(channel_.get(), cq, rpcmethod_CreateGroup_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>* MruVGroupsService::Stub::AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CreateGroupResponse>::Create(channel_.get(), cq, rpcmethod_CreateGroup_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GroupID>* MruVGroupsService::Stub::PrepareAsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::Group& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GroupID>::Create(channel_.get(), cq, rpcmethod_CreateGroup_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>* MruVGroupsService::Stub::PrepareAsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::CreateGroupResponse>::Create(channel_.get(), cq, rpcmethod_CreateGroup_, context, request, false);
 }
 
-::grpc::Status MruVGroupsService::Stub::GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID& request, ::mruv::Group* response) {
+::grpc::Status MruVGroupsService::Stub::GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::mruv::GetGroupResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetGroup_, context, request, response);
 }
 
-void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, std::function<void(::grpc::Status)> f) {
+void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGroup_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, std::function<void(::grpc::Status)> f) {
+void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGroup_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::Group* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetGroup_, context, request, response, reactor);
 }
 
-void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Group* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVGroupsService::Stub::experimental_async::GetGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetGroup_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Group>* MruVGroupsService::Stub::AsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GroupID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::Group>::Create(channel_.get(), cq, rpcmethod_GetGroup_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>* MruVGroupsService::Stub::AsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetGroupResponse>::Create(channel_.get(), cq, rpcmethod_GetGroup_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Group>* MruVGroupsService::Stub::PrepareAsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GroupID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::Group>::Create(channel_.get(), cq, rpcmethod_GetGroup_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>* MruVGroupsService::Stub::PrepareAsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetGroupResponse>::Create(channel_.get(), cq, rpcmethod_GetGroup_, context, request, false);
 }
 
-::grpc::Status MruVGroupsService::Stub::DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID& request, ::mruv::GroupID* response) {
+::grpc::Status MruVGroupsService::Stub::UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::mruv::UpdateGroupResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateGroup_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateGroup_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::UpdateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UpdateGroupResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateGroup_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateGroup_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::UpdateGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UpdateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateGroup_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>* MruVGroupsService::Stub::AsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::UpdateGroupResponse>::Create(channel_.get(), cq, rpcmethod_UpdateGroup_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>* MruVGroupsService::Stub::PrepareAsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::UpdateGroupResponse>::Create(channel_.get(), cq, rpcmethod_UpdateGroup_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::mruv::DeleteGroupResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteGroup_, context, request, response);
 }
 
-void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)> f) {
+void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteGroup_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, std::function<void(::grpc::Status)> f) {
+void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::DeleteGroupResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteGroup_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteGroup_, context, request, response, reactor);
 }
 
-void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GroupID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVGroupsService::Stub::experimental_async::DeleteGroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::DeleteGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteGroup_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GroupID>* MruVGroupsService::Stub::AsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::GroupID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GroupID>::Create(channel_.get(), cq, rpcmethod_DeleteGroup_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>* MruVGroupsService::Stub::AsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::DeleteGroupResponse>::Create(channel_.get(), cq, rpcmethod_DeleteGroup_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GroupID>* MruVGroupsService::Stub::PrepareAsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::GroupID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GroupID>::Create(channel_.get(), cq, rpcmethod_DeleteGroup_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>* MruVGroupsService::Stub::PrepareAsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::DeleteGroupResponse>::Create(channel_.get(), cq, rpcmethod_DeleteGroup_, context, request, false);
 }
 
 ::grpc::Status MruVGroupsService::Stub::GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::mruv::GetGroupsResponse* response) {
@@ -161,60 +211,340 @@ void MruVGroupsService::Stub::experimental_async::GetGroups(::grpc::ClientContex
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetGroupsResponse>::Create(channel_.get(), cq, rpcmethod_GetGroups_, context, request, false);
 }
 
-::grpc::Status MruVGroupsService::Stub::AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest& request, ::mruv::AddGroupMemberResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddGroupMember_, context, request, response);
+::grpc::Status MruVGroupsService::Stub::AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::mruv::AssignOwnerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AssignOwner_, context, request, response);
 }
 
-void MruVGroupsService::Stub::experimental_async::AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddGroupMember_, context, request, response, std::move(f));
+void MruVGroupsService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddGroupMember_, context, request, response, std::move(f));
+void MruVGroupsService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AssignOwnerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::AddGroupMember(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddGroupMember_, context, request, response, reactor);
+void MruVGroupsService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, reactor);
 }
 
-void MruVGroupsService::Stub::experimental_async::AddGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddGroupMember_, context, request, response, reactor);
+void MruVGroupsService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::AddGroupMemberResponse>* MruVGroupsService::Stub::AsyncAddGroupMemberRaw(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddGroupMemberResponse>::Create(channel_.get(), cq, rpcmethod_AddGroupMember_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>* MruVGroupsService::Stub::AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AssignOwnerResponse>::Create(channel_.get(), cq, rpcmethod_AssignOwner_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::AddGroupMemberResponse>* MruVGroupsService::Stub::PrepareAsyncAddGroupMemberRaw(::grpc::ClientContext* context, const ::mruv::AddGroupMemberRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddGroupMemberResponse>::Create(channel_.get(), cq, rpcmethod_AddGroupMember_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>* MruVGroupsService::Stub::PrepareAsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AssignOwnerResponse>::Create(channel_.get(), cq, rpcmethod_AssignOwner_, context, request, false);
 }
 
-::grpc::Status MruVGroupsService::Stub::RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest& request, ::mruv::RemoveGroupMemberResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemoveGroupMember_, context, request, response);
+::grpc::Status MruVGroupsService::Stub::GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::mruv::GetOwnerResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetOwner_, context, request, response);
 }
 
-void MruVGroupsService::Stub::experimental_async::RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveGroupMember_, context, request, response, std::move(f));
+void MruVGroupsService::Stub::experimental_async::GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOwner_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveGroupMember_, context, request, response, std::move(f));
+void MruVGroupsService::Stub::experimental_async::GetOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetOwnerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOwner_, context, request, response, std::move(f));
 }
 
-void MruVGroupsService::Stub::experimental_async::RemoveGroupMember(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveGroupMember_, context, request, response, reactor);
+void MruVGroupsService::Stub::experimental_async::GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOwner_, context, request, response, reactor);
 }
 
-void MruVGroupsService::Stub::experimental_async::RemoveGroupMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveGroupMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveGroupMember_, context, request, response, reactor);
+void MruVGroupsService::Stub::experimental_async::GetOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOwner_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::RemoveGroupMemberResponse>* MruVGroupsService::Stub::AsyncRemoveGroupMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemoveGroupMemberResponse>::Create(channel_.get(), cq, rpcmethod_RemoveGroupMember_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>* MruVGroupsService::Stub::AsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetOwnerResponse>::Create(channel_.get(), cq, rpcmethod_GetOwner_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::RemoveGroupMemberResponse>* MruVGroupsService::Stub::PrepareAsyncRemoveGroupMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveGroupMemberRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemoveGroupMemberResponse>::Create(channel_.get(), cq, rpcmethod_RemoveGroupMember_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>* MruVGroupsService::Stub::PrepareAsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetOwnerResponse>::Create(channel_.get(), cq, rpcmethod_GetOwner_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::mruv::AddMemberResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddMember_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddMember_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::AddMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddMemberResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddMember_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddMember_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::AddMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddMember_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>* MruVGroupsService::Stub::AsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddMemberResponse>::Create(channel_.get(), cq, rpcmethod_AddMember_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>* MruVGroupsService::Stub::PrepareAsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddMemberResponse>::Create(channel_.get(), cq, rpcmethod_AddMember_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::mruv::GetMembersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetMembers_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMembers_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::GetMembers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetMembersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMembers_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMembers_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::GetMembers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetMembersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMembers_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>* MruVGroupsService::Stub::AsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetMembersResponse>::Create(channel_.get(), cq, rpcmethod_GetMembers_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>* MruVGroupsService::Stub::PrepareAsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetMembersResponse>::Create(channel_.get(), cq, rpcmethod_GetMembers_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::mruv::RemoveMemberResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemoveMember_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveMember_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveMemberResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveMember_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveMember_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveMember(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveMember_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>* MruVGroupsService::Stub::AsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemoveMemberResponse>::Create(channel_.get(), cq, rpcmethod_RemoveMember_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>* MruVGroupsService::Stub::PrepareAsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemoveMemberResponse>::Create(channel_.get(), cq, rpcmethod_RemoveMember_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::mruv::AddPermissionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddPermission_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddPermission_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::AddPermission(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddPermissionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddPermission_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddPermission_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::AddPermission(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddPermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddPermission_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>* MruVGroupsService::Stub::AsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddPermissionResponse>::Create(channel_.get(), cq, rpcmethod_AddPermission_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>* MruVGroupsService::Stub::PrepareAsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddPermissionResponse>::Create(channel_.get(), cq, rpcmethod_AddPermission_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::mruv::GetPermissionsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetPermissions_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPermissions_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::GetPermissions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetPermissionsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPermissions_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPermissions_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::GetPermissions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetPermissionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPermissions_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>* MruVGroupsService::Stub::AsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetPermissionsResponse>::Create(channel_.get(), cq, rpcmethod_GetPermissions_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>* MruVGroupsService::Stub::PrepareAsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetPermissionsResponse>::Create(channel_.get(), cq, rpcmethod_GetPermissions_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::mruv::RemovePermissionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemovePermission_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemovePermission_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::RemovePermission(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemovePermissionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemovePermission_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemovePermission_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::RemovePermission(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemovePermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemovePermission_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>* MruVGroupsService::Stub::AsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemovePermissionResponse>::Create(channel_.get(), cq, rpcmethod_RemovePermission_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>* MruVGroupsService::Stub::PrepareAsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemovePermissionResponse>::Create(channel_.get(), cq, rpcmethod_RemovePermission_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::mruv::AddSubgroupResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddSubgroup_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddSubgroup_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::AddSubgroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddSubgroupResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddSubgroup_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddSubgroup_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::AddSubgroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::AddSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddSubgroup_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>* MruVGroupsService::Stub::AsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddSubgroupResponse>::Create(channel_.get(), cq, rpcmethod_AddSubgroup_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>* MruVGroupsService::Stub::PrepareAsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::AddSubgroupResponse>::Create(channel_.get(), cq, rpcmethod_AddSubgroup_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::mruv::GetSubgroupsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetSubgroups_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSubgroups_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::GetSubgroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetSubgroupsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSubgroups_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSubgroups_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::GetSubgroups(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetSubgroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSubgroups_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>* MruVGroupsService::Stub::AsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetSubgroupsResponse>::Create(channel_.get(), cq, rpcmethod_GetSubgroups_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>* MruVGroupsService::Stub::PrepareAsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetSubgroupsResponse>::Create(channel_.get(), cq, rpcmethod_GetSubgroups_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::mruv::RemoveSubgroupResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RemoveSubgroup_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveSubgroup_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveSubgroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveSubgroupResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveSubgroup_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveSubgroup_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::RemoveSubgroup(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RemoveSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveSubgroup_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>* MruVGroupsService::Stub::AsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemoveSubgroupResponse>::Create(channel_.get(), cq, rpcmethod_RemoveSubgroup_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>* MruVGroupsService::Stub::PrepareAsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RemoveSubgroupResponse>::Create(channel_.get(), cq, rpcmethod_RemoveSubgroup_, context, request, false);
+}
+
+::grpc::Status MruVGroupsService::Stub::IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::mruv::IsPermittedResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_IsPermitted_, context, request, response);
+}
+
+void MruVGroupsService::Stub::experimental_async::IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsPermitted_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::IsPermitted(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsPermittedResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsPermitted_, context, request, response, std::move(f));
+}
+
+void MruVGroupsService::Stub::experimental_async::IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsPermitted_, context, request, response, reactor);
+}
+
+void MruVGroupsService::Stub::experimental_async::IsPermitted(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsPermittedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsPermitted_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>* MruVGroupsService::Stub::AsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::IsPermittedResponse>::Create(channel_.get(), cq, rpcmethod_IsPermitted_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>* MruVGroupsService::Stub::PrepareAsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::IsPermittedResponse>::Create(channel_.get(), cq, rpcmethod_IsPermitted_, context, request, false);
 }
 
 ::grpc::Status MruVGroupsService::Stub::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) {
@@ -277,40 +607,95 @@ MruVGroupsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::Group, ::mruv::GroupID>(
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>(
           std::mem_fn(&MruVGroupsService::Service::CreateGroup), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GroupID, ::mruv::Group>(
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>(
           std::mem_fn(&MruVGroupsService::Service::GetGroup), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GroupID, ::mruv::GroupID>(
-          std::mem_fn(&MruVGroupsService::Service::DeleteGroup), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>(
+          std::mem_fn(&MruVGroupsService::Service::UpdateGroup), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>(
+          std::mem_fn(&MruVGroupsService::Service::DeleteGroup), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
           std::mem_fn(&MruVGroupsService::Service::GetGroups), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVGroupsService_method_names[4],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddGroupMemberRequest, ::mruv::AddGroupMemberResponse>(
-          std::mem_fn(&MruVGroupsService::Service::AddGroupMember), this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemoveGroupMemberRequest, ::mruv::RemoveGroupMemberResponse>(
-          std::mem_fn(&MruVGroupsService::Service::RemoveGroupMember), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>(
+          std::mem_fn(&MruVGroupsService::Service::AssignOwner), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>(
+          std::mem_fn(&MruVGroupsService::Service::GetOwner), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>(
+          std::mem_fn(&MruVGroupsService::Service::AddMember), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>(
+          std::mem_fn(&MruVGroupsService::Service::GetMembers), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>(
+          std::mem_fn(&MruVGroupsService::Service::RemoveMember), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>(
+          std::mem_fn(&MruVGroupsService::Service::AddPermission), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>(
+          std::mem_fn(&MruVGroupsService::Service::GetPermissions), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>(
+          std::mem_fn(&MruVGroupsService::Service::RemovePermission), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>(
+          std::mem_fn(&MruVGroupsService::Service::AddSubgroup), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>(
+          std::mem_fn(&MruVGroupsService::Service::GetSubgroups), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>(
+          std::mem_fn(&MruVGroupsService::Service::RemoveSubgroup), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>(
+          std::mem_fn(&MruVGroupsService::Service::IsPermitted), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGroupsService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
           std::mem_fn(&MruVGroupsService::Service::GetServiceStatus), this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVGroupsService_method_names[7],
+      MruVGroupsService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
           std::mem_fn(&MruVGroupsService::Service::GetServiceVersion), this)));
@@ -319,21 +704,28 @@ MruVGroupsService::Service::Service() {
 MruVGroupsService::Service::~Service() {
 }
 
-::grpc::Status MruVGroupsService::Service::CreateGroup(::grpc::ServerContext* context, const ::mruv::Group* request, ::mruv::GroupID* response) {
+::grpc::Status MruVGroupsService::Service::CreateGroup(::grpc::ServerContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVGroupsService::Service::GetGroup(::grpc::ServerContext* context, const ::mruv::GroupID* request, ::mruv::Group* response) {
+::grpc::Status MruVGroupsService::Service::GetGroup(::grpc::ServerContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVGroupsService::Service::DeleteGroup(::grpc::ServerContext* context, const ::mruv::GroupID* request, ::mruv::GroupID* response) {
+::grpc::Status MruVGroupsService::Service::UpdateGroup(::grpc::ServerContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::DeleteGroup(::grpc::ServerContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -347,14 +739,84 @@ MruVGroupsService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVGroupsService::Service::AddGroupMember(::grpc::ServerContext* context, const ::mruv::AddGroupMemberRequest* request, ::mruv::AddGroupMemberResponse* response) {
+::grpc::Status MruVGroupsService::Service::AssignOwner(::grpc::ServerContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVGroupsService::Service::RemoveGroupMember(::grpc::ServerContext* context, const ::mruv::RemoveGroupMemberRequest* request, ::mruv::RemoveGroupMemberResponse* response) {
+::grpc::Status MruVGroupsService::Service::GetOwner(::grpc::ServerContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::AddMember(::grpc::ServerContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::GetMembers(::grpc::ServerContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::RemoveMember(::grpc::ServerContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::AddPermission(::grpc::ServerContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::GetPermissions(::grpc::ServerContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::RemovePermission(::grpc::ServerContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::AddSubgroup(::grpc::ServerContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::GetSubgroups(::grpc::ServerContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::RemoveSubgroup(::grpc::ServerContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGroupsService::Service::IsPermitted(::grpc::ServerContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response) {
   (void) context;
   (void) request;
   (void) response;

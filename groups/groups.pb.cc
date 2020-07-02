@@ -14,25 +14,41 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Group_groups_2fgroups_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Permission_groups_2fgroups_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGroupResponse_groups_2fgroups_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto;
 namespace mruv {
-class PermissionIDDefaultTypeInternal {
+class CreateGroupRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PermissionID> _instance;
-} _PermissionID_default_instance_;
-class PermissionDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateGroupRequest> _instance;
+} _CreateGroupRequest_default_instance_;
+class CreateGroupResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Permission> _instance;
-} _Permission_default_instance_;
-class GroupIDDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateGroupResponse> _instance;
+} _CreateGroupResponse_default_instance_;
+class GetGroupRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GroupID> _instance;
-} _GroupID_default_instance_;
-class GroupDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupRequest> _instance;
+} _GetGroupRequest_default_instance_;
+class GetGroupResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Group> _instance;
-} _Group_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupResponse> _instance;
+} _GetGroupResponse_default_instance_;
+class UpdateGroupRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateGroupRequest> _instance;
+} _UpdateGroupRequest_default_instance_;
+class UpdateGroupResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UpdateGroupResponse> _instance;
+} _UpdateGroupResponse_default_instance_;
+class DeleteGroupRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteGroupRequest> _instance;
+} _DeleteGroupRequest_default_instance_;
+class DeleteGroupResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteGroupResponse> _instance;
+} _DeleteGroupResponse_default_instance_;
 class GetGroupsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupsRequest> _instance;
@@ -41,50 +57,302 @@ class GetGroupsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupsResponse> _instance;
 } _GetGroupsResponse_default_instance_;
-class AddGroupMemberRequestDefaultTypeInternal {
+class AssignOwnerRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddGroupMemberRequest> _instance;
-} _AddGroupMemberRequest_default_instance_;
-class AddGroupMemberResponseDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AssignOwnerRequest> _instance;
+} _AssignOwnerRequest_default_instance_;
+class AssignOwnerResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddGroupMemberResponse> _instance;
-} _AddGroupMemberResponse_default_instance_;
-class RemoveGroupMemberRequestDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AssignOwnerResponse> _instance;
+} _AssignOwnerResponse_default_instance_;
+class GetOwnerRequestDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveGroupMemberRequest> _instance;
-} _RemoveGroupMemberRequest_default_instance_;
-class RemoveGroupMemberResponseDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetOwnerRequest> _instance;
+} _GetOwnerRequest_default_instance_;
+class GetOwnerResponseDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveGroupMemberResponse> _instance;
-} _RemoveGroupMemberResponse_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetOwnerResponse> _instance;
+} _GetOwnerResponse_default_instance_;
+class AddMemberRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddMemberRequest> _instance;
+} _AddMemberRequest_default_instance_;
+class AddMemberResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddMemberResponse> _instance;
+} _AddMemberResponse_default_instance_;
+class GetMembersRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetMembersRequest> _instance;
+} _GetMembersRequest_default_instance_;
+class GetMembersResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetMembersResponse> _instance;
+} _GetMembersResponse_default_instance_;
+class RemoveMemberRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveMemberRequest> _instance;
+} _RemoveMemberRequest_default_instance_;
+class RemoveMemberResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveMemberResponse> _instance;
+} _RemoveMemberResponse_default_instance_;
+class AddPermissionRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddPermissionRequest> _instance;
+} _AddPermissionRequest_default_instance_;
+class AddPermissionResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddPermissionResponse> _instance;
+} _AddPermissionResponse_default_instance_;
+class GetPermissionsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetPermissionsRequest> _instance;
+} _GetPermissionsRequest_default_instance_;
+class GetPermissionsResponse_PermissionDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetPermissionsResponse_Permission> _instance;
+} _GetPermissionsResponse_Permission_default_instance_;
+class GetPermissionsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetPermissionsResponse> _instance;
+} _GetPermissionsResponse_default_instance_;
+class RemovePermissionRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemovePermissionRequest> _instance;
+} _RemovePermissionRequest_default_instance_;
+class RemovePermissionResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemovePermissionResponse> _instance;
+} _RemovePermissionResponse_default_instance_;
+class AddSubgroupRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddSubgroupRequest> _instance;
+} _AddSubgroupRequest_default_instance_;
+class AddSubgroupResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddSubgroupResponse> _instance;
+} _AddSubgroupResponse_default_instance_;
+class GetSubgroupsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetSubgroupsRequest> _instance;
+} _GetSubgroupsRequest_default_instance_;
+class GetSubgroupsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetSubgroupsResponse> _instance;
+} _GetSubgroupsResponse_default_instance_;
+class RemoveSubgroupRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveSubgroupRequest> _instance;
+} _RemoveSubgroupRequest_default_instance_;
+class RemoveSubgroupResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemoveSubgroupResponse> _instance;
+} _RemoveSubgroupResponse_default_instance_;
+class IsPermittedRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IsPermittedRequest> _instance;
+} _IsPermittedRequest_default_instance_;
+class IsPermittedResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<IsPermittedResponse> _instance;
+} _IsPermittedResponse_default_instance_;
 }  // namespace mruv
-static void InitDefaultsscc_info_AddGroupMemberRequest_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_AddMemberRequest_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_AddGroupMemberRequest_default_instance_;
-    new (ptr) ::mruv::AddGroupMemberRequest();
+    void* ptr = &::mruv::_AddMemberRequest_default_instance_;
+    new (ptr) ::mruv::AddMemberRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::AddGroupMemberRequest::InitAsDefaultInstance();
+  ::mruv::AddMemberRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddGroupMemberRequest_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddGroupMemberRequest_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddMemberRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddMemberRequest_groups_2fgroups_2eproto}, {}};
 
-static void InitDefaultsscc_info_AddGroupMemberResponse_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_AddMemberResponse_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_AddGroupMemberResponse_default_instance_;
-    new (ptr) ::mruv::AddGroupMemberResponse();
+    void* ptr = &::mruv::_AddMemberResponse_default_instance_;
+    new (ptr) ::mruv::AddMemberResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::AddGroupMemberResponse::InitAsDefaultInstance();
+  ::mruv::AddMemberResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddGroupMemberResponse_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddGroupMemberResponse_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddMemberResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddMemberResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddPermissionRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_AddPermissionRequest_default_instance_;
+    new (ptr) ::mruv::AddPermissionRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::AddPermissionRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddPermissionRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddPermissionRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddPermissionResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_AddPermissionResponse_default_instance_;
+    new (ptr) ::mruv::AddPermissionResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::AddPermissionResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddPermissionResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddPermissionResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddSubgroupRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_AddSubgroupRequest_default_instance_;
+    new (ptr) ::mruv::AddSubgroupRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::AddSubgroupRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddSubgroupRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddSubgroupRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddSubgroupResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_AddSubgroupResponse_default_instance_;
+    new (ptr) ::mruv::AddSubgroupResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::AddSubgroupResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddSubgroupResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddSubgroupResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_AssignOwnerRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_AssignOwnerRequest_default_instance_;
+    new (ptr) ::mruv::AssignOwnerRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::AssignOwnerRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AssignOwnerRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AssignOwnerRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_AssignOwnerResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_AssignOwnerResponse_default_instance_;
+    new (ptr) ::mruv::AssignOwnerResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::AssignOwnerResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AssignOwnerResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AssignOwnerResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_CreateGroupRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_CreateGroupRequest_default_instance_;
+    new (ptr) ::mruv::CreateGroupRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::CreateGroupRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateGroupRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateGroupRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_CreateGroupResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_CreateGroupResponse_default_instance_;
+    new (ptr) ::mruv::CreateGroupResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::CreateGroupResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateGroupResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateGroupResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteGroupRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_DeleteGroupRequest_default_instance_;
+    new (ptr) ::mruv::DeleteGroupRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::DeleteGroupRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteGroupRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteGroupRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteGroupResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_DeleteGroupResponse_default_instance_;
+    new (ptr) ::mruv::DeleteGroupResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::DeleteGroupResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteGroupResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteGroupResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetGroupRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_GetGroupRequest_default_instance_;
+    new (ptr) ::mruv::GetGroupRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::GetGroupRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGroupRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetGroupRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetGroupResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_GetGroupResponse_default_instance_;
+    new (ptr) ::mruv::GetGroupResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::GetGroupResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGroupResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetGroupResponse_groups_2fgroups_2eproto}, {}};
 
 static void InitDefaultsscc_info_GetGroupsRequest_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -113,134 +381,332 @@ static void InitDefaultsscc_info_GetGroupsResponse_groups_2fgroups_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetGroupsResponse_groups_2fgroups_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetGroupsResponse_groups_2fgroups_2eproto}, {
-      &scc_info_Group_groups_2fgroups_2eproto.base,}};
+      &scc_info_GetGroupResponse_groups_2fgroups_2eproto.base,}};
 
-static void InitDefaultsscc_info_Group_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_GetMembersRequest_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_Group_default_instance_;
-    new (ptr) ::mruv::Group();
+    void* ptr = &::mruv::_GetMembersRequest_default_instance_;
+    new (ptr) ::mruv::GetMembersRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::Group::InitAsDefaultInstance();
+  ::mruv::GetMembersRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Group_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Group_groups_2fgroups_2eproto}, {
-      &scc_info_Permission_groups_2fgroups_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetMembersRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetMembersRequest_groups_2fgroups_2eproto}, {}};
 
-static void InitDefaultsscc_info_GroupID_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_GetMembersResponse_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GroupID_default_instance_;
-    new (ptr) ::mruv::GroupID();
+    void* ptr = &::mruv::_GetMembersResponse_default_instance_;
+    new (ptr) ::mruv::GetMembersResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GroupID::InitAsDefaultInstance();
+  ::mruv::GetMembersResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GroupID_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GroupID_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetMembersResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetMembersResponse_groups_2fgroups_2eproto}, {}};
 
-static void InitDefaultsscc_info_Permission_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_GetOwnerRequest_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_Permission_default_instance_;
-    new (ptr) ::mruv::Permission();
+    void* ptr = &::mruv::_GetOwnerRequest_default_instance_;
+    new (ptr) ::mruv::GetOwnerRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::Permission::InitAsDefaultInstance();
+  ::mruv::GetOwnerRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Permission_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Permission_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetOwnerRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetOwnerRequest_groups_2fgroups_2eproto}, {}};
 
-static void InitDefaultsscc_info_PermissionID_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_GetOwnerResponse_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_PermissionID_default_instance_;
-    new (ptr) ::mruv::PermissionID();
+    void* ptr = &::mruv::_GetOwnerResponse_default_instance_;
+    new (ptr) ::mruv::GetOwnerResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::PermissionID::InitAsDefaultInstance();
+  ::mruv::GetOwnerResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PermissionID_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PermissionID_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetOwnerResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetOwnerResponse_groups_2fgroups_2eproto}, {}};
 
-static void InitDefaultsscc_info_RemoveGroupMemberRequest_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_GetPermissionsRequest_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_RemoveGroupMemberRequest_default_instance_;
-    new (ptr) ::mruv::RemoveGroupMemberRequest();
+    void* ptr = &::mruv::_GetPermissionsRequest_default_instance_;
+    new (ptr) ::mruv::GetPermissionsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::RemoveGroupMemberRequest::InitAsDefaultInstance();
+  ::mruv::GetPermissionsRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveGroupMemberRequest_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveGroupMemberRequest_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPermissionsRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetPermissionsRequest_groups_2fgroups_2eproto}, {}};
 
-static void InitDefaultsscc_info_RemoveGroupMemberResponse_groups_2fgroups_2eproto() {
+static void InitDefaultsscc_info_GetPermissionsResponse_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_RemoveGroupMemberResponse_default_instance_;
-    new (ptr) ::mruv::RemoveGroupMemberResponse();
+    void* ptr = &::mruv::_GetPermissionsResponse_default_instance_;
+    new (ptr) ::mruv::GetPermissionsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::RemoveGroupMemberResponse::InitAsDefaultInstance();
+  ::mruv::GetPermissionsResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveGroupMemberResponse_groups_2fgroups_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveGroupMemberResponse_groups_2fgroups_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetPermissionsResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetPermissionsResponse_groups_2fgroups_2eproto}, {
+      &scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_groups_2fgroups_2eproto[10];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_groups_2fgroups_2eproto = nullptr;
+static void InitDefaultsscc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_GetPermissionsResponse_Permission_default_instance_;
+    new (ptr) ::mruv::GetPermissionsResponse_Permission();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::GetPermissionsResponse_Permission::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetSubgroupsRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_GetSubgroupsRequest_default_instance_;
+    new (ptr) ::mruv::GetSubgroupsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::GetSubgroupsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetSubgroupsRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetSubgroupsRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetSubgroupsResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_GetSubgroupsResponse_default_instance_;
+    new (ptr) ::mruv::GetSubgroupsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::GetSubgroupsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetSubgroupsResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetSubgroupsResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_IsPermittedRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_IsPermittedRequest_default_instance_;
+    new (ptr) ::mruv::IsPermittedRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::IsPermittedRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsPermittedRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_IsPermittedRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_IsPermittedResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_IsPermittedResponse_default_instance_;
+    new (ptr) ::mruv::IsPermittedResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::IsPermittedResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsPermittedResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_IsPermittedResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveMemberRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_RemoveMemberRequest_default_instance_;
+    new (ptr) ::mruv::RemoveMemberRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::RemoveMemberRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveMemberRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveMemberRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveMemberResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_RemoveMemberResponse_default_instance_;
+    new (ptr) ::mruv::RemoveMemberResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::RemoveMemberResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveMemberResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveMemberResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemovePermissionRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_RemovePermissionRequest_default_instance_;
+    new (ptr) ::mruv::RemovePermissionRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::RemovePermissionRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemovePermissionRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemovePermissionRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemovePermissionResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_RemovePermissionResponse_default_instance_;
+    new (ptr) ::mruv::RemovePermissionResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::RemovePermissionResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemovePermissionResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemovePermissionResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveSubgroupRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_RemoveSubgroupRequest_default_instance_;
+    new (ptr) ::mruv::RemoveSubgroupRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::RemoveSubgroupRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveSubgroupRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveSubgroupRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_RemoveSubgroupResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_RemoveSubgroupResponse_default_instance_;
+    new (ptr) ::mruv::RemoveSubgroupResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::RemoveSubgroupResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemoveSubgroupResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemoveSubgroupResponse_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_UpdateGroupRequest_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_UpdateGroupRequest_default_instance_;
+    new (ptr) ::mruv::UpdateGroupRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::UpdateGroupRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateGroupRequest_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateGroupRequest_groups_2fgroups_2eproto}, {}};
+
+static void InitDefaultsscc_info_UpdateGroupResponse_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_UpdateGroupResponse_default_instance_;
+    new (ptr) ::mruv::UpdateGroupResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::UpdateGroupResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateGroupResponse_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateGroupResponse_groups_2fgroups_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_groups_2fgroups_2eproto[35];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_groups_2fgroups_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_groups_2fgroups_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::PermissionID, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::PermissionID, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupRequest, name_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::Permission, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::Permission, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Permission, name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Permission, role_),
+  PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupResponse, group_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GroupID, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GroupID, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupRequest, group_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::Group, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::Group, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Group, name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Group, description_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Group, permissions_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Group, members_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupResponse, name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::DeleteGroupRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::DeleteGroupRequest, group_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::DeleteGroupResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsRequest, limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -248,177 +714,501 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offse
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse, groups_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::AddGroupMemberRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AssignOwnerRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::AssignOwnerRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AssignOwnerRequest, owner_type_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AssignOwnerRequest, owner_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::AssignOwnerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::AddGroupMemberResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetOwnerRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetOwnerRequest, group_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetOwnerResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetOwnerResponse, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetOwnerResponse, owner_type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddMemberRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddMemberRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AddMemberRequest, member_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddMemberResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::RemoveGroupMemberRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetMembersRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetMembersRequest, group_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetMembersResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetMembersResponse, member_type_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetMembersResponse, member_ids_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveMemberRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveMemberRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveMemberRequest, member_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveMemberResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::RemoveGroupMemberResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AddPermissionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddPermissionRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AddPermissionRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AddPermissionRequest, definition_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddPermissionResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddPermissionResponse, permission_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsRequest, group_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsResponse_Permission, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsResponse_Permission, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsResponse_Permission, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsResponse_Permission, definition_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetPermissionsResponse, permissions_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemovePermissionRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemovePermissionRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::RemovePermissionRequest, permission_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemovePermissionResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddSubgroupRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddSubgroupRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::AddSubgroupRequest, subgroup_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::AddSubgroupResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetSubgroupsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetSubgroupsRequest, group_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetSubgroupsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetSubgroupsResponse, subgroup_ids_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveSubgroupRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveSubgroupRequest, group_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveSubgroupRequest, subgroup_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::RemoveSubgroupResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsPermittedRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsPermittedRequest, member_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::IsPermittedRequest, member_type_),
+  PROTOBUF_FIELD_OFFSET(::mruv::IsPermittedRequest, action_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsPermittedResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::IsPermittedResponse, permitted_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::PermissionID)},
-  { 6, -1, sizeof(::mruv::Permission)},
-  { 14, -1, sizeof(::mruv::GroupID)},
-  { 20, -1, sizeof(::mruv::Group)},
-  { 30, -1, sizeof(::mruv::GetGroupsRequest)},
-  { 36, -1, sizeof(::mruv::GetGroupsResponse)},
-  { 42, -1, sizeof(::mruv::AddGroupMemberRequest)},
-  { 47, -1, sizeof(::mruv::AddGroupMemberResponse)},
-  { 52, -1, sizeof(::mruv::RemoveGroupMemberRequest)},
-  { 57, -1, sizeof(::mruv::RemoveGroupMemberResponse)},
+  { 0, -1, sizeof(::mruv::CreateGroupRequest)},
+  { 6, -1, sizeof(::mruv::CreateGroupResponse)},
+  { 12, -1, sizeof(::mruv::GetGroupRequest)},
+  { 18, -1, sizeof(::mruv::GetGroupResponse)},
+  { 24, -1, sizeof(::mruv::UpdateGroupRequest)},
+  { 31, -1, sizeof(::mruv::UpdateGroupResponse)},
+  { 36, -1, sizeof(::mruv::DeleteGroupRequest)},
+  { 42, -1, sizeof(::mruv::DeleteGroupResponse)},
+  { 47, -1, sizeof(::mruv::GetGroupsRequest)},
+  { 52, -1, sizeof(::mruv::GetGroupsResponse)},
+  { 58, -1, sizeof(::mruv::AssignOwnerRequest)},
+  { 66, -1, sizeof(::mruv::AssignOwnerResponse)},
+  { 71, -1, sizeof(::mruv::GetOwnerRequest)},
+  { 77, -1, sizeof(::mruv::GetOwnerResponse)},
+  { 84, -1, sizeof(::mruv::AddMemberRequest)},
+  { 91, -1, sizeof(::mruv::AddMemberResponse)},
+  { 96, -1, sizeof(::mruv::GetMembersRequest)},
+  { 102, -1, sizeof(::mruv::GetMembersResponse)},
+  { 109, -1, sizeof(::mruv::RemoveMemberRequest)},
+  { 116, -1, sizeof(::mruv::RemoveMemberResponse)},
+  { 121, -1, sizeof(::mruv::AddPermissionRequest)},
+  { 129, -1, sizeof(::mruv::AddPermissionResponse)},
+  { 135, -1, sizeof(::mruv::GetPermissionsRequest)},
+  { 141, -1, sizeof(::mruv::GetPermissionsResponse_Permission)},
+  { 149, -1, sizeof(::mruv::GetPermissionsResponse)},
+  { 155, -1, sizeof(::mruv::RemovePermissionRequest)},
+  { 162, -1, sizeof(::mruv::RemovePermissionResponse)},
+  { 167, -1, sizeof(::mruv::AddSubgroupRequest)},
+  { 174, -1, sizeof(::mruv::AddSubgroupResponse)},
+  { 179, -1, sizeof(::mruv::GetSubgroupsRequest)},
+  { 185, -1, sizeof(::mruv::GetSubgroupsResponse)},
+  { 191, -1, sizeof(::mruv::RemoveSubgroupRequest)},
+  { 198, -1, sizeof(::mruv::RemoveSubgroupResponse)},
+  { 203, -1, sizeof(::mruv::IsPermittedRequest)},
+  { 211, -1, sizeof(::mruv::IsPermittedResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_PermissionID_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_Permission_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GroupID_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_Group_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_CreateGroupRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_CreateGroupResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_UpdateGroupRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_UpdateGroupResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeleteGroupRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeleteGroupResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupsRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddGroupMemberRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddGroupMemberResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemoveGroupMemberRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemoveGroupMemberResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AssignOwnerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AssignOwnerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetOwnerRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetOwnerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddMemberRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddMemberResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetMembersRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetMembersResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemoveMemberRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemoveMemberResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddPermissionRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddPermissionResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetPermissionsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetPermissionsResponse_Permission_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetPermissionsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemovePermissionRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemovePermissionResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddSubgroupRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AddSubgroupResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetSubgroupsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetSubgroupsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemoveSubgroupRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_RemoveSubgroupResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_IsPermittedRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_IsPermittedResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_groups_2fgroups_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023groups/groups.proto\022\004mruv\032\034google/api/"
-  "annotations.proto\032\023common/health.proto\"\032"
-  "\n\014PermissionID\022\n\n\002id\030\001 \001(\r\"4\n\nPermission"
-  "\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\014\n\004role\030\003 \001(\t"
-  "\"\025\n\007GroupID\022\n\n\002id\030\001 \001(\r\"n\n\005Group\022\n\n\002id\030\001"
-  " \001(\r\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022"
-  "%\n\013permissions\030\005 \003(\0132\020.mruv.Permission\022\017"
-  "\n\007members\030\006 \003(\r\"!\n\020GetGroupsRequest\022\r\n\005l"
-  "imit\030\001 \001(\r\"0\n\021GetGroupsResponse\022\033\n\006group"
-  "s\030\001 \003(\0132\013.mruv.Group\"\027\n\025AddGroupMemberRe"
-  "quest\"\030\n\026AddGroupMemberResponse\"\032\n\030Remov"
-  "eGroupMemberRequest\"\033\n\031RemoveGroupMember"
-  "Response2\230\005\n\021MruVGroupsService\022=\n\013Create"
-  "Group\022\013.mruv.Group\032\r.mruv.GroupID\"\022\202\323\344\223\002"
-  "\014\"\n/v1/groups\022\?\n\010GetGroup\022\r.mruv.GroupID"
-  "\032\013.mruv.Group\"\027\202\323\344\223\002\021\022\017/v1/groups/{id}\022D"
-  "\n\013DeleteGroup\022\r.mruv.GroupID\032\r.mruv.Grou"
-  "pID\"\027\202\323\344\223\002\021*\017/v1/groups/{id}\022P\n\tGetGroup"
-  "s\022\026.mruv.GetGroupsRequest\032\027.mruv.GetGrou"
-  "psResponse\"\022\202\323\344\223\002\014\022\n/v1/groups\022M\n\016AddGro"
-  "upMember\022\033.mruv.AddGroupMemberRequest\032\034."
-  "mruv.AddGroupMemberResponse\"\000\022V\n\021RemoveG"
-  "roupMember\022\036.mruv.RemoveGroupMemberReque"
-  "st\032\037.mruv.RemoveGroupMemberResponse\"\000\022f\n"
-  "\020GetServiceStatus\022\032.mruv.ServiceStatusRe"
-  "quest\032\033.mruv.ServiceStatusResponse\"\031\202\323\344\223"
-  "\002\023\022\021/v1/groups/status\022\\\n\021GetServiceVersi"
-  "on\022\024.mruv.VersionRequest\032\025.mruv.VersionR"
-  "esponse\"\032\202\323\344\223\002\024\022\022/v1/groups/versionB&Z$g"
-  "ithub.com/MruV-RP/mruv-pb-go/groupsb\006pro"
-  "to3"
+  "annotations.proto\032\023common/health.proto\"\""
+  "\n\022CreateGroupRequest\022\014\n\004name\030\001 \001(\t\"\'\n\023Cr"
+  "eateGroupResponse\022\020\n\010group_id\030\001 \001(\r\"#\n\017G"
+  "etGroupRequest\022\020\n\010group_id\030\001 \001(\r\" \n\020GetG"
+  "roupResponse\022\014\n\004name\030\001 \001(\t\"4\n\022UpdateGrou"
+  "pRequest\022\020\n\010group_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t"
+  "\"\025\n\023UpdateGroupResponse\"&\n\022DeleteGroupRe"
+  "quest\022\020\n\010group_id\030\001 \001(\r\"\025\n\023DeleteGroupRe"
+  "sponse\"\022\n\020GetGroupsRequest\";\n\021GetGroupsR"
+  "esponse\022&\n\006groups\030\001 \003(\0132\026.mruv.GetGroupR"
+  "esponse\"]\n\022AssignOwnerRequest\022\020\n\010group_i"
+  "d\030\001 \001(\r\022#\n\nowner_type\030\003 \001(\0162\017.mruv.Owner"
+  "Type\022\020\n\010owner_id\030\002 \001(\r\"\025\n\023AssignOwnerRes"
+  "ponse\"#\n\017GetOwnerRequest\022\020\n\010group_id\030\001 \001"
+  "(\r\"I\n\020GetOwnerResponse\022\020\n\010owner_id\030\001 \001(\r"
+  "\022#\n\nowner_type\030\002 \001(\0162\017.mruv.OwnerType\"7\n"
+  "\020AddMemberRequest\022\020\n\010group_id\030\001 \001(\r\022\021\n\tm"
+  "ember_id\030\002 \001(\r\"\023\n\021AddMemberResponse\"%\n\021G"
+  "etMembersRequest\022\020\n\010group_id\030\001 \001(\r\"O\n\022Ge"
+  "tMembersResponse\022%\n\013member_type\030\001 \001(\0162\020."
+  "mruv.MemberType\022\022\n\nmember_ids\030\002 \003(\r\":\n\023R"
+  "emoveMemberRequest\022\020\n\010group_id\030\001 \001(\r\022\021\n\t"
+  "member_id\030\002 \001(\r\"\026\n\024RemoveMemberResponse\""
+  "J\n\024AddPermissionRequest\022\020\n\010group_id\030\001 \001("
+  "\r\022\014\n\004name\030\002 \001(\t\022\022\n\ndefinition\030\003 \001(\t\".\n\025A"
+  "ddPermissionResponse\022\025\n\rpermission_id\030\001 "
+  "\001(\r\")\n\025GetPermissionsRequest\022\020\n\010group_id"
+  "\030\001 \001(\r\"\222\001\n\026GetPermissionsResponse\022<\n\013per"
+  "missions\030\001 \003(\0132\'.mruv.GetPermissionsResp"
+  "onse.Permission\032:\n\nPermission\022\n\n\002id\030\001 \001("
+  "\r\022\014\n\004name\030\002 \001(\t\022\022\n\ndefinition\030\003 \001(\t\"B\n\027R"
+  "emovePermissionRequest\022\020\n\010group_id\030\001 \001(\r"
+  "\022\025\n\rpermission_id\030\002 \001(\r\"\032\n\030RemovePermiss"
+  "ionResponse\";\n\022AddSubgroupRequest\022\020\n\010gro"
+  "up_id\030\001 \001(\r\022\023\n\013subgroup_id\030\002 \001(\r\"\025\n\023AddS"
+  "ubgroupResponse\"\'\n\023GetSubgroupsRequest\022\020"
+  "\n\010group_id\030\001 \001(\r\",\n\024GetSubgroupsResponse"
+  "\022\024\n\014subgroup_ids\030\001 \003(\r\">\n\025RemoveSubgroup"
+  "Request\022\020\n\010group_id\030\001 \001(\r\022\023\n\013subgroup_id"
+  "\030\002 \001(\r\"\030\n\026RemoveSubgroupResponse\"^\n\022IsPe"
+  "rmittedRequest\022\021\n\tmember_id\030\001 \001(\r\022%\n\013mem"
+  "ber_type\030\002 \001(\0162\020.mruv.MemberType\022\016\n\006acti"
+  "on\030\003 \001(\t\"(\n\023IsPermittedResponse\022\021\n\tpermi"
+  "tted\030\001 \001(\010*k\n\tOwnerType\022\026\n\022OWNER_TYPE_UN"
+  "KNOWN\020\000\022\026\n\022OWNER_TYPE_ACCOUNT\020\001\022\030\n\024OWNER"
+  "_TYPE_CHARACTER\020\002\022\024\n\020OWNER_TYPE_GROUP\020\003*"
+  "Y\n\nMemberType\022\027\n\023MEMBER_TYPE_UNKNOWN\020\000\022\027"
+  "\n\023MEMBER_TYPE_ACCOUNT\020\001\022\031\n\025MEMBER_TYPE_C"
+  "HARACTER\020\0022\220\020\n\021MruVGroupsService\022V\n\013Crea"
+  "teGroup\022\030.mruv.CreateGroupRequest\032\031.mruv"
+  ".CreateGroupResponse\"\022\202\323\344\223\002\014\"\n/v1/groups"
+  "\022X\n\010GetGroup\022\025.mruv.GetGroupRequest\032\026.mr"
+  "uv.GetGroupResponse\"\035\202\323\344\223\002\027\022\025/v1/groups/"
+  "{group_id}\022a\n\013UpdateGroup\022\030.mruv.UpdateG"
+  "roupRequest\032\031.mruv.UpdateGroupResponse\"\035"
+  "\202\323\344\223\002\0272\025/v1/groups/{group_id}\022a\n\013DeleteG"
+  "roup\022\030.mruv.DeleteGroupRequest\032\031.mruv.De"
+  "leteGroupResponse\"\035\202\323\344\223\002\027*\025/v1/groups/{g"
+  "roup_id}\022P\n\tGetGroups\022\026.mruv.GetGroupsRe"
+  "quest\032\027.mruv.GetGroupsResponse\"\022\202\323\344\223\002\014\022\n"
+  "/v1/groups\022g\n\013AssignOwner\022\030.mruv.AssignO"
+  "wnerRequest\032\031.mruv.AssignOwnerResponse\"#"
+  "\202\323\344\223\002\035\032\033/v1/groups/{group_id}/owner\022^\n\010G"
+  "etOwner\022\025.mruv.GetOwnerRequest\032\026.mruv.Ge"
+  "tOwnerResponse\"#\202\323\344\223\002\035\022\033/v1/groups/{grou"
+  "p_id}/owner\022o\n\tAddMember\022\026.mruv.AddMembe"
+  "rRequest\032\027.mruv.AddMemberResponse\"1\202\323\344\223\002"
+  "+\")/v1/groups/{group_id}/members/{member"
+  "_id}\022f\n\nGetMembers\022\027.mruv.GetMembersRequ"
+  "est\032\030.mruv.GetMembersResponse\"%\202\323\344\223\002\037\022\035/"
+  "v1/groups/{group_id}/members\022x\n\014RemoveMe"
+  "mber\022\031.mruv.RemoveMemberRequest\032\032.mruv.R"
+  "emoveMemberResponse\"1\202\323\344\223\002+*)/v1/groups/"
+  "{group_id}/members/{member_id}\022s\n\rAddPer"
+  "mission\022\032.mruv.AddPermissionRequest\032\033.mr"
+  "uv.AddPermissionResponse\")\202\323\344\223\002#\"!/v1/gr"
+  "oups/{group_id}/permissions\022v\n\016GetPermis"
+  "sions\022\033.mruv.GetPermissionsRequest\032\034.mru"
+  "v.GetPermissionsResponse\")\202\323\344\223\002#\022!/v1/gr"
+  "oups/{group_id}/permissions\022|\n\020RemovePer"
+  "mission\022\035.mruv.RemovePermissionRequest\032\036"
+  ".mruv.RemovePermissionResponse\")\202\323\344\223\002#*!"
+  "/v1/groups/{group_id}/permissions\022y\n\013Add"
+  "Subgroup\022\030.mruv.AddSubgroupRequest\032\031.mru"
+  "v.AddSubgroupResponse\"5\202\323\344\223\002/\"-/v1/group"
+  "s/{group_id}/subgroups/{subgroup_id}\022n\n\014"
+  "GetSubgroups\022\031.mruv.GetSubgroupsRequest\032"
+  "\032.mruv.GetSubgroupsResponse\"\'\202\323\344\223\002!\022\037/v1"
+  "/groups/{group_id}/subgroups\022\202\001\n\016RemoveS"
+  "ubgroup\022\033.mruv.RemoveSubgroupRequest\032\034.m"
+  "ruv.RemoveSubgroupResponse\"5\202\323\344\223\002/*-/v1/"
+  "groups/{group_id}/subgroups/{subgroup_id"
+  "}\022t\n\013IsPermitted\022\030.mruv.IsPermittedReque"
+  "st\032\031.mruv.IsPermittedResponse\"0\202\323\344\223\002*\022(/"
+  "v1/groups/members/{member_id}/permitted\022"
+  "f\n\020GetServiceStatus\022\032.mruv.ServiceStatus"
+  "Request\032\033.mruv.ServiceStatusResponse\"\031\202\323"
+  "\344\223\002\023\022\021/v1/groups/status\022\\\n\021GetServiceVer"
+  "sion\022\024.mruv.VersionRequest\032\025.mruv.Versio"
+  "nResponse\"\032\202\323\344\223\002\024\022\022/v1/groups/versionB&Z"
+  "$github.com/MruV-RP/mruv-pb-go/groupsb\006p"
+  "roto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_groups_2fgroups_2eproto_deps[2] = {
   &::descriptor_table_common_2fhealth_2eproto,
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_groups_2fgroups_2eproto_sccs[10] = {
-  &scc_info_AddGroupMemberRequest_groups_2fgroups_2eproto.base,
-  &scc_info_AddGroupMemberResponse_groups_2fgroups_2eproto.base,
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_groups_2fgroups_2eproto_sccs[35] = {
+  &scc_info_AddMemberRequest_groups_2fgroups_2eproto.base,
+  &scc_info_AddMemberResponse_groups_2fgroups_2eproto.base,
+  &scc_info_AddPermissionRequest_groups_2fgroups_2eproto.base,
+  &scc_info_AddPermissionResponse_groups_2fgroups_2eproto.base,
+  &scc_info_AddSubgroupRequest_groups_2fgroups_2eproto.base,
+  &scc_info_AddSubgroupResponse_groups_2fgroups_2eproto.base,
+  &scc_info_AssignOwnerRequest_groups_2fgroups_2eproto.base,
+  &scc_info_AssignOwnerResponse_groups_2fgroups_2eproto.base,
+  &scc_info_CreateGroupRequest_groups_2fgroups_2eproto.base,
+  &scc_info_CreateGroupResponse_groups_2fgroups_2eproto.base,
+  &scc_info_DeleteGroupRequest_groups_2fgroups_2eproto.base,
+  &scc_info_DeleteGroupResponse_groups_2fgroups_2eproto.base,
+  &scc_info_GetGroupRequest_groups_2fgroups_2eproto.base,
+  &scc_info_GetGroupResponse_groups_2fgroups_2eproto.base,
   &scc_info_GetGroupsRequest_groups_2fgroups_2eproto.base,
   &scc_info_GetGroupsResponse_groups_2fgroups_2eproto.base,
-  &scc_info_Group_groups_2fgroups_2eproto.base,
-  &scc_info_GroupID_groups_2fgroups_2eproto.base,
-  &scc_info_Permission_groups_2fgroups_2eproto.base,
-  &scc_info_PermissionID_groups_2fgroups_2eproto.base,
-  &scc_info_RemoveGroupMemberRequest_groups_2fgroups_2eproto.base,
-  &scc_info_RemoveGroupMemberResponse_groups_2fgroups_2eproto.base,
+  &scc_info_GetMembersRequest_groups_2fgroups_2eproto.base,
+  &scc_info_GetMembersResponse_groups_2fgroups_2eproto.base,
+  &scc_info_GetOwnerRequest_groups_2fgroups_2eproto.base,
+  &scc_info_GetOwnerResponse_groups_2fgroups_2eproto.base,
+  &scc_info_GetPermissionsRequest_groups_2fgroups_2eproto.base,
+  &scc_info_GetPermissionsResponse_groups_2fgroups_2eproto.base,
+  &scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto.base,
+  &scc_info_GetSubgroupsRequest_groups_2fgroups_2eproto.base,
+  &scc_info_GetSubgroupsResponse_groups_2fgroups_2eproto.base,
+  &scc_info_IsPermittedRequest_groups_2fgroups_2eproto.base,
+  &scc_info_IsPermittedResponse_groups_2fgroups_2eproto.base,
+  &scc_info_RemoveMemberRequest_groups_2fgroups_2eproto.base,
+  &scc_info_RemoveMemberResponse_groups_2fgroups_2eproto.base,
+  &scc_info_RemovePermissionRequest_groups_2fgroups_2eproto.base,
+  &scc_info_RemovePermissionResponse_groups_2fgroups_2eproto.base,
+  &scc_info_RemoveSubgroupRequest_groups_2fgroups_2eproto.base,
+  &scc_info_RemoveSubgroupResponse_groups_2fgroups_2eproto.base,
+  &scc_info_UpdateGroupRequest_groups_2fgroups_2eproto.base,
+  &scc_info_UpdateGroupResponse_groups_2fgroups_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_groups_2fgroups_2eproto_once;
 static bool descriptor_table_groups_2fgroups_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_groups_2fgroups_2eproto = {
-  &descriptor_table_groups_2fgroups_2eproto_initialized, descriptor_table_protodef_groups_2fgroups_2eproto, "groups/groups.proto", 1203,
-  &descriptor_table_groups_2fgroups_2eproto_once, descriptor_table_groups_2fgroups_2eproto_sccs, descriptor_table_groups_2fgroups_2eproto_deps, 10, 2,
+  &descriptor_table_groups_2fgroups_2eproto_initialized, descriptor_table_protodef_groups_2fgroups_2eproto, "groups/groups.proto", 4085,
+  &descriptor_table_groups_2fgroups_2eproto_once, descriptor_table_groups_2fgroups_2eproto_sccs, descriptor_table_groups_2fgroups_2eproto_deps, 35, 2,
   schemas, file_default_instances, TableStruct_groups_2fgroups_2eproto::offsets,
-  file_level_metadata_groups_2fgroups_2eproto, 10, file_level_enum_descriptors_groups_2fgroups_2eproto, file_level_service_descriptors_groups_2fgroups_2eproto,
+  file_level_metadata_groups_2fgroups_2eproto, 35, file_level_enum_descriptors_groups_2fgroups_2eproto, file_level_service_descriptors_groups_2fgroups_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_groups_2fgroups_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_groups_2fgroups_2eproto), true);
 namespace mruv {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OwnerType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_groups_2fgroups_2eproto);
+  return file_level_enum_descriptors_groups_2fgroups_2eproto[0];
+}
+bool OwnerType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MemberType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_groups_2fgroups_2eproto);
+  return file_level_enum_descriptors_groups_2fgroups_2eproto[1];
+}
+bool MemberType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
-void PermissionID::InitAsDefaultInstance() {
+void CreateGroupRequest::InitAsDefaultInstance() {
 }
-class PermissionID::_Internal {
+class CreateGroupRequest::_Internal {
  public:
 };
 
-PermissionID::PermissionID()
+CreateGroupRequest::CreateGroupRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.PermissionID)
+  // @@protoc_insertion_point(constructor:mruv.CreateGroupRequest)
 }
-PermissionID::PermissionID(const PermissionID& from)
+CreateGroupRequest::CreateGroupRequest(const CreateGroupRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.PermissionID)
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.CreateGroupRequest)
 }
 
-void PermissionID::SharedCtor() {
-  id_ = 0u;
+void CreateGroupRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateGroupRequest_groups_2fgroups_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-PermissionID::~PermissionID() {
-  // @@protoc_insertion_point(destructor:mruv.PermissionID)
+CreateGroupRequest::~CreateGroupRequest() {
+  // @@protoc_insertion_point(destructor:mruv.CreateGroupRequest)
   SharedDtor();
 }
 
-void PermissionID::SharedDtor() {
+void CreateGroupRequest::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void PermissionID::SetCachedSize(int size) const {
+void CreateGroupRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const PermissionID& PermissionID::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PermissionID_groups_2fgroups_2eproto.base);
+const CreateGroupRequest& CreateGroupRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateGroupRequest_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void PermissionID::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.PermissionID)
+void CreateGroupRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.CreateGroupRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0u;
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
-const char* PermissionID::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CreateGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // string name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.CreateGroupRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -442,39 +1232,43 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* PermissionID::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* CreateGroupRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.PermissionID)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.CreateGroupRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.CreateGroupRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.PermissionID)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.CreateGroupRequest)
   return target;
 }
 
-size_t PermissionID::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.PermissionID)
+size_t CreateGroupRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.CreateGroupRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // string name = 1;
+  if (this->name().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -486,76 +1280,450 @@ size_t PermissionID::ByteSizeLong() const {
   return total_size;
 }
 
-void PermissionID::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.PermissionID)
+void CreateGroupRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.CreateGroupRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const PermissionID* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PermissionID>(
+  const CreateGroupRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateGroupRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.PermissionID)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.CreateGroupRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.PermissionID)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.CreateGroupRequest)
     MergeFrom(*source);
   }
 }
 
-void PermissionID::MergeFrom(const PermissionID& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.PermissionID)
+void CreateGroupRequest::MergeFrom(const CreateGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.CreateGroupRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
 }
 
-void PermissionID::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.PermissionID)
+void CreateGroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.CreateGroupRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void PermissionID::CopyFrom(const PermissionID& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.PermissionID)
+void CreateGroupRequest::CopyFrom(const CreateGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.CreateGroupRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool PermissionID::IsInitialized() const {
+bool CreateGroupRequest::IsInitialized() const {
   return true;
 }
 
-void PermissionID::InternalSwap(PermissionID* other) {
+void CreateGroupRequest::InternalSwap(CreateGroupRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PermissionID::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CreateGroupRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void Permission::InitAsDefaultInstance() {
+void CreateGroupResponse::InitAsDefaultInstance() {
 }
-class Permission::_Internal {
+class CreateGroupResponse::_Internal {
  public:
 };
 
-Permission::Permission()
+CreateGroupResponse::CreateGroupResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.Permission)
+  // @@protoc_insertion_point(constructor:mruv.CreateGroupResponse)
 }
-Permission::Permission(const Permission& from)
+CreateGroupResponse::CreateGroupResponse(const CreateGroupResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.CreateGroupResponse)
+}
+
+void CreateGroupResponse::SharedCtor() {
+  group_id_ = 0u;
+}
+
+CreateGroupResponse::~CreateGroupResponse() {
+  // @@protoc_insertion_point(destructor:mruv.CreateGroupResponse)
+  SharedDtor();
+}
+
+void CreateGroupResponse::SharedDtor() {
+}
+
+void CreateGroupResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const CreateGroupResponse& CreateGroupResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CreateGroupResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void CreateGroupResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.CreateGroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* CreateGroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* CreateGroupResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.CreateGroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.CreateGroupResponse)
+  return target;
+}
+
+size_t CreateGroupResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.CreateGroupResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CreateGroupResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.CreateGroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CreateGroupResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateGroupResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.CreateGroupResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.CreateGroupResponse)
+    MergeFrom(*source);
+  }
+}
+
+void CreateGroupResponse::MergeFrom(const CreateGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.CreateGroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+}
+
+void CreateGroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.CreateGroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CreateGroupResponse::CopyFrom(const CreateGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.CreateGroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CreateGroupResponse::IsInitialized() const {
+  return true;
+}
+
+void CreateGroupResponse::InternalSwap(CreateGroupResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CreateGroupResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetGroupRequest::InitAsDefaultInstance() {
+}
+class GetGroupRequest::_Internal {
+ public:
+};
+
+GetGroupRequest::GetGroupRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetGroupRequest)
+}
+GetGroupRequest::GetGroupRequest(const GetGroupRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetGroupRequest)
+}
+
+void GetGroupRequest::SharedCtor() {
+  group_id_ = 0u;
+}
+
+GetGroupRequest::~GetGroupRequest() {
+  // @@protoc_insertion_point(destructor:mruv.GetGroupRequest)
+  SharedDtor();
+}
+
+void GetGroupRequest::SharedDtor() {
+}
+
+void GetGroupRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetGroupRequest& GetGroupRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetGroupRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetGroupRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetGroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetGroupRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetGroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetGroupRequest)
+  return target;
+}
+
+size_t GetGroupRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetGroupRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetGroupRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetGroupRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetGroupRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetGroupRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetGroupRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetGroupRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetGroupRequest::MergeFrom(const GetGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetGroupRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+}
+
+void GetGroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetGroupRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetGroupRequest::CopyFrom(const GetGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetGroupRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetGroupRequest::IsInitialized() const {
+  return true;
+}
+
+void GetGroupRequest::InternalSwap(GetGroupRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGroupRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetGroupResponse::InitAsDefaultInstance() {
+}
+class GetGroupResponse::_Internal {
+ public:
+};
+
+GetGroupResponse::GetGroupResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetGroupResponse)
+}
+GetGroupResponse::GetGroupResponse(const GetGroupResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -563,63 +1731,255 @@ Permission::Permission(const Permission& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  role_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_role().empty()) {
-    role_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.role_);
-  }
-  id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.Permission)
+  // @@protoc_insertion_point(copy_constructor:mruv.GetGroupResponse)
 }
 
-void Permission::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Permission_groups_2fgroups_2eproto.base);
+void GetGroupResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetGroupResponse_groups_2fgroups_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  role_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_ = 0u;
 }
 
-Permission::~Permission() {
-  // @@protoc_insertion_point(destructor:mruv.Permission)
+GetGroupResponse::~GetGroupResponse() {
+  // @@protoc_insertion_point(destructor:mruv.GetGroupResponse)
   SharedDtor();
 }
 
-void Permission::SharedDtor() {
+void GetGroupResponse::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  role_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void Permission::SetCachedSize(int size) const {
+void GetGroupResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Permission& Permission::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Permission_groups_2fgroups_2eproto.base);
+const GetGroupResponse& GetGroupResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetGroupResponse_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Permission::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.Permission)
+void GetGroupResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetGroupResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  role_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_ = 0u;
   _internal_metadata_.Clear();
 }
 
-const char* Permission::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetGroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetGroupResponse.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetGroupResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetGroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.GetGroupResponse.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetGroupResponse)
+  return target;
+}
+
+size_t GetGroupResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetGroupResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetGroupResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetGroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetGroupResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetGroupResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetGroupResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetGroupResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetGroupResponse::MergeFrom(const GetGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetGroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+}
+
+void GetGroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetGroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetGroupResponse::CopyFrom(const GetGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetGroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetGroupResponse::IsInitialized() const {
+  return true;
+}
+
+void GetGroupResponse::InternalSwap(GetGroupResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGroupResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void UpdateGroupRequest::InitAsDefaultInstance() {
+}
+class UpdateGroupRequest::_Internal {
+ public:
+};
+
+UpdateGroupRequest::UpdateGroupRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.UpdateGroupRequest)
+}
+UpdateGroupRequest::UpdateGroupRequest(const UpdateGroupRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.UpdateGroupRequest)
+}
+
+void UpdateGroupRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateGroupRequest_groups_2fgroups_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  group_id_ = 0u;
+}
+
+UpdateGroupRequest::~UpdateGroupRequest() {
+  // @@protoc_insertion_point(destructor:mruv.UpdateGroupRequest)
+  SharedDtor();
+}
+
+void UpdateGroupRequest::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void UpdateGroupRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const UpdateGroupRequest& UpdateGroupRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateGroupRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void UpdateGroupRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.UpdateGroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* UpdateGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -628,16 +1988,7 @@ const char* Permission::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.Permission.name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string role = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_role();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.Permission.role"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.UpdateGroupRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -661,16 +2012,16 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Permission::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateGroupRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.Permission)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.UpdateGroupRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
   }
 
   // string name = 2;
@@ -678,31 +2029,21 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.Permission.name");
+      "mruv.UpdateGroupRequest.name");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_name(), target);
   }
 
-  // string role = 3;
-  if (this->role().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_role().data(), static_cast<int>(this->_internal_role().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.Permission.role");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_role(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.Permission)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.UpdateGroupRequest)
   return target;
 }
 
-size_t Permission::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.Permission)
+size_t UpdateGroupRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.UpdateGroupRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -716,18 +2057,11 @@ size_t Permission::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // string role = 3;
-  if (this->role().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_role());
-  }
-
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
+        this->_internal_group_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -739,23 +2073,23 @@ size_t Permission::ByteSizeLong() const {
   return total_size;
 }
 
-void Permission::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.Permission)
+void UpdateGroupRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.UpdateGroupRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const Permission* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Permission>(
+  const UpdateGroupRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateGroupRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.Permission)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.UpdateGroupRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.Permission)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.UpdateGroupRequest)
     MergeFrom(*source);
   }
 }
 
-void Permission::MergeFrom(const Permission& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.Permission)
+void UpdateGroupRequest::MergeFrom(const UpdateGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.UpdateGroupRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -765,116 +2099,97 @@ void Permission::MergeFrom(const Permission& from) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  if (from.role().size() > 0) {
-
-    role_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.role_);
-  }
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
   }
 }
 
-void Permission::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.Permission)
+void UpdateGroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.UpdateGroupRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Permission::CopyFrom(const Permission& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.Permission)
+void UpdateGroupRequest::CopyFrom(const UpdateGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.UpdateGroupRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Permission::IsInitialized() const {
+bool UpdateGroupRequest::IsInitialized() const {
   return true;
 }
 
-void Permission::InternalSwap(Permission* other) {
+void UpdateGroupRequest::InternalSwap(UpdateGroupRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  role_.Swap(&other->role_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(id_, other->id_);
+  swap(group_id_, other->group_id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Permission::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateGroupRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void GroupID::InitAsDefaultInstance() {
+void UpdateGroupResponse::InitAsDefaultInstance() {
 }
-class GroupID::_Internal {
+class UpdateGroupResponse::_Internal {
  public:
 };
 
-GroupID::GroupID()
+UpdateGroupResponse::UpdateGroupResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.GroupID)
+  // @@protoc_insertion_point(constructor:mruv.UpdateGroupResponse)
 }
-GroupID::GroupID(const GroupID& from)
+UpdateGroupResponse::UpdateGroupResponse(const UpdateGroupResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.GroupID)
+  // @@protoc_insertion_point(copy_constructor:mruv.UpdateGroupResponse)
 }
 
-void GroupID::SharedCtor() {
-  id_ = 0u;
+void UpdateGroupResponse::SharedCtor() {
 }
 
-GroupID::~GroupID() {
-  // @@protoc_insertion_point(destructor:mruv.GroupID)
+UpdateGroupResponse::~UpdateGroupResponse() {
+  // @@protoc_insertion_point(destructor:mruv.UpdateGroupResponse)
   SharedDtor();
 }
 
-void GroupID::SharedDtor() {
+void UpdateGroupResponse::SharedDtor() {
 }
 
-void GroupID::SetCachedSize(int size) const {
+void UpdateGroupResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GroupID& GroupID::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GroupID_groups_2fgroups_2eproto.base);
+const UpdateGroupResponse& UpdateGroupResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_UpdateGroupResponse_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void GroupID::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GroupID)
+void UpdateGroupResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.UpdateGroupResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0u;
   _internal_metadata_.Clear();
 }
 
-const char* GroupID::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* UpdateGroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -882,8 +2197,6 @@ const char* GroupID::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
-      }
-    }  // switch
   }  // while
 success:
   return ptr;
@@ -893,40 +2206,27 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GroupID::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* UpdateGroupResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GroupID)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.UpdateGroupResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
-
-  // uint32 id = 1;
-  if (this->id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GroupID)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.UpdateGroupResponse)
   return target;
 }
 
-size_t GroupID::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GroupID)
+size_t UpdateGroupResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.UpdateGroupResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // uint32 id = 1;
-  if (this->id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -937,184 +2237,121 @@ size_t GroupID::ByteSizeLong() const {
   return total_size;
 }
 
-void GroupID::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GroupID)
+void UpdateGroupResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.UpdateGroupResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const GroupID* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GroupID>(
+  const UpdateGroupResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateGroupResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GroupID)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.UpdateGroupResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GroupID)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.UpdateGroupResponse)
     MergeFrom(*source);
   }
 }
 
-void GroupID::MergeFrom(const GroupID& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GroupID)
+void UpdateGroupResponse::MergeFrom(const UpdateGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.UpdateGroupResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
 }
 
-void GroupID::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GroupID)
+void UpdateGroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.UpdateGroupResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GroupID::CopyFrom(const GroupID& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GroupID)
+void UpdateGroupResponse::CopyFrom(const UpdateGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.UpdateGroupResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GroupID::IsInitialized() const {
+bool UpdateGroupResponse::IsInitialized() const {
   return true;
 }
 
-void GroupID::InternalSwap(GroupID* other) {
+void UpdateGroupResponse::InternalSwap(UpdateGroupResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GroupID::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateGroupResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void Group::InitAsDefaultInstance() {
+void DeleteGroupRequest::InitAsDefaultInstance() {
 }
-class Group::_Internal {
+class DeleteGroupRequest::_Internal {
  public:
 };
 
-Group::Group()
+DeleteGroupRequest::DeleteGroupRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.Group)
+  // @@protoc_insertion_point(constructor:mruv.DeleteGroupRequest)
 }
-Group::Group(const Group& from)
+DeleteGroupRequest::DeleteGroupRequest(const DeleteGroupRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
-      permissions_(from.permissions_),
-      members_(from.members_) {
+      _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_description().empty()) {
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
-  }
-  id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.Group)
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.DeleteGroupRequest)
 }
 
-void Group::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Group_groups_2fgroups_2eproto.base);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_ = 0u;
+void DeleteGroupRequest::SharedCtor() {
+  group_id_ = 0u;
 }
 
-Group::~Group() {
-  // @@protoc_insertion_point(destructor:mruv.Group)
+DeleteGroupRequest::~DeleteGroupRequest() {
+  // @@protoc_insertion_point(destructor:mruv.DeleteGroupRequest)
   SharedDtor();
 }
 
-void Group::SharedDtor() {
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+void DeleteGroupRequest::SharedDtor() {
 }
 
-void Group::SetCachedSize(int size) const {
+void DeleteGroupRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Group& Group::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Group_groups_2fgroups_2eproto.base);
+const DeleteGroupRequest& DeleteGroupRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteGroupRequest_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Group::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.Group)
+void DeleteGroupRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.DeleteGroupRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  permissions_.Clear();
-  members_.Clear();
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_ = 0u;
+  group_id_ = 0u;
   _internal_metadata_.Clear();
 }
 
-const char* Group::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* DeleteGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // uint32 group_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string name = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.Group.name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string description = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_description();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.Group.description"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .mruv.Permission permissions = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated uint32 members = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_members(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48) {
-          _internal_add_members(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1138,112 +2375,39 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Group::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteGroupRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.Group)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.DeleteGroupRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
-  }
-
-  // string name = 3;
-  if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.Group.name");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_name(), target);
-  }
-
-  // string description = 4;
-  if (this->description().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.Group.description");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_description(), target);
-  }
-
-  // repeated .mruv.Permission permissions = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, this->_internal_permissions(i), target, stream);
-  }
-
-  // repeated uint32 members = 6;
-  {
-    int byte_size = _members_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteUInt32Packed(
-          6, _internal_members(), byte_size, target);
-    }
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.Group)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.DeleteGroupRequest)
   return target;
 }
 
-size_t Group::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.Group)
+size_t DeleteGroupRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.DeleteGroupRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Permission permissions = 5;
-  total_size += 1UL * this->_internal_permissions_size();
-  for (const auto& msg : this->permissions_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated uint32 members = 6;
-  {
-    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      UInt32Size(this->members_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
-    }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _members_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  // string name = 3;
-  if (this->name().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // string description = 4;
-  if (this->description().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_description());
-  }
-
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
+        this->_internal_group_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1255,74 +2419,212 @@ size_t Group::ByteSizeLong() const {
   return total_size;
 }
 
-void Group::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.Group)
+void DeleteGroupRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.DeleteGroupRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const Group* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Group>(
+  const DeleteGroupRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteGroupRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.Group)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.DeleteGroupRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.Group)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.DeleteGroupRequest)
     MergeFrom(*source);
   }
 }
 
-void Group::MergeFrom(const Group& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.Group)
+void DeleteGroupRequest::MergeFrom(const DeleteGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.DeleteGroupRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  permissions_.MergeFrom(from.permissions_);
-  members_.MergeFrom(from.members_);
-  if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
-  }
-  if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
-  }
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
   }
 }
 
-void Group::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.Group)
+void DeleteGroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.DeleteGroupRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Group::CopyFrom(const Group& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.Group)
+void DeleteGroupRequest::CopyFrom(const DeleteGroupRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.DeleteGroupRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Group::IsInitialized() const {
+bool DeleteGroupRequest::IsInitialized() const {
   return true;
 }
 
-void Group::InternalSwap(Group* other) {
+void DeleteGroupRequest::InternalSwap(DeleteGroupRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  permissions_.InternalSwap(&other->permissions_);
-  members_.InternalSwap(&other->members_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(id_, other->id_);
+  swap(group_id_, other->group_id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Group::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteGroupRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteGroupResponse::InitAsDefaultInstance() {
+}
+class DeleteGroupResponse::_Internal {
+ public:
+};
+
+DeleteGroupResponse::DeleteGroupResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.DeleteGroupResponse)
+}
+DeleteGroupResponse::DeleteGroupResponse(const DeleteGroupResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.DeleteGroupResponse)
+}
+
+void DeleteGroupResponse::SharedCtor() {
+}
+
+DeleteGroupResponse::~DeleteGroupResponse() {
+  // @@protoc_insertion_point(destructor:mruv.DeleteGroupResponse)
+  SharedDtor();
+}
+
+void DeleteGroupResponse::SharedDtor() {
+}
+
+void DeleteGroupResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteGroupResponse& DeleteGroupResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteGroupResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteGroupResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.DeleteGroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteGroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteGroupResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.DeleteGroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.DeleteGroupResponse)
+  return target;
+}
+
+size_t DeleteGroupResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.DeleteGroupResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteGroupResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.DeleteGroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteGroupResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteGroupResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.DeleteGroupResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.DeleteGroupResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteGroupResponse::MergeFrom(const DeleteGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.DeleteGroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void DeleteGroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.DeleteGroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteGroupResponse::CopyFrom(const DeleteGroupResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.DeleteGroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteGroupResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteGroupResponse::InternalSwap(DeleteGroupResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteGroupResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1344,12 +2646,10 @@ GetGroupsRequest::GetGroupsRequest(const GetGroupsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  limit_ = from.limit_;
   // @@protoc_insertion_point(copy_constructor:mruv.GetGroupsRequest)
 }
 
 void GetGroupsRequest::SharedCtor() {
-  limit_ = 0u;
 }
 
 GetGroupsRequest::~GetGroupsRequest() {
@@ -1375,7 +2675,6 @@ void GetGroupsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  limit_ = 0u;
   _internal_metadata_.Clear();
 }
 
@@ -1385,16 +2684,6 @@ const char* GetGroupsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 limit = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -1402,8 +2691,6 @@ const char* GetGroupsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
-      }
-    }  // switch
   }  // while
 success:
   return ptr;
@@ -1418,12 +2705,6 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.GetGroupsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
-
-  // uint32 limit = 1;
-  if (this->limit() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_limit(), target);
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1440,13 +2721,6 @@ size_t GetGroupsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // uint32 limit = 1;
-  if (this->limit() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_limit());
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1479,9 +2753,6 @@ void GetGroupsRequest::MergeFrom(const GetGroupsRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.limit() != 0) {
-    _internal_set_limit(from._internal_limit());
-  }
 }
 
 void GetGroupsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1505,7 +2776,6 @@ bool GetGroupsRequest::IsInitialized() const {
 void GetGroupsRequest::InternalSwap(GetGroupsRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(limit_, other->limit_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetGroupsRequest::GetMetadata() const {
@@ -1572,7 +2842,7 @@ const char* GetGroupsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.Group groups = 1;
+      // repeated .mruv.GetGroupResponse groups = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1610,7 +2880,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.Group groups = 1;
+  // repeated .mruv.GetGroupResponse groups = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_groups_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1634,7 +2904,7 @@ size_t GetGroupsResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Group groups = 1;
+  // repeated .mruv.GetGroupResponse groups = 1;
   total_size += 1UL * this->_internal_groups_size();
   for (const auto& msg : this->groups_) {
     total_size +=
@@ -1706,59 +2976,93 @@ void GetGroupsResponse::InternalSwap(GetGroupsResponse* other) {
 
 // ===================================================================
 
-void AddGroupMemberRequest::InitAsDefaultInstance() {
+void AssignOwnerRequest::InitAsDefaultInstance() {
 }
-class AddGroupMemberRequest::_Internal {
+class AssignOwnerRequest::_Internal {
  public:
 };
 
-AddGroupMemberRequest::AddGroupMemberRequest()
+AssignOwnerRequest::AssignOwnerRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.AddGroupMemberRequest)
+  // @@protoc_insertion_point(constructor:mruv.AssignOwnerRequest)
 }
-AddGroupMemberRequest::AddGroupMemberRequest(const AddGroupMemberRequest& from)
+AssignOwnerRequest::AssignOwnerRequest(const AssignOwnerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.AddGroupMemberRequest)
+  ::memcpy(&group_id_, &from.group_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&owner_type_) -
+    reinterpret_cast<char*>(&group_id_)) + sizeof(owner_type_));
+  // @@protoc_insertion_point(copy_constructor:mruv.AssignOwnerRequest)
 }
 
-void AddGroupMemberRequest::SharedCtor() {
+void AssignOwnerRequest::SharedCtor() {
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&owner_type_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(owner_type_));
 }
 
-AddGroupMemberRequest::~AddGroupMemberRequest() {
-  // @@protoc_insertion_point(destructor:mruv.AddGroupMemberRequest)
+AssignOwnerRequest::~AssignOwnerRequest() {
+  // @@protoc_insertion_point(destructor:mruv.AssignOwnerRequest)
   SharedDtor();
 }
 
-void AddGroupMemberRequest::SharedDtor() {
+void AssignOwnerRequest::SharedDtor() {
 }
 
-void AddGroupMemberRequest::SetCachedSize(int size) const {
+void AssignOwnerRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AddGroupMemberRequest& AddGroupMemberRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddGroupMemberRequest_groups_2fgroups_2eproto.base);
+const AssignOwnerRequest& AssignOwnerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AssignOwnerRequest_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void AddGroupMemberRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.AddGroupMemberRequest)
+void AssignOwnerRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AssignOwnerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&owner_type_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(owner_type_));
   _internal_metadata_.Clear();
 }
 
-const char* AddGroupMemberRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* AssignOwnerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 owner_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          owner_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.OwnerType owner_type = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_owner_type(static_cast<::mruv::OwnerType>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -1766,6 +3070,8 @@ const char* AddGroupMemberRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1775,27 +3081,66 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AddGroupMemberRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* AssignOwnerRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddGroupMemberRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AssignOwnerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // uint32 owner_id = 2;
+  if (this->owner_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_owner_id(), target);
+  }
+
+  // .mruv.OwnerType owner_type = 3;
+  if (this->owner_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_owner_type(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddGroupMemberRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AssignOwnerRequest)
   return target;
 }
 
-size_t AddGroupMemberRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.AddGroupMemberRequest)
+size_t AssignOwnerRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AssignOwnerRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  // uint32 owner_id = 2;
+  if (this->owner_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_owner_id());
+  }
+
+  // .mruv.OwnerType owner_type = 3;
+  if (this->owner_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_owner_type());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1806,100 +3151,112 @@ size_t AddGroupMemberRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void AddGroupMemberRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddGroupMemberRequest)
+void AssignOwnerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AssignOwnerRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const AddGroupMemberRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddGroupMemberRequest>(
+  const AssignOwnerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AssignOwnerRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddGroupMemberRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AssignOwnerRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddGroupMemberRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AssignOwnerRequest)
     MergeFrom(*source);
   }
 }
 
-void AddGroupMemberRequest::MergeFrom(const AddGroupMemberRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddGroupMemberRequest)
+void AssignOwnerRequest::MergeFrom(const AssignOwnerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AssignOwnerRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+  if (from.owner_id() != 0) {
+    _internal_set_owner_id(from._internal_owner_id());
+  }
+  if (from.owner_type() != 0) {
+    _internal_set_owner_type(from._internal_owner_type());
+  }
 }
 
-void AddGroupMemberRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddGroupMemberRequest)
+void AssignOwnerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AssignOwnerRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void AddGroupMemberRequest::CopyFrom(const AddGroupMemberRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddGroupMemberRequest)
+void AssignOwnerRequest::CopyFrom(const AssignOwnerRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AssignOwnerRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool AddGroupMemberRequest::IsInitialized() const {
+bool AssignOwnerRequest::IsInitialized() const {
   return true;
 }
 
-void AddGroupMemberRequest::InternalSwap(AddGroupMemberRequest* other) {
+void AssignOwnerRequest::InternalSwap(AssignOwnerRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+  swap(owner_id_, other->owner_id_);
+  swap(owner_type_, other->owner_type_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata AddGroupMemberRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AssignOwnerRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void AddGroupMemberResponse::InitAsDefaultInstance() {
+void AssignOwnerResponse::InitAsDefaultInstance() {
 }
-class AddGroupMemberResponse::_Internal {
+class AssignOwnerResponse::_Internal {
  public:
 };
 
-AddGroupMemberResponse::AddGroupMemberResponse()
+AssignOwnerResponse::AssignOwnerResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.AddGroupMemberResponse)
+  // @@protoc_insertion_point(constructor:mruv.AssignOwnerResponse)
 }
-AddGroupMemberResponse::AddGroupMemberResponse(const AddGroupMemberResponse& from)
+AssignOwnerResponse::AssignOwnerResponse(const AssignOwnerResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.AddGroupMemberResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.AssignOwnerResponse)
 }
 
-void AddGroupMemberResponse::SharedCtor() {
+void AssignOwnerResponse::SharedCtor() {
 }
 
-AddGroupMemberResponse::~AddGroupMemberResponse() {
-  // @@protoc_insertion_point(destructor:mruv.AddGroupMemberResponse)
+AssignOwnerResponse::~AssignOwnerResponse() {
+  // @@protoc_insertion_point(destructor:mruv.AssignOwnerResponse)
   SharedDtor();
 }
 
-void AddGroupMemberResponse::SharedDtor() {
+void AssignOwnerResponse::SharedDtor() {
 }
 
-void AddGroupMemberResponse::SetCachedSize(int size) const {
+void AssignOwnerResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const AddGroupMemberResponse& AddGroupMemberResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddGroupMemberResponse_groups_2fgroups_2eproto.base);
+const AssignOwnerResponse& AssignOwnerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AssignOwnerResponse_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void AddGroupMemberResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.AddGroupMemberResponse)
+void AssignOwnerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AssignOwnerResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1907,7 +3264,7 @@ void AddGroupMemberResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* AddGroupMemberResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* AssignOwnerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -1929,9 +3286,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* AddGroupMemberResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* AssignOwnerResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddGroupMemberResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AssignOwnerResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1939,12 +3296,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddGroupMemberResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AssignOwnerResponse)
   return target;
 }
 
-size_t AddGroupMemberResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.AddGroupMemberResponse)
+size_t AssignOwnerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AssignOwnerResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1960,23 +3317,23 @@ size_t AddGroupMemberResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void AddGroupMemberResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddGroupMemberResponse)
+void AssignOwnerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AssignOwnerResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const AddGroupMemberResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddGroupMemberResponse>(
+  const AssignOwnerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AssignOwnerResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddGroupMemberResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AssignOwnerResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddGroupMemberResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AssignOwnerResponse)
     MergeFrom(*source);
   }
 }
 
-void AddGroupMemberResponse::MergeFrom(const AddGroupMemberResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddGroupMemberResponse)
+void AssignOwnerResponse::MergeFrom(const AssignOwnerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AssignOwnerResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1984,89 +3341,102 @@ void AddGroupMemberResponse::MergeFrom(const AddGroupMemberResponse& from) {
 
 }
 
-void AddGroupMemberResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddGroupMemberResponse)
+void AssignOwnerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AssignOwnerResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void AddGroupMemberResponse::CopyFrom(const AddGroupMemberResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddGroupMemberResponse)
+void AssignOwnerResponse::CopyFrom(const AssignOwnerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AssignOwnerResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool AddGroupMemberResponse::IsInitialized() const {
+bool AssignOwnerResponse::IsInitialized() const {
   return true;
 }
 
-void AddGroupMemberResponse::InternalSwap(AddGroupMemberResponse* other) {
+void AssignOwnerResponse::InternalSwap(AssignOwnerResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata AddGroupMemberResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AssignOwnerResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RemoveGroupMemberRequest::InitAsDefaultInstance() {
+void GetOwnerRequest::InitAsDefaultInstance() {
 }
-class RemoveGroupMemberRequest::_Internal {
+class GetOwnerRequest::_Internal {
  public:
 };
 
-RemoveGroupMemberRequest::RemoveGroupMemberRequest()
+GetOwnerRequest::GetOwnerRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.RemoveGroupMemberRequest)
+  // @@protoc_insertion_point(constructor:mruv.GetOwnerRequest)
 }
-RemoveGroupMemberRequest::RemoveGroupMemberRequest(const RemoveGroupMemberRequest& from)
+GetOwnerRequest::GetOwnerRequest(const GetOwnerRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.RemoveGroupMemberRequest)
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetOwnerRequest)
 }
 
-void RemoveGroupMemberRequest::SharedCtor() {
+void GetOwnerRequest::SharedCtor() {
+  group_id_ = 0u;
 }
 
-RemoveGroupMemberRequest::~RemoveGroupMemberRequest() {
-  // @@protoc_insertion_point(destructor:mruv.RemoveGroupMemberRequest)
+GetOwnerRequest::~GetOwnerRequest() {
+  // @@protoc_insertion_point(destructor:mruv.GetOwnerRequest)
   SharedDtor();
 }
 
-void RemoveGroupMemberRequest::SharedDtor() {
+void GetOwnerRequest::SharedDtor() {
 }
 
-void RemoveGroupMemberRequest::SetCachedSize(int size) const {
+void GetOwnerRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RemoveGroupMemberRequest& RemoveGroupMemberRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveGroupMemberRequest_groups_2fgroups_2eproto.base);
+const GetOwnerRequest& GetOwnerRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetOwnerRequest_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void RemoveGroupMemberRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.RemoveGroupMemberRequest)
+void GetOwnerRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetOwnerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  group_id_ = 0u;
   _internal_metadata_.Clear();
 }
 
-const char* RemoveGroupMemberRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetOwnerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -2074,6 +3444,8 @@ const char* RemoveGroupMemberRequest::_InternalParse(const char* ptr, ::PROTOBUF
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2083,27 +3455,40 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RemoveGroupMemberRequest::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* GetOwnerRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemoveGroupMemberRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetOwnerRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemoveGroupMemberRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetOwnerRequest)
   return target;
 }
 
-size_t RemoveGroupMemberRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.RemoveGroupMemberRequest)
+size_t GetOwnerRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetOwnerRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2114,100 +3499,537 @@ size_t RemoveGroupMemberRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void RemoveGroupMemberRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemoveGroupMemberRequest)
+void GetOwnerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetOwnerRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const RemoveGroupMemberRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveGroupMemberRequest>(
+  const GetOwnerRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetOwnerRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemoveGroupMemberRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetOwnerRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemoveGroupMemberRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetOwnerRequest)
     MergeFrom(*source);
   }
 }
 
-void RemoveGroupMemberRequest::MergeFrom(const RemoveGroupMemberRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemoveGroupMemberRequest)
+void GetOwnerRequest::MergeFrom(const GetOwnerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetOwnerRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
 }
 
-void RemoveGroupMemberRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemoveGroupMemberRequest)
+void GetOwnerRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetOwnerRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void RemoveGroupMemberRequest::CopyFrom(const RemoveGroupMemberRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemoveGroupMemberRequest)
+void GetOwnerRequest::CopyFrom(const GetOwnerRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetOwnerRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool RemoveGroupMemberRequest::IsInitialized() const {
+bool GetOwnerRequest::IsInitialized() const {
   return true;
 }
 
-void RemoveGroupMemberRequest::InternalSwap(RemoveGroupMemberRequest* other) {
+void GetOwnerRequest::InternalSwap(GetOwnerRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RemoveGroupMemberRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetOwnerRequest::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void RemoveGroupMemberResponse::InitAsDefaultInstance() {
+void GetOwnerResponse::InitAsDefaultInstance() {
 }
-class RemoveGroupMemberResponse::_Internal {
+class GetOwnerResponse::_Internal {
  public:
 };
 
-RemoveGroupMemberResponse::RemoveGroupMemberResponse()
+GetOwnerResponse::GetOwnerResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.RemoveGroupMemberResponse)
+  // @@protoc_insertion_point(constructor:mruv.GetOwnerResponse)
 }
-RemoveGroupMemberResponse::RemoveGroupMemberResponse(const RemoveGroupMemberResponse& from)
+GetOwnerResponse::GetOwnerResponse(const GetOwnerResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.RemoveGroupMemberResponse)
+  ::memcpy(&owner_id_, &from.owner_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&owner_type_) -
+    reinterpret_cast<char*>(&owner_id_)) + sizeof(owner_type_));
+  // @@protoc_insertion_point(copy_constructor:mruv.GetOwnerResponse)
 }
 
-void RemoveGroupMemberResponse::SharedCtor() {
+void GetOwnerResponse::SharedCtor() {
+  ::memset(&owner_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&owner_type_) -
+      reinterpret_cast<char*>(&owner_id_)) + sizeof(owner_type_));
 }
 
-RemoveGroupMemberResponse::~RemoveGroupMemberResponse() {
-  // @@protoc_insertion_point(destructor:mruv.RemoveGroupMemberResponse)
+GetOwnerResponse::~GetOwnerResponse() {
+  // @@protoc_insertion_point(destructor:mruv.GetOwnerResponse)
   SharedDtor();
 }
 
-void RemoveGroupMemberResponse::SharedDtor() {
+void GetOwnerResponse::SharedDtor() {
 }
 
-void RemoveGroupMemberResponse::SetCachedSize(int size) const {
+void GetOwnerResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const RemoveGroupMemberResponse& RemoveGroupMemberResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveGroupMemberResponse_groups_2fgroups_2eproto.base);
+const GetOwnerResponse& GetOwnerResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetOwnerResponse_groups_2fgroups_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void RemoveGroupMemberResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.RemoveGroupMemberResponse)
+void GetOwnerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetOwnerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&owner_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&owner_type_) -
+      reinterpret_cast<char*>(&owner_id_)) + sizeof(owner_type_));
+  _internal_metadata_.Clear();
+}
+
+const char* GetOwnerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 owner_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          owner_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.OwnerType owner_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_owner_type(static_cast<::mruv::OwnerType>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetOwnerResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetOwnerResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 owner_id = 1;
+  if (this->owner_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_owner_id(), target);
+  }
+
+  // .mruv.OwnerType owner_type = 2;
+  if (this->owner_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_owner_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetOwnerResponse)
+  return target;
+}
+
+size_t GetOwnerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetOwnerResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 owner_id = 1;
+  if (this->owner_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_owner_id());
+  }
+
+  // .mruv.OwnerType owner_type = 2;
+  if (this->owner_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_owner_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetOwnerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetOwnerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetOwnerResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetOwnerResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetOwnerResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetOwnerResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetOwnerResponse::MergeFrom(const GetOwnerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetOwnerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.owner_id() != 0) {
+    _internal_set_owner_id(from._internal_owner_id());
+  }
+  if (from.owner_type() != 0) {
+    _internal_set_owner_type(from._internal_owner_type());
+  }
+}
+
+void GetOwnerResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetOwnerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetOwnerResponse::CopyFrom(const GetOwnerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetOwnerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetOwnerResponse::IsInitialized() const {
+  return true;
+}
+
+void GetOwnerResponse::InternalSwap(GetOwnerResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(owner_id_, other->owner_id_);
+  swap(owner_type_, other->owner_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetOwnerResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddMemberRequest::InitAsDefaultInstance() {
+}
+class AddMemberRequest::_Internal {
+ public:
+};
+
+AddMemberRequest::AddMemberRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.AddMemberRequest)
+}
+AddMemberRequest::AddMemberRequest(const AddMemberRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&group_id_, &from.group_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&member_id_) -
+    reinterpret_cast<char*>(&group_id_)) + sizeof(member_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.AddMemberRequest)
+}
+
+void AddMemberRequest::SharedCtor() {
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&member_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(member_id_));
+}
+
+AddMemberRequest::~AddMemberRequest() {
+  // @@protoc_insertion_point(destructor:mruv.AddMemberRequest)
+  SharedDtor();
+}
+
+void AddMemberRequest::SharedDtor() {
+}
+
+void AddMemberRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddMemberRequest& AddMemberRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddMemberRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddMemberRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AddMemberRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&member_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(member_id_));
+  _internal_metadata_.Clear();
+}
+
+const char* AddMemberRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 member_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          member_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddMemberRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddMemberRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // uint32 member_id = 2;
+  if (this->member_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_member_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddMemberRequest)
+  return target;
+}
+
+size_t AddMemberRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AddMemberRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  // uint32 member_id = 2;
+  if (this->member_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_member_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddMemberRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddMemberRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddMemberRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddMemberRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddMemberRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddMemberRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AddMemberRequest::MergeFrom(const AddMemberRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddMemberRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+  if (from.member_id() != 0) {
+    _internal_set_member_id(from._internal_member_id());
+  }
+}
+
+void AddMemberRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddMemberRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddMemberRequest::CopyFrom(const AddMemberRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddMemberRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddMemberRequest::IsInitialized() const {
+  return true;
+}
+
+void AddMemberRequest::InternalSwap(AddMemberRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+  swap(member_id_, other->member_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddMemberRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddMemberResponse::InitAsDefaultInstance() {
+}
+class AddMemberResponse::_Internal {
+ public:
+};
+
+AddMemberResponse::AddMemberResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.AddMemberResponse)
+}
+AddMemberResponse::AddMemberResponse(const AddMemberResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.AddMemberResponse)
+}
+
+void AddMemberResponse::SharedCtor() {
+}
+
+AddMemberResponse::~AddMemberResponse() {
+  // @@protoc_insertion_point(destructor:mruv.AddMemberResponse)
+  SharedDtor();
+}
+
+void AddMemberResponse::SharedDtor() {
+}
+
+void AddMemberResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddMemberResponse& AddMemberResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddMemberResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddMemberResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AddMemberResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2215,7 +4037,7 @@ void RemoveGroupMemberResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-const char* RemoveGroupMemberResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* AddMemberResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -2237,9 +4059,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RemoveGroupMemberResponse::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* AddMemberResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemoveGroupMemberResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddMemberResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2247,12 +4069,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemoveGroupMemberResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddMemberResponse)
   return target;
 }
 
-size_t RemoveGroupMemberResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.RemoveGroupMemberResponse)
+size_t AddMemberResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AddMemberResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2268,23 +4090,23 @@ size_t RemoveGroupMemberResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void RemoveGroupMemberResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemoveGroupMemberResponse)
+void AddMemberResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddMemberResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const RemoveGroupMemberResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveGroupMemberResponse>(
+  const AddMemberResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddMemberResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemoveGroupMemberResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddMemberResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemoveGroupMemberResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddMemberResponse)
     MergeFrom(*source);
   }
 }
 
-void RemoveGroupMemberResponse::MergeFrom(const RemoveGroupMemberResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemoveGroupMemberResponse)
+void AddMemberResponse::MergeFrom(const AddMemberResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddMemberResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2292,30 +4114,3838 @@ void RemoveGroupMemberResponse::MergeFrom(const RemoveGroupMemberResponse& from)
 
 }
 
-void RemoveGroupMemberResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemoveGroupMemberResponse)
+void AddMemberResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddMemberResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void RemoveGroupMemberResponse::CopyFrom(const RemoveGroupMemberResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemoveGroupMemberResponse)
+void AddMemberResponse::CopyFrom(const AddMemberResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddMemberResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool RemoveGroupMemberResponse::IsInitialized() const {
+bool AddMemberResponse::IsInitialized() const {
   return true;
 }
 
-void RemoveGroupMemberResponse::InternalSwap(RemoveGroupMemberResponse* other) {
+void AddMemberResponse::InternalSwap(AddMemberResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RemoveGroupMemberResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AddMemberResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetMembersRequest::InitAsDefaultInstance() {
+}
+class GetMembersRequest::_Internal {
+ public:
+};
+
+GetMembersRequest::GetMembersRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetMembersRequest)
+}
+GetMembersRequest::GetMembersRequest(const GetMembersRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetMembersRequest)
+}
+
+void GetMembersRequest::SharedCtor() {
+  group_id_ = 0u;
+}
+
+GetMembersRequest::~GetMembersRequest() {
+  // @@protoc_insertion_point(destructor:mruv.GetMembersRequest)
+  SharedDtor();
+}
+
+void GetMembersRequest::SharedDtor() {
+}
+
+void GetMembersRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetMembersRequest& GetMembersRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetMembersRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetMembersRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetMembersRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetMembersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetMembersRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetMembersRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetMembersRequest)
+  return target;
+}
+
+size_t GetMembersRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetMembersRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetMembersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetMembersRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetMembersRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetMembersRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetMembersRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetMembersRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetMembersRequest::MergeFrom(const GetMembersRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetMembersRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+}
+
+void GetMembersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetMembersRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetMembersRequest::CopyFrom(const GetMembersRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetMembersRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetMembersRequest::IsInitialized() const {
+  return true;
+}
+
+void GetMembersRequest::InternalSwap(GetMembersRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetMembersRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetMembersResponse::InitAsDefaultInstance() {
+}
+class GetMembersResponse::_Internal {
+ public:
+};
+
+GetMembersResponse::GetMembersResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetMembersResponse)
+}
+GetMembersResponse::GetMembersResponse(const GetMembersResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      member_ids_(from.member_ids_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  member_type_ = from.member_type_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetMembersResponse)
+}
+
+void GetMembersResponse::SharedCtor() {
+  member_type_ = 0;
+}
+
+GetMembersResponse::~GetMembersResponse() {
+  // @@protoc_insertion_point(destructor:mruv.GetMembersResponse)
+  SharedDtor();
+}
+
+void GetMembersResponse::SharedDtor() {
+}
+
+void GetMembersResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetMembersResponse& GetMembersResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetMembersResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetMembersResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetMembersResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  member_ids_.Clear();
+  member_type_ = 0;
+  _internal_metadata_.Clear();
+}
+
+const char* GetMembersResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .mruv.MemberType member_type = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_member_type(static_cast<::mruv::MemberType>(val));
+        } else goto handle_unusual;
+        continue;
+      // repeated uint32 member_ids = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_member_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16) {
+          _internal_add_member_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetMembersResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetMembersResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mruv.MemberType member_type = 1;
+  if (this->member_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_member_type(), target);
+  }
+
+  // repeated uint32 member_ids = 2;
+  {
+    int byte_size = _member_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteUInt32Packed(
+          2, _internal_member_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetMembersResponse)
+  return target;
+}
+
+size_t GetMembersResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetMembersResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated uint32 member_ids = 2;
+  {
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      UInt32Size(this->member_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _member_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // .mruv.MemberType member_type = 1;
+  if (this->member_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_member_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetMembersResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetMembersResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetMembersResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetMembersResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetMembersResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetMembersResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetMembersResponse::MergeFrom(const GetMembersResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetMembersResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  member_ids_.MergeFrom(from.member_ids_);
+  if (from.member_type() != 0) {
+    _internal_set_member_type(from._internal_member_type());
+  }
+}
+
+void GetMembersResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetMembersResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetMembersResponse::CopyFrom(const GetMembersResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetMembersResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetMembersResponse::IsInitialized() const {
+  return true;
+}
+
+void GetMembersResponse::InternalSwap(GetMembersResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  member_ids_.InternalSwap(&other->member_ids_);
+  swap(member_type_, other->member_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetMembersResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemoveMemberRequest::InitAsDefaultInstance() {
+}
+class RemoveMemberRequest::_Internal {
+ public:
+};
+
+RemoveMemberRequest::RemoveMemberRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.RemoveMemberRequest)
+}
+RemoveMemberRequest::RemoveMemberRequest(const RemoveMemberRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&group_id_, &from.group_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&member_id_) -
+    reinterpret_cast<char*>(&group_id_)) + sizeof(member_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.RemoveMemberRequest)
+}
+
+void RemoveMemberRequest::SharedCtor() {
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&member_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(member_id_));
+}
+
+RemoveMemberRequest::~RemoveMemberRequest() {
+  // @@protoc_insertion_point(destructor:mruv.RemoveMemberRequest)
+  SharedDtor();
+}
+
+void RemoveMemberRequest::SharedDtor() {
+}
+
+void RemoveMemberRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemoveMemberRequest& RemoveMemberRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveMemberRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemoveMemberRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.RemoveMemberRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&member_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(member_id_));
+  _internal_metadata_.Clear();
+}
+
+const char* RemoveMemberRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 member_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          member_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveMemberRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemoveMemberRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // uint32 member_id = 2;
+  if (this->member_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_member_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemoveMemberRequest)
+  return target;
+}
+
+size_t RemoveMemberRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.RemoveMemberRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  // uint32 member_id = 2;
+  if (this->member_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_member_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemoveMemberRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemoveMemberRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveMemberRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveMemberRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemoveMemberRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemoveMemberRequest)
+    MergeFrom(*source);
+  }
+}
+
+void RemoveMemberRequest::MergeFrom(const RemoveMemberRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemoveMemberRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+  if (from.member_id() != 0) {
+    _internal_set_member_id(from._internal_member_id());
+  }
+}
+
+void RemoveMemberRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemoveMemberRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemoveMemberRequest::CopyFrom(const RemoveMemberRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemoveMemberRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveMemberRequest::IsInitialized() const {
+  return true;
+}
+
+void RemoveMemberRequest::InternalSwap(RemoveMemberRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+  swap(member_id_, other->member_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemoveMemberRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemoveMemberResponse::InitAsDefaultInstance() {
+}
+class RemoveMemberResponse::_Internal {
+ public:
+};
+
+RemoveMemberResponse::RemoveMemberResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.RemoveMemberResponse)
+}
+RemoveMemberResponse::RemoveMemberResponse(const RemoveMemberResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.RemoveMemberResponse)
+}
+
+void RemoveMemberResponse::SharedCtor() {
+}
+
+RemoveMemberResponse::~RemoveMemberResponse() {
+  // @@protoc_insertion_point(destructor:mruv.RemoveMemberResponse)
+  SharedDtor();
+}
+
+void RemoveMemberResponse::SharedDtor() {
+}
+
+void RemoveMemberResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemoveMemberResponse& RemoveMemberResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveMemberResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemoveMemberResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.RemoveMemberResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* RemoveMemberResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveMemberResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemoveMemberResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemoveMemberResponse)
+  return target;
+}
+
+size_t RemoveMemberResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.RemoveMemberResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemoveMemberResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemoveMemberResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveMemberResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveMemberResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemoveMemberResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemoveMemberResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RemoveMemberResponse::MergeFrom(const RemoveMemberResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemoveMemberResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void RemoveMemberResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemoveMemberResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemoveMemberResponse::CopyFrom(const RemoveMemberResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemoveMemberResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveMemberResponse::IsInitialized() const {
+  return true;
+}
+
+void RemoveMemberResponse::InternalSwap(RemoveMemberResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemoveMemberResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddPermissionRequest::InitAsDefaultInstance() {
+}
+class AddPermissionRequest::_Internal {
+ public:
+};
+
+AddPermissionRequest::AddPermissionRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.AddPermissionRequest)
+}
+AddPermissionRequest::AddPermissionRequest(const AddPermissionRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  definition_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_definition().empty()) {
+    definition_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.definition_);
+  }
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.AddPermissionRequest)
+}
+
+void AddPermissionRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AddPermissionRequest_groups_2fgroups_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  definition_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  group_id_ = 0u;
+}
+
+AddPermissionRequest::~AddPermissionRequest() {
+  // @@protoc_insertion_point(destructor:mruv.AddPermissionRequest)
+  SharedDtor();
+}
+
+void AddPermissionRequest::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  definition_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AddPermissionRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddPermissionRequest& AddPermissionRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddPermissionRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddPermissionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AddPermissionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  definition_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* AddPermissionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.AddPermissionRequest.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string definition = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_definition();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.AddPermissionRequest.definition"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddPermissionRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddPermissionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.AddPermissionRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string definition = 3;
+  if (this->definition().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_definition().data(), static_cast<int>(this->_internal_definition().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.AddPermissionRequest.definition");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_definition(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddPermissionRequest)
+  return target;
+}
+
+size_t AddPermissionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AddPermissionRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string definition = 3;
+  if (this->definition().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_definition());
+  }
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddPermissionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddPermissionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddPermissionRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddPermissionRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddPermissionRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddPermissionRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AddPermissionRequest::MergeFrom(const AddPermissionRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddPermissionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.definition().size() > 0) {
+
+    definition_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.definition_);
+  }
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+}
+
+void AddPermissionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddPermissionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddPermissionRequest::CopyFrom(const AddPermissionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddPermissionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddPermissionRequest::IsInitialized() const {
+  return true;
+}
+
+void AddPermissionRequest::InternalSwap(AddPermissionRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  definition_.Swap(&other->definition_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(group_id_, other->group_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddPermissionRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddPermissionResponse::InitAsDefaultInstance() {
+}
+class AddPermissionResponse::_Internal {
+ public:
+};
+
+AddPermissionResponse::AddPermissionResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.AddPermissionResponse)
+}
+AddPermissionResponse::AddPermissionResponse(const AddPermissionResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  permission_id_ = from.permission_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.AddPermissionResponse)
+}
+
+void AddPermissionResponse::SharedCtor() {
+  permission_id_ = 0u;
+}
+
+AddPermissionResponse::~AddPermissionResponse() {
+  // @@protoc_insertion_point(destructor:mruv.AddPermissionResponse)
+  SharedDtor();
+}
+
+void AddPermissionResponse::SharedDtor() {
+}
+
+void AddPermissionResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddPermissionResponse& AddPermissionResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddPermissionResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddPermissionResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AddPermissionResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  permission_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* AddPermissionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 permission_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          permission_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddPermissionResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddPermissionResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 permission_id = 1;
+  if (this->permission_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_permission_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddPermissionResponse)
+  return target;
+}
+
+size_t AddPermissionResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AddPermissionResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 permission_id = 1;
+  if (this->permission_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_permission_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddPermissionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddPermissionResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddPermissionResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddPermissionResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddPermissionResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddPermissionResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AddPermissionResponse::MergeFrom(const AddPermissionResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddPermissionResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.permission_id() != 0) {
+    _internal_set_permission_id(from._internal_permission_id());
+  }
+}
+
+void AddPermissionResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddPermissionResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddPermissionResponse::CopyFrom(const AddPermissionResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddPermissionResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddPermissionResponse::IsInitialized() const {
+  return true;
+}
+
+void AddPermissionResponse::InternalSwap(AddPermissionResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(permission_id_, other->permission_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddPermissionResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetPermissionsRequest::InitAsDefaultInstance() {
+}
+class GetPermissionsRequest::_Internal {
+ public:
+};
+
+GetPermissionsRequest::GetPermissionsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetPermissionsRequest)
+}
+GetPermissionsRequest::GetPermissionsRequest(const GetPermissionsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetPermissionsRequest)
+}
+
+void GetPermissionsRequest::SharedCtor() {
+  group_id_ = 0u;
+}
+
+GetPermissionsRequest::~GetPermissionsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.GetPermissionsRequest)
+  SharedDtor();
+}
+
+void GetPermissionsRequest::SharedDtor() {
+}
+
+void GetPermissionsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetPermissionsRequest& GetPermissionsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetPermissionsRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetPermissionsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetPermissionsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetPermissionsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetPermissionsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetPermissionsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetPermissionsRequest)
+  return target;
+}
+
+size_t GetPermissionsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetPermissionsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetPermissionsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetPermissionsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetPermissionsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPermissionsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetPermissionsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetPermissionsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetPermissionsRequest::MergeFrom(const GetPermissionsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetPermissionsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+}
+
+void GetPermissionsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetPermissionsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetPermissionsRequest::CopyFrom(const GetPermissionsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetPermissionsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetPermissionsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetPermissionsRequest::InternalSwap(GetPermissionsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetPermissionsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetPermissionsResponse_Permission::InitAsDefaultInstance() {
+}
+class GetPermissionsResponse_Permission::_Internal {
+ public:
+};
+
+GetPermissionsResponse_Permission::GetPermissionsResponse_Permission()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetPermissionsResponse.Permission)
+}
+GetPermissionsResponse_Permission::GetPermissionsResponse_Permission(const GetPermissionsResponse_Permission& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  definition_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_definition().empty()) {
+    definition_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.definition_);
+  }
+  id_ = from.id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetPermissionsResponse.Permission)
+}
+
+void GetPermissionsResponse_Permission::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  definition_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
+}
+
+GetPermissionsResponse_Permission::~GetPermissionsResponse_Permission() {
+  // @@protoc_insertion_point(destructor:mruv.GetPermissionsResponse.Permission)
+  SharedDtor();
+}
+
+void GetPermissionsResponse_Permission::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  definition_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetPermissionsResponse_Permission::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetPermissionsResponse_Permission& GetPermissionsResponse_Permission::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetPermissionsResponse_Permission::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetPermissionsResponse.Permission)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  definition_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetPermissionsResponse_Permission::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetPermissionsResponse.Permission.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string definition = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_definition();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetPermissionsResponse.Permission.definition"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetPermissionsResponse_Permission::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetPermissionsResponse.Permission)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.GetPermissionsResponse.Permission.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string definition = 3;
+  if (this->definition().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_definition().data(), static_cast<int>(this->_internal_definition().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.GetPermissionsResponse.Permission.definition");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_definition(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetPermissionsResponse.Permission)
+  return target;
+}
+
+size_t GetPermissionsResponse_Permission::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetPermissionsResponse.Permission)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string definition = 3;
+  if (this->definition().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_definition());
+  }
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetPermissionsResponse_Permission::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetPermissionsResponse.Permission)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetPermissionsResponse_Permission* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPermissionsResponse_Permission>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetPermissionsResponse.Permission)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetPermissionsResponse.Permission)
+    MergeFrom(*source);
+  }
+}
+
+void GetPermissionsResponse_Permission::MergeFrom(const GetPermissionsResponse_Permission& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetPermissionsResponse.Permission)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.definition().size() > 0) {
+
+    definition_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.definition_);
+  }
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void GetPermissionsResponse_Permission::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetPermissionsResponse.Permission)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetPermissionsResponse_Permission::CopyFrom(const GetPermissionsResponse_Permission& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetPermissionsResponse.Permission)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetPermissionsResponse_Permission::IsInitialized() const {
+  return true;
+}
+
+void GetPermissionsResponse_Permission::InternalSwap(GetPermissionsResponse_Permission* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  definition_.Swap(&other->definition_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetPermissionsResponse_Permission::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetPermissionsResponse::InitAsDefaultInstance() {
+}
+class GetPermissionsResponse::_Internal {
+ public:
+};
+
+GetPermissionsResponse::GetPermissionsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetPermissionsResponse)
+}
+GetPermissionsResponse::GetPermissionsResponse(const GetPermissionsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      permissions_(from.permissions_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.GetPermissionsResponse)
+}
+
+void GetPermissionsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetPermissionsResponse_groups_2fgroups_2eproto.base);
+}
+
+GetPermissionsResponse::~GetPermissionsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.GetPermissionsResponse)
+  SharedDtor();
+}
+
+void GetPermissionsResponse::SharedDtor() {
+}
+
+void GetPermissionsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetPermissionsResponse& GetPermissionsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetPermissionsResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetPermissionsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetPermissionsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  permissions_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* GetPermissionsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .mruv.GetPermissionsResponse.Permission permissions = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_permissions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetPermissionsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetPermissionsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mruv.GetPermissionsResponse.Permission permissions = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_permissions_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_permissions(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetPermissionsResponse)
+  return target;
+}
+
+size_t GetPermissionsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetPermissionsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mruv.GetPermissionsResponse.Permission permissions = 1;
+  total_size += 1UL * this->_internal_permissions_size();
+  for (const auto& msg : this->permissions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetPermissionsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetPermissionsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetPermissionsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPermissionsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetPermissionsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetPermissionsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetPermissionsResponse::MergeFrom(const GetPermissionsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetPermissionsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  permissions_.MergeFrom(from.permissions_);
+}
+
+void GetPermissionsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetPermissionsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetPermissionsResponse::CopyFrom(const GetPermissionsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetPermissionsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetPermissionsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetPermissionsResponse::InternalSwap(GetPermissionsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  permissions_.InternalSwap(&other->permissions_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetPermissionsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemovePermissionRequest::InitAsDefaultInstance() {
+}
+class RemovePermissionRequest::_Internal {
+ public:
+};
+
+RemovePermissionRequest::RemovePermissionRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.RemovePermissionRequest)
+}
+RemovePermissionRequest::RemovePermissionRequest(const RemovePermissionRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&group_id_, &from.group_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&permission_id_) -
+    reinterpret_cast<char*>(&group_id_)) + sizeof(permission_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.RemovePermissionRequest)
+}
+
+void RemovePermissionRequest::SharedCtor() {
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&permission_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(permission_id_));
+}
+
+RemovePermissionRequest::~RemovePermissionRequest() {
+  // @@protoc_insertion_point(destructor:mruv.RemovePermissionRequest)
+  SharedDtor();
+}
+
+void RemovePermissionRequest::SharedDtor() {
+}
+
+void RemovePermissionRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemovePermissionRequest& RemovePermissionRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemovePermissionRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemovePermissionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.RemovePermissionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&permission_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(permission_id_));
+  _internal_metadata_.Clear();
+}
+
+const char* RemovePermissionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 permission_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          permission_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemovePermissionRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemovePermissionRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // uint32 permission_id = 2;
+  if (this->permission_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_permission_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemovePermissionRequest)
+  return target;
+}
+
+size_t RemovePermissionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.RemovePermissionRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  // uint32 permission_id = 2;
+  if (this->permission_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_permission_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemovePermissionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemovePermissionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemovePermissionRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemovePermissionRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemovePermissionRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemovePermissionRequest)
+    MergeFrom(*source);
+  }
+}
+
+void RemovePermissionRequest::MergeFrom(const RemovePermissionRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemovePermissionRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+  if (from.permission_id() != 0) {
+    _internal_set_permission_id(from._internal_permission_id());
+  }
+}
+
+void RemovePermissionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemovePermissionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemovePermissionRequest::CopyFrom(const RemovePermissionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemovePermissionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemovePermissionRequest::IsInitialized() const {
+  return true;
+}
+
+void RemovePermissionRequest::InternalSwap(RemovePermissionRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+  swap(permission_id_, other->permission_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemovePermissionRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemovePermissionResponse::InitAsDefaultInstance() {
+}
+class RemovePermissionResponse::_Internal {
+ public:
+};
+
+RemovePermissionResponse::RemovePermissionResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.RemovePermissionResponse)
+}
+RemovePermissionResponse::RemovePermissionResponse(const RemovePermissionResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.RemovePermissionResponse)
+}
+
+void RemovePermissionResponse::SharedCtor() {
+}
+
+RemovePermissionResponse::~RemovePermissionResponse() {
+  // @@protoc_insertion_point(destructor:mruv.RemovePermissionResponse)
+  SharedDtor();
+}
+
+void RemovePermissionResponse::SharedDtor() {
+}
+
+void RemovePermissionResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemovePermissionResponse& RemovePermissionResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemovePermissionResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemovePermissionResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.RemovePermissionResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* RemovePermissionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemovePermissionResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemovePermissionResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemovePermissionResponse)
+  return target;
+}
+
+size_t RemovePermissionResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.RemovePermissionResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemovePermissionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemovePermissionResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemovePermissionResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemovePermissionResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemovePermissionResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemovePermissionResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RemovePermissionResponse::MergeFrom(const RemovePermissionResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemovePermissionResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void RemovePermissionResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemovePermissionResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemovePermissionResponse::CopyFrom(const RemovePermissionResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemovePermissionResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemovePermissionResponse::IsInitialized() const {
+  return true;
+}
+
+void RemovePermissionResponse::InternalSwap(RemovePermissionResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemovePermissionResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddSubgroupRequest::InitAsDefaultInstance() {
+}
+class AddSubgroupRequest::_Internal {
+ public:
+};
+
+AddSubgroupRequest::AddSubgroupRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.AddSubgroupRequest)
+}
+AddSubgroupRequest::AddSubgroupRequest(const AddSubgroupRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&group_id_, &from.group_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&subgroup_id_) -
+    reinterpret_cast<char*>(&group_id_)) + sizeof(subgroup_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.AddSubgroupRequest)
+}
+
+void AddSubgroupRequest::SharedCtor() {
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&subgroup_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(subgroup_id_));
+}
+
+AddSubgroupRequest::~AddSubgroupRequest() {
+  // @@protoc_insertion_point(destructor:mruv.AddSubgroupRequest)
+  SharedDtor();
+}
+
+void AddSubgroupRequest::SharedDtor() {
+}
+
+void AddSubgroupRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddSubgroupRequest& AddSubgroupRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddSubgroupRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddSubgroupRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AddSubgroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&subgroup_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(subgroup_id_));
+  _internal_metadata_.Clear();
+}
+
+const char* AddSubgroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 subgroup_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          subgroup_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddSubgroupRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddSubgroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // uint32 subgroup_id = 2;
+  if (this->subgroup_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_subgroup_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddSubgroupRequest)
+  return target;
+}
+
+size_t AddSubgroupRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AddSubgroupRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  // uint32 subgroup_id = 2;
+  if (this->subgroup_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_subgroup_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddSubgroupRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddSubgroupRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddSubgroupRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddSubgroupRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddSubgroupRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddSubgroupRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AddSubgroupRequest::MergeFrom(const AddSubgroupRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddSubgroupRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+  if (from.subgroup_id() != 0) {
+    _internal_set_subgroup_id(from._internal_subgroup_id());
+  }
+}
+
+void AddSubgroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddSubgroupRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddSubgroupRequest::CopyFrom(const AddSubgroupRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddSubgroupRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddSubgroupRequest::IsInitialized() const {
+  return true;
+}
+
+void AddSubgroupRequest::InternalSwap(AddSubgroupRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+  swap(subgroup_id_, other->subgroup_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddSubgroupRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddSubgroupResponse::InitAsDefaultInstance() {
+}
+class AddSubgroupResponse::_Internal {
+ public:
+};
+
+AddSubgroupResponse::AddSubgroupResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.AddSubgroupResponse)
+}
+AddSubgroupResponse::AddSubgroupResponse(const AddSubgroupResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.AddSubgroupResponse)
+}
+
+void AddSubgroupResponse::SharedCtor() {
+}
+
+AddSubgroupResponse::~AddSubgroupResponse() {
+  // @@protoc_insertion_point(destructor:mruv.AddSubgroupResponse)
+  SharedDtor();
+}
+
+void AddSubgroupResponse::SharedDtor() {
+}
+
+void AddSubgroupResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddSubgroupResponse& AddSubgroupResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddSubgroupResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddSubgroupResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.AddSubgroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* AddSubgroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddSubgroupResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.AddSubgroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.AddSubgroupResponse)
+  return target;
+}
+
+size_t AddSubgroupResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.AddSubgroupResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddSubgroupResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.AddSubgroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddSubgroupResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddSubgroupResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.AddSubgroupResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.AddSubgroupResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AddSubgroupResponse::MergeFrom(const AddSubgroupResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.AddSubgroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void AddSubgroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.AddSubgroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddSubgroupResponse::CopyFrom(const AddSubgroupResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.AddSubgroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddSubgroupResponse::IsInitialized() const {
+  return true;
+}
+
+void AddSubgroupResponse::InternalSwap(AddSubgroupResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddSubgroupResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetSubgroupsRequest::InitAsDefaultInstance() {
+}
+class GetSubgroupsRequest::_Internal {
+ public:
+};
+
+GetSubgroupsRequest::GetSubgroupsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetSubgroupsRequest)
+}
+GetSubgroupsRequest::GetSubgroupsRequest(const GetSubgroupsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  group_id_ = from.group_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetSubgroupsRequest)
+}
+
+void GetSubgroupsRequest::SharedCtor() {
+  group_id_ = 0u;
+}
+
+GetSubgroupsRequest::~GetSubgroupsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.GetSubgroupsRequest)
+  SharedDtor();
+}
+
+void GetSubgroupsRequest::SharedDtor() {
+}
+
+void GetSubgroupsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetSubgroupsRequest& GetSubgroupsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetSubgroupsRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetSubgroupsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetSubgroupsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  group_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetSubgroupsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetSubgroupsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetSubgroupsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetSubgroupsRequest)
+  return target;
+}
+
+size_t GetSubgroupsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetSubgroupsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetSubgroupsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetSubgroupsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetSubgroupsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetSubgroupsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetSubgroupsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetSubgroupsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetSubgroupsRequest::MergeFrom(const GetSubgroupsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetSubgroupsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+}
+
+void GetSubgroupsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetSubgroupsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetSubgroupsRequest::CopyFrom(const GetSubgroupsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetSubgroupsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetSubgroupsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetSubgroupsRequest::InternalSwap(GetSubgroupsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetSubgroupsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetSubgroupsResponse::InitAsDefaultInstance() {
+}
+class GetSubgroupsResponse::_Internal {
+ public:
+};
+
+GetSubgroupsResponse::GetSubgroupsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetSubgroupsResponse)
+}
+GetSubgroupsResponse::GetSubgroupsResponse(const GetSubgroupsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      subgroup_ids_(from.subgroup_ids_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.GetSubgroupsResponse)
+}
+
+void GetSubgroupsResponse::SharedCtor() {
+}
+
+GetSubgroupsResponse::~GetSubgroupsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.GetSubgroupsResponse)
+  SharedDtor();
+}
+
+void GetSubgroupsResponse::SharedDtor() {
+}
+
+void GetSubgroupsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetSubgroupsResponse& GetSubgroupsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetSubgroupsResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetSubgroupsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetSubgroupsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  subgroup_ids_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* GetSubgroupsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated uint32 subgroup_ids = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_subgroup_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
+          _internal_add_subgroup_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetSubgroupsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetSubgroupsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated uint32 subgroup_ids = 1;
+  {
+    int byte_size = _subgroup_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteUInt32Packed(
+          1, _internal_subgroup_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetSubgroupsResponse)
+  return target;
+}
+
+size_t GetSubgroupsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetSubgroupsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated uint32 subgroup_ids = 1;
+  {
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      UInt32Size(this->subgroup_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _subgroup_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetSubgroupsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetSubgroupsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetSubgroupsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetSubgroupsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetSubgroupsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetSubgroupsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetSubgroupsResponse::MergeFrom(const GetSubgroupsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetSubgroupsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  subgroup_ids_.MergeFrom(from.subgroup_ids_);
+}
+
+void GetSubgroupsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetSubgroupsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetSubgroupsResponse::CopyFrom(const GetSubgroupsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetSubgroupsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetSubgroupsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetSubgroupsResponse::InternalSwap(GetSubgroupsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  subgroup_ids_.InternalSwap(&other->subgroup_ids_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetSubgroupsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemoveSubgroupRequest::InitAsDefaultInstance() {
+}
+class RemoveSubgroupRequest::_Internal {
+ public:
+};
+
+RemoveSubgroupRequest::RemoveSubgroupRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.RemoveSubgroupRequest)
+}
+RemoveSubgroupRequest::RemoveSubgroupRequest(const RemoveSubgroupRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&group_id_, &from.group_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&subgroup_id_) -
+    reinterpret_cast<char*>(&group_id_)) + sizeof(subgroup_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.RemoveSubgroupRequest)
+}
+
+void RemoveSubgroupRequest::SharedCtor() {
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&subgroup_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(subgroup_id_));
+}
+
+RemoveSubgroupRequest::~RemoveSubgroupRequest() {
+  // @@protoc_insertion_point(destructor:mruv.RemoveSubgroupRequest)
+  SharedDtor();
+}
+
+void RemoveSubgroupRequest::SharedDtor() {
+}
+
+void RemoveSubgroupRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemoveSubgroupRequest& RemoveSubgroupRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveSubgroupRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemoveSubgroupRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.RemoveSubgroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&group_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&subgroup_id_) -
+      reinterpret_cast<char*>(&group_id_)) + sizeof(subgroup_id_));
+  _internal_metadata_.Clear();
+}
+
+const char* RemoveSubgroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 group_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          group_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 subgroup_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          subgroup_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveSubgroupRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemoveSubgroupRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_group_id(), target);
+  }
+
+  // uint32 subgroup_id = 2;
+  if (this->subgroup_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_subgroup_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemoveSubgroupRequest)
+  return target;
+}
+
+size_t RemoveSubgroupRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.RemoveSubgroupRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 group_id = 1;
+  if (this->group_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_group_id());
+  }
+
+  // uint32 subgroup_id = 2;
+  if (this->subgroup_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_subgroup_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemoveSubgroupRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemoveSubgroupRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveSubgroupRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveSubgroupRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemoveSubgroupRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemoveSubgroupRequest)
+    MergeFrom(*source);
+  }
+}
+
+void RemoveSubgroupRequest::MergeFrom(const RemoveSubgroupRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemoveSubgroupRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.group_id() != 0) {
+    _internal_set_group_id(from._internal_group_id());
+  }
+  if (from.subgroup_id() != 0) {
+    _internal_set_subgroup_id(from._internal_subgroup_id());
+  }
+}
+
+void RemoveSubgroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemoveSubgroupRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemoveSubgroupRequest::CopyFrom(const RemoveSubgroupRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemoveSubgroupRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveSubgroupRequest::IsInitialized() const {
+  return true;
+}
+
+void RemoveSubgroupRequest::InternalSwap(RemoveSubgroupRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(group_id_, other->group_id_);
+  swap(subgroup_id_, other->subgroup_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemoveSubgroupRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemoveSubgroupResponse::InitAsDefaultInstance() {
+}
+class RemoveSubgroupResponse::_Internal {
+ public:
+};
+
+RemoveSubgroupResponse::RemoveSubgroupResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.RemoveSubgroupResponse)
+}
+RemoveSubgroupResponse::RemoveSubgroupResponse(const RemoveSubgroupResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.RemoveSubgroupResponse)
+}
+
+void RemoveSubgroupResponse::SharedCtor() {
+}
+
+RemoveSubgroupResponse::~RemoveSubgroupResponse() {
+  // @@protoc_insertion_point(destructor:mruv.RemoveSubgroupResponse)
+  SharedDtor();
+}
+
+void RemoveSubgroupResponse::SharedDtor() {
+}
+
+void RemoveSubgroupResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemoveSubgroupResponse& RemoveSubgroupResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemoveSubgroupResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemoveSubgroupResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.RemoveSubgroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* RemoveSubgroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemoveSubgroupResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.RemoveSubgroupResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.RemoveSubgroupResponse)
+  return target;
+}
+
+size_t RemoveSubgroupResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.RemoveSubgroupResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemoveSubgroupResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.RemoveSubgroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemoveSubgroupResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemoveSubgroupResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.RemoveSubgroupResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.RemoveSubgroupResponse)
+    MergeFrom(*source);
+  }
+}
+
+void RemoveSubgroupResponse::MergeFrom(const RemoveSubgroupResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.RemoveSubgroupResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void RemoveSubgroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.RemoveSubgroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemoveSubgroupResponse::CopyFrom(const RemoveSubgroupResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.RemoveSubgroupResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemoveSubgroupResponse::IsInitialized() const {
+  return true;
+}
+
+void RemoveSubgroupResponse::InternalSwap(RemoveSubgroupResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemoveSubgroupResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void IsPermittedRequest::InitAsDefaultInstance() {
+}
+class IsPermittedRequest::_Internal {
+ public:
+};
+
+IsPermittedRequest::IsPermittedRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.IsPermittedRequest)
+}
+IsPermittedRequest::IsPermittedRequest(const IsPermittedRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_action().empty()) {
+    action_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.action_);
+  }
+  ::memcpy(&member_id_, &from.member_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&member_type_) -
+    reinterpret_cast<char*>(&member_id_)) + sizeof(member_type_));
+  // @@protoc_insertion_point(copy_constructor:mruv.IsPermittedRequest)
+}
+
+void IsPermittedRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_IsPermittedRequest_groups_2fgroups_2eproto.base);
+  action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&member_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&member_type_) -
+      reinterpret_cast<char*>(&member_id_)) + sizeof(member_type_));
+}
+
+IsPermittedRequest::~IsPermittedRequest() {
+  // @@protoc_insertion_point(destructor:mruv.IsPermittedRequest)
+  SharedDtor();
+}
+
+void IsPermittedRequest::SharedDtor() {
+  action_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void IsPermittedRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const IsPermittedRequest& IsPermittedRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IsPermittedRequest_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void IsPermittedRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.IsPermittedRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  action_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&member_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&member_type_) -
+      reinterpret_cast<char*>(&member_id_)) + sizeof(member_type_));
+  _internal_metadata_.Clear();
+}
+
+const char* IsPermittedRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 member_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          member_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.MemberType member_type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_member_type(static_cast<::mruv::MemberType>(val));
+        } else goto handle_unusual;
+        continue;
+      // string action = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_action();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.IsPermittedRequest.action"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* IsPermittedRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.IsPermittedRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 member_id = 1;
+  if (this->member_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_member_id(), target);
+  }
+
+  // .mruv.MemberType member_type = 2;
+  if (this->member_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_member_type(), target);
+  }
+
+  // string action = 3;
+  if (this->action().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_action().data(), static_cast<int>(this->_internal_action().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.IsPermittedRequest.action");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_action(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.IsPermittedRequest)
+  return target;
+}
+
+size_t IsPermittedRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.IsPermittedRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string action = 3;
+  if (this->action().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_action());
+  }
+
+  // uint32 member_id = 1;
+  if (this->member_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_member_id());
+  }
+
+  // .mruv.MemberType member_type = 2;
+  if (this->member_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_member_type());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void IsPermittedRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.IsPermittedRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IsPermittedRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsPermittedRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.IsPermittedRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.IsPermittedRequest)
+    MergeFrom(*source);
+  }
+}
+
+void IsPermittedRequest::MergeFrom(const IsPermittedRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.IsPermittedRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.action().size() > 0) {
+
+    action_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.action_);
+  }
+  if (from.member_id() != 0) {
+    _internal_set_member_id(from._internal_member_id());
+  }
+  if (from.member_type() != 0) {
+    _internal_set_member_type(from._internal_member_type());
+  }
+}
+
+void IsPermittedRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.IsPermittedRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void IsPermittedRequest::CopyFrom(const IsPermittedRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.IsPermittedRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IsPermittedRequest::IsInitialized() const {
+  return true;
+}
+
+void IsPermittedRequest::InternalSwap(IsPermittedRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  action_.Swap(&other->action_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(member_id_, other->member_id_);
+  swap(member_type_, other->member_type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata IsPermittedRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void IsPermittedResponse::InitAsDefaultInstance() {
+}
+class IsPermittedResponse::_Internal {
+ public:
+};
+
+IsPermittedResponse::IsPermittedResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.IsPermittedResponse)
+}
+IsPermittedResponse::IsPermittedResponse(const IsPermittedResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  permitted_ = from.permitted_;
+  // @@protoc_insertion_point(copy_constructor:mruv.IsPermittedResponse)
+}
+
+void IsPermittedResponse::SharedCtor() {
+  permitted_ = false;
+}
+
+IsPermittedResponse::~IsPermittedResponse() {
+  // @@protoc_insertion_point(destructor:mruv.IsPermittedResponse)
+  SharedDtor();
+}
+
+void IsPermittedResponse::SharedDtor() {
+}
+
+void IsPermittedResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const IsPermittedResponse& IsPermittedResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_IsPermittedResponse_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void IsPermittedResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.IsPermittedResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  permitted_ = false;
+  _internal_metadata_.Clear();
+}
+
+const char* IsPermittedResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // bool permitted = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          permitted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* IsPermittedResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.IsPermittedResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool permitted = 1;
+  if (this->permitted() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_permitted(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.IsPermittedResponse)
+  return target;
+}
+
+size_t IsPermittedResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.IsPermittedResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool permitted = 1;
+  if (this->permitted() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void IsPermittedResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.IsPermittedResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IsPermittedResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsPermittedResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.IsPermittedResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.IsPermittedResponse)
+    MergeFrom(*source);
+  }
+}
+
+void IsPermittedResponse::MergeFrom(const IsPermittedResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.IsPermittedResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.permitted() != 0) {
+    _internal_set_permitted(from._internal_permitted());
+  }
+}
+
+void IsPermittedResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.IsPermittedResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void IsPermittedResponse::CopyFrom(const IsPermittedResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.IsPermittedResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool IsPermittedResponse::IsInitialized() const {
+  return true;
+}
+
+void IsPermittedResponse::InternalSwap(IsPermittedResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(permitted_, other->permitted_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata IsPermittedResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2323,17 +7953,29 @@ void RemoveGroupMemberResponse::InternalSwap(RemoveGroupMemberResponse* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::PermissionID* Arena::CreateMaybeMessage< ::mruv::PermissionID >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::PermissionID >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::CreateGroupRequest* Arena::CreateMaybeMessage< ::mruv::CreateGroupRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::CreateGroupRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::Permission* Arena::CreateMaybeMessage< ::mruv::Permission >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::Permission >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::CreateGroupResponse* Arena::CreateMaybeMessage< ::mruv::CreateGroupResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::CreateGroupResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GroupID* Arena::CreateMaybeMessage< ::mruv::GroupID >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::GroupID >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::GetGroupRequest* Arena::CreateMaybeMessage< ::mruv::GetGroupRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetGroupRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::Group* Arena::CreateMaybeMessage< ::mruv::Group >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::Group >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::GetGroupResponse* Arena::CreateMaybeMessage< ::mruv::GetGroupResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetGroupResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::UpdateGroupRequest* Arena::CreateMaybeMessage< ::mruv::UpdateGroupRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::UpdateGroupRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::UpdateGroupResponse* Arena::CreateMaybeMessage< ::mruv::UpdateGroupResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::UpdateGroupResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::DeleteGroupRequest* Arena::CreateMaybeMessage< ::mruv::DeleteGroupRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::DeleteGroupRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::DeleteGroupResponse* Arena::CreateMaybeMessage< ::mruv::DeleteGroupResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::DeleteGroupResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::GetGroupsRequest* Arena::CreateMaybeMessage< ::mruv::GetGroupsRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::GetGroupsRequest >(arena);
@@ -2341,17 +7983,80 @@ template<> PROTOBUF_NOINLINE ::mruv::GetGroupsRequest* Arena::CreateMaybeMessage
 template<> PROTOBUF_NOINLINE ::mruv::GetGroupsResponse* Arena::CreateMaybeMessage< ::mruv::GetGroupsResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::GetGroupsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::AddGroupMemberRequest* Arena::CreateMaybeMessage< ::mruv::AddGroupMemberRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::AddGroupMemberRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::AssignOwnerRequest* Arena::CreateMaybeMessage< ::mruv::AssignOwnerRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AssignOwnerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::AddGroupMemberResponse* Arena::CreateMaybeMessage< ::mruv::AddGroupMemberResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::AddGroupMemberResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::AssignOwnerResponse* Arena::CreateMaybeMessage< ::mruv::AssignOwnerResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AssignOwnerResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::RemoveGroupMemberRequest* Arena::CreateMaybeMessage< ::mruv::RemoveGroupMemberRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::RemoveGroupMemberRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::GetOwnerRequest* Arena::CreateMaybeMessage< ::mruv::GetOwnerRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetOwnerRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::RemoveGroupMemberResponse* Arena::CreateMaybeMessage< ::mruv::RemoveGroupMemberResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::RemoveGroupMemberResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::GetOwnerResponse* Arena::CreateMaybeMessage< ::mruv::GetOwnerResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetOwnerResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::AddMemberRequest* Arena::CreateMaybeMessage< ::mruv::AddMemberRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AddMemberRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::AddMemberResponse* Arena::CreateMaybeMessage< ::mruv::AddMemberResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AddMemberResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetMembersRequest* Arena::CreateMaybeMessage< ::mruv::GetMembersRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetMembersRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetMembersResponse* Arena::CreateMaybeMessage< ::mruv::GetMembersResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetMembersResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::RemoveMemberRequest* Arena::CreateMaybeMessage< ::mruv::RemoveMemberRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::RemoveMemberRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::RemoveMemberResponse* Arena::CreateMaybeMessage< ::mruv::RemoveMemberResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::RemoveMemberResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::AddPermissionRequest* Arena::CreateMaybeMessage< ::mruv::AddPermissionRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AddPermissionRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::AddPermissionResponse* Arena::CreateMaybeMessage< ::mruv::AddPermissionResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AddPermissionResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetPermissionsRequest* Arena::CreateMaybeMessage< ::mruv::GetPermissionsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetPermissionsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetPermissionsResponse_Permission* Arena::CreateMaybeMessage< ::mruv::GetPermissionsResponse_Permission >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetPermissionsResponse_Permission >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetPermissionsResponse* Arena::CreateMaybeMessage< ::mruv::GetPermissionsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetPermissionsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::RemovePermissionRequest* Arena::CreateMaybeMessage< ::mruv::RemovePermissionRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::RemovePermissionRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::RemovePermissionResponse* Arena::CreateMaybeMessage< ::mruv::RemovePermissionResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::RemovePermissionResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::AddSubgroupRequest* Arena::CreateMaybeMessage< ::mruv::AddSubgroupRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AddSubgroupRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::AddSubgroupResponse* Arena::CreateMaybeMessage< ::mruv::AddSubgroupResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::AddSubgroupResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetSubgroupsRequest* Arena::CreateMaybeMessage< ::mruv::GetSubgroupsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetSubgroupsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetSubgroupsResponse* Arena::CreateMaybeMessage< ::mruv::GetSubgroupsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetSubgroupsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::RemoveSubgroupRequest* Arena::CreateMaybeMessage< ::mruv::RemoveSubgroupRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::RemoveSubgroupRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::RemoveSubgroupResponse* Arena::CreateMaybeMessage< ::mruv::RemoveSubgroupResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::RemoveSubgroupResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::IsPermittedRequest* Arena::CreateMaybeMessage< ::mruv::IsPermittedRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::IsPermittedRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::IsPermittedResponse* Arena::CreateMaybeMessage< ::mruv::IsPermittedResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::IsPermittedResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

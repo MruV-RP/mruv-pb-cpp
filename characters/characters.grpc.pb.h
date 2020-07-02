@@ -76,6 +76,14 @@ class MruVCharactersService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CharacterID>> PrepareAsyncPermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CharacterID>>(PrepareAsyncPermanentCharacterKillRaw(context, request, cq));
     }
+    // Change player clothes.
+    virtual ::grpc::Status ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::mruv::ChangeClothesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ChangeClothesResponse>> AsyncChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ChangeClothesResponse>>(AsyncChangeClothesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ChangeClothesResponse>> PrepareAsyncChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ChangeClothesResponse>>(PrepareAsyncChangeClothesRaw(context, request, cq));
+    }
     // Stream of deaths.
     std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::DeathStreamResponse>> DeathsStream(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request) {
       return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::DeathStreamResponse>>(DeathsStreamRaw(context, request));
@@ -169,6 +177,19 @@ class MruVCharactersService final {
       #else
       virtual void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Change player clothes.
+      virtual void ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Stream of deaths.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeathsStream(::grpc::ClientContext* context, ::mruv::DeathStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::DeathStreamResponse>* reactor) = 0;
@@ -219,6 +240,8 @@ class MruVCharactersService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteCharacterResponse>* PrepareAsyncDeleteCharacterRaw(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CharacterID>* AsyncPermanentCharacterKillRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CharacterID>* PrepareAsyncPermanentCharacterKillRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ChangeClothesResponse>* AsyncChangeClothesRaw(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ChangeClothesResponse>* PrepareAsyncChangeClothesRaw(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientReaderInterface< ::mruv::DeathStreamResponse>* DeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::mruv::DeathStreamResponse>* AsyncDeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
     virtual ::grpc::ClientAsyncReaderInterface< ::mruv::DeathStreamResponse>* PrepareAsyncDeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -264,6 +287,13 @@ class MruVCharactersService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>> PrepareAsyncPermanentCharacterKill(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>>(PrepareAsyncPermanentCharacterKillRaw(context, request, cq));
+    }
+    ::grpc::Status ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::mruv::ChangeClothesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>> AsyncChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>>(AsyncChangeClothesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>> PrepareAsyncChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>>(PrepareAsyncChangeClothesRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientReader< ::mruv::DeathStreamResponse>> DeathsStream(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request) {
       return std::unique_ptr< ::grpc::ClientReader< ::mruv::DeathStreamResponse>>(DeathsStreamRaw(context, request));
@@ -351,6 +381,18 @@ class MruVCharactersService final {
       #else
       void PermanentCharacterKill(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::CharacterID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, std::function<void(::grpc::Status)>) override;
+      void ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ChangeClothes(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void ChangeClothes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ChangeClothesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeathsStream(::grpc::ClientContext* context, ::mruv::DeathStreamRequest* request, ::grpc::ClientReadReactor< ::mruv::DeathStreamResponse>* reactor) override;
       #else
@@ -401,6 +443,8 @@ class MruVCharactersService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::DeleteCharacterResponse>* PrepareAsyncDeleteCharacterRaw(::grpc::ClientContext* context, const ::mruv::DeleteCharacterRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>* AsyncPermanentCharacterKillRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::CharacterID>* PrepareAsyncPermanentCharacterKillRaw(::grpc::ClientContext* context, const ::mruv::CharacterID& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>* AsyncChangeClothesRaw(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::ChangeClothesResponse>* PrepareAsyncChangeClothesRaw(::grpc::ClientContext* context, const ::mruv::ChangeClothesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientReader< ::mruv::DeathStreamResponse>* DeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request) override;
     ::grpc::ClientAsyncReader< ::mruv::DeathStreamResponse>* AsyncDeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
     ::grpc::ClientAsyncReader< ::mruv::DeathStreamResponse>* PrepareAsyncDeathsStreamRaw(::grpc::ClientContext* context, const ::mruv::DeathStreamRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -413,6 +457,7 @@ class MruVCharactersService final {
     const ::grpc::internal::RpcMethod rpcmethod_UpdateCharacter_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteCharacter_;
     const ::grpc::internal::RpcMethod rpcmethod_PermanentCharacterKill_;
+    const ::grpc::internal::RpcMethod rpcmethod_ChangeClothes_;
     const ::grpc::internal::RpcMethod rpcmethod_DeathsStream_;
     const ::grpc::internal::RpcMethod rpcmethod_GetServiceStatus_;
     const ::grpc::internal::RpcMethod rpcmethod_GetServiceVersion_;
@@ -433,6 +478,8 @@ class MruVCharactersService final {
     virtual ::grpc::Status DeleteCharacter(::grpc::ServerContext* context, const ::mruv::DeleteCharacterRequest* request, ::mruv::DeleteCharacterResponse* response);
     // Kill a character. A character that is killed cannot be played anymore.
     virtual ::grpc::Status PermanentCharacterKill(::grpc::ServerContext* context, const ::mruv::CharacterID* request, ::mruv::CharacterID* response);
+    // Change player clothes.
+    virtual ::grpc::Status ChangeClothes(::grpc::ServerContext* context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response);
     // Stream of deaths.
     virtual ::grpc::Status DeathsStream(::grpc::ServerContext* context, const ::mruv::DeathStreamRequest* request, ::grpc::ServerWriter< ::mruv::DeathStreamResponse>* writer);
     // Service status
@@ -540,12 +587,32 @@ class MruVCharactersService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_ChangeClothes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ChangeClothes() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_ChangeClothes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ChangeClothes(::grpc::ServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestChangeClothes(::grpc::ServerContext* context, ::mruv::ChangeClothesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::ChangeClothesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_DeathsStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeathsStream() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_DeathsStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -556,7 +623,7 @@ class MruVCharactersService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeathsStream(::grpc::ServerContext* context, ::mruv::DeathStreamRequest* request, ::grpc::ServerAsyncWriter< ::mruv::DeathStreamResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(5, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -565,7 +632,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetServiceStatus() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -576,7 +643,7 @@ class MruVCharactersService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetServiceStatus(::grpc::ServerContext* context, ::mruv::ServiceStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::ServiceStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -585,7 +652,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetServiceVersion() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -596,10 +663,10 @@ class MruVCharactersService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetServiceVersion(::grpc::ServerContext* context, ::mruv::VersionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::VersionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateCharacter<WithAsyncMethod_GetCharacter<WithAsyncMethod_UpdateCharacter<WithAsyncMethod_DeleteCharacter<WithAsyncMethod_PermanentCharacterKill<WithAsyncMethod_DeathsStream<WithAsyncMethod_GetServiceStatus<WithAsyncMethod_GetServiceVersion<Service > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateCharacter<WithAsyncMethod_GetCharacter<WithAsyncMethod_UpdateCharacter<WithAsyncMethod_DeleteCharacter<WithAsyncMethod_PermanentCharacterKill<WithAsyncMethod_ChangeClothes<WithAsyncMethod_DeathsStream<WithAsyncMethod_GetServiceStatus<WithAsyncMethod_GetServiceVersion<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateCharacter : public BaseClass {
    private:
@@ -836,6 +903,53 @@ class MruVCharactersService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_ChangeClothes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_ChangeClothes() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::ChangeClothesRequest* request, ::mruv::ChangeClothesResponse* response) { return this->ChangeClothes(context, request, response); }));}
+    void SetMessageAllocatorFor_ChangeClothes(
+        ::grpc::experimental::MessageAllocator< ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_ChangeClothes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ChangeClothes(::grpc::ServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ChangeClothes(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ChangeClothes(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithCallbackMethod_DeathsStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -846,7 +960,7 @@ class MruVCharactersService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
+        MarkMethodCallback(6,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -884,7 +998,7 @@ class MruVCharactersService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
+        MarkMethodCallback(7,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -896,9 +1010,9 @@ class MruVCharactersService final {
     void SetMessageAllocatorFor_GetServiceStatus(
         ::grpc::experimental::MessageAllocator< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -931,7 +1045,7 @@ class MruVCharactersService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(7,
+        MarkMethodCallback(8,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -943,9 +1057,9 @@ class MruVCharactersService final {
     void SetMessageAllocatorFor_GetServiceVersion(
         ::grpc::experimental::MessageAllocator< ::mruv::VersionRequest, ::mruv::VersionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -968,10 +1082,10 @@ class MruVCharactersService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateCharacter<ExperimentalWithCallbackMethod_GetCharacter<ExperimentalWithCallbackMethod_UpdateCharacter<ExperimentalWithCallbackMethod_DeleteCharacter<ExperimentalWithCallbackMethod_PermanentCharacterKill<ExperimentalWithCallbackMethod_DeathsStream<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateCharacter<ExperimentalWithCallbackMethod_GetCharacter<ExperimentalWithCallbackMethod_UpdateCharacter<ExperimentalWithCallbackMethod_DeleteCharacter<ExperimentalWithCallbackMethod_PermanentCharacterKill<ExperimentalWithCallbackMethod_ChangeClothes<ExperimentalWithCallbackMethod_DeathsStream<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateCharacter<ExperimentalWithCallbackMethod_GetCharacter<ExperimentalWithCallbackMethod_UpdateCharacter<ExperimentalWithCallbackMethod_DeleteCharacter<ExperimentalWithCallbackMethod_PermanentCharacterKill<ExperimentalWithCallbackMethod_DeathsStream<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateCharacter<ExperimentalWithCallbackMethod_GetCharacter<ExperimentalWithCallbackMethod_UpdateCharacter<ExperimentalWithCallbackMethod_DeleteCharacter<ExperimentalWithCallbackMethod_PermanentCharacterKill<ExperimentalWithCallbackMethod_ChangeClothes<ExperimentalWithCallbackMethod_DeathsStream<ExperimentalWithCallbackMethod_GetServiceStatus<ExperimentalWithCallbackMethod_GetServiceVersion<Service > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateCharacter : public BaseClass {
    private:
@@ -1058,12 +1172,29 @@ class MruVCharactersService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_ChangeClothes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ChangeClothes() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_ChangeClothes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ChangeClothes(::grpc::ServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_DeathsStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeathsStream() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_DeathsStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1080,7 +1211,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetServiceStatus() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1097,7 +1228,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetServiceVersion() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1209,12 +1340,32 @@ class MruVCharactersService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_ChangeClothes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ChangeClothes() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_ChangeClothes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ChangeClothes(::grpc::ServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestChangeClothes(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_DeathsStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeathsStream() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_DeathsStream() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1225,7 +1376,7 @@ class MruVCharactersService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeathsStream(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(5, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(6, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1234,7 +1385,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetServiceStatus() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1245,7 +1396,7 @@ class MruVCharactersService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetServiceStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1254,7 +1405,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetServiceVersion() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1265,7 +1416,7 @@ class MruVCharactersService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetServiceVersion(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1459,6 +1610,44 @@ class MruVCharactersService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_ChangeClothes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_ChangeClothes() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ChangeClothes(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_ChangeClothes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ChangeClothes(::grpc::ServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* ChangeClothes(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* ChangeClothes(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_DeathsStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1469,7 +1658,7 @@ class MruVCharactersService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(6,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1507,7 +1696,7 @@ class MruVCharactersService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(7,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1545,7 +1734,7 @@ class MruVCharactersService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(7,
+        MarkMethodRawCallback(8,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1673,12 +1862,32 @@ class MruVCharactersService final {
     virtual ::grpc::Status StreamedPermanentCharacterKill(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::CharacterID,::mruv::CharacterID>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_ChangeClothes : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ChangeClothes() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>(std::bind(&WithStreamedUnaryMethod_ChangeClothes<BaseClass>::StreamedChangeClothes, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_ChangeClothes() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ChangeClothes(::grpc::ServerContext* /*context*/, const ::mruv::ChangeClothesRequest* /*request*/, ::mruv::ChangeClothesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedChangeClothes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::ChangeClothesRequest,::mruv::ChangeClothesResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetServiceStatus : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetServiceStatus() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceStatus<BaseClass>::StreamedGetServiceStatus, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetServiceStatus() override {
@@ -1698,7 +1907,7 @@ class MruVCharactersService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetServiceVersion() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceVersion<BaseClass>::StreamedGetServiceVersion, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithStreamedUnaryMethod_GetServiceVersion() override {
@@ -1712,14 +1921,14 @@ class MruVCharactersService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetServiceVersion(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::VersionRequest,::mruv::VersionResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateCharacter<WithStreamedUnaryMethod_GetCharacter<WithStreamedUnaryMethod_UpdateCharacter<WithStreamedUnaryMethod_DeleteCharacter<WithStreamedUnaryMethod_PermanentCharacterKill<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateCharacter<WithStreamedUnaryMethod_GetCharacter<WithStreamedUnaryMethod_UpdateCharacter<WithStreamedUnaryMethod_DeleteCharacter<WithStreamedUnaryMethod_PermanentCharacterKill<WithStreamedUnaryMethod_ChangeClothes<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_DeathsStream : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_DeathsStream() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::SplitServerStreamingHandler< ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(std::bind(&WithSplitStreamingMethod_DeathsStream<BaseClass>::StreamedDeathsStream, this, std::placeholders::_1, std::placeholders::_2)));
     }
     ~WithSplitStreamingMethod_DeathsStream() override {
@@ -1734,7 +1943,7 @@ class MruVCharactersService final {
     virtual ::grpc::Status StreamedDeathsStream(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::DeathStreamRequest,::mruv::DeathStreamResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_DeathsStream<Service > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateCharacter<WithStreamedUnaryMethod_GetCharacter<WithStreamedUnaryMethod_UpdateCharacter<WithStreamedUnaryMethod_DeleteCharacter<WithStreamedUnaryMethod_PermanentCharacterKill<WithSplitStreamingMethod_DeathsStream<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateCharacter<WithStreamedUnaryMethod_GetCharacter<WithStreamedUnaryMethod_UpdateCharacter<WithStreamedUnaryMethod_DeleteCharacter<WithStreamedUnaryMethod_PermanentCharacterKill<WithStreamedUnaryMethod_ChangeClothes<WithSplitStreamingMethod_DeathsStream<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > > StreamedService;
 };
 
 }  // namespace mruv
