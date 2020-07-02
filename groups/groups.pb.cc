@@ -14,7 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGroupResponse_groups_2fgroups_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_groups_2fgroups_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPermissionsResponse_Permission_groups_2fgroups_2eproto;
 namespace mruv {
 class CreateGroupRequestDefaultTypeInternal {
@@ -53,6 +53,10 @@ class GetGroupsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupsRequest> _instance;
 } _GetGroupsRequest_default_instance_;
+class GetGroupsResponse_GroupDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupsResponse_Group> _instance;
+} _GetGroupsResponse_Group_default_instance_;
 class GetGroupsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetGroupsResponse> _instance;
@@ -381,7 +385,21 @@ static void InitDefaultsscc_info_GetGroupsResponse_groups_2fgroups_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetGroupsResponse_groups_2fgroups_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetGroupsResponse_groups_2fgroups_2eproto}, {
-      &scc_info_GetGroupResponse_groups_2fgroups_2eproto.base,}};
+      &scc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::_GetGroupsResponse_Group_default_instance_;
+    new (ptr) ::mruv::GetGroupsResponse_Group();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::GetGroupsResponse_Group::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto}, {}};
 
 static void InitDefaultsscc_info_GetMembersRequest_groups_2fgroups_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -650,7 +668,7 @@ static void InitDefaultsscc_info_UpdateGroupResponse_groups_2fgroups_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateGroupResponse_groups_2fgroups_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateGroupResponse_groups_2fgroups_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_groups_2fgroups_2eproto[35];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_groups_2fgroups_2eproto[36];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_groups_2fgroups_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_groups_2fgroups_2eproto = nullptr;
 
@@ -661,6 +679,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offse
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupRequest, description_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::CreateGroupResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -679,6 +698,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offse
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::GetGroupResponse, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupResponse, description_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -686,6 +706,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offse
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, group_id_),
   PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupRequest, description_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::UpdateGroupResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -707,6 +728,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offse
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsRequest, begin_from_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse_Group, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse_Group, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse_Group, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse_Group, description_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::GetGroupsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -875,40 +906,41 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_groups_2fgroups_2eproto::offse
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::CreateGroupRequest)},
-  { 6, -1, sizeof(::mruv::CreateGroupResponse)},
-  { 12, -1, sizeof(::mruv::GetGroupRequest)},
-  { 18, -1, sizeof(::mruv::GetGroupResponse)},
-  { 24, -1, sizeof(::mruv::UpdateGroupRequest)},
-  { 31, -1, sizeof(::mruv::UpdateGroupResponse)},
-  { 36, -1, sizeof(::mruv::DeleteGroupRequest)},
-  { 42, -1, sizeof(::mruv::DeleteGroupResponse)},
-  { 47, -1, sizeof(::mruv::GetGroupsRequest)},
-  { 52, -1, sizeof(::mruv::GetGroupsResponse)},
-  { 58, -1, sizeof(::mruv::AssignOwnerRequest)},
-  { 66, -1, sizeof(::mruv::AssignOwnerResponse)},
-  { 71, -1, sizeof(::mruv::GetOwnerRequest)},
-  { 77, -1, sizeof(::mruv::GetOwnerResponse)},
-  { 84, -1, sizeof(::mruv::AddMemberRequest)},
-  { 91, -1, sizeof(::mruv::AddMemberResponse)},
-  { 96, -1, sizeof(::mruv::GetMembersRequest)},
-  { 102, -1, sizeof(::mruv::GetMembersResponse)},
-  { 109, -1, sizeof(::mruv::RemoveMemberRequest)},
-  { 116, -1, sizeof(::mruv::RemoveMemberResponse)},
-  { 121, -1, sizeof(::mruv::AddPermissionRequest)},
-  { 129, -1, sizeof(::mruv::AddPermissionResponse)},
-  { 135, -1, sizeof(::mruv::GetPermissionsRequest)},
-  { 141, -1, sizeof(::mruv::GetPermissionsResponse_Permission)},
-  { 149, -1, sizeof(::mruv::GetPermissionsResponse)},
-  { 155, -1, sizeof(::mruv::RemovePermissionRequest)},
-  { 162, -1, sizeof(::mruv::RemovePermissionResponse)},
-  { 167, -1, sizeof(::mruv::AddSubgroupRequest)},
-  { 174, -1, sizeof(::mruv::AddSubgroupResponse)},
-  { 179, -1, sizeof(::mruv::GetSubgroupsRequest)},
-  { 185, -1, sizeof(::mruv::GetSubgroupsResponse)},
-  { 191, -1, sizeof(::mruv::RemoveSubgroupRequest)},
-  { 198, -1, sizeof(::mruv::RemoveSubgroupResponse)},
-  { 203, -1, sizeof(::mruv::IsPermittedRequest)},
-  { 211, -1, sizeof(::mruv::IsPermittedResponse)},
+  { 7, -1, sizeof(::mruv::CreateGroupResponse)},
+  { 13, -1, sizeof(::mruv::GetGroupRequest)},
+  { 19, -1, sizeof(::mruv::GetGroupResponse)},
+  { 26, -1, sizeof(::mruv::UpdateGroupRequest)},
+  { 34, -1, sizeof(::mruv::UpdateGroupResponse)},
+  { 39, -1, sizeof(::mruv::DeleteGroupRequest)},
+  { 45, -1, sizeof(::mruv::DeleteGroupResponse)},
+  { 50, -1, sizeof(::mruv::GetGroupsRequest)},
+  { 57, -1, sizeof(::mruv::GetGroupsResponse_Group)},
+  { 65, -1, sizeof(::mruv::GetGroupsResponse)},
+  { 71, -1, sizeof(::mruv::AssignOwnerRequest)},
+  { 79, -1, sizeof(::mruv::AssignOwnerResponse)},
+  { 84, -1, sizeof(::mruv::GetOwnerRequest)},
+  { 90, -1, sizeof(::mruv::GetOwnerResponse)},
+  { 97, -1, sizeof(::mruv::AddMemberRequest)},
+  { 104, -1, sizeof(::mruv::AddMemberResponse)},
+  { 109, -1, sizeof(::mruv::GetMembersRequest)},
+  { 115, -1, sizeof(::mruv::GetMembersResponse)},
+  { 122, -1, sizeof(::mruv::RemoveMemberRequest)},
+  { 129, -1, sizeof(::mruv::RemoveMemberResponse)},
+  { 134, -1, sizeof(::mruv::AddPermissionRequest)},
+  { 142, -1, sizeof(::mruv::AddPermissionResponse)},
+  { 148, -1, sizeof(::mruv::GetPermissionsRequest)},
+  { 154, -1, sizeof(::mruv::GetPermissionsResponse_Permission)},
+  { 162, -1, sizeof(::mruv::GetPermissionsResponse)},
+  { 168, -1, sizeof(::mruv::RemovePermissionRequest)},
+  { 175, -1, sizeof(::mruv::RemovePermissionResponse)},
+  { 180, -1, sizeof(::mruv::AddSubgroupRequest)},
+  { 187, -1, sizeof(::mruv::AddSubgroupResponse)},
+  { 192, -1, sizeof(::mruv::GetSubgroupsRequest)},
+  { 198, -1, sizeof(::mruv::GetSubgroupsResponse)},
+  { 204, -1, sizeof(::mruv::RemoveSubgroupRequest)},
+  { 211, -1, sizeof(::mruv::RemoveSubgroupResponse)},
+  { 216, -1, sizeof(::mruv::IsPermittedRequest)},
+  { 224, -1, sizeof(::mruv::IsPermittedResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -921,6 +953,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeleteGroupRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeleteGroupResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupsResponse_Group_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetGroupsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AssignOwnerRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_AssignOwnerResponse_default_instance_),
@@ -951,114 +984,118 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_groups_2fgroups_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\023groups/groups.proto\022\004mruv\032\034google/api/"
-  "annotations.proto\032\023common/health.proto\"\""
-  "\n\022CreateGroupRequest\022\014\n\004name\030\001 \001(\t\"\'\n\023Cr"
-  "eateGroupResponse\022\020\n\010group_id\030\001 \001(\r\"#\n\017G"
-  "etGroupRequest\022\020\n\010group_id\030\001 \001(\r\" \n\020GetG"
-  "roupResponse\022\014\n\004name\030\001 \001(\t\"4\n\022UpdateGrou"
-  "pRequest\022\020\n\010group_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t"
-  "\"\025\n\023UpdateGroupResponse\"&\n\022DeleteGroupRe"
-  "quest\022\020\n\010group_id\030\001 \001(\r\"\025\n\023DeleteGroupRe"
-  "sponse\"\022\n\020GetGroupsRequest\";\n\021GetGroupsR"
-  "esponse\022&\n\006groups\030\001 \003(\0132\026.mruv.GetGroupR"
-  "esponse\"]\n\022AssignOwnerRequest\022\020\n\010group_i"
-  "d\030\001 \001(\r\022#\n\nowner_type\030\003 \001(\0162\017.mruv.Owner"
-  "Type\022\020\n\010owner_id\030\002 \001(\r\"\025\n\023AssignOwnerRes"
-  "ponse\"#\n\017GetOwnerRequest\022\020\n\010group_id\030\001 \001"
-  "(\r\"I\n\020GetOwnerResponse\022\020\n\010owner_id\030\001 \001(\r"
-  "\022#\n\nowner_type\030\002 \001(\0162\017.mruv.OwnerType\"7\n"
-  "\020AddMemberRequest\022\020\n\010group_id\030\001 \001(\r\022\021\n\tm"
-  "ember_id\030\002 \001(\r\"\023\n\021AddMemberResponse\"%\n\021G"
-  "etMembersRequest\022\020\n\010group_id\030\001 \001(\r\"O\n\022Ge"
-  "tMembersResponse\022%\n\013member_type\030\001 \001(\0162\020."
-  "mruv.MemberType\022\022\n\nmember_ids\030\002 \003(\r\":\n\023R"
-  "emoveMemberRequest\022\020\n\010group_id\030\001 \001(\r\022\021\n\t"
-  "member_id\030\002 \001(\r\"\026\n\024RemoveMemberResponse\""
-  "J\n\024AddPermissionRequest\022\020\n\010group_id\030\001 \001("
-  "\r\022\014\n\004name\030\002 \001(\t\022\022\n\ndefinition\030\003 \001(\t\".\n\025A"
-  "ddPermissionResponse\022\025\n\rpermission_id\030\001 "
-  "\001(\r\")\n\025GetPermissionsRequest\022\020\n\010group_id"
-  "\030\001 \001(\r\"\222\001\n\026GetPermissionsResponse\022<\n\013per"
-  "missions\030\001 \003(\0132\'.mruv.GetPermissionsResp"
-  "onse.Permission\032:\n\nPermission\022\n\n\002id\030\001 \001("
-  "\r\022\014\n\004name\030\002 \001(\t\022\022\n\ndefinition\030\003 \001(\t\"B\n\027R"
-  "emovePermissionRequest\022\020\n\010group_id\030\001 \001(\r"
-  "\022\025\n\rpermission_id\030\002 \001(\r\"\032\n\030RemovePermiss"
-  "ionResponse\";\n\022AddSubgroupRequest\022\020\n\010gro"
-  "up_id\030\001 \001(\r\022\023\n\013subgroup_id\030\002 \001(\r\"\025\n\023AddS"
-  "ubgroupResponse\"\'\n\023GetSubgroupsRequest\022\020"
-  "\n\010group_id\030\001 \001(\r\",\n\024GetSubgroupsResponse"
-  "\022\024\n\014subgroup_ids\030\001 \003(\r\">\n\025RemoveSubgroup"
-  "Request\022\020\n\010group_id\030\001 \001(\r\022\023\n\013subgroup_id"
-  "\030\002 \001(\r\"\030\n\026RemoveSubgroupResponse\"^\n\022IsPe"
-  "rmittedRequest\022\021\n\tmember_id\030\001 \001(\r\022%\n\013mem"
-  "ber_type\030\002 \001(\0162\020.mruv.MemberType\022\016\n\006acti"
-  "on\030\003 \001(\t\"(\n\023IsPermittedResponse\022\021\n\tpermi"
-  "tted\030\001 \001(\010*k\n\tOwnerType\022\026\n\022OWNER_TYPE_UN"
-  "KNOWN\020\000\022\026\n\022OWNER_TYPE_ACCOUNT\020\001\022\030\n\024OWNER"
-  "_TYPE_CHARACTER\020\002\022\024\n\020OWNER_TYPE_GROUP\020\003*"
-  "Y\n\nMemberType\022\027\n\023MEMBER_TYPE_UNKNOWN\020\000\022\027"
-  "\n\023MEMBER_TYPE_ACCOUNT\020\001\022\031\n\025MEMBER_TYPE_C"
-  "HARACTER\020\0022\220\020\n\021MruVGroupsService\022V\n\013Crea"
-  "teGroup\022\030.mruv.CreateGroupRequest\032\031.mruv"
-  ".CreateGroupResponse\"\022\202\323\344\223\002\014\"\n/v1/groups"
-  "\022X\n\010GetGroup\022\025.mruv.GetGroupRequest\032\026.mr"
-  "uv.GetGroupResponse\"\035\202\323\344\223\002\027\022\025/v1/groups/"
-  "{group_id}\022a\n\013UpdateGroup\022\030.mruv.UpdateG"
-  "roupRequest\032\031.mruv.UpdateGroupResponse\"\035"
-  "\202\323\344\223\002\0272\025/v1/groups/{group_id}\022a\n\013DeleteG"
-  "roup\022\030.mruv.DeleteGroupRequest\032\031.mruv.De"
-  "leteGroupResponse\"\035\202\323\344\223\002\027*\025/v1/groups/{g"
-  "roup_id}\022P\n\tGetGroups\022\026.mruv.GetGroupsRe"
-  "quest\032\027.mruv.GetGroupsResponse\"\022\202\323\344\223\002\014\022\n"
-  "/v1/groups\022g\n\013AssignOwner\022\030.mruv.AssignO"
-  "wnerRequest\032\031.mruv.AssignOwnerResponse\"#"
-  "\202\323\344\223\002\035\032\033/v1/groups/{group_id}/owner\022^\n\010G"
-  "etOwner\022\025.mruv.GetOwnerRequest\032\026.mruv.Ge"
-  "tOwnerResponse\"#\202\323\344\223\002\035\022\033/v1/groups/{grou"
-  "p_id}/owner\022o\n\tAddMember\022\026.mruv.AddMembe"
-  "rRequest\032\027.mruv.AddMemberResponse\"1\202\323\344\223\002"
-  "+\")/v1/groups/{group_id}/members/{member"
-  "_id}\022f\n\nGetMembers\022\027.mruv.GetMembersRequ"
-  "est\032\030.mruv.GetMembersResponse\"%\202\323\344\223\002\037\022\035/"
-  "v1/groups/{group_id}/members\022x\n\014RemoveMe"
-  "mber\022\031.mruv.RemoveMemberRequest\032\032.mruv.R"
-  "emoveMemberResponse\"1\202\323\344\223\002+*)/v1/groups/"
-  "{group_id}/members/{member_id}\022s\n\rAddPer"
-  "mission\022\032.mruv.AddPermissionRequest\032\033.mr"
-  "uv.AddPermissionResponse\")\202\323\344\223\002#\"!/v1/gr"
-  "oups/{group_id}/permissions\022v\n\016GetPermis"
-  "sions\022\033.mruv.GetPermissionsRequest\032\034.mru"
-  "v.GetPermissionsResponse\")\202\323\344\223\002#\022!/v1/gr"
-  "oups/{group_id}/permissions\022|\n\020RemovePer"
-  "mission\022\035.mruv.RemovePermissionRequest\032\036"
-  ".mruv.RemovePermissionResponse\")\202\323\344\223\002#*!"
-  "/v1/groups/{group_id}/permissions\022y\n\013Add"
-  "Subgroup\022\030.mruv.AddSubgroupRequest\032\031.mru"
-  "v.AddSubgroupResponse\"5\202\323\344\223\002/\"-/v1/group"
-  "s/{group_id}/subgroups/{subgroup_id}\022n\n\014"
-  "GetSubgroups\022\031.mruv.GetSubgroupsRequest\032"
-  "\032.mruv.GetSubgroupsResponse\"\'\202\323\344\223\002!\022\037/v1"
-  "/groups/{group_id}/subgroups\022\202\001\n\016RemoveS"
-  "ubgroup\022\033.mruv.RemoveSubgroupRequest\032\034.m"
-  "ruv.RemoveSubgroupResponse\"5\202\323\344\223\002/*-/v1/"
-  "groups/{group_id}/subgroups/{subgroup_id"
-  "}\022t\n\013IsPermitted\022\030.mruv.IsPermittedReque"
-  "st\032\031.mruv.IsPermittedResponse\"0\202\323\344\223\002*\022(/"
-  "v1/groups/members/{member_id}/permitted\022"
-  "f\n\020GetServiceStatus\022\032.mruv.ServiceStatus"
-  "Request\032\033.mruv.ServiceStatusResponse\"\031\202\323"
-  "\344\223\002\023\022\021/v1/groups/status\022\\\n\021GetServiceVer"
-  "sion\022\024.mruv.VersionRequest\032\025.mruv.Versio"
-  "nResponse\"\032\202\323\344\223\002\024\022\022/v1/groups/versionB&Z"
-  "$github.com/MruV-RP/mruv-pb-go/groupsb\006p"
-  "roto3"
+  "annotations.proto\032\023common/health.proto\"7"
+  "\n\022CreateGroupRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013de"
+  "scription\030\002 \001(\t\"\'\n\023CreateGroupResponse\022\020"
+  "\n\010group_id\030\001 \001(\r\"#\n\017GetGroupRequest\022\020\n\010g"
+  "roup_id\030\001 \001(\r\"5\n\020GetGroupResponse\022\014\n\004nam"
+  "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"I\n\022UpdateGr"
+  "oupRequest\022\020\n\010group_id\030\001 \001(\r\022\014\n\004name\030\002 \001"
+  "(\t\022\023\n\013description\030\003 \001(\t\"\025\n\023UpdateGroupRe"
+  "sponse\"&\n\022DeleteGroupRequest\022\020\n\010group_id"
+  "\030\001 \001(\r\"\025\n\023DeleteGroupResponse\"5\n\020GetGrou"
+  "psRequest\022\r\n\005limit\030\001 \001(\r\022\022\n\nbegin_from\030\002"
+  " \001(\r\"z\n\021GetGroupsResponse\022-\n\006groups\030\001 \003("
+  "\0132\035.mruv.GetGroupsResponse.Group\0326\n\005Grou"
+  "p\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013descripti"
+  "on\030\003 \001(\t\"]\n\022AssignOwnerRequest\022\020\n\010group_"
+  "id\030\001 \001(\r\022#\n\nowner_type\030\003 \001(\0162\017.mruv.Owne"
+  "rType\022\020\n\010owner_id\030\002 \001(\r\"\025\n\023AssignOwnerRe"
+  "sponse\"#\n\017GetOwnerRequest\022\020\n\010group_id\030\001 "
+  "\001(\r\"I\n\020GetOwnerResponse\022\020\n\010owner_id\030\001 \001("
+  "\r\022#\n\nowner_type\030\002 \001(\0162\017.mruv.OwnerType\"7"
+  "\n\020AddMemberRequest\022\020\n\010group_id\030\001 \001(\r\022\021\n\t"
+  "member_id\030\002 \001(\r\"\023\n\021AddMemberResponse\"%\n\021"
+  "GetMembersRequest\022\020\n\010group_id\030\001 \001(\r\"O\n\022G"
+  "etMembersResponse\022%\n\013member_type\030\001 \001(\0162\020"
+  ".mruv.MemberType\022\022\n\nmember_ids\030\002 \003(\r\":\n\023"
+  "RemoveMemberRequest\022\020\n\010group_id\030\001 \001(\r\022\021\n"
+  "\tmember_id\030\002 \001(\r\"\026\n\024RemoveMemberResponse"
+  "\"J\n\024AddPermissionRequest\022\020\n\010group_id\030\001 \001"
+  "(\r\022\014\n\004name\030\002 \001(\t\022\022\n\ndefinition\030\003 \001(\t\".\n\025"
+  "AddPermissionResponse\022\025\n\rpermission_id\030\001"
+  " \001(\r\")\n\025GetPermissionsRequest\022\020\n\010group_i"
+  "d\030\001 \001(\r\"\222\001\n\026GetPermissionsResponse\022<\n\013pe"
+  "rmissions\030\001 \003(\0132\'.mruv.GetPermissionsRes"
+  "ponse.Permission\032:\n\nPermission\022\n\n\002id\030\001 \001"
+  "(\r\022\014\n\004name\030\002 \001(\t\022\022\n\ndefinition\030\003 \001(\t\"B\n\027"
+  "RemovePermissionRequest\022\020\n\010group_id\030\001 \001("
+  "\r\022\025\n\rpermission_id\030\002 \001(\r\"\032\n\030RemovePermis"
+  "sionResponse\";\n\022AddSubgroupRequest\022\020\n\010gr"
+  "oup_id\030\001 \001(\r\022\023\n\013subgroup_id\030\002 \001(\r\"\025\n\023Add"
+  "SubgroupResponse\"\'\n\023GetSubgroupsRequest\022"
+  "\020\n\010group_id\030\001 \001(\r\",\n\024GetSubgroupsRespons"
+  "e\022\024\n\014subgroup_ids\030\001 \003(\r\">\n\025RemoveSubgrou"
+  "pRequest\022\020\n\010group_id\030\001 \001(\r\022\023\n\013subgroup_i"
+  "d\030\002 \001(\r\"\030\n\026RemoveSubgroupResponse\"^\n\022IsP"
+  "ermittedRequest\022\021\n\tmember_id\030\001 \001(\r\022%\n\013me"
+  "mber_type\030\002 \001(\0162\020.mruv.MemberType\022\016\n\006act"
+  "ion\030\003 \001(\t\"(\n\023IsPermittedResponse\022\021\n\tperm"
+  "itted\030\001 \001(\010*k\n\tOwnerType\022\026\n\022OWNER_TYPE_U"
+  "NKNOWN\020\000\022\026\n\022OWNER_TYPE_ACCOUNT\020\001\022\030\n\024OWNE"
+  "R_TYPE_CHARACTER\020\002\022\024\n\020OWNER_TYPE_GROUP\020\003"
+  "*Y\n\nMemberType\022\027\n\023MEMBER_TYPE_UNKNOWN\020\000\022"
+  "\027\n\023MEMBER_TYPE_ACCOUNT\020\001\022\031\n\025MEMBER_TYPE_"
+  "CHARACTER\020\0022\220\020\n\021MruVGroupsService\022V\n\013Cre"
+  "ateGroup\022\030.mruv.CreateGroupRequest\032\031.mru"
+  "v.CreateGroupResponse\"\022\202\323\344\223\002\014\"\n/v1/group"
+  "s\022X\n\010GetGroup\022\025.mruv.GetGroupRequest\032\026.m"
+  "ruv.GetGroupResponse\"\035\202\323\344\223\002\027\022\025/v1/groups"
+  "/{group_id}\022a\n\013UpdateGroup\022\030.mruv.Update"
+  "GroupRequest\032\031.mruv.UpdateGroupResponse\""
+  "\035\202\323\344\223\002\0272\025/v1/groups/{group_id}\022a\n\013Delete"
+  "Group\022\030.mruv.DeleteGroupRequest\032\031.mruv.D"
+  "eleteGroupResponse\"\035\202\323\344\223\002\027*\025/v1/groups/{"
+  "group_id}\022P\n\tGetGroups\022\026.mruv.GetGroupsR"
+  "equest\032\027.mruv.GetGroupsResponse\"\022\202\323\344\223\002\014\022"
+  "\n/v1/groups\022g\n\013AssignOwner\022\030.mruv.Assign"
+  "OwnerRequest\032\031.mruv.AssignOwnerResponse\""
+  "#\202\323\344\223\002\035\032\033/v1/groups/{group_id}/owner\022^\n\010"
+  "GetOwner\022\025.mruv.GetOwnerRequest\032\026.mruv.G"
+  "etOwnerResponse\"#\202\323\344\223\002\035\022\033/v1/groups/{gro"
+  "up_id}/owner\022o\n\tAddMember\022\026.mruv.AddMemb"
+  "erRequest\032\027.mruv.AddMemberResponse\"1\202\323\344\223"
+  "\002+\")/v1/groups/{group_id}/members/{membe"
+  "r_id}\022f\n\nGetMembers\022\027.mruv.GetMembersReq"
+  "uest\032\030.mruv.GetMembersResponse\"%\202\323\344\223\002\037\022\035"
+  "/v1/groups/{group_id}/members\022x\n\014RemoveM"
+  "ember\022\031.mruv.RemoveMemberRequest\032\032.mruv."
+  "RemoveMemberResponse\"1\202\323\344\223\002+*)/v1/groups"
+  "/{group_id}/members/{member_id}\022s\n\rAddPe"
+  "rmission\022\032.mruv.AddPermissionRequest\032\033.m"
+  "ruv.AddPermissionResponse\")\202\323\344\223\002#\"!/v1/g"
+  "roups/{group_id}/permissions\022v\n\016GetPermi"
+  "ssions\022\033.mruv.GetPermissionsRequest\032\034.mr"
+  "uv.GetPermissionsResponse\")\202\323\344\223\002#\022!/v1/g"
+  "roups/{group_id}/permissions\022|\n\020RemovePe"
+  "rmission\022\035.mruv.RemovePermissionRequest\032"
+  "\036.mruv.RemovePermissionResponse\")\202\323\344\223\002#*"
+  "!/v1/groups/{group_id}/permissions\022y\n\013Ad"
+  "dSubgroup\022\030.mruv.AddSubgroupRequest\032\031.mr"
+  "uv.AddSubgroupResponse\"5\202\323\344\223\002/\"-/v1/grou"
+  "ps/{group_id}/subgroups/{subgroup_id}\022n\n"
+  "\014GetSubgroups\022\031.mruv.GetSubgroupsRequest"
+  "\032\032.mruv.GetSubgroupsResponse\"\'\202\323\344\223\002!\022\037/v"
+  "1/groups/{group_id}/subgroups\022\202\001\n\016Remove"
+  "Subgroup\022\033.mruv.RemoveSubgroupRequest\032\034."
+  "mruv.RemoveSubgroupResponse\"5\202\323\344\223\002/*-/v1"
+  "/groups/{group_id}/subgroups/{subgroup_i"
+  "d}\022t\n\013IsPermitted\022\030.mruv.IsPermittedRequ"
+  "est\032\031.mruv.IsPermittedResponse\"0\202\323\344\223\002*\022("
+  "/v1/groups/members/{member_id}/permitted"
+  "\022f\n\020GetServiceStatus\022\032.mruv.ServiceStatu"
+  "sRequest\032\033.mruv.ServiceStatusResponse\"\031\202"
+  "\323\344\223\002\023\022\021/v1/groups/status\022\\\n\021GetServiceVe"
+  "rsion\022\024.mruv.VersionRequest\032\025.mruv.Versi"
+  "onResponse\"\032\202\323\344\223\002\024\022\022/v1/groups/versionB&"
+  "Z$github.com/MruV-RP/mruv-pb-go/groupsb\006"
+  "proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_groups_2fgroups_2eproto_deps[2] = {
   &::descriptor_table_common_2fhealth_2eproto,
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_groups_2fgroups_2eproto_sccs[35] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_groups_2fgroups_2eproto_sccs[36] = {
   &scc_info_AddMemberRequest_groups_2fgroups_2eproto.base,
   &scc_info_AddMemberResponse_groups_2fgroups_2eproto.base,
   &scc_info_AddPermissionRequest_groups_2fgroups_2eproto.base,
@@ -1075,6 +1112,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gro
   &scc_info_GetGroupResponse_groups_2fgroups_2eproto.base,
   &scc_info_GetGroupsRequest_groups_2fgroups_2eproto.base,
   &scc_info_GetGroupsResponse_groups_2fgroups_2eproto.base,
+  &scc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto.base,
   &scc_info_GetMembersRequest_groups_2fgroups_2eproto.base,
   &scc_info_GetMembersResponse_groups_2fgroups_2eproto.base,
   &scc_info_GetOwnerRequest_groups_2fgroups_2eproto.base,
@@ -1098,10 +1136,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gro
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_groups_2fgroups_2eproto_once;
 static bool descriptor_table_groups_2fgroups_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_groups_2fgroups_2eproto = {
-  &descriptor_table_groups_2fgroups_2eproto_initialized, descriptor_table_protodef_groups_2fgroups_2eproto, "groups/groups.proto", 4085,
-  &descriptor_table_groups_2fgroups_2eproto_once, descriptor_table_groups_2fgroups_2eproto_sccs, descriptor_table_groups_2fgroups_2eproto_deps, 35, 2,
+  &descriptor_table_groups_2fgroups_2eproto_initialized, descriptor_table_protodef_groups_2fgroups_2eproto, "groups/groups.proto", 4246,
+  &descriptor_table_groups_2fgroups_2eproto_once, descriptor_table_groups_2fgroups_2eproto_sccs, descriptor_table_groups_2fgroups_2eproto_deps, 36, 2,
   schemas, file_default_instances, TableStruct_groups_2fgroups_2eproto::offsets,
-  file_level_metadata_groups_2fgroups_2eproto, 35, file_level_enum_descriptors_groups_2fgroups_2eproto, file_level_service_descriptors_groups_2fgroups_2eproto,
+  file_level_metadata_groups_2fgroups_2eproto, 36, file_level_enum_descriptors_groups_2fgroups_2eproto, file_level_service_descriptors_groups_2fgroups_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1160,12 +1198,17 @@ CreateGroupRequest::CreateGroupRequest(const CreateGroupRequest& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
   // @@protoc_insertion_point(copy_constructor:mruv.CreateGroupRequest)
 }
 
 void CreateGroupRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateGroupRequest_groups_2fgroups_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 CreateGroupRequest::~CreateGroupRequest() {
@@ -1175,6 +1218,7 @@ CreateGroupRequest::~CreateGroupRequest() {
 
 void CreateGroupRequest::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateGroupRequest::SetCachedSize(int size) const {
@@ -1193,6 +1237,7 @@ void CreateGroupRequest::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -1209,6 +1254,15 @@ const char* CreateGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.CreateGroupRequest.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.CreateGroupRequest.description"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1248,6 +1302,16 @@ failure:
         1, this->_internal_name(), target);
   }
 
+  // string description = 2;
+  if (this->description().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.CreateGroupRequest.description");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_description(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1269,6 +1333,13 @@ size_t CreateGroupRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // string description = 2;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1306,6 +1377,10 @@ void CreateGroupRequest::MergeFrom(const CreateGroupRequest& from) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
 }
 
 void CreateGroupRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1330,6 +1405,8 @@ void CreateGroupRequest::InternalSwap(CreateGroupRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 
@@ -1731,12 +1808,17 @@ GetGroupResponse::GetGroupResponse(const GetGroupResponse& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
   // @@protoc_insertion_point(copy_constructor:mruv.GetGroupResponse)
 }
 
 void GetGroupResponse::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetGroupResponse_groups_2fgroups_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 GetGroupResponse::~GetGroupResponse() {
@@ -1746,6 +1828,7 @@ GetGroupResponse::~GetGroupResponse() {
 
 void GetGroupResponse::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetGroupResponse::SetCachedSize(int size) const {
@@ -1764,6 +1847,7 @@ void GetGroupResponse::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -1780,6 +1864,15 @@ const char* GetGroupResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetGroupResponse.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetGroupResponse.description"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1819,6 +1912,16 @@ failure:
         1, this->_internal_name(), target);
   }
 
+  // string description = 2;
+  if (this->description().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.GetGroupResponse.description");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_description(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1840,6 +1943,13 @@ size_t GetGroupResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // string description = 2;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1877,6 +1987,10 @@ void GetGroupResponse::MergeFrom(const GetGroupResponse& from) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
 }
 
 void GetGroupResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1901,6 +2015,8 @@ void GetGroupResponse::InternalSwap(GetGroupResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 
@@ -1930,6 +2046,10 @@ UpdateGroupRequest::UpdateGroupRequest(const UpdateGroupRequest& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
   group_id_ = from.group_id_;
   // @@protoc_insertion_point(copy_constructor:mruv.UpdateGroupRequest)
 }
@@ -1937,6 +2057,7 @@ UpdateGroupRequest::UpdateGroupRequest(const UpdateGroupRequest& from)
 void UpdateGroupRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateGroupRequest_groups_2fgroups_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   group_id_ = 0u;
 }
 
@@ -1947,6 +2068,7 @@ UpdateGroupRequest::~UpdateGroupRequest() {
 
 void UpdateGroupRequest::SharedDtor() {
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UpdateGroupRequest::SetCachedSize(int size) const {
@@ -1965,6 +2087,7 @@ void UpdateGroupRequest::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   group_id_ = 0u;
   _internal_metadata_.Clear();
 }
@@ -1989,6 +2112,15 @@ const char* UpdateGroupRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.UpdateGroupRequest.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.UpdateGroupRequest.description"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2034,6 +2166,16 @@ failure:
         2, this->_internal_name(), target);
   }
 
+  // string description = 3;
+  if (this->description().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.UpdateGroupRequest.description");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_description(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -2055,6 +2197,13 @@ size_t UpdateGroupRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_name());
+  }
+
+  // string description = 3;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
   }
 
   // uint32 group_id = 1;
@@ -2099,6 +2248,10 @@ void UpdateGroupRequest::MergeFrom(const UpdateGroupRequest& from) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
   if (from.group_id() != 0) {
     _internal_set_group_id(from._internal_group_id());
   }
@@ -2126,6 +2279,8 @@ void UpdateGroupRequest::InternalSwap(UpdateGroupRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(group_id_, other->group_id_);
 }
@@ -2646,10 +2801,16 @@ GetGroupsRequest::GetGroupsRequest(const GetGroupsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&limit_, &from.limit_,
+    static_cast<size_t>(reinterpret_cast<char*>(&begin_from_) -
+    reinterpret_cast<char*>(&limit_)) + sizeof(begin_from_));
   // @@protoc_insertion_point(copy_constructor:mruv.GetGroupsRequest)
 }
 
 void GetGroupsRequest::SharedCtor() {
+  ::memset(&limit_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&begin_from_) -
+      reinterpret_cast<char*>(&limit_)) + sizeof(begin_from_));
 }
 
 GetGroupsRequest::~GetGroupsRequest() {
@@ -2675,6 +2836,9 @@ void GetGroupsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ::memset(&limit_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&begin_from_) -
+      reinterpret_cast<char*>(&limit_)) + sizeof(begin_from_));
   _internal_metadata_.Clear();
 }
 
@@ -2684,6 +2848,23 @@ const char* GetGroupsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 limit = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 begin_from = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          begin_from_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -2691,6 +2872,8 @@ const char* GetGroupsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -2705,6 +2888,18 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.GetGroupsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 limit = 1;
+  if (this->limit() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_limit(), target);
+  }
+
+  // uint32 begin_from = 2;
+  if (this->begin_from() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_begin_from(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -2721,6 +2916,20 @@ size_t GetGroupsRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint32 limit = 1;
+  if (this->limit() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_limit());
+  }
+
+  // uint32 begin_from = 2;
+  if (this->begin_from() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_begin_from());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -2753,6 +2962,12 @@ void GetGroupsRequest::MergeFrom(const GetGroupsRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.limit() != 0) {
+    _internal_set_limit(from._internal_limit());
+  }
+  if (from.begin_from() != 0) {
+    _internal_set_begin_from(from._internal_begin_from());
+  }
 }
 
 void GetGroupsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2776,9 +2991,276 @@ bool GetGroupsRequest::IsInitialized() const {
 void GetGroupsRequest::InternalSwap(GetGroupsRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(limit_, other->limit_);
+  swap(begin_from_, other->begin_from_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetGroupsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetGroupsResponse_Group::InitAsDefaultInstance() {
+}
+class GetGroupsResponse_Group::_Internal {
+ public:
+};
+
+GetGroupsResponse_Group::GetGroupsResponse_Group()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.GetGroupsResponse.Group)
+}
+GetGroupsResponse_Group::GetGroupsResponse_Group(const GetGroupsResponse_Group& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  id_ = from.id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.GetGroupsResponse.Group)
+}
+
+void GetGroupsResponse_Group::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
+}
+
+GetGroupsResponse_Group::~GetGroupsResponse_Group() {
+  // @@protoc_insertion_point(destructor:mruv.GetGroupsResponse.Group)
+  SharedDtor();
+}
+
+void GetGroupsResponse_Group::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetGroupsResponse_Group::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetGroupsResponse_Group& GetGroupsResponse_Group::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetGroupsResponse_Group_groups_2fgroups_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetGroupsResponse_Group::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.GetGroupsResponse.Group)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetGroupsResponse_Group::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetGroupsResponse.Group.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetGroupsResponse.Group.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetGroupsResponse_Group::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetGroupsResponse.Group)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.GetGroupsResponse.Group.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string description = 3;
+  if (this->description().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.GetGroupsResponse.Group.description");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_description(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetGroupsResponse.Group)
+  return target;
+}
+
+size_t GetGroupsResponse_Group::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.GetGroupsResponse.Group)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string description = 3;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetGroupsResponse_Group::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetGroupsResponse.Group)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetGroupsResponse_Group* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetGroupsResponse_Group>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetGroupsResponse.Group)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetGroupsResponse.Group)
+    MergeFrom(*source);
+  }
+}
+
+void GetGroupsResponse_Group::MergeFrom(const GetGroupsResponse_Group& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetGroupsResponse.Group)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void GetGroupsResponse_Group::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetGroupsResponse.Group)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetGroupsResponse_Group::CopyFrom(const GetGroupsResponse_Group& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetGroupsResponse.Group)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetGroupsResponse_Group::IsInitialized() const {
+  return true;
+}
+
+void GetGroupsResponse_Group::InternalSwap(GetGroupsResponse_Group* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetGroupsResponse_Group::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2842,7 +3324,7 @@ const char* GetGroupsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.GetGroupResponse groups = 1;
+      // repeated .mruv.GetGroupsResponse.Group groups = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -2880,7 +3362,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.GetGroupResponse groups = 1;
+  // repeated .mruv.GetGroupsResponse.Group groups = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_groups_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2904,7 +3386,7 @@ size_t GetGroupsResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.GetGroupResponse groups = 1;
+  // repeated .mruv.GetGroupsResponse.Group groups = 1;
   total_size += 1UL * this->_internal_groups_size();
   for (const auto& msg : this->groups_) {
     total_size +=
@@ -7979,6 +8461,9 @@ template<> PROTOBUF_NOINLINE ::mruv::DeleteGroupResponse* Arena::CreateMaybeMess
 }
 template<> PROTOBUF_NOINLINE ::mruv::GetGroupsRequest* Arena::CreateMaybeMessage< ::mruv::GetGroupsRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::GetGroupsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::GetGroupsResponse_Group* Arena::CreateMaybeMessage< ::mruv::GetGroupsResponse_Group >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::GetGroupsResponse_Group >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::GetGroupsResponse* Arena::CreateMaybeMessage< ::mruv::GetGroupsResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::GetGroupsResponse >(arena);
