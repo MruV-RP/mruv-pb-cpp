@@ -659,11 +659,30 @@ class CreateEntranceRequest :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kEntranceFieldNumber = 1,
+  };
+  // .mruv.entrances.Entrance entrance = 1;
+  bool has_entrance() const;
+  private:
+  bool _internal_has_entrance() const;
+  public:
+  void clear_entrance();
+  const ::mruv::entrances::Entrance& entrance() const;
+  ::mruv::entrances::Entrance* release_entrance();
+  ::mruv::entrances::Entrance* mutable_entrance();
+  void set_allocated_entrance(::mruv::entrances::Entrance* entrance);
+  private:
+  const ::mruv::entrances::Entrance& _internal_entrance() const;
+  ::mruv::entrances::Entrance* _internal_mutable_entrance();
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.entrances.CreateEntranceRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::mruv::entrances::Entrance* entrance_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_entrances_2fentrances_2eproto;
 };
@@ -2998,6 +3017,66 @@ inline void Entrance::set_allocated_in(::mruv::entrances::Entrance_EntranceDoor*
 // -------------------------------------------------------------------
 
 // CreateEntranceRequest
+
+// .mruv.entrances.Entrance entrance = 1;
+inline bool CreateEntranceRequest::_internal_has_entrance() const {
+  return this != internal_default_instance() && entrance_ != nullptr;
+}
+inline bool CreateEntranceRequest::has_entrance() const {
+  return _internal_has_entrance();
+}
+inline void CreateEntranceRequest::clear_entrance() {
+  if (GetArenaNoVirtual() == nullptr && entrance_ != nullptr) {
+    delete entrance_;
+  }
+  entrance_ = nullptr;
+}
+inline const ::mruv::entrances::Entrance& CreateEntranceRequest::_internal_entrance() const {
+  const ::mruv::entrances::Entrance* p = entrance_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::entrances::Entrance*>(
+      &::mruv::entrances::_Entrance_default_instance_);
+}
+inline const ::mruv::entrances::Entrance& CreateEntranceRequest::entrance() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.CreateEntranceRequest.entrance)
+  return _internal_entrance();
+}
+inline ::mruv::entrances::Entrance* CreateEntranceRequest::release_entrance() {
+  // @@protoc_insertion_point(field_release:mruv.entrances.CreateEntranceRequest.entrance)
+  
+  ::mruv::entrances::Entrance* temp = entrance_;
+  entrance_ = nullptr;
+  return temp;
+}
+inline ::mruv::entrances::Entrance* CreateEntranceRequest::_internal_mutable_entrance() {
+  
+  if (entrance_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::entrances::Entrance>(GetArenaNoVirtual());
+    entrance_ = p;
+  }
+  return entrance_;
+}
+inline ::mruv::entrances::Entrance* CreateEntranceRequest::mutable_entrance() {
+  // @@protoc_insertion_point(field_mutable:mruv.entrances.CreateEntranceRequest.entrance)
+  return _internal_mutable_entrance();
+}
+inline void CreateEntranceRequest::set_allocated_entrance(::mruv::entrances::Entrance* entrance) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete entrance_;
+  }
+  if (entrance) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      entrance = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, entrance, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  entrance_ = entrance;
+  // @@protoc_insertion_point(field_set_allocated:mruv.entrances.CreateEntranceRequest.entrance)
+}
 
 // -------------------------------------------------------------------
 

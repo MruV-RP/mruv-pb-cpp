@@ -430,6 +430,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_estates_2festates_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, entrances_),
   PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, gates_),
   PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, rooms_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, product_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::estates::CreateEstateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -561,27 +562,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_estates_2festates_2eproto::off
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::estates::Estate)},
-  { 11, -1, sizeof(::mruv::estates::CreateEstateRequest)},
-  { 18, -1, sizeof(::mruv::estates::CreateEstateResponse)},
-  { 24, -1, sizeof(::mruv::estates::GetEstateRequest)},
-  { 30, -1, sizeof(::mruv::estates::UpdateEstateRequest)},
-  { 38, -1, sizeof(::mruv::estates::UpdateEstateResponse)},
-  { 43, -1, sizeof(::mruv::estates::DeleteEstateRequest)},
-  { 49, -1, sizeof(::mruv::estates::DeleteEstateResponse)},
-  { 54, -1, sizeof(::mruv::estates::GetEstatesRequest)},
-  { 60, -1, sizeof(::mruv::estates::GetEstatesResponse)},
-  { 65, -1, sizeof(::mruv::estates::AddGateRequest)},
-  { 72, -1, sizeof(::mruv::estates::AddGateResponse)},
-  { 78, -1, sizeof(::mruv::estates::DeleteGateRequest)},
-  { 85, -1, sizeof(::mruv::estates::DeleteGateResponse)},
-  { 91, -1, sizeof(::mruv::estates::GetEstateGatesRequest)},
-  { 97, -1, sizeof(::mruv::estates::GetEstateGatesResponse)},
-  { 102, -1, sizeof(::mruv::estates::AddEntranceRequest)},
-  { 109, -1, sizeof(::mruv::estates::AddEntranceResponse)},
-  { 115, -1, sizeof(::mruv::estates::RemoveEntranceRequest)},
-  { 122, -1, sizeof(::mruv::estates::RemoveEntranceResponse)},
-  { 128, -1, sizeof(::mruv::estates::GetEstateEntrancesRequest)},
-  { 134, -1, sizeof(::mruv::estates::GetEstateEntrancesResponse)},
+  { 12, -1, sizeof(::mruv::estates::CreateEstateRequest)},
+  { 19, -1, sizeof(::mruv::estates::CreateEstateResponse)},
+  { 25, -1, sizeof(::mruv::estates::GetEstateRequest)},
+  { 31, -1, sizeof(::mruv::estates::UpdateEstateRequest)},
+  { 39, -1, sizeof(::mruv::estates::UpdateEstateResponse)},
+  { 44, -1, sizeof(::mruv::estates::DeleteEstateRequest)},
+  { 50, -1, sizeof(::mruv::estates::DeleteEstateResponse)},
+  { 55, -1, sizeof(::mruv::estates::GetEstatesRequest)},
+  { 61, -1, sizeof(::mruv::estates::GetEstatesResponse)},
+  { 66, -1, sizeof(::mruv::estates::AddGateRequest)},
+  { 73, -1, sizeof(::mruv::estates::AddGateResponse)},
+  { 79, -1, sizeof(::mruv::estates::DeleteGateRequest)},
+  { 86, -1, sizeof(::mruv::estates::DeleteGateResponse)},
+  { 92, -1, sizeof(::mruv::estates::GetEstateGatesRequest)},
+  { 98, -1, sizeof(::mruv::estates::GetEstateGatesResponse)},
+  { 103, -1, sizeof(::mruv::estates::AddEntranceRequest)},
+  { 110, -1, sizeof(::mruv::estates::AddEntranceResponse)},
+  { 116, -1, sizeof(::mruv::estates::RemoveEntranceRequest)},
+  { 123, -1, sizeof(::mruv::estates::RemoveEntranceResponse)},
+  { 129, -1, sizeof(::mruv::estates::GetEstateEntrancesRequest)},
+  { 135, -1, sizeof(::mruv::estates::GetEstateEntrancesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -611,67 +612,68 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_estates_2festates_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025estates/estates.proto\022\014mruv.estates\032\034g"
-  "oogle/api/annotations.proto\"h\n\006Estate\022\n\n"
+  "oogle/api/annotations.proto\"|\n\006Estate\022\n\n"
   "\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003"
   " \001(\t\022\021\n\tentrances\030\004 \003(\r\022\r\n\005gates\030\005 \003(\r\022\r"
-  "\n\005rooms\030\006 \003(\r\"8\n\023CreateEstateRequest\022\014\n\004"
-  "name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\"\n\024Creat"
-  "eEstateResponse\022\n\n\002id\030\001 \001(\r\"\036\n\020GetEstate"
-  "Request\022\n\n\002id\030\001 \001(\r\"D\n\023UpdateEstateReque"
-  "st\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013descript"
-  "ion\030\003 \001(\t\"\026\n\024UpdateEstateResponse\"!\n\023Del"
-  "eteEstateRequest\022\n\n\002id\030\001 \001(\r\"\026\n\024DeleteEs"
-  "tateResponse\"\037\n\021GetEstatesRequest\022\n\n\002id\030"
-  "\001 \001(\r\"\024\n\022GetEstatesResponse\"4\n\016AddGateRe"
-  "quest\022\021\n\testate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001("
-  "\r\"%\n\017AddGateResponse\022\022\n\ngate_count\030\001 \001(\r"
-  "\"7\n\021DeleteGateRequest\022\021\n\testate_id\030\001 \001(\r"
-  "\022\017\n\007gate_id\030\002 \001(\r\"(\n\022DeleteGateResponse\022"
-  "\022\n\ngate_count\030\001 \001(\r\"*\n\025GetEstateGatesReq"
-  "uest\022\021\n\testate_id\030\001 \001(\r\"\030\n\026GetEstateGate"
-  "sResponse\"<\n\022AddEntranceRequest\022\021\n\testat"
-  "e_id\030\001 \001(\r\022\023\n\013entrance_id\030\002 \001(\r\"-\n\023AddEn"
-  "tranceResponse\022\026\n\016entrance_count\030\001 \001(\r\"\?"
-  "\n\025RemoveEntranceRequest\022\021\n\testate_id\030\001 \001"
-  "(\r\022\023\n\013entrance_id\030\002 \001(\r\"0\n\026RemoveEntranc"
-  "eResponse\022\026\n\016entrance_count\030\001 \001(\r\".\n\031Get"
-  "EstateEntrancesRequest\022\021\n\testate_id\030\001 \001("
-  "\r\"\034\n\032GetEstateEntrancesResponse2\304\n\n\021MruV"
-  "EstateService\022j\n\014CreateEstate\022!.mruv.est"
-  "ates.CreateEstateRequest\032\".mruv.estates."
-  "CreateEstateResponse\"\023\202\323\344\223\002\r\"\013/v1/estate"
-  "s\022[\n\tGetEstate\022\036.mruv.estates.GetEstateR"
-  "equest\032\024.mruv.estates.Estate\"\030\202\323\344\223\002\022\022\020/v"
-  "1/estates/{id}\022o\n\014UpdateEstate\022!.mruv.es"
-  "tates.UpdateEstateRequest\032\".mruv.estates"
-  ".UpdateEstateResponse\"\030\202\323\344\223\002\0222\020/v1/estat"
-  "es/{id}\022o\n\014DeleteEstate\022!.mruv.estates.D"
-  "eleteEstateRequest\032\".mruv.estates.Delete"
-  "EstateResponse\"\030\202\323\344\223\002\022*\020/v1/estates/{id}"
-  "\022d\n\nGetEstates\022\037.mruv.estates.GetEstates"
-  "Request\032 .mruv.estates.GetEstatesRespons"
-  "e\"\023\202\323\344\223\002\r\022\013/v1/estates\022m\n\007AddGate\022\034.mruv"
-  ".estates.AddGateRequest\032\035.mruv.estates.A"
-  "ddGateResponse\"%\202\323\344\223\002\037\"\035/v1/estates/{est"
-  "ate_id}/gates\022\200\001\n\nDeleteGate\022\037.mruv.esta"
-  "tes.DeleteGateRequest\032 .mruv.estates.Del"
-  "eteGateResponse\"/\202\323\344\223\002)*\'/v1/estates/{es"
-  "tate_id}/gates/{gate_id}\022\201\001\n\016GetEstateGa"
-  "tes\022#.mruv.estates.GetEstateGatesRequest"
-  "\032$.mruv.estates.GetEstateGatesResponse\"$"
-  "\202\323\344\223\002\036\022\034/v1/estate/{estate_id}/gates\022}\n\013"
-  "AddEntrance\022 .mruv.estates.AddEntranceRe"
-  "quest\032!.mruv.estates.AddEntranceResponse"
-  "\")\202\323\344\223\002#\"!/v1/estates/{estate_id}/entran"
-  "ces\022\224\001\n\016RemoveEntrance\022#.mruv.estates.Re"
-  "moveEntranceRequest\032$.mruv.estates.Remov"
-  "eEntranceResponse\"7\202\323\344\223\0021*//v1/estates/{"
-  "estate_id}/entrances/{entrance_id}\022\221\001\n\022G"
-  "etEstateEntrances\022\'.mruv.estates.GetEsta"
-  "teEntrancesRequest\032(.mruv.estates.GetEst"
-  "ateEntrancesResponse\"(\202\323\344\223\002\"\022 /v1/estate"
-  "/{estate_id}/entrancesB\'Z%github.com/Mru"
-  "V-RP/mruv-pb-go/estatesb\006proto3"
+  "\n\005rooms\030\006 \003(\r\022\022\n\nproduct_id\030\007 \001(\r\"8\n\023Cre"
+  "ateEstateRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013descri"
+  "ption\030\002 \001(\t\"\"\n\024CreateEstateResponse\022\n\n\002i"
+  "d\030\001 \001(\r\"\036\n\020GetEstateRequest\022\n\n\002id\030\001 \001(\r\""
+  "D\n\023UpdateEstateRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004na"
+  "me\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\026\n\024UpdateE"
+  "stateResponse\"!\n\023DeleteEstateRequest\022\n\n\002"
+  "id\030\001 \001(\r\"\026\n\024DeleteEstateResponse\"\037\n\021GetE"
+  "statesRequest\022\n\n\002id\030\001 \001(\r\"\024\n\022GetEstatesR"
+  "esponse\"4\n\016AddGateRequest\022\021\n\testate_id\030\001"
+  " \001(\r\022\017\n\007gate_id\030\002 \001(\r\"%\n\017AddGateResponse"
+  "\022\022\n\ngate_count\030\001 \001(\r\"7\n\021DeleteGateReques"
+  "t\022\021\n\testate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001(\r\"(\n"
+  "\022DeleteGateResponse\022\022\n\ngate_count\030\001 \001(\r\""
+  "*\n\025GetEstateGatesRequest\022\021\n\testate_id\030\001 "
+  "\001(\r\"\030\n\026GetEstateGatesResponse\"<\n\022AddEntr"
+  "anceRequest\022\021\n\testate_id\030\001 \001(\r\022\023\n\013entran"
+  "ce_id\030\002 \001(\r\"-\n\023AddEntranceResponse\022\026\n\016en"
+  "trance_count\030\001 \001(\r\"\?\n\025RemoveEntranceRequ"
+  "est\022\021\n\testate_id\030\001 \001(\r\022\023\n\013entrance_id\030\002 "
+  "\001(\r\"0\n\026RemoveEntranceResponse\022\026\n\016entranc"
+  "e_count\030\001 \001(\r\".\n\031GetEstateEntrancesReque"
+  "st\022\021\n\testate_id\030\001 \001(\r\"\034\n\032GetEstateEntran"
+  "cesResponse2\304\n\n\021MruVEstateService\022j\n\014Cre"
+  "ateEstate\022!.mruv.estates.CreateEstateReq"
+  "uest\032\".mruv.estates.CreateEstateResponse"
+  "\"\023\202\323\344\223\002\r\"\013/v1/estates\022[\n\tGetEstate\022\036.mru"
+  "v.estates.GetEstateRequest\032\024.mruv.estate"
+  "s.Estate\"\030\202\323\344\223\002\022\022\020/v1/estates/{id}\022o\n\014Up"
+  "dateEstate\022!.mruv.estates.UpdateEstateRe"
+  "quest\032\".mruv.estates.UpdateEstateRespons"
+  "e\"\030\202\323\344\223\002\0222\020/v1/estates/{id}\022o\n\014DeleteEst"
+  "ate\022!.mruv.estates.DeleteEstateRequest\032\""
+  ".mruv.estates.DeleteEstateResponse\"\030\202\323\344\223"
+  "\002\022*\020/v1/estates/{id}\022d\n\nGetEstates\022\037.mru"
+  "v.estates.GetEstatesRequest\032 .mruv.estat"
+  "es.GetEstatesResponse\"\023\202\323\344\223\002\r\022\013/v1/estat"
+  "es\022m\n\007AddGate\022\034.mruv.estates.AddGateRequ"
+  "est\032\035.mruv.estates.AddGateResponse\"%\202\323\344\223"
+  "\002\037\"\035/v1/estates/{estate_id}/gates\022\200\001\n\nDe"
+  "leteGate\022\037.mruv.estates.DeleteGateReques"
+  "t\032 .mruv.estates.DeleteGateResponse\"/\202\323\344"
+  "\223\002)*\'/v1/estates/{estate_id}/gates/{gate"
+  "_id}\022\201\001\n\016GetEstateGates\022#.mruv.estates.G"
+  "etEstateGatesRequest\032$.mruv.estates.GetE"
+  "stateGatesResponse\"$\202\323\344\223\002\036\022\034/v1/estate/{"
+  "estate_id}/gates\022}\n\013AddEntrance\022 .mruv.e"
+  "states.AddEntranceRequest\032!.mruv.estates"
+  ".AddEntranceResponse\")\202\323\344\223\002#\"!/v1/estate"
+  "s/{estate_id}/entrances\022\224\001\n\016RemoveEntran"
+  "ce\022#.mruv.estates.RemoveEntranceRequest\032"
+  "$.mruv.estates.RemoveEntranceResponse\"7\202"
+  "\323\344\223\0021*//v1/estates/{estate_id}/entrances"
+  "/{entrance_id}\022\221\001\n\022GetEstateEntrances\022\'."
+  "mruv.estates.GetEstateEntrancesRequest\032("
+  ".mruv.estates.GetEstateEntrancesResponse"
+  "\"(\202\323\344\223\002\"\022 /v1/estate/{estate_id}/entranc"
+  "esB\'Z%github.com/MruV-RP/mruv-pb-go/esta"
+  "tesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_estates_2festates_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -703,7 +705,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_est
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_estates_2festates_2eproto_once;
 static bool descriptor_table_estates_2festates_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_estates_2festates_2eproto = {
-  &descriptor_table_estates_2festates_2eproto_initialized, descriptor_table_protodef_estates_2festates_2eproto, "estates/estates.proto", 2471,
+  &descriptor_table_estates_2festates_2eproto_initialized, descriptor_table_protodef_estates_2festates_2eproto, "estates/estates.proto", 2491,
   &descriptor_table_estates_2festates_2eproto_once, descriptor_table_estates_2festates_2eproto_sccs, descriptor_table_estates_2festates_2eproto_deps, 22, 1,
   schemas, file_default_instances, TableStruct_estates_2festates_2eproto::offsets,
   file_level_metadata_estates_2festates_2eproto, 22, file_level_enum_descriptors_estates_2festates_2eproto, file_level_service_descriptors_estates_2festates_2eproto,
@@ -742,7 +744,9 @@ Estate::Estate(const Estate& from)
   if (!from._internal_description().empty()) {
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
-  id_ = from.id_;
+  ::memcpy(&id_, &from.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&product_id_) -
+    reinterpret_cast<char*>(&id_)) + sizeof(product_id_));
   // @@protoc_insertion_point(copy_constructor:mruv.estates.Estate)
 }
 
@@ -750,7 +754,9 @@ void Estate::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Estate_estates_2festates_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_ = 0u;
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&product_id_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(product_id_));
 }
 
 Estate::~Estate() {
@@ -783,7 +789,9 @@ void Estate::Clear() {
   rooms_.Clear();
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  id_ = 0u;
+  ::memset(&id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&product_id_) -
+      reinterpret_cast<char*>(&id_)) + sizeof(product_id_));
   _internal_metadata_.Clear();
 }
 
@@ -846,6 +854,13 @@ const char* Estate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48) {
           _internal_add_rooms(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 product_id = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -926,6 +941,12 @@ failure:
       target = stream->WriteUInt32Packed(
           6, _internal_rooms(), byte_size, target);
     }
+  }
+
+  // uint32 product_id = 7;
+  if (this->product_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_product_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1010,6 +1031,13 @@ size_t Estate::ByteSizeLong() const {
         this->_internal_id());
   }
 
+  // uint32 product_id = 7;
+  if (this->product_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_product_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1055,6 +1083,9 @@ void Estate::MergeFrom(const Estate& from) {
   if (from.id() != 0) {
     _internal_set_id(from._internal_id());
   }
+  if (from.product_id() != 0) {
+    _internal_set_product_id(from._internal_product_id());
+  }
 }
 
 void Estate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1086,6 +1117,7 @@ void Estate::InternalSwap(Estate* other) {
   description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(id_, other->id_);
+  swap(product_id_, other->product_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Estate::GetMetadata() const {

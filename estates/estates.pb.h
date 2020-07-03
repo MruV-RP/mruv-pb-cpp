@@ -266,6 +266,7 @@ class Estate :
     kNameFieldNumber = 2,
     kDescriptionFieldNumber = 3,
     kIdFieldNumber = 1,
+    kProductIdFieldNumber = 7,
   };
   // repeated uint32 entrances = 4;
   int entrances_size() const;
@@ -374,6 +375,15 @@ class Estate :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // uint32 product_id = 7;
+  void clear_product_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 product_id() const;
+  void set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_product_id() const;
+  void _internal_set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.estates.Estate)
  private:
   class _Internal;
@@ -388,6 +398,7 @@ class Estate :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 product_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_estates_2festates_2eproto;
 };
@@ -3409,6 +3420,26 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >
 Estate::mutable_rooms() {
   // @@protoc_insertion_point(field_mutable_list:mruv.estates.Estate.rooms)
   return _internal_mutable_rooms();
+}
+
+// uint32 product_id = 7;
+inline void Estate::clear_product_id() {
+  product_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Estate::_internal_product_id() const {
+  return product_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Estate::product_id() const {
+  // @@protoc_insertion_point(field_get:mruv.estates.Estate.product_id)
+  return _internal_product_id();
+}
+inline void Estate::_internal_set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  product_id_ = value;
+}
+inline void Estate::set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_product_id(value);
+  // @@protoc_insertion_point(field_set:mruv.estates.Estate.product_id)
 }
 
 // -------------------------------------------------------------------

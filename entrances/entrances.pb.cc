@@ -14,6 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_entrances_2fentrances_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Entrance_entrances_2fentrances_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_entrances_2fentrances_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Entrance_EntranceDoor_entrances_2fentrances_2eproto;
 namespace mruv {
 namespace entrances {
@@ -102,8 +103,9 @@ static void InitDefaultsscc_info_CreateEntranceRequest_entrances_2fentrances_2ep
   ::mruv::entrances::CreateEntranceRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateEntranceRequest_entrances_2fentrances_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateEntranceRequest_entrances_2fentrances_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CreateEntranceRequest_entrances_2fentrances_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_CreateEntranceRequest_entrances_2fentrances_2eproto}, {
+      &scc_info_Entrance_entrances_2fentrances_2eproto.base,}};
 
 static void InitDefaultsscc_info_CreateEntranceResponse_entrances_2fentrances_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -378,6 +380,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_entrances_2fentrances_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::CreateEntranceRequest, entrance_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::entrances::CreateEntranceResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -470,21 +473,21 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::mruv::entrances::Entrance_EntranceDoor)},
   { 15, -1, sizeof(::mruv::entrances::Entrance)},
   { 24, -1, sizeof(::mruv::entrances::CreateEntranceRequest)},
-  { 29, -1, sizeof(::mruv::entrances::CreateEntranceResponse)},
-  { 34, -1, sizeof(::mruv::entrances::GetEntranceRequest)},
-  { 40, -1, sizeof(::mruv::entrances::GetEntranceResponse)},
-  { 45, -1, sizeof(::mruv::entrances::UpdateEntranceRequest)},
-  { 51, -1, sizeof(::mruv::entrances::UpdateEntranceResponse)},
-  { 56, -1, sizeof(::mruv::entrances::DeleteEntranceRequest)},
-  { 62, -1, sizeof(::mruv::entrances::DeleteEntranceResponse)},
-  { 67, -1, sizeof(::mruv::entrances::LockRequest)},
-  { 73, -1, sizeof(::mruv::entrances::LockResponse)},
-  { 78, -1, sizeof(::mruv::entrances::UnlockRequest)},
-  { 84, -1, sizeof(::mruv::entrances::UnlockResponse)},
-  { 89, -1, sizeof(::mruv::entrances::FindNearestEntranceRequest)},
-  { 98, -1, sizeof(::mruv::entrances::FindNearestEntranceResponse)},
-  { 105, -1, sizeof(::mruv::entrances::EnterRequest)},
-  { 111, -1, sizeof(::mruv::entrances::EnterResponse)},
+  { 30, -1, sizeof(::mruv::entrances::CreateEntranceResponse)},
+  { 35, -1, sizeof(::mruv::entrances::GetEntranceRequest)},
+  { 41, -1, sizeof(::mruv::entrances::GetEntranceResponse)},
+  { 46, -1, sizeof(::mruv::entrances::UpdateEntranceRequest)},
+  { 52, -1, sizeof(::mruv::entrances::UpdateEntranceResponse)},
+  { 57, -1, sizeof(::mruv::entrances::DeleteEntranceRequest)},
+  { 63, -1, sizeof(::mruv::entrances::DeleteEntranceResponse)},
+  { 68, -1, sizeof(::mruv::entrances::LockRequest)},
+  { 74, -1, sizeof(::mruv::entrances::LockResponse)},
+  { 79, -1, sizeof(::mruv::entrances::UnlockRequest)},
+  { 85, -1, sizeof(::mruv::entrances::UnlockResponse)},
+  { 90, -1, sizeof(::mruv::entrances::FindNearestEntranceRequest)},
+  { 99, -1, sizeof(::mruv::entrances::FindNearestEntranceResponse)},
+  { 106, -1, sizeof(::mruv::entrances::EnterRequest)},
+  { 112, -1, sizeof(::mruv::entrances::EnterResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -518,45 +521,46 @@ const char descriptor_table_protodef_entrances_2fentrances_2eproto[] PROTOBUF_SE
   "\004name\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022\014\n\004icon\030\003 \001"
   "(\005\022\016\n\006marker\030\004 \001(\005\022\t\n\001x\030\005 \001(\002\022\t\n\001y\030\006 \001(\002"
   "\022\t\n\001z\030\007 \001(\002\022\n\n\002vw\030\010 \001(\005\022\013\n\003int\030\t \001(\005\022\021\n\t"
-  "estate_id\030\n \001(\r\"\027\n\025CreateEntranceRequest"
-  "\"\030\n\026CreateEntranceResponse\" \n\022GetEntranc"
-  "eRequest\022\n\n\002id\030\001 \001(\r\"\025\n\023GetEntranceRespo"
-  "nse\"#\n\025UpdateEntranceRequest\022\n\n\002id\030\001 \001(\r"
-  "\"\030\n\026UpdateEntranceResponse\"#\n\025DeleteEntr"
-  "anceRequest\022\n\n\002id\030\001 \001(\r\"\030\n\026DeleteEntranc"
-  "eResponse\"\031\n\013LockRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014"
-  "LockResponse\"\033\n\rUnlockRequest\022\n\n\002id\030\001 \001("
-  "\r\"\020\n\016UnlockResponse\"S\n\032FindNearestEntran"
-  "ceRequest\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001"
-  "(\002\022\024\n\014max_distance\030\004 \001(\002\";\n\033FindNearestE"
-  "ntranceResponse\022\n\n\002id\030\001 \001(\r\022\020\n\010distance\030"
-  "\002 \001(\002\"\032\n\014EnterRequest\022\n\n\002id\030\001 \001(\r\"\017\n\rEnt"
-  "erResponse2\304\007\n\024MruVEntrancesService\022v\n\016C"
-  "reateEntrance\022%.mruv.entrances.CreateEnt"
-  "ranceRequest\032&.mruv.entrances.CreateEntr"
-  "anceResponse\"\025\202\323\344\223\002\017\"\r/v1/entrances\022r\n\013G"
-  "etEntrance\022\".mruv.entrances.GetEntranceR"
-  "equest\032#.mruv.entrances.GetEntranceRespo"
-  "nse\"\032\202\323\344\223\002\024\022\022/v1/entrances/{id}\022{\n\016Updat"
-  "eEntrance\022%.mruv.entrances.UpdateEntranc"
-  "eRequest\032&.mruv.entrances.UpdateEntrance"
-  "Response\"\032\202\323\344\223\002\0242\022/v1/entrances/{id}\022{\n\016"
-  "DeleteEntrance\022%.mruv.entrances.DeleteEn"
-  "tranceRequest\032&.mruv.entrances.DeleteEnt"
-  "ranceResponse\"\032\202\323\344\223\002\024*\022/v1/entrances/{id"
-  "}\022b\n\004Lock\022\033.mruv.entrances.LockRequest\032\034"
-  ".mruv.entrances.LockResponse\"\037\202\323\344\223\002\031\"\027/v"
-  "1/entrances/{id}/lock\022j\n\006Unlock\022\035.mruv.e"
-  "ntrances.UnlockRequest\032\036.mruv.entrances."
-  "UnlockResponse\"!\202\323\344\223\002\033\"\031/v1/entrances/{i"
-  "d}/unlock\022\215\001\n\023FindNearestEntrance\022*.mruv"
-  ".entrances.FindNearestEntranceRequest\032+."
-  "mruv.entrances.FindNearestEntranceRespon"
-  "se\"\035\202\323\344\223\002\027\022\025/v1/entrances/nearest\022f\n\005Ent"
-  "er\022\034.mruv.entrances.EnterRequest\032\035.mruv."
-  "entrances.EnterResponse\" \202\323\344\223\002\032\"\030/v1/ent"
-  "rances/{id}/enterB)Z\'github.com/MruV-RP/"
-  "mruv-pb-go/entrancesb\006proto3"
+  "estate_id\030\n \001(\r\"C\n\025CreateEntranceRequest"
+  "\022*\n\010entrance\030\001 \001(\0132\030.mruv.entrances.Entr"
+  "ance\"\030\n\026CreateEntranceResponse\" \n\022GetEnt"
+  "ranceRequest\022\n\n\002id\030\001 \001(\r\"\025\n\023GetEntranceR"
+  "esponse\"#\n\025UpdateEntranceRequest\022\n\n\002id\030\001"
+  " \001(\r\"\030\n\026UpdateEntranceResponse\"#\n\025Delete"
+  "EntranceRequest\022\n\n\002id\030\001 \001(\r\"\030\n\026DeleteEnt"
+  "ranceResponse\"\031\n\013LockRequest\022\n\n\002id\030\001 \001(\r"
+  "\"\016\n\014LockResponse\"\033\n\rUnlockRequest\022\n\n\002id\030"
+  "\001 \001(\r\"\020\n\016UnlockResponse\"S\n\032FindNearestEn"
+  "tranceRequest\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z"
+  "\030\003 \001(\002\022\024\n\014max_distance\030\004 \001(\002\";\n\033FindNear"
+  "estEntranceResponse\022\n\n\002id\030\001 \001(\r\022\020\n\010dista"
+  "nce\030\002 \001(\002\"\032\n\014EnterRequest\022\n\n\002id\030\001 \001(\r\"\017\n"
+  "\rEnterResponse2\304\007\n\024MruVEntrancesService\022"
+  "v\n\016CreateEntrance\022%.mruv.entrances.Creat"
+  "eEntranceRequest\032&.mruv.entrances.Create"
+  "EntranceResponse\"\025\202\323\344\223\002\017\"\r/v1/entrances\022"
+  "r\n\013GetEntrance\022\".mruv.entrances.GetEntra"
+  "nceRequest\032#.mruv.entrances.GetEntranceR"
+  "esponse\"\032\202\323\344\223\002\024\022\022/v1/entrances/{id}\022{\n\016U"
+  "pdateEntrance\022%.mruv.entrances.UpdateEnt"
+  "ranceRequest\032&.mruv.entrances.UpdateEntr"
+  "anceResponse\"\032\202\323\344\223\002\0242\022/v1/entrances/{id}"
+  "\022{\n\016DeleteEntrance\022%.mruv.entrances.Dele"
+  "teEntranceRequest\032&.mruv.entrances.Delet"
+  "eEntranceResponse\"\032\202\323\344\223\002\024*\022/v1/entrances"
+  "/{id}\022b\n\004Lock\022\033.mruv.entrances.LockReque"
+  "st\032\034.mruv.entrances.LockResponse\"\037\202\323\344\223\002\031"
+  "\"\027/v1/entrances/{id}/lock\022j\n\006Unlock\022\035.mr"
+  "uv.entrances.UnlockRequest\032\036.mruv.entran"
+  "ces.UnlockResponse\"!\202\323\344\223\002\033\"\031/v1/entrance"
+  "s/{id}/unlock\022\215\001\n\023FindNearestEntrance\022*."
+  "mruv.entrances.FindNearestEntranceReques"
+  "t\032+.mruv.entrances.FindNearestEntranceRe"
+  "sponse\"\035\202\323\344\223\002\027\022\025/v1/entrances/nearest\022f\n"
+  "\005Enter\022\034.mruv.entrances.EnterRequest\032\035.m"
+  "ruv.entrances.EnterResponse\" \202\323\344\223\002\032\"\030/v1"
+  "/entrances/{id}/enterB)Z\'github.com/MruV"
+  "-RP/mruv-pb-go/entrancesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_entrances_2fentrances_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -584,7 +588,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ent
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_entrances_2fentrances_2eproto_once;
 static bool descriptor_table_entrances_2fentrances_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_entrances_2fentrances_2eproto = {
-  &descriptor_table_entrances_2fentrances_2eproto_initialized, descriptor_table_protodef_entrances_2fentrances_2eproto, "entrances/entrances.proto", 1908,
+  &descriptor_table_entrances_2fentrances_2eproto_initialized, descriptor_table_protodef_entrances_2fentrances_2eproto, "entrances/entrances.proto", 1952,
   &descriptor_table_entrances_2fentrances_2eproto_once, descriptor_table_entrances_2fentrances_2eproto_sccs, descriptor_table_entrances_2fentrances_2eproto_deps, 18, 1,
   schemas, file_default_instances, TableStruct_entrances_2fentrances_2eproto::offsets,
   file_level_metadata_entrances_2fentrances_2eproto, 18, file_level_enum_descriptors_entrances_2fentrances_2eproto, file_level_service_descriptors_entrances_2fentrances_2eproto,
@@ -1334,11 +1338,18 @@ void Entrance::InternalSwap(Entrance* other) {
 // ===================================================================
 
 void CreateEntranceRequest::InitAsDefaultInstance() {
+  ::mruv::entrances::_CreateEntranceRequest_default_instance_._instance.get_mutable()->entrance_ = const_cast< ::mruv::entrances::Entrance*>(
+      ::mruv::entrances::Entrance::internal_default_instance());
 }
 class CreateEntranceRequest::_Internal {
  public:
+  static const ::mruv::entrances::Entrance& entrance(const CreateEntranceRequest* msg);
 };
 
+const ::mruv::entrances::Entrance&
+CreateEntranceRequest::_Internal::entrance(const CreateEntranceRequest* msg) {
+  return *msg->entrance_;
+}
 CreateEntranceRequest::CreateEntranceRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -1348,10 +1359,17 @@ CreateEntranceRequest::CreateEntranceRequest(const CreateEntranceRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_entrance()) {
+    entrance_ = new ::mruv::entrances::Entrance(*from.entrance_);
+  } else {
+    entrance_ = nullptr;
+  }
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.CreateEntranceRequest)
 }
 
 void CreateEntranceRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateEntranceRequest_entrances_2fentrances_2eproto.base);
+  entrance_ = nullptr;
 }
 
 CreateEntranceRequest::~CreateEntranceRequest() {
@@ -1360,6 +1378,7 @@ CreateEntranceRequest::~CreateEntranceRequest() {
 }
 
 void CreateEntranceRequest::SharedDtor() {
+  if (this != internal_default_instance()) delete entrance_;
 }
 
 void CreateEntranceRequest::SetCachedSize(int size) const {
@@ -1377,6 +1396,10 @@ void CreateEntranceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaNoVirtual() == nullptr && entrance_ != nullptr) {
+    delete entrance_;
+  }
+  entrance_ = nullptr;
   _internal_metadata_.Clear();
 }
 
@@ -1386,6 +1409,16 @@ const char* CreateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // .mruv.entrances.Entrance entrance = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_entrance(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -1393,6 +1426,8 @@ const char* CreateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1407,6 +1442,14 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.entrances.CreateEntranceRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // .mruv.entrances.Entrance entrance = 1;
+  if (this->has_entrance()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::entrance(this), target, stream);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1423,6 +1466,13 @@ size_t CreateEntranceRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // .mruv.entrances.Entrance entrance = 1;
+  if (this->has_entrance()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *entrance_);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1455,6 +1505,9 @@ void CreateEntranceRequest::MergeFrom(const CreateEntranceRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.has_entrance()) {
+    _internal_mutable_entrance()->::mruv::entrances::Entrance::MergeFrom(from._internal_entrance());
+  }
 }
 
 void CreateEntranceRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1478,6 +1531,7 @@ bool CreateEntranceRequest::IsInitialized() const {
 void CreateEntranceRequest::InternalSwap(CreateEntranceRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(entrance_, other->entrance_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateEntranceRequest::GetMetadata() const {
