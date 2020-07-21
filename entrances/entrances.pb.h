@@ -793,11 +793,24 @@ class CreateEntranceResponse :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // uint32 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.entrances.CreateEntranceResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_entrances_2fentrances_2eproto;
 };
@@ -3081,6 +3094,26 @@ inline void CreateEntranceRequest::set_allocated_entrance(::mruv::entrances::Ent
 // -------------------------------------------------------------------
 
 // CreateEntranceResponse
+
+// uint32 id = 1;
+inline void CreateEntranceResponse::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateEntranceResponse::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateEntranceResponse::id() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.CreateEntranceResponse.id)
+  return _internal_id();
+}
+inline void CreateEntranceResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void CreateEntranceResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.entrances.CreateEntranceResponse.id)
+}
 
 // -------------------------------------------------------------------
 

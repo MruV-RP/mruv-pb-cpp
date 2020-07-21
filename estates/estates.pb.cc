@@ -14,6 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Estate_estates_2festates_2eproto;
 namespace mruv {
 namespace estates {
 class EstateDefaultTypeInternal {
@@ -313,8 +314,9 @@ static void InitDefaultsscc_info_GetEstateGatesResponse_estates_2festates_2eprot
   ::mruv::estates::GetEstateGatesResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetEstateGatesResponse_estates_2festates_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetEstateGatesResponse_estates_2festates_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetEstateGatesResponse_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetEstateGatesResponse_estates_2festates_2eproto}, {
+      &scc_info_Estate_estates_2festates_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetEstateRequest_estates_2festates_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -479,7 +481,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_estates_2festates_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::estates::GetEstatesRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::GetEstatesRequest, from_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::GetEstatesRequest, limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::estates::GetEstatesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -522,6 +525,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_estates_2festates_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::GetEstateGatesResponse, estates_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::estates::AddEntranceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -570,19 +574,19 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 44, -1, sizeof(::mruv::estates::DeleteEstateRequest)},
   { 50, -1, sizeof(::mruv::estates::DeleteEstateResponse)},
   { 55, -1, sizeof(::mruv::estates::GetEstatesRequest)},
-  { 61, -1, sizeof(::mruv::estates::GetEstatesResponse)},
-  { 66, -1, sizeof(::mruv::estates::AddGateRequest)},
-  { 73, -1, sizeof(::mruv::estates::AddGateResponse)},
-  { 79, -1, sizeof(::mruv::estates::DeleteGateRequest)},
-  { 86, -1, sizeof(::mruv::estates::DeleteGateResponse)},
-  { 92, -1, sizeof(::mruv::estates::GetEstateGatesRequest)},
-  { 98, -1, sizeof(::mruv::estates::GetEstateGatesResponse)},
-  { 103, -1, sizeof(::mruv::estates::AddEntranceRequest)},
-  { 110, -1, sizeof(::mruv::estates::AddEntranceResponse)},
-  { 116, -1, sizeof(::mruv::estates::RemoveEntranceRequest)},
-  { 123, -1, sizeof(::mruv::estates::RemoveEntranceResponse)},
-  { 129, -1, sizeof(::mruv::estates::GetEstateEntrancesRequest)},
-  { 135, -1, sizeof(::mruv::estates::GetEstateEntrancesResponse)},
+  { 62, -1, sizeof(::mruv::estates::GetEstatesResponse)},
+  { 67, -1, sizeof(::mruv::estates::AddGateRequest)},
+  { 74, -1, sizeof(::mruv::estates::AddGateResponse)},
+  { 80, -1, sizeof(::mruv::estates::DeleteGateRequest)},
+  { 87, -1, sizeof(::mruv::estates::DeleteGateResponse)},
+  { 93, -1, sizeof(::mruv::estates::GetEstateGatesRequest)},
+  { 99, -1, sizeof(::mruv::estates::GetEstateGatesResponse)},
+  { 105, -1, sizeof(::mruv::estates::AddEntranceRequest)},
+  { 112, -1, sizeof(::mruv::estates::AddEntranceResponse)},
+  { 118, -1, sizeof(::mruv::estates::RemoveEntranceRequest)},
+  { 125, -1, sizeof(::mruv::estates::RemoveEntranceResponse)},
+  { 131, -1, sizeof(::mruv::estates::GetEstateEntrancesRequest)},
+  { 137, -1, sizeof(::mruv::estates::GetEstateEntrancesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -622,58 +626,59 @@ const char descriptor_table_protodef_estates_2festates_2eproto[] PROTOBUF_SECTIO
   "D\n\023UpdateEstateRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004na"
   "me\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\026\n\024UpdateE"
   "stateResponse\"!\n\023DeleteEstateRequest\022\n\n\002"
-  "id\030\001 \001(\r\"\026\n\024DeleteEstateResponse\"\037\n\021GetE"
-  "statesRequest\022\n\n\002id\030\001 \001(\r\"\024\n\022GetEstatesR"
-  "esponse\"4\n\016AddGateRequest\022\021\n\testate_id\030\001"
-  " \001(\r\022\017\n\007gate_id\030\002 \001(\r\"%\n\017AddGateResponse"
-  "\022\022\n\ngate_count\030\001 \001(\r\"7\n\021DeleteGateReques"
-  "t\022\021\n\testate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001(\r\"(\n"
-  "\022DeleteGateResponse\022\022\n\ngate_count\030\001 \001(\r\""
-  "*\n\025GetEstateGatesRequest\022\021\n\testate_id\030\001 "
-  "\001(\r\"\030\n\026GetEstateGatesResponse\"<\n\022AddEntr"
-  "anceRequest\022\021\n\testate_id\030\001 \001(\r\022\023\n\013entran"
-  "ce_id\030\002 \001(\r\"-\n\023AddEntranceResponse\022\026\n\016en"
-  "trance_count\030\001 \001(\r\"\?\n\025RemoveEntranceRequ"
-  "est\022\021\n\testate_id\030\001 \001(\r\022\023\n\013entrance_id\030\002 "
-  "\001(\r\"0\n\026RemoveEntranceResponse\022\026\n\016entranc"
-  "e_count\030\001 \001(\r\".\n\031GetEstateEntrancesReque"
-  "st\022\021\n\testate_id\030\001 \001(\r\"\034\n\032GetEstateEntran"
-  "cesResponse2\304\n\n\021MruVEstateService\022j\n\014Cre"
-  "ateEstate\022!.mruv.estates.CreateEstateReq"
-  "uest\032\".mruv.estates.CreateEstateResponse"
-  "\"\023\202\323\344\223\002\r\"\013/v1/estates\022[\n\tGetEstate\022\036.mru"
-  "v.estates.GetEstateRequest\032\024.mruv.estate"
-  "s.Estate\"\030\202\323\344\223\002\022\022\020/v1/estates/{id}\022o\n\014Up"
-  "dateEstate\022!.mruv.estates.UpdateEstateRe"
-  "quest\032\".mruv.estates.UpdateEstateRespons"
-  "e\"\030\202\323\344\223\002\0222\020/v1/estates/{id}\022o\n\014DeleteEst"
-  "ate\022!.mruv.estates.DeleteEstateRequest\032\""
-  ".mruv.estates.DeleteEstateResponse\"\030\202\323\344\223"
-  "\002\022*\020/v1/estates/{id}\022d\n\nGetEstates\022\037.mru"
-  "v.estates.GetEstatesRequest\032 .mruv.estat"
-  "es.GetEstatesResponse\"\023\202\323\344\223\002\r\022\013/v1/estat"
-  "es\022m\n\007AddGate\022\034.mruv.estates.AddGateRequ"
-  "est\032\035.mruv.estates.AddGateResponse\"%\202\323\344\223"
-  "\002\037\"\035/v1/estates/{estate_id}/gates\022\200\001\n\nDe"
-  "leteGate\022\037.mruv.estates.DeleteGateReques"
-  "t\032 .mruv.estates.DeleteGateResponse\"/\202\323\344"
-  "\223\002)*\'/v1/estates/{estate_id}/gates/{gate"
-  "_id}\022\201\001\n\016GetEstateGates\022#.mruv.estates.G"
-  "etEstateGatesRequest\032$.mruv.estates.GetE"
-  "stateGatesResponse\"$\202\323\344\223\002\036\022\034/v1/estate/{"
-  "estate_id}/gates\022}\n\013AddEntrance\022 .mruv.e"
-  "states.AddEntranceRequest\032!.mruv.estates"
-  ".AddEntranceResponse\")\202\323\344\223\002#\"!/v1/estate"
-  "s/{estate_id}/entrances\022\224\001\n\016RemoveEntran"
-  "ce\022#.mruv.estates.RemoveEntranceRequest\032"
-  "$.mruv.estates.RemoveEntranceResponse\"7\202"
-  "\323\344\223\0021*//v1/estates/{estate_id}/entrances"
-  "/{entrance_id}\022\221\001\n\022GetEstateEntrances\022\'."
-  "mruv.estates.GetEstateEntrancesRequest\032("
-  ".mruv.estates.GetEstateEntrancesResponse"
-  "\"(\202\323\344\223\002\"\022 /v1/estate/{estate_id}/entranc"
-  "esB\'Z%github.com/MruV-RP/mruv-pb-go/esta"
-  "tesb\006proto3"
+  "id\030\001 \001(\r\"\026\n\024DeleteEstateResponse\"0\n\021GetE"
+  "statesRequest\022\014\n\004from\030\001 \001(\r\022\r\n\005limit\030\002 \001"
+  "(\r\"\024\n\022GetEstatesResponse\"4\n\016AddGateReque"
+  "st\022\021\n\testate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001(\r\"%"
+  "\n\017AddGateResponse\022\022\n\ngate_count\030\001 \001(\r\"7\n"
+  "\021DeleteGateRequest\022\021\n\testate_id\030\001 \001(\r\022\017\n"
+  "\007gate_id\030\002 \001(\r\"(\n\022DeleteGateResponse\022\022\n\n"
+  "gate_count\030\001 \001(\r\"*\n\025GetEstateGatesReques"
+  "t\022\021\n\testate_id\030\001 \001(\r\"\?\n\026GetEstateGatesRe"
+  "sponse\022%\n\007estates\030\001 \003(\0132\024.mruv.estates.E"
+  "state\"<\n\022AddEntranceRequest\022\021\n\testate_id"
+  "\030\001 \001(\r\022\023\n\013entrance_id\030\002 \001(\r\"-\n\023AddEntran"
+  "ceResponse\022\026\n\016entrance_count\030\001 \001(\r\"\?\n\025Re"
+  "moveEntranceRequest\022\021\n\testate_id\030\001 \001(\r\022\023"
+  "\n\013entrance_id\030\002 \001(\r\"0\n\026RemoveEntranceRes"
+  "ponse\022\026\n\016entrance_count\030\001 \001(\r\".\n\031GetEsta"
+  "teEntrancesRequest\022\021\n\testate_id\030\001 \001(\r\"\034\n"
+  "\032GetEstateEntrancesResponse2\304\n\n\021MruVEsta"
+  "teService\022j\n\014CreateEstate\022!.mruv.estates"
+  ".CreateEstateRequest\032\".mruv.estates.Crea"
+  "teEstateResponse\"\023\202\323\344\223\002\r\"\013/v1/estates\022[\n"
+  "\tGetEstate\022\036.mruv.estates.GetEstateReque"
+  "st\032\024.mruv.estates.Estate\"\030\202\323\344\223\002\022\022\020/v1/es"
+  "tates/{id}\022o\n\014UpdateEstate\022!.mruv.estate"
+  "s.UpdateEstateRequest\032\".mruv.estates.Upd"
+  "ateEstateResponse\"\030\202\323\344\223\002\0222\020/v1/estates/{"
+  "id}\022o\n\014DeleteEstate\022!.mruv.estates.Delet"
+  "eEstateRequest\032\".mruv.estates.DeleteEsta"
+  "teResponse\"\030\202\323\344\223\002\022*\020/v1/estates/{id}\022d\n\n"
+  "GetEstates\022\037.mruv.estates.GetEstatesRequ"
+  "est\032 .mruv.estates.GetEstatesResponse\"\023\202"
+  "\323\344\223\002\r\022\013/v1/estates\022m\n\007AddGate\022\034.mruv.est"
+  "ates.AddGateRequest\032\035.mruv.estates.AddGa"
+  "teResponse\"%\202\323\344\223\002\037\"\035/v1/estates/{estate_"
+  "id}/gates\022\200\001\n\nDeleteGate\022\037.mruv.estates."
+  "DeleteGateRequest\032 .mruv.estates.DeleteG"
+  "ateResponse\"/\202\323\344\223\002)*\'/v1/estates/{estate"
+  "_id}/gates/{gate_id}\022\201\001\n\016GetEstateGates\022"
+  "#.mruv.estates.GetEstateGatesRequest\032$.m"
+  "ruv.estates.GetEstateGatesResponse\"$\202\323\344\223"
+  "\002\036\022\034/v1/estate/{estate_id}/gates\022}\n\013AddE"
+  "ntrance\022 .mruv.estates.AddEntranceReques"
+  "t\032!.mruv.estates.AddEntranceResponse\")\202\323"
+  "\344\223\002#\"!/v1/estates/{estate_id}/entrances\022"
+  "\224\001\n\016RemoveEntrance\022#.mruv.estates.Remove"
+  "EntranceRequest\032$.mruv.estates.RemoveEnt"
+  "ranceResponse\"7\202\323\344\223\0021*//v1/estates/{esta"
+  "te_id}/entrances/{entrance_id}\022\221\001\n\022GetEs"
+  "tateEntrances\022\'.mruv.estates.GetEstateEn"
+  "trancesRequest\032(.mruv.estates.GetEstateE"
+  "ntrancesResponse\"(\202\323\344\223\002\"\022 /v1/estate/{es"
+  "tate_id}/entrancesB\'Z%github.com/MruV-RP"
+  "/mruv-pb-go/estatesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_estates_2festates_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -705,7 +710,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_est
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_estates_2festates_2eproto_once;
 static bool descriptor_table_estates_2festates_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_estates_2festates_2eproto = {
-  &descriptor_table_estates_2festates_2eproto_initialized, descriptor_table_protodef_estates_2festates_2eproto, "estates/estates.proto", 2491,
+  &descriptor_table_estates_2festates_2eproto_initialized, descriptor_table_protodef_estates_2festates_2eproto, "estates/estates.proto", 2547,
   &descriptor_table_estates_2festates_2eproto_once, descriptor_table_estates_2festates_2eproto_sccs, descriptor_table_estates_2festates_2eproto_deps, 22, 1,
   schemas, file_default_instances, TableStruct_estates_2festates_2eproto::offsets,
   file_level_metadata_estates_2festates_2eproto, 22, file_level_enum_descriptors_estates_2festates_2eproto, file_level_service_descriptors_estates_2festates_2eproto,
@@ -2511,12 +2516,16 @@ GetEstatesRequest::GetEstatesRequest(const GetEstatesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_ = from.id_;
+  ::memcpy(&from_, &from.from_,
+    static_cast<size_t>(reinterpret_cast<char*>(&limit_) -
+    reinterpret_cast<char*>(&from_)) + sizeof(limit_));
   // @@protoc_insertion_point(copy_constructor:mruv.estates.GetEstatesRequest)
 }
 
 void GetEstatesRequest::SharedCtor() {
-  id_ = 0u;
+  ::memset(&from_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&limit_) -
+      reinterpret_cast<char*>(&from_)) + sizeof(limit_));
 }
 
 GetEstatesRequest::~GetEstatesRequest() {
@@ -2542,7 +2551,9 @@ void GetEstatesRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0u;
+  ::memset(&from_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&limit_) -
+      reinterpret_cast<char*>(&from_)) + sizeof(limit_));
   _internal_metadata_.Clear();
 }
 
@@ -2553,10 +2564,17 @@ const char* GetEstatesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // uint32 from = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          from_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 limit = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2586,10 +2604,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // uint32 from = 1;
+  if (this->from() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_from(), target);
+  }
+
+  // uint32 limit = 2;
+  if (this->limit() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_limit(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2608,11 +2632,18 @@ size_t GetEstatesRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // uint32 from = 1;
+  if (this->from() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
+        this->_internal_from());
+  }
+
+  // uint32 limit = 2;
+  if (this->limit() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_limit());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2646,8 +2677,11 @@ void GetEstatesRequest::MergeFrom(const GetEstatesRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
+  if (from.from() != 0) {
+    _internal_set_from(from._internal_from());
+  }
+  if (from.limit() != 0) {
+    _internal_set_limit(from._internal_limit());
   }
 }
 
@@ -2672,7 +2706,8 @@ bool GetEstatesRequest::IsInitialized() const {
 void GetEstatesRequest::InternalSwap(GetEstatesRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  swap(from_, other->from_);
+  swap(limit_, other->limit_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEstatesRequest::GetMetadata() const {
@@ -3839,12 +3874,14 @@ GetEstateGatesResponse::GetEstateGatesResponse()
 }
 GetEstateGatesResponse::GetEstateGatesResponse(const GetEstateGatesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      estates_(from.estates_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.estates.GetEstateGatesResponse)
 }
 
 void GetEstateGatesResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetEstateGatesResponse_estates_2festates_2eproto.base);
 }
 
 GetEstateGatesResponse::~GetEstateGatesResponse() {
@@ -3870,6 +3907,7 @@ void GetEstateGatesResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  estates_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -3879,6 +3917,21 @@ const char* GetEstateGatesResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .mruv.estates.Estate estates = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_estates(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -3886,6 +3939,8 @@ const char* GetEstateGatesResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -3900,6 +3955,14 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.estates.GetEstateGatesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // repeated .mruv.estates.Estate estates = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_estates_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_estates(i), target, stream);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -3916,6 +3979,13 @@ size_t GetEstateGatesResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .mruv.estates.Estate estates = 1;
+  total_size += 1UL * this->_internal_estates_size();
+  for (const auto& msg : this->estates_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -3948,6 +4018,7 @@ void GetEstateGatesResponse::MergeFrom(const GetEstateGatesResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  estates_.MergeFrom(from.estates_);
 }
 
 void GetEstateGatesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -3971,6 +4042,7 @@ bool GetEstateGatesResponse::IsInitialized() const {
 void GetEstateGatesResponse::InternalSwap(GetEstateGatesResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  estates_.InternalSwap(&other->estates_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEstateGatesResponse::GetMetadata() const {
