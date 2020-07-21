@@ -49,7 +49,7 @@ struct TableStruct_entrances_2fentrances_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -76,6 +76,9 @@ extern EnterRequestDefaultTypeInternal _EnterRequest_default_instance_;
 class EnterResponse;
 class EnterResponseDefaultTypeInternal;
 extern EnterResponseDefaultTypeInternal _EnterResponse_default_instance_;
+class Entrance;
+class EntranceDefaultTypeInternal;
+extern EntranceDefaultTypeInternal _Entrance_default_instance_;
 class FindNearestEntranceRequest;
 class FindNearestEntranceRequestDefaultTypeInternal;
 extern FindNearestEntranceRequestDefaultTypeInternal _FindNearestEntranceRequest_default_instance_;
@@ -115,6 +118,7 @@ template<> ::mruv::entrances::DeleteEntranceRequest* Arena::CreateMaybeMessage<:
 template<> ::mruv::entrances::DeleteEntranceResponse* Arena::CreateMaybeMessage<::mruv::entrances::DeleteEntranceResponse>(Arena*);
 template<> ::mruv::entrances::EnterRequest* Arena::CreateMaybeMessage<::mruv::entrances::EnterRequest>(Arena*);
 template<> ::mruv::entrances::EnterResponse* Arena::CreateMaybeMessage<::mruv::entrances::EnterResponse>(Arena*);
+template<> ::mruv::entrances::Entrance* Arena::CreateMaybeMessage<::mruv::entrances::Entrance>(Arena*);
 template<> ::mruv::entrances::FindNearestEntranceRequest* Arena::CreateMaybeMessage<::mruv::entrances::FindNearestEntranceRequest>(Arena*);
 template<> ::mruv::entrances::FindNearestEntranceResponse* Arena::CreateMaybeMessage<::mruv::entrances::FindNearestEntranceResponse>(Arena*);
 template<> ::mruv::entrances::GetEntranceRequest* Arena::CreateMaybeMessage<::mruv::entrances::GetEntranceRequest>(Arena*);
@@ -130,6 +134,175 @@ namespace mruv {
 namespace entrances {
 
 // ===================================================================
+
+class Entrance :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.entrances.Entrance) */ {
+ public:
+  Entrance();
+  virtual ~Entrance();
+
+  Entrance(const Entrance& from);
+  Entrance(Entrance&& from) noexcept
+    : Entrance() {
+    *this = ::std::move(from);
+  }
+
+  inline Entrance& operator=(const Entrance& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Entrance& operator=(Entrance&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Entrance& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Entrance* internal_default_instance() {
+    return reinterpret_cast<const Entrance*>(
+               &_Entrance_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(Entrance& a, Entrance& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Entrance* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Entrance* New() const final {
+    return CreateMaybeMessage<Entrance>(nullptr);
+  }
+
+  Entrance* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Entrance>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Entrance& from);
+  void MergeFrom(const Entrance& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Entrance* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.entrances.Entrance";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_entrances_2fentrances_2eproto);
+    return ::descriptor_table_entrances_2fentrances_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kOutFieldNumber = 2,
+    kInFieldNumber = 3,
+  };
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // .mruv.spots.Spot out = 2;
+  bool has_out() const;
+  private:
+  bool _internal_has_out() const;
+  public:
+  void clear_out();
+  const ::mruv::spots::Spot& out() const;
+  ::mruv::spots::Spot* release_out();
+  ::mruv::spots::Spot* mutable_out();
+  void set_allocated_out(::mruv::spots::Spot* out);
+  private:
+  const ::mruv::spots::Spot& _internal_out() const;
+  ::mruv::spots::Spot* _internal_mutable_out();
+  public:
+
+  // .mruv.spots.Spot in = 3;
+  bool has_in() const;
+  private:
+  bool _internal_has_in() const;
+  public:
+  void clear_in();
+  const ::mruv::spots::Spot& in() const;
+  ::mruv::spots::Spot* release_in();
+  ::mruv::spots::Spot* mutable_in();
+  void set_allocated_in(::mruv::spots::Spot* in);
+  private:
+  const ::mruv::spots::Spot& _internal_in() const;
+  ::mruv::spots::Spot* _internal_mutable_in();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.entrances.Entrance)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::mruv::spots::Spot* out_;
+  ::mruv::spots::Spot* in_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_entrances_2fentrances_2eproto;
+};
+// -------------------------------------------------------------------
 
 class CreateEntranceRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.entrances.CreateEntranceRequest) */ {
@@ -173,7 +346,7 @@ class CreateEntranceRequest :
                &_CreateEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(CreateEntranceRequest& a, CreateEntranceRequest& b) {
     a.Swap(&b);
@@ -342,7 +515,7 @@ class CreateEntranceResponse :
                &_CreateEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(CreateEntranceResponse& a, CreateEntranceResponse& b) {
     a.Swap(&b);
@@ -470,7 +643,7 @@ class GetEntranceRequest :
                &_GetEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(GetEntranceRequest& a, GetEntranceRequest& b) {
     a.Swap(&b);
@@ -598,7 +771,7 @@ class GetEntranceResponse :
                &_GetEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(GetEntranceResponse& a, GetEntranceResponse& b) {
     a.Swap(&b);
@@ -663,8 +836,8 @@ class GetEntranceResponse :
 
   enum : int {
     kNameFieldNumber = 1,
-    kInSpotIdFieldNumber = 2,
-    kOutSpotIdFieldNumber = 3,
+    kInSpotFieldNumber = 2,
+    kOutSpotFieldNumber = 3,
   };
   // string name = 1;
   void clear_name();
@@ -682,22 +855,34 @@ class GetEntranceResponse :
   std::string* _internal_mutable_name();
   public:
 
-  // uint32 in_spot_id = 2;
-  void clear_in_spot_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 in_spot_id() const;
-  void set_in_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // .mruv.spots.Spot in_spot = 2;
+  bool has_in_spot() const;
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_in_spot_id() const;
-  void _internal_set_in_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  bool _internal_has_in_spot() const;
+  public:
+  void clear_in_spot();
+  const ::mruv::spots::Spot& in_spot() const;
+  ::mruv::spots::Spot* release_in_spot();
+  ::mruv::spots::Spot* mutable_in_spot();
+  void set_allocated_in_spot(::mruv::spots::Spot* in_spot);
+  private:
+  const ::mruv::spots::Spot& _internal_in_spot() const;
+  ::mruv::spots::Spot* _internal_mutable_in_spot();
   public:
 
-  // uint32 out_spot_id = 3;
-  void clear_out_spot_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 out_spot_id() const;
-  void set_out_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // .mruv.spots.Spot out_spot = 3;
+  bool has_out_spot() const;
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_out_spot_id() const;
-  void _internal_set_out_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  bool _internal_has_out_spot() const;
+  public:
+  void clear_out_spot();
+  const ::mruv::spots::Spot& out_spot() const;
+  ::mruv::spots::Spot* release_out_spot();
+  ::mruv::spots::Spot* mutable_out_spot();
+  void set_allocated_out_spot(::mruv::spots::Spot* out_spot);
+  private:
+  const ::mruv::spots::Spot& _internal_out_spot() const;
+  ::mruv::spots::Spot* _internal_mutable_out_spot();
   public:
 
   // @@protoc_insertion_point(class_scope:mruv.entrances.GetEntranceResponse)
@@ -706,8 +891,8 @@ class GetEntranceResponse :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 in_spot_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 out_spot_id_;
+  ::mruv::spots::Spot* in_spot_;
+  ::mruv::spots::Spot* out_spot_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_entrances_2fentrances_2eproto;
 };
@@ -755,7 +940,7 @@ class UpdateEntranceRequest :
                &_UpdateEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(UpdateEntranceRequest& a, UpdateEntranceRequest& b) {
     a.Swap(&b);
@@ -905,7 +1090,7 @@ class UpdateEntranceResponse :
                &_UpdateEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(UpdateEntranceResponse& a, UpdateEntranceResponse& b) {
     a.Swap(&b);
@@ -1020,7 +1205,7 @@ class DeleteEntranceRequest :
                &_DeleteEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(DeleteEntranceRequest& a, DeleteEntranceRequest& b) {
     a.Swap(&b);
@@ -1148,7 +1333,7 @@ class DeleteEntranceResponse :
                &_DeleteEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(DeleteEntranceResponse& a, DeleteEntranceResponse& b) {
     a.Swap(&b);
@@ -1263,7 +1448,7 @@ class LockRequest :
                &_LockRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(LockRequest& a, LockRequest& b) {
     a.Swap(&b);
@@ -1391,7 +1576,7 @@ class LockResponse :
                &_LockResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(LockResponse& a, LockResponse& b) {
     a.Swap(&b);
@@ -1506,7 +1691,7 @@ class UnlockRequest :
                &_UnlockRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(UnlockRequest& a, UnlockRequest& b) {
     a.Swap(&b);
@@ -1634,7 +1819,7 @@ class UnlockResponse :
                &_UnlockResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(UnlockResponse& a, UnlockResponse& b) {
     a.Swap(&b);
@@ -1749,7 +1934,7 @@ class FindNearestEntranceRequest :
                &_FindNearestEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(FindNearestEntranceRequest& a, FindNearestEntranceRequest& b) {
     a.Swap(&b);
@@ -1910,7 +2095,7 @@ class FindNearestEntranceResponse :
                &_FindNearestEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(FindNearestEntranceResponse& a, FindNearestEntranceResponse& b) {
     a.Swap(&b);
@@ -2049,7 +2234,7 @@ class EnterRequest :
                &_EnterRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(EnterRequest& a, EnterRequest& b) {
     a.Swap(&b);
@@ -2177,7 +2362,7 @@ class EnterResponse :
                &_EnterResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(EnterResponse& a, EnterResponse& b) {
     a.Swap(&b);
@@ -2257,6 +2442,178 @@ class EnterResponse :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Entrance
+
+// string name = 1;
+inline void Entrance::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Entrance::name() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.Entrance.name)
+  return _internal_name();
+}
+inline void Entrance::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:mruv.entrances.Entrance.name)
+}
+inline std::string* Entrance::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.entrances.Entrance.name)
+  return _internal_mutable_name();
+}
+inline const std::string& Entrance::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void Entrance::_internal_set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Entrance::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.entrances.Entrance.name)
+}
+inline void Entrance::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.entrances.Entrance.name)
+}
+inline void Entrance::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.entrances.Entrance.name)
+}
+inline std::string* Entrance::_internal_mutable_name() {
+  
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Entrance::release_name() {
+  // @@protoc_insertion_point(field_release:mruv.entrances.Entrance.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Entrance::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.entrances.Entrance.name)
+}
+
+// .mruv.spots.Spot out = 2;
+inline bool Entrance::_internal_has_out() const {
+  return this != internal_default_instance() && out_ != nullptr;
+}
+inline bool Entrance::has_out() const {
+  return _internal_has_out();
+}
+inline const ::mruv::spots::Spot& Entrance::_internal_out() const {
+  const ::mruv::spots::Spot* p = out_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::spots::Spot*>(
+      &::mruv::spots::_Spot_default_instance_);
+}
+inline const ::mruv::spots::Spot& Entrance::out() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.Entrance.out)
+  return _internal_out();
+}
+inline ::mruv::spots::Spot* Entrance::release_out() {
+  // @@protoc_insertion_point(field_release:mruv.entrances.Entrance.out)
+  
+  ::mruv::spots::Spot* temp = out_;
+  out_ = nullptr;
+  return temp;
+}
+inline ::mruv::spots::Spot* Entrance::_internal_mutable_out() {
+  
+  if (out_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::spots::Spot>(GetArenaNoVirtual());
+    out_ = p;
+  }
+  return out_;
+}
+inline ::mruv::spots::Spot* Entrance::mutable_out() {
+  // @@protoc_insertion_point(field_mutable:mruv.entrances.Entrance.out)
+  return _internal_mutable_out();
+}
+inline void Entrance::set_allocated_out(::mruv::spots::Spot* out) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(out_);
+  }
+  if (out) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      out = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, out, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  out_ = out;
+  // @@protoc_insertion_point(field_set_allocated:mruv.entrances.Entrance.out)
+}
+
+// .mruv.spots.Spot in = 3;
+inline bool Entrance::_internal_has_in() const {
+  return this != internal_default_instance() && in_ != nullptr;
+}
+inline bool Entrance::has_in() const {
+  return _internal_has_in();
+}
+inline const ::mruv::spots::Spot& Entrance::_internal_in() const {
+  const ::mruv::spots::Spot* p = in_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::spots::Spot*>(
+      &::mruv::spots::_Spot_default_instance_);
+}
+inline const ::mruv::spots::Spot& Entrance::in() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.Entrance.in)
+  return _internal_in();
+}
+inline ::mruv::spots::Spot* Entrance::release_in() {
+  // @@protoc_insertion_point(field_release:mruv.entrances.Entrance.in)
+  
+  ::mruv::spots::Spot* temp = in_;
+  in_ = nullptr;
+  return temp;
+}
+inline ::mruv::spots::Spot* Entrance::_internal_mutable_in() {
+  
+  if (in_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::spots::Spot>(GetArenaNoVirtual());
+    in_ = p;
+  }
+  return in_;
+}
+inline ::mruv::spots::Spot* Entrance::mutable_in() {
+  // @@protoc_insertion_point(field_mutable:mruv.entrances.Entrance.in)
+  return _internal_mutable_in();
+}
+inline void Entrance::set_allocated_in(::mruv::spots::Spot* in) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(in_);
+  }
+  if (in) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      in = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, in, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  in_ = in;
+  // @@protoc_insertion_point(field_set_allocated:mruv.entrances.Entrance.in)
+}
+
+// -------------------------------------------------------------------
+
 // CreateEntranceRequest
 
 // string name = 1;
@@ -2539,44 +2896,112 @@ inline void GetEntranceResponse::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:mruv.entrances.GetEntranceResponse.name)
 }
 
-// uint32 in_spot_id = 2;
-inline void GetEntranceResponse::clear_in_spot_id() {
-  in_spot_id_ = 0u;
+// .mruv.spots.Spot in_spot = 2;
+inline bool GetEntranceResponse::_internal_has_in_spot() const {
+  return this != internal_default_instance() && in_spot_ != nullptr;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetEntranceResponse::_internal_in_spot_id() const {
-  return in_spot_id_;
+inline bool GetEntranceResponse::has_in_spot() const {
+  return _internal_has_in_spot();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetEntranceResponse::in_spot_id() const {
-  // @@protoc_insertion_point(field_get:mruv.entrances.GetEntranceResponse.in_spot_id)
-  return _internal_in_spot_id();
+inline const ::mruv::spots::Spot& GetEntranceResponse::_internal_in_spot() const {
+  const ::mruv::spots::Spot* p = in_spot_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::spots::Spot*>(
+      &::mruv::spots::_Spot_default_instance_);
 }
-inline void GetEntranceResponse::_internal_set_in_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline const ::mruv::spots::Spot& GetEntranceResponse::in_spot() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.GetEntranceResponse.in_spot)
+  return _internal_in_spot();
+}
+inline ::mruv::spots::Spot* GetEntranceResponse::release_in_spot() {
+  // @@protoc_insertion_point(field_release:mruv.entrances.GetEntranceResponse.in_spot)
   
-  in_spot_id_ = value;
+  ::mruv::spots::Spot* temp = in_spot_;
+  in_spot_ = nullptr;
+  return temp;
 }
-inline void GetEntranceResponse::set_in_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_in_spot_id(value);
-  // @@protoc_insertion_point(field_set:mruv.entrances.GetEntranceResponse.in_spot_id)
+inline ::mruv::spots::Spot* GetEntranceResponse::_internal_mutable_in_spot() {
+  
+  if (in_spot_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::spots::Spot>(GetArenaNoVirtual());
+    in_spot_ = p;
+  }
+  return in_spot_;
+}
+inline ::mruv::spots::Spot* GetEntranceResponse::mutable_in_spot() {
+  // @@protoc_insertion_point(field_mutable:mruv.entrances.GetEntranceResponse.in_spot)
+  return _internal_mutable_in_spot();
+}
+inline void GetEntranceResponse::set_allocated_in_spot(::mruv::spots::Spot* in_spot) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(in_spot_);
+  }
+  if (in_spot) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      in_spot = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, in_spot, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  in_spot_ = in_spot;
+  // @@protoc_insertion_point(field_set_allocated:mruv.entrances.GetEntranceResponse.in_spot)
 }
 
-// uint32 out_spot_id = 3;
-inline void GetEntranceResponse::clear_out_spot_id() {
-  out_spot_id_ = 0u;
+// .mruv.spots.Spot out_spot = 3;
+inline bool GetEntranceResponse::_internal_has_out_spot() const {
+  return this != internal_default_instance() && out_spot_ != nullptr;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetEntranceResponse::_internal_out_spot_id() const {
-  return out_spot_id_;
+inline bool GetEntranceResponse::has_out_spot() const {
+  return _internal_has_out_spot();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetEntranceResponse::out_spot_id() const {
-  // @@protoc_insertion_point(field_get:mruv.entrances.GetEntranceResponse.out_spot_id)
-  return _internal_out_spot_id();
+inline const ::mruv::spots::Spot& GetEntranceResponse::_internal_out_spot() const {
+  const ::mruv::spots::Spot* p = out_spot_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::spots::Spot*>(
+      &::mruv::spots::_Spot_default_instance_);
 }
-inline void GetEntranceResponse::_internal_set_out_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline const ::mruv::spots::Spot& GetEntranceResponse::out_spot() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.GetEntranceResponse.out_spot)
+  return _internal_out_spot();
+}
+inline ::mruv::spots::Spot* GetEntranceResponse::release_out_spot() {
+  // @@protoc_insertion_point(field_release:mruv.entrances.GetEntranceResponse.out_spot)
   
-  out_spot_id_ = value;
+  ::mruv::spots::Spot* temp = out_spot_;
+  out_spot_ = nullptr;
+  return temp;
 }
-inline void GetEntranceResponse::set_out_spot_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_out_spot_id(value);
-  // @@protoc_insertion_point(field_set:mruv.entrances.GetEntranceResponse.out_spot_id)
+inline ::mruv::spots::Spot* GetEntranceResponse::_internal_mutable_out_spot() {
+  
+  if (out_spot_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::spots::Spot>(GetArenaNoVirtual());
+    out_spot_ = p;
+  }
+  return out_spot_;
+}
+inline ::mruv::spots::Spot* GetEntranceResponse::mutable_out_spot() {
+  // @@protoc_insertion_point(field_mutable:mruv.entrances.GetEntranceResponse.out_spot)
+  return _internal_mutable_out_spot();
+}
+inline void GetEntranceResponse::set_allocated_out_spot(::mruv::spots::Spot* out_spot) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(out_spot_);
+  }
+  if (out_spot) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      out_spot = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, out_spot, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  out_spot_ = out_spot;
+  // @@protoc_insertion_point(field_set_allocated:mruv.entrances.GetEntranceResponse.out_spot)
 }
 
 // -------------------------------------------------------------------
@@ -2890,6 +3315,8 @@ inline void EnterRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

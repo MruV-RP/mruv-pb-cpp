@@ -87,12 +87,12 @@ class MruVEstateService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::AddGateResponse>>(PrepareAsyncAddGateRaw(context, request, cq));
     }
     // Delete a gate from estate.
-    virtual ::grpc::Status DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::mruv::estates::DeleteGateResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::DeleteGateResponse>> AsyncDeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::DeleteGateResponse>>(AsyncDeleteGateRaw(context, request, cq));
+    virtual ::grpc::Status RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::mruv::estates::RemoveGateResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::RemoveGateResponse>> AsyncRemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::RemoveGateResponse>>(AsyncRemoveGateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::DeleteGateResponse>> PrepareAsyncDeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::DeleteGateResponse>>(PrepareAsyncDeleteGateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::RemoveGateResponse>> PrepareAsyncRemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::RemoveGateResponse>>(PrepareAsyncRemoveGateRaw(context, request, cq));
     }
     // Get all estate gates.
     virtual ::grpc::Status GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::mruv::estates::GetEstateGatesResponse* response) = 0;
@@ -208,17 +208,17 @@ class MruVEstateService final {
       virtual void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Delete a gate from estate.
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all estate gates.
       virtual void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -293,8 +293,8 @@ class MruVEstateService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::GetEstatesResponse>* PrepareAsyncGetEstatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::AddGateResponse>* AsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::AddGateResponse>* PrepareAsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::DeleteGateResponse>* AsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::DeleteGateResponse>* PrepareAsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::RemoveGateResponse>* AsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::RemoveGateResponse>* PrepareAsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::GetEstateGatesResponse>* AsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::GetEstateGatesResponse>* PrepareAsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::estates::AddEntranceResponse>* AsyncAddEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -349,12 +349,12 @@ class MruVEstateService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>> PrepareAsyncAddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>>(PrepareAsyncAddGateRaw(context, request, cq));
     }
-    ::grpc::Status DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::mruv::estates::DeleteGateResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteGateResponse>> AsyncDeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteGateResponse>>(AsyncDeleteGateRaw(context, request, cq));
+    ::grpc::Status RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::mruv::estates::RemoveGateResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>> AsyncRemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>>(AsyncRemoveGateRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteGateResponse>> PrepareAsyncDeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteGateResponse>>(PrepareAsyncDeleteGateRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>> PrepareAsyncRemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>>(PrepareAsyncRemoveGateRaw(context, request, cq));
     }
     ::grpc::Status GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::mruv::estates::GetEstateGatesResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateGatesResponse>> AsyncGetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) {
@@ -459,17 +459,17 @@ class MruVEstateService final {
       #else
       void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteGate(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) override;
       void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) override;
@@ -542,8 +542,8 @@ class MruVEstateService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstatesResponse>* PrepareAsyncGetEstatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>* AsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>* PrepareAsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteGateResponse>* AsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteGateResponse>* PrepareAsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>* AsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>* PrepareAsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateGatesResponse>* AsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateGatesResponse>* PrepareAsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddEntranceResponse>* AsyncAddEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -558,7 +558,7 @@ class MruVEstateService final {
     const ::grpc::internal::RpcMethod rpcmethod_DeleteEstate_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEstates_;
     const ::grpc::internal::RpcMethod rpcmethod_AddGate_;
-    const ::grpc::internal::RpcMethod rpcmethod_DeleteGate_;
+    const ::grpc::internal::RpcMethod rpcmethod_RemoveGate_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEstateGates_;
     const ::grpc::internal::RpcMethod rpcmethod_AddEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveEntrance_;
@@ -583,7 +583,7 @@ class MruVEstateService final {
     // Add a gate to an estate.
     virtual ::grpc::Status AddGate(::grpc::ServerContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response);
     // Delete a gate from estate.
-    virtual ::grpc::Status DeleteGate(::grpc::ServerContext* context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response);
+    virtual ::grpc::Status RemoveGate(::grpc::ServerContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response);
     // Get all estate gates.
     virtual ::grpc::Status GetEstateGates(::grpc::ServerContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response);
     // Add an entrance to estate.
@@ -714,22 +714,22 @@ class MruVEstateService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_DeleteGate : public BaseClass {
+  class WithAsyncMethod_RemoveGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_DeleteGate() {
+    WithAsyncMethod_RemoveGate() {
       ::grpc::Service::MarkMethodAsync(6);
     }
-    ~WithAsyncMethod_DeleteGate() override {
+    ~WithAsyncMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/) override {
+    ::grpc::Status RemoveGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteGate(::grpc::ServerContext* context, ::mruv::estates::DeleteGateRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::estates::DeleteGateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRemoveGate(::grpc::ServerContext* context, ::mruv::estates::RemoveGateRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::estates::RemoveGateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -813,7 +813,7 @@ class MruVEstateService final {
       ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateEstate<WithAsyncMethod_GetEstate<WithAsyncMethod_UpdateEstate<WithAsyncMethod_DeleteEstate<WithAsyncMethod_GetEstates<WithAsyncMethod_AddGate<WithAsyncMethod_DeleteGate<WithAsyncMethod_GetEstateGates<WithAsyncMethod_AddEntrance<WithAsyncMethod_RemoveEntrance<WithAsyncMethod_GetEstateEntrances<Service > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateEstate<WithAsyncMethod_GetEstate<WithAsyncMethod_UpdateEstate<WithAsyncMethod_DeleteEstate<WithAsyncMethod_GetEstates<WithAsyncMethod_AddGate<WithAsyncMethod_RemoveGate<WithAsyncMethod_GetEstateGates<WithAsyncMethod_AddEntrance<WithAsyncMethod_RemoveEntrance<WithAsyncMethod_GetEstateEntrances<Service > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateEstate : public BaseClass {
    private:
@@ -1097,49 +1097,49 @@ class MruVEstateService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_DeleteGate : public BaseClass {
+  class ExperimentalWithCallbackMethod_RemoveGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_DeleteGate() {
+    ExperimentalWithCallbackMethod_RemoveGate() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::DeleteGateRequest, ::mruv::estates::DeleteGateResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::estates::DeleteGateRequest* request, ::mruv::estates::DeleteGateResponse* response) { return this->DeleteGate(context, request, response); }));}
-    void SetMessageAllocatorFor_DeleteGate(
-        ::grpc::experimental::MessageAllocator< ::mruv::estates::DeleteGateRequest, ::mruv::estates::DeleteGateResponse>* allocator) {
+                     context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response) { return this->RemoveGate(context, request, response); }));}
+    void SetMessageAllocatorFor_RemoveGate(
+        ::grpc::experimental::MessageAllocator< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::DeleteGateRequest, ::mruv::estates::DeleteGateResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_DeleteGate() override {
+    ~ExperimentalWithCallbackMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/) override {
+    ::grpc::Status RemoveGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* DeleteGate(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* RemoveGate(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteGate(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* RemoveGate(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1332,10 +1332,10 @@ class MruVEstateService final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateEstate<ExperimentalWithCallbackMethod_GetEstate<ExperimentalWithCallbackMethod_UpdateEstate<ExperimentalWithCallbackMethod_DeleteEstate<ExperimentalWithCallbackMethod_GetEstates<ExperimentalWithCallbackMethod_AddGate<ExperimentalWithCallbackMethod_DeleteGate<ExperimentalWithCallbackMethod_GetEstateGates<ExperimentalWithCallbackMethod_AddEntrance<ExperimentalWithCallbackMethod_RemoveEntrance<ExperimentalWithCallbackMethod_GetEstateEntrances<Service > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateEstate<ExperimentalWithCallbackMethod_GetEstate<ExperimentalWithCallbackMethod_UpdateEstate<ExperimentalWithCallbackMethod_DeleteEstate<ExperimentalWithCallbackMethod_GetEstates<ExperimentalWithCallbackMethod_AddGate<ExperimentalWithCallbackMethod_RemoveGate<ExperimentalWithCallbackMethod_GetEstateGates<ExperimentalWithCallbackMethod_AddEntrance<ExperimentalWithCallbackMethod_RemoveEntrance<ExperimentalWithCallbackMethod_GetEstateEntrances<Service > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateEstate<ExperimentalWithCallbackMethod_GetEstate<ExperimentalWithCallbackMethod_UpdateEstate<ExperimentalWithCallbackMethod_DeleteEstate<ExperimentalWithCallbackMethod_GetEstates<ExperimentalWithCallbackMethod_AddGate<ExperimentalWithCallbackMethod_DeleteGate<ExperimentalWithCallbackMethod_GetEstateGates<ExperimentalWithCallbackMethod_AddEntrance<ExperimentalWithCallbackMethod_RemoveEntrance<ExperimentalWithCallbackMethod_GetEstateEntrances<Service > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateEstate<ExperimentalWithCallbackMethod_GetEstate<ExperimentalWithCallbackMethod_UpdateEstate<ExperimentalWithCallbackMethod_DeleteEstate<ExperimentalWithCallbackMethod_GetEstates<ExperimentalWithCallbackMethod_AddGate<ExperimentalWithCallbackMethod_RemoveGate<ExperimentalWithCallbackMethod_GetEstateGates<ExperimentalWithCallbackMethod_AddEntrance<ExperimentalWithCallbackMethod_RemoveEntrance<ExperimentalWithCallbackMethod_GetEstateEntrances<Service > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateEstate : public BaseClass {
    private:
@@ -1439,18 +1439,18 @@ class MruVEstateService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_DeleteGate : public BaseClass {
+  class WithGenericMethod_RemoveGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_DeleteGate() {
+    WithGenericMethod_RemoveGate() {
       ::grpc::Service::MarkMethodGeneric(6);
     }
-    ~WithGenericMethod_DeleteGate() override {
+    ~WithGenericMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/) override {
+    ::grpc::Status RemoveGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1644,22 +1644,22 @@ class MruVEstateService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_DeleteGate : public BaseClass {
+  class WithRawMethod_RemoveGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_DeleteGate() {
+    WithRawMethod_RemoveGate() {
       ::grpc::Service::MarkMethodRaw(6);
     }
-    ~WithRawMethod_DeleteGate() override {
+    ~WithRawMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/) override {
+    ::grpc::Status RemoveGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteGate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRemoveGate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1972,11 +1972,11 @@ class MruVEstateService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_DeleteGate : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_RemoveGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_DeleteGate() {
+    ExperimentalWithRawCallbackMethod_RemoveGate() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -1990,21 +1990,21 @@ class MruVEstateService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteGate(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveGate(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_DeleteGate() override {
+    ~ExperimentalWithRawCallbackMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/) override {
+    ::grpc::Status RemoveGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* DeleteGate(
+    virtual ::grpc::ServerUnaryReactor* RemoveGate(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* DeleteGate(
+    virtual ::grpc::experimental::ServerUnaryReactor* RemoveGate(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
@@ -2282,24 +2282,24 @@ class MruVEstateService final {
     virtual ::grpc::Status StreamedAddGate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::estates::AddGateRequest,::mruv::estates::AddGateResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_DeleteGate : public BaseClass {
+  class WithStreamedUnaryMethod_RemoveGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_DeleteGate() {
+    WithStreamedUnaryMethod_RemoveGate() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::DeleteGateRequest, ::mruv::estates::DeleteGateResponse>(std::bind(&WithStreamedUnaryMethod_DeleteGate<BaseClass>::StreamedDeleteGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(std::bind(&WithStreamedUnaryMethod_RemoveGate<BaseClass>::StreamedRemoveGate, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_DeleteGate() override {
+    ~WithStreamedUnaryMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status DeleteGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::DeleteGateRequest* /*request*/, ::mruv::estates::DeleteGateResponse* /*response*/) override {
+    ::grpc::Status RemoveGate(::grpc::ServerContext* /*context*/, const ::mruv::estates::RemoveGateRequest* /*request*/, ::mruv::estates::RemoveGateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedDeleteGate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::estates::DeleteGateRequest,::mruv::estates::DeleteGateResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRemoveGate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::estates::RemoveGateRequest,::mruv::estates::RemoveGateResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetEstateGates : public BaseClass {
@@ -2381,9 +2381,9 @@ class MruVEstateService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetEstateEntrances(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::estates::GetEstateEntrancesRequest,::mruv::estates::GetEstateEntrancesResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateEstate<WithStreamedUnaryMethod_GetEstate<WithStreamedUnaryMethod_UpdateEstate<WithStreamedUnaryMethod_DeleteEstate<WithStreamedUnaryMethod_GetEstates<WithStreamedUnaryMethod_AddGate<WithStreamedUnaryMethod_DeleteGate<WithStreamedUnaryMethod_GetEstateGates<WithStreamedUnaryMethod_AddEntrance<WithStreamedUnaryMethod_RemoveEntrance<WithStreamedUnaryMethod_GetEstateEntrances<Service > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateEstate<WithStreamedUnaryMethod_GetEstate<WithStreamedUnaryMethod_UpdateEstate<WithStreamedUnaryMethod_DeleteEstate<WithStreamedUnaryMethod_GetEstates<WithStreamedUnaryMethod_AddGate<WithStreamedUnaryMethod_RemoveGate<WithStreamedUnaryMethod_GetEstateGates<WithStreamedUnaryMethod_AddEntrance<WithStreamedUnaryMethod_RemoveEntrance<WithStreamedUnaryMethod_GetEstateEntrances<Service > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateEstate<WithStreamedUnaryMethod_GetEstate<WithStreamedUnaryMethod_UpdateEstate<WithStreamedUnaryMethod_DeleteEstate<WithStreamedUnaryMethod_GetEstates<WithStreamedUnaryMethod_AddGate<WithStreamedUnaryMethod_DeleteGate<WithStreamedUnaryMethod_GetEstateGates<WithStreamedUnaryMethod_AddEntrance<WithStreamedUnaryMethod_RemoveEntrance<WithStreamedUnaryMethod_GetEstateEntrances<Service > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateEstate<WithStreamedUnaryMethod_GetEstate<WithStreamedUnaryMethod_UpdateEstate<WithStreamedUnaryMethod_DeleteEstate<WithStreamedUnaryMethod_GetEstates<WithStreamedUnaryMethod_AddGate<WithStreamedUnaryMethod_RemoveGate<WithStreamedUnaryMethod_GetEstateGates<WithStreamedUnaryMethod_AddEntrance<WithStreamedUnaryMethod_RemoveEntrance<WithStreamedUnaryMethod_GetEstateEntrances<Service > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace estates
