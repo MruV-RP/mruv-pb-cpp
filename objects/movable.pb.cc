@@ -332,6 +332,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fmovable_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::State, rx_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::State, ry_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::State, rz_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::State, transition_speed_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MovableObject, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -431,21 +432,21 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fmovable_2eproto::off
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::objects::State)},
-  { 12, -1, sizeof(::mruv::objects::MovableObject)},
-  { 19, -1, sizeof(::mruv::objects::CreateMovableObjectRequest)},
-  { 26, -1, sizeof(::mruv::objects::CreateMovableObjectResponse)},
-  { 32, -1, sizeof(::mruv::objects::GetMovableObjectRequest)},
-  { 38, -1, sizeof(::mruv::objects::GetMovableObjectResponse)},
-  { 47, -1, sizeof(::mruv::objects::UpdateMovableObjectRequest)},
-  { 55, -1, sizeof(::mruv::objects::UpdateMovableObjectResponse)},
-  { 60, -1, sizeof(::mruv::objects::DeleteMovableObjectRequest)},
-  { 66, -1, sizeof(::mruv::objects::DeleteMovableObjectResponse)},
-  { 71, -1, sizeof(::mruv::objects::MoveObjectRequest)},
-  { 77, -1, sizeof(::mruv::objects::MoveObjectResponse)},
-  { 82, -1, sizeof(::mruv::objects::MoveObjectNextRequest)},
-  { 88, -1, sizeof(::mruv::objects::MoveObjectNextResponse)},
-  { 95, -1, sizeof(::mruv::objects::MoveObjectPreviousRequest)},
-  { 101, -1, sizeof(::mruv::objects::MoveObjectPreviousResponse)},
+  { 13, -1, sizeof(::mruv::objects::MovableObject)},
+  { 20, -1, sizeof(::mruv::objects::CreateMovableObjectRequest)},
+  { 27, -1, sizeof(::mruv::objects::CreateMovableObjectResponse)},
+  { 33, -1, sizeof(::mruv::objects::GetMovableObjectRequest)},
+  { 39, -1, sizeof(::mruv::objects::GetMovableObjectResponse)},
+  { 48, -1, sizeof(::mruv::objects::UpdateMovableObjectRequest)},
+  { 56, -1, sizeof(::mruv::objects::UpdateMovableObjectResponse)},
+  { 61, -1, sizeof(::mruv::objects::DeleteMovableObjectRequest)},
+  { 67, -1, sizeof(::mruv::objects::DeleteMovableObjectResponse)},
+  { 72, -1, sizeof(::mruv::objects::MoveObjectRequest)},
+  { 78, -1, sizeof(::mruv::objects::MoveObjectResponse)},
+  { 83, -1, sizeof(::mruv::objects::MoveObjectNextRequest)},
+  { 89, -1, sizeof(::mruv::objects::MoveObjectNextResponse)},
+  { 96, -1, sizeof(::mruv::objects::MoveObjectPreviousRequest)},
+  { 102, -1, sizeof(::mruv::objects::MoveObjectPreviousResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -470,57 +471,58 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_objects_2fmovable_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025objects/movable.proto\022\014mruv.objects\032\034g"
   "oogle/api/annotations.proto\032\025objects/obj"
-  "ects.proto\"Z\n\005State\022\014\n\004name\030\001 \001(\t\022\t\n\001x\030\002"
+  "ects.proto\"t\n\005State\022\014\n\004name\030\001 \001(\t\022\t\n\001x\030\002"
   " \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\022\n\n\002rx\030\005 \001(\002\022\n"
-  "\n\002ry\030\006 \001(\002\022\n\n\002rz\030\007 \001(\002\"Z\n\rMovableObject\022"
-  "$\n\006object\030\001 \001(\0132\024.mruv.objects.Object\022#\n"
-  "\006states\030\002 \003(\0132\023.mruv.objects.State\"g\n\032Cr"
-  "eateMovableObjectRequest\022$\n\006object\030\001 \001(\013"
-  "2\024.mruv.objects.Object\022#\n\006states\030\002 \003(\0132\023"
-  ".mruv.objects.State\")\n\033CreateMovableObje"
-  "ctResponse\022\n\n\002id\030\001 \001(\r\"%\n\027GetMovableObje"
-  "ctRequest\022\n\n\002id\030\001 \001(\r\"\233\001\n\030GetMovableObje"
-  "ctResponse\022$\n\006object\030\001 \001(\0132\024.mruv.object"
+  "\n\002ry\030\006 \001(\002\022\n\n\002rz\030\007 \001(\002\022\030\n\020transition_spe"
+  "ed\030\010 \001(\002\"Z\n\rMovableObject\022$\n\006object\030\001 \001("
+  "\0132\024.mruv.objects.Object\022#\n\006states\030\002 \003(\0132"
+  "\023.mruv.objects.State\"g\n\032CreateMovableObj"
+  "ectRequest\022$\n\006object\030\001 \001(\0132\024.mruv.object"
   "s.Object\022#\n\006states\030\002 \003(\0132\023.mruv.objects."
-  "State\022\030\n\020current_state_id\030\003 \001(\r\022\032\n\022curre"
-  "nt_state_name\030\004 \001(\t\"`\n\032UpdateMovableObje"
-  "ctRequest\022\n\n\002id\030\001 \001(\r\022\021\n\tobject_id\030\002 \001(\r"
-  "\022#\n\006states\030\003 \003(\0132\023.mruv.objects.State\"\035\n"
-  "\033UpdateMovableObjectResponse\"(\n\032DeleteMo"
-  "vableObjectRequest\022\n\n\002id\030\001 \001(\r\"\035\n\033Delete"
-  "MovableObjectResponse\"\"\n\021MoveObjectReque"
-  "st\022\r\n\005state\030\001 \001(\r\"\024\n\022MoveObjectResponse\""
-  "#\n\025MoveObjectNextRequest\022\n\n\002id\030\001 \001(\r\">\n\026"
-  "MoveObjectNextResponse\022\020\n\010state_id\030\001 \001(\r"
-  "\022\022\n\nstate_name\030\002 \001(\t\"\'\n\031MoveObjectPrevio"
-  "usRequest\022\n\n\002id\030\001 \001(\r\"B\n\032MoveObjectPrevi"
-  "ousResponse\022\020\n\010state_id\030\001 \001(\r\022\022\n\nstate_n"
-  "ame\030\002 \001(\t2\302\007\n\031MruVMovableObjectsService\022"
-  "\206\001\n\023CreateMovableObject\022(.mruv.objects.C"
-  "reateMovableObjectRequest\032).mruv.objects"
-  ".CreateMovableObjectResponse\"\032\202\323\344\223\002\024\"\022/v"
-  "1/movableObjects\022}\n\020GetMovableObject\022%.m"
-  "ruv.objects.GetMovableObjectRequest\032&.mr"
-  "uv.objects.GetMovableObjectResponse\"\032\202\323\344"
-  "\223\002\024\022\022/v1/movableObjects\022\206\001\n\023UpdateMovabl"
-  "eObject\022(.mruv.objects.UpdateMovableObje"
-  "ctRequest\032).mruv.objects.UpdateMovableOb"
-  "jectResponse\"\032\202\323\344\223\002\0242\022/v1/movableObjects"
-  "\022\206\001\n\023DeleteMovableObject\022(.mruv.objects."
-  "DeleteMovableObjectRequest\032).mruv.object"
-  "s.DeleteMovableObjectResponse\"\032\202\323\344\223\002\024*\022/"
-  "v1/movableObjects\022q\n\nMoveObject\022\037.mruv.o"
-  "bjects.MoveObjectRequest\032 .mruv.objects."
-  "MoveObjectResponse\" \202\323\344\223\002\032\"\030/v1/movableO"
-  "bjects/moves\022\202\001\n\016MoveObjectNext\022#.mruv.o"
-  "bjects.MoveObjectNextRequest\032$.mruv.obje"
-  "cts.MoveObjectNextResponse\"%\202\323\344\223\002\037\"\035/v1/"
-  "movableObjects/moves/next\022\222\001\n\022MoveObject"
-  "Previous\022\'.mruv.objects.MoveObjectPrevio"
-  "usRequest\032(.mruv.objects.MoveObjectPrevi"
-  "ousResponse\")\202\323\344\223\002#\"!/v1/movableObjects/"
-  "moves/previousB\'Z%github.com/MruV-RP/mru"
-  "v-pb-go/objectsb\006proto3"
+  "State\")\n\033CreateMovableObjectResponse\022\n\n\002"
+  "id\030\001 \001(\r\"%\n\027GetMovableObjectRequest\022\n\n\002i"
+  "d\030\001 \001(\r\"\233\001\n\030GetMovableObjectResponse\022$\n\006"
+  "object\030\001 \001(\0132\024.mruv.objects.Object\022#\n\006st"
+  "ates\030\002 \003(\0132\023.mruv.objects.State\022\030\n\020curre"
+  "nt_state_id\030\003 \001(\r\022\032\n\022current_state_name\030"
+  "\004 \001(\t\"`\n\032UpdateMovableObjectRequest\022\n\n\002i"
+  "d\030\001 \001(\r\022\021\n\tobject_id\030\002 \001(\r\022#\n\006states\030\003 \003"
+  "(\0132\023.mruv.objects.State\"\035\n\033UpdateMovable"
+  "ObjectResponse\"(\n\032DeleteMovableObjectReq"
+  "uest\022\n\n\002id\030\001 \001(\r\"\035\n\033DeleteMovableObjectR"
+  "esponse\"\"\n\021MoveObjectRequest\022\r\n\005state\030\001 "
+  "\001(\r\"\024\n\022MoveObjectResponse\"#\n\025MoveObjectN"
+  "extRequest\022\n\n\002id\030\001 \001(\r\">\n\026MoveObjectNext"
+  "Response\022\020\n\010state_id\030\001 \001(\r\022\022\n\nstate_name"
+  "\030\002 \001(\t\"\'\n\031MoveObjectPreviousRequest\022\n\n\002i"
+  "d\030\001 \001(\r\"B\n\032MoveObjectPreviousResponse\022\020\n"
+  "\010state_id\030\001 \001(\r\022\022\n\nstate_name\030\002 \001(\t2\302\007\n\031"
+  "MruVMovableObjectsService\022\206\001\n\023CreateMova"
+  "bleObject\022(.mruv.objects.CreateMovableOb"
+  "jectRequest\032).mruv.objects.CreateMovable"
+  "ObjectResponse\"\032\202\323\344\223\002\024\"\022/v1/movableObjec"
+  "ts\022}\n\020GetMovableObject\022%.mruv.objects.Ge"
+  "tMovableObjectRequest\032&.mruv.objects.Get"
+  "MovableObjectResponse\"\032\202\323\344\223\002\024\022\022/v1/movab"
+  "leObjects\022\206\001\n\023UpdateMovableObject\022(.mruv"
+  ".objects.UpdateMovableObjectRequest\032).mr"
+  "uv.objects.UpdateMovableObjectResponse\"\032"
+  "\202\323\344\223\002\0242\022/v1/movableObjects\022\206\001\n\023DeleteMov"
+  "ableObject\022(.mruv.objects.DeleteMovableO"
+  "bjectRequest\032).mruv.objects.DeleteMovabl"
+  "eObjectResponse\"\032\202\323\344\223\002\024*\022/v1/movableObje"
+  "cts\022q\n\nMoveObject\022\037.mruv.objects.MoveObj"
+  "ectRequest\032 .mruv.objects.MoveObjectResp"
+  "onse\" \202\323\344\223\002\032\"\030/v1/movableObjects/moves\022\202"
+  "\001\n\016MoveObjectNext\022#.mruv.objects.MoveObj"
+  "ectNextRequest\032$.mruv.objects.MoveObject"
+  "NextResponse\"%\202\323\344\223\002\037\"\035/v1/movableObjects"
+  "/moves/next\022\222\001\n\022MoveObjectPrevious\022\'.mru"
+  "v.objects.MoveObjectPreviousRequest\032(.mr"
+  "uv.objects.MoveObjectPreviousResponse\")\202"
+  "\323\344\223\002#\"!/v1/movableObjects/moves/previous"
+  "B\'Z%github.com/MruV-RP/mruv-pb-go/object"
+  "sb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_objects_2fmovable_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -547,7 +549,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_obj
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_objects_2fmovable_2eproto_once;
 static bool descriptor_table_objects_2fmovable_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fmovable_2eproto = {
-  &descriptor_table_objects_2fmovable_2eproto_initialized, descriptor_table_protodef_objects_2fmovable_2eproto, "objects/movable.proto", 2103,
+  &descriptor_table_objects_2fmovable_2eproto_initialized, descriptor_table_protodef_objects_2fmovable_2eproto, "objects/movable.proto", 2129,
   &descriptor_table_objects_2fmovable_2eproto_once, descriptor_table_objects_2fmovable_2eproto_sccs, descriptor_table_objects_2fmovable_2eproto_deps, 16, 2,
   schemas, file_default_instances, TableStruct_objects_2fmovable_2eproto::offsets,
   file_level_metadata_objects_2fmovable_2eproto, 16, file_level_enum_descriptors_objects_2fmovable_2eproto, file_level_service_descriptors_objects_2fmovable_2eproto,
@@ -580,8 +582,8 @@ State::State(const State& from)
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ::memcpy(&x_, &from.x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rz_) -
-    reinterpret_cast<char*>(&x_)) + sizeof(rz_));
+    static_cast<size_t>(reinterpret_cast<char*>(&transition_speed_) -
+    reinterpret_cast<char*>(&x_)) + sizeof(transition_speed_));
   // @@protoc_insertion_point(copy_constructor:mruv.objects.State)
 }
 
@@ -589,8 +591,8 @@ void State::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_State_objects_2fmovable_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rz_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(rz_));
+      reinterpret_cast<char*>(&transition_speed_) -
+      reinterpret_cast<char*>(&x_)) + sizeof(transition_speed_));
 }
 
 State::~State() {
@@ -619,8 +621,8 @@ void State::Clear() {
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rz_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(rz_));
+      reinterpret_cast<char*>(&transition_speed_) -
+      reinterpret_cast<char*>(&x_)) + sizeof(transition_speed_));
   _internal_metadata_.Clear();
 }
 
@@ -679,6 +681,13 @@ const char* State::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
           rz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float transition_speed = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 69)) {
+          transition_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
@@ -754,6 +763,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_rz(), target);
   }
 
+  // float transition_speed = 8;
+  if (!(this->transition_speed() <= 0 && this->transition_speed() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(8, this->_internal_transition_speed(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -804,6 +819,11 @@ size_t State::ByteSizeLong() const {
 
   // float rz = 7;
   if (!(this->rz() <= 0 && this->rz() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float transition_speed = 8;
+  if (!(this->transition_speed() <= 0 && this->transition_speed() >= 0)) {
     total_size += 1 + 4;
   }
 
@@ -860,6 +880,9 @@ void State::MergeFrom(const State& from) {
   if (!(from.rz() <= 0 && from.rz() >= 0)) {
     _internal_set_rz(from._internal_rz());
   }
+  if (!(from.transition_speed() <= 0 && from.transition_speed() >= 0)) {
+    _internal_set_transition_speed(from._internal_transition_speed());
+  }
 }
 
 void State::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -891,6 +914,7 @@ void State::InternalSwap(State* other) {
   swap(rx_, other->rx_);
   swap(ry_, other->ry_);
   swap(rz_, other->rz_);
+  swap(transition_speed_, other->transition_speed_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata State::GetMetadata() const {

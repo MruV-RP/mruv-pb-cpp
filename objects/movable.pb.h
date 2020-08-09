@@ -244,6 +244,7 @@ class State :
     kRxFieldNumber = 5,
     kRyFieldNumber = 6,
     kRzFieldNumber = 7,
+    kTransitionSpeedFieldNumber = 8,
   };
   // string name = 1;
   void clear_name();
@@ -315,6 +316,15 @@ class State :
   void _internal_set_rz(float value);
   public:
 
+  // float transition_speed = 8;
+  void clear_transition_speed();
+  float transition_speed() const;
+  void set_transition_speed(float value);
+  private:
+  float _internal_transition_speed() const;
+  void _internal_set_transition_speed(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.objects.State)
  private:
   class _Internal;
@@ -327,6 +337,7 @@ class State :
   float rx_;
   float ry_;
   float rz_;
+  float transition_speed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fmovable_2eproto;
 };
@@ -2574,6 +2585,26 @@ inline void State::_internal_set_rz(float value) {
 inline void State::set_rz(float value) {
   _internal_set_rz(value);
   // @@protoc_insertion_point(field_set:mruv.objects.State.rz)
+}
+
+// float transition_speed = 8;
+inline void State::clear_transition_speed() {
+  transition_speed_ = 0;
+}
+inline float State::_internal_transition_speed() const {
+  return transition_speed_;
+}
+inline float State::transition_speed() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.State.transition_speed)
+  return _internal_transition_speed();
+}
+inline void State::_internal_set_transition_speed(float value) {
+  
+  transition_speed_ = value;
+}
+inline void State::set_transition_speed(float value) {
+  _internal_set_transition_speed(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.State.transition_speed)
 }
 
 // -------------------------------------------------------------------
