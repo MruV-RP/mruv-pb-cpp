@@ -1034,7 +1034,14 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_RegisterAccount() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::RegisterAccountRequest, ::mruv::RegisterAccountResponse>(std::bind(&WithStreamedUnaryMethod_RegisterAccount<BaseClass>::StreamedRegisterAccount, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::RegisterAccountRequest, ::mruv::RegisterAccountResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::RegisterAccountRequest, ::mruv::RegisterAccountResponse>* streamer) {
+                       return this->StreamedRegisterAccount(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RegisterAccount() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1054,7 +1061,14 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_LogIn() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::LogInRequest, ::mruv::LogInResponse>(std::bind(&WithStreamedUnaryMethod_LogIn<BaseClass>::StreamedLogIn, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::LogInRequest, ::mruv::LogInResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::LogInRequest, ::mruv::LogInResponse>* streamer) {
+                       return this->StreamedLogIn(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_LogIn() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1074,7 +1088,14 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_IsAccountExist() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>(std::bind(&WithStreamedUnaryMethod_IsAccountExist<BaseClass>::StreamedIsAccountExist, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>* streamer) {
+                       return this->StreamedIsAccountExist(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_IsAccountExist() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1094,7 +1115,14 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_GetAccount() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>(std::bind(&WithStreamedUnaryMethod_GetAccount<BaseClass>::StreamedGetAccount, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>* streamer) {
+                       return this->StreamedGetAccount(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetAccount() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1114,7 +1142,14 @@ class MruVAccountsService final {
    public:
     WithStreamedUnaryMethod_GetAccountCharacters() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>(std::bind(&WithStreamedUnaryMethod_GetAccountCharacters<BaseClass>::StreamedGetAccountCharacters, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>* streamer) {
+                       return this->StreamedGetAccountCharacters(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetAccountCharacters() override {
       BaseClassMustBeDerivedFromService(this);

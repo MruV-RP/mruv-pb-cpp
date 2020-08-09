@@ -339,52 +339,102 @@ MruVDevToolsService::Service::Service() {
       MruVDevToolsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::GetPositions), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::GetPositionsRequest* req,
+             ::mruv::devtools::GetPositionsResponse* resp) {
+               return service->GetPositions(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::SavePosition), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::SavePositionRequest* req,
+             ::mruv::devtools::SavePositionResponse* resp) {
+               return service->SavePosition(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::DeletePosition), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::DeletePositionRequest* req,
+             ::mruv::devtools::DeletePositionResponse* resp) {
+               return service->DeletePosition(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::GetOutfits), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::GetOutfitsRequest* req,
+             ::mruv::devtools::GetOutfitsResponse* resp) {
+               return service->GetOutfits(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::SaveOutfit), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::SaveOutfitRequest* req,
+             ::mruv::devtools::SaveOutfitResponse* resp) {
+               return service->SaveOutfit(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::GetAnimations), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::GetAnimationsRequest* req,
+             ::mruv::devtools::GetAnimationsResponse* resp) {
+               return service->GetAnimations(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::GetAnimation), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::GetAnimationRequest* req,
+             ::mruv::devtools::GetAnimationResponse* resp) {
+               return service->GetAnimation(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::SaveAnimation), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::devtools::SaveAnimationRequest* req,
+             ::mruv::devtools::SaveAnimationResponse* resp) {
+               return service->SaveAnimation(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::GetServiceStatus), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ServiceStatusRequest* req,
+             ::mruv::ServiceStatusResponse* resp) {
+               return service->GetServiceStatus(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          std::mem_fn(&MruVDevToolsService::Service::GetServiceVersion), this)));
+          [](MruVDevToolsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::VersionRequest* req,
+             ::mruv::VersionResponse* resp) {
+               return service->GetServiceVersion(ctx, req, resp);
+             }, this)));
 }
 
 MruVDevToolsService::Service::~Service() {

@@ -189,27 +189,52 @@ MruVElevatorsService::Service::Service() {
       MruVElevatorsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(
-          std::mem_fn(&MruVElevatorsService::Service::CreateElevator), this)));
+          [](MruVElevatorsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::elevators::CreateElevatorRequest* req,
+             ::mruv::elevators::CreateElevatorResponse* resp) {
+               return service->CreateElevator(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVElevatorsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(
-          std::mem_fn(&MruVElevatorsService::Service::GetElevator), this)));
+          [](MruVElevatorsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::elevators::GetElevatorRequest* req,
+             ::mruv::elevators::GetElevatorResponse* resp) {
+               return service->GetElevator(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVElevatorsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(
-          std::mem_fn(&MruVElevatorsService::Service::UpdateElevator), this)));
+          [](MruVElevatorsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::elevators::UpdateElevatorRequest* req,
+             ::mruv::elevators::UpdateElevatorResponse* resp) {
+               return service->UpdateElevator(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVElevatorsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(
-          std::mem_fn(&MruVElevatorsService::Service::DeleteElevator), this)));
+          [](MruVElevatorsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::elevators::DeleteElevatorRequest* req,
+             ::mruv::elevators::DeleteElevatorResponse* resp) {
+               return service->DeleteElevator(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVElevatorsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(
-          std::mem_fn(&MruVElevatorsService::Service::GetElevatorFloors), this)));
+          [](MruVElevatorsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::elevators::GetElevatorFloorsRequest* req,
+             ::mruv::elevators::GetElevatorFloorsResponse* resp) {
+               return service->GetElevatorFloors(ctx, req, resp);
+             }, this)));
 }
 
 MruVElevatorsService::Service::~Service() {

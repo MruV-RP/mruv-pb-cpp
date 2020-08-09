@@ -1226,7 +1226,14 @@ class MruVOrganizationsService final {
    public:
     WithStreamedUnaryMethod_CreateOrganization() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_CreateOrganization<BaseClass>::StreamedCreateOrganization, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>* streamer) {
+                       return this->StreamedCreateOrganization(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1246,7 +1253,14 @@ class MruVOrganizationsService final {
    public:
     WithStreamedUnaryMethod_GetOrganization() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_GetOrganization<BaseClass>::StreamedGetOrganization, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>* streamer) {
+                       return this->StreamedGetOrganization(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1266,7 +1280,14 @@ class MruVOrganizationsService final {
    public:
     WithStreamedUnaryMethod_UpdateOrganization() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_UpdateOrganization<BaseClass>::StreamedUpdateOrganization, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>* streamer) {
+                       return this->StreamedUpdateOrganization(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1286,7 +1307,14 @@ class MruVOrganizationsService final {
    public:
     WithStreamedUnaryMethod_DeleteOrganization() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(std::bind(&WithStreamedUnaryMethod_DeleteOrganization<BaseClass>::StreamedDeleteOrganization, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>* streamer) {
+                       return this->StreamedDeleteOrganization(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteOrganization() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1306,7 +1334,14 @@ class MruVOrganizationsService final {
    public:
     WithStreamedUnaryMethod_AssignLeader() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(std::bind(&WithStreamedUnaryMethod_AssignLeader<BaseClass>::StreamedAssignLeader, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>* streamer) {
+                       return this->StreamedAssignLeader(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AssignLeader() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1326,7 +1361,14 @@ class MruVOrganizationsService final {
    public:
     WithStreamedUnaryMethod_UnassignLeader() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(std::bind(&WithStreamedUnaryMethod_UnassignLeader<BaseClass>::StreamedUnassignLeader, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>* streamer) {
+                       return this->StreamedUnassignLeader(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UnassignLeader() override {
       BaseClassMustBeDerivedFromService(this);

@@ -1790,7 +1790,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_CreateGate() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(std::bind(&WithStreamedUnaryMethod_CreateGate<BaseClass>::StreamedCreateGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>* streamer) {
+                       return this->StreamedCreateGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateGate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1810,7 +1817,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_GetGate() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(std::bind(&WithStreamedUnaryMethod_GetGate<BaseClass>::StreamedGetGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>* streamer) {
+                       return this->StreamedGetGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetGate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1830,7 +1844,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_UpdateGate() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(std::bind(&WithStreamedUnaryMethod_UpdateGate<BaseClass>::StreamedUpdateGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>* streamer) {
+                       return this->StreamedUpdateGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateGate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1850,7 +1871,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_DeleteGate() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(std::bind(&WithStreamedUnaryMethod_DeleteGate<BaseClass>::StreamedDeleteGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>* streamer) {
+                       return this->StreamedDeleteGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteGate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1870,7 +1898,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_Lock() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(std::bind(&WithStreamedUnaryMethod_Lock<BaseClass>::StreamedLock, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>* streamer) {
+                       return this->StreamedLock(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Lock() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1890,7 +1925,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_Unlock() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(std::bind(&WithStreamedUnaryMethod_Unlock<BaseClass>::StreamedUnlock, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>* streamer) {
+                       return this->StreamedUnlock(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Unlock() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1910,7 +1952,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_Open() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(std::bind(&WithStreamedUnaryMethod_Open<BaseClass>::StreamedOpen, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>* streamer) {
+                       return this->StreamedOpen(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Open() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1930,7 +1979,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_Close() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(std::bind(&WithStreamedUnaryMethod_Close<BaseClass>::StreamedClose, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>* streamer) {
+                       return this->StreamedClose(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Close() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1950,7 +2006,14 @@ class MruVGatesService final {
    public:
     WithStreamedUnaryMethod_FindNearestGate() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(std::bind(&WithStreamedUnaryMethod_FindNearestGate<BaseClass>::StreamedFindNearestGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>* streamer) {
+                       return this->StreamedFindNearestGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_FindNearestGate() override {
       BaseClassMustBeDerivedFromService(this);

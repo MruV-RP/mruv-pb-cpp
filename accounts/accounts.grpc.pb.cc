@@ -188,27 +188,52 @@ MruVAccountsService::Service::Service() {
       MruVAccountsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::RegisterAccountRequest, ::mruv::RegisterAccountResponse>(
-          std::mem_fn(&MruVAccountsService::Service::RegisterAccount), this)));
+          [](MruVAccountsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::RegisterAccountRequest* req,
+             ::mruv::RegisterAccountResponse* resp) {
+               return service->RegisterAccount(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::LogInRequest, ::mruv::LogInResponse>(
-          std::mem_fn(&MruVAccountsService::Service::LogIn), this)));
+          [](MruVAccountsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::LogInRequest* req,
+             ::mruv::LogInResponse* resp) {
+               return service->LogIn(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>(
-          std::mem_fn(&MruVAccountsService::Service::IsAccountExist), this)));
+          [](MruVAccountsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::IsAccountExistRequest* req,
+             ::mruv::IsAccountExistResponse* resp) {
+               return service->IsAccountExist(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>(
-          std::mem_fn(&MruVAccountsService::Service::GetAccount), this)));
+          [](MruVAccountsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetAccountRequest* req,
+             ::mruv::GetAccountResponse* resp) {
+               return service->GetAccount(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>(
-          std::mem_fn(&MruVAccountsService::Service::GetAccountCharacters), this)));
+          [](MruVAccountsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetAccountCharactersRequest* req,
+             ::mruv::GetAccountCharactersResponse* resp) {
+               return service->GetAccountCharacters(ctx, req, resp);
+             }, this)));
 }
 
 MruVAccountsService::Service::~Service() {

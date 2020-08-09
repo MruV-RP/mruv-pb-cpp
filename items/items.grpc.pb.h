@@ -4627,7 +4627,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_CreateItem() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::Item, ::mruv::ItemID>(std::bind(&WithStreamedUnaryMethod_CreateItem<BaseClass>::StreamedCreateItem, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::Item, ::mruv::ItemID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::Item, ::mruv::ItemID>* streamer) {
+                       return this->StreamedCreateItem(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4647,7 +4654,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetItem() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ItemID, ::mruv::Item>(std::bind(&WithStreamedUnaryMethod_GetItem<BaseClass>::StreamedGetItem, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ItemID, ::mruv::Item>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ItemID, ::mruv::Item>* streamer) {
+                       return this->StreamedGetItem(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4667,7 +4681,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_DeleteItem() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ItemID, ::mruv::ItemID>(std::bind(&WithStreamedUnaryMethod_DeleteItem<BaseClass>::StreamedDeleteItem, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ItemID, ::mruv::ItemID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ItemID, ::mruv::ItemID>* streamer) {
+                       return this->StreamedDeleteItem(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4687,7 +4708,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetItems() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(std::bind(&WithStreamedUnaryMethod_GetItems<BaseClass>::StreamedGetItems, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>* streamer) {
+                       return this->StreamedGetItems(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4707,7 +4735,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_CreateItemType() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ItemType, ::mruv::ItemTypeID>(std::bind(&WithStreamedUnaryMethod_CreateItemType<BaseClass>::StreamedCreateItemType, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ItemType, ::mruv::ItemTypeID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ItemType, ::mruv::ItemTypeID>* streamer) {
+                       return this->StreamedCreateItemType(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateItemType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4727,7 +4762,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetItemType() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemType>(std::bind(&WithStreamedUnaryMethod_GetItemType<BaseClass>::StreamedGetItemType, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ItemTypeID, ::mruv::ItemType>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ItemTypeID, ::mruv::ItemType>* streamer) {
+                       return this->StreamedGetItemType(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetItemType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4747,7 +4789,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_DeleteItemType() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ItemTypeID, ::mruv::ItemTypeID>(std::bind(&WithStreamedUnaryMethod_DeleteItemType<BaseClass>::StreamedDeleteItemType, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ItemTypeID, ::mruv::ItemTypeID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ItemTypeID, ::mruv::ItemTypeID>* streamer) {
+                       return this->StreamedDeleteItemType(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteItemType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4767,7 +4816,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetItemTypes() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(std::bind(&WithStreamedUnaryMethod_GetItemTypes<BaseClass>::StreamedGetItemTypes, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>* streamer) {
+                       return this->StreamedGetItemTypes(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetItemTypes() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4787,7 +4843,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_CreateContainer() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::Container, ::mruv::ContainerID>(std::bind(&WithStreamedUnaryMethod_CreateContainer<BaseClass>::StreamedCreateContainer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::Container, ::mruv::ContainerID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::Container, ::mruv::ContainerID>* streamer) {
+                       return this->StreamedCreateContainer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateContainer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4807,7 +4870,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetContainer() {
       ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ContainerID, ::mruv::Container>(std::bind(&WithStreamedUnaryMethod_GetContainer<BaseClass>::StreamedGetContainer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ContainerID, ::mruv::Container>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ContainerID, ::mruv::Container>* streamer) {
+                       return this->StreamedGetContainer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetContainer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4827,7 +4897,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_DeleteContainer() {
       ::grpc::Service::MarkMethodStreamed(10,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ContainerID, ::mruv::ContainerID>(std::bind(&WithStreamedUnaryMethod_DeleteContainer<BaseClass>::StreamedDeleteContainer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ContainerID, ::mruv::ContainerID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ContainerID, ::mruv::ContainerID>* streamer) {
+                       return this->StreamedDeleteContainer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteContainer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4847,7 +4924,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetContainers() {
       ::grpc::Service::MarkMethodStreamed(11,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(std::bind(&WithStreamedUnaryMethod_GetContainers<BaseClass>::StreamedGetContainers, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>* streamer) {
+                       return this->StreamedGetContainers(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetContainers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4867,7 +4951,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_CreateContainerType() {
       ::grpc::Service::MarkMethodStreamed(12,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ContainerType, ::mruv::ContainerTypeID>(std::bind(&WithStreamedUnaryMethod_CreateContainerType<BaseClass>::StreamedCreateContainerType, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ContainerType, ::mruv::ContainerTypeID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ContainerType, ::mruv::ContainerTypeID>* streamer) {
+                       return this->StreamedCreateContainerType(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateContainerType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4887,7 +4978,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetContainerType() {
       ::grpc::Service::MarkMethodStreamed(13,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerType>(std::bind(&WithStreamedUnaryMethod_GetContainerType<BaseClass>::StreamedGetContainerType, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ContainerTypeID, ::mruv::ContainerType>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ContainerTypeID, ::mruv::ContainerType>* streamer) {
+                       return this->StreamedGetContainerType(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetContainerType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4907,7 +5005,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_DeleteContainerType() {
       ::grpc::Service::MarkMethodStreamed(14,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>(std::bind(&WithStreamedUnaryMethod_DeleteContainerType<BaseClass>::StreamedDeleteContainerType, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>* streamer) {
+                       return this->StreamedDeleteContainerType(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteContainerType() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4927,7 +5032,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetContainerTypes() {
       ::grpc::Service::MarkMethodStreamed(15,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(std::bind(&WithStreamedUnaryMethod_GetContainerTypes<BaseClass>::StreamedGetContainerTypes, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>* streamer) {
+                       return this->StreamedGetContainerTypes(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetContainerTypes() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4947,7 +5059,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetContainerItems() {
       ::grpc::Service::MarkMethodStreamed(16,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(std::bind(&WithStreamedUnaryMethod_GetContainerItems<BaseClass>::StreamedGetContainerItems, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>* streamer) {
+                       return this->StreamedGetContainerItems(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetContainerItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4967,7 +5086,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_PullItem() {
       ::grpc::Service::MarkMethodStreamed(17,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>(std::bind(&WithStreamedUnaryMethod_PullItem<BaseClass>::StreamedPullItem, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::PullItemRequest, ::mruv::Item>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::PullItemRequest, ::mruv::Item>* streamer) {
+                       return this->StreamedPullItem(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_PullItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4987,7 +5113,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_PutItem() {
       ::grpc::Service::MarkMethodStreamed(18,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>(std::bind(&WithStreamedUnaryMethod_PutItem<BaseClass>::StreamedPutItem, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::PutItemRequest, ::mruv::PutItemResponse>* streamer) {
+                       return this->StreamedPutItem(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_PutItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5007,7 +5140,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_SortItems() {
       ::grpc::Service::MarkMethodStreamed(19,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(std::bind(&WithStreamedUnaryMethod_SortItems<BaseClass>::StreamedSortItems, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>* streamer) {
+                       return this->StreamedSortItems(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_SortItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5027,7 +5167,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetNearestItems() {
       ::grpc::Service::MarkMethodStreamed(20,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(std::bind(&WithStreamedUnaryMethod_GetNearestItems<BaseClass>::StreamedGetNearestItems, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>* streamer) {
+                       return this->StreamedGetNearestItems(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetNearestItems() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5047,7 +5194,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_UseItem() {
       ::grpc::Service::MarkMethodStreamed(21,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>(std::bind(&WithStreamedUnaryMethod_UseItem<BaseClass>::StreamedUseItem, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::UseItemRequest, ::mruv::UseItemResponse>* streamer) {
+                       return this->StreamedUseItem(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UseItem() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5067,7 +5221,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetServiceStatus() {
       ::grpc::Service::MarkMethodStreamed(22,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceStatus<BaseClass>::StreamedGetServiceStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
+                       return this->StreamedGetServiceStatus(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5087,7 +5248,14 @@ class MruVItemService final {
    public:
     WithStreamedUnaryMethod_GetServiceVersion() {
       ::grpc::Service::MarkMethodStreamed(23,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceVersion<BaseClass>::StreamedGetServiceVersion, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
+                       return this->StreamedGetServiceVersion(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);

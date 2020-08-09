@@ -3676,7 +3676,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_CreateGroup() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>(std::bind(&WithStreamedUnaryMethod_CreateGroup<BaseClass>::StreamedCreateGroup, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>* streamer) {
+                       return this->StreamedCreateGroup(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3696,7 +3703,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetGroup() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>(std::bind(&WithStreamedUnaryMethod_GetGroup<BaseClass>::StreamedGetGroup, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>* streamer) {
+                       return this->StreamedGetGroup(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3716,7 +3730,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_UpdateGroup() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>(std::bind(&WithStreamedUnaryMethod_UpdateGroup<BaseClass>::StreamedUpdateGroup, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>* streamer) {
+                       return this->StreamedUpdateGroup(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3736,7 +3757,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_DeleteGroup() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>(std::bind(&WithStreamedUnaryMethod_DeleteGroup<BaseClass>::StreamedDeleteGroup, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>* streamer) {
+                       return this->StreamedDeleteGroup(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteGroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3756,7 +3784,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetGroups() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(std::bind(&WithStreamedUnaryMethod_GetGroups<BaseClass>::StreamedGetGroups, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>* streamer) {
+                       return this->StreamedGetGroups(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetGroups() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3776,7 +3811,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_AssignOwner() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>(std::bind(&WithStreamedUnaryMethod_AssignOwner<BaseClass>::StreamedAssignOwner, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>* streamer) {
+                       return this->StreamedAssignOwner(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AssignOwner() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3796,7 +3838,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetOwner() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>(std::bind(&WithStreamedUnaryMethod_GetOwner<BaseClass>::StreamedGetOwner, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>* streamer) {
+                       return this->StreamedGetOwner(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetOwner() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3816,7 +3865,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_AddMember() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>(std::bind(&WithStreamedUnaryMethod_AddMember<BaseClass>::StreamedAddMember, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>* streamer) {
+                       return this->StreamedAddMember(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AddMember() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3836,7 +3892,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetMembers() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>(std::bind(&WithStreamedUnaryMethod_GetMembers<BaseClass>::StreamedGetMembers, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>* streamer) {
+                       return this->StreamedGetMembers(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetMembers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3856,7 +3919,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_RemoveMember() {
       ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>(std::bind(&WithStreamedUnaryMethod_RemoveMember<BaseClass>::StreamedRemoveMember, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>* streamer) {
+                       return this->StreamedRemoveMember(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RemoveMember() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3876,7 +3946,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_AddPermission() {
       ::grpc::Service::MarkMethodStreamed(10,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>(std::bind(&WithStreamedUnaryMethod_AddPermission<BaseClass>::StreamedAddPermission, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>* streamer) {
+                       return this->StreamedAddPermission(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AddPermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3896,7 +3973,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetPermissions() {
       ::grpc::Service::MarkMethodStreamed(11,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>(std::bind(&WithStreamedUnaryMethod_GetPermissions<BaseClass>::StreamedGetPermissions, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>* streamer) {
+                       return this->StreamedGetPermissions(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPermissions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3916,7 +4000,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_RemovePermission() {
       ::grpc::Service::MarkMethodStreamed(12,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>(std::bind(&WithStreamedUnaryMethod_RemovePermission<BaseClass>::StreamedRemovePermission, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>* streamer) {
+                       return this->StreamedRemovePermission(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RemovePermission() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3936,7 +4027,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_AddSubgroup() {
       ::grpc::Service::MarkMethodStreamed(13,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>(std::bind(&WithStreamedUnaryMethod_AddSubgroup<BaseClass>::StreamedAddSubgroup, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>* streamer) {
+                       return this->StreamedAddSubgroup(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AddSubgroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3956,7 +4054,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetSubgroups() {
       ::grpc::Service::MarkMethodStreamed(14,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>(std::bind(&WithStreamedUnaryMethod_GetSubgroups<BaseClass>::StreamedGetSubgroups, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>* streamer) {
+                       return this->StreamedGetSubgroups(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetSubgroups() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3976,7 +4081,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_RemoveSubgroup() {
       ::grpc::Service::MarkMethodStreamed(15,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>(std::bind(&WithStreamedUnaryMethod_RemoveSubgroup<BaseClass>::StreamedRemoveSubgroup, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>* streamer) {
+                       return this->StreamedRemoveSubgroup(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RemoveSubgroup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3996,7 +4108,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_IsPermitted() {
       ::grpc::Service::MarkMethodStreamed(16,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>(std::bind(&WithStreamedUnaryMethod_IsPermitted<BaseClass>::StreamedIsPermitted, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>* streamer) {
+                       return this->StreamedIsPermitted(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_IsPermitted() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4016,7 +4135,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetServiceStatus() {
       ::grpc::Service::MarkMethodStreamed(17,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceStatus<BaseClass>::StreamedGetServiceStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
+                       return this->StreamedGetServiceStatus(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4036,7 +4162,14 @@ class MruVGroupsService final {
    public:
     WithStreamedUnaryMethod_GetServiceVersion() {
       ::grpc::Service::MarkMethodStreamed(18,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceVersion<BaseClass>::StreamedGetServiceVersion, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
+                       return this->StreamedGetServiceVersion(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);

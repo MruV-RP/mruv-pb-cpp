@@ -1768,7 +1768,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_CreateCharacter() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::CreateCharacterRequest, ::mruv::CreateCharacterResponse>(std::bind(&WithStreamedUnaryMethod_CreateCharacter<BaseClass>::StreamedCreateCharacter, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::CreateCharacterRequest, ::mruv::CreateCharacterResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::CreateCharacterRequest, ::mruv::CreateCharacterResponse>* streamer) {
+                       return this->StreamedCreateCharacter(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1788,7 +1795,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_GetCharacter() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::GetCharacterRequest, ::mruv::GetCharacterResponse>(std::bind(&WithStreamedUnaryMethod_GetCharacter<BaseClass>::StreamedGetCharacter, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::GetCharacterRequest, ::mruv::GetCharacterResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::GetCharacterRequest, ::mruv::GetCharacterResponse>* streamer) {
+                       return this->StreamedGetCharacter(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1808,7 +1822,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_UpdateCharacter() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::UpdateCharacterRequest, ::mruv::UpdateCharacterResponse>(std::bind(&WithStreamedUnaryMethod_UpdateCharacter<BaseClass>::StreamedUpdateCharacter, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::UpdateCharacterRequest, ::mruv::UpdateCharacterResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::UpdateCharacterRequest, ::mruv::UpdateCharacterResponse>* streamer) {
+                       return this->StreamedUpdateCharacter(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1828,7 +1849,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_DeleteCharacter() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::DeleteCharacterRequest, ::mruv::DeleteCharacterResponse>(std::bind(&WithStreamedUnaryMethod_DeleteCharacter<BaseClass>::StreamedDeleteCharacter, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::DeleteCharacterRequest, ::mruv::DeleteCharacterResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::DeleteCharacterRequest, ::mruv::DeleteCharacterResponse>* streamer) {
+                       return this->StreamedDeleteCharacter(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteCharacter() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1848,7 +1876,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_PermanentCharacterKill() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::CharacterID, ::mruv::CharacterID>(std::bind(&WithStreamedUnaryMethod_PermanentCharacterKill<BaseClass>::StreamedPermanentCharacterKill, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::CharacterID, ::mruv::CharacterID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::CharacterID, ::mruv::CharacterID>* streamer) {
+                       return this->StreamedPermanentCharacterKill(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_PermanentCharacterKill() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1868,7 +1903,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_ChangeClothes() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>(std::bind(&WithStreamedUnaryMethod_ChangeClothes<BaseClass>::StreamedChangeClothes, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>* streamer) {
+                       return this->StreamedChangeClothes(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_ChangeClothes() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1888,7 +1930,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_GetServiceStatus() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceStatus<BaseClass>::StreamedGetServiceStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
+                       return this->StreamedGetServiceStatus(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1908,7 +1957,14 @@ class MruVCharactersService final {
    public:
     WithStreamedUnaryMethod_GetServiceVersion() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceVersion<BaseClass>::StreamedGetServiceVersion, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
+                       return this->StreamedGetServiceVersion(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1929,7 +1985,14 @@ class MruVCharactersService final {
    public:
     WithSplitStreamingMethod_DeathsStream() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(std::bind(&WithSplitStreamingMethod_DeathsStream<BaseClass>::StreamedDeathsStream, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>* streamer) {
+                       return this->StreamedDeathsStream(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_DeathsStream() override {
       BaseClassMustBeDerivedFromService(this);

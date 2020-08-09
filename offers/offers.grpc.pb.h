@@ -1034,7 +1034,14 @@ class MruVOffersService final {
    public:
     WithStreamedUnaryMethod_CreateOffer() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(std::bind(&WithStreamedUnaryMethod_CreateOffer<BaseClass>::StreamedCreateOffer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>* streamer) {
+                       return this->StreamedCreateOffer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1054,7 +1061,14 @@ class MruVOffersService final {
    public:
     WithStreamedUnaryMethod_GetOffer() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(std::bind(&WithStreamedUnaryMethod_GetOffer<BaseClass>::StreamedGetOffer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>* streamer) {
+                       return this->StreamedGetOffer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1074,7 +1088,14 @@ class MruVOffersService final {
    public:
     WithStreamedUnaryMethod_UpdateOffer() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(std::bind(&WithStreamedUnaryMethod_UpdateOffer<BaseClass>::StreamedUpdateOffer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>* streamer) {
+                       return this->StreamedUpdateOffer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1094,7 +1115,14 @@ class MruVOffersService final {
    public:
     WithStreamedUnaryMethod_DeleteOffer() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(std::bind(&WithStreamedUnaryMethod_DeleteOffer<BaseClass>::StreamedDeleteOffer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>* streamer) {
+                       return this->StreamedDeleteOffer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteOffer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1114,7 +1142,14 @@ class MruVOffersService final {
    public:
     WithStreamedUnaryMethod_AcceptOffer() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(std::bind(&WithStreamedUnaryMethod_AcceptOffer<BaseClass>::StreamedAcceptOffer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>* streamer) {
+                       return this->StreamedAcceptOffer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AcceptOffer() override {
       BaseClassMustBeDerivedFromService(this);

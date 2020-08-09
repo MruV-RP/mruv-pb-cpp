@@ -845,7 +845,14 @@ class MruVHousesService final {
    public:
     WithStreamedUnaryMethod_CreateHouse() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(std::bind(&WithStreamedUnaryMethod_CreateHouse<BaseClass>::StreamedCreateHouse, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>* streamer) {
+                       return this->StreamedCreateHouse(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateHouse() override {
       BaseClassMustBeDerivedFromService(this);
@@ -865,7 +872,14 @@ class MruVHousesService final {
    public:
     WithStreamedUnaryMethod_GetHouse() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(std::bind(&WithStreamedUnaryMethod_GetHouse<BaseClass>::StreamedGetHouse, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>* streamer) {
+                       return this->StreamedGetHouse(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetHouse() override {
       BaseClassMustBeDerivedFromService(this);
@@ -885,7 +899,14 @@ class MruVHousesService final {
    public:
     WithStreamedUnaryMethod_UpdateHouse() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(std::bind(&WithStreamedUnaryMethod_UpdateHouse<BaseClass>::StreamedUpdateHouse, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>* streamer) {
+                       return this->StreamedUpdateHouse(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateHouse() override {
       BaseClassMustBeDerivedFromService(this);
@@ -905,7 +926,14 @@ class MruVHousesService final {
    public:
     WithStreamedUnaryMethod_DeleteHouse() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(std::bind(&WithStreamedUnaryMethod_DeleteHouse<BaseClass>::StreamedDeleteHouse, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>* streamer) {
+                       return this->StreamedDeleteHouse(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteHouse() override {
       BaseClassMustBeDerivedFromService(this);

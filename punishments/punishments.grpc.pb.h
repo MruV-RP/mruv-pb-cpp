@@ -5389,7 +5389,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_Ban() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>(std::bind(&WithStreamedUnaryMethod_Ban<BaseClass>::StreamedBan, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>* streamer) {
+                       return this->StreamedBan(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Ban() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5409,7 +5416,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_Block() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>(std::bind(&WithStreamedUnaryMethod_Block<BaseClass>::StreamedBlock, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>* streamer) {
+                       return this->StreamedBlock(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Block() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5429,7 +5443,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_Warn() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>(std::bind(&WithStreamedUnaryMethod_Warn<BaseClass>::StreamedWarn, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>* streamer) {
+                       return this->StreamedWarn(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Warn() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5449,7 +5470,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_AdminJail() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>(std::bind(&WithStreamedUnaryMethod_AdminJail<BaseClass>::StreamedAdminJail, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>* streamer) {
+                       return this->StreamedAdminJail(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AdminJail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5469,7 +5497,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_MuteGlobalChats() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>(std::bind(&WithStreamedUnaryMethod_MuteGlobalChats<BaseClass>::StreamedMuteGlobalChats, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>* streamer) {
+                       return this->StreamedMuteGlobalChats(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_MuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5489,7 +5524,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_UnBan() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>(std::bind(&WithStreamedUnaryMethod_UnBan<BaseClass>::StreamedUnBan, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>* streamer) {
+                       return this->StreamedUnBan(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UnBan() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5509,7 +5551,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_UnWarn() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>(std::bind(&WithStreamedUnaryMethod_UnWarn<BaseClass>::StreamedUnWarn, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>* streamer) {
+                       return this->StreamedUnWarn(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UnWarn() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5529,7 +5578,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_UnAdminJail() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>(std::bind(&WithStreamedUnaryMethod_UnAdminJail<BaseClass>::StreamedUnAdminJail, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>* streamer) {
+                       return this->StreamedUnAdminJail(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UnAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5549,7 +5605,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_UnMuteGlobalChats() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>(std::bind(&WithStreamedUnaryMethod_UnMuteGlobalChats<BaseClass>::StreamedUnMuteGlobalChats, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>* streamer) {
+                       return this->StreamedUnMuteGlobalChats(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UnMuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5569,7 +5632,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_GetPlayerBans() {
       ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>(std::bind(&WithStreamedUnaryMethod_GetPlayerBans<BaseClass>::StreamedGetPlayerBans, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>* streamer) {
+                       return this->StreamedGetPlayerBans(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPlayerBans() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5589,7 +5659,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_GetPlayerWarns() {
       ::grpc::Service::MarkMethodStreamed(10,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>(std::bind(&WithStreamedUnaryMethod_GetPlayerWarns<BaseClass>::StreamedGetPlayerWarns, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>* streamer) {
+                       return this->StreamedGetPlayerWarns(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPlayerWarns() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5609,7 +5686,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_GetPlayerAdminJail() {
       ::grpc::Service::MarkMethodStreamed(11,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>(std::bind(&WithStreamedUnaryMethod_GetPlayerAdminJail<BaseClass>::StreamedGetPlayerAdminJail, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>* streamer) {
+                       return this->StreamedGetPlayerAdminJail(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPlayerAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5629,7 +5713,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_GetBan() {
       ::grpc::Service::MarkMethodStreamed(12,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>(std::bind(&WithStreamedUnaryMethod_GetBan<BaseClass>::StreamedGetBan, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>* streamer) {
+                       return this->StreamedGetBan(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetBan() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5649,7 +5740,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_GetWarn() {
       ::grpc::Service::MarkMethodStreamed(13,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>(std::bind(&WithStreamedUnaryMethod_GetWarn<BaseClass>::StreamedGetWarn, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>* streamer) {
+                       return this->StreamedGetWarn(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetWarn() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5669,7 +5767,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_GetBlock() {
       ::grpc::Service::MarkMethodStreamed(14,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>(std::bind(&WithStreamedUnaryMethod_GetBlock<BaseClass>::StreamedGetBlock, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>* streamer) {
+                       return this->StreamedGetBlock(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetBlock() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5689,7 +5794,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_IsPlayerBanned() {
       ::grpc::Service::MarkMethodStreamed(15,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>(std::bind(&WithStreamedUnaryMethod_IsPlayerBanned<BaseClass>::StreamedIsPlayerBanned, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>* streamer) {
+                       return this->StreamedIsPlayerBanned(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_IsPlayerBanned() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5709,7 +5821,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_IsCharacterBlocked() {
       ::grpc::Service::MarkMethodStreamed(16,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>(std::bind(&WithStreamedUnaryMethod_IsCharacterBlocked<BaseClass>::StreamedIsCharacterBlocked, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>* streamer) {
+                       return this->StreamedIsCharacterBlocked(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_IsCharacterBlocked() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5729,7 +5848,14 @@ class MruVPunishmentsService final {
    public:
     WithStreamedUnaryMethod_IsCharacterJailed() {
       ::grpc::Service::MarkMethodStreamed(17,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>(std::bind(&WithStreamedUnaryMethod_IsCharacterJailed<BaseClass>::StreamedIsCharacterJailed, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>* streamer) {
+                       return this->StreamedIsCharacterJailed(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_IsCharacterJailed() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5750,7 +5876,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchBans() {
       ::grpc::Service::MarkMethodStreamed(18,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>(std::bind(&WithSplitStreamingMethod_WatchBans<BaseClass>::StreamedWatchBans, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>* streamer) {
+                       return this->StreamedWatchBans(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchBans() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5770,7 +5903,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchBlocks() {
       ::grpc::Service::MarkMethodStreamed(19,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>(std::bind(&WithSplitStreamingMethod_WatchBlocks<BaseClass>::StreamedWatchBlocks, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>* streamer) {
+                       return this->StreamedWatchBlocks(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchBlocks() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5790,7 +5930,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchWarns() {
       ::grpc::Service::MarkMethodStreamed(20,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>(std::bind(&WithSplitStreamingMethod_WatchWarns<BaseClass>::StreamedWatchWarns, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>* streamer) {
+                       return this->StreamedWatchWarns(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchWarns() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5810,7 +5957,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchAdminJails() {
       ::grpc::Service::MarkMethodStreamed(21,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>(std::bind(&WithSplitStreamingMethod_WatchAdminJails<BaseClass>::StreamedWatchAdminJails, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>* streamer) {
+                       return this->StreamedWatchAdminJails(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5830,7 +5984,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchUnBans() {
       ::grpc::Service::MarkMethodStreamed(22,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>(std::bind(&WithSplitStreamingMethod_WatchUnBans<BaseClass>::StreamedWatchUnBans, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>* streamer) {
+                       return this->StreamedWatchUnBans(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchUnBans() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5850,7 +6011,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchUnBlocks() {
       ::grpc::Service::MarkMethodStreamed(23,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>(std::bind(&WithSplitStreamingMethod_WatchUnBlocks<BaseClass>::StreamedWatchUnBlocks, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>* streamer) {
+                       return this->StreamedWatchUnBlocks(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchUnBlocks() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5870,7 +6038,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchUnWarns() {
       ::grpc::Service::MarkMethodStreamed(24,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>(std::bind(&WithSplitStreamingMethod_WatchUnWarns<BaseClass>::StreamedWatchUnWarns, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>* streamer) {
+                       return this->StreamedWatchUnWarns(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchUnWarns() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5890,7 +6065,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchUnAdminJails() {
       ::grpc::Service::MarkMethodStreamed(25,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>(std::bind(&WithSplitStreamingMethod_WatchUnAdminJails<BaseClass>::StreamedWatchUnAdminJails, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>* streamer) {
+                       return this->StreamedWatchUnAdminJails(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchUnAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5910,7 +6092,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchPlayerPunishments() {
       ::grpc::Service::MarkMethodStreamed(26,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>(std::bind(&WithSplitStreamingMethod_WatchPlayerPunishments<BaseClass>::StreamedWatchPlayerPunishments, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>* streamer) {
+                       return this->StreamedWatchPlayerPunishments(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchPlayerPunishments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5930,7 +6119,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchPlayerAcquittals() {
       ::grpc::Service::MarkMethodStreamed(27,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>(std::bind(&WithSplitStreamingMethod_WatchPlayerAcquittals<BaseClass>::StreamedWatchPlayerAcquittals, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>* streamer) {
+                       return this->StreamedWatchPlayerAcquittals(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchPlayerAcquittals() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5950,7 +6146,14 @@ class MruVPunishmentsService final {
    public:
     WithSplitStreamingMethod_WatchPunishments() {
       ::grpc::Service::MarkMethodStreamed(28,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>(std::bind(&WithSplitStreamingMethod_WatchPunishments<BaseClass>::StreamedWatchPunishments, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>* streamer) {
+                       return this->StreamedWatchPunishments(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchPunishments() override {
       BaseClassMustBeDerivedFromService(this);

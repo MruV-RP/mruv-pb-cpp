@@ -1759,7 +1759,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_RegisterProduct() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(std::bind(&WithStreamedUnaryMethod_RegisterProduct<BaseClass>::StreamedRegisterProduct, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>* streamer) {
+                       return this->StreamedRegisterProduct(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RegisterProduct() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1779,7 +1786,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_GetProduct() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(std::bind(&WithStreamedUnaryMethod_GetProduct<BaseClass>::StreamedGetProduct, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>* streamer) {
+                       return this->StreamedGetProduct(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetProduct() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1799,7 +1813,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_UpdateProduct() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(std::bind(&WithStreamedUnaryMethod_UpdateProduct<BaseClass>::StreamedUpdateProduct, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>* streamer) {
+                       return this->StreamedUpdateProduct(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateProduct() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1819,7 +1840,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_DeleteProduct() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(std::bind(&WithStreamedUnaryMethod_DeleteProduct<BaseClass>::StreamedDeleteProduct, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>* streamer) {
+                       return this->StreamedDeleteProduct(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteProduct() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1839,7 +1867,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_UpdatePrice() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(std::bind(&WithStreamedUnaryMethod_UpdatePrice<BaseClass>::StreamedUpdatePrice, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>* streamer) {
+                       return this->StreamedUpdatePrice(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdatePrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1859,7 +1894,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_GetPrice() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(std::bind(&WithStreamedUnaryMethod_GetPrice<BaseClass>::StreamedGetPrice, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>* streamer) {
+                       return this->StreamedGetPrice(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1879,7 +1921,14 @@ class MruVEconomyService final {
    public:
     WithStreamedUnaryMethod_BuyProduct() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(std::bind(&WithStreamedUnaryMethod_BuyProduct<BaseClass>::StreamedBuyProduct, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>* streamer) {
+                       return this->StreamedBuyProduct(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_BuyProduct() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1900,7 +1949,14 @@ class MruVEconomyService final {
    public:
     WithSplitStreamingMethod_WatchProduct() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(std::bind(&WithSplitStreamingMethod_WatchProduct<BaseClass>::StreamedWatchProduct, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>* streamer) {
+                       return this->StreamedWatchProduct(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchProduct() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1920,7 +1976,14 @@ class MruVEconomyService final {
    public:
     WithSplitStreamingMethod_WatchPrice() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(std::bind(&WithSplitStreamingMethod_WatchPrice<BaseClass>::StreamedWatchPrice, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>* streamer) {
+                       return this->StreamedWatchPrice(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchPrice() override {
       BaseClassMustBeDerivedFromService(this);

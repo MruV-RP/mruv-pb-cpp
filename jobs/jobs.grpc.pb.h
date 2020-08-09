@@ -845,7 +845,14 @@ class MruVJobsService final {
    public:
     WithStreamedUnaryMethod_CreateJob() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(std::bind(&WithStreamedUnaryMethod_CreateJob<BaseClass>::StreamedCreateJob, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>* streamer) {
+                       return this->StreamedCreateJob(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -865,7 +872,14 @@ class MruVJobsService final {
    public:
     WithStreamedUnaryMethod_GetJob() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(std::bind(&WithStreamedUnaryMethod_GetJob<BaseClass>::StreamedGetJob, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>* streamer) {
+                       return this->StreamedGetJob(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -885,7 +899,14 @@ class MruVJobsService final {
    public:
     WithStreamedUnaryMethod_UpdateJob() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(std::bind(&WithStreamedUnaryMethod_UpdateJob<BaseClass>::StreamedUpdateJob, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>* streamer) {
+                       return this->StreamedUpdateJob(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateJob() override {
       BaseClassMustBeDerivedFromService(this);
@@ -905,7 +926,14 @@ class MruVJobsService final {
    public:
     WithStreamedUnaryMethod_DeleteJob() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(std::bind(&WithStreamedUnaryMethod_DeleteJob<BaseClass>::StreamedDeleteJob, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>* streamer) {
+                       return this->StreamedDeleteJob(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteJob() override {
       BaseClassMustBeDerivedFromService(this);

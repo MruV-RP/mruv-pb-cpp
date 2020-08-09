@@ -845,7 +845,14 @@ class MruVVehiclesService final {
    public:
     WithStreamedUnaryMethod_CreateVehicle() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(std::bind(&WithStreamedUnaryMethod_CreateVehicle<BaseClass>::StreamedCreateVehicle, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>* streamer) {
+                       return this->StreamedCreateVehicle(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateVehicle() override {
       BaseClassMustBeDerivedFromService(this);
@@ -865,7 +872,14 @@ class MruVVehiclesService final {
    public:
     WithStreamedUnaryMethod_GetVehicle() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(std::bind(&WithStreamedUnaryMethod_GetVehicle<BaseClass>::StreamedGetVehicle, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>* streamer) {
+                       return this->StreamedGetVehicle(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetVehicle() override {
       BaseClassMustBeDerivedFromService(this);
@@ -885,7 +899,14 @@ class MruVVehiclesService final {
    public:
     WithStreamedUnaryMethod_UpdateVehicle() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(std::bind(&WithStreamedUnaryMethod_UpdateVehicle<BaseClass>::StreamedUpdateVehicle, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>* streamer) {
+                       return this->StreamedUpdateVehicle(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateVehicle() override {
       BaseClassMustBeDerivedFromService(this);
@@ -905,7 +926,14 @@ class MruVVehiclesService final {
    public:
     WithStreamedUnaryMethod_DeleteVehicle() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(std::bind(&WithStreamedUnaryMethod_DeleteVehicle<BaseClass>::StreamedDeleteVehicle, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>* streamer) {
+                       return this->StreamedDeleteVehicle(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteVehicle() override {
       BaseClassMustBeDerivedFromService(this);

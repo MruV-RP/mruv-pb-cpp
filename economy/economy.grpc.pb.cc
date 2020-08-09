@@ -285,47 +285,92 @@ MruVEconomyService::Service::Service() {
       MruVEconomyService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(
-          std::mem_fn(&MruVEconomyService::Service::RegisterProduct), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::RegisterProductRequest* req,
+             ::mruv::economy::RegisterProductResponse* resp) {
+               return service->RegisterProduct(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(
-          std::mem_fn(&MruVEconomyService::Service::GetProduct), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::GetProductRequest* req,
+             ::mruv::economy::GetProductResponse* resp) {
+               return service->GetProduct(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(
-          std::mem_fn(&MruVEconomyService::Service::UpdateProduct), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::UpdateProductRequest* req,
+             ::mruv::economy::UpdateProductResponse* resp) {
+               return service->UpdateProduct(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(
-          std::mem_fn(&MruVEconomyService::Service::DeleteProduct), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::DeleteProductRequest* req,
+             ::mruv::economy::DeleteProductResponse* resp) {
+               return service->DeleteProduct(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(
-          std::mem_fn(&MruVEconomyService::Service::UpdatePrice), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::UpdatePriceRequest* req,
+             ::mruv::economy::UpdatePriceResponse* resp) {
+               return service->UpdatePrice(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(
-          std::mem_fn(&MruVEconomyService::Service::GetPrice), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::GetPriceRequest* req,
+             ::mruv::economy::GetPriceResponse* resp) {
+               return service->GetPrice(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(
-          std::mem_fn(&MruVEconomyService::Service::BuyProduct), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::BuyProductRequest* req,
+             ::mruv::economy::BuyProductResponse* resp) {
+               return service->BuyProduct(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[7],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVEconomyService::Service, ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(
-          std::mem_fn(&MruVEconomyService::Service::WatchProduct), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::WatchProductRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::economy::WatchProductResponse>* writer) {
+               return service->WatchProduct(ctx, req, writer);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEconomyService_method_names[8],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVEconomyService::Service, ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(
-          std::mem_fn(&MruVEconomyService::Service::WatchPrice), this)));
+          [](MruVEconomyService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::WatchPriceRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::economy::WatchPriceResponse>* writer) {
+               return service->WatchPrice(ctx, req, writer);
+             }, this)));
 }
 
 MruVEconomyService::Service::~Service() {

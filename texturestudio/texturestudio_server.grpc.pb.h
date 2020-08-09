@@ -1583,7 +1583,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_StartServer() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::StartServerRequest, ::texture_studio::StartServerResponse>(std::bind(&WithStreamedUnaryMethod_StartServer<BaseClass>::StreamedStartServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::StartServerRequest, ::texture_studio::StartServerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::StartServerRequest, ::texture_studio::StartServerResponse>* streamer) {
+                       return this->StreamedStartServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_StartServer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1603,7 +1610,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_StopServer() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::StopServerRequest, ::texture_studio::StopServerResponse>(std::bind(&WithStreamedUnaryMethod_StopServer<BaseClass>::StreamedStopServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::StopServerRequest, ::texture_studio::StopServerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::StopServerRequest, ::texture_studio::StopServerResponse>* streamer) {
+                       return this->StreamedStopServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_StopServer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1623,7 +1637,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_RestartServer() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::RestartServerRequest, ::texture_studio::RestartServerResponse>(std::bind(&WithStreamedUnaryMethod_RestartServer<BaseClass>::StreamedRestartServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::RestartServerRequest, ::texture_studio::RestartServerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::RestartServerRequest, ::texture_studio::RestartServerResponse>* streamer) {
+                       return this->StreamedRestartServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RestartServer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1643,7 +1664,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_ServerStatus() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::ServerStatusRequest, ::texture_studio::ServerStatusResponse>(std::bind(&WithStreamedUnaryMethod_ServerStatus<BaseClass>::StreamedServerStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::ServerStatusRequest, ::texture_studio::ServerStatusResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::ServerStatusRequest, ::texture_studio::ServerStatusResponse>* streamer) {
+                       return this->StreamedServerStatus(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_ServerStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1663,7 +1691,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_UploadProject() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::UploadProjectRequest, ::texture_studio::UploadProjectResponse>(std::bind(&WithStreamedUnaryMethod_UploadProject<BaseClass>::StreamedUploadProject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::UploadProjectRequest, ::texture_studio::UploadProjectResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::UploadProjectRequest, ::texture_studio::UploadProjectResponse>* streamer) {
+                       return this->StreamedUploadProject(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UploadProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1683,7 +1718,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_GetProject() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::GetProjectRequest, ::texture_studio::GetProjectResponse>(std::bind(&WithStreamedUnaryMethod_GetProject<BaseClass>::StreamedGetProject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::GetProjectRequest, ::texture_studio::GetProjectResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::GetProjectRequest, ::texture_studio::GetProjectResponse>* streamer) {
+                       return this->StreamedGetProject(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetProject() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1703,7 +1745,14 @@ class TextureStudioServerService final {
    public:
     WithStreamedUnaryMethod_GetProjects() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::GetProjectsRequest, ::texture_studio::GetProjectsResponse>(std::bind(&WithStreamedUnaryMethod_GetProjects<BaseClass>::StreamedGetProjects, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::GetProjectsRequest, ::texture_studio::GetProjectsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::GetProjectsRequest, ::texture_studio::GetProjectsResponse>* streamer) {
+                       return this->StreamedGetProjects(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetProjects() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1724,7 +1773,14 @@ class TextureStudioServerService final {
    public:
     WithSplitStreamingMethod_SubscribeToProjectsChanges() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::SplitServerStreamingHandler< ::texture_studio::SubscribeToProjectsChangesRequest, ::texture_studio::SubscribeToProjectsChangesResponse>(std::bind(&WithSplitStreamingMethod_SubscribeToProjectsChanges<BaseClass>::StreamedSubscribeToProjectsChanges, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::texture_studio::SubscribeToProjectsChangesRequest, ::texture_studio::SubscribeToProjectsChangesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::texture_studio::SubscribeToProjectsChangesRequest, ::texture_studio::SubscribeToProjectsChangesResponse>* streamer) {
+                       return this->StreamedSubscribeToProjectsChanges(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_SubscribeToProjectsChanges() override {
       BaseClassMustBeDerivedFromService(this);

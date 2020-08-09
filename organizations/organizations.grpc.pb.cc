@@ -219,32 +219,62 @@ MruVOrganizationsService::Service::Service() {
       MruVOrganizationsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(
-          std::mem_fn(&MruVOrganizationsService::Service::CreateOrganization), this)));
+          [](MruVOrganizationsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::organizations::CreateOrganizationRequest* req,
+             ::mruv::organizations::CreateOrganizationResponse* resp) {
+               return service->CreateOrganization(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOrganizationsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(
-          std::mem_fn(&MruVOrganizationsService::Service::GetOrganization), this)));
+          [](MruVOrganizationsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::organizations::GetOrganizationRequest* req,
+             ::mruv::organizations::GetOrganizationResponse* resp) {
+               return service->GetOrganization(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOrganizationsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(
-          std::mem_fn(&MruVOrganizationsService::Service::UpdateOrganization), this)));
+          [](MruVOrganizationsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::organizations::UpdateOrganizationRequest* req,
+             ::mruv::organizations::UpdateOrganizationResponse* resp) {
+               return service->UpdateOrganization(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOrganizationsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(
-          std::mem_fn(&MruVOrganizationsService::Service::DeleteOrganization), this)));
+          [](MruVOrganizationsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::organizations::DeleteOrganizationRequest* req,
+             ::mruv::organizations::DeleteOrganizationResponse* resp) {
+               return service->DeleteOrganization(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOrganizationsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(
-          std::mem_fn(&MruVOrganizationsService::Service::AssignLeader), this)));
+          [](MruVOrganizationsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::organizations::AssignLeaderRequest* req,
+             ::mruv::organizations::AssignLeaderResponse* resp) {
+               return service->AssignLeader(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOrganizationsService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(
-          std::mem_fn(&MruVOrganizationsService::Service::UnassignLeader), this)));
+          [](MruVOrganizationsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::organizations::UnassignLeaderRequest* req,
+             ::mruv::organizations::UnassignLeaderResponse* resp) {
+               return service->UnassignLeader(ctx, req, resp);
+             }, this)));
 }
 
 MruVOrganizationsService::Service::~Service() {

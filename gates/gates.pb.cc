@@ -14,6 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fmovable_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_MovableObject_objects_2fmovable_2eproto;
 namespace mruv {
 namespace gates {
 class GateDefaultTypeInternal {
@@ -133,8 +134,9 @@ static void InitDefaultsscc_info_CreateGateRequest_gates_2fgates_2eproto() {
   ::mruv::gates::CreateGateRequest::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateGateRequest_gates_2fgates_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateGateRequest_gates_2fgates_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CreateGateRequest_gates_2fgates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_CreateGateRequest_gates_2fgates_2eproto}, {
+      &scc_info_MovableObject_objects_2fmovable_2eproto.base,}};
 
 static void InitDefaultsscc_info_CreateGateResponse_gates_2fgates_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -245,8 +247,9 @@ static void InitDefaultsscc_info_GetGateResponse_gates_2fgates_2eproto() {
   ::mruv::gates::GetGateResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetGateResponse_gates_2fgates_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetGateResponse_gates_2fgates_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetGateResponse_gates_2fgates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetGateResponse_gates_2fgates_2eproto}, {
+      &scc_info_MovableObject_objects_2fmovable_2eproto.base,}};
 
 static void InitDefaultsscc_info_LockRequest_gates_2fgates_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -370,18 +373,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gates_2fgates_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::gates::Gate, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::gates::Gate, estate_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::CreateGateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::CreateGateRequest, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::CreateGateRequest, gate_objects_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::CreateGateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::CreateGateResponse, id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -393,13 +397,17 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gates_2fgates_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, gate_objects_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, opened_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, locked_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::UpdateGateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::UpdateGateRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::UpdateGateRequest, name_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::UpdateGateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -479,24 +487,24 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gates_2fgates_2eproto::offsets
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::gates::Gate)},
-  { 7, -1, sizeof(::mruv::gates::CreateGateRequest)},
+  { 5, -1, sizeof(::mruv::gates::CreateGateRequest)},
   { 12, -1, sizeof(::mruv::gates::CreateGateResponse)},
-  { 17, -1, sizeof(::mruv::gates::GetGateRequest)},
-  { 23, -1, sizeof(::mruv::gates::GetGateResponse)},
-  { 29, -1, sizeof(::mruv::gates::UpdateGateRequest)},
-  { 35, -1, sizeof(::mruv::gates::UpdateGateResponse)},
-  { 40, -1, sizeof(::mruv::gates::DeleteGateRequest)},
-  { 46, -1, sizeof(::mruv::gates::DeleteGateResponse)},
-  { 51, -1, sizeof(::mruv::gates::LockRequest)},
-  { 57, -1, sizeof(::mruv::gates::LockResponse)},
-  { 62, -1, sizeof(::mruv::gates::UnlockRequest)},
-  { 68, -1, sizeof(::mruv::gates::UnlockResponse)},
-  { 73, -1, sizeof(::mruv::gates::OpenRequest)},
-  { 79, -1, sizeof(::mruv::gates::OpenResponse)},
-  { 84, -1, sizeof(::mruv::gates::CloseRequest)},
-  { 90, -1, sizeof(::mruv::gates::CloseResponse)},
-  { 95, -1, sizeof(::mruv::gates::FindNearestGateRequest)},
-  { 104, -1, sizeof(::mruv::gates::FindNearestGateResponse)},
+  { 18, -1, sizeof(::mruv::gates::GetGateRequest)},
+  { 24, -1, sizeof(::mruv::gates::GetGateResponse)},
+  { 33, -1, sizeof(::mruv::gates::UpdateGateRequest)},
+  { 40, -1, sizeof(::mruv::gates::UpdateGateResponse)},
+  { 45, -1, sizeof(::mruv::gates::DeleteGateRequest)},
+  { 51, -1, sizeof(::mruv::gates::DeleteGateResponse)},
+  { 56, -1, sizeof(::mruv::gates::LockRequest)},
+  { 62, -1, sizeof(::mruv::gates::LockResponse)},
+  { 67, -1, sizeof(::mruv::gates::UnlockRequest)},
+  { 73, -1, sizeof(::mruv::gates::UnlockResponse)},
+  { 78, -1, sizeof(::mruv::gates::OpenRequest)},
+  { 84, -1, sizeof(::mruv::gates::OpenResponse)},
+  { 89, -1, sizeof(::mruv::gates::CloseRequest)},
+  { 95, -1, sizeof(::mruv::gates::CloseResponse)},
+  { 100, -1, sizeof(::mruv::gates::FindNearestGateRequest)},
+  { 109, -1, sizeof(::mruv::gates::FindNearestGateResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -523,48 +531,53 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_gates_2fgates_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021gates/gates.proto\022\nmruv.gates\032\034google/"
-  "api/annotations.proto\"%\n\004Gate\022\n\n\002id\030\001 \001("
-  "\r\022\021\n\testate_id\030\002 \001(\r\"\023\n\021CreateGateReques"
-  "t\"\024\n\022CreateGateResponse\"\034\n\016GetGateReques"
-  "t\022\n\n\002id\030\001 \001(\r\"\035\n\017GetGateResponse\022\n\n\002id\030\001"
-  " \001(\r\"\037\n\021UpdateGateRequest\022\n\n\002id\030\001 \001(\r\"\024\n"
-  "\022UpdateGateResponse\"\037\n\021DeleteGateRequest"
-  "\022\n\n\002id\030\001 \001(\r\"\024\n\022DeleteGateResponse\"\031\n\013Lo"
-  "ckRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014LockResponse\"\033\n"
-  "\rUnlockRequest\022\n\n\002id\030\001 \001(\r\"\020\n\016UnlockResp"
-  "onse\"\031\n\013OpenRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014OpenR"
-  "esponse\"\032\n\014CloseRequest\022\n\n\002id\030\001 \001(\r\"\017\n\rC"
-  "loseResponse\"O\n\026FindNearestGateRequest\022\t"
-  "\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\024\n\014max_d"
-  "istance\030\004 \001(\002\"7\n\027FindNearestGateResponse"
-  "\022\n\n\002id\030\001 \001(\r\022\020\n\010distance\030\002 \001(\0022\373\006\n\020MruVG"
-  "atesService\022^\n\nCreateGate\022\035.mruv.gates.C"
-  "reateGateRequest\032\036.mruv.gates.CreateGate"
-  "Response\"\021\202\323\344\223\002\013\"\t/v1/gates\022Z\n\007GetGate\022\032"
-  ".mruv.gates.GetGateRequest\032\033.mruv.gates."
-  "GetGateResponse\"\026\202\323\344\223\002\020\022\016/v1/gates/{id}\022"
-  "c\n\nUpdateGate\022\035.mruv.gates.UpdateGateReq"
-  "uest\032\036.mruv.gates.UpdateGateResponse\"\026\202\323"
-  "\344\223\002\0202\016/v1/gates/{id}\022c\n\nDeleteGate\022\035.mru"
-  "v.gates.DeleteGateRequest\032\036.mruv.gates.D"
-  "eleteGateResponse\"\026\202\323\344\223\002\020*\016/v1/gates/{id"
-  "}\022V\n\004Lock\022\027.mruv.gates.LockRequest\032\030.mru"
-  "v.gates.LockResponse\"\033\202\323\344\223\002\025\"\023/v1/gates/"
-  "{id}/lock\022^\n\006Unlock\022\031.mruv.gates.UnlockR"
-  "equest\032\032.mruv.gates.UnlockResponse\"\035\202\323\344\223"
-  "\002\027\"\025/v1/gates/{id}/unlock\022V\n\004Open\022\027.mruv"
-  ".gates.OpenRequest\032\030.mruv.gates.OpenResp"
-  "onse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/open\022Z\n\005Clo"
-  "se\022\030.mruv.gates.CloseRequest\032\031.mruv.gate"
-  "s.CloseResponse\"\034\202\323\344\223\002\026\"\024/v1/gates/{id}/"
-  "close\022u\n\017FindNearestGate\022\".mruv.gates.Fi"
-  "ndNearestGateRequest\032#.mruv.gates.FindNe"
-  "arestGateResponse\"\031\202\323\344\223\002\023\022\021/v1/gates/nea"
-  "restB%Z#github.com/MruV-RP/mruv-pb-go/ga"
-  "tesb\006proto3"
+  "api/annotations.proto\032\025objects/movable.p"
+  "roto\"\006\n\004Gate\"T\n\021CreateGateRequest\022\014\n\004nam"
+  "e\030\001 \001(\t\0221\n\014gate_objects\030\002 \003(\0132\033.mruv.obj"
+  "ects.MovableObject\" \n\022CreateGateResponse"
+  "\022\n\n\002id\030\001 \001(\r\"\034\n\016GetGateRequest\022\n\n\002id\030\001 \001"
+  "(\r\"r\n\017GetGateResponse\022\014\n\004name\030\001 \001(\t\0221\n\014g"
+  "ate_objects\030\002 \003(\0132\033.mruv.objects.Movable"
+  "Object\022\016\n\006opened\030\003 \001(\010\022\016\n\006locked\030\004 \001(\010\"-"
+  "\n\021UpdateGateRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030"
+  "\002 \001(\t\"\024\n\022UpdateGateResponse\"\037\n\021DeleteGat"
+  "eRequest\022\n\n\002id\030\001 \001(\r\"\024\n\022DeleteGateRespon"
+  "se\"\031\n\013LockRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014LockRes"
+  "ponse\"\033\n\rUnlockRequest\022\n\n\002id\030\001 \001(\r\"\020\n\016Un"
+  "lockResponse\"\031\n\013OpenRequest\022\n\n\002id\030\001 \001(\r\""
+  "\016\n\014OpenResponse\"\032\n\014CloseRequest\022\n\n\002id\030\001 "
+  "\001(\r\"\017\n\rCloseResponse\"O\n\026FindNearestGateR"
+  "equest\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022"
+  "\024\n\014max_distance\030\004 \001(\002\"7\n\027FindNearestGate"
+  "Response\022\n\n\002id\030\001 \001(\r\022\020\n\010distance\030\002 \001(\0022\373"
+  "\006\n\020MruVGatesService\022^\n\nCreateGate\022\035.mruv"
+  ".gates.CreateGateRequest\032\036.mruv.gates.Cr"
+  "eateGateResponse\"\021\202\323\344\223\002\013\"\t/v1/gates\022Z\n\007G"
+  "etGate\022\032.mruv.gates.GetGateRequest\032\033.mru"
+  "v.gates.GetGateResponse\"\026\202\323\344\223\002\020\022\016/v1/gat"
+  "es/{id}\022c\n\nUpdateGate\022\035.mruv.gates.Updat"
+  "eGateRequest\032\036.mruv.gates.UpdateGateResp"
+  "onse\"\026\202\323\344\223\002\0202\016/v1/gates/{id}\022c\n\nDeleteGa"
+  "te\022\035.mruv.gates.DeleteGateRequest\032\036.mruv"
+  ".gates.DeleteGateResponse\"\026\202\323\344\223\002\020*\016/v1/g"
+  "ates/{id}\022V\n\004Lock\022\027.mruv.gates.LockReque"
+  "st\032\030.mruv.gates.LockResponse\"\033\202\323\344\223\002\025\"\023/v"
+  "1/gates/{id}/lock\022^\n\006Unlock\022\031.mruv.gates"
+  ".UnlockRequest\032\032.mruv.gates.UnlockRespon"
+  "se\"\035\202\323\344\223\002\027\"\025/v1/gates/{id}/unlock\022V\n\004Ope"
+  "n\022\027.mruv.gates.OpenRequest\032\030.mruv.gates."
+  "OpenResponse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/ope"
+  "n\022Z\n\005Close\022\030.mruv.gates.CloseRequest\032\031.m"
+  "ruv.gates.CloseResponse\"\034\202\323\344\223\002\026\"\024/v1/gat"
+  "es/{id}/close\022u\n\017FindNearestGate\022\".mruv."
+  "gates.FindNearestGateRequest\032#.mruv.gate"
+  "s.FindNearestGateResponse\"\031\202\323\344\223\002\023\022\021/v1/g"
+  "ates/nearestB%Z#github.com/MruV-RP/mruv-"
+  "pb-go/gatesb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_gates_2fgates_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_gates_2fgates_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
+  &::descriptor_table_objects_2fmovable_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gates_2fgates_2eproto_sccs[19] = {
   &scc_info_CloseRequest_gates_2fgates_2eproto.base,
@@ -590,8 +603,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gat
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_gates_2fgates_2eproto_once;
 static bool descriptor_table_gates_2fgates_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_gates_2fgates_2eproto = {
-  &descriptor_table_gates_2fgates_2eproto_initialized, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 1571,
-  &descriptor_table_gates_2fgates_2eproto_once, descriptor_table_gates_2fgates_2eproto_sccs, descriptor_table_gates_2fgates_2eproto_deps, 19, 1,
+  &descriptor_table_gates_2fgates_2eproto_initialized, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 1739,
+  &descriptor_table_gates_2fgates_2eproto_once, descriptor_table_gates_2fgates_2eproto_sccs, descriptor_table_gates_2fgates_2eproto_deps, 19, 2,
   schemas, file_default_instances, TableStruct_gates_2fgates_2eproto::offsets,
   file_level_metadata_gates_2fgates_2eproto, 19, file_level_enum_descriptors_gates_2fgates_2eproto, file_level_service_descriptors_gates_2fgates_2eproto,
 };
@@ -618,16 +631,10 @@ Gate::Gate(const Gate& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(estate_id_));
   // @@protoc_insertion_point(copy_constructor:mruv.gates.Gate)
 }
 
 void Gate::SharedCtor() {
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&estate_id_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(estate_id_));
 }
 
 Gate::~Gate() {
@@ -653,9 +660,6 @@ void Gate::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&estate_id_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(estate_id_));
   _internal_metadata_.Clear();
 }
 
@@ -665,23 +669,6 @@ const char* Gate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 estate_id = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -689,8 +676,6 @@ const char* Gate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
-      }
-    }  // switch
   }  // while
 success:
   return ptr;
@@ -705,18 +690,6 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.gates.Gate)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
-
-  // uint32 id = 1;
-  if (this->id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
-  }
-
-  // uint32 estate_id = 2;
-  if (this->estate_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_estate_id(), target);
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -733,20 +706,6 @@ size_t Gate::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // uint32 id = 1;
-  if (this->id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
-  }
-
-  // uint32 estate_id = 2;
-  if (this->estate_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_estate_id());
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -779,12 +738,6 @@ void Gate::MergeFrom(const Gate& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
-  }
-  if (from.estate_id() != 0) {
-    _internal_set_estate_id(from._internal_estate_id());
-  }
 }
 
 void Gate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -808,8 +761,6 @@ bool Gate::IsInitialized() const {
 void Gate::InternalSwap(Gate* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
-  swap(estate_id_, other->estate_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Gate::GetMetadata() const {
@@ -825,6 +776,9 @@ class CreateGateRequest::_Internal {
  public:
 };
 
+void CreateGateRequest::clear_gate_objects() {
+  gate_objects_.Clear();
+}
 CreateGateRequest::CreateGateRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -832,12 +786,19 @@ CreateGateRequest::CreateGateRequest()
 }
 CreateGateRequest::CreateGateRequest(const CreateGateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      gate_objects_(from.gate_objects_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   // @@protoc_insertion_point(copy_constructor:mruv.gates.CreateGateRequest)
 }
 
 void CreateGateRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CreateGateRequest_gates_2fgates_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 CreateGateRequest::~CreateGateRequest() {
@@ -846,6 +807,7 @@ CreateGateRequest::~CreateGateRequest() {
 }
 
 void CreateGateRequest::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void CreateGateRequest::SetCachedSize(int size) const {
@@ -863,6 +825,8 @@ void CreateGateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  gate_objects_.Clear();
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -872,6 +836,30 @@ const char* CreateGateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.gates.CreateGateRequest.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .mruv.objects.MovableObject gate_objects = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_gate_objects(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -879,6 +867,8 @@ const char* CreateGateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -893,6 +883,24 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.gates.CreateGateRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.gates.CreateGateRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // repeated .mruv.objects.MovableObject gate_objects = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_gate_objects_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_gate_objects(i), target, stream);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -909,6 +917,20 @@ size_t CreateGateRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .mruv.objects.MovableObject gate_objects = 2;
+  total_size += 1UL * this->_internal_gate_objects_size();
+  for (const auto& msg : this->gate_objects_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -941,6 +963,11 @@ void CreateGateRequest::MergeFrom(const CreateGateRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  gate_objects_.MergeFrom(from.gate_objects_);
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
 }
 
 void CreateGateRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -964,6 +991,9 @@ bool CreateGateRequest::IsInitialized() const {
 void CreateGateRequest::InternalSwap(CreateGateRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  gate_objects_.InternalSwap(&other->gate_objects_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateGateRequest::GetMetadata() const {
@@ -988,10 +1018,12 @@ CreateGateResponse::CreateGateResponse(const CreateGateResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.gates.CreateGateResponse)
 }
 
 void CreateGateResponse::SharedCtor() {
+  id_ = 0u;
 }
 
 CreateGateResponse::~CreateGateResponse() {
@@ -1017,6 +1049,7 @@ void CreateGateResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  id_ = 0u;
   _internal_metadata_.Clear();
 }
 
@@ -1026,6 +1059,16 @@ const char* CreateGateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -1033,6 +1076,8 @@ const char* CreateGateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -1047,6 +1092,12 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:mruv.gates.CreateGateResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1063,6 +1114,13 @@ size_t CreateGateResponse::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1095,6 +1153,9 @@ void CreateGateResponse::MergeFrom(const CreateGateResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
 }
 
 void CreateGateResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1118,6 +1179,7 @@ bool CreateGateResponse::IsInitialized() const {
 void CreateGateResponse::InternalSwap(CreateGateResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(id_, other->id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateGateResponse::GetMetadata() const {
@@ -1319,6 +1381,9 @@ class GetGateResponse::_Internal {
  public:
 };
 
+void GetGateResponse::clear_gate_objects() {
+  gate_objects_.Clear();
+}
 GetGateResponse::GetGateResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
@@ -1326,14 +1391,25 @@ GetGateResponse::GetGateResponse()
 }
 GetGateResponse::GetGateResponse(const GetGateResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+      _internal_metadata_(nullptr),
+      gate_objects_(from.gate_objects_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_ = from.id_;
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  ::memcpy(&opened_, &from.opened_,
+    static_cast<size_t>(reinterpret_cast<char*>(&locked_) -
+    reinterpret_cast<char*>(&opened_)) + sizeof(locked_));
   // @@protoc_insertion_point(copy_constructor:mruv.gates.GetGateResponse)
 }
 
 void GetGateResponse::SharedCtor() {
-  id_ = 0u;
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetGateResponse_gates_2fgates_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&opened_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&locked_) -
+      reinterpret_cast<char*>(&opened_)) + sizeof(locked_));
 }
 
 GetGateResponse::~GetGateResponse() {
@@ -1342,6 +1418,7 @@ GetGateResponse::~GetGateResponse() {
 }
 
 void GetGateResponse::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetGateResponse::SetCachedSize(int size) const {
@@ -1359,7 +1436,11 @@ void GetGateResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  id_ = 0u;
+  gate_objects_.Clear();
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&opened_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&locked_) -
+      reinterpret_cast<char*>(&opened_)) + sizeof(locked_));
   _internal_metadata_.Clear();
 }
 
@@ -1370,10 +1451,38 @@ const char* GetGateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 id = 1;
+      // string name = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.gates.GetGateResponse.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .mruv.objects.MovableObject gate_objects = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_gate_objects(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bool opened = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          opened_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool locked = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          locked_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1403,10 +1512,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.gates.GetGateResponse.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // repeated .mruv.objects.MovableObject gate_objects = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_gate_objects_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_gate_objects(i), target, stream);
+  }
+
+  // bool opened = 3;
+  if (this->opened() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_opened(), target);
+  }
+
+  // bool locked = 4;
+  if (this->locked() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_locked(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1425,11 +1558,28 @@ size_t GetGateResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 id = 1;
-  if (this->id() != 0) {
+  // repeated .mruv.objects.MovableObject gate_objects = 2;
+  total_size += 1UL * this->_internal_gate_objects_size();
+  for (const auto& msg : this->gate_objects_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string name = 1;
+  if (this->name().size() > 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_id());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // bool opened = 3;
+  if (this->opened() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool locked = 4;
+  if (this->locked() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1463,8 +1613,16 @@ void GetGateResponse::MergeFrom(const GetGateResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.id() != 0) {
-    _internal_set_id(from._internal_id());
+  gate_objects_.MergeFrom(from.gate_objects_);
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.opened() != 0) {
+    _internal_set_opened(from._internal_opened());
+  }
+  if (from.locked() != 0) {
+    _internal_set_locked(from._internal_locked());
   }
 }
 
@@ -1489,7 +1647,11 @@ bool GetGateResponse::IsInitialized() const {
 void GetGateResponse::InternalSwap(GetGateResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
+  gate_objects_.InternalSwap(&other->gate_objects_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(opened_, other->opened_);
+  swap(locked_, other->locked_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetGateResponse::GetMetadata() const {
@@ -1514,11 +1676,17 @@ UpdateGateRequest::UpdateGateRequest(const UpdateGateRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.gates.UpdateGateRequest)
 }
 
 void UpdateGateRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UpdateGateRequest_gates_2fgates_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_ = 0u;
 }
 
@@ -1528,6 +1696,7 @@ UpdateGateRequest::~UpdateGateRequest() {
 }
 
 void UpdateGateRequest::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UpdateGateRequest::SetCachedSize(int size) const {
@@ -1545,6 +1714,7 @@ void UpdateGateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   id_ = 0u;
   _internal_metadata_.Clear();
 }
@@ -1560,6 +1730,15 @@ const char* UpdateGateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.gates.UpdateGateRequest.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1595,6 +1774,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
   }
 
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.gates.UpdateGateRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1610,6 +1799,13 @@ size_t UpdateGateRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
 
   // uint32 id = 1;
   if (this->id() != 0) {
@@ -1649,6 +1845,10 @@ void UpdateGateRequest::MergeFrom(const UpdateGateRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   if (from.id() != 0) {
     _internal_set_id(from._internal_id());
   }
@@ -1675,6 +1875,8 @@ bool UpdateGateRequest::IsInitialized() const {
 void UpdateGateRequest::InternalSwap(UpdateGateRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(id_, other->id_);
 }
 

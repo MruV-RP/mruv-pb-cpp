@@ -1601,7 +1601,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_CreateEntrance() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(std::bind(&WithStreamedUnaryMethod_CreateEntrance<BaseClass>::StreamedCreateEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>* streamer) {
+                       return this->StreamedCreateEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1621,7 +1628,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_GetEntrance() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(std::bind(&WithStreamedUnaryMethod_GetEntrance<BaseClass>::StreamedGetEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>* streamer) {
+                       return this->StreamedGetEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1641,7 +1655,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_UpdateEntrance() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(std::bind(&WithStreamedUnaryMethod_UpdateEntrance<BaseClass>::StreamedUpdateEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>* streamer) {
+                       return this->StreamedUpdateEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1661,7 +1682,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_DeleteEntrance() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(std::bind(&WithStreamedUnaryMethod_DeleteEntrance<BaseClass>::StreamedDeleteEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>* streamer) {
+                       return this->StreamedDeleteEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1681,7 +1709,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_Lock() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(std::bind(&WithStreamedUnaryMethod_Lock<BaseClass>::StreamedLock, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>* streamer) {
+                       return this->StreamedLock(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Lock() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1701,7 +1736,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_Unlock() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(std::bind(&WithStreamedUnaryMethod_Unlock<BaseClass>::StreamedUnlock, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>* streamer) {
+                       return this->StreamedUnlock(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Unlock() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1721,7 +1763,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_FindNearestEntrance() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(std::bind(&WithStreamedUnaryMethod_FindNearestEntrance<BaseClass>::StreamedFindNearestEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>* streamer) {
+                       return this->StreamedFindNearestEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_FindNearestEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1741,7 +1790,14 @@ class MruVEntrancesService final {
    public:
     WithStreamedUnaryMethod_Enter() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(std::bind(&WithStreamedUnaryMethod_Enter<BaseClass>::StreamedEnter, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>* streamer) {
+                       return this->StreamedEnter(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_Enter() override {
       BaseClassMustBeDerivedFromService(this);

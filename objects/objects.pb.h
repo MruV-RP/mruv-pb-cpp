@@ -56,7 +56,7 @@ struct TableStruct_objects_2fobjects_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fobjects_2eproto;
 namespace mruv {
-namespace gates {
+namespace objects {
 class CreateObjectModelRequest;
 class CreateObjectModelRequestDefaultTypeInternal;
 extern CreateObjectModelRequestDefaultTypeInternal _CreateObjectModelRequest_default_instance_;
@@ -111,35 +111,35 @@ extern UpdateObjectRequestDefaultTypeInternal _UpdateObjectRequest_default_insta
 class UpdateObjectResponse;
 class UpdateObjectResponseDefaultTypeInternal;
 extern UpdateObjectResponseDefaultTypeInternal _UpdateObjectResponse_default_instance_;
-}  // namespace gates
+}  // namespace objects
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::gates::CreateObjectModelRequest* Arena::CreateMaybeMessage<::mruv::gates::CreateObjectModelRequest>(Arena*);
-template<> ::mruv::gates::CreateObjectModelResponse* Arena::CreateMaybeMessage<::mruv::gates::CreateObjectModelResponse>(Arena*);
-template<> ::mruv::gates::CreateObjectRequest* Arena::CreateMaybeMessage<::mruv::gates::CreateObjectRequest>(Arena*);
-template<> ::mruv::gates::CreateObjectResponse* Arena::CreateMaybeMessage<::mruv::gates::CreateObjectResponse>(Arena*);
-template<> ::mruv::gates::DeleteObjectModelRequest* Arena::CreateMaybeMessage<::mruv::gates::DeleteObjectModelRequest>(Arena*);
-template<> ::mruv::gates::DeleteObjectModelResponse* Arena::CreateMaybeMessage<::mruv::gates::DeleteObjectModelResponse>(Arena*);
-template<> ::mruv::gates::DeleteObjectRequest* Arena::CreateMaybeMessage<::mruv::gates::DeleteObjectRequest>(Arena*);
-template<> ::mruv::gates::DeleteObjectResponse* Arena::CreateMaybeMessage<::mruv::gates::DeleteObjectResponse>(Arena*);
-template<> ::mruv::gates::GetObjectModelRequest* Arena::CreateMaybeMessage<::mruv::gates::GetObjectModelRequest>(Arena*);
-template<> ::mruv::gates::GetObjectModelResponse* Arena::CreateMaybeMessage<::mruv::gates::GetObjectModelResponse>(Arena*);
-template<> ::mruv::gates::GetObjectRequest* Arena::CreateMaybeMessage<::mruv::gates::GetObjectRequest>(Arena*);
-template<> ::mruv::gates::GetObjectResponse* Arena::CreateMaybeMessage<::mruv::gates::GetObjectResponse>(Arena*);
-template<> ::mruv::gates::Object* Arena::CreateMaybeMessage<::mruv::gates::Object>(Arena*);
-template<> ::mruv::gates::ObjectModel* Arena::CreateMaybeMessage<::mruv::gates::ObjectModel>(Arena*);
-template<> ::mruv::gates::UpdateObjectModelRequest* Arena::CreateMaybeMessage<::mruv::gates::UpdateObjectModelRequest>(Arena*);
-template<> ::mruv::gates::UpdateObjectModelResponse* Arena::CreateMaybeMessage<::mruv::gates::UpdateObjectModelResponse>(Arena*);
-template<> ::mruv::gates::UpdateObjectRequest* Arena::CreateMaybeMessage<::mruv::gates::UpdateObjectRequest>(Arena*);
-template<> ::mruv::gates::UpdateObjectResponse* Arena::CreateMaybeMessage<::mruv::gates::UpdateObjectResponse>(Arena*);
+template<> ::mruv::objects::CreateObjectModelRequest* Arena::CreateMaybeMessage<::mruv::objects::CreateObjectModelRequest>(Arena*);
+template<> ::mruv::objects::CreateObjectModelResponse* Arena::CreateMaybeMessage<::mruv::objects::CreateObjectModelResponse>(Arena*);
+template<> ::mruv::objects::CreateObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::CreateObjectRequest>(Arena*);
+template<> ::mruv::objects::CreateObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::CreateObjectResponse>(Arena*);
+template<> ::mruv::objects::DeleteObjectModelRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectModelRequest>(Arena*);
+template<> ::mruv::objects::DeleteObjectModelResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectModelResponse>(Arena*);
+template<> ::mruv::objects::DeleteObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectRequest>(Arena*);
+template<> ::mruv::objects::DeleteObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectResponse>(Arena*);
+template<> ::mruv::objects::GetObjectModelRequest* Arena::CreateMaybeMessage<::mruv::objects::GetObjectModelRequest>(Arena*);
+template<> ::mruv::objects::GetObjectModelResponse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectModelResponse>(Arena*);
+template<> ::mruv::objects::GetObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::GetObjectRequest>(Arena*);
+template<> ::mruv::objects::GetObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectResponse>(Arena*);
+template<> ::mruv::objects::Object* Arena::CreateMaybeMessage<::mruv::objects::Object>(Arena*);
+template<> ::mruv::objects::ObjectModel* Arena::CreateMaybeMessage<::mruv::objects::ObjectModel>(Arena*);
+template<> ::mruv::objects::UpdateObjectModelRequest* Arena::CreateMaybeMessage<::mruv::objects::UpdateObjectModelRequest>(Arena*);
+template<> ::mruv::objects::UpdateObjectModelResponse* Arena::CreateMaybeMessage<::mruv::objects::UpdateObjectModelResponse>(Arena*);
+template<> ::mruv::objects::UpdateObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::UpdateObjectRequest>(Arena*);
+template<> ::mruv::objects::UpdateObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::UpdateObjectResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
-namespace gates {
+namespace objects {
 
 // ===================================================================
 
 class ObjectModel :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.ObjectModel) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.ObjectModel) */ {
  public:
   ObjectModel();
   virtual ~ObjectModel();
@@ -219,7 +219,7 @@ class ObjectModel :
   void InternalSwap(ObjectModel* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.ObjectModel";
+    return "mruv.objects.ObjectModel";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -441,7 +441,7 @@ class ObjectModel :
   void _internal_set_visible_to(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.ObjectModel)
+  // @@protoc_insertion_point(class_scope:mruv.objects.ObjectModel)
  private:
   class _Internal;
 
@@ -468,7 +468,7 @@ class ObjectModel :
 // -------------------------------------------------------------------
 
 class Object :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.Object) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.Object) */ {
  public:
   Object();
   virtual ~Object();
@@ -548,7 +548,7 @@ class Object :
   void InternalSwap(Object* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.Object";
+    return "mruv.objects.Object";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -724,7 +724,7 @@ class Object :
   void _internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.Object)
+  // @@protoc_insertion_point(class_scope:mruv.objects.Object)
  private:
   class _Internal;
 
@@ -750,7 +750,7 @@ class Object :
 // -------------------------------------------------------------------
 
 class CreateObjectModelRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.CreateObjectModelRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.CreateObjectModelRequest) */ {
  public:
   CreateObjectModelRequest();
   virtual ~CreateObjectModelRequest();
@@ -830,7 +830,7 @@ class CreateObjectModelRequest :
   void InternalSwap(CreateObjectModelRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.CreateObjectModelRequest";
+    return "mruv.objects.CreateObjectModelRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -857,34 +857,34 @@ class CreateObjectModelRequest :
   enum : int {
     kObjectTypeFieldNumber = 1,
   };
-  // .mruv.gates.ObjectModel object_type = 1;
+  // .mruv.objects.ObjectModel object_type = 1;
   bool has_object_type() const;
   private:
   bool _internal_has_object_type() const;
   public:
   void clear_object_type();
-  const ::mruv::gates::ObjectModel& object_type() const;
-  ::mruv::gates::ObjectModel* release_object_type();
-  ::mruv::gates::ObjectModel* mutable_object_type();
-  void set_allocated_object_type(::mruv::gates::ObjectModel* object_type);
+  const ::mruv::objects::ObjectModel& object_type() const;
+  ::mruv::objects::ObjectModel* release_object_type();
+  ::mruv::objects::ObjectModel* mutable_object_type();
+  void set_allocated_object_type(::mruv::objects::ObjectModel* object_type);
   private:
-  const ::mruv::gates::ObjectModel& _internal_object_type() const;
-  ::mruv::gates::ObjectModel* _internal_mutable_object_type();
+  const ::mruv::objects::ObjectModel& _internal_object_type() const;
+  ::mruv::objects::ObjectModel* _internal_mutable_object_type();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.CreateObjectModelRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.CreateObjectModelRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::mruv::gates::ObjectModel* object_type_;
+  ::mruv::objects::ObjectModel* object_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
 // -------------------------------------------------------------------
 
 class CreateObjectModelResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.CreateObjectModelResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.CreateObjectModelResponse) */ {
  public:
   CreateObjectModelResponse();
   virtual ~CreateObjectModelResponse();
@@ -964,7 +964,7 @@ class CreateObjectModelResponse :
   void InternalSwap(CreateObjectModelResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.CreateObjectModelResponse";
+    return "mruv.objects.CreateObjectModelResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1000,7 +1000,7 @@ class CreateObjectModelResponse :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.CreateObjectModelResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.CreateObjectModelResponse)
  private:
   class _Internal;
 
@@ -1012,7 +1012,7 @@ class CreateObjectModelResponse :
 // -------------------------------------------------------------------
 
 class GetObjectModelRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.GetObjectModelRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectModelRequest) */ {
  public:
   GetObjectModelRequest();
   virtual ~GetObjectModelRequest();
@@ -1092,7 +1092,7 @@ class GetObjectModelRequest :
   void InternalSwap(GetObjectModelRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.GetObjectModelRequest";
+    return "mruv.objects.GetObjectModelRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1128,7 +1128,7 @@ class GetObjectModelRequest :
   void _internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.GetObjectModelRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectModelRequest)
  private:
   class _Internal;
 
@@ -1140,7 +1140,7 @@ class GetObjectModelRequest :
 // -------------------------------------------------------------------
 
 class GetObjectModelResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.GetObjectModelResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectModelResponse) */ {
  public:
   GetObjectModelResponse();
   virtual ~GetObjectModelResponse();
@@ -1220,7 +1220,7 @@ class GetObjectModelResponse :
   void InternalSwap(GetObjectModelResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.GetObjectModelResponse";
+    return "mruv.objects.GetObjectModelResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1247,34 +1247,34 @@ class GetObjectModelResponse :
   enum : int {
     kObjectTypeFieldNumber = 1,
   };
-  // .mruv.gates.ObjectModel object_type = 1;
+  // .mruv.objects.ObjectModel object_type = 1;
   bool has_object_type() const;
   private:
   bool _internal_has_object_type() const;
   public:
   void clear_object_type();
-  const ::mruv::gates::ObjectModel& object_type() const;
-  ::mruv::gates::ObjectModel* release_object_type();
-  ::mruv::gates::ObjectModel* mutable_object_type();
-  void set_allocated_object_type(::mruv::gates::ObjectModel* object_type);
+  const ::mruv::objects::ObjectModel& object_type() const;
+  ::mruv::objects::ObjectModel* release_object_type();
+  ::mruv::objects::ObjectModel* mutable_object_type();
+  void set_allocated_object_type(::mruv::objects::ObjectModel* object_type);
   private:
-  const ::mruv::gates::ObjectModel& _internal_object_type() const;
-  ::mruv::gates::ObjectModel* _internal_mutable_object_type();
+  const ::mruv::objects::ObjectModel& _internal_object_type() const;
+  ::mruv::objects::ObjectModel* _internal_mutable_object_type();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.GetObjectModelResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectModelResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::mruv::gates::ObjectModel* object_type_;
+  ::mruv::objects::ObjectModel* object_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
 // -------------------------------------------------------------------
 
 class UpdateObjectModelRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.UpdateObjectModelRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.UpdateObjectModelRequest) */ {
  public:
   UpdateObjectModelRequest();
   virtual ~UpdateObjectModelRequest();
@@ -1354,7 +1354,7 @@ class UpdateObjectModelRequest :
   void InternalSwap(UpdateObjectModelRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.UpdateObjectModelRequest";
+    return "mruv.objects.UpdateObjectModelRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1381,34 +1381,34 @@ class UpdateObjectModelRequest :
   enum : int {
     kObjectTypeFieldNumber = 1,
   };
-  // .mruv.gates.ObjectModel object_type = 1;
+  // .mruv.objects.ObjectModel object_type = 1;
   bool has_object_type() const;
   private:
   bool _internal_has_object_type() const;
   public:
   void clear_object_type();
-  const ::mruv::gates::ObjectModel& object_type() const;
-  ::mruv::gates::ObjectModel* release_object_type();
-  ::mruv::gates::ObjectModel* mutable_object_type();
-  void set_allocated_object_type(::mruv::gates::ObjectModel* object_type);
+  const ::mruv::objects::ObjectModel& object_type() const;
+  ::mruv::objects::ObjectModel* release_object_type();
+  ::mruv::objects::ObjectModel* mutable_object_type();
+  void set_allocated_object_type(::mruv::objects::ObjectModel* object_type);
   private:
-  const ::mruv::gates::ObjectModel& _internal_object_type() const;
-  ::mruv::gates::ObjectModel* _internal_mutable_object_type();
+  const ::mruv::objects::ObjectModel& _internal_object_type() const;
+  ::mruv::objects::ObjectModel* _internal_mutable_object_type();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.UpdateObjectModelRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.UpdateObjectModelRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::mruv::gates::ObjectModel* object_type_;
+  ::mruv::objects::ObjectModel* object_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
 // -------------------------------------------------------------------
 
 class UpdateObjectModelResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.UpdateObjectModelResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.UpdateObjectModelResponse) */ {
  public:
   UpdateObjectModelResponse();
   virtual ~UpdateObjectModelResponse();
@@ -1488,7 +1488,7 @@ class UpdateObjectModelResponse :
   void InternalSwap(UpdateObjectModelResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.UpdateObjectModelResponse";
+    return "mruv.objects.UpdateObjectModelResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1512,7 +1512,7 @@ class UpdateObjectModelResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.UpdateObjectModelResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.UpdateObjectModelResponse)
  private:
   class _Internal;
 
@@ -1523,7 +1523,7 @@ class UpdateObjectModelResponse :
 // -------------------------------------------------------------------
 
 class DeleteObjectModelRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.DeleteObjectModelRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectModelRequest) */ {
  public:
   DeleteObjectModelRequest();
   virtual ~DeleteObjectModelRequest();
@@ -1603,7 +1603,7 @@ class DeleteObjectModelRequest :
   void InternalSwap(DeleteObjectModelRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.DeleteObjectModelRequest";
+    return "mruv.objects.DeleteObjectModelRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1639,7 +1639,7 @@ class DeleteObjectModelRequest :
   void _internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.DeleteObjectModelRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectModelRequest)
  private:
   class _Internal;
 
@@ -1651,7 +1651,7 @@ class DeleteObjectModelRequest :
 // -------------------------------------------------------------------
 
 class DeleteObjectModelResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.DeleteObjectModelResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectModelResponse) */ {
  public:
   DeleteObjectModelResponse();
   virtual ~DeleteObjectModelResponse();
@@ -1731,7 +1731,7 @@ class DeleteObjectModelResponse :
   void InternalSwap(DeleteObjectModelResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.DeleteObjectModelResponse";
+    return "mruv.objects.DeleteObjectModelResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1755,7 +1755,7 @@ class DeleteObjectModelResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.DeleteObjectModelResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectModelResponse)
  private:
   class _Internal;
 
@@ -1766,7 +1766,7 @@ class DeleteObjectModelResponse :
 // -------------------------------------------------------------------
 
 class CreateObjectRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.CreateObjectRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.CreateObjectRequest) */ {
  public:
   CreateObjectRequest();
   virtual ~CreateObjectRequest();
@@ -1846,7 +1846,7 @@ class CreateObjectRequest :
   void InternalSwap(CreateObjectRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.CreateObjectRequest";
+    return "mruv.objects.CreateObjectRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1873,34 +1873,34 @@ class CreateObjectRequest :
   enum : int {
     kObjectFieldNumber = 1,
   };
-  // .mruv.gates.Object object = 1;
+  // .mruv.objects.Object object = 1;
   bool has_object() const;
   private:
   bool _internal_has_object() const;
   public:
   void clear_object();
-  const ::mruv::gates::Object& object() const;
-  ::mruv::gates::Object* release_object();
-  ::mruv::gates::Object* mutable_object();
-  void set_allocated_object(::mruv::gates::Object* object);
+  const ::mruv::objects::Object& object() const;
+  ::mruv::objects::Object* release_object();
+  ::mruv::objects::Object* mutable_object();
+  void set_allocated_object(::mruv::objects::Object* object);
   private:
-  const ::mruv::gates::Object& _internal_object() const;
-  ::mruv::gates::Object* _internal_mutable_object();
+  const ::mruv::objects::Object& _internal_object() const;
+  ::mruv::objects::Object* _internal_mutable_object();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.CreateObjectRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.CreateObjectRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::mruv::gates::Object* object_;
+  ::mruv::objects::Object* object_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
 // -------------------------------------------------------------------
 
 class CreateObjectResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.CreateObjectResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.CreateObjectResponse) */ {
  public:
   CreateObjectResponse();
   virtual ~CreateObjectResponse();
@@ -1980,7 +1980,7 @@ class CreateObjectResponse :
   void InternalSwap(CreateObjectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.CreateObjectResponse";
+    return "mruv.objects.CreateObjectResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2016,7 +2016,7 @@ class CreateObjectResponse :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.CreateObjectResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.CreateObjectResponse)
  private:
   class _Internal;
 
@@ -2028,7 +2028,7 @@ class CreateObjectResponse :
 // -------------------------------------------------------------------
 
 class GetObjectRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.GetObjectRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectRequest) */ {
  public:
   GetObjectRequest();
   virtual ~GetObjectRequest();
@@ -2108,7 +2108,7 @@ class GetObjectRequest :
   void InternalSwap(GetObjectRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.GetObjectRequest";
+    return "mruv.objects.GetObjectRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2144,7 +2144,7 @@ class GetObjectRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.GetObjectRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectRequest)
  private:
   class _Internal;
 
@@ -2156,7 +2156,7 @@ class GetObjectRequest :
 // -------------------------------------------------------------------
 
 class GetObjectResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.GetObjectResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectResponse) */ {
  public:
   GetObjectResponse();
   virtual ~GetObjectResponse();
@@ -2236,7 +2236,7 @@ class GetObjectResponse :
   void InternalSwap(GetObjectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.GetObjectResponse";
+    return "mruv.objects.GetObjectResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2263,34 +2263,34 @@ class GetObjectResponse :
   enum : int {
     kObjectFieldNumber = 1,
   };
-  // .mruv.gates.Object object = 1;
+  // .mruv.objects.Object object = 1;
   bool has_object() const;
   private:
   bool _internal_has_object() const;
   public:
   void clear_object();
-  const ::mruv::gates::Object& object() const;
-  ::mruv::gates::Object* release_object();
-  ::mruv::gates::Object* mutable_object();
-  void set_allocated_object(::mruv::gates::Object* object);
+  const ::mruv::objects::Object& object() const;
+  ::mruv::objects::Object* release_object();
+  ::mruv::objects::Object* mutable_object();
+  void set_allocated_object(::mruv::objects::Object* object);
   private:
-  const ::mruv::gates::Object& _internal_object() const;
-  ::mruv::gates::Object* _internal_mutable_object();
+  const ::mruv::objects::Object& _internal_object() const;
+  ::mruv::objects::Object* _internal_mutable_object();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.GetObjectResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::mruv::gates::Object* object_;
+  ::mruv::objects::Object* object_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
 // -------------------------------------------------------------------
 
 class UpdateObjectRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.UpdateObjectRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.UpdateObjectRequest) */ {
  public:
   UpdateObjectRequest();
   virtual ~UpdateObjectRequest();
@@ -2370,7 +2370,7 @@ class UpdateObjectRequest :
   void InternalSwap(UpdateObjectRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.UpdateObjectRequest";
+    return "mruv.objects.UpdateObjectRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2398,19 +2398,19 @@ class UpdateObjectRequest :
     kObjectFieldNumber = 2,
     kIdFieldNumber = 1,
   };
-  // .mruv.gates.Object object = 2;
+  // .mruv.objects.Object object = 2;
   bool has_object() const;
   private:
   bool _internal_has_object() const;
   public:
   void clear_object();
-  const ::mruv::gates::Object& object() const;
-  ::mruv::gates::Object* release_object();
-  ::mruv::gates::Object* mutable_object();
-  void set_allocated_object(::mruv::gates::Object* object);
+  const ::mruv::objects::Object& object() const;
+  ::mruv::objects::Object* release_object();
+  ::mruv::objects::Object* mutable_object();
+  void set_allocated_object(::mruv::objects::Object* object);
   private:
-  const ::mruv::gates::Object& _internal_object() const;
-  ::mruv::gates::Object* _internal_mutable_object();
+  const ::mruv::objects::Object& _internal_object() const;
+  ::mruv::objects::Object* _internal_mutable_object();
   public:
 
   // uint32 id = 1;
@@ -2422,12 +2422,12 @@ class UpdateObjectRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.UpdateObjectRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.UpdateObjectRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::mruv::gates::Object* object_;
+  ::mruv::objects::Object* object_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
@@ -2435,7 +2435,7 @@ class UpdateObjectRequest :
 // -------------------------------------------------------------------
 
 class UpdateObjectResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.UpdateObjectResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.UpdateObjectResponse) */ {
  public:
   UpdateObjectResponse();
   virtual ~UpdateObjectResponse();
@@ -2515,7 +2515,7 @@ class UpdateObjectResponse :
   void InternalSwap(UpdateObjectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.UpdateObjectResponse";
+    return "mruv.objects.UpdateObjectResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2539,7 +2539,7 @@ class UpdateObjectResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.UpdateObjectResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.UpdateObjectResponse)
  private:
   class _Internal;
 
@@ -2550,7 +2550,7 @@ class UpdateObjectResponse :
 // -------------------------------------------------------------------
 
 class DeleteObjectRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.DeleteObjectRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectRequest) */ {
  public:
   DeleteObjectRequest();
   virtual ~DeleteObjectRequest();
@@ -2630,7 +2630,7 @@ class DeleteObjectRequest :
   void InternalSwap(DeleteObjectRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.DeleteObjectRequest";
+    return "mruv.objects.DeleteObjectRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2666,7 +2666,7 @@ class DeleteObjectRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.DeleteObjectRequest)
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectRequest)
  private:
   class _Internal;
 
@@ -2678,7 +2678,7 @@ class DeleteObjectRequest :
 // -------------------------------------------------------------------
 
 class DeleteObjectResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.gates.DeleteObjectResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectResponse) */ {
  public:
   DeleteObjectResponse();
   virtual ~DeleteObjectResponse();
@@ -2758,7 +2758,7 @@ class DeleteObjectResponse :
   void InternalSwap(DeleteObjectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.gates.DeleteObjectResponse";
+    return "mruv.objects.DeleteObjectResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2782,7 +2782,7 @@ class DeleteObjectResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.gates.DeleteObjectResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectResponse)
  private:
   class _Internal;
 
@@ -2809,7 +2809,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::_internal_model() const {
   return model_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::model() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.model)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.model)
   return _internal_model();
 }
 inline void ObjectModel::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2818,7 +2818,7 @@ inline void ObjectModel::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 val
 }
 inline void ObjectModel::set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_model(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.model)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.model)
 }
 
 // string model_name = 2;
@@ -2826,15 +2826,15 @@ inline void ObjectModel::clear_model_name() {
   model_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ObjectModel::model_name() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.model_name)
   return _internal_model_name();
 }
 inline void ObjectModel::set_model_name(const std::string& value) {
   _internal_set_model_name(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.model_name)
 }
 inline std::string* ObjectModel::mutable_model_name() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_mutable:mruv.objects.ObjectModel.model_name)
   return _internal_mutable_model_name();
 }
 inline const std::string& ObjectModel::_internal_model_name() const {
@@ -2848,26 +2848,26 @@ inline void ObjectModel::set_model_name(std::string&& value) {
   
   model_name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.ObjectModel.model_name)
 }
 inline void ObjectModel::set_model_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   model_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_set_char:mruv.objects.ObjectModel.model_name)
 }
 inline void ObjectModel::set_model_name(const char* value, size_t size) {
   
   model_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.ObjectModel.model_name)
 }
 inline std::string* ObjectModel::_internal_mutable_model_name() {
   
   return model_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ObjectModel::release_model_name() {
-  // @@protoc_insertion_point(field_release:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_release:mruv.objects.ObjectModel.model_name)
   
   return model_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2878,7 +2878,7 @@ inline void ObjectModel::set_allocated_model_name(std::string* model_name) {
     
   }
   model_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), model_name);
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.ObjectModel.model_name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.ObjectModel.model_name)
 }
 
 // string name = 3;
@@ -2886,15 +2886,15 @@ inline void ObjectModel::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ObjectModel::name() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.name)
   return _internal_name();
 }
 inline void ObjectModel::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.name)
 }
 inline std::string* ObjectModel::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_mutable:mruv.objects.ObjectModel.name)
   return _internal_mutable_name();
 }
 inline const std::string& ObjectModel::_internal_name() const {
@@ -2908,26 +2908,26 @@ inline void ObjectModel::set_name(std::string&& value) {
   
   name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.ObjectModel.name)
 }
 inline void ObjectModel::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_set_char:mruv.objects.ObjectModel.name)
 }
 inline void ObjectModel::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.ObjectModel.name)
 }
 inline std::string* ObjectModel::_internal_mutable_name() {
   
   return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ObjectModel::release_name() {
-  // @@protoc_insertion_point(field_release:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_release:mruv.objects.ObjectModel.name)
   
   return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2938,7 +2938,7 @@ inline void ObjectModel::set_allocated_name(std::string* name) {
     
   }
   name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.ObjectModel.name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.ObjectModel.name)
 }
 
 // string category = 13;
@@ -2946,15 +2946,15 @@ inline void ObjectModel::clear_category() {
   category_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& ObjectModel::category() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.category)
   return _internal_category();
 }
 inline void ObjectModel::set_category(const std::string& value) {
   _internal_set_category(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.category)
 }
 inline std::string* ObjectModel::mutable_category() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_mutable:mruv.objects.ObjectModel.category)
   return _internal_mutable_category();
 }
 inline const std::string& ObjectModel::_internal_category() const {
@@ -2968,26 +2968,26 @@ inline void ObjectModel::set_category(std::string&& value) {
   
   category_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.ObjectModel.category)
 }
 inline void ObjectModel::set_category(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   category_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_set_char:mruv.objects.ObjectModel.category)
 }
 inline void ObjectModel::set_category(const char* value, size_t size) {
   
   category_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.ObjectModel.category)
 }
 inline std::string* ObjectModel::_internal_mutable_category() {
   
   return category_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* ObjectModel::release_category() {
-  // @@protoc_insertion_point(field_release:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_release:mruv.objects.ObjectModel.category)
   
   return category_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2998,7 +2998,7 @@ inline void ObjectModel::set_allocated_category(std::string* category) {
     
   }
   category_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), category);
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.ObjectModel.category)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.ObjectModel.category)
 }
 
 // uint32 product_id = 4;
@@ -3009,7 +3009,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::_internal_product_id() const
   return product_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::product_id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.product_id)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.product_id)
   return _internal_product_id();
 }
 inline void ObjectModel::_internal_set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3018,7 +3018,7 @@ inline void ObjectModel::_internal_set_product_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void ObjectModel::set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_product_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.product_id)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.product_id)
 }
 
 // double length = 5;
@@ -3029,7 +3029,7 @@ inline double ObjectModel::_internal_length() const {
   return length_;
 }
 inline double ObjectModel::length() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.length)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.length)
   return _internal_length();
 }
 inline void ObjectModel::_internal_set_length(double value) {
@@ -3038,7 +3038,7 @@ inline void ObjectModel::_internal_set_length(double value) {
 }
 inline void ObjectModel::set_length(double value) {
   _internal_set_length(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.length)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.length)
 }
 
 // double width = 6;
@@ -3049,7 +3049,7 @@ inline double ObjectModel::_internal_width() const {
   return width_;
 }
 inline double ObjectModel::width() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.width)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.width)
   return _internal_width();
 }
 inline void ObjectModel::_internal_set_width(double value) {
@@ -3058,7 +3058,7 @@ inline void ObjectModel::_internal_set_width(double value) {
 }
 inline void ObjectModel::set_width(double value) {
   _internal_set_width(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.width)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.width)
 }
 
 // double height = 7;
@@ -3069,7 +3069,7 @@ inline double ObjectModel::_internal_height() const {
   return height_;
 }
 inline double ObjectModel::height() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.height)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.height)
   return _internal_height();
 }
 inline void ObjectModel::_internal_set_height(double value) {
@@ -3078,7 +3078,7 @@ inline void ObjectModel::_internal_set_height(double value) {
 }
 inline void ObjectModel::set_height(double value) {
   _internal_set_height(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.height)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.height)
 }
 
 // double size = 8;
@@ -3089,7 +3089,7 @@ inline double ObjectModel::_internal_size() const {
   return size_;
 }
 inline double ObjectModel::size() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.size)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.size)
   return _internal_size();
 }
 inline void ObjectModel::_internal_set_size(double value) {
@@ -3098,7 +3098,7 @@ inline void ObjectModel::_internal_set_size(double value) {
 }
 inline void ObjectModel::set_size(double value) {
   _internal_set_size(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.size)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.size)
 }
 
 // repeated string tags = 9;
@@ -3112,66 +3112,66 @@ inline void ObjectModel::clear_tags() {
   tags_.Clear();
 }
 inline std::string* ObjectModel::add_tags() {
-  // @@protoc_insertion_point(field_add_mutable:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_add_mutable:mruv.objects.ObjectModel.tags)
   return _internal_add_tags();
 }
 inline const std::string& ObjectModel::_internal_tags(int index) const {
   return tags_.Get(index);
 }
 inline const std::string& ObjectModel::tags(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.tags)
   return _internal_tags(index);
 }
 inline std::string* ObjectModel::mutable_tags(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_mutable:mruv.objects.ObjectModel.tags)
   return tags_.Mutable(index);
 }
 inline void ObjectModel::set_tags(int index, const std::string& value) {
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.tags)
   tags_.Mutable(index)->assign(value);
 }
 inline void ObjectModel::set_tags(int index, std::string&& value) {
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.tags)
   tags_.Mutable(index)->assign(std::move(value));
 }
 inline void ObjectModel::set_tags(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   tags_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_set_char:mruv.objects.ObjectModel.tags)
 }
 inline void ObjectModel::set_tags(int index, const char* value, size_t size) {
   tags_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.ObjectModel.tags)
 }
 inline std::string* ObjectModel::_internal_add_tags() {
   return tags_.Add();
 }
 inline void ObjectModel::add_tags(const std::string& value) {
   tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_add:mruv.objects.ObjectModel.tags)
 }
 inline void ObjectModel::add_tags(std::string&& value) {
   tags_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_add:mruv.objects.ObjectModel.tags)
 }
 inline void ObjectModel::add_tags(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   tags_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_add_char:mruv.objects.ObjectModel.tags)
 }
 inline void ObjectModel::add_tags(const char* value, size_t size) {
   tags_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_add_pointer:mruv.objects.ObjectModel.tags)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 ObjectModel::tags() const {
-  // @@protoc_insertion_point(field_list:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_list:mruv.objects.ObjectModel.tags)
   return tags_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 ObjectModel::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.gates.ObjectModel.tags)
+  // @@protoc_insertion_point(field_mutable_list:mruv.objects.ObjectModel.tags)
   return &tags_;
 }
 
@@ -3183,7 +3183,7 @@ inline bool ObjectModel::_internal_has_collision() const {
   return has_collision_;
 }
 inline bool ObjectModel::has_collision() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.has_collision)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.has_collision)
   return _internal_has_collision();
 }
 inline void ObjectModel::_internal_set_has_collision(bool value) {
@@ -3192,7 +3192,7 @@ inline void ObjectModel::_internal_set_has_collision(bool value) {
 }
 inline void ObjectModel::set_has_collision(bool value) {
   _internal_set_has_collision(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.has_collision)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.has_collision)
 }
 
 // bool breaks_on_hit = 11;
@@ -3203,7 +3203,7 @@ inline bool ObjectModel::_internal_breaks_on_hit() const {
   return breaks_on_hit_;
 }
 inline bool ObjectModel::breaks_on_hit() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.breaks_on_hit)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.breaks_on_hit)
   return _internal_breaks_on_hit();
 }
 inline void ObjectModel::_internal_set_breaks_on_hit(bool value) {
@@ -3212,7 +3212,7 @@ inline void ObjectModel::_internal_set_breaks_on_hit(bool value) {
 }
 inline void ObjectModel::set_breaks_on_hit(bool value) {
   _internal_set_breaks_on_hit(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.breaks_on_hit)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.breaks_on_hit)
 }
 
 // bool has_animation = 12;
@@ -3223,7 +3223,7 @@ inline bool ObjectModel::_internal_has_animation() const {
   return has_animation_;
 }
 inline bool ObjectModel::has_animation() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.has_animation)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.has_animation)
   return _internal_has_animation();
 }
 inline void ObjectModel::_internal_set_has_animation(bool value) {
@@ -3232,7 +3232,7 @@ inline void ObjectModel::_internal_set_has_animation(bool value) {
 }
 inline void ObjectModel::set_has_animation(bool value) {
   _internal_set_has_animation(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.has_animation)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.has_animation)
 }
 
 // bool visible_by_time = 16;
@@ -3243,7 +3243,7 @@ inline bool ObjectModel::_internal_visible_by_time() const {
   return visible_by_time_;
 }
 inline bool ObjectModel::visible_by_time() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.visible_by_time)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.visible_by_time)
   return _internal_visible_by_time();
 }
 inline void ObjectModel::_internal_set_visible_by_time(bool value) {
@@ -3252,7 +3252,7 @@ inline void ObjectModel::_internal_set_visible_by_time(bool value) {
 }
 inline void ObjectModel::set_visible_by_time(bool value) {
   _internal_set_visible_by_time(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.visible_by_time)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.visible_by_time)
 }
 
 // uint32 visible_from = 17;
@@ -3263,7 +3263,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::_internal_visible_from() con
   return visible_from_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::visible_from() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.visible_from)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.visible_from)
   return _internal_visible_from();
 }
 inline void ObjectModel::_internal_set_visible_from(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3272,7 +3272,7 @@ inline void ObjectModel::_internal_set_visible_from(::PROTOBUF_NAMESPACE_ID::uin
 }
 inline void ObjectModel::set_visible_from(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_visible_from(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.visible_from)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.visible_from)
 }
 
 // uint32 visible_to = 18;
@@ -3283,7 +3283,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::_internal_visible_to() const
   return visible_to_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ObjectModel::visible_to() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.ObjectModel.visible_to)
+  // @@protoc_insertion_point(field_get:mruv.objects.ObjectModel.visible_to)
   return _internal_visible_to();
 }
 inline void ObjectModel::_internal_set_visible_to(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3292,7 +3292,7 @@ inline void ObjectModel::_internal_set_visible_to(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void ObjectModel::set_visible_to(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_visible_to(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.ObjectModel.visible_to)
+  // @@protoc_insertion_point(field_set:mruv.objects.ObjectModel.visible_to)
 }
 
 // -------------------------------------------------------------------
@@ -3307,7 +3307,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::_internal_model() const {
   return model_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::model() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.model)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.model)
   return _internal_model();
 }
 inline void Object::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3316,7 +3316,7 @@ inline void Object::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 }
 inline void Object::set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_model(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.model)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.model)
 }
 
 // uint32 estate_id = 2;
@@ -3327,7 +3327,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::_internal_estate_id() const {
   return estate_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::estate_id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.estate_id)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.estate_id)
   return _internal_estate_id();
 }
 inline void Object::_internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3336,7 +3336,7 @@ inline void Object::_internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 valu
 }
 inline void Object::set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_estate_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.estate_id)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.estate_id)
 }
 
 // float x = 3;
@@ -3347,7 +3347,7 @@ inline float Object::_internal_x() const {
   return x_;
 }
 inline float Object::x() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.x)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.x)
   return _internal_x();
 }
 inline void Object::_internal_set_x(float value) {
@@ -3356,7 +3356,7 @@ inline void Object::_internal_set_x(float value) {
 }
 inline void Object::set_x(float value) {
   _internal_set_x(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.x)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.x)
 }
 
 // float y = 4;
@@ -3367,7 +3367,7 @@ inline float Object::_internal_y() const {
   return y_;
 }
 inline float Object::y() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.y)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.y)
   return _internal_y();
 }
 inline void Object::_internal_set_y(float value) {
@@ -3376,7 +3376,7 @@ inline void Object::_internal_set_y(float value) {
 }
 inline void Object::set_y(float value) {
   _internal_set_y(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.y)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.y)
 }
 
 // float z = 5;
@@ -3387,7 +3387,7 @@ inline float Object::_internal_z() const {
   return z_;
 }
 inline float Object::z() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.z)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.z)
   return _internal_z();
 }
 inline void Object::_internal_set_z(float value) {
@@ -3396,7 +3396,7 @@ inline void Object::_internal_set_z(float value) {
 }
 inline void Object::set_z(float value) {
   _internal_set_z(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.z)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.z)
 }
 
 // float rx = 6;
@@ -3407,7 +3407,7 @@ inline float Object::_internal_rx() const {
   return rx_;
 }
 inline float Object::rx() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.rx)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.rx)
   return _internal_rx();
 }
 inline void Object::_internal_set_rx(float value) {
@@ -3416,7 +3416,7 @@ inline void Object::_internal_set_rx(float value) {
 }
 inline void Object::set_rx(float value) {
   _internal_set_rx(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.rx)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.rx)
 }
 
 // float ry = 7;
@@ -3427,7 +3427,7 @@ inline float Object::_internal_ry() const {
   return ry_;
 }
 inline float Object::ry() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.ry)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.ry)
   return _internal_ry();
 }
 inline void Object::_internal_set_ry(float value) {
@@ -3436,7 +3436,7 @@ inline void Object::_internal_set_ry(float value) {
 }
 inline void Object::set_ry(float value) {
   _internal_set_ry(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.ry)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.ry)
 }
 
 // float rz = 8;
@@ -3447,7 +3447,7 @@ inline float Object::_internal_rz() const {
   return rz_;
 }
 inline float Object::rz() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.rz)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.rz)
   return _internal_rz();
 }
 inline void Object::_internal_set_rz(float value) {
@@ -3456,7 +3456,7 @@ inline void Object::_internal_set_rz(float value) {
 }
 inline void Object::set_rz(float value) {
   _internal_set_rz(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.rz)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.rz)
 }
 
 // int32 world_id = 9;
@@ -3467,7 +3467,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 Object::_internal_world_id() const {
   return world_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 Object::world_id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.world_id)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.world_id)
   return _internal_world_id();
 }
 inline void Object::_internal_set_world_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -3476,7 +3476,7 @@ inline void Object::_internal_set_world_id(::PROTOBUF_NAMESPACE_ID::int32 value)
 }
 inline void Object::set_world_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_world_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.world_id)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.world_id)
 }
 
 // int32 interior_id = 10;
@@ -3487,7 +3487,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 Object::_internal_interior_id() const {
   return interior_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 Object::interior_id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.interior_id)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.interior_id)
   return _internal_interior_id();
 }
 inline void Object::_internal_set_interior_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -3496,7 +3496,7 @@ inline void Object::_internal_set_interior_id(::PROTOBUF_NAMESPACE_ID::int32 val
 }
 inline void Object::set_interior_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_interior_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.interior_id)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.interior_id)
 }
 
 // int32 player_id = 11;
@@ -3507,7 +3507,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 Object::_internal_player_id() const {
   return player_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 Object::player_id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.player_id)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.player_id)
   return _internal_player_id();
 }
 inline void Object::_internal_set_player_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -3516,7 +3516,7 @@ inline void Object::_internal_set_player_id(::PROTOBUF_NAMESPACE_ID::int32 value
 }
 inline void Object::set_player_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_player_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.player_id)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.player_id)
 }
 
 // int32 area_id = 12;
@@ -3527,7 +3527,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 Object::_internal_area_id() const {
   return area_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 Object::area_id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.area_id)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.area_id)
   return _internal_area_id();
 }
 inline void Object::_internal_set_area_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -3536,7 +3536,7 @@ inline void Object::_internal_set_area_id(::PROTOBUF_NAMESPACE_ID::int32 value) 
 }
 inline void Object::set_area_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_area_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.area_id)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.area_id)
 }
 
 // float stream_distance = 13;
@@ -3547,7 +3547,7 @@ inline float Object::_internal_stream_distance() const {
   return stream_distance_;
 }
 inline float Object::stream_distance() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.stream_distance)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.stream_distance)
   return _internal_stream_distance();
 }
 inline void Object::_internal_set_stream_distance(float value) {
@@ -3556,7 +3556,7 @@ inline void Object::_internal_set_stream_distance(float value) {
 }
 inline void Object::set_stream_distance(float value) {
   _internal_set_stream_distance(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.stream_distance)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.stream_distance)
 }
 
 // float draw_distance = 14;
@@ -3567,7 +3567,7 @@ inline float Object::_internal_draw_distance() const {
   return draw_distance_;
 }
 inline float Object::draw_distance() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.draw_distance)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.draw_distance)
   return _internal_draw_distance();
 }
 inline void Object::_internal_set_draw_distance(float value) {
@@ -3576,7 +3576,7 @@ inline void Object::_internal_set_draw_distance(float value) {
 }
 inline void Object::set_draw_distance(float value) {
   _internal_set_draw_distance(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.draw_distance)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.draw_distance)
 }
 
 // int32 priority = 15;
@@ -3587,7 +3587,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 Object::_internal_priority() const {
   return priority_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 Object::priority() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.Object.priority)
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.priority)
   return _internal_priority();
 }
 inline void Object::_internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -3596,14 +3596,14 @@ inline void Object::_internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value)
 }
 inline void Object::set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_priority(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.Object.priority)
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.priority)
 }
 
 // -------------------------------------------------------------------
 
 // CreateObjectModelRequest
 
-// .mruv.gates.ObjectModel object_type = 1;
+// .mruv.objects.ObjectModel object_type = 1;
 inline bool CreateObjectModelRequest::_internal_has_object_type() const {
   return this != internal_default_instance() && object_type_ != nullptr;
 }
@@ -3616,35 +3616,35 @@ inline void CreateObjectModelRequest::clear_object_type() {
   }
   object_type_ = nullptr;
 }
-inline const ::mruv::gates::ObjectModel& CreateObjectModelRequest::_internal_object_type() const {
-  const ::mruv::gates::ObjectModel* p = object_type_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::gates::ObjectModel*>(
-      &::mruv::gates::_ObjectModel_default_instance_);
+inline const ::mruv::objects::ObjectModel& CreateObjectModelRequest::_internal_object_type() const {
+  const ::mruv::objects::ObjectModel* p = object_type_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::ObjectModel*>(
+      &::mruv::objects::_ObjectModel_default_instance_);
 }
-inline const ::mruv::gates::ObjectModel& CreateObjectModelRequest::object_type() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.CreateObjectModelRequest.object_type)
+inline const ::mruv::objects::ObjectModel& CreateObjectModelRequest::object_type() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.CreateObjectModelRequest.object_type)
   return _internal_object_type();
 }
-inline ::mruv::gates::ObjectModel* CreateObjectModelRequest::release_object_type() {
-  // @@protoc_insertion_point(field_release:mruv.gates.CreateObjectModelRequest.object_type)
+inline ::mruv::objects::ObjectModel* CreateObjectModelRequest::release_object_type() {
+  // @@protoc_insertion_point(field_release:mruv.objects.CreateObjectModelRequest.object_type)
   
-  ::mruv::gates::ObjectModel* temp = object_type_;
+  ::mruv::objects::ObjectModel* temp = object_type_;
   object_type_ = nullptr;
   return temp;
 }
-inline ::mruv::gates::ObjectModel* CreateObjectModelRequest::_internal_mutable_object_type() {
+inline ::mruv::objects::ObjectModel* CreateObjectModelRequest::_internal_mutable_object_type() {
   
   if (object_type_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::gates::ObjectModel>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::mruv::objects::ObjectModel>(GetArenaNoVirtual());
     object_type_ = p;
   }
   return object_type_;
 }
-inline ::mruv::gates::ObjectModel* CreateObjectModelRequest::mutable_object_type() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.CreateObjectModelRequest.object_type)
+inline ::mruv::objects::ObjectModel* CreateObjectModelRequest::mutable_object_type() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.CreateObjectModelRequest.object_type)
   return _internal_mutable_object_type();
 }
-inline void CreateObjectModelRequest::set_allocated_object_type(::mruv::gates::ObjectModel* object_type) {
+inline void CreateObjectModelRequest::set_allocated_object_type(::mruv::objects::ObjectModel* object_type) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete object_type_;
@@ -3660,7 +3660,7 @@ inline void CreateObjectModelRequest::set_allocated_object_type(::mruv::gates::O
     
   }
   object_type_ = object_type;
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.CreateObjectModelRequest.object_type)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.CreateObjectModelRequest.object_type)
 }
 
 // -------------------------------------------------------------------
@@ -3675,7 +3675,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateObjectModelResponse::_internal_id()
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateObjectModelResponse::id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.CreateObjectModelResponse.id)
+  // @@protoc_insertion_point(field_get:mruv.objects.CreateObjectModelResponse.id)
   return _internal_id();
 }
 inline void CreateObjectModelResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3684,7 +3684,7 @@ inline void CreateObjectModelResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID:
 }
 inline void CreateObjectModelResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.CreateObjectModelResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.objects.CreateObjectModelResponse.id)
 }
 
 // -------------------------------------------------------------------
@@ -3699,7 +3699,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectModelRequest::_internal_model() 
   return model_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectModelRequest::model() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.GetObjectModelRequest.model)
+  // @@protoc_insertion_point(field_get:mruv.objects.GetObjectModelRequest.model)
   return _internal_model();
 }
 inline void GetObjectModelRequest::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3708,14 +3708,14 @@ inline void GetObjectModelRequest::_internal_set_model(::PROTOBUF_NAMESPACE_ID::
 }
 inline void GetObjectModelRequest::set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_model(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.GetObjectModelRequest.model)
+  // @@protoc_insertion_point(field_set:mruv.objects.GetObjectModelRequest.model)
 }
 
 // -------------------------------------------------------------------
 
 // GetObjectModelResponse
 
-// .mruv.gates.ObjectModel object_type = 1;
+// .mruv.objects.ObjectModel object_type = 1;
 inline bool GetObjectModelResponse::_internal_has_object_type() const {
   return this != internal_default_instance() && object_type_ != nullptr;
 }
@@ -3728,35 +3728,35 @@ inline void GetObjectModelResponse::clear_object_type() {
   }
   object_type_ = nullptr;
 }
-inline const ::mruv::gates::ObjectModel& GetObjectModelResponse::_internal_object_type() const {
-  const ::mruv::gates::ObjectModel* p = object_type_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::gates::ObjectModel*>(
-      &::mruv::gates::_ObjectModel_default_instance_);
+inline const ::mruv::objects::ObjectModel& GetObjectModelResponse::_internal_object_type() const {
+  const ::mruv::objects::ObjectModel* p = object_type_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::ObjectModel*>(
+      &::mruv::objects::_ObjectModel_default_instance_);
 }
-inline const ::mruv::gates::ObjectModel& GetObjectModelResponse::object_type() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.GetObjectModelResponse.object_type)
+inline const ::mruv::objects::ObjectModel& GetObjectModelResponse::object_type() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.GetObjectModelResponse.object_type)
   return _internal_object_type();
 }
-inline ::mruv::gates::ObjectModel* GetObjectModelResponse::release_object_type() {
-  // @@protoc_insertion_point(field_release:mruv.gates.GetObjectModelResponse.object_type)
+inline ::mruv::objects::ObjectModel* GetObjectModelResponse::release_object_type() {
+  // @@protoc_insertion_point(field_release:mruv.objects.GetObjectModelResponse.object_type)
   
-  ::mruv::gates::ObjectModel* temp = object_type_;
+  ::mruv::objects::ObjectModel* temp = object_type_;
   object_type_ = nullptr;
   return temp;
 }
-inline ::mruv::gates::ObjectModel* GetObjectModelResponse::_internal_mutable_object_type() {
+inline ::mruv::objects::ObjectModel* GetObjectModelResponse::_internal_mutable_object_type() {
   
   if (object_type_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::gates::ObjectModel>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::mruv::objects::ObjectModel>(GetArenaNoVirtual());
     object_type_ = p;
   }
   return object_type_;
 }
-inline ::mruv::gates::ObjectModel* GetObjectModelResponse::mutable_object_type() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.GetObjectModelResponse.object_type)
+inline ::mruv::objects::ObjectModel* GetObjectModelResponse::mutable_object_type() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.GetObjectModelResponse.object_type)
   return _internal_mutable_object_type();
 }
-inline void GetObjectModelResponse::set_allocated_object_type(::mruv::gates::ObjectModel* object_type) {
+inline void GetObjectModelResponse::set_allocated_object_type(::mruv::objects::ObjectModel* object_type) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete object_type_;
@@ -3772,14 +3772,14 @@ inline void GetObjectModelResponse::set_allocated_object_type(::mruv::gates::Obj
     
   }
   object_type_ = object_type;
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.GetObjectModelResponse.object_type)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.GetObjectModelResponse.object_type)
 }
 
 // -------------------------------------------------------------------
 
 // UpdateObjectModelRequest
 
-// .mruv.gates.ObjectModel object_type = 1;
+// .mruv.objects.ObjectModel object_type = 1;
 inline bool UpdateObjectModelRequest::_internal_has_object_type() const {
   return this != internal_default_instance() && object_type_ != nullptr;
 }
@@ -3792,35 +3792,35 @@ inline void UpdateObjectModelRequest::clear_object_type() {
   }
   object_type_ = nullptr;
 }
-inline const ::mruv::gates::ObjectModel& UpdateObjectModelRequest::_internal_object_type() const {
-  const ::mruv::gates::ObjectModel* p = object_type_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::gates::ObjectModel*>(
-      &::mruv::gates::_ObjectModel_default_instance_);
+inline const ::mruv::objects::ObjectModel& UpdateObjectModelRequest::_internal_object_type() const {
+  const ::mruv::objects::ObjectModel* p = object_type_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::ObjectModel*>(
+      &::mruv::objects::_ObjectModel_default_instance_);
 }
-inline const ::mruv::gates::ObjectModel& UpdateObjectModelRequest::object_type() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.UpdateObjectModelRequest.object_type)
+inline const ::mruv::objects::ObjectModel& UpdateObjectModelRequest::object_type() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.UpdateObjectModelRequest.object_type)
   return _internal_object_type();
 }
-inline ::mruv::gates::ObjectModel* UpdateObjectModelRequest::release_object_type() {
-  // @@protoc_insertion_point(field_release:mruv.gates.UpdateObjectModelRequest.object_type)
+inline ::mruv::objects::ObjectModel* UpdateObjectModelRequest::release_object_type() {
+  // @@protoc_insertion_point(field_release:mruv.objects.UpdateObjectModelRequest.object_type)
   
-  ::mruv::gates::ObjectModel* temp = object_type_;
+  ::mruv::objects::ObjectModel* temp = object_type_;
   object_type_ = nullptr;
   return temp;
 }
-inline ::mruv::gates::ObjectModel* UpdateObjectModelRequest::_internal_mutable_object_type() {
+inline ::mruv::objects::ObjectModel* UpdateObjectModelRequest::_internal_mutable_object_type() {
   
   if (object_type_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::gates::ObjectModel>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::mruv::objects::ObjectModel>(GetArenaNoVirtual());
     object_type_ = p;
   }
   return object_type_;
 }
-inline ::mruv::gates::ObjectModel* UpdateObjectModelRequest::mutable_object_type() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.UpdateObjectModelRequest.object_type)
+inline ::mruv::objects::ObjectModel* UpdateObjectModelRequest::mutable_object_type() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.UpdateObjectModelRequest.object_type)
   return _internal_mutable_object_type();
 }
-inline void UpdateObjectModelRequest::set_allocated_object_type(::mruv::gates::ObjectModel* object_type) {
+inline void UpdateObjectModelRequest::set_allocated_object_type(::mruv::objects::ObjectModel* object_type) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete object_type_;
@@ -3836,7 +3836,7 @@ inline void UpdateObjectModelRequest::set_allocated_object_type(::mruv::gates::O
     
   }
   object_type_ = object_type;
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.UpdateObjectModelRequest.object_type)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.UpdateObjectModelRequest.object_type)
 }
 
 // -------------------------------------------------------------------
@@ -3855,7 +3855,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectModelRequest::_internal_model
   return model_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectModelRequest::model() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.DeleteObjectModelRequest.model)
+  // @@protoc_insertion_point(field_get:mruv.objects.DeleteObjectModelRequest.model)
   return _internal_model();
 }
 inline void DeleteObjectModelRequest::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3864,7 +3864,7 @@ inline void DeleteObjectModelRequest::_internal_set_model(::PROTOBUF_NAMESPACE_I
 }
 inline void DeleteObjectModelRequest::set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_model(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.DeleteObjectModelRequest.model)
+  // @@protoc_insertion_point(field_set:mruv.objects.DeleteObjectModelRequest.model)
 }
 
 // -------------------------------------------------------------------
@@ -3875,7 +3875,7 @@ inline void DeleteObjectModelRequest::set_model(::PROTOBUF_NAMESPACE_ID::uint32 
 
 // CreateObjectRequest
 
-// .mruv.gates.Object object = 1;
+// .mruv.objects.Object object = 1;
 inline bool CreateObjectRequest::_internal_has_object() const {
   return this != internal_default_instance() && object_ != nullptr;
 }
@@ -3888,35 +3888,35 @@ inline void CreateObjectRequest::clear_object() {
   }
   object_ = nullptr;
 }
-inline const ::mruv::gates::Object& CreateObjectRequest::_internal_object() const {
-  const ::mruv::gates::Object* p = object_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::gates::Object*>(
-      &::mruv::gates::_Object_default_instance_);
+inline const ::mruv::objects::Object& CreateObjectRequest::_internal_object() const {
+  const ::mruv::objects::Object* p = object_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::Object*>(
+      &::mruv::objects::_Object_default_instance_);
 }
-inline const ::mruv::gates::Object& CreateObjectRequest::object() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.CreateObjectRequest.object)
+inline const ::mruv::objects::Object& CreateObjectRequest::object() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.CreateObjectRequest.object)
   return _internal_object();
 }
-inline ::mruv::gates::Object* CreateObjectRequest::release_object() {
-  // @@protoc_insertion_point(field_release:mruv.gates.CreateObjectRequest.object)
+inline ::mruv::objects::Object* CreateObjectRequest::release_object() {
+  // @@protoc_insertion_point(field_release:mruv.objects.CreateObjectRequest.object)
   
-  ::mruv::gates::Object* temp = object_;
+  ::mruv::objects::Object* temp = object_;
   object_ = nullptr;
   return temp;
 }
-inline ::mruv::gates::Object* CreateObjectRequest::_internal_mutable_object() {
+inline ::mruv::objects::Object* CreateObjectRequest::_internal_mutable_object() {
   
   if (object_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::gates::Object>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::mruv::objects::Object>(GetArenaNoVirtual());
     object_ = p;
   }
   return object_;
 }
-inline ::mruv::gates::Object* CreateObjectRequest::mutable_object() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.CreateObjectRequest.object)
+inline ::mruv::objects::Object* CreateObjectRequest::mutable_object() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.CreateObjectRequest.object)
   return _internal_mutable_object();
 }
-inline void CreateObjectRequest::set_allocated_object(::mruv::gates::Object* object) {
+inline void CreateObjectRequest::set_allocated_object(::mruv::objects::Object* object) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete object_;
@@ -3932,7 +3932,7 @@ inline void CreateObjectRequest::set_allocated_object(::mruv::gates::Object* obj
     
   }
   object_ = object;
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.CreateObjectRequest.object)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.CreateObjectRequest.object)
 }
 
 // -------------------------------------------------------------------
@@ -3947,7 +3947,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateObjectResponse::_internal_id() cons
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateObjectResponse::id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.CreateObjectResponse.id)
+  // @@protoc_insertion_point(field_get:mruv.objects.CreateObjectResponse.id)
   return _internal_id();
 }
 inline void CreateObjectResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3956,7 +3956,7 @@ inline void CreateObjectResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint
 }
 inline void CreateObjectResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.CreateObjectResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.objects.CreateObjectResponse.id)
 }
 
 // -------------------------------------------------------------------
@@ -3971,7 +3971,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectRequest::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectRequest::id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.GetObjectRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.objects.GetObjectRequest.id)
   return _internal_id();
 }
 inline void GetObjectRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3980,14 +3980,14 @@ inline void GetObjectRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 v
 }
 inline void GetObjectRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.GetObjectRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.objects.GetObjectRequest.id)
 }
 
 // -------------------------------------------------------------------
 
 // GetObjectResponse
 
-// .mruv.gates.Object object = 1;
+// .mruv.objects.Object object = 1;
 inline bool GetObjectResponse::_internal_has_object() const {
   return this != internal_default_instance() && object_ != nullptr;
 }
@@ -4000,35 +4000,35 @@ inline void GetObjectResponse::clear_object() {
   }
   object_ = nullptr;
 }
-inline const ::mruv::gates::Object& GetObjectResponse::_internal_object() const {
-  const ::mruv::gates::Object* p = object_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::gates::Object*>(
-      &::mruv::gates::_Object_default_instance_);
+inline const ::mruv::objects::Object& GetObjectResponse::_internal_object() const {
+  const ::mruv::objects::Object* p = object_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::Object*>(
+      &::mruv::objects::_Object_default_instance_);
 }
-inline const ::mruv::gates::Object& GetObjectResponse::object() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.GetObjectResponse.object)
+inline const ::mruv::objects::Object& GetObjectResponse::object() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.GetObjectResponse.object)
   return _internal_object();
 }
-inline ::mruv::gates::Object* GetObjectResponse::release_object() {
-  // @@protoc_insertion_point(field_release:mruv.gates.GetObjectResponse.object)
+inline ::mruv::objects::Object* GetObjectResponse::release_object() {
+  // @@protoc_insertion_point(field_release:mruv.objects.GetObjectResponse.object)
   
-  ::mruv::gates::Object* temp = object_;
+  ::mruv::objects::Object* temp = object_;
   object_ = nullptr;
   return temp;
 }
-inline ::mruv::gates::Object* GetObjectResponse::_internal_mutable_object() {
+inline ::mruv::objects::Object* GetObjectResponse::_internal_mutable_object() {
   
   if (object_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::gates::Object>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::mruv::objects::Object>(GetArenaNoVirtual());
     object_ = p;
   }
   return object_;
 }
-inline ::mruv::gates::Object* GetObjectResponse::mutable_object() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.GetObjectResponse.object)
+inline ::mruv::objects::Object* GetObjectResponse::mutable_object() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.GetObjectResponse.object)
   return _internal_mutable_object();
 }
-inline void GetObjectResponse::set_allocated_object(::mruv::gates::Object* object) {
+inline void GetObjectResponse::set_allocated_object(::mruv::objects::Object* object) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete object_;
@@ -4044,7 +4044,7 @@ inline void GetObjectResponse::set_allocated_object(::mruv::gates::Object* objec
     
   }
   object_ = object;
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.GetObjectResponse.object)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.GetObjectResponse.object)
 }
 
 // -------------------------------------------------------------------
@@ -4059,7 +4059,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 UpdateObjectRequest::_internal_id() const
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 UpdateObjectRequest::id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.UpdateObjectRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.objects.UpdateObjectRequest.id)
   return _internal_id();
 }
 inline void UpdateObjectRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -4068,10 +4068,10 @@ inline void UpdateObjectRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void UpdateObjectRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.UpdateObjectRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.objects.UpdateObjectRequest.id)
 }
 
-// .mruv.gates.Object object = 2;
+// .mruv.objects.Object object = 2;
 inline bool UpdateObjectRequest::_internal_has_object() const {
   return this != internal_default_instance() && object_ != nullptr;
 }
@@ -4084,35 +4084,35 @@ inline void UpdateObjectRequest::clear_object() {
   }
   object_ = nullptr;
 }
-inline const ::mruv::gates::Object& UpdateObjectRequest::_internal_object() const {
-  const ::mruv::gates::Object* p = object_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::gates::Object*>(
-      &::mruv::gates::_Object_default_instance_);
+inline const ::mruv::objects::Object& UpdateObjectRequest::_internal_object() const {
+  const ::mruv::objects::Object* p = object_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::Object*>(
+      &::mruv::objects::_Object_default_instance_);
 }
-inline const ::mruv::gates::Object& UpdateObjectRequest::object() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.UpdateObjectRequest.object)
+inline const ::mruv::objects::Object& UpdateObjectRequest::object() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.UpdateObjectRequest.object)
   return _internal_object();
 }
-inline ::mruv::gates::Object* UpdateObjectRequest::release_object() {
-  // @@protoc_insertion_point(field_release:mruv.gates.UpdateObjectRequest.object)
+inline ::mruv::objects::Object* UpdateObjectRequest::release_object() {
+  // @@protoc_insertion_point(field_release:mruv.objects.UpdateObjectRequest.object)
   
-  ::mruv::gates::Object* temp = object_;
+  ::mruv::objects::Object* temp = object_;
   object_ = nullptr;
   return temp;
 }
-inline ::mruv::gates::Object* UpdateObjectRequest::_internal_mutable_object() {
+inline ::mruv::objects::Object* UpdateObjectRequest::_internal_mutable_object() {
   
   if (object_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::gates::Object>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::mruv::objects::Object>(GetArenaNoVirtual());
     object_ = p;
   }
   return object_;
 }
-inline ::mruv::gates::Object* UpdateObjectRequest::mutable_object() {
-  // @@protoc_insertion_point(field_mutable:mruv.gates.UpdateObjectRequest.object)
+inline ::mruv::objects::Object* UpdateObjectRequest::mutable_object() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.UpdateObjectRequest.object)
   return _internal_mutable_object();
 }
-inline void UpdateObjectRequest::set_allocated_object(::mruv::gates::Object* object) {
+inline void UpdateObjectRequest::set_allocated_object(::mruv::objects::Object* object) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete object_;
@@ -4128,7 +4128,7 @@ inline void UpdateObjectRequest::set_allocated_object(::mruv::gates::Object* obj
     
   }
   object_ = object;
-  // @@protoc_insertion_point(field_set_allocated:mruv.gates.UpdateObjectRequest.object)
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.UpdateObjectRequest.object)
 }
 
 // -------------------------------------------------------------------
@@ -4147,7 +4147,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectRequest::_internal_id() const
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectRequest::id() const {
-  // @@protoc_insertion_point(field_get:mruv.gates.DeleteObjectRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.objects.DeleteObjectRequest.id)
   return _internal_id();
 }
 inline void DeleteObjectRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -4156,7 +4156,7 @@ inline void DeleteObjectRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void DeleteObjectRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.gates.DeleteObjectRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.objects.DeleteObjectRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -4203,7 +4203,7 @@ inline void DeleteObjectRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace gates
+}  // namespace objects
 }  // namespace mruv
 
 // @@protoc_insertion_point(global_scope)

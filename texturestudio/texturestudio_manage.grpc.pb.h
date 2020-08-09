@@ -1033,7 +1033,14 @@ class TextureStudioManagerService final {
    public:
     WithStreamedUnaryMethod_CreateServer() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>(std::bind(&WithStreamedUnaryMethod_CreateServer<BaseClass>::StreamedCreateServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>* streamer) {
+                       return this->StreamedCreateServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateServer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1053,7 +1060,14 @@ class TextureStudioManagerService final {
    public:
     WithStreamedUnaryMethod_GetServers() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>(std::bind(&WithStreamedUnaryMethod_GetServers<BaseClass>::StreamedGetServers, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>* streamer) {
+                       return this->StreamedGetServers(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1073,7 +1087,14 @@ class TextureStudioManagerService final {
    public:
     WithStreamedUnaryMethod_MyServer() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>(std::bind(&WithStreamedUnaryMethod_MyServer<BaseClass>::StreamedMyServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>* streamer) {
+                       return this->StreamedMyServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_MyServer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1093,7 +1114,14 @@ class TextureStudioManagerService final {
    public:
     WithStreamedUnaryMethod_TransferOwnership() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>(std::bind(&WithStreamedUnaryMethod_TransferOwnership<BaseClass>::StreamedTransferOwnership, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>* streamer) {
+                       return this->StreamedTransferOwnership(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_TransferOwnership() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1113,7 +1141,14 @@ class TextureStudioManagerService final {
    public:
     WithStreamedUnaryMethod_DeleteServer() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>(std::bind(&WithStreamedUnaryMethod_DeleteServer<BaseClass>::StreamedDeleteServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>* streamer) {
+                       return this->StreamedDeleteServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteServer() override {
       BaseClassMustBeDerivedFromService(this);

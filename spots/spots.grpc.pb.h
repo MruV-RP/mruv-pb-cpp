@@ -845,7 +845,14 @@ class MruVSpotsService final {
    public:
     WithStreamedUnaryMethod_CreateSpot() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(std::bind(&WithStreamedUnaryMethod_CreateSpot<BaseClass>::StreamedCreateSpot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>* streamer) {
+                       return this->StreamedCreateSpot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateSpot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -865,7 +872,14 @@ class MruVSpotsService final {
    public:
     WithStreamedUnaryMethod_GetSpot() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(std::bind(&WithStreamedUnaryMethod_GetSpot<BaseClass>::StreamedGetSpot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>* streamer) {
+                       return this->StreamedGetSpot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetSpot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -885,7 +899,14 @@ class MruVSpotsService final {
    public:
     WithStreamedUnaryMethod_UpdateSpot() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(std::bind(&WithStreamedUnaryMethod_UpdateSpot<BaseClass>::StreamedUpdateSpot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>* streamer) {
+                       return this->StreamedUpdateSpot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateSpot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -905,7 +926,14 @@ class MruVSpotsService final {
    public:
     WithStreamedUnaryMethod_DeleteSpot() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(std::bind(&WithStreamedUnaryMethod_DeleteSpot<BaseClass>::StreamedDeleteSpot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>* streamer) {
+                       return this->StreamedDeleteSpot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteSpot() override {
       BaseClassMustBeDerivedFromService(this);

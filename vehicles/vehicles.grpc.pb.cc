@@ -159,22 +159,42 @@ MruVVehiclesService::Service::Service() {
       MruVVehiclesService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(
-          std::mem_fn(&MruVVehiclesService::Service::CreateVehicle), this)));
+          [](MruVVehiclesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::vehicles::CreateVehicleRequest* req,
+             ::mruv::vehicles::CreateVehicleResponse* resp) {
+               return service->CreateVehicle(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVVehiclesService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(
-          std::mem_fn(&MruVVehiclesService::Service::GetVehicle), this)));
+          [](MruVVehiclesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::vehicles::GetVehicleRequest* req,
+             ::mruv::vehicles::GetVehicleResponse* resp) {
+               return service->GetVehicle(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVVehiclesService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(
-          std::mem_fn(&MruVVehiclesService::Service::UpdateVehicle), this)));
+          [](MruVVehiclesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::vehicles::UpdateVehicleRequest* req,
+             ::mruv::vehicles::UpdateVehicleResponse* resp) {
+               return service->UpdateVehicle(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVVehiclesService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(
-          std::mem_fn(&MruVVehiclesService::Service::DeleteVehicle), this)));
+          [](MruVVehiclesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::vehicles::DeleteVehicleRequest* req,
+             ::mruv::vehicles::DeleteVehicleResponse* resp) {
+               return service->DeleteVehicle(ctx, req, resp);
+             }, this)));
 }
 
 MruVVehiclesService::Service::~Service() {

@@ -845,7 +845,14 @@ class MruVPlotsService final {
    public:
     WithStreamedUnaryMethod_CreatePlot() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>(std::bind(&WithStreamedUnaryMethod_CreatePlot<BaseClass>::StreamedCreatePlot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>* streamer) {
+                       return this->StreamedCreatePlot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreatePlot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -865,7 +872,14 @@ class MruVPlotsService final {
    public:
     WithStreamedUnaryMethod_GetPlot() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>(std::bind(&WithStreamedUnaryMethod_GetPlot<BaseClass>::StreamedGetPlot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>* streamer) {
+                       return this->StreamedGetPlot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPlot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -885,7 +899,14 @@ class MruVPlotsService final {
    public:
     WithStreamedUnaryMethod_UpdatePlot() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>(std::bind(&WithStreamedUnaryMethod_UpdatePlot<BaseClass>::StreamedUpdatePlot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>* streamer) {
+                       return this->StreamedUpdatePlot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdatePlot() override {
       BaseClassMustBeDerivedFromService(this);
@@ -905,7 +926,14 @@ class MruVPlotsService final {
    public:
     WithStreamedUnaryMethod_DeletePlot() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>(std::bind(&WithStreamedUnaryMethod_DeletePlot<BaseClass>::StreamedDeletePlot, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>* streamer) {
+                       return this->StreamedDeletePlot(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeletePlot() override {
       BaseClassMustBeDerivedFromService(this);

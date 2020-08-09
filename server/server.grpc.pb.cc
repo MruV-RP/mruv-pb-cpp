@@ -177,27 +177,52 @@ MruVServerService::Service::Service() {
       MruVServerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::ServerInfo, ::mruv::server::ServerID>(
-          std::mem_fn(&MruVServerService::Service::RegisterServer), this)));
+          [](MruVServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::server::ServerInfo* req,
+             ::mruv::server::ServerID* resp) {
+               return service->RegisterServer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVServerService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>(
-          std::mem_fn(&MruVServerService::Service::GetRegisteredServers), this)));
+          [](MruVServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::server::GetRegisteredServersRequest* req,
+             ::mruv::server::GetRegisteredServersResponse* resp) {
+               return service->GetRegisteredServers(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVServerService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::ServerID, ::mruv::server::ServerInfo>(
-          std::mem_fn(&MruVServerService::Service::GetServerInfo), this)));
+          [](MruVServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::server::ServerID* req,
+             ::mruv::server::ServerInfo* resp) {
+               return service->GetServerInfo(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVServerService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>(
-          std::mem_fn(&MruVServerService::Service::UpdateServerStatus), this)));
+          [](MruVServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::server::UpdateServerStatusRequest* req,
+             ::mruv::server::UpdateServerStatusResponse* resp) {
+               return service->UpdateServerStatus(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVServerService_method_names[4],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVServerService::Service, ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>(
-          std::mem_fn(&MruVServerService::Service::ServerEventsStream), this)));
+          [](MruVServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::server::ServerEventsStreamRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::server::ServerEvent>* writer) {
+               return service->ServerEventsStream(ctx, req, writer);
+             }, this)));
 }
 
 MruVServerService::Service::~Service() {

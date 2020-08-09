@@ -369,57 +369,112 @@ MruVEstateService::Service::Service() {
       MruVEstateService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(
-          std::mem_fn(&MruVEstateService::Service::CreateEstate), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::CreateEstateRequest* req,
+             ::mruv::estates::CreateEstateResponse* resp) {
+               return service->CreateEstate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(
-          std::mem_fn(&MruVEstateService::Service::GetEstate), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::GetEstateRequest* req,
+             ::mruv::estates::Estate* resp) {
+               return service->GetEstate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(
-          std::mem_fn(&MruVEstateService::Service::UpdateEstate), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::UpdateEstateRequest* req,
+             ::mruv::estates::UpdateEstateResponse* resp) {
+               return service->UpdateEstate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(
-          std::mem_fn(&MruVEstateService::Service::DeleteEstate), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::DeleteEstateRequest* req,
+             ::mruv::estates::DeleteEstateResponse* resp) {
+               return service->DeleteEstate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(
-          std::mem_fn(&MruVEstateService::Service::GetEstates), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::GetEstatesRequest* req,
+             ::mruv::estates::GetEstatesResponse* resp) {
+               return service->GetEstates(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(
-          std::mem_fn(&MruVEstateService::Service::AddGate), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::AddGateRequest* req,
+             ::mruv::estates::AddGateResponse* resp) {
+               return service->AddGate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
-          std::mem_fn(&MruVEstateService::Service::RemoveGate), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::RemoveGateRequest* req,
+             ::mruv::estates::RemoveGateResponse* resp) {
+               return service->RemoveGate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(
-          std::mem_fn(&MruVEstateService::Service::GetEstateGates), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::GetEstateGatesRequest* req,
+             ::mruv::estates::GetEstateGatesResponse* resp) {
+               return service->GetEstateGates(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(
-          std::mem_fn(&MruVEstateService::Service::AddEntrance), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::AddEntranceRequest* req,
+             ::mruv::estates::AddEntranceResponse* resp) {
+               return service->AddEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(
-          std::mem_fn(&MruVEstateService::Service::RemoveEntrance), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::RemoveEntranceRequest* req,
+             ::mruv::estates::RemoveEntranceResponse* resp) {
+               return service->RemoveEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(
-          std::mem_fn(&MruVEstateService::Service::GetEstateEntrances), this)));
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::GetEstateEntrancesRequest* req,
+             ::mruv::estates::GetEstateEntrancesResponse* resp) {
+               return service->GetEstateEntrances(ctx, req, resp);
+             }, this)));
 }
 
 MruVEstateService::Service::~Service() {

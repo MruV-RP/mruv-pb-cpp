@@ -159,22 +159,42 @@ MruVJobsService::Service::Service() {
       MruVJobsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(
-          std::mem_fn(&MruVJobsService::Service::CreateJob), this)));
+          [](MruVJobsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::jobs::CreateJobRequest* req,
+             ::mruv::jobs::CreateJobResponse* resp) {
+               return service->CreateJob(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVJobsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(
-          std::mem_fn(&MruVJobsService::Service::GetJob), this)));
+          [](MruVJobsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::jobs::GetJobRequest* req,
+             ::mruv::jobs::GetJobResponse* resp) {
+               return service->GetJob(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVJobsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(
-          std::mem_fn(&MruVJobsService::Service::UpdateJob), this)));
+          [](MruVJobsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::jobs::UpdateJobRequest* req,
+             ::mruv::jobs::UpdateJobResponse* resp) {
+               return service->UpdateJob(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVJobsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(
-          std::mem_fn(&MruVJobsService::Service::DeleteJob), this)));
+          [](MruVJobsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::jobs::DeleteJobRequest* req,
+             ::mruv::jobs::DeleteJobResponse* resp) {
+               return service->DeleteJob(ctx, req, resp);
+             }, this)));
 }
 
 MruVJobsService::Service::~Service() {

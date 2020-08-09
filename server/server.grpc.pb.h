@@ -1020,7 +1020,14 @@ class MruVServerService final {
    public:
     WithStreamedUnaryMethod_RegisterServer() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::ServerInfo, ::mruv::server::ServerID>(std::bind(&WithStreamedUnaryMethod_RegisterServer<BaseClass>::StreamedRegisterServer, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::server::ServerInfo, ::mruv::server::ServerID>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::server::ServerInfo, ::mruv::server::ServerID>* streamer) {
+                       return this->StreamedRegisterServer(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RegisterServer() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1040,7 +1047,14 @@ class MruVServerService final {
    public:
     WithStreamedUnaryMethod_GetRegisteredServers() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>(std::bind(&WithStreamedUnaryMethod_GetRegisteredServers<BaseClass>::StreamedGetRegisteredServers, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>* streamer) {
+                       return this->StreamedGetRegisteredServers(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetRegisteredServers() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1060,7 +1074,14 @@ class MruVServerService final {
    public:
     WithStreamedUnaryMethod_GetServerInfo() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::ServerID, ::mruv::server::ServerInfo>(std::bind(&WithStreamedUnaryMethod_GetServerInfo<BaseClass>::StreamedGetServerInfo, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::server::ServerID, ::mruv::server::ServerInfo>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::server::ServerID, ::mruv::server::ServerInfo>* streamer) {
+                       return this->StreamedGetServerInfo(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServerInfo() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1080,7 +1101,14 @@ class MruVServerService final {
    public:
     WithStreamedUnaryMethod_UpdateServerStatus() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>(std::bind(&WithStreamedUnaryMethod_UpdateServerStatus<BaseClass>::StreamedUpdateServerStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>* streamer) {
+                       return this->StreamedUpdateServerStatus(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateServerStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1101,7 +1129,14 @@ class MruVServerService final {
    public:
     WithSplitStreamingMethod_ServerEventsStream() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>(std::bind(&WithSplitStreamingMethod_ServerEventsStream<BaseClass>::StreamedServerEventsStream, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>* streamer) {
+                       return this->StreamedServerEventsStream(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_ServerEventsStream() override {
       BaseClassMustBeDerivedFromService(this);

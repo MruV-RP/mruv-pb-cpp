@@ -758,122 +758,242 @@ MruVItemService::Service::Service() {
       MruVItemService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::Item, ::mruv::ItemID>(
-          std::mem_fn(&MruVItemService::Service::CreateItem), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::Item* req,
+             ::mruv::ItemID* resp) {
+               return service->CreateItem(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemID, ::mruv::Item>(
-          std::mem_fn(&MruVItemService::Service::GetItem), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ItemID* req,
+             ::mruv::Item* resp) {
+               return service->GetItem(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemID, ::mruv::ItemID>(
-          std::mem_fn(&MruVItemService::Service::DeleteItem), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ItemID* req,
+             ::mruv::ItemID* resp) {
+               return service->DeleteItem(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
-          std::mem_fn(&MruVItemService::Service::GetItems), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetItemsRequest* req,
+             ::mruv::GetItemsResponse* resp) {
+               return service->GetItems(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemType, ::mruv::ItemTypeID>(
-          std::mem_fn(&MruVItemService::Service::CreateItemType), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ItemType* req,
+             ::mruv::ItemTypeID* resp) {
+               return service->CreateItemType(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemTypeID, ::mruv::ItemType>(
-          std::mem_fn(&MruVItemService::Service::GetItemType), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ItemTypeID* req,
+             ::mruv::ItemType* resp) {
+               return service->GetItemType(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemTypeID, ::mruv::ItemTypeID>(
-          std::mem_fn(&MruVItemService::Service::DeleteItemType), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ItemTypeID* req,
+             ::mruv::ItemTypeID* resp) {
+               return service->DeleteItemType(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
-          std::mem_fn(&MruVItemService::Service::GetItemTypes), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetItemTypesRequest* req,
+             ::mruv::GetItemTypesResponse* resp) {
+               return service->GetItemTypes(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::Container, ::mruv::ContainerID>(
-          std::mem_fn(&MruVItemService::Service::CreateContainer), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::Container* req,
+             ::mruv::ContainerID* resp) {
+               return service->CreateContainer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerID, ::mruv::Container>(
-          std::mem_fn(&MruVItemService::Service::GetContainer), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ContainerID* req,
+             ::mruv::Container* resp) {
+               return service->GetContainer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerID, ::mruv::ContainerID>(
-          std::mem_fn(&MruVItemService::Service::DeleteContainer), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ContainerID* req,
+             ::mruv::ContainerID* resp) {
+               return service->DeleteContainer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
-          std::mem_fn(&MruVItemService::Service::GetContainers), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetContainersRequest* req,
+             ::mruv::GetContainersResponse* resp) {
+               return service->GetContainers(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerType, ::mruv::ContainerTypeID>(
-          std::mem_fn(&MruVItemService::Service::CreateContainerType), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ContainerType* req,
+             ::mruv::ContainerTypeID* resp) {
+               return service->CreateContainerType(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerTypeID, ::mruv::ContainerType>(
-          std::mem_fn(&MruVItemService::Service::GetContainerType), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ContainerTypeID* req,
+             ::mruv::ContainerType* resp) {
+               return service->GetContainerType(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>(
-          std::mem_fn(&MruVItemService::Service::DeleteContainerType), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ContainerTypeID* req,
+             ::mruv::ContainerTypeID* resp) {
+               return service->DeleteContainerType(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
-          std::mem_fn(&MruVItemService::Service::GetContainerTypes), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetContainerTypesRequest* req,
+             ::mruv::GetContainerTypesResponse* resp) {
+               return service->GetContainerTypes(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
-          std::mem_fn(&MruVItemService::Service::GetContainerItems), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetContainerItemsRequest* req,
+             ::mruv::GetContainerItemsResponse* resp) {
+               return service->GetContainerItems(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::PullItemRequest, ::mruv::Item>(
-          std::mem_fn(&MruVItemService::Service::PullItem), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::PullItemRequest* req,
+             ::mruv::Item* resp) {
+               return service->PullItem(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
-          std::mem_fn(&MruVItemService::Service::PutItem), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::PutItemRequest* req,
+             ::mruv::PutItemResponse* resp) {
+               return service->PutItem(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
-          std::mem_fn(&MruVItemService::Service::SortItems), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::SortItemsRequest* req,
+             ::mruv::SortItemsResponse* resp) {
+               return service->SortItems(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
-          std::mem_fn(&MruVItemService::Service::GetNearestItems), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetNearestItemsRequest* req,
+             ::mruv::GetNearestItemsResponse* resp) {
+               return service->GetNearestItems(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
-          std::mem_fn(&MruVItemService::Service::UseItem), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::UseItemRequest* req,
+             ::mruv::UseItemResponse* resp) {
+               return service->UseItem(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          std::mem_fn(&MruVItemService::Service::GetServiceStatus), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ServiceStatusRequest* req,
+             ::mruv::ServiceStatusResponse* resp) {
+               return service->GetServiceStatus(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          std::mem_fn(&MruVItemService::Service::GetServiceVersion), this)));
+          [](MruVItemService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::VersionRequest* req,
+             ::mruv::VersionResponse* resp) {
+               return service->GetServiceVersion(ctx, req, resp);
+             }, this)));
 }
 
 MruVItemService::Service::~Service() {

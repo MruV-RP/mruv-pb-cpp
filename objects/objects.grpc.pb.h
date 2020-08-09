@@ -27,187 +27,187 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace mruv {
-namespace gates {
+namespace objects {
 
 // The MruV objects service provides procedures for game objects.
 class MruVObjectsService final {
  public:
   static constexpr char const* service_full_name() {
-    return "mruv.gates.MruVObjectsService";
+    return "mruv.objects.MruVObjectsService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
     // Create an object model.
-    virtual ::grpc::Status CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::mruv::gates::CreateObjectModelResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectModelResponse>> AsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectModelResponse>>(AsyncCreateObjectModelRaw(context, request, cq));
+    virtual ::grpc::Status CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::mruv::objects::CreateObjectModelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectModelResponse>> AsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectModelResponse>>(AsyncCreateObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectModelResponse>> PrepareAsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectModelResponse>>(PrepareAsyncCreateObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectModelResponse>> PrepareAsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectModelResponse>>(PrepareAsyncCreateObjectModelRaw(context, request, cq));
     }
     // Get an object model.
-    virtual ::grpc::Status GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::mruv::gates::GetObjectModelResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectModelResponse>> AsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectModelResponse>>(AsyncGetObjectModelRaw(context, request, cq));
+    virtual ::grpc::Status GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::mruv::objects::GetObjectModelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectModelResponse>> AsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectModelResponse>>(AsyncGetObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectModelResponse>> PrepareAsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectModelResponse>>(PrepareAsyncGetObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectModelResponse>> PrepareAsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectModelResponse>>(PrepareAsyncGetObjectModelRaw(context, request, cq));
     }
     // Update an object model.
-    virtual ::grpc::Status UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::mruv::gates::UpdateObjectModelResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectModelResponse>> AsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectModelResponse>>(AsyncUpdateObjectModelRaw(context, request, cq));
+    virtual ::grpc::Status UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::mruv::objects::UpdateObjectModelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>> AsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>>(AsyncUpdateObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectModelResponse>> PrepareAsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectModelResponse>>(PrepareAsyncUpdateObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>> PrepareAsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>>(PrepareAsyncUpdateObjectModelRaw(context, request, cq));
     }
     // Delete an object model.
-    virtual ::grpc::Status DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::mruv::gates::DeleteObjectModelResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectModelResponse>> AsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectModelResponse>>(AsyncDeleteObjectModelRaw(context, request, cq));
+    virtual ::grpc::Status DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::mruv::objects::DeleteObjectModelResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>> AsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>>(AsyncDeleteObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectModelResponse>> PrepareAsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectModelResponse>>(PrepareAsyncDeleteObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>> PrepareAsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>>(PrepareAsyncDeleteObjectModelRaw(context, request, cq));
     }
     // Create an object.
-    virtual ::grpc::Status CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::mruv::gates::CreateObjectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectResponse>> AsyncCreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectResponse>>(AsyncCreateObjectRaw(context, request, cq));
+    virtual ::grpc::Status CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::mruv::objects::CreateObjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectResponse>> AsyncCreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectResponse>>(AsyncCreateObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectResponse>> PrepareAsyncCreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectResponse>>(PrepareAsyncCreateObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectResponse>> PrepareAsyncCreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectResponse>>(PrepareAsyncCreateObjectRaw(context, request, cq));
     }
     // Get an object.
-    virtual ::grpc::Status GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::mruv::gates::GetObjectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectResponse>> AsyncGetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectResponse>>(AsyncGetObjectRaw(context, request, cq));
+    virtual ::grpc::Status GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::mruv::objects::GetObjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectResponse>> AsyncGetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectResponse>>(AsyncGetObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectResponse>> PrepareAsyncGetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectResponse>>(PrepareAsyncGetObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectResponse>> PrepareAsyncGetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectResponse>>(PrepareAsyncGetObjectRaw(context, request, cq));
     }
     // Update an object.
-    virtual ::grpc::Status UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::mruv::gates::UpdateObjectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectResponse>> AsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectResponse>>(AsyncUpdateObjectRaw(context, request, cq));
+    virtual ::grpc::Status UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::mruv::objects::UpdateObjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>> AsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>>(AsyncUpdateObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectResponse>> PrepareAsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectResponse>>(PrepareAsyncUpdateObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>> PrepareAsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>>(PrepareAsyncUpdateObjectRaw(context, request, cq));
     }
     // Delete an object.
-    virtual ::grpc::Status DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::mruv::gates::DeleteObjectResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectResponse>> AsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectResponse>>(AsyncDeleteObjectRaw(context, request, cq));
+    virtual ::grpc::Status DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::mruv::objects::DeleteObjectResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>> AsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>>(AsyncDeleteObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectResponse>> PrepareAsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectResponse>>(PrepareAsyncDeleteObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>> PrepareAsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>>(PrepareAsyncDeleteObjectRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       // Create an object model.
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get an object model.
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Update an object model.
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Delete an object model.
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Create an object.
-      virtual void CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get an object.
-      virtual void GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Update an object.
-      virtual void UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Delete an object.
-      virtual void DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -218,180 +218,180 @@ class MruVObjectsService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectModelResponse>* AsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectModelResponse>* PrepareAsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectModelResponse>* AsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectModelResponse>* PrepareAsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectModelResponse>* AsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectModelResponse>* PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectModelResponse>* AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectModelResponse>* PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectResponse>* AsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CreateObjectResponse>* PrepareAsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectResponse>* AsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::GetObjectResponse>* PrepareAsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectResponse>* AsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::UpdateObjectResponse>* PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectResponse>* AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::DeleteObjectResponse>* PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectModelResponse>* AsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectModelResponse>* PrepareAsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectModelResponse>* AsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectModelResponse>* PrepareAsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>* AsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>* PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>* AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>* PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectResponse>* AsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::CreateObjectResponse>* PrepareAsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectResponse>* AsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectResponse>* PrepareAsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>* AsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>* PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>* AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>* PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::mruv::gates::CreateObjectModelResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>> AsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>>(AsyncCreateObjectModelRaw(context, request, cq));
+    ::grpc::Status CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::mruv::objects::CreateObjectModelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>> AsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>>(AsyncCreateObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>> PrepareAsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>>(PrepareAsyncCreateObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>> PrepareAsyncCreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>>(PrepareAsyncCreateObjectModelRaw(context, request, cq));
     }
-    ::grpc::Status GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::mruv::gates::GetObjectModelResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>> AsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>>(AsyncGetObjectModelRaw(context, request, cq));
+    ::grpc::Status GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::mruv::objects::GetObjectModelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>> AsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>>(AsyncGetObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>> PrepareAsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>>(PrepareAsyncGetObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>> PrepareAsyncGetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>>(PrepareAsyncGetObjectModelRaw(context, request, cq));
     }
-    ::grpc::Status UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::mruv::gates::UpdateObjectModelResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>> AsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>>(AsyncUpdateObjectModelRaw(context, request, cq));
+    ::grpc::Status UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::mruv::objects::UpdateObjectModelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>> AsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>>(AsyncUpdateObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>> PrepareAsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>>(PrepareAsyncUpdateObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>> PrepareAsyncUpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>>(PrepareAsyncUpdateObjectModelRaw(context, request, cq));
     }
-    ::grpc::Status DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::mruv::gates::DeleteObjectModelResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>> AsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>>(AsyncDeleteObjectModelRaw(context, request, cq));
+    ::grpc::Status DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::mruv::objects::DeleteObjectModelResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>> AsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>>(AsyncDeleteObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>> PrepareAsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>>(PrepareAsyncDeleteObjectModelRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>> PrepareAsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>>(PrepareAsyncDeleteObjectModelRaw(context, request, cq));
     }
-    ::grpc::Status CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::mruv::gates::CreateObjectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>> AsyncCreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>>(AsyncCreateObjectRaw(context, request, cq));
+    ::grpc::Status CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::mruv::objects::CreateObjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>> AsyncCreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>>(AsyncCreateObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>> PrepareAsyncCreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>>(PrepareAsyncCreateObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>> PrepareAsyncCreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>>(PrepareAsyncCreateObjectRaw(context, request, cq));
     }
-    ::grpc::Status GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::mruv::gates::GetObjectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>> AsyncGetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>>(AsyncGetObjectRaw(context, request, cq));
+    ::grpc::Status GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::mruv::objects::GetObjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>> AsyncGetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>>(AsyncGetObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>> PrepareAsyncGetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>>(PrepareAsyncGetObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>> PrepareAsyncGetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>>(PrepareAsyncGetObjectRaw(context, request, cq));
     }
-    ::grpc::Status UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::mruv::gates::UpdateObjectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>> AsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>>(AsyncUpdateObjectRaw(context, request, cq));
+    ::grpc::Status UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::mruv::objects::UpdateObjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>> AsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>>(AsyncUpdateObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>> PrepareAsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>>(PrepareAsyncUpdateObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>> PrepareAsyncUpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>>(PrepareAsyncUpdateObjectRaw(context, request, cq));
     }
-    ::grpc::Status DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::mruv::gates::DeleteObjectResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>> AsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>>(AsyncDeleteObjectRaw(context, request, cq));
+    ::grpc::Status DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::mruv::objects::DeleteObjectResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>> AsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>>(AsyncDeleteObjectRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>> PrepareAsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>>(PrepareAsyncDeleteObjectRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>> PrepareAsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>>(PrepareAsyncDeleteObjectRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -404,22 +404,22 @@ class MruVObjectsService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>* AsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>* PrepareAsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>* AsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>* PrepareAsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>* AsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>* PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>* AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>* PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>* AsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>* PrepareAsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>* AsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>* PrepareAsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>* AsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>* PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>* AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>* PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>* AsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>* PrepareAsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>* AsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>* PrepareAsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>* AsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>* PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>* AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>* PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>* AsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>* PrepareAsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>* AsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>* PrepareAsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>* AsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>* PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>* AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>* PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateObjectModel_;
     const ::grpc::internal::RpcMethod rpcmethod_GetObjectModel_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateObjectModel_;
@@ -436,21 +436,21 @@ class MruVObjectsService final {
     Service();
     virtual ~Service();
     // Create an object model.
-    virtual ::grpc::Status CreateObjectModel(::grpc::ServerContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response);
+    virtual ::grpc::Status CreateObjectModel(::grpc::ServerContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response);
     // Get an object model.
-    virtual ::grpc::Status GetObjectModel(::grpc::ServerContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response);
+    virtual ::grpc::Status GetObjectModel(::grpc::ServerContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response);
     // Update an object model.
-    virtual ::grpc::Status UpdateObjectModel(::grpc::ServerContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response);
+    virtual ::grpc::Status UpdateObjectModel(::grpc::ServerContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response);
     // Delete an object model.
-    virtual ::grpc::Status DeleteObjectModel(::grpc::ServerContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response);
+    virtual ::grpc::Status DeleteObjectModel(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response);
     // Create an object.
-    virtual ::grpc::Status CreateObject(::grpc::ServerContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response);
+    virtual ::grpc::Status CreateObject(::grpc::ServerContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response);
     // Get an object.
-    virtual ::grpc::Status GetObject(::grpc::ServerContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response);
+    virtual ::grpc::Status GetObject(::grpc::ServerContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response);
     // Update an object.
-    virtual ::grpc::Status UpdateObject(::grpc::ServerContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response);
+    virtual ::grpc::Status UpdateObject(::grpc::ServerContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response);
     // Delete an object.
-    virtual ::grpc::Status DeleteObject(::grpc::ServerContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response);
+    virtual ::grpc::Status DeleteObject(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateObjectModel : public BaseClass {
@@ -464,11 +464,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/) override {
+    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateObjectModel(::grpc::ServerContext* context, ::mruv::gates::CreateObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::CreateObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCreateObjectModel(::grpc::ServerContext* context, ::mruv::objects::CreateObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::CreateObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -484,11 +484,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/) override {
+    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetObjectModel(::grpc::ServerContext* context, ::mruv::gates::GetObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::GetObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetObjectModel(::grpc::ServerContext* context, ::mruv::objects::GetObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::GetObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -504,11 +504,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/) override {
+    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateObjectModel(::grpc::ServerContext* context, ::mruv::gates::UpdateObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::UpdateObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateObjectModel(::grpc::ServerContext* context, ::mruv::objects::UpdateObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::UpdateObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -524,11 +524,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/) override {
+    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteObjectModel(::grpc::ServerContext* context, ::mruv::gates::DeleteObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::DeleteObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDeleteObjectModel(::grpc::ServerContext* context, ::mruv::objects::DeleteObjectModelRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::DeleteObjectModelResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -544,11 +544,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/) override {
+    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateObject(::grpc::ServerContext* context, ::mruv::gates::CreateObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::CreateObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCreateObject(::grpc::ServerContext* context, ::mruv::objects::CreateObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::CreateObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -564,11 +564,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/) override {
+    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetObject(::grpc::ServerContext* context, ::mruv::gates::GetObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::GetObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetObject(::grpc::ServerContext* context, ::mruv::objects::GetObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::GetObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -584,11 +584,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/) override {
+    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateObject(::grpc::ServerContext* context, ::mruv::gates::UpdateObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::UpdateObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateObject(::grpc::ServerContext* context, ::mruv::objects::UpdateObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::UpdateObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -604,11 +604,11 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/) override {
+    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteObject(::grpc::ServerContext* context, ::mruv::gates::DeleteObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::gates::DeleteObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDeleteObject(::grpc::ServerContext* context, ::mruv::objects::DeleteObjectRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::DeleteObjectResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -625,38 +625,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CreateObjectModelRequest, ::mruv::gates::CreateObjectModelResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response) { return this->CreateObjectModel(context, request, response); }));}
+                     context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response) { return this->CreateObjectModel(context, request, response); }));}
     void SetMessageAllocatorFor_CreateObjectModel(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::CreateObjectModelRequest, ::mruv::gates::CreateObjectModelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CreateObjectModelRequest, ::mruv::gates::CreateObjectModelResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/) override {
+    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateObjectModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* CreateObjectModel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -672,38 +672,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::GetObjectModelRequest, ::mruv::gates::GetObjectModelResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response) { return this->GetObjectModel(context, request, response); }));}
+                     context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response) { return this->GetObjectModel(context, request, response); }));}
     void SetMessageAllocatorFor_GetObjectModel(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::GetObjectModelRequest, ::mruv::gates::GetObjectModelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::GetObjectModelRequest, ::mruv::gates::GetObjectModelResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/) override {
+    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetObjectModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetObjectModel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -719,38 +719,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UpdateObjectModelRequest, ::mruv::gates::UpdateObjectModelResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response) { return this->UpdateObjectModel(context, request, response); }));}
+                     context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response) { return this->UpdateObjectModel(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateObjectModel(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::UpdateObjectModelRequest, ::mruv::gates::UpdateObjectModelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UpdateObjectModelRequest, ::mruv::gates::UpdateObjectModelResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/) override {
+    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UpdateObjectModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UpdateObjectModel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -766,38 +766,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::DeleteObjectModelRequest, ::mruv::gates::DeleteObjectModelResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response) { return this->DeleteObjectModel(context, request, response); }));}
+                     context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response) { return this->DeleteObjectModel(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteObjectModel(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::DeleteObjectModelRequest, ::mruv::gates::DeleteObjectModelResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::DeleteObjectModelRequest, ::mruv::gates::DeleteObjectModelResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/) override {
+    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* DeleteObjectModel(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* DeleteObjectModel(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -813,38 +813,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CreateObjectRequest, ::mruv::gates::CreateObjectResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectRequest, ::mruv::objects::CreateObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response) { return this->CreateObject(context, request, response); }));}
+                     context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response) { return this->CreateObject(context, request, response); }));}
     void SetMessageAllocatorFor_CreateObject(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::CreateObjectRequest, ::mruv::gates::CreateObjectResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::CreateObjectRequest, ::mruv::objects::CreateObjectResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CreateObjectRequest, ::mruv::gates::CreateObjectResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectRequest, ::mruv::objects::CreateObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/) override {
+    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateObject(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* CreateObject(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -860,38 +860,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::GetObjectRequest, ::mruv::gates::GetObjectResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectRequest, ::mruv::objects::GetObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response) { return this->GetObject(context, request, response); }));}
+                     context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response) { return this->GetObject(context, request, response); }));}
     void SetMessageAllocatorFor_GetObject(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::GetObjectRequest, ::mruv::gates::GetObjectResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::GetObjectRequest, ::mruv::objects::GetObjectResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::GetObjectRequest, ::mruv::gates::GetObjectResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectRequest, ::mruv::objects::GetObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/) override {
+    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetObject(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetObject(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -907,38 +907,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UpdateObjectRequest, ::mruv::gates::UpdateObjectResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectRequest, ::mruv::objects::UpdateObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response) { return this->UpdateObject(context, request, response); }));}
+                     context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response) { return this->UpdateObject(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateObject(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::UpdateObjectRequest, ::mruv::gates::UpdateObjectResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::UpdateObjectRequest, ::mruv::objects::UpdateObjectResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UpdateObjectRequest, ::mruv::gates::UpdateObjectResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectRequest, ::mruv::objects::UpdateObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/) override {
+    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UpdateObject(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UpdateObject(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -954,38 +954,38 @@ class MruVObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::DeleteObjectRequest, ::mruv::gates::DeleteObjectResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectRequest, ::mruv::objects::DeleteObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response) { return this->DeleteObject(context, request, response); }));}
+                     context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response) { return this->DeleteObject(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteObject(
-        ::grpc::experimental::MessageAllocator< ::mruv::gates::DeleteObjectRequest, ::mruv::gates::DeleteObjectResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::DeleteObjectRequest, ::mruv::objects::DeleteObjectResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::DeleteObjectRequest, ::mruv::gates::DeleteObjectResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectRequest, ::mruv::objects::DeleteObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/) override {
+    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* DeleteObject(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* DeleteObject(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1006,7 +1006,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/) override {
+    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1023,7 +1023,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/) override {
+    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1040,7 +1040,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/) override {
+    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1057,7 +1057,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/) override {
+    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1074,7 +1074,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/) override {
+    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1091,7 +1091,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/) override {
+    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1108,7 +1108,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/) override {
+    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1125,7 +1125,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/) override {
+    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1142,7 +1142,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/) override {
+    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1162,7 +1162,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/) override {
+    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1182,7 +1182,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/) override {
+    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1202,7 +1202,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/) override {
+    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1222,7 +1222,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/) override {
+    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1242,7 +1242,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/) override {
+    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1262,7 +1262,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/) override {
+    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1282,7 +1282,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/) override {
+    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1315,7 +1315,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/) override {
+    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1353,7 +1353,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/) override {
+    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1391,7 +1391,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/) override {
+    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1429,7 +1429,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/) override {
+    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1467,7 +1467,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/) override {
+    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1505,7 +1505,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/) override {
+    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1543,7 +1543,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/) override {
+    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1581,7 +1581,7 @@ class MruVObjectsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/) override {
+    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1601,18 +1601,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_CreateObjectModel() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::CreateObjectModelRequest, ::mruv::gates::CreateObjectModelResponse>(std::bind(&WithStreamedUnaryMethod_CreateObjectModel<BaseClass>::StreamedCreateObjectModel, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>* streamer) {
+                       return this->StreamedCreateObjectModel(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectModelRequest* /*request*/, ::mruv::gates::CreateObjectModelResponse* /*response*/) override {
+    ::grpc::Status CreateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectModelRequest* /*request*/, ::mruv::objects::CreateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::CreateObjectModelRequest,::mruv::gates::CreateObjectModelResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedCreateObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::CreateObjectModelRequest,::mruv::objects::CreateObjectModelResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetObjectModel : public BaseClass {
@@ -1621,18 +1628,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_GetObjectModel() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::GetObjectModelRequest, ::mruv::gates::GetObjectModelResponse>(std::bind(&WithStreamedUnaryMethod_GetObjectModel<BaseClass>::StreamedGetObjectModel, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>* streamer) {
+                       return this->StreamedGetObjectModel(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectModelRequest* /*request*/, ::mruv::gates::GetObjectModelResponse* /*response*/) override {
+    ::grpc::Status GetObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectModelRequest* /*request*/, ::mruv::objects::GetObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::GetObjectModelRequest,::mruv::gates::GetObjectModelResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::GetObjectModelRequest,::mruv::objects::GetObjectModelResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UpdateObjectModel : public BaseClass {
@@ -1641,18 +1655,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_UpdateObjectModel() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::UpdateObjectModelRequest, ::mruv::gates::UpdateObjectModelResponse>(std::bind(&WithStreamedUnaryMethod_UpdateObjectModel<BaseClass>::StreamedUpdateObjectModel, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>* streamer) {
+                       return this->StreamedUpdateObjectModel(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectModelRequest* /*request*/, ::mruv::gates::UpdateObjectModelResponse* /*response*/) override {
+    ::grpc::Status UpdateObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectModelRequest* /*request*/, ::mruv::objects::UpdateObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::UpdateObjectModelRequest,::mruv::gates::UpdateObjectModelResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUpdateObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::UpdateObjectModelRequest,::mruv::objects::UpdateObjectModelResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteObjectModel : public BaseClass {
@@ -1661,18 +1682,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_DeleteObjectModel() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::DeleteObjectModelRequest, ::mruv::gates::DeleteObjectModelResponse>(std::bind(&WithStreamedUnaryMethod_DeleteObjectModel<BaseClass>::StreamedDeleteObjectModel, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>* streamer) {
+                       return this->StreamedDeleteObjectModel(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteObjectModel() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectModelRequest* /*request*/, ::mruv::gates::DeleteObjectModelResponse* /*response*/) override {
+    ::grpc::Status DeleteObjectModel(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectModelRequest* /*request*/, ::mruv::objects::DeleteObjectModelResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedDeleteObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::DeleteObjectModelRequest,::mruv::gates::DeleteObjectModelResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedDeleteObjectModel(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::DeleteObjectModelRequest,::mruv::objects::DeleteObjectModelResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateObject : public BaseClass {
@@ -1681,18 +1709,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_CreateObject() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::CreateObjectRequest, ::mruv::gates::CreateObjectResponse>(std::bind(&WithStreamedUnaryMethod_CreateObject<BaseClass>::StreamedCreateObject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::CreateObjectRequest, ::mruv::objects::CreateObjectResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::CreateObjectRequest, ::mruv::objects::CreateObjectResponse>* streamer) {
+                       return this->StreamedCreateObject(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::CreateObjectRequest* /*request*/, ::mruv::gates::CreateObjectResponse* /*response*/) override {
+    ::grpc::Status CreateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::CreateObjectRequest* /*request*/, ::mruv::objects::CreateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::CreateObjectRequest,::mruv::gates::CreateObjectResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedCreateObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::CreateObjectRequest,::mruv::objects::CreateObjectResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetObject : public BaseClass {
@@ -1701,18 +1736,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_GetObject() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::GetObjectRequest, ::mruv::gates::GetObjectResponse>(std::bind(&WithStreamedUnaryMethod_GetObject<BaseClass>::StreamedGetObject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::GetObjectRequest, ::mruv::objects::GetObjectResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::GetObjectRequest, ::mruv::objects::GetObjectResponse>* streamer) {
+                       return this->StreamedGetObject(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::GetObjectRequest* /*request*/, ::mruv::gates::GetObjectResponse* /*response*/) override {
+    ::grpc::Status GetObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectRequest* /*request*/, ::mruv::objects::GetObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::GetObjectRequest,::mruv::gates::GetObjectResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::GetObjectRequest,::mruv::objects::GetObjectResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UpdateObject : public BaseClass {
@@ -1721,18 +1763,25 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_UpdateObject() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::UpdateObjectRequest, ::mruv::gates::UpdateObjectResponse>(std::bind(&WithStreamedUnaryMethod_UpdateObject<BaseClass>::StreamedUpdateObject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::UpdateObjectRequest, ::mruv::objects::UpdateObjectResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::UpdateObjectRequest, ::mruv::objects::UpdateObjectResponse>* streamer) {
+                       return this->StreamedUpdateObject(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::UpdateObjectRequest* /*request*/, ::mruv::gates::UpdateObjectResponse* /*response*/) override {
+    ::grpc::Status UpdateObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::UpdateObjectRequest* /*request*/, ::mruv::objects::UpdateObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::UpdateObjectRequest,::mruv::gates::UpdateObjectResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUpdateObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::UpdateObjectRequest,::mruv::objects::UpdateObjectResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteObject : public BaseClass {
@@ -1741,25 +1790,32 @@ class MruVObjectsService final {
    public:
     WithStreamedUnaryMethod_DeleteObject() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::gates::DeleteObjectRequest, ::mruv::gates::DeleteObjectResponse>(std::bind(&WithStreamedUnaryMethod_DeleteObject<BaseClass>::StreamedDeleteObject, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::DeleteObjectRequest, ::mruv::objects::DeleteObjectResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::DeleteObjectRequest, ::mruv::objects::DeleteObjectResponse>* streamer) {
+                       return this->StreamedDeleteObject(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteObject() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::gates::DeleteObjectRequest* /*request*/, ::mruv::gates::DeleteObjectResponse* /*response*/) override {
+    ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedDeleteObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::DeleteObjectRequest,::mruv::gates::DeleteObjectResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedDeleteObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::DeleteObjectRequest,::mruv::objects::DeleteObjectResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateObjectModel<WithStreamedUnaryMethod_GetObjectModel<WithStreamedUnaryMethod_UpdateObjectModel<WithStreamedUnaryMethod_DeleteObjectModel<WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<Service > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
   typedef WithStreamedUnaryMethod_CreateObjectModel<WithStreamedUnaryMethod_GetObjectModel<WithStreamedUnaryMethod_UpdateObjectModel<WithStreamedUnaryMethod_DeleteObjectModel<WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<Service > > > > > > > > StreamedService;
 };
 
-}  // namespace gates
+}  // namespace objects
 }  // namespace mruv
 
 

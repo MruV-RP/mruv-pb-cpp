@@ -1045,7 +1045,14 @@ class MruVElevatorsService final {
    public:
     WithStreamedUnaryMethod_CreateElevator() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(std::bind(&WithStreamedUnaryMethod_CreateElevator<BaseClass>::StreamedCreateElevator, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>* streamer) {
+                       return this->StreamedCreateElevator(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateElevator() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1065,7 +1072,14 @@ class MruVElevatorsService final {
    public:
     WithStreamedUnaryMethod_GetElevator() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(std::bind(&WithStreamedUnaryMethod_GetElevator<BaseClass>::StreamedGetElevator, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>* streamer) {
+                       return this->StreamedGetElevator(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetElevator() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1085,7 +1099,14 @@ class MruVElevatorsService final {
    public:
     WithStreamedUnaryMethod_UpdateElevator() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(std::bind(&WithStreamedUnaryMethod_UpdateElevator<BaseClass>::StreamedUpdateElevator, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>* streamer) {
+                       return this->StreamedUpdateElevator(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateElevator() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1105,7 +1126,14 @@ class MruVElevatorsService final {
    public:
     WithStreamedUnaryMethod_DeleteElevator() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(std::bind(&WithStreamedUnaryMethod_DeleteElevator<BaseClass>::StreamedDeleteElevator, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>* streamer) {
+                       return this->StreamedDeleteElevator(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteElevator() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1125,7 +1153,14 @@ class MruVElevatorsService final {
    public:
     WithStreamedUnaryMethod_GetElevatorFloors() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(std::bind(&WithStreamedUnaryMethod_GetElevatorFloors<BaseClass>::StreamedGetElevatorFloors, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>* streamer) {
+                       return this->StreamedGetElevatorFloors(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetElevatorFloors() override {
       BaseClassMustBeDerivedFromService(this);

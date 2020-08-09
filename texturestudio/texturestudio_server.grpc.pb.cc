@@ -266,42 +266,82 @@ TextureStudioServerService::Service::Service() {
       TextureStudioServerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::StartServerRequest, ::texture_studio::StartServerResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::StartServer), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::StartServerRequest* req,
+             ::texture_studio::StartServerResponse* resp) {
+               return service->StartServer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::StopServerRequest, ::texture_studio::StopServerResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::StopServer), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::StopServerRequest* req,
+             ::texture_studio::StopServerResponse* resp) {
+               return service->StopServer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::RestartServerRequest, ::texture_studio::RestartServerResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::RestartServer), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::RestartServerRequest* req,
+             ::texture_studio::RestartServerResponse* resp) {
+               return service->RestartServer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::ServerStatusRequest, ::texture_studio::ServerStatusResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::ServerStatus), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::ServerStatusRequest* req,
+             ::texture_studio::ServerStatusResponse* resp) {
+               return service->ServerStatus(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::UploadProjectRequest, ::texture_studio::UploadProjectResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::UploadProject), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::UploadProjectRequest* req,
+             ::texture_studio::UploadProjectResponse* resp) {
+               return service->UploadProject(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::GetProjectRequest, ::texture_studio::GetProjectResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::GetProject), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::GetProjectRequest* req,
+             ::texture_studio::GetProjectResponse* resp) {
+               return service->GetProject(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::GetProjectsRequest, ::texture_studio::GetProjectsResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::GetProjects), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::GetProjectsRequest* req,
+             ::texture_studio::GetProjectsResponse* resp) {
+               return service->GetProjects(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[7],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< TextureStudioServerService::Service, ::texture_studio::SubscribeToProjectsChangesRequest, ::texture_studio::SubscribeToProjectsChangesResponse>(
-          std::mem_fn(&TextureStudioServerService::Service::SubscribeToProjectsChanges), this)));
+          [](TextureStudioServerService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::texture_studio::SubscribeToProjectsChangesRequest* req,
+             ::grpc_impl::ServerWriter<::texture_studio::SubscribeToProjectsChangesResponse>* writer) {
+               return service->SubscribeToProjectsChanges(ctx, req, writer);
+             }, this)));
 }
 
 TextureStudioServerService::Service::~Service() {

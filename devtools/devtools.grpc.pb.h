@@ -1979,7 +1979,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_GetPositions() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(std::bind(&WithStreamedUnaryMethod_GetPositions<BaseClass>::StreamedGetPositions, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>* streamer) {
+                       return this->StreamedGetPositions(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetPositions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1999,7 +2006,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_SavePosition() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(std::bind(&WithStreamedUnaryMethod_SavePosition<BaseClass>::StreamedSavePosition, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>* streamer) {
+                       return this->StreamedSavePosition(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_SavePosition() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2019,7 +2033,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_DeletePosition() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(std::bind(&WithStreamedUnaryMethod_DeletePosition<BaseClass>::StreamedDeletePosition, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>* streamer) {
+                       return this->StreamedDeletePosition(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeletePosition() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2039,7 +2060,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_GetOutfits() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(std::bind(&WithStreamedUnaryMethod_GetOutfits<BaseClass>::StreamedGetOutfits, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>* streamer) {
+                       return this->StreamedGetOutfits(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetOutfits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2059,7 +2087,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_SaveOutfit() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(std::bind(&WithStreamedUnaryMethod_SaveOutfit<BaseClass>::StreamedSaveOutfit, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>* streamer) {
+                       return this->StreamedSaveOutfit(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_SaveOutfit() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2079,7 +2114,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_GetAnimations() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(std::bind(&WithStreamedUnaryMethod_GetAnimations<BaseClass>::StreamedGetAnimations, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>* streamer) {
+                       return this->StreamedGetAnimations(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetAnimations() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2099,7 +2141,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_GetAnimation() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(std::bind(&WithStreamedUnaryMethod_GetAnimation<BaseClass>::StreamedGetAnimation, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>* streamer) {
+                       return this->StreamedGetAnimation(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetAnimation() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2119,7 +2168,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_SaveAnimation() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(std::bind(&WithStreamedUnaryMethod_SaveAnimation<BaseClass>::StreamedSaveAnimation, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>* streamer) {
+                       return this->StreamedSaveAnimation(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_SaveAnimation() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2139,7 +2195,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_GetServiceStatus() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceStatus<BaseClass>::StreamedGetServiceStatus, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
+                       return this->StreamedGetServiceStatus(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2159,7 +2222,14 @@ class MruVDevToolsService final {
    public:
     WithStreamedUnaryMethod_GetServiceVersion() {
       ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(std::bind(&WithStreamedUnaryMethod_GetServiceVersion<BaseClass>::StreamedGetServiceVersion, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::VersionRequest, ::mruv::VersionResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
+                       return this->StreamedGetServiceVersion(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);

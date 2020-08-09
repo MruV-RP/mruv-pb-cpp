@@ -189,27 +189,52 @@ MruVOffersService::Service::Service() {
       MruVOffersService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(
-          std::mem_fn(&MruVOffersService::Service::CreateOffer), this)));
+          [](MruVOffersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::offers::CreateOfferRequest* req,
+             ::mruv::offers::CreateOfferResponse* resp) {
+               return service->CreateOffer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOffersService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(
-          std::mem_fn(&MruVOffersService::Service::GetOffer), this)));
+          [](MruVOffersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::offers::GetOfferRequest* req,
+             ::mruv::offers::GetOfferResponse* resp) {
+               return service->GetOffer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOffersService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(
-          std::mem_fn(&MruVOffersService::Service::UpdateOffer), this)));
+          [](MruVOffersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::offers::UpdateOfferRequest* req,
+             ::mruv::offers::UpdateOfferResponse* resp) {
+               return service->UpdateOffer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOffersService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(
-          std::mem_fn(&MruVOffersService::Service::DeleteOffer), this)));
+          [](MruVOffersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::offers::DeleteOfferRequest* req,
+             ::mruv::offers::DeleteOfferResponse* resp) {
+               return service->DeleteOffer(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVOffersService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(
-          std::mem_fn(&MruVOffersService::Service::AcceptOffer), this)));
+          [](MruVOffersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::offers::AcceptOfferRequest* req,
+             ::mruv::offers::AcceptOfferResponse* resp) {
+               return service->AcceptOffer(ctx, req, resp);
+             }, this)));
 }
 
 MruVOffersService::Service::~Service() {

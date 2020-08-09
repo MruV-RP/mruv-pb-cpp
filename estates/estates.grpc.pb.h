@@ -2168,7 +2168,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_CreateEstate() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(std::bind(&WithStreamedUnaryMethod_CreateEstate<BaseClass>::StreamedCreateEstate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>* streamer) {
+                       return this->StreamedCreateEstate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateEstate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2188,7 +2195,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_GetEstate() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(std::bind(&WithStreamedUnaryMethod_GetEstate<BaseClass>::StreamedGetEstate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>* streamer) {
+                       return this->StreamedGetEstate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetEstate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2208,7 +2222,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_UpdateEstate() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(std::bind(&WithStreamedUnaryMethod_UpdateEstate<BaseClass>::StreamedUpdateEstate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>* streamer) {
+                       return this->StreamedUpdateEstate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateEstate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2228,7 +2249,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_DeleteEstate() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(std::bind(&WithStreamedUnaryMethod_DeleteEstate<BaseClass>::StreamedDeleteEstate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>* streamer) {
+                       return this->StreamedDeleteEstate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteEstate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2248,7 +2276,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_GetEstates() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(std::bind(&WithStreamedUnaryMethod_GetEstates<BaseClass>::StreamedGetEstates, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>* streamer) {
+                       return this->StreamedGetEstates(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetEstates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2268,7 +2303,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_AddGate() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(std::bind(&WithStreamedUnaryMethod_AddGate<BaseClass>::StreamedAddGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>* streamer) {
+                       return this->StreamedAddGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AddGate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2288,7 +2330,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_RemoveGate() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(std::bind(&WithStreamedUnaryMethod_RemoveGate<BaseClass>::StreamedRemoveGate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>* streamer) {
+                       return this->StreamedRemoveGate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RemoveGate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2308,7 +2357,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_GetEstateGates() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(std::bind(&WithStreamedUnaryMethod_GetEstateGates<BaseClass>::StreamedGetEstateGates, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>* streamer) {
+                       return this->StreamedGetEstateGates(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetEstateGates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2328,7 +2384,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_AddEntrance() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(std::bind(&WithStreamedUnaryMethod_AddEntrance<BaseClass>::StreamedAddEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>* streamer) {
+                       return this->StreamedAddEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AddEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2348,7 +2411,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_RemoveEntrance() {
       ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(std::bind(&WithStreamedUnaryMethod_RemoveEntrance<BaseClass>::StreamedRemoveEntrance, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>* streamer) {
+                       return this->StreamedRemoveEntrance(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_RemoveEntrance() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2368,7 +2438,14 @@ class MruVEstateService final {
    public:
     WithStreamedUnaryMethod_GetEstateEntrances() {
       ::grpc::Service::MarkMethodStreamed(10,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(std::bind(&WithStreamedUnaryMethod_GetEstateEntrances<BaseClass>::StreamedGetEstateEntrances, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>* streamer) {
+                       return this->StreamedGetEstateEntrances(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetEstateEntrances() override {
       BaseClassMustBeDerivedFromService(this);

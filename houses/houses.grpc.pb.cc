@@ -159,22 +159,42 @@ MruVHousesService::Service::Service() {
       MruVHousesService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(
-          std::mem_fn(&MruVHousesService::Service::CreateHouse), this)));
+          [](MruVHousesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::houses::CreateHouseRequest* req,
+             ::mruv::houses::CreateHouseResponse* resp) {
+               return service->CreateHouse(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVHousesService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(
-          std::mem_fn(&MruVHousesService::Service::GetHouse), this)));
+          [](MruVHousesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::houses::GetHouseRequest* req,
+             ::mruv::houses::GetHouseResponse* resp) {
+               return service->GetHouse(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVHousesService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(
-          std::mem_fn(&MruVHousesService::Service::UpdateHouse), this)));
+          [](MruVHousesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::houses::UpdateHouseRequest* req,
+             ::mruv::houses::UpdateHouseResponse* resp) {
+               return service->UpdateHouse(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVHousesService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(
-          std::mem_fn(&MruVHousesService::Service::DeleteHouse), this)));
+          [](MruVHousesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::houses::DeleteHouseRequest* req,
+             ::mruv::houses::DeleteHouseResponse* resp) {
+               return service->DeleteHouse(ctx, req, resp);
+             }, this)));
 }
 
 MruVHousesService::Service::~Service() {

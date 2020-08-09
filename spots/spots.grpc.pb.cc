@@ -159,22 +159,42 @@ MruVSpotsService::Service::Service() {
       MruVSpotsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(
-          std::mem_fn(&MruVSpotsService::Service::CreateSpot), this)));
+          [](MruVSpotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::spots::CreateSpotRequest* req,
+             ::mruv::spots::CreateSpotResponse* resp) {
+               return service->CreateSpot(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVSpotsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(
-          std::mem_fn(&MruVSpotsService::Service::GetSpot), this)));
+          [](MruVSpotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::spots::GetSpotRequest* req,
+             ::mruv::spots::GetSpotResponse* resp) {
+               return service->GetSpot(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVSpotsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(
-          std::mem_fn(&MruVSpotsService::Service::UpdateSpot), this)));
+          [](MruVSpotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::spots::UpdateSpotRequest* req,
+             ::mruv::spots::UpdateSpotResponse* resp) {
+               return service->UpdateSpot(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVSpotsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(
-          std::mem_fn(&MruVSpotsService::Service::DeleteSpot), this)));
+          [](MruVSpotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::spots::DeleteSpotRequest* req,
+             ::mruv::spots::DeleteSpotResponse* resp) {
+               return service->DeleteSpot(ctx, req, resp);
+             }, this)));
 }
 
 MruVSpotsService::Service::~Service() {

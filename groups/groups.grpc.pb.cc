@@ -608,97 +608,192 @@ MruVGroupsService::Service::Service() {
       MruVGroupsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>(
-          std::mem_fn(&MruVGroupsService::Service::CreateGroup), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::CreateGroupRequest* req,
+             ::mruv::CreateGroupResponse* resp) {
+               return service->CreateGroup(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetGroup), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetGroupRequest* req,
+             ::mruv::GetGroupResponse* resp) {
+               return service->GetGroup(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>(
-          std::mem_fn(&MruVGroupsService::Service::UpdateGroup), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::UpdateGroupRequest* req,
+             ::mruv::UpdateGroupResponse* resp) {
+               return service->UpdateGroup(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>(
-          std::mem_fn(&MruVGroupsService::Service::DeleteGroup), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::DeleteGroupRequest* req,
+             ::mruv::DeleteGroupResponse* resp) {
+               return service->DeleteGroup(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetGroups), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetGroupsRequest* req,
+             ::mruv::GetGroupsResponse* resp) {
+               return service->GetGroups(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>(
-          std::mem_fn(&MruVGroupsService::Service::AssignOwner), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::AssignOwnerRequest* req,
+             ::mruv::AssignOwnerResponse* resp) {
+               return service->AssignOwner(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetOwner), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetOwnerRequest* req,
+             ::mruv::GetOwnerResponse* resp) {
+               return service->GetOwner(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>(
-          std::mem_fn(&MruVGroupsService::Service::AddMember), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::AddMemberRequest* req,
+             ::mruv::AddMemberResponse* resp) {
+               return service->AddMember(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetMembers), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetMembersRequest* req,
+             ::mruv::GetMembersResponse* resp) {
+               return service->GetMembers(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>(
-          std::mem_fn(&MruVGroupsService::Service::RemoveMember), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::RemoveMemberRequest* req,
+             ::mruv::RemoveMemberResponse* resp) {
+               return service->RemoveMember(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>(
-          std::mem_fn(&MruVGroupsService::Service::AddPermission), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::AddPermissionRequest* req,
+             ::mruv::AddPermissionResponse* resp) {
+               return service->AddPermission(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetPermissions), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetPermissionsRequest* req,
+             ::mruv::GetPermissionsResponse* resp) {
+               return service->GetPermissions(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>(
-          std::mem_fn(&MruVGroupsService::Service::RemovePermission), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::RemovePermissionRequest* req,
+             ::mruv::RemovePermissionResponse* resp) {
+               return service->RemovePermission(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>(
-          std::mem_fn(&MruVGroupsService::Service::AddSubgroup), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::AddSubgroupRequest* req,
+             ::mruv::AddSubgroupResponse* resp) {
+               return service->AddSubgroup(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetSubgroups), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetSubgroupsRequest* req,
+             ::mruv::GetSubgroupsResponse* resp) {
+               return service->GetSubgroups(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>(
-          std::mem_fn(&MruVGroupsService::Service::RemoveSubgroup), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::RemoveSubgroupRequest* req,
+             ::mruv::RemoveSubgroupResponse* resp) {
+               return service->RemoveSubgroup(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>(
-          std::mem_fn(&MruVGroupsService::Service::IsPermitted), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::IsPermittedRequest* req,
+             ::mruv::IsPermittedResponse* resp) {
+               return service->IsPermitted(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetServiceStatus), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ServiceStatusRequest* req,
+             ::mruv::ServiceStatusResponse* resp) {
+               return service->GetServiceStatus(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGroupsService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGroupsService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          std::mem_fn(&MruVGroupsService::Service::GetServiceVersion), this)));
+          [](MruVGroupsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::VersionRequest* req,
+             ::mruv::VersionResponse* resp) {
+               return service->GetServiceVersion(ctx, req, resp);
+             }, this)));
 }
 
 MruVGroupsService::Service::~Service() {

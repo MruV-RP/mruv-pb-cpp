@@ -309,47 +309,92 @@ MruVGatesService::Service::Service() {
       MruVGatesService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(
-          std::mem_fn(&MruVGatesService::Service::CreateGate), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::CreateGateRequest* req,
+             ::mruv::gates::CreateGateResponse* resp) {
+               return service->CreateGate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(
-          std::mem_fn(&MruVGatesService::Service::GetGate), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::GetGateRequest* req,
+             ::mruv::gates::GetGateResponse* resp) {
+               return service->GetGate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(
-          std::mem_fn(&MruVGatesService::Service::UpdateGate), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::UpdateGateRequest* req,
+             ::mruv::gates::UpdateGateResponse* resp) {
+               return service->UpdateGate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(
-          std::mem_fn(&MruVGatesService::Service::DeleteGate), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::DeleteGateRequest* req,
+             ::mruv::gates::DeleteGateResponse* resp) {
+               return service->DeleteGate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(
-          std::mem_fn(&MruVGatesService::Service::Lock), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::LockRequest* req,
+             ::mruv::gates::LockResponse* resp) {
+               return service->Lock(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(
-          std::mem_fn(&MruVGatesService::Service::Unlock), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::UnlockRequest* req,
+             ::mruv::gates::UnlockResponse* resp) {
+               return service->Unlock(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(
-          std::mem_fn(&MruVGatesService::Service::Open), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::OpenRequest* req,
+             ::mruv::gates::OpenResponse* resp) {
+               return service->Open(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(
-          std::mem_fn(&MruVGatesService::Service::Close), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::CloseRequest* req,
+             ::mruv::gates::CloseResponse* resp) {
+               return service->Close(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(
-          std::mem_fn(&MruVGatesService::Service::FindNearestGate), this)));
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::FindNearestGateRequest* req,
+             ::mruv::gates::FindNearestGateResponse* resp) {
+               return service->FindNearestGate(ctx, req, resp);
+             }, this)));
 }
 
 MruVGatesService::Service::~Service() {

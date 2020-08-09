@@ -296,47 +296,92 @@ MruVCharactersService::Service::Service() {
       MruVCharactersService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::CreateCharacterRequest, ::mruv::CreateCharacterResponse>(
-          std::mem_fn(&MruVCharactersService::Service::CreateCharacter), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::CreateCharacterRequest* req,
+             ::mruv::CreateCharacterResponse* resp) {
+               return service->CreateCharacter(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::GetCharacterRequest, ::mruv::GetCharacterResponse>(
-          std::mem_fn(&MruVCharactersService::Service::GetCharacter), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::GetCharacterRequest* req,
+             ::mruv::GetCharacterResponse* resp) {
+               return service->GetCharacter(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::UpdateCharacterRequest, ::mruv::UpdateCharacterResponse>(
-          std::mem_fn(&MruVCharactersService::Service::UpdateCharacter), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::UpdateCharacterRequest* req,
+             ::mruv::UpdateCharacterResponse* resp) {
+               return service->UpdateCharacter(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::DeleteCharacterRequest, ::mruv::DeleteCharacterResponse>(
-          std::mem_fn(&MruVCharactersService::Service::DeleteCharacter), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::DeleteCharacterRequest* req,
+             ::mruv::DeleteCharacterResponse* resp) {
+               return service->DeleteCharacter(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::CharacterID, ::mruv::CharacterID>(
-          std::mem_fn(&MruVCharactersService::Service::PermanentCharacterKill), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::CharacterID* req,
+             ::mruv::CharacterID* resp) {
+               return service->PermanentCharacterKill(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::ChangeClothesRequest, ::mruv::ChangeClothesResponse>(
-          std::mem_fn(&MruVCharactersService::Service::ChangeClothes), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ChangeClothesRequest* req,
+             ::mruv::ChangeClothesResponse* resp) {
+               return service->ChangeClothes(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[6],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVCharactersService::Service, ::mruv::DeathStreamRequest, ::mruv::DeathStreamResponse>(
-          std::mem_fn(&MruVCharactersService::Service::DeathsStream), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::DeathStreamRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::DeathStreamResponse>* writer) {
+               return service->DeathsStream(ctx, req, writer);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-          std::mem_fn(&MruVCharactersService::Service::GetServiceStatus), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::ServiceStatusRequest* req,
+             ::mruv::ServiceStatusResponse* resp) {
+               return service->GetServiceStatus(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVCharactersService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVCharactersService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
-          std::mem_fn(&MruVCharactersService::Service::GetServiceVersion), this)));
+          [](MruVCharactersService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::VersionRequest* req,
+             ::mruv::VersionResponse* resp) {
+               return service->GetServiceVersion(ctx, req, resp);
+             }, this)));
 }
 
 MruVCharactersService::Service::~Service() {

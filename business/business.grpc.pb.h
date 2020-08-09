@@ -1948,7 +1948,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_CreateBusiness() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(std::bind(&WithStreamedUnaryMethod_CreateBusiness<BaseClass>::StreamedCreateBusiness, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>* streamer) {
+                       return this->StreamedCreateBusiness(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_CreateBusiness() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1968,7 +1975,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_GetBusiness() {
       ::grpc::Service::MarkMethodStreamed(1,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(std::bind(&WithStreamedUnaryMethod_GetBusiness<BaseClass>::StreamedGetBusiness, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::GetBusinessRequest, ::mruv::business::Business>* streamer) {
+                       return this->StreamedGetBusiness(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_GetBusiness() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1988,7 +2002,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_UpdateBusiness() {
       ::grpc::Service::MarkMethodStreamed(2,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(std::bind(&WithStreamedUnaryMethod_UpdateBusiness<BaseClass>::StreamedUpdateBusiness, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>* streamer) {
+                       return this->StreamedUpdateBusiness(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UpdateBusiness() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2008,7 +2029,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_DeleteBusiness() {
       ::grpc::Service::MarkMethodStreamed(3,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(std::bind(&WithStreamedUnaryMethod_DeleteBusiness<BaseClass>::StreamedDeleteBusiness, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>* streamer) {
+                       return this->StreamedDeleteBusiness(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_DeleteBusiness() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2028,7 +2056,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_AssignOwner() {
       ::grpc::Service::MarkMethodStreamed(4,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(std::bind(&WithStreamedUnaryMethod_AssignOwner<BaseClass>::StreamedAssignOwner, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>* streamer) {
+                       return this->StreamedAssignOwner(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AssignOwner() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2048,7 +2083,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_AssignEstate() {
       ::grpc::Service::MarkMethodStreamed(5,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(std::bind(&WithStreamedUnaryMethod_AssignEstate<BaseClass>::StreamedAssignEstate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>* streamer) {
+                       return this->StreamedAssignEstate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_AssignEstate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2068,7 +2110,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_UnassignEstate() {
       ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(std::bind(&WithStreamedUnaryMethod_UnassignEstate<BaseClass>::StreamedUnassignEstate, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>* streamer) {
+                       return this->StreamedUnassignEstate(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_UnassignEstate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2088,7 +2137,14 @@ class MruVBusinessService final {
    public:
     WithStreamedUnaryMethod_BuyBusiness() {
       ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler< ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(std::bind(&WithStreamedUnaryMethod_BuyBusiness<BaseClass>::StreamedBuyBusiness, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>* streamer) {
+                       return this->StreamedBuyBusiness(context,
+                         streamer);
+                  }));
     }
     ~WithStreamedUnaryMethod_BuyBusiness() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2109,7 +2165,14 @@ class MruVBusinessService final {
    public:
     WithSplitStreamingMethod_WatchBusiness() {
       ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(std::bind(&WithSplitStreamingMethod_WatchBusiness<BaseClass>::StreamedWatchBusiness, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>* streamer) {
+                       return this->StreamedWatchBusiness(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchBusiness() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2129,7 +2192,14 @@ class MruVBusinessService final {
    public:
     WithSplitStreamingMethod_WatchBusinesses() {
       ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::SplitServerStreamingHandler< ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(std::bind(&WithSplitStreamingMethod_WatchBusinesses<BaseClass>::StreamedWatchBusinesses, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>* streamer) {
+                       return this->StreamedWatchBusinesses(context,
+                         streamer);
+                  }));
     }
     ~WithSplitStreamingMethod_WatchBusinesses() override {
       BaseClassMustBeDerivedFromService(this);

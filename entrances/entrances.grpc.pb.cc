@@ -279,42 +279,82 @@ MruVEntrancesService::Service::Service() {
       MruVEntrancesService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::CreateEntrance), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::CreateEntranceRequest* req,
+             ::mruv::entrances::CreateEntranceResponse* resp) {
+               return service->CreateEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::GetEntrance), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::GetEntranceRequest* req,
+             ::mruv::entrances::GetEntranceResponse* resp) {
+               return service->GetEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::UpdateEntrance), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::UpdateEntranceRequest* req,
+             ::mruv::entrances::UpdateEntranceResponse* resp) {
+               return service->UpdateEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::DeleteEntrance), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::DeleteEntranceRequest* req,
+             ::mruv::entrances::DeleteEntranceResponse* resp) {
+               return service->DeleteEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::Lock), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::LockRequest* req,
+             ::mruv::entrances::LockResponse* resp) {
+               return service->Lock(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::Unlock), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::UnlockRequest* req,
+             ::mruv::entrances::UnlockResponse* resp) {
+               return service->Unlock(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::FindNearestEntrance), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::FindNearestEntranceRequest* req,
+             ::mruv::entrances::FindNearestEntranceResponse* resp) {
+               return service->FindNearestEntrance(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(
-          std::mem_fn(&MruVEntrancesService::Service::Enter), this)));
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::EnterRequest* req,
+             ::mruv::entrances::EnterResponse* resp) {
+               return service->Enter(ctx, req, resp);
+             }, this)));
 }
 
 MruVEntrancesService::Service::~Service() {

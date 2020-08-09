@@ -20,17 +20,17 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace mruv {
-namespace gates {
+namespace objects {
 
 static const char* MruVObjectsService_method_names[] = {
-  "/mruv.gates.MruVObjectsService/CreateObjectModel",
-  "/mruv.gates.MruVObjectsService/GetObjectModel",
-  "/mruv.gates.MruVObjectsService/UpdateObjectModel",
-  "/mruv.gates.MruVObjectsService/DeleteObjectModel",
-  "/mruv.gates.MruVObjectsService/CreateObject",
-  "/mruv.gates.MruVObjectsService/GetObject",
-  "/mruv.gates.MruVObjectsService/UpdateObject",
-  "/mruv.gates.MruVObjectsService/DeleteObject",
+  "/mruv.objects.MruVObjectsService/CreateObjectModel",
+  "/mruv.objects.MruVObjectsService/GetObjectModel",
+  "/mruv.objects.MruVObjectsService/UpdateObjectModel",
+  "/mruv.objects.MruVObjectsService/DeleteObjectModel",
+  "/mruv.objects.MruVObjectsService/CreateObject",
+  "/mruv.objects.MruVObjectsService/GetObject",
+  "/mruv.objects.MruVObjectsService/UpdateObject",
+  "/mruv.objects.MruVObjectsService/DeleteObject",
 };
 
 std::unique_ptr< MruVObjectsService::Stub> MruVObjectsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -50,326 +50,366 @@ MruVObjectsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_DeleteObject_(MruVObjectsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MruVObjectsService::Stub::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::mruv::gates::CreateObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Stub::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::mruv::objects::CreateObjectModelResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateObjectModel_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateObjectModel_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateObjectModel_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>* MruVObjectsService::Stub::AsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_CreateObjectModel_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>* MruVObjectsService::Stub::AsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_CreateObjectModel_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_CreateObjectModel_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncCreateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_CreateObjectModel_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::mruv::gates::GetObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Stub::GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::mruv::objects::GetObjectModelResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetObjectModel_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObjectModel_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObjectModel_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>* MruVObjectsService::Stub::AsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectModel_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>* MruVObjectsService::Stub::AsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectModel_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectModel_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncGetObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectModel_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::mruv::gates::UpdateObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Stub::UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::mruv::objects::UpdateObjectModelResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateObjectModel_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateObjectModel_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateObjectModel_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>* MruVObjectsService::Stub::AsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObjectModel_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>* MruVObjectsService::Stub::AsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObjectModel_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObjectModel_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObjectModel_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::mruv::gates::DeleteObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Stub::DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::mruv::objects::DeleteObjectModelResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteObjectModel_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectModel_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectModel_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectModel_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>* MruVObjectsService::Stub::AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectModel_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>* MruVObjectsService::Stub::AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectModel_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectModel_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectModel_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::mruv::gates::CreateObjectResponse* response) {
+::grpc::Status MruVObjectsService::Stub::CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::mruv::objects::CreateObjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateObject_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateObject_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::CreateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateObject_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>* MruVObjectsService::Stub::AsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateObject_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>* MruVObjectsService::Stub::AsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateObject_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateObjectResponse>* MruVObjectsService::Stub::PrepareAsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateObject_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateObjectResponse>* MruVObjectsService::Stub::PrepareAsyncCreateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateObject_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::mruv::gates::GetObjectResponse* response) {
+::grpc::Status MruVObjectsService::Stub::GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::mruv::objects::GetObjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetObject_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObject_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::GetObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObject_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>* MruVObjectsService::Stub::AsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetObject_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>* MruVObjectsService::Stub::AsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetObject_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::GetObjectResponse>* MruVObjectsService::Stub::PrepareAsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetObject_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectResponse>* MruVObjectsService::Stub::PrepareAsyncGetObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetObject_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::mruv::gates::UpdateObjectResponse* response) {
+::grpc::Status MruVObjectsService::Stub::UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::mruv::objects::UpdateObjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UpdateObject_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateObject_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::UpdateObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateObject_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>* MruVObjectsService::Stub::AsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObject_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>* MruVObjectsService::Stub::AsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObject_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateObjectResponse>* MruVObjectsService::Stub::PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObject_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>* MruVObjectsService::Stub::PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateObject_, context, request, false);
 }
 
-::grpc::Status MruVObjectsService::Stub::DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::mruv::gates::DeleteObjectResponse* response) {
+::grpc::Status MruVObjectsService::Stub::DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::mruv::objects::DeleteObjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteObject_, context, request, response);
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObject_, context, request, response, std::move(f));
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObject_, context, request, response, reactor);
 }
 
-void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObject_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>* MruVObjectsService::Stub::AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObject_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>* MruVObjectsService::Stub::AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObject_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteObjectResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObject_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObject_, context, request, false);
 }
 
 MruVObjectsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::CreateObjectModelRequest, ::mruv::gates::CreateObjectModelResponse>(
-          std::mem_fn(&MruVObjectsService::Service::CreateObjectModel), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::CreateObjectModelRequest* req,
+             ::mruv::objects::CreateObjectModelResponse* resp) {
+               return service->CreateObjectModel(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::GetObjectModelRequest, ::mruv::gates::GetObjectModelResponse>(
-          std::mem_fn(&MruVObjectsService::Service::GetObjectModel), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::GetObjectModelRequest* req,
+             ::mruv::objects::GetObjectModelResponse* resp) {
+               return service->GetObjectModel(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::UpdateObjectModelRequest, ::mruv::gates::UpdateObjectModelResponse>(
-          std::mem_fn(&MruVObjectsService::Service::UpdateObjectModel), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::UpdateObjectModelRequest* req,
+             ::mruv::objects::UpdateObjectModelResponse* resp) {
+               return service->UpdateObjectModel(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::DeleteObjectModelRequest, ::mruv::gates::DeleteObjectModelResponse>(
-          std::mem_fn(&MruVObjectsService::Service::DeleteObjectModel), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::DeleteObjectModelRequest* req,
+             ::mruv::objects::DeleteObjectModelResponse* resp) {
+               return service->DeleteObjectModel(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::CreateObjectRequest, ::mruv::gates::CreateObjectResponse>(
-          std::mem_fn(&MruVObjectsService::Service::CreateObject), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::CreateObjectRequest, ::mruv::objects::CreateObjectResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::CreateObjectRequest* req,
+             ::mruv::objects::CreateObjectResponse* resp) {
+               return service->CreateObject(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::GetObjectRequest, ::mruv::gates::GetObjectResponse>(
-          std::mem_fn(&MruVObjectsService::Service::GetObject), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::GetObjectRequest, ::mruv::objects::GetObjectResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::GetObjectRequest* req,
+             ::mruv::objects::GetObjectResponse* resp) {
+               return service->GetObject(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::UpdateObjectRequest, ::mruv::gates::UpdateObjectResponse>(
-          std::mem_fn(&MruVObjectsService::Service::UpdateObject), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::UpdateObjectRequest, ::mruv::objects::UpdateObjectResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::UpdateObjectRequest* req,
+             ::mruv::objects::UpdateObjectResponse* resp) {
+               return service->UpdateObject(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::gates::DeleteObjectRequest, ::mruv::gates::DeleteObjectResponse>(
-          std::mem_fn(&MruVObjectsService::Service::DeleteObject), this)));
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::DeleteObjectRequest, ::mruv::objects::DeleteObjectResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::DeleteObjectRequest* req,
+             ::mruv::objects::DeleteObjectResponse* resp) {
+               return service->DeleteObject(ctx, req, resp);
+             }, this)));
 }
 
 MruVObjectsService::Service::~Service() {
 }
 
-::grpc::Status MruVObjectsService::Service::CreateObjectModel(::grpc::ServerContext* context, const ::mruv::gates::CreateObjectModelRequest* request, ::mruv::gates::CreateObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Service::CreateObjectModel(::grpc::ServerContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::GetObjectModel(::grpc::ServerContext* context, const ::mruv::gates::GetObjectModelRequest* request, ::mruv::gates::GetObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Service::GetObjectModel(::grpc::ServerContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::UpdateObjectModel(::grpc::ServerContext* context, const ::mruv::gates::UpdateObjectModelRequest* request, ::mruv::gates::UpdateObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Service::UpdateObjectModel(::grpc::ServerContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::DeleteObjectModel(::grpc::ServerContext* context, const ::mruv::gates::DeleteObjectModelRequest* request, ::mruv::gates::DeleteObjectModelResponse* response) {
+::grpc::Status MruVObjectsService::Service::DeleteObjectModel(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::CreateObject(::grpc::ServerContext* context, const ::mruv::gates::CreateObjectRequest* request, ::mruv::gates::CreateObjectResponse* response) {
+::grpc::Status MruVObjectsService::Service::CreateObject(::grpc::ServerContext* context, const ::mruv::objects::CreateObjectRequest* request, ::mruv::objects::CreateObjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::GetObject(::grpc::ServerContext* context, const ::mruv::gates::GetObjectRequest* request, ::mruv::gates::GetObjectResponse* response) {
+::grpc::Status MruVObjectsService::Service::GetObject(::grpc::ServerContext* context, const ::mruv::objects::GetObjectRequest* request, ::mruv::objects::GetObjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::UpdateObject(::grpc::ServerContext* context, const ::mruv::gates::UpdateObjectRequest* request, ::mruv::gates::UpdateObjectResponse* response) {
+::grpc::Status MruVObjectsService::Service::UpdateObject(::grpc::ServerContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::DeleteObject(::grpc::ServerContext* context, const ::mruv::gates::DeleteObjectRequest* request, ::mruv::gates::DeleteObjectResponse* response) {
+::grpc::Status MruVObjectsService::Service::DeleteObject(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -378,5 +418,5 @@ MruVObjectsService::Service::~Service() {
 
 
 }  // namespace mruv
-}  // namespace gates
+}  // namespace objects
 

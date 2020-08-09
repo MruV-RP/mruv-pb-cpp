@@ -315,52 +315,102 @@ MruVBusinessService::Service::Service() {
       MruVBusinessService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(
-          std::mem_fn(&MruVBusinessService::Service::CreateBusiness), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::CreateBusinessRequest* req,
+             ::mruv::business::CreateBusinessResponse* resp) {
+               return service->CreateBusiness(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(
-          std::mem_fn(&MruVBusinessService::Service::GetBusiness), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::GetBusinessRequest* req,
+             ::mruv::business::Business* resp) {
+               return service->GetBusiness(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(
-          std::mem_fn(&MruVBusinessService::Service::UpdateBusiness), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::UpdateBusinessRequest* req,
+             ::mruv::business::Business* resp) {
+               return service->UpdateBusiness(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(
-          std::mem_fn(&MruVBusinessService::Service::DeleteBusiness), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::DeleteBusinessRequest* req,
+             ::mruv::business::DeleteBusinessResponse* resp) {
+               return service->DeleteBusiness(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(
-          std::mem_fn(&MruVBusinessService::Service::AssignOwner), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::AssignOwnerRequest* req,
+             ::mruv::business::AssignOwnerResponse* resp) {
+               return service->AssignOwner(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(
-          std::mem_fn(&MruVBusinessService::Service::AssignEstate), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::AssignEstateRequest* req,
+             ::mruv::business::AssignEstateResponse* resp) {
+               return service->AssignEstate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(
-          std::mem_fn(&MruVBusinessService::Service::UnassignEstate), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::UnassignEstateRequest* req,
+             ::mruv::business::UnassignEstateResponse* resp) {
+               return service->UnassignEstate(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(
-          std::mem_fn(&MruVBusinessService::Service::BuyBusiness), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::BuyBusinessRequest* req,
+             ::mruv::business::BuyBusinessResponse* resp) {
+               return service->BuyBusiness(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[8],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVBusinessService::Service, ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(
-          std::mem_fn(&MruVBusinessService::Service::WatchBusiness), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::WatchBusinessRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::business::WatchBusinessResponse>* writer) {
+               return service->WatchBusiness(ctx, req, writer);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVBusinessService_method_names[9],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVBusinessService::Service, ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(
-          std::mem_fn(&MruVBusinessService::Service::WatchBusinesses), this)));
+          [](MruVBusinessService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::business::WatchBusinessesRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::business::WatchBusinessesResponse>* writer) {
+               return service->WatchBusinesses(ctx, req, writer);
+             }, this)));
 }
 
 MruVBusinessService::Service::~Service() {

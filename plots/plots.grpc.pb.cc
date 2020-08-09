@@ -159,22 +159,42 @@ MruVPlotsService::Service::Service() {
       MruVPlotsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPlotsService::Service, ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>(
-          std::mem_fn(&MruVPlotsService::Service::CreatePlot), this)));
+          [](MruVPlotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::plots::CreatePlotRequest* req,
+             ::mruv::plots::CreatePlotResponse* resp) {
+               return service->CreatePlot(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPlotsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPlotsService::Service, ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>(
-          std::mem_fn(&MruVPlotsService::Service::GetPlot), this)));
+          [](MruVPlotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::plots::GetPlotRequest* req,
+             ::mruv::plots::GetPlotResponse* resp) {
+               return service->GetPlot(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPlotsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPlotsService::Service, ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>(
-          std::mem_fn(&MruVPlotsService::Service::UpdatePlot), this)));
+          [](MruVPlotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::plots::UpdatePlotRequest* req,
+             ::mruv::plots::UpdatePlotResponse* resp) {
+               return service->UpdatePlot(ctx, req, resp);
+             }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPlotsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPlotsService::Service, ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>(
-          std::mem_fn(&MruVPlotsService::Service::DeletePlot), this)));
+          [](MruVPlotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::plots::DeletePlotRequest* req,
+             ::mruv::plots::DeletePlotResponse* resp) {
+               return service->DeletePlot(ctx, req, resp);
+             }, this)));
 }
 
 MruVPlotsService::Service::~Service() {
