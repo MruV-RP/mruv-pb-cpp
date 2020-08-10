@@ -637,6 +637,7 @@ class GetPlotResponse :
     kPointsFieldNumber = 3,
     kNameFieldNumber = 1,
     kDescriptionFieldNumber = 2,
+    kAreaFieldNumber = 4,
   };
   // repeated .mruv.Position points = 3;
   int points_size() const;
@@ -688,6 +689,15 @@ class GetPlotResponse :
   std::string* _internal_mutable_description();
   public:
 
+  // double area = 4;
+  void clear_area();
+  double area() const;
+  void set_area(double value);
+  private:
+  double _internal_area() const;
+  void _internal_set_area(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.plots.GetPlotResponse)
  private:
   class _Internal;
@@ -696,6 +706,7 @@ class GetPlotResponse :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position > points_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  double area_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_plots_2fplots_2eproto;
 };
@@ -1594,6 +1605,26 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
 GetPlotResponse::points() const {
   // @@protoc_insertion_point(field_list:mruv.plots.GetPlotResponse.points)
   return points_;
+}
+
+// double area = 4;
+inline void GetPlotResponse::clear_area() {
+  area_ = 0;
+}
+inline double GetPlotResponse::_internal_area() const {
+  return area_;
+}
+inline double GetPlotResponse::area() const {
+  // @@protoc_insertion_point(field_get:mruv.plots.GetPlotResponse.area)
+  return _internal_area();
+}
+inline void GetPlotResponse::_internal_set_area(double value) {
+  
+  area_ = value;
+}
+inline void GetPlotResponse::set_area(double value) {
+  _internal_set_area(value);
+  // @@protoc_insertion_point(field_set:mruv.plots.GetPlotResponse.area)
 }
 
 // -------------------------------------------------------------------

@@ -198,6 +198,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_plots_2fplots_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::mruv::plots::GetPlotResponse, name_),
   PROTOBUF_FIELD_OFFSET(::mruv::plots::GetPlotResponse, description_),
   PROTOBUF_FIELD_OFFSET(::mruv::plots::GetPlotResponse, points_),
+  PROTOBUF_FIELD_OFFSET(::mruv::plots::GetPlotResponse, area_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::plots::UpdatePlotRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -228,10 +229,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 8, -1, sizeof(::mruv::plots::CreatePlotResponse)},
   { 14, -1, sizeof(::mruv::plots::GetPlotRequest)},
   { 20, -1, sizeof(::mruv::plots::GetPlotResponse)},
-  { 28, -1, sizeof(::mruv::plots::UpdatePlotRequest)},
-  { 36, -1, sizeof(::mruv::plots::UpdatePlotResponse)},
-  { 41, -1, sizeof(::mruv::plots::DeletePlotRequest)},
-  { 47, -1, sizeof(::mruv::plots::DeletePlotResponse)},
+  { 29, -1, sizeof(::mruv::plots::UpdatePlotRequest)},
+  { 37, -1, sizeof(::mruv::plots::UpdatePlotResponse)},
+  { 42, -1, sizeof(::mruv::plots::DeletePlotRequest)},
+  { 48, -1, sizeof(::mruv::plots::DeletePlotResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -251,25 +252,25 @@ const char descriptor_table_protodef_plots_2fplots_2eproto[] PROTOBUF_SECTION_VA
   "oto\"V\n\021CreatePlotRequest\022\014\n\004name\030\001 \001(\t\022\023"
   "\n\013description\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mr"
   "uv.Position\" \n\022CreatePlotResponse\022\n\n\002id\030"
-  "\001 \001(\r\"\034\n\016GetPlotRequest\022\n\n\002id\030\001 \001(\r\"T\n\017G"
+  "\001 \001(\r\"\034\n\016GetPlotRequest\022\n\n\002id\030\001 \001(\r\"b\n\017G"
   "etPlotResponse\022\014\n\004name\030\001 \001(\t\022\023\n\013descript"
   "ion\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Positio"
-  "n\"B\n\021UpdatePlotRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004na"
-  "me\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\024\n\022UpdateP"
-  "lotResponse\"\037\n\021DeletePlotRequest\022\n\n\002id\030\001"
-  " \001(\r\"\024\n\022DeletePlotResponse2\230\003\n\020MruVPlots"
-  "Service\022^\n\nCreatePlot\022\035.mruv.plots.Creat"
-  "ePlotRequest\032\036.mruv.plots.CreatePlotResp"
-  "onse\"\021\202\323\344\223\002\013\"\t/v1/plots\022Z\n\007GetPlot\022\032.mru"
-  "v.plots.GetPlotRequest\032\033.mruv.plots.GetP"
-  "lotResponse\"\026\202\323\344\223\002\020\022\016/v1/plots/{id}\022c\n\nU"
-  "pdatePlot\022\035.mruv.plots.UpdatePlotRequest"
-  "\032\036.mruv.plots.UpdatePlotResponse\"\026\202\323\344\223\002\020"
-  "2\016/v1/plots/{id}\022c\n\nDeletePlot\022\035.mruv.pl"
-  "ots.DeletePlotRequest\032\036.mruv.plots.Delet"
-  "ePlotResponse\"\026\202\323\344\223\002\020*\016/v1/plots/{id}B%Z"
-  "#github.com/MruV-RP/mruv-pb-go/plotsb\006pr"
-  "oto3"
+  "n\022\014\n\004area\030\004 \001(\001\"B\n\021UpdatePlotRequest\022\n\n\002"
+  "id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 "
+  "\001(\t\"\024\n\022UpdatePlotResponse\"\037\n\021DeletePlotR"
+  "equest\022\n\n\002id\030\001 \001(\r\"\024\n\022DeletePlotResponse"
+  "2\230\003\n\020MruVPlotsService\022^\n\nCreatePlot\022\035.mr"
+  "uv.plots.CreatePlotRequest\032\036.mruv.plots."
+  "CreatePlotResponse\"\021\202\323\344\223\002\013\"\t/v1/plots\022Z\n"
+  "\007GetPlot\022\032.mruv.plots.GetPlotRequest\032\033.m"
+  "ruv.plots.GetPlotResponse\"\026\202\323\344\223\002\020\022\016/v1/p"
+  "lots/{id}\022c\n\nUpdatePlot\022\035.mruv.plots.Upd"
+  "atePlotRequest\032\036.mruv.plots.UpdatePlotRe"
+  "sponse\"\026\202\323\344\223\002\0202\016/v1/plots/{id}\022c\n\nDelete"
+  "Plot\022\035.mruv.plots.DeletePlotRequest\032\036.mr"
+  "uv.plots.DeletePlotResponse\"\026\202\323\344\223\002\020*\016/v1"
+  "/plots/{id}B%Z#github.com/MruV-RP/mruv-p"
+  "b-go/plotsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_plots_2fplots_2eproto_deps[2] = {
   &::descriptor_table_common_2fspatial_2eproto,
@@ -288,7 +289,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_plo
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_plots_2fplots_2eproto_once;
 static bool descriptor_table_plots_2fplots_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_plots_2fplots_2eproto = {
-  &descriptor_table_plots_2fplots_2eproto_initialized, descriptor_table_protodef_plots_2fplots_2eproto, "plots/plots.proto", 924,
+  &descriptor_table_plots_2fplots_2eproto_initialized, descriptor_table_protodef_plots_2fplots_2eproto, "plots/plots.proto", 938,
   &descriptor_table_plots_2fplots_2eproto_once, descriptor_table_plots_2fplots_2eproto_sccs, descriptor_table_plots_2fplots_2eproto_deps, 8, 2,
   schemas, file_default_instances, TableStruct_plots_2fplots_2eproto::offsets,
   file_level_metadata_plots_2fplots_2eproto, 8, file_level_enum_descriptors_plots_2fplots_2eproto, file_level_service_descriptors_plots_2fplots_2eproto,
@@ -972,6 +973,7 @@ GetPlotResponse::GetPlotResponse(const GetPlotResponse& from)
   if (!from._internal_description().empty()) {
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
+  area_ = from.area_;
   // @@protoc_insertion_point(copy_constructor:mruv.plots.GetPlotResponse)
 }
 
@@ -979,6 +981,7 @@ void GetPlotResponse::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetPlotResponse_plots_2fplots_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  area_ = 0;
 }
 
 GetPlotResponse::~GetPlotResponse() {
@@ -1009,6 +1012,7 @@ void GetPlotResponse::Clear() {
   points_.Clear();
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  area_ = 0;
   _internal_metadata_.Clear();
 }
 
@@ -1047,6 +1051,13 @@ const char* GetPlotResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // double area = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 33)) {
+          area_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else goto handle_unusual;
         continue;
       default: {
@@ -1103,6 +1114,12 @@ failure:
       InternalWriteMessage(3, this->_internal_points(i), target, stream);
   }
 
+  // double area = 4;
+  if (!(this->area() <= 0 && this->area() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(4, this->_internal_area(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1138,6 +1155,11 @@ size_t GetPlotResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_description());
+  }
+
+  // double area = 4;
+  if (!(this->area() <= 0 && this->area() >= 0)) {
+    total_size += 1 + 8;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1180,6 +1202,9 @@ void GetPlotResponse::MergeFrom(const GetPlotResponse& from) {
 
     description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
   }
+  if (!(from.area() <= 0 && from.area() >= 0)) {
+    _internal_set_area(from._internal_area());
+  }
 }
 
 void GetPlotResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1208,6 +1233,7 @@ void GetPlotResponse::InternalSwap(GetPlotResponse* other) {
     GetArenaNoVirtual());
   description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(area_, other->area_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPlotResponse::GetMetadata() const {

@@ -16,7 +16,7 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_entrances_2fentrances_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Entrance_entrances_2fentrances_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Estate_estates_2festates_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_gates_2fgates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Gate_gates_2fgates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_gates_2fgates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Gate_gates_2fgates_2eproto;
 namespace mruv {
 namespace estates {
 class EstateDefaultTypeInternal {
