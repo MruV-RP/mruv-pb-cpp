@@ -31,6 +31,7 @@ static const char* MruVEntrancesService_method_names[] = {
   "/mruv.entrances.MruVEntrancesService/Unlock",
   "/mruv.entrances.MruVEntrancesService/FindNearestEntrance",
   "/mruv.entrances.MruVEntrancesService/Enter",
+  "/mruv.entrances.MruVEntrancesService/Exit",
 };
 
 std::unique_ptr< MruVEntrancesService::Stub> MruVEntrancesService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -48,6 +49,7 @@ MruVEntrancesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_Unlock_(MruVEntrancesService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_FindNearestEntrance_(MruVEntrancesService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_Enter_(MruVEntrancesService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Exit_(MruVEntrancesService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MruVEntrancesService::Stub::CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest& request, ::mruv::entrances::CreateEntranceResponse* response) {
@@ -274,6 +276,34 @@ void MruVEntrancesService::Stub::experimental_async::Enter(::grpc::ClientContext
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::EnterResponse>::Create(channel_.get(), cq, rpcmethod_Enter_, context, request, false);
 }
 
+::grpc::Status MruVEntrancesService::Stub::Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::mruv::entrances::ExitResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Exit_, context, request, response);
+}
+
+void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, std::move(f));
+}
+
+void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, std::move(f));
+}
+
+void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, reactor);
+}
+
+void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* MruVEntrancesService::Stub::AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::ExitResponse>::Create(channel_.get(), cq, rpcmethod_Exit_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* MruVEntrancesService::Stub::PrepareAsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::ExitResponse>::Create(channel_.get(), cq, rpcmethod_Exit_, context, request, false);
+}
+
 MruVEntrancesService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[0],
@@ -355,6 +385,16 @@ MruVEntrancesService::Service::Service() {
              ::mruv::entrances::EnterResponse* resp) {
                return service->Enter(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVEntrancesService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::ExitRequest* req,
+             ::mruv::entrances::ExitResponse* resp) {
+               return service->Exit(ctx, req, resp);
+             }, this)));
 }
 
 MruVEntrancesService::Service::~Service() {
@@ -410,6 +450,13 @@ MruVEntrancesService::Service::~Service() {
 }
 
 ::grpc::Status MruVEntrancesService::Service::Enter(::grpc::ServerContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVEntrancesService::Service::Exit(::grpc::ServerContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response) {
   (void) context;
   (void) request;
   (void) response;

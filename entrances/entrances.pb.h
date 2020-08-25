@@ -49,7 +49,7 @@ struct TableStruct_entrances_2fentrances_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[17]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -79,6 +79,12 @@ extern EnterResponseDefaultTypeInternal _EnterResponse_default_instance_;
 class Entrance;
 class EntranceDefaultTypeInternal;
 extern EntranceDefaultTypeInternal _Entrance_default_instance_;
+class ExitRequest;
+class ExitRequestDefaultTypeInternal;
+extern ExitRequestDefaultTypeInternal _ExitRequest_default_instance_;
+class ExitResponse;
+class ExitResponseDefaultTypeInternal;
+extern ExitResponseDefaultTypeInternal _ExitResponse_default_instance_;
 class FindNearestEntranceRequest;
 class FindNearestEntranceRequestDefaultTypeInternal;
 extern FindNearestEntranceRequestDefaultTypeInternal _FindNearestEntranceRequest_default_instance_;
@@ -119,6 +125,8 @@ template<> ::mruv::entrances::DeleteEntranceResponse* Arena::CreateMaybeMessage<
 template<> ::mruv::entrances::EnterRequest* Arena::CreateMaybeMessage<::mruv::entrances::EnterRequest>(Arena*);
 template<> ::mruv::entrances::EnterResponse* Arena::CreateMaybeMessage<::mruv::entrances::EnterResponse>(Arena*);
 template<> ::mruv::entrances::Entrance* Arena::CreateMaybeMessage<::mruv::entrances::Entrance>(Arena*);
+template<> ::mruv::entrances::ExitRequest* Arena::CreateMaybeMessage<::mruv::entrances::ExitRequest>(Arena*);
+template<> ::mruv::entrances::ExitResponse* Arena::CreateMaybeMessage<::mruv::entrances::ExitResponse>(Arena*);
 template<> ::mruv::entrances::FindNearestEntranceRequest* Arena::CreateMaybeMessage<::mruv::entrances::FindNearestEntranceRequest>(Arena*);
 template<> ::mruv::entrances::FindNearestEntranceResponse* Arena::CreateMaybeMessage<::mruv::entrances::FindNearestEntranceResponse>(Arena*);
 template<> ::mruv::entrances::GetEntranceRequest* Arena::CreateMaybeMessage<::mruv::entrances::GetEntranceRequest>(Arena*);
@@ -2161,6 +2169,7 @@ class FindNearestEntranceResponse :
   enum : int {
     kIdFieldNumber = 1,
     kDistanceFieldNumber = 2,
+    kInsideFieldNumber = 3,
   };
   // uint32 id = 1;
   void clear_id();
@@ -2180,6 +2189,15 @@ class FindNearestEntranceResponse :
   void _internal_set_distance(float value);
   public:
 
+  // bool inside = 3;
+  void clear_inside();
+  bool inside() const;
+  void set_inside(bool value);
+  private:
+  bool _internal_inside() const;
+  void _internal_set_inside(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.entrances.FindNearestEntranceResponse)
  private:
   class _Internal;
@@ -2187,6 +2205,7 @@ class FindNearestEntranceResponse :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   float distance_;
+  bool inside_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_entrances_2fentrances_2eproto;
 };
@@ -2426,6 +2445,249 @@ class EnterResponse :
   // accessors -------------------------------------------------------
 
   // @@protoc_insertion_point(class_scope:mruv.entrances.EnterResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_entrances_2fentrances_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ExitRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.entrances.ExitRequest) */ {
+ public:
+  ExitRequest();
+  virtual ~ExitRequest();
+
+  ExitRequest(const ExitRequest& from);
+  ExitRequest(ExitRequest&& from) noexcept
+    : ExitRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ExitRequest& operator=(const ExitRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ExitRequest& operator=(ExitRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ExitRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ExitRequest* internal_default_instance() {
+    return reinterpret_cast<const ExitRequest*>(
+               &_ExitRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(ExitRequest& a, ExitRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ExitRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ExitRequest* New() const final {
+    return CreateMaybeMessage<ExitRequest>(nullptr);
+  }
+
+  ExitRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ExitRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ExitRequest& from);
+  void MergeFrom(const ExitRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ExitRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.entrances.ExitRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_entrances_2fentrances_2eproto);
+    return ::descriptor_table_entrances_2fentrances_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdFieldNumber = 1,
+  };
+  // uint32 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.entrances.ExitRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_entrances_2fentrances_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ExitResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.entrances.ExitResponse) */ {
+ public:
+  ExitResponse();
+  virtual ~ExitResponse();
+
+  ExitResponse(const ExitResponse& from);
+  ExitResponse(ExitResponse&& from) noexcept
+    : ExitResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ExitResponse& operator=(const ExitResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ExitResponse& operator=(ExitResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ExitResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ExitResponse* internal_default_instance() {
+    return reinterpret_cast<const ExitResponse*>(
+               &_ExitResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(ExitResponse& a, ExitResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ExitResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ExitResponse* New() const final {
+    return CreateMaybeMessage<ExitResponse>(nullptr);
+  }
+
+  ExitResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ExitResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ExitResponse& from);
+  void MergeFrom(const ExitResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ExitResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.entrances.ExitResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_entrances_2fentrances_2eproto);
+    return ::descriptor_table_entrances_2fentrances_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.entrances.ExitResponse)
  private:
   class _Internal;
 
@@ -3284,6 +3546,26 @@ inline void FindNearestEntranceResponse::set_distance(float value) {
   // @@protoc_insertion_point(field_set:mruv.entrances.FindNearestEntranceResponse.distance)
 }
 
+// bool inside = 3;
+inline void FindNearestEntranceResponse::clear_inside() {
+  inside_ = false;
+}
+inline bool FindNearestEntranceResponse::_internal_inside() const {
+  return inside_;
+}
+inline bool FindNearestEntranceResponse::inside() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.FindNearestEntranceResponse.inside)
+  return _internal_inside();
+}
+inline void FindNearestEntranceResponse::_internal_set_inside(bool value) {
+  
+  inside_ = value;
+}
+inline void FindNearestEntranceResponse::set_inside(bool value) {
+  _internal_set_inside(value);
+  // @@protoc_insertion_point(field_set:mruv.entrances.FindNearestEntranceResponse.inside)
+}
+
 // -------------------------------------------------------------------
 
 // EnterRequest
@@ -3312,9 +3594,41 @@ inline void EnterRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
 // EnterResponse
 
+// -------------------------------------------------------------------
+
+// ExitRequest
+
+// uint32 id = 1;
+inline void ExitRequest::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ExitRequest::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ExitRequest::id() const {
+  // @@protoc_insertion_point(field_get:mruv.entrances.ExitRequest.id)
+  return _internal_id();
+}
+inline void ExitRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void ExitRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.entrances.ExitRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// ExitResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

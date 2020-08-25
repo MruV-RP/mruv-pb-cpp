@@ -251,8 +251,9 @@ static void InitDefaultsscc_info_GetGateResponse_gates_2fgates_2eproto() {
   ::mruv::gates::GetGateResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetGateResponse_gates_2fgates_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetGateResponse_gates_2fgates_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_GetGateResponse_gates_2fgates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_GetGateResponse_gates_2fgates_2eproto}, {
+      &scc_info_MovableObject_objects_2fmovable_2eproto.base,
       &scc_info_Spot_spots_2fspots_2eproto.base,}};
 
 static void InitDefaultsscc_info_LockRequest_gates_2fgates_2eproto() {
@@ -408,7 +409,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gates_2fgates_2eproto::offsets
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, gate_movable_objects_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, movable_objects_),
   PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, spot_),
   PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, opened_),
   PROTOBUF_FIELD_OFFSET(::mruv::gates::GetGateResponse, locked_),
@@ -553,46 +554,47 @@ const char descriptor_table_protodef_gates_2fgates_2eproto[] PROTOBUF_SECTION_VA
   "gate_objects\030\002 \003(\0132\033.mruv.objects.Movabl"
   "eObject\022\036\n\004spot\030\003 \001(\0132\020.mruv.spots.Spot\""
   " \n\022CreateGateResponse\022\n\n\002id\030\001 \001(\r\"\034\n\016Get"
-  "GateRequest\022\n\n\002id\030\001 \001(\r\"}\n\017GetGateRespon"
-  "se\022\014\n\004name\030\001 \001(\t\022\034\n\024gate_movable_objects"
-  "\030\002 \003(\r\022\036\n\004spot\030\003 \001(\0132\020.mruv.spots.Spot\022\016"
-  "\n\006opened\030\004 \001(\010\022\016\n\006locked\030\005 \001(\010\"\\\n\021Update"
-  "GateRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\017\n"
-  "\007spot_id\030\003 \001(\r\022\034\n\024gate_movable_objects\030\004"
-  " \003(\r\"\024\n\022UpdateGateResponse\"\037\n\021DeleteGate"
-  "Request\022\n\n\002id\030\001 \001(\r\"\024\n\022DeleteGateRespons"
-  "e\"\031\n\013LockRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014LockResp"
-  "onse\"\033\n\rUnlockRequest\022\n\n\002id\030\001 \001(\r\"\020\n\016Unl"
-  "ockResponse\"\031\n\013OpenRequest\022\n\n\002id\030\001 \001(\r\"\016"
-  "\n\014OpenResponse\"\032\n\014CloseRequest\022\n\n\002id\030\001 \001"
-  "(\r\"\017\n\rCloseResponse\"O\n\026FindNearestGateRe"
-  "quest\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\024"
-  "\n\014max_distance\030\004 \001(\002\"7\n\027FindNearestGateR"
-  "esponse\022\n\n\002id\030\001 \001(\r\022\020\n\010distance\030\002 \001(\0022\373\006"
-  "\n\020MruVGatesService\022^\n\nCreateGate\022\035.mruv."
-  "gates.CreateGateRequest\032\036.mruv.gates.Cre"
-  "ateGateResponse\"\021\202\323\344\223\002\013\"\t/v1/gates\022Z\n\007Ge"
-  "tGate\022\032.mruv.gates.GetGateRequest\032\033.mruv"
-  ".gates.GetGateResponse\"\026\202\323\344\223\002\020\022\016/v1/gate"
-  "s/{id}\022c\n\nUpdateGate\022\035.mruv.gates.Update"
-  "GateRequest\032\036.mruv.gates.UpdateGateRespo"
-  "nse\"\026\202\323\344\223\002\0202\016/v1/gates/{id}\022c\n\nDeleteGat"
-  "e\022\035.mruv.gates.DeleteGateRequest\032\036.mruv."
-  "gates.DeleteGateResponse\"\026\202\323\344\223\002\020*\016/v1/ga"
-  "tes/{id}\022V\n\004Lock\022\027.mruv.gates.LockReques"
-  "t\032\030.mruv.gates.LockResponse\"\033\202\323\344\223\002\025\"\023/v1"
-  "/gates/{id}/lock\022^\n\006Unlock\022\031.mruv.gates."
-  "UnlockRequest\032\032.mruv.gates.UnlockRespons"
-  "e\"\035\202\323\344\223\002\027\"\025/v1/gates/{id}/unlock\022V\n\004Open"
-  "\022\027.mruv.gates.OpenRequest\032\030.mruv.gates.O"
-  "penResponse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/open"
-  "\022Z\n\005Close\022\030.mruv.gates.CloseRequest\032\031.mr"
-  "uv.gates.CloseResponse\"\034\202\323\344\223\002\026\"\024/v1/gate"
-  "s/{id}/close\022u\n\017FindNearestGate\022\".mruv.g"
-  "ates.FindNearestGateRequest\032#.mruv.gates"
-  ".FindNearestGateResponse\"\031\202\323\344\223\002\023\022\021/v1/ga"
-  "tes/nearestB%Z#github.com/MruV-RP/mruv-p"
-  "b-go/gatesb\006proto3"
+  "GateRequest\022\n\n\002id\030\001 \001(\r\"\225\001\n\017GetGateRespo"
+  "nse\022\014\n\004name\030\001 \001(\t\0224\n\017movable_objects\030\002 \003"
+  "(\0132\033.mruv.objects.MovableObject\022\036\n\004spot\030"
+  "\003 \001(\0132\020.mruv.spots.Spot\022\016\n\006opened\030\004 \001(\010\022"
+  "\016\n\006locked\030\005 \001(\010\"\\\n\021UpdateGateRequest\022\n\n\002"
+  "id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\017\n\007spot_id\030\003 \001(\r\022"
+  "\034\n\024gate_movable_objects\030\004 \003(\r\"\024\n\022UpdateG"
+  "ateResponse\"\037\n\021DeleteGateRequest\022\n\n\002id\030\001"
+  " \001(\r\"\024\n\022DeleteGateResponse\"\031\n\013LockReques"
+  "t\022\n\n\002id\030\001 \001(\r\"\016\n\014LockResponse\"\033\n\rUnlockR"
+  "equest\022\n\n\002id\030\001 \001(\r\"\020\n\016UnlockResponse\"\031\n\013"
+  "OpenRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014OpenResponse\""
+  "\032\n\014CloseRequest\022\n\n\002id\030\001 \001(\r\"\017\n\rCloseResp"
+  "onse\"O\n\026FindNearestGateRequest\022\t\n\001x\030\001 \001("
+  "\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\024\n\014max_distance\030"
+  "\004 \001(\002\"7\n\027FindNearestGateResponse\022\n\n\002id\030\001"
+  " \001(\r\022\020\n\010distance\030\002 \001(\0022\373\006\n\020MruVGatesServ"
+  "ice\022^\n\nCreateGate\022\035.mruv.gates.CreateGat"
+  "eRequest\032\036.mruv.gates.CreateGateResponse"
+  "\"\021\202\323\344\223\002\013\"\t/v1/gates\022Z\n\007GetGate\022\032.mruv.ga"
+  "tes.GetGateRequest\032\033.mruv.gates.GetGateR"
+  "esponse\"\026\202\323\344\223\002\020\022\016/v1/gates/{id}\022c\n\nUpdat"
+  "eGate\022\035.mruv.gates.UpdateGateRequest\032\036.m"
+  "ruv.gates.UpdateGateResponse\"\026\202\323\344\223\002\0202\016/v"
+  "1/gates/{id}\022c\n\nDeleteGate\022\035.mruv.gates."
+  "DeleteGateRequest\032\036.mruv.gates.DeleteGat"
+  "eResponse\"\026\202\323\344\223\002\020*\016/v1/gates/{id}\022V\n\004Loc"
+  "k\022\027.mruv.gates.LockRequest\032\030.mruv.gates."
+  "LockResponse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/loc"
+  "k\022^\n\006Unlock\022\031.mruv.gates.UnlockRequest\032\032"
+  ".mruv.gates.UnlockResponse\"\035\202\323\344\223\002\027\"\025/v1/"
+  "gates/{id}/unlock\022V\n\004Open\022\027.mruv.gates.O"
+  "penRequest\032\030.mruv.gates.OpenResponse\"\033\202\323"
+  "\344\223\002\025\"\023/v1/gates/{id}/open\022Z\n\005Close\022\030.mru"
+  "v.gates.CloseRequest\032\031.mruv.gates.CloseR"
+  "esponse\"\034\202\323\344\223\002\026\"\024/v1/gates/{id}/close\022u\n"
+  "\017FindNearestGate\022\".mruv.gates.FindNeares"
+  "tGateRequest\032#.mruv.gates.FindNearestGat"
+  "eResponse\"\031\202\323\344\223\002\023\022\021/v1/gates/nearestB%Z#"
+  "github.com/MruV-RP/mruv-pb-go/gatesb\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_gates_2fgates_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -623,7 +625,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gat
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_gates_2fgates_2eproto_once;
 static bool descriptor_table_gates_2fgates_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_gates_2fgates_2eproto = {
-  &descriptor_table_gates_2fgates_2eproto_initialized, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 1978,
+  &descriptor_table_gates_2fgates_2eproto_initialized, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 2003,
   &descriptor_table_gates_2fgates_2eproto_once, descriptor_table_gates_2fgates_2eproto_sccs, descriptor_table_gates_2fgates_2eproto_deps, 19, 3,
   schemas, file_default_instances, TableStruct_gates_2fgates_2eproto::offsets,
   file_level_metadata_gates_2fgates_2eproto, 19, file_level_enum_descriptors_gates_2fgates_2eproto, file_level_service_descriptors_gates_2fgates_2eproto,
@@ -1639,6 +1641,9 @@ const ::mruv::spots::Spot&
 GetGateResponse::_Internal::spot(const GetGateResponse* msg) {
   return *msg->spot_;
 }
+void GetGateResponse::clear_movable_objects() {
+  movable_objects_.Clear();
+}
 void GetGateResponse::clear_spot() {
   if (GetArenaNoVirtual() == nullptr && spot_ != nullptr) {
     delete spot_;
@@ -1653,7 +1658,7 @@ GetGateResponse::GetGateResponse()
 GetGateResponse::GetGateResponse(const GetGateResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
-      gate_movable_objects_(from.gate_movable_objects_) {
+      movable_objects_(from.movable_objects_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
@@ -1703,7 +1708,7 @@ void GetGateResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  gate_movable_objects_.Clear();
+  movable_objects_.Clear();
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && spot_ != nullptr) {
     delete spot_;
@@ -1731,14 +1736,16 @@ const char* GetGateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated uint32 gate_movable_objects = 2;
+      // repeated .mruv.objects.MovableObject movable_objects = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_gate_movable_objects(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16) {
-          _internal_add_gate_movable_objects(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_movable_objects(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
       // .mruv.spots.Spot spot = 3;
@@ -1798,13 +1805,12 @@ failure:
         1, this->_internal_name(), target);
   }
 
-  // repeated uint32 gate_movable_objects = 2;
-  {
-    int byte_size = _gate_movable_objects_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteUInt32Packed(
-          2, _internal_gate_movable_objects(), byte_size, target);
-    }
+  // repeated .mruv.objects.MovableObject movable_objects = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_movable_objects_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_movable_objects(i), target, stream);
   }
 
   // .mruv.spots.Spot spot = 3;
@@ -1843,19 +1849,11 @@ size_t GetGateResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated uint32 gate_movable_objects = 2;
-  {
-    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      UInt32Size(this->gate_movable_objects_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
-    }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _gate_movable_objects_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
+  // repeated .mruv.objects.MovableObject movable_objects = 2;
+  total_size += 1UL * this->_internal_movable_objects_size();
+  for (const auto& msg : this->movable_objects_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // string name = 1;
@@ -1913,7 +1911,7 @@ void GetGateResponse::MergeFrom(const GetGateResponse& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  gate_movable_objects_.MergeFrom(from.gate_movable_objects_);
+  movable_objects_.MergeFrom(from.movable_objects_);
   if (from.name().size() > 0) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
@@ -1950,7 +1948,7 @@ bool GetGateResponse::IsInitialized() const {
 void GetGateResponse::InternalSwap(GetGateResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  gate_movable_objects_.InternalSwap(&other->gate_movable_objects_);
+  movable_objects_.InternalSwap(&other->movable_objects_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(spot_, other->spot_);

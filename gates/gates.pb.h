@@ -872,33 +872,29 @@ class GetGateResponse :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kGateMovableObjectsFieldNumber = 2,
+    kMovableObjectsFieldNumber = 2,
     kNameFieldNumber = 1,
     kSpotFieldNumber = 3,
     kOpenedFieldNumber = 4,
     kLockedFieldNumber = 5,
   };
-  // repeated uint32 gate_movable_objects = 2;
-  int gate_movable_objects_size() const;
+  // repeated .mruv.objects.MovableObject movable_objects = 2;
+  int movable_objects_size() const;
   private:
-  int _internal_gate_movable_objects_size() const;
+  int _internal_movable_objects_size() const;
   public:
-  void clear_gate_movable_objects();
+  void clear_movable_objects();
+  ::mruv::objects::MovableObject* mutable_movable_objects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::MovableObject >*
+      mutable_movable_objects();
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_gate_movable_objects(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-      _internal_gate_movable_objects() const;
-  void _internal_add_gate_movable_objects(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-      _internal_mutable_gate_movable_objects();
+  const ::mruv::objects::MovableObject& _internal_movable_objects(int index) const;
+  ::mruv::objects::MovableObject* _internal_add_movable_objects();
   public:
-  ::PROTOBUF_NAMESPACE_ID::uint32 gate_movable_objects(int index) const;
-  void set_gate_movable_objects(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value);
-  void add_gate_movable_objects(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-      gate_movable_objects() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-      mutable_gate_movable_objects();
+  const ::mruv::objects::MovableObject& movable_objects(int index) const;
+  ::mruv::objects::MovableObject* add_movable_objects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::MovableObject >&
+      movable_objects() const;
 
   // string name = 1;
   void clear_name();
@@ -954,8 +950,7 @@ class GetGateResponse :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 > gate_movable_objects_;
-  mutable std::atomic<int> _gate_movable_objects_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::MovableObject > movable_objects_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::mruv::spots::Spot* spot_;
   bool opened_;
@@ -3242,51 +3237,40 @@ inline void GetGateResponse::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:mruv.gates.GetGateResponse.name)
 }
 
-// repeated uint32 gate_movable_objects = 2;
-inline int GetGateResponse::_internal_gate_movable_objects_size() const {
-  return gate_movable_objects_.size();
+// repeated .mruv.objects.MovableObject movable_objects = 2;
+inline int GetGateResponse::_internal_movable_objects_size() const {
+  return movable_objects_.size();
 }
-inline int GetGateResponse::gate_movable_objects_size() const {
-  return _internal_gate_movable_objects_size();
+inline int GetGateResponse::movable_objects_size() const {
+  return _internal_movable_objects_size();
 }
-inline void GetGateResponse::clear_gate_movable_objects() {
-  gate_movable_objects_.Clear();
+inline ::mruv::objects::MovableObject* GetGateResponse::mutable_movable_objects(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.gates.GetGateResponse.movable_objects)
+  return movable_objects_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetGateResponse::_internal_gate_movable_objects(int index) const {
-  return gate_movable_objects_.Get(index);
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::MovableObject >*
+GetGateResponse::mutable_movable_objects() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.gates.GetGateResponse.movable_objects)
+  return &movable_objects_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 GetGateResponse::gate_movable_objects(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.gates.GetGateResponse.gate_movable_objects)
-  return _internal_gate_movable_objects(index);
+inline const ::mruv::objects::MovableObject& GetGateResponse::_internal_movable_objects(int index) const {
+  return movable_objects_.Get(index);
 }
-inline void GetGateResponse::set_gate_movable_objects(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  gate_movable_objects_.Set(index, value);
-  // @@protoc_insertion_point(field_set:mruv.gates.GetGateResponse.gate_movable_objects)
+inline const ::mruv::objects::MovableObject& GetGateResponse::movable_objects(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.gates.GetGateResponse.movable_objects)
+  return _internal_movable_objects(index);
 }
-inline void GetGateResponse::_internal_add_gate_movable_objects(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  gate_movable_objects_.Add(value);
+inline ::mruv::objects::MovableObject* GetGateResponse::_internal_add_movable_objects() {
+  return movable_objects_.Add();
 }
-inline void GetGateResponse::add_gate_movable_objects(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_add_gate_movable_objects(value);
-  // @@protoc_insertion_point(field_add:mruv.gates.GetGateResponse.gate_movable_objects)
+inline ::mruv::objects::MovableObject* GetGateResponse::add_movable_objects() {
+  // @@protoc_insertion_point(field_add:mruv.gates.GetGateResponse.movable_objects)
+  return _internal_add_movable_objects();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-GetGateResponse::_internal_gate_movable_objects() const {
-  return gate_movable_objects_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
-GetGateResponse::gate_movable_objects() const {
-  // @@protoc_insertion_point(field_list:mruv.gates.GetGateResponse.gate_movable_objects)
-  return _internal_gate_movable_objects();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-GetGateResponse::_internal_mutable_gate_movable_objects() {
-  return &gate_movable_objects_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
-GetGateResponse::mutable_gate_movable_objects() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.gates.GetGateResponse.gate_movable_objects)
-  return _internal_mutable_gate_movable_objects();
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::MovableObject >&
+GetGateResponse::movable_objects() const {
+  // @@protoc_insertion_point(field_list:mruv.gates.GetGateResponse.movable_objects)
+  return movable_objects_;
 }
 
 // .mruv.spots.Spot spot = 3;

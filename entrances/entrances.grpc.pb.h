@@ -94,13 +94,21 @@ class MruVEntrancesService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::FindNearestEntranceResponse>> PrepareAsyncFindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::FindNearestEntranceResponse>>(PrepareAsyncFindNearestEntranceRaw(context, request, cq));
     }
-    // Enter an entrance
+    // Enter an entrance (player teleport from in spot position to out spot position).
     virtual ::grpc::Status Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::mruv::entrances::EnterResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>> AsyncEnter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>>(AsyncEnterRaw(context, request, cq));
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>> PrepareAsyncEnter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>>(PrepareAsyncEnterRaw(context, request, cq));
+    }
+    // Exit from entrance (player teleport from out spot position to in spot position).
+    virtual ::grpc::Status Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::mruv::entrances::ExitResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>> AsyncExit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>>(AsyncExitRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>> PrepareAsyncExit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>>(PrepareAsyncExitRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -196,7 +204,7 @@ class MruVEntrancesService final {
       #else
       virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      // Enter an entrance
+      // Enter an entrance (player teleport from in spot position to out spot position).
       virtual void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -208,6 +216,19 @@ class MruVEntrancesService final {
       virtual void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Exit from entrance (player teleport from out spot position to in spot position).
+      virtual void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -234,6 +255,8 @@ class MruVEntrancesService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::FindNearestEntranceResponse>* PrepareAsyncFindNearestEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>* AsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>* PrepareAsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>* AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>* PrepareAsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -293,6 +316,13 @@ class MruVEntrancesService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>> PrepareAsyncEnter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>>(PrepareAsyncEnterRaw(context, request, cq));
+    }
+    ::grpc::Status Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::mruv::entrances::ExitResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>> AsyncExit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>>(AsyncExitRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>> PrepareAsyncExit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>>(PrepareAsyncExitRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -393,6 +423,18 @@ class MruVEntrancesService final {
       #else
       void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) override;
+      void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -420,6 +462,8 @@ class MruVEntrancesService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::entrances::FindNearestEntranceResponse>* PrepareAsyncFindNearestEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>* AsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>* PrepareAsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* PrepareAsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateEntrance_;
@@ -428,6 +472,7 @@ class MruVEntrancesService final {
     const ::grpc::internal::RpcMethod rpcmethod_Unlock_;
     const ::grpc::internal::RpcMethod rpcmethod_FindNearestEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_Enter_;
+    const ::grpc::internal::RpcMethod rpcmethod_Exit_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -449,8 +494,10 @@ class MruVEntrancesService final {
     virtual ::grpc::Status Unlock(::grpc::ServerContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response);
     // Find gate that is closest to a specific position.
     virtual ::grpc::Status FindNearestEntrance(::grpc::ServerContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response);
-    // Enter an entrance
+    // Enter an entrance (player teleport from in spot position to out spot position).
     virtual ::grpc::Status Enter(::grpc::ServerContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response);
+    // Exit from entrance (player teleport from out spot position to in spot position).
+    virtual ::grpc::Status Exit(::grpc::ServerContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateEntrance : public BaseClass {
@@ -612,7 +659,27 @@ class MruVEntrancesService final {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateEntrance<WithAsyncMethod_GetEntrance<WithAsyncMethod_UpdateEntrance<WithAsyncMethod_DeleteEntrance<WithAsyncMethod_Lock<WithAsyncMethod_Unlock<WithAsyncMethod_FindNearestEntrance<WithAsyncMethod_Enter<Service > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_Exit : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Exit() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_Exit() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestExit(::grpc::ServerContext* context, ::mruv::entrances::ExitRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::entrances::ExitResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateEntrance<WithAsyncMethod_GetEntrance<WithAsyncMethod_UpdateEntrance<WithAsyncMethod_DeleteEntrance<WithAsyncMethod_Lock<WithAsyncMethod_Unlock<WithAsyncMethod_FindNearestEntrance<WithAsyncMethod_Enter<WithAsyncMethod_Exit<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateEntrance : public BaseClass {
    private:
@@ -989,11 +1056,58 @@ class MruVEntrancesService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_Exit : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_Exit() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response) { return this->Exit(context, request, response); }));}
+    void SetMessageAllocatorFor_Exit(
+        ::grpc::experimental::MessageAllocator< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_Exit() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* Exit(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* Exit(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<Service > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<ExperimentalWithCallbackMethod_Exit<Service > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<Service > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<ExperimentalWithCallbackMethod_Exit<Service > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateEntrance : public BaseClass {
    private:
@@ -1126,6 +1240,23 @@ class MruVEntrancesService final {
     }
     // disable synchronous version of this method
     ::grpc::Status Enter(::grpc::ServerContext* /*context*/, const ::mruv::entrances::EnterRequest* /*request*/, ::mruv::entrances::EnterResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Exit : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Exit() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_Exit() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1288,6 +1419,26 @@ class MruVEntrancesService final {
     }
     void RequestEnter(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Exit : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Exit() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_Exit() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestExit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1595,6 +1746,44 @@ class MruVEntrancesService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_Exit : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_Exit() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Exit(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_Exit() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* Exit(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* Exit(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateEntrance : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1810,9 +1999,36 @@ class MruVEntrancesService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedEnter(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::entrances::EnterRequest,::mruv::entrances::EnterResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<Service > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Exit : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Exit() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>* streamer) {
+                       return this->StreamedExit(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Exit() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedExit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::entrances::ExitRequest,::mruv::entrances::ExitResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<WithStreamedUnaryMethod_Exit<Service > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<WithStreamedUnaryMethod_Exit<Service > > > > > > > > > StreamedService;
 };
 
 }  // namespace entrances
