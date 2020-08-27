@@ -49,7 +49,7 @@ struct TableStruct_punishments_2fpunishments_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[55]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[57]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -157,6 +157,12 @@ extern UnBanResponseDefaultTypeInternal _UnBanResponse_default_instance_;
 class UnBlockMessage;
 class UnBlockMessageDefaultTypeInternal;
 extern UnBlockMessageDefaultTypeInternal _UnBlockMessage_default_instance_;
+class UnBlockRequest;
+class UnBlockRequestDefaultTypeInternal;
+extern UnBlockRequestDefaultTypeInternal _UnBlockRequest_default_instance_;
+class UnBlockResponse;
+class UnBlockResponseDefaultTypeInternal;
+extern UnBlockResponseDefaultTypeInternal _UnBlockResponse_default_instance_;
 class UnMuteGlobalChatsRequest;
 class UnMuteGlobalChatsRequestDefaultTypeInternal;
 extern UnMuteGlobalChatsRequestDefaultTypeInternal _UnMuteGlobalChatsRequest_default_instance_;
@@ -259,6 +265,8 @@ template<> ::mruv::economy::UnBanMessage* Arena::CreateMaybeMessage<::mruv::econ
 template<> ::mruv::economy::UnBanRequest* Arena::CreateMaybeMessage<::mruv::economy::UnBanRequest>(Arena*);
 template<> ::mruv::economy::UnBanResponse* Arena::CreateMaybeMessage<::mruv::economy::UnBanResponse>(Arena*);
 template<> ::mruv::economy::UnBlockMessage* Arena::CreateMaybeMessage<::mruv::economy::UnBlockMessage>(Arena*);
+template<> ::mruv::economy::UnBlockRequest* Arena::CreateMaybeMessage<::mruv::economy::UnBlockRequest>(Arena*);
+template<> ::mruv::economy::UnBlockResponse* Arena::CreateMaybeMessage<::mruv::economy::UnBlockResponse>(Arena*);
 template<> ::mruv::economy::UnMuteGlobalChatsRequest* Arena::CreateMaybeMessage<::mruv::economy::UnMuteGlobalChatsRequest>(Arena*);
 template<> ::mruv::economy::UnMuteGlobalChatsResponse* Arena::CreateMaybeMessage<::mruv::economy::UnMuteGlobalChatsResponse>(Arena*);
 template<> ::mruv::economy::UnWarnMessage* Arena::CreateMaybeMessage<::mruv::economy::UnWarnMessage>(Arena*);
@@ -3314,9 +3322,26 @@ class UnBanRequest :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBanIdFieldNumber = 2,
+    kReasonFieldNumber = 2,
+    kBanIdFieldNumber = 1,
   };
-  // uint32 ban_id = 2;
+  // string reason = 2;
+  void clear_reason();
+  const std::string& reason() const;
+  void set_reason(const std::string& value);
+  void set_reason(std::string&& value);
+  void set_reason(const char* value);
+  void set_reason(const char* value, size_t size);
+  std::string* mutable_reason();
+  std::string* release_reason();
+  void set_allocated_reason(std::string* reason);
+  private:
+  const std::string& _internal_reason() const;
+  void _internal_set_reason(const std::string& value);
+  std::string* _internal_mutable_reason();
+  public:
+
+  // uint32 ban_id = 1;
   void clear_ban_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 ban_id() const;
   void set_ban_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3330,6 +3355,7 @@ class UnBanRequest :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
   ::PROTOBUF_NAMESPACE_ID::uint32 ban_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_punishments_2fpunishments_2eproto;
@@ -3451,6 +3477,267 @@ class UnBanResponse :
 };
 // -------------------------------------------------------------------
 
+class UnBlockRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.economy.UnBlockRequest) */ {
+ public:
+  UnBlockRequest();
+  virtual ~UnBlockRequest();
+
+  UnBlockRequest(const UnBlockRequest& from);
+  UnBlockRequest(UnBlockRequest&& from) noexcept
+    : UnBlockRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline UnBlockRequest& operator=(const UnBlockRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UnBlockRequest& operator=(UnBlockRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const UnBlockRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UnBlockRequest* internal_default_instance() {
+    return reinterpret_cast<const UnBlockRequest*>(
+               &_UnBlockRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(UnBlockRequest& a, UnBlockRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UnBlockRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UnBlockRequest* New() const final {
+    return CreateMaybeMessage<UnBlockRequest>(nullptr);
+  }
+
+  UnBlockRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UnBlockRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const UnBlockRequest& from);
+  void MergeFrom(const UnBlockRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnBlockRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.economy.UnBlockRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_punishments_2fpunishments_2eproto);
+    return ::descriptor_table_punishments_2fpunishments_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReasonFieldNumber = 2,
+    kBlockIdFieldNumber = 1,
+  };
+  // string reason = 2;
+  void clear_reason();
+  const std::string& reason() const;
+  void set_reason(const std::string& value);
+  void set_reason(std::string&& value);
+  void set_reason(const char* value);
+  void set_reason(const char* value, size_t size);
+  std::string* mutable_reason();
+  std::string* release_reason();
+  void set_allocated_reason(std::string* reason);
+  private:
+  const std::string& _internal_reason() const;
+  void _internal_set_reason(const std::string& value);
+  std::string* _internal_mutable_reason();
+  public:
+
+  // uint32 block_id = 1;
+  void clear_block_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 block_id() const;
+  void set_block_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_block_id() const;
+  void _internal_set_block_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.economy.UnBlockRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 block_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_punishments_2fpunishments_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UnBlockResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.economy.UnBlockResponse) */ {
+ public:
+  UnBlockResponse();
+  virtual ~UnBlockResponse();
+
+  UnBlockResponse(const UnBlockResponse& from);
+  UnBlockResponse(UnBlockResponse&& from) noexcept
+    : UnBlockResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline UnBlockResponse& operator=(const UnBlockResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UnBlockResponse& operator=(UnBlockResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const UnBlockResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UnBlockResponse* internal_default_instance() {
+    return reinterpret_cast<const UnBlockResponse*>(
+               &_UnBlockResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(UnBlockResponse& a, UnBlockResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(UnBlockResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UnBlockResponse* New() const final {
+    return CreateMaybeMessage<UnBlockResponse>(nullptr);
+  }
+
+  UnBlockResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UnBlockResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const UnBlockResponse& from);
+  void MergeFrom(const UnBlockResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnBlockResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.economy.UnBlockResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_punishments_2fpunishments_2eproto);
+    return ::descriptor_table_punishments_2fpunishments_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.economy.UnBlockResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_punishments_2fpunishments_2eproto;
+};
+// -------------------------------------------------------------------
+
 class UnWarnRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.economy.UnWarnRequest) */ {
  public:
@@ -3493,7 +3780,7 @@ class UnWarnRequest :
                &_UnWarnRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(UnWarnRequest& a, UnWarnRequest& b) {
     a.Swap(&b);
@@ -3557,9 +3844,26 @@ class UnWarnRequest :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kWarnIdFieldNumber = 2,
+    kReasonFieldNumber = 2,
+    kWarnIdFieldNumber = 1,
   };
-  // uint32 warn_id = 2;
+  // string reason = 2;
+  void clear_reason();
+  const std::string& reason() const;
+  void set_reason(const std::string& value);
+  void set_reason(std::string&& value);
+  void set_reason(const char* value);
+  void set_reason(const char* value, size_t size);
+  std::string* mutable_reason();
+  std::string* release_reason();
+  void set_allocated_reason(std::string* reason);
+  private:
+  const std::string& _internal_reason() const;
+  void _internal_set_reason(const std::string& value);
+  std::string* _internal_mutable_reason();
+  public:
+
+  // uint32 warn_id = 1;
   void clear_warn_id();
   ::PROTOBUF_NAMESPACE_ID::uint32 warn_id() const;
   void set_warn_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3573,6 +3877,7 @@ class UnWarnRequest :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr reason_;
   ::PROTOBUF_NAMESPACE_ID::uint32 warn_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_punishments_2fpunishments_2eproto;
@@ -3621,7 +3926,7 @@ class UnWarnResponse :
                &_UnWarnResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(UnWarnResponse& a, UnWarnResponse& b) {
     a.Swap(&b);
@@ -3736,7 +4041,7 @@ class UnAdminJailRequest :
                &_UnAdminJailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(UnAdminJailRequest& a, UnAdminJailRequest& b) {
     a.Swap(&b);
@@ -3864,7 +4169,7 @@ class UnAdminJailResponse :
                &_UnAdminJailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(UnAdminJailResponse& a, UnAdminJailResponse& b) {
     a.Swap(&b);
@@ -3979,7 +4284,7 @@ class UnMuteGlobalChatsRequest :
                &_UnMuteGlobalChatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(UnMuteGlobalChatsRequest& a, UnMuteGlobalChatsRequest& b) {
     a.Swap(&b);
@@ -4107,7 +4412,7 @@ class UnMuteGlobalChatsResponse :
                &_UnMuteGlobalChatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(UnMuteGlobalChatsResponse& a, UnMuteGlobalChatsResponse& b) {
     a.Swap(&b);
@@ -4222,7 +4527,7 @@ class GetPlayerBansRequest :
                &_GetPlayerBansRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(GetPlayerBansRequest& a, GetPlayerBansRequest& b) {
     a.Swap(&b);
@@ -4368,7 +4673,7 @@ class GetPlayerBansResponse :
                &_GetPlayerBansResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(GetPlayerBansResponse& a, GetPlayerBansResponse& b) {
     a.Swap(&b);
@@ -4505,7 +4810,7 @@ class GetPlayerWarnsRequest :
                &_GetPlayerWarnsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(GetPlayerWarnsRequest& a, GetPlayerWarnsRequest& b) {
     a.Swap(&b);
@@ -4633,7 +4938,7 @@ class GetPlayerWarnsResponse :
                &_GetPlayerWarnsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(GetPlayerWarnsResponse& a, GetPlayerWarnsResponse& b) {
     a.Swap(&b);
@@ -4770,7 +5075,7 @@ class GetPlayerAdminJailRequest :
                &_GetPlayerAdminJailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(GetPlayerAdminJailRequest& a, GetPlayerAdminJailRequest& b) {
     a.Swap(&b);
@@ -4898,7 +5203,7 @@ class GetPlayerAdminJailResponse :
                &_GetPlayerAdminJailResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(GetPlayerAdminJailResponse& a, GetPlayerAdminJailResponse& b) {
     a.Swap(&b);
@@ -5066,7 +5371,7 @@ class GetBanRequest :
                &_GetBanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(GetBanRequest& a, GetBanRequest& b) {
     a.Swap(&b);
@@ -5194,7 +5499,7 @@ class GetWarnRequest :
                &_GetWarnRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(GetWarnRequest& a, GetWarnRequest& b) {
     a.Swap(&b);
@@ -5322,7 +5627,7 @@ class GetBlockRequest :
                &_GetBlockRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(GetBlockRequest& a, GetBlockRequest& b) {
     a.Swap(&b);
@@ -5450,7 +5755,7 @@ class IsPlayerBannedRequest :
                &_IsPlayerBannedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(IsPlayerBannedRequest& a, IsPlayerBannedRequest& b) {
     a.Swap(&b);
@@ -5596,7 +5901,7 @@ class IsPlayerBannedResponse :
                &_IsPlayerBannedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(IsPlayerBannedResponse& a, IsPlayerBannedResponse& b) {
     a.Swap(&b);
@@ -5735,7 +6040,7 @@ class IsCharacterBlockedRequest :
                &_IsCharacterBlockedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(IsCharacterBlockedRequest& a, IsCharacterBlockedRequest& b) {
     a.Swap(&b);
@@ -5863,7 +6168,7 @@ class IsCharacterBlockedResponse :
                &_IsCharacterBlockedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(IsCharacterBlockedResponse& a, IsCharacterBlockedResponse& b) {
     a.Swap(&b);
@@ -6002,7 +6307,7 @@ class IsCharacterJailedRequest :
                &_IsCharacterJailedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(IsCharacterJailedRequest& a, IsCharacterJailedRequest& b) {
     a.Swap(&b);
@@ -6130,7 +6435,7 @@ class IsCharacterJailedResponse :
                &_IsCharacterJailedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(IsCharacterJailedResponse& a, IsCharacterJailedResponse& b) {
     a.Swap(&b);
@@ -6269,7 +6574,7 @@ class WatchBansRequest :
                &_WatchBansRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(WatchBansRequest& a, WatchBansRequest& b) {
     a.Swap(&b);
@@ -6384,7 +6689,7 @@ class WatchBlocksRequest :
                &_WatchBlocksRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(WatchBlocksRequest& a, WatchBlocksRequest& b) {
     a.Swap(&b);
@@ -6499,7 +6804,7 @@ class WatchWarnsRequest :
                &_WatchWarnsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(WatchWarnsRequest& a, WatchWarnsRequest& b) {
     a.Swap(&b);
@@ -6614,7 +6919,7 @@ class WatchAdminJailsRequest :
                &_WatchAdminJailsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(WatchAdminJailsRequest& a, WatchAdminJailsRequest& b) {
     a.Swap(&b);
@@ -6729,7 +7034,7 @@ class WatchUnBansRequest :
                &_WatchUnBansRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(WatchUnBansRequest& a, WatchUnBansRequest& b) {
     a.Swap(&b);
@@ -6844,7 +7149,7 @@ class WatchUnBlocksRequest :
                &_WatchUnBlocksRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(WatchUnBlocksRequest& a, WatchUnBlocksRequest& b) {
     a.Swap(&b);
@@ -6959,7 +7264,7 @@ class WatchUnWarnsRequest :
                &_WatchUnWarnsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(WatchUnWarnsRequest& a, WatchUnWarnsRequest& b) {
     a.Swap(&b);
@@ -7074,7 +7379,7 @@ class WatchUnAdminJailsRequest :
                &_WatchUnAdminJailsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(WatchUnAdminJailsRequest& a, WatchUnAdminJailsRequest& b) {
     a.Swap(&b);
@@ -7189,7 +7494,7 @@ class WatchPlayerAcquittalsRequest :
                &_WatchPlayerAcquittalsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(WatchPlayerAcquittalsRequest& a, WatchPlayerAcquittalsRequest& b) {
     a.Swap(&b);
@@ -7304,7 +7609,7 @@ class WatchPlayerAcquittalsResponse :
                &_WatchPlayerAcquittalsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(WatchPlayerAcquittalsResponse& a, WatchPlayerAcquittalsResponse& b) {
     a.Swap(&b);
@@ -7419,7 +7724,7 @@ class WatchPlayerPunishmentsRequest :
                &_WatchPlayerPunishmentsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(WatchPlayerPunishmentsRequest& a, WatchPlayerPunishmentsRequest& b) {
     a.Swap(&b);
@@ -7534,7 +7839,7 @@ class WatchPlayerPunishmentsResponse :
                &_WatchPlayerPunishmentsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(WatchPlayerPunishmentsResponse& a, WatchPlayerPunishmentsResponse& b) {
     a.Swap(&b);
@@ -7673,7 +7978,7 @@ class WatchPunishmentsRequest :
                &_WatchPunishmentsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(WatchPunishmentsRequest& a, WatchPunishmentsRequest& b) {
     a.Swap(&b);
@@ -7788,7 +8093,7 @@ class WatchPunishmentsResponse :
                &_WatchPunishmentsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(WatchPunishmentsResponse& a, WatchPunishmentsResponse& b) {
     a.Swap(&b);
@@ -9648,7 +9953,7 @@ inline void MuteGlobalChatsRequest::set_account(::PROTOBUF_NAMESPACE_ID::uint32 
 
 // UnBanRequest
 
-// uint32 ban_id = 2;
+// uint32 ban_id = 1;
 inline void UnBanRequest::clear_ban_id() {
   ban_id_ = 0u;
 }
@@ -9668,15 +9973,163 @@ inline void UnBanRequest::set_ban_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:mruv.economy.UnBanRequest.ban_id)
 }
 
+// string reason = 2;
+inline void UnBanRequest::clear_reason() {
+  reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& UnBanRequest::reason() const {
+  // @@protoc_insertion_point(field_get:mruv.economy.UnBanRequest.reason)
+  return _internal_reason();
+}
+inline void UnBanRequest::set_reason(const std::string& value) {
+  _internal_set_reason(value);
+  // @@protoc_insertion_point(field_set:mruv.economy.UnBanRequest.reason)
+}
+inline std::string* UnBanRequest::mutable_reason() {
+  // @@protoc_insertion_point(field_mutable:mruv.economy.UnBanRequest.reason)
+  return _internal_mutable_reason();
+}
+inline const std::string& UnBanRequest::_internal_reason() const {
+  return reason_.GetNoArena();
+}
+inline void UnBanRequest::_internal_set_reason(const std::string& value) {
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void UnBanRequest::set_reason(std::string&& value) {
+  
+  reason_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.economy.UnBanRequest.reason)
+}
+inline void UnBanRequest::set_reason(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.economy.UnBanRequest.reason)
+}
+inline void UnBanRequest::set_reason(const char* value, size_t size) {
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.economy.UnBanRequest.reason)
+}
+inline std::string* UnBanRequest::_internal_mutable_reason() {
+  
+  return reason_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* UnBanRequest::release_reason() {
+  // @@protoc_insertion_point(field_release:mruv.economy.UnBanRequest.reason)
+  
+  return reason_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void UnBanRequest::set_allocated_reason(std::string* reason) {
+  if (reason != nullptr) {
+    
+  } else {
+    
+  }
+  reason_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reason);
+  // @@protoc_insertion_point(field_set_allocated:mruv.economy.UnBanRequest.reason)
+}
+
 // -------------------------------------------------------------------
 
 // UnBanResponse
 
 // -------------------------------------------------------------------
 
+// UnBlockRequest
+
+// uint32 block_id = 1;
+inline void UnBlockRequest::clear_block_id() {
+  block_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 UnBlockRequest::_internal_block_id() const {
+  return block_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 UnBlockRequest::block_id() const {
+  // @@protoc_insertion_point(field_get:mruv.economy.UnBlockRequest.block_id)
+  return _internal_block_id();
+}
+inline void UnBlockRequest::_internal_set_block_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  block_id_ = value;
+}
+inline void UnBlockRequest::set_block_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_block_id(value);
+  // @@protoc_insertion_point(field_set:mruv.economy.UnBlockRequest.block_id)
+}
+
+// string reason = 2;
+inline void UnBlockRequest::clear_reason() {
+  reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& UnBlockRequest::reason() const {
+  // @@protoc_insertion_point(field_get:mruv.economy.UnBlockRequest.reason)
+  return _internal_reason();
+}
+inline void UnBlockRequest::set_reason(const std::string& value) {
+  _internal_set_reason(value);
+  // @@protoc_insertion_point(field_set:mruv.economy.UnBlockRequest.reason)
+}
+inline std::string* UnBlockRequest::mutable_reason() {
+  // @@protoc_insertion_point(field_mutable:mruv.economy.UnBlockRequest.reason)
+  return _internal_mutable_reason();
+}
+inline const std::string& UnBlockRequest::_internal_reason() const {
+  return reason_.GetNoArena();
+}
+inline void UnBlockRequest::_internal_set_reason(const std::string& value) {
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void UnBlockRequest::set_reason(std::string&& value) {
+  
+  reason_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.economy.UnBlockRequest.reason)
+}
+inline void UnBlockRequest::set_reason(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.economy.UnBlockRequest.reason)
+}
+inline void UnBlockRequest::set_reason(const char* value, size_t size) {
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.economy.UnBlockRequest.reason)
+}
+inline std::string* UnBlockRequest::_internal_mutable_reason() {
+  
+  return reason_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* UnBlockRequest::release_reason() {
+  // @@protoc_insertion_point(field_release:mruv.economy.UnBlockRequest.reason)
+  
+  return reason_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void UnBlockRequest::set_allocated_reason(std::string* reason) {
+  if (reason != nullptr) {
+    
+  } else {
+    
+  }
+  reason_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reason);
+  // @@protoc_insertion_point(field_set_allocated:mruv.economy.UnBlockRequest.reason)
+}
+
+// -------------------------------------------------------------------
+
+// UnBlockResponse
+
+// -------------------------------------------------------------------
+
 // UnWarnRequest
 
-// uint32 warn_id = 2;
+// uint32 warn_id = 1;
 inline void UnWarnRequest::clear_warn_id() {
   warn_id_ = 0u;
 }
@@ -9694,6 +10147,66 @@ inline void UnWarnRequest::_internal_set_warn_id(::PROTOBUF_NAMESPACE_ID::uint32
 inline void UnWarnRequest::set_warn_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_warn_id(value);
   // @@protoc_insertion_point(field_set:mruv.economy.UnWarnRequest.warn_id)
+}
+
+// string reason = 2;
+inline void UnWarnRequest::clear_reason() {
+  reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& UnWarnRequest::reason() const {
+  // @@protoc_insertion_point(field_get:mruv.economy.UnWarnRequest.reason)
+  return _internal_reason();
+}
+inline void UnWarnRequest::set_reason(const std::string& value) {
+  _internal_set_reason(value);
+  // @@protoc_insertion_point(field_set:mruv.economy.UnWarnRequest.reason)
+}
+inline std::string* UnWarnRequest::mutable_reason() {
+  // @@protoc_insertion_point(field_mutable:mruv.economy.UnWarnRequest.reason)
+  return _internal_mutable_reason();
+}
+inline const std::string& UnWarnRequest::_internal_reason() const {
+  return reason_.GetNoArena();
+}
+inline void UnWarnRequest::_internal_set_reason(const std::string& value) {
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void UnWarnRequest::set_reason(std::string&& value) {
+  
+  reason_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.economy.UnWarnRequest.reason)
+}
+inline void UnWarnRequest::set_reason(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.economy.UnWarnRequest.reason)
+}
+inline void UnWarnRequest::set_reason(const char* value, size_t size) {
+  
+  reason_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.economy.UnWarnRequest.reason)
+}
+inline std::string* UnWarnRequest::_internal_mutable_reason() {
+  
+  return reason_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* UnWarnRequest::release_reason() {
+  // @@protoc_insertion_point(field_release:mruv.economy.UnWarnRequest.reason)
+  
+  return reason_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void UnWarnRequest::set_allocated_reason(std::string* reason) {
+  if (reason != nullptr) {
+    
+  } else {
+    
+  }
+  reason_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), reason);
+  // @@protoc_insertion_point(field_set_allocated:mruv.economy.UnWarnRequest.reason)
 }
 
 // -------------------------------------------------------------------
@@ -10613,6 +11126,10 @@ inline void WatchPunishmentsResponse::set_character(::PROTOBUF_NAMESPACE_ID::uin
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -29,6 +29,7 @@ static const char* MruVPunishmentsService_method_names[] = {
   "/mruv.economy.MruVPunishmentsService/AdminJail",
   "/mruv.economy.MruVPunishmentsService/MuteGlobalChats",
   "/mruv.economy.MruVPunishmentsService/UnBan",
+  "/mruv.economy.MruVPunishmentsService/UnBlock",
   "/mruv.economy.MruVPunishmentsService/UnWarn",
   "/mruv.economy.MruVPunishmentsService/UnAdminJail",
   "/mruv.economy.MruVPunishmentsService/UnMuteGlobalChats",
@@ -67,29 +68,30 @@ MruVPunishmentsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterfa
   , rpcmethod_AdminJail_(MruVPunishmentsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_MuteGlobalChats_(MruVPunishmentsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UnBan_(MruVPunishmentsService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnWarn_(MruVPunishmentsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnAdminJail_(MruVPunishmentsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnMuteGlobalChats_(MruVPunishmentsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPlayerBans_(MruVPunishmentsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPlayerWarns_(MruVPunishmentsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPlayerAdminJail_(MruVPunishmentsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBan_(MruVPunishmentsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetWarn_(MruVPunishmentsService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBlock_(MruVPunishmentsService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IsPlayerBanned_(MruVPunishmentsService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IsCharacterBlocked_(MruVPunishmentsService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IsCharacterJailed_(MruVPunishmentsService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_WatchBans_(MruVPunishmentsService_method_names[18], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchBlocks_(MruVPunishmentsService_method_names[19], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchWarns_(MruVPunishmentsService_method_names[20], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchAdminJails_(MruVPunishmentsService_method_names[21], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnBans_(MruVPunishmentsService_method_names[22], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnBlocks_(MruVPunishmentsService_method_names[23], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnWarns_(MruVPunishmentsService_method_names[24], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnAdminJails_(MruVPunishmentsService_method_names[25], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchPlayerPunishments_(MruVPunishmentsService_method_names[26], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchPlayerAcquittals_(MruVPunishmentsService_method_names[27], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchPunishments_(MruVPunishmentsService_method_names[28], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_UnBlock_(MruVPunishmentsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnWarn_(MruVPunishmentsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnAdminJail_(MruVPunishmentsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnMuteGlobalChats_(MruVPunishmentsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPlayerBans_(MruVPunishmentsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPlayerWarns_(MruVPunishmentsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPlayerAdminJail_(MruVPunishmentsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBan_(MruVPunishmentsService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetWarn_(MruVPunishmentsService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBlock_(MruVPunishmentsService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsPlayerBanned_(MruVPunishmentsService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsCharacterBlocked_(MruVPunishmentsService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsCharacterJailed_(MruVPunishmentsService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_WatchBans_(MruVPunishmentsService_method_names[19], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchBlocks_(MruVPunishmentsService_method_names[20], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchWarns_(MruVPunishmentsService_method_names[21], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchAdminJails_(MruVPunishmentsService_method_names[22], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnBans_(MruVPunishmentsService_method_names[23], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnBlocks_(MruVPunishmentsService_method_names[24], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnWarns_(MruVPunishmentsService_method_names[25], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnAdminJails_(MruVPunishmentsService_method_names[26], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchPlayerPunishments_(MruVPunishmentsService_method_names[27], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchPlayerAcquittals_(MruVPunishmentsService_method_names[28], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchPunishments_(MruVPunishmentsService_method_names[29], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVPunishmentsService::Stub::Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::mruv::economy::BanResponse* response) {
@@ -258,6 +260,34 @@ void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientConte
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBanResponse>::Create(channel_.get(), cq, rpcmethod_UnBan_, context, request, false);
+}
+
+::grpc::Status MruVPunishmentsService::Stub::UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::mruv::economy::UnBlockResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UnBlock_, context, request, response);
+}
+
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, std::move(f));
+}
+
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, std::move(f));
+}
+
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, reactor);
+}
+
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>* MruVPunishmentsService::Stub::AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBlockResponse>::Create(channel_.get(), cq, rpcmethod_UnBlock_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBlockResponse>::Create(channel_.get(), cq, rpcmethod_UnBlock_, context, request, false);
 }
 
 ::grpc::Status MruVPunishmentsService::Stub::UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::mruv::economy::UnWarnResponse* response) {
@@ -836,6 +866,16 @@ MruVPunishmentsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>(
+          [](MruVPunishmentsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::economy::UnBlockRequest* req,
+             ::mruv::economy::UnBlockResponse* resp) {
+               return service->UnBlock(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVPunishmentsService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
@@ -844,7 +884,7 @@ MruVPunishmentsService::Service::Service() {
                return service->UnWarn(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[7],
+      MruVPunishmentsService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -854,7 +894,7 @@ MruVPunishmentsService::Service::Service() {
                return service->UnAdminJail(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[8],
+      MruVPunishmentsService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -864,7 +904,7 @@ MruVPunishmentsService::Service::Service() {
                return service->UnMuteGlobalChats(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[9],
+      MruVPunishmentsService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -874,7 +914,7 @@ MruVPunishmentsService::Service::Service() {
                return service->GetPlayerBans(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[10],
+      MruVPunishmentsService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -884,7 +924,7 @@ MruVPunishmentsService::Service::Service() {
                return service->GetPlayerWarns(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[11],
+      MruVPunishmentsService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -894,7 +934,7 @@ MruVPunishmentsService::Service::Service() {
                return service->GetPlayerAdminJail(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[12],
+      MruVPunishmentsService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -904,7 +944,7 @@ MruVPunishmentsService::Service::Service() {
                return service->GetBan(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[13],
+      MruVPunishmentsService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -914,7 +954,7 @@ MruVPunishmentsService::Service::Service() {
                return service->GetWarn(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[14],
+      MruVPunishmentsService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -924,7 +964,7 @@ MruVPunishmentsService::Service::Service() {
                return service->GetBlock(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[15],
+      MruVPunishmentsService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -934,7 +974,7 @@ MruVPunishmentsService::Service::Service() {
                return service->IsPlayerBanned(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[16],
+      MruVPunishmentsService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -944,7 +984,7 @@ MruVPunishmentsService::Service::Service() {
                return service->IsCharacterBlocked(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[17],
+      MruVPunishmentsService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -954,7 +994,7 @@ MruVPunishmentsService::Service::Service() {
                return service->IsCharacterJailed(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[18],
+      MruVPunishmentsService_method_names[19],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -964,7 +1004,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchBans(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[19],
+      MruVPunishmentsService_method_names[20],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -974,7 +1014,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchBlocks(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[20],
+      MruVPunishmentsService_method_names[21],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -984,7 +1024,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchWarns(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[21],
+      MruVPunishmentsService_method_names[22],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -994,7 +1034,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchAdminJails(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[22],
+      MruVPunishmentsService_method_names[23],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -1004,7 +1044,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchUnBans(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[23],
+      MruVPunishmentsService_method_names[24],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -1014,7 +1054,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchUnBlocks(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[24],
+      MruVPunishmentsService_method_names[25],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -1024,7 +1064,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchUnWarns(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[25],
+      MruVPunishmentsService_method_names[26],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>(
           [](MruVPunishmentsService::Service* service,
@@ -1034,7 +1074,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchUnAdminJails(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[26],
+      MruVPunishmentsService_method_names[27],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -1044,7 +1084,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchPlayerPunishments(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[27],
+      MruVPunishmentsService_method_names[28],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -1054,7 +1094,7 @@ MruVPunishmentsService::Service::Service() {
                return service->WatchPlayerAcquittals(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      MruVPunishmentsService_method_names[28],
+      MruVPunishmentsService_method_names[29],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>(
           [](MruVPunishmentsService::Service* service,
@@ -1104,6 +1144,13 @@ MruVPunishmentsService::Service::~Service() {
 }
 
 ::grpc::Status MruVPunishmentsService::Service::UnBan(::grpc::ServerContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVPunishmentsService::Service::UnBlock(::grpc::ServerContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response) {
   (void) context;
   (void) request;
   (void) response;

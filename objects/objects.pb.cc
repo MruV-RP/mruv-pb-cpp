@@ -208,6 +208,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, stream_distance_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, draw_distance_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, priority_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, estate_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::CreateObjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -258,14 +259,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::objects::Object)},
-  { 19, -1, sizeof(::mruv::objects::CreateObjectRequest)},
-  { 25, -1, sizeof(::mruv::objects::CreateObjectResponse)},
-  { 31, -1, sizeof(::mruv::objects::GetObjectRequest)},
-  { 37, -1, sizeof(::mruv::objects::GetObjectResponse)},
-  { 43, -1, sizeof(::mruv::objects::UpdateObjectRequest)},
-  { 50, -1, sizeof(::mruv::objects::UpdateObjectResponse)},
-  { 55, -1, sizeof(::mruv::objects::DeleteObjectRequest)},
-  { 61, -1, sizeof(::mruv::objects::DeleteObjectResponse)},
+  { 20, -1, sizeof(::mruv::objects::CreateObjectRequest)},
+  { 26, -1, sizeof(::mruv::objects::CreateObjectResponse)},
+  { 32, -1, sizeof(::mruv::objects::GetObjectRequest)},
+  { 38, -1, sizeof(::mruv::objects::GetObjectResponse)},
+  { 44, -1, sizeof(::mruv::objects::UpdateObjectRequest)},
+  { 51, -1, sizeof(::mruv::objects::UpdateObjectResponse)},
+  { 56, -1, sizeof(::mruv::objects::DeleteObjectRequest)},
+  { 62, -1, sizeof(::mruv::objects::DeleteObjectResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -282,34 +283,35 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_objects_2fobjects_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025objects/objects.proto\022\014mruv.objects\032\034g"
-  "oogle/api/annotations.proto\"\351\001\n\006Object\022\r"
+  "oogle/api/annotations.proto\"\374\001\n\006Object\022\r"
   "\n\005model\030\001 \001(\r\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z"
   "\030\004 \001(\002\022\n\n\002rx\030\005 \001(\002\022\n\n\002ry\030\006 \001(\002\022\n\n\002rz\030\007 \001"
   "(\002\022\020\n\010world_id\030\010 \001(\005\022\023\n\013interior_id\030\t \001("
   "\005\022\021\n\tplayer_id\030\n \001(\005\022\017\n\007area_id\030\013 \001(\005\022\027\n"
   "\017stream_distance\030\014 \001(\002\022\025\n\rdraw_distance\030"
-  "\r \001(\002\022\020\n\010priority\030\017 \001(\005\";\n\023CreateObjectR"
-  "equest\022$\n\006object\030\001 \001(\0132\024.mruv.objects.Ob"
-  "ject\"\"\n\024CreateObjectResponse\022\n\n\002id\030\001 \001(\r"
-  "\"\036\n\020GetObjectRequest\022\n\n\002id\030\001 \001(\r\"9\n\021GetO"
-  "bjectResponse\022$\n\006object\030\001 \001(\0132\024.mruv.obj"
-  "ects.Object\"G\n\023UpdateObjectRequest\022\n\n\002id"
-  "\030\001 \001(\r\022$\n\006object\030\002 \001(\0132\024.mruv.objects.Ob"
-  "ject\"\026\n\024UpdateObjectResponse\"!\n\023DeleteOb"
-  "jectRequest\022\n\n\002id\030\001 \001(\r\"\026\n\024DeleteObjectR"
-  "esponse2\310\003\n\022MruVObjectsService\022i\n\014Create"
-  "Object\022!.mruv.objects.CreateObjectReques"
-  "t\032\".mruv.objects.CreateObjectResponse\"\022\202"
-  "\323\344\223\002\014\"\n/v1/object\022e\n\tGetObject\022\036.mruv.ob"
-  "jects.GetObjectRequest\032\037.mruv.objects.Ge"
-  "tObjectResponse\"\027\202\323\344\223\002\021\022\017/v1/object/{id}"
-  "\022o\n\014UpdateObject\022!.mruv.objects.UpdateOb"
-  "jectRequest\032\".mruv.objects.UpdateObjectR"
-  "esponse\"\030\202\323\344\223\002\0222\020/v1/objects/{id}\022o\n\014Del"
-  "eteObject\022!.mruv.objects.DeleteObjectReq"
-  "uest\032\".mruv.objects.DeleteObjectResponse"
-  "\"\030\202\323\344\223\002\022*\020/v1/objects/{id}B\'Z%github.com"
-  "/MruV-RP/mruv-pb-go/objectsb\006proto3"
+  "\r \001(\002\022\020\n\010priority\030\017 \001(\005\022\021\n\testate_id\030\020 \001"
+  "(\r\";\n\023CreateObjectRequest\022$\n\006object\030\001 \001("
+  "\0132\024.mruv.objects.Object\"\"\n\024CreateObjectR"
+  "esponse\022\n\n\002id\030\001 \001(\r\"\036\n\020GetObjectRequest\022"
+  "\n\n\002id\030\001 \001(\r\"9\n\021GetObjectResponse\022$\n\006obje"
+  "ct\030\001 \001(\0132\024.mruv.objects.Object\"G\n\023Update"
+  "ObjectRequest\022\n\n\002id\030\001 \001(\r\022$\n\006object\030\002 \001("
+  "\0132\024.mruv.objects.Object\"\026\n\024UpdateObjectR"
+  "esponse\"!\n\023DeleteObjectRequest\022\n\n\002id\030\001 \001"
+  "(\r\"\026\n\024DeleteObjectResponse2\310\003\n\022MruVObjec"
+  "tsService\022i\n\014CreateObject\022!.mruv.objects"
+  ".CreateObjectRequest\032\".mruv.objects.Crea"
+  "teObjectResponse\"\022\202\323\344\223\002\014\"\n/v1/object\022e\n\t"
+  "GetObject\022\036.mruv.objects.GetObjectReques"
+  "t\032\037.mruv.objects.GetObjectResponse\"\027\202\323\344\223"
+  "\002\021\022\017/v1/object/{id}\022o\n\014UpdateObject\022!.mr"
+  "uv.objects.UpdateObjectRequest\032\".mruv.ob"
+  "jects.UpdateObjectResponse\"\030\202\323\344\223\002\0222\020/v1/"
+  "objects/{id}\022o\n\014DeleteObject\022!.mruv.obje"
+  "cts.DeleteObjectRequest\032\".mruv.objects.D"
+  "eleteObjectResponse\"\030\202\323\344\223\002\022*\020/v1/objects"
+  "/{id}B\'Z%github.com/MruV-RP/mruv-pb-go/o"
+  "bjectsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_objects_2fobjects_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -328,7 +330,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_obj
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_objects_2fobjects_2eproto_once;
 static bool descriptor_table_objects_2fobjects_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fobjects_2eproto = {
-  &descriptor_table_objects_2fobjects_2eproto_initialized, descriptor_table_protodef_objects_2fobjects_2eproto, "objects/objects.proto", 1155,
+  &descriptor_table_objects_2fobjects_2eproto_initialized, descriptor_table_protodef_objects_2fobjects_2eproto, "objects/objects.proto", 1174,
   &descriptor_table_objects_2fobjects_2eproto_once, descriptor_table_objects_2fobjects_2eproto_sccs, descriptor_table_objects_2fobjects_2eproto_deps, 9, 1,
   schemas, file_default_instances, TableStruct_objects_2fobjects_2eproto::offsets,
   file_level_metadata_objects_2fobjects_2eproto, 9, file_level_enum_descriptors_objects_2fobjects_2eproto, file_level_service_descriptors_objects_2fobjects_2eproto,
@@ -357,15 +359,15 @@ Object::Object(const Object& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&model_, &from.model_,
-    static_cast<size_t>(reinterpret_cast<char*>(&priority_) -
-    reinterpret_cast<char*>(&model_)) + sizeof(priority_));
+    static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
+    reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
   // @@protoc_insertion_point(copy_constructor:mruv.objects.Object)
 }
 
 void Object::SharedCtor() {
   ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&priority_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(priority_));
+      reinterpret_cast<char*>(&estate_id_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
 }
 
 Object::~Object() {
@@ -392,8 +394,8 @@ void Object::Clear() {
   (void) cached_has_bits;
 
   ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&priority_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(priority_));
+      reinterpret_cast<char*>(&estate_id_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
   _internal_metadata_.Clear();
 }
 
@@ -499,6 +501,13 @@ const char* Object::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
           priority_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 estate_id = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
+          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -612,6 +621,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(15, this->_internal_priority(), target);
   }
 
+  // uint32 estate_id = 16;
+  if (this->estate_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(16, this->_internal_estate_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -710,6 +725,13 @@ size_t Object::ByteSizeLong() const {
         this->_internal_priority());
   }
 
+  // uint32 estate_id = 16;
+  if (this->estate_id() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_estate_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -783,6 +805,9 @@ void Object::MergeFrom(const Object& from) {
   if (from.priority() != 0) {
     _internal_set_priority(from._internal_priority());
   }
+  if (from.estate_id() != 0) {
+    _internal_set_estate_id(from._internal_estate_id());
+  }
 }
 
 void Object::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -820,6 +845,7 @@ void Object::InternalSwap(Object* other) {
   swap(stream_distance_, other->stream_distance_);
   swap(draw_distance_, other->draw_distance_);
   swap(priority_, other->priority_);
+  swap(estate_id_, other->estate_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Object::GetMetadata() const {

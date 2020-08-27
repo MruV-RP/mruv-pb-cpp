@@ -222,6 +222,7 @@ class Object :
     kStreamDistanceFieldNumber = 12,
     kDrawDistanceFieldNumber = 13,
     kPriorityFieldNumber = 15,
+    kEstateIdFieldNumber = 16,
   };
   // uint32 model = 1;
   void clear_model();
@@ -349,6 +350,15 @@ class Object :
   void _internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // uint32 estate_id = 16;
+  void clear_estate_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id() const;
+  void set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_estate_id() const;
+  void _internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.objects.Object)
  private:
   class _Internal;
@@ -368,6 +378,7 @@ class Object :
   float stream_distance_;
   float draw_distance_;
   ::PROTOBUF_NAMESPACE_ID::int32 priority_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
@@ -1687,6 +1698,26 @@ inline void Object::_internal_set_priority(::PROTOBUF_NAMESPACE_ID::int32 value)
 inline void Object::set_priority(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_priority(value);
   // @@protoc_insertion_point(field_set:mruv.objects.Object.priority)
+}
+
+// uint32 estate_id = 16;
+inline void Object::clear_estate_id() {
+  estate_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::_internal_estate_id() const {
+  return estate_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::estate_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.Object.estate_id)
+  return _internal_estate_id();
+}
+inline void Object::_internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  estate_id_ = value;
+}
+inline void Object::set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_estate_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.Object.estate_id)
 }
 
 // -------------------------------------------------------------------
