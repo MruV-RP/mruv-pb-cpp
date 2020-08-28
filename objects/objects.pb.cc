@@ -14,13 +14,35 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Object_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Material_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MaterialText_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Object_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto;
 namespace mruv {
 namespace objects {
+class Object_MaterialsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Object_MaterialsEntry_DoNotUse> _instance;
+} _Object_MaterialsEntry_DoNotUse_default_instance_;
+class Object_MaterialTextsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Object_MaterialTextsEntry_DoNotUse> _instance;
+} _Object_MaterialTextsEntry_DoNotUse_default_instance_;
 class ObjectDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Object> _instance;
 } _Object_default_instance_;
+class MaterialDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Material> _instance;
+} _Material_default_instance_;
+class MaterialTextDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MaterialText> _instance;
+} _MaterialText_default_instance_;
 class CreateObjectRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateObjectRequest> _instance;
@@ -53,8 +75,130 @@ class DeleteObjectResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteObjectResponse> _instance;
 } _DeleteObjectResponse_default_instance_;
+class AddObjectMaterialRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddObjectMaterialRequest> _instance;
+} _AddObjectMaterialRequest_default_instance_;
+class AddObjectMaterialResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddObjectMaterialResponse> _instance;
+} _AddObjectMaterialResponse_default_instance_;
+class GetObjectMaterialsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetObjectMaterialsRequest> _instance;
+} _GetObjectMaterialsRequest_default_instance_;
+class GetObjectMaterialsResponse_MaterialsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetObjectMaterialsResponse_MaterialsEntry_DoNotUse> _instance;
+} _GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_default_instance_;
+class GetObjectMaterialsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetObjectMaterialsResponse> _instance;
+} _GetObjectMaterialsResponse_default_instance_;
+class DeleteObjectMaterialRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteObjectMaterialRequest> _instance;
+} _DeleteObjectMaterialRequest_default_instance_;
+class DeleteObjectMaterialResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteObjectMaterialResponse> _instance;
+} _DeleteObjectMaterialResponse_default_instance_;
+class AddObjectMaterialTextRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddObjectMaterialTextRequest> _instance;
+} _AddObjectMaterialTextRequest_default_instance_;
+class AddObjectMaterialTextResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddObjectMaterialTextResponse> _instance;
+} _AddObjectMaterialTextResponse_default_instance_;
+class GetObjectMaterialTextsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetObjectMaterialTextsRequest> _instance;
+} _GetObjectMaterialTextsRequest_default_instance_;
+class GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse> _instance;
+} _GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_default_instance_;
+class GetObjectMaterialTextsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetObjectMaterialTextsResponse> _instance;
+} _GetObjectMaterialTextsResponse_default_instance_;
+class DeleteObjectMaterialTextRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteObjectMaterialTextRequest> _instance;
+} _DeleteObjectMaterialTextRequest_default_instance_;
+class DeleteObjectMaterialTextResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteObjectMaterialTextResponse> _instance;
+} _DeleteObjectMaterialTextResponse_default_instance_;
+class FetchAllRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllRequest> _instance;
+} _FetchAllRequest_default_instance_;
+class FetchAllResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllResponse> _instance;
+} _FetchAllResponse_default_instance_;
 }  // namespace objects
 }  // namespace mruv
+static void InitDefaultsscc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_AddObjectMaterialRequest_default_instance_;
+    new (ptr) ::mruv::objects::AddObjectMaterialRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::AddObjectMaterialRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto}, {
+      &scc_info_Material_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_AddObjectMaterialResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_AddObjectMaterialResponse_default_instance_;
+    new (ptr) ::mruv::objects::AddObjectMaterialResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::AddObjectMaterialResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddObjectMaterialResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddObjectMaterialResponse_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_AddObjectMaterialTextRequest_default_instance_;
+    new (ptr) ::mruv::objects::AddObjectMaterialTextRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::AddObjectMaterialTextRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto}, {
+      &scc_info_MaterialText_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_AddObjectMaterialTextResponse_default_instance_;
+    new (ptr) ::mruv::objects::AddObjectMaterialTextResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::AddObjectMaterialTextResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto}, {}};
+
 static void InitDefaultsscc_info_CreateObjectRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -84,6 +228,62 @@ static void InitDefaultsscc_info_CreateObjectResponse_objects_2fobjects_2eproto(
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateObjectResponse_objects_2fobjects_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CreateObjectResponse_objects_2fobjects_2eproto}, {}};
 
+static void InitDefaultsscc_info_DeleteObjectMaterialRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_DeleteObjectMaterialRequest_default_instance_;
+    new (ptr) ::mruv::objects::DeleteObjectMaterialRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::DeleteObjectMaterialRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteObjectMaterialRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteObjectMaterialRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteObjectMaterialResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_DeleteObjectMaterialResponse_default_instance_;
+    new (ptr) ::mruv::objects::DeleteObjectMaterialResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::DeleteObjectMaterialResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteObjectMaterialResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteObjectMaterialResponse_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteObjectMaterialTextRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_DeleteObjectMaterialTextRequest_default_instance_;
+    new (ptr) ::mruv::objects::DeleteObjectMaterialTextRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::DeleteObjectMaterialTextRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteObjectMaterialTextRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteObjectMaterialTextRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteObjectMaterialTextResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_DeleteObjectMaterialTextResponse_default_instance_;
+    new (ptr) ::mruv::objects::DeleteObjectMaterialTextResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::DeleteObjectMaterialTextResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteObjectMaterialTextResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteObjectMaterialTextResponse_objects_2fobjects_2eproto}, {}};
+
 static void InitDefaultsscc_info_DeleteObjectRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -111,6 +311,121 @@ static void InitDefaultsscc_info_DeleteObjectResponse_objects_2fobjects_2eproto(
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteObjectResponse_objects_2fobjects_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteObjectResponse_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_FetchAllRequest_default_instance_;
+    new (ptr) ::mruv::objects::FetchAllRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::FetchAllRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FetchAllRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FetchAllRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_FetchAllResponse_default_instance_;
+    new (ptr) ::mruv::objects::FetchAllResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::FetchAllResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllResponse_objects_2fobjects_2eproto}, {
+      &scc_info_Object_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetObjectMaterialTextsRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetObjectMaterialTextsRequest_default_instance_;
+    new (ptr) ::mruv::objects::GetObjectMaterialTextsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::GetObjectMaterialTextsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetObjectMaterialTextsRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetObjectMaterialTextsRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetObjectMaterialTextsResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetObjectMaterialTextsResponse_default_instance_;
+    new (ptr) ::mruv::objects::GetObjectMaterialTextsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::GetObjectMaterialTextsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetObjectMaterialTextsResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetObjectMaterialTextsResponse_objects_2fobjects_2eproto}, {
+      &scc_info_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse();
+  }
+  ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto}, {
+      &scc_info_MaterialText_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetObjectMaterialsRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetObjectMaterialsRequest_default_instance_;
+    new (ptr) ::mruv::objects::GetObjectMaterialsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::GetObjectMaterialsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetObjectMaterialsRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetObjectMaterialsRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetObjectMaterialsResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetObjectMaterialsResponse_default_instance_;
+    new (ptr) ::mruv::objects::GetObjectMaterialsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::GetObjectMaterialsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetObjectMaterialsResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetObjectMaterialsResponse_objects_2fobjects_2eproto}, {
+      &scc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse();
+  }
+  ::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto}, {
+      &scc_info_Material_objects_2fobjects_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetObjectRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -141,6 +456,34 @@ static void InitDefaultsscc_info_GetObjectResponse_objects_2fobjects_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetObjectResponse_objects_2fobjects_2eproto}, {
       &scc_info_Object_objects_2fobjects_2eproto.base,}};
 
+static void InitDefaultsscc_info_Material_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_Material_default_instance_;
+    new (ptr) ::mruv::objects::Material();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::Material::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Material_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Material_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_MaterialText_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_MaterialText_default_instance_;
+    new (ptr) ::mruv::objects::MaterialText();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::MaterialText::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MaterialText_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MaterialText_objects_2fobjects_2eproto}, {}};
+
 static void InitDefaultsscc_info_Object_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -152,8 +495,38 @@ static void InitDefaultsscc_info_Object_objects_2fobjects_2eproto() {
   ::mruv::objects::Object::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Object_objects_2fobjects_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Object_objects_2fobjects_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Object_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_Object_objects_2fobjects_2eproto}, {
+      &scc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto.base,
+      &scc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_Object_MaterialTextsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::objects::Object_MaterialTextsEntry_DoNotUse();
+  }
+  ::mruv::objects::Object_MaterialTextsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto}, {
+      &scc_info_MaterialText_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_Object_MaterialsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::objects::Object_MaterialsEntry_DoNotUse();
+  }
+  ::mruv::objects::Object_MaterialsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto}, {
+      &scc_info_Material_objects_2fobjects_2eproto.base,}};
 
 static void InitDefaultsscc_info_UpdateObjectRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -184,11 +557,29 @@ static void InitDefaultsscc_info_UpdateObjectResponse_objects_2fobjects_2eproto(
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateObjectResponse_objects_2fobjects_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateObjectResponse_objects_2fobjects_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_objects_2fobjects_2eproto[9];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_objects_2fobjects_2eproto = nullptr;
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_objects_2fobjects_2eproto[29];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_objects_2fobjects_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_objects_2fobjects_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialsEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialTextsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialTextsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialTextsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object_MaterialTextsEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -209,6 +600,30 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, draw_distance_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, priority_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, estate_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, materials_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Object, material_texts_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, model_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, txd_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, texture_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, material_color_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, text_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, material_size_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, font_face_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, font_size_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, bold_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, font_color_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, back_color_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, text_alignment_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::CreateObjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -256,21 +671,148 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialRequest, object_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialRequest, index_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialRequest, material_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsRequest, object_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialsResponse, materials_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialRequest, object_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialRequest, index_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialTextRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialTextRequest, object_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialTextRequest, index_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialTextRequest, material_text_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddObjectMaterialTextResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsRequest, object_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetObjectMaterialTextsResponse, material_texts_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialTextRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialTextRequest, object_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialTextRequest, index_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteObjectMaterialTextResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllResponse, objects_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::objects::Object)},
-  { 20, -1, sizeof(::mruv::objects::CreateObjectRequest)},
-  { 26, -1, sizeof(::mruv::objects::CreateObjectResponse)},
-  { 32, -1, sizeof(::mruv::objects::GetObjectRequest)},
-  { 38, -1, sizeof(::mruv::objects::GetObjectResponse)},
-  { 44, -1, sizeof(::mruv::objects::UpdateObjectRequest)},
-  { 51, -1, sizeof(::mruv::objects::UpdateObjectResponse)},
-  { 56, -1, sizeof(::mruv::objects::DeleteObjectRequest)},
-  { 62, -1, sizeof(::mruv::objects::DeleteObjectResponse)},
+  { 0, 7, sizeof(::mruv::objects::Object_MaterialsEntry_DoNotUse)},
+  { 9, 16, sizeof(::mruv::objects::Object_MaterialTextsEntry_DoNotUse)},
+  { 18, -1, sizeof(::mruv::objects::Object)},
+  { 40, -1, sizeof(::mruv::objects::Material)},
+  { 49, -1, sizeof(::mruv::objects::MaterialText)},
+  { 62, -1, sizeof(::mruv::objects::CreateObjectRequest)},
+  { 68, -1, sizeof(::mruv::objects::CreateObjectResponse)},
+  { 74, -1, sizeof(::mruv::objects::GetObjectRequest)},
+  { 80, -1, sizeof(::mruv::objects::GetObjectResponse)},
+  { 86, -1, sizeof(::mruv::objects::UpdateObjectRequest)},
+  { 93, -1, sizeof(::mruv::objects::UpdateObjectResponse)},
+  { 98, -1, sizeof(::mruv::objects::DeleteObjectRequest)},
+  { 104, -1, sizeof(::mruv::objects::DeleteObjectResponse)},
+  { 109, -1, sizeof(::mruv::objects::AddObjectMaterialRequest)},
+  { 117, -1, sizeof(::mruv::objects::AddObjectMaterialResponse)},
+  { 122, -1, sizeof(::mruv::objects::GetObjectMaterialsRequest)},
+  { 128, 135, sizeof(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse)},
+  { 137, -1, sizeof(::mruv::objects::GetObjectMaterialsResponse)},
+  { 143, -1, sizeof(::mruv::objects::DeleteObjectMaterialRequest)},
+  { 150, -1, sizeof(::mruv::objects::DeleteObjectMaterialResponse)},
+  { 155, -1, sizeof(::mruv::objects::AddObjectMaterialTextRequest)},
+  { 163, -1, sizeof(::mruv::objects::AddObjectMaterialTextResponse)},
+  { 168, -1, sizeof(::mruv::objects::GetObjectMaterialTextsRequest)},
+  { 174, 181, sizeof(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse)},
+  { 183, -1, sizeof(::mruv::objects::GetObjectMaterialTextsResponse)},
+  { 189, -1, sizeof(::mruv::objects::DeleteObjectMaterialTextRequest)},
+  { 196, -1, sizeof(::mruv::objects::DeleteObjectMaterialTextResponse)},
+  { 201, -1, sizeof(::mruv::objects::FetchAllRequest)},
+  { 206, -1, sizeof(::mruv::objects::FetchAllResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_Object_MaterialsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_Object_MaterialTextsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_Object_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_Material_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_MaterialText_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_CreateObjectRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_CreateObjectResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectRequest_default_instance_),
@@ -279,67 +821,243 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_UpdateObjectResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_AddObjectMaterialRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_AddObjectMaterialResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectMaterialRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectMaterialResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_AddObjectMaterialTextRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_AddObjectMaterialTextResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialTextsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialTextsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectMaterialTextRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectMaterialTextResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_objects_2fobjects_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025objects/objects.proto\022\014mruv.objects\032\034g"
-  "oogle/api/annotations.proto\"\374\001\n\006Object\022\r"
+  "oogle/api/annotations.proto\"\221\004\n\006Object\022\r"
   "\n\005model\030\001 \001(\r\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z"
   "\030\004 \001(\002\022\n\n\002rx\030\005 \001(\002\022\n\n\002ry\030\006 \001(\002\022\n\n\002rz\030\007 \001"
   "(\002\022\020\n\010world_id\030\010 \001(\005\022\023\n\013interior_id\030\t \001("
   "\005\022\021\n\tplayer_id\030\n \001(\005\022\017\n\007area_id\030\013 \001(\005\022\027\n"
   "\017stream_distance\030\014 \001(\002\022\025\n\rdraw_distance\030"
   "\r \001(\002\022\020\n\010priority\030\017 \001(\005\022\021\n\testate_id\030\020 \001"
-  "(\r\";\n\023CreateObjectRequest\022$\n\006object\030\001 \001("
-  "\0132\024.mruv.objects.Object\"\"\n\024CreateObjectR"
-  "esponse\022\n\n\002id\030\001 \001(\r\"\036\n\020GetObjectRequest\022"
-  "\n\n\002id\030\001 \001(\r\"9\n\021GetObjectResponse\022$\n\006obje"
-  "ct\030\001 \001(\0132\024.mruv.objects.Object\"G\n\023Update"
-  "ObjectRequest\022\n\n\002id\030\001 \001(\r\022$\n\006object\030\002 \001("
-  "\0132\024.mruv.objects.Object\"\026\n\024UpdateObjectR"
-  "esponse\"!\n\023DeleteObjectRequest\022\n\n\002id\030\001 \001"
-  "(\r\"\026\n\024DeleteObjectResponse2\310\003\n\022MruVObjec"
-  "tsService\022i\n\014CreateObject\022!.mruv.objects"
-  ".CreateObjectRequest\032\".mruv.objects.Crea"
-  "teObjectResponse\"\022\202\323\344\223\002\014\"\n/v1/object\022e\n\t"
-  "GetObject\022\036.mruv.objects.GetObjectReques"
-  "t\032\037.mruv.objects.GetObjectResponse\"\027\202\323\344\223"
-  "\002\021\022\017/v1/object/{id}\022o\n\014UpdateObject\022!.mr"
-  "uv.objects.UpdateObjectRequest\032\".mruv.ob"
-  "jects.UpdateObjectResponse\"\030\202\323\344\223\002\0222\020/v1/"
-  "objects/{id}\022o\n\014DeleteObject\022!.mruv.obje"
-  "cts.DeleteObjectRequest\032\".mruv.objects.D"
-  "eleteObjectResponse\"\030\202\323\344\223\002\022*\020/v1/objects"
-  "/{id}B\'Z%github.com/MruV-RP/mruv-pb-go/o"
-  "bjectsb\006proto3"
+  "(\r\0226\n\tmaterials\030\021 \003(\0132#.mruv.objects.Obj"
+  "ect.MaterialsEntry\022\?\n\016material_texts\030\022 \003"
+  "(\0132\'.mruv.objects.Object.MaterialTextsEn"
+  "try\032H\n\016MaterialsEntry\022\013\n\003key\030\001 \001(\r\022%\n\005va"
+  "lue\030\002 \001(\0132\026.mruv.objects.Material:\0028\001\032P\n"
+  "\022MaterialTextsEntry\022\013\n\003key\030\001 \001(\r\022)\n\005valu"
+  "e\030\002 \001(\0132\032.mruv.objects.MaterialText:\0028\001\""
+  "\\\n\010Material\022\020\n\010model_id\030\001 \001(\005\022\020\n\010txd_nam"
+  "e\030\002 \001(\t\022\024\n\014texture_name\030\003 \001(\t\022\026\n\016materia"
+  "l_color\030\004 \001(\005\"\303\001\n\014MaterialText\022\014\n\004text\030\001"
+  " \001(\t\0221\n\rmaterial_size\030\002 \001(\0162\032.mruv.objec"
+  "ts.MaterialSize\022\021\n\tfont_face\030\003 \001(\t\022\021\n\tfo"
+  "nt_size\030\004 \001(\r\022\014\n\004bold\030\005 \001(\010\022\022\n\nfont_colo"
+  "r\030\006 \001(\005\022\022\n\nback_color\030\007 \001(\005\022\026\n\016text_alig"
+  "nment\030\010 \001(\005\";\n\023CreateObjectRequest\022$\n\006ob"
+  "ject\030\001 \001(\0132\024.mruv.objects.Object\"\"\n\024Crea"
+  "teObjectResponse\022\n\n\002id\030\001 \001(\r\"\036\n\020GetObjec"
+  "tRequest\022\n\n\002id\030\001 \001(\r\"9\n\021GetObjectRespons"
+  "e\022$\n\006object\030\001 \001(\0132\024.mruv.objects.Object\""
+  "G\n\023UpdateObjectRequest\022\n\n\002id\030\001 \001(\r\022$\n\006ob"
+  "ject\030\002 \001(\0132\024.mruv.objects.Object\"\026\n\024Upda"
+  "teObjectResponse\"!\n\023DeleteObjectRequest\022"
+  "\n\n\002id\030\001 \001(\r\"\026\n\024DeleteObjectResponse\"f\n\030A"
+  "ddObjectMaterialRequest\022\021\n\tobject_id\030\001 \001"
+  "(\r\022\r\n\005index\030\002 \001(\r\022(\n\010material\030\003 \001(\0132\026.mr"
+  "uv.objects.Material\"\033\n\031AddObjectMaterial"
+  "Response\".\n\031GetObjectMaterialsRequest\022\021\n"
+  "\tobject_id\030\001 \001(\r\"\262\001\n\032GetObjectMaterialsR"
+  "esponse\022J\n\tmaterials\030\001 \003(\01327.mruv.object"
+  "s.GetObjectMaterialsResponse.MaterialsEn"
+  "try\032H\n\016MaterialsEntry\022\013\n\003key\030\001 \001(\r\022%\n\005va"
+  "lue\030\002 \001(\0132\026.mruv.objects.Material:\0028\001\"\?\n"
+  "\033DeleteObjectMaterialRequest\022\021\n\tobject_i"
+  "d\030\001 \001(\r\022\r\n\005index\030\002 \001(\r\"\036\n\034DeleteObjectMa"
+  "terialResponse\"s\n\034AddObjectMaterialTextR"
+  "equest\022\021\n\tobject_id\030\001 \001(\r\022\r\n\005index\030\002 \001(\r"
+  "\0221\n\rmaterial_text\030\003 \001(\0132\032.mruv.objects.M"
+  "aterialText\"\037\n\035AddObjectMaterialTextResp"
+  "onse\"2\n\035GetObjectMaterialTextsRequest\022\021\n"
+  "\tobject_id\030\001 \001(\r\"\313\001\n\036GetObjectMaterialTe"
+  "xtsResponse\022W\n\016material_texts\030\001 \003(\0132\?.mr"
+  "uv.objects.GetObjectMaterialTextsRespons"
+  "e.MaterialTextsEntry\032P\n\022MaterialTextsEnt"
+  "ry\022\013\n\003key\030\001 \001(\r\022)\n\005value\030\002 \001(\0132\032.mruv.ob"
+  "jects.MaterialText:\0028\001\"C\n\037DeleteObjectMa"
+  "terialTextRequest\022\021\n\tobject_id\030\001 \001(\r\022\r\n\005"
+  "index\030\002 \001(\r\"\"\n DeleteObjectMaterialTextR"
+  "esponse\"\021\n\017FetchAllRequest\"9\n\020FetchAllRe"
+  "sponse\022%\n\007objects\030\001 \003(\0132\024.mruv.objects.O"
+  "bject*\375\003\n\014MaterialSize\022\032\n\026OBJECT_MATERIA"
+  "L_SIZE_0\020\000\022\036\n\032OBJECT_MATERIAL_SIZE_32X32"
+  "\020\n\022\036\n\032OBJECT_MATERIAL_SIZE_64X32\020\024\022\036\n\032OB"
+  "JECT_MATERIAL_SIZE_64X64\020\036\022\037\n\033OBJECT_MAT"
+  "ERIAL_SIZE_128X32\020(\022\037\n\033OBJECT_MATERIAL_S"
+  "IZE_128X64\0202\022 \n\034OBJECT_MATERIAL_SIZE_128"
+  "X128\020<\022\037\n\033OBJECT_MATERIAL_SIZE_256X32\020F\022"
+  "\037\n\033OBJECT_MATERIAL_SIZE_256X64\020P\022 \n\034OBJE"
+  "CT_MATERIAL_SIZE_256X128\020Z\022 \n\034OBJECT_MAT"
+  "ERIAL_SIZE_256X256\020d\022\037\n\033OBJECT_MATERIAL_"
+  "SIZE_512X64\020n\022 \n\034OBJECT_MATERIAL_SIZE_51"
+  "2X128\020x\022!\n\034OBJECT_MATERIAL_SIZE_512X256\020"
+  "\202\001\022!\n\034OBJECT_MATERIAL_SIZE_512X512\020\214\0012\346\013"
+  "\n\022MruVObjectsService\022j\n\014CreateObject\022!.m"
+  "ruv.objects.CreateObjectRequest\032\".mruv.o"
+  "bjects.CreateObjectResponse\"\023\202\323\344\223\002\r\"\013/v1"
+  "/objects\022f\n\tGetObject\022\036.mruv.objects.Get"
+  "ObjectRequest\032\037.mruv.objects.GetObjectRe"
+  "sponse\"\030\202\323\344\223\002\022\022\020/v1/objects/{id}\022o\n\014Upda"
+  "teObject\022!.mruv.objects.UpdateObjectRequ"
+  "est\032\".mruv.objects.UpdateObjectResponse\""
+  "\030\202\323\344\223\002\0222\020/v1/objects/{id}\022o\n\014DeleteObjec"
+  "t\022!.mruv.objects.DeleteObjectRequest\032\".m"
+  "ruv.objects.DeleteObjectResponse\"\030\202\323\344\223\002\022"
+  "*\020/v1/objects/{id}\022\217\001\n\021AddObjectMaterial"
+  "\022&.mruv.objects.AddObjectMaterialRequest"
+  "\032\'.mruv.objects.AddObjectMaterialRespons"
+  "e\")\202\323\344\223\002#\032!/v1/objects/{object_id}/mater"
+  "ials\022\222\001\n\022GetObjectMaterials\022\'.mruv.objec"
+  "ts.GetObjectMaterialsRequest\032(.mruv.obje"
+  "cts.GetObjectMaterialsResponse\")\202\323\344\223\002#\022!"
+  "/v1/objects/{object_id}/materials\022\240\001\n\024De"
+  "leteObjectMaterial\022).mruv.objects.Delete"
+  "ObjectMaterialRequest\032*.mruv.objects.Del"
+  "eteObjectMaterialResponse\"1\202\323\344\223\002+*)/v1/o"
+  "bjects/{object_id}/materials/{index}\022\237\001\n"
+  "\025AddObjectMaterialText\022*.mruv.objects.Ad"
+  "dObjectMaterialTextRequest\032+.mruv.object"
+  "s.AddObjectMaterialTextResponse\"-\202\323\344\223\002\'\032"
+  "%/v1/objects/{object_id}/materialTexts\022\242"
+  "\001\n\026GetObjectMaterialTexts\022+.mruv.objects"
+  ".GetObjectMaterialTextsRequest\032,.mruv.ob"
+  "jects.GetObjectMaterialTextsResponse\"-\202\323"
+  "\344\223\002\'\022%/v1/objects/{object_id}/materialTe"
+  "xts\022\250\001\n\030DeleteObjectMaterialText\022-.mruv."
+  "objects.DeleteObjectMaterialTextRequest\032"
+  "..mruv.objects.DeleteObjectMaterialTextR"
+  "esponse\"-\202\323\344\223\002\'*%/v1/objects/{object_id}"
+  "/materialTexts\022^\n\010FetchAll\022\035.mruv.object"
+  "s.FetchAllRequest\032\036.mruv.objects.FetchAl"
+  "lResponse\"\023\202\323\344\223\002\r\022\013/v1/objectsB\'Z%github"
+  ".com/MruV-RP/mruv-pb-go/objectsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_objects_2fobjects_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_objects_2fobjects_2eproto_sccs[9] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_objects_2fobjects_2eproto_sccs[29] = {
+  &scc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto.base,
+  &scc_info_AddObjectMaterialResponse_objects_2fobjects_2eproto.base,
+  &scc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto.base,
+  &scc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto.base,
   &scc_info_CreateObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_CreateObjectResponse_objects_2fobjects_2eproto.base,
+  &scc_info_DeleteObjectMaterialRequest_objects_2fobjects_2eproto.base,
+  &scc_info_DeleteObjectMaterialResponse_objects_2fobjects_2eproto.base,
+  &scc_info_DeleteObjectMaterialTextRequest_objects_2fobjects_2eproto.base,
+  &scc_info_DeleteObjectMaterialTextResponse_objects_2fobjects_2eproto.base,
   &scc_info_DeleteObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_DeleteObjectResponse_objects_2fobjects_2eproto.base,
+  &scc_info_FetchAllRequest_objects_2fobjects_2eproto.base,
+  &scc_info_FetchAllResponse_objects_2fobjects_2eproto.base,
+  &scc_info_GetObjectMaterialTextsRequest_objects_2fobjects_2eproto.base,
+  &scc_info_GetObjectMaterialTextsResponse_objects_2fobjects_2eproto.base,
+  &scc_info_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto.base,
+  &scc_info_GetObjectMaterialsRequest_objects_2fobjects_2eproto.base,
+  &scc_info_GetObjectMaterialsResponse_objects_2fobjects_2eproto.base,
+  &scc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto.base,
   &scc_info_GetObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_GetObjectResponse_objects_2fobjects_2eproto.base,
+  &scc_info_Material_objects_2fobjects_2eproto.base,
+  &scc_info_MaterialText_objects_2fobjects_2eproto.base,
   &scc_info_Object_objects_2fobjects_2eproto.base,
+  &scc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto.base,
+  &scc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto.base,
   &scc_info_UpdateObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_UpdateObjectResponse_objects_2fobjects_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_objects_2fobjects_2eproto_once;
 static bool descriptor_table_objects_2fobjects_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fobjects_2eproto = {
-  &descriptor_table_objects_2fobjects_2eproto_initialized, descriptor_table_protodef_objects_2fobjects_2eproto, "objects/objects.proto", 1174,
-  &descriptor_table_objects_2fobjects_2eproto_once, descriptor_table_objects_2fobjects_2eproto_sccs, descriptor_table_objects_2fobjects_2eproto_deps, 9, 1,
+  &descriptor_table_objects_2fobjects_2eproto_initialized, descriptor_table_protodef_objects_2fobjects_2eproto, "objects/objects.proto", 4359,
+  &descriptor_table_objects_2fobjects_2eproto_once, descriptor_table_objects_2fobjects_2eproto_sccs, descriptor_table_objects_2fobjects_2eproto_deps, 29, 1,
   schemas, file_default_instances, TableStruct_objects_2fobjects_2eproto::offsets,
-  file_level_metadata_objects_2fobjects_2eproto, 9, file_level_enum_descriptors_objects_2fobjects_2eproto, file_level_service_descriptors_objects_2fobjects_2eproto,
+  file_level_metadata_objects_2fobjects_2eproto, 29, file_level_enum_descriptors_objects_2fobjects_2eproto, file_level_service_descriptors_objects_2fobjects_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_objects_2fobjects_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_objects_2fobjects_2eproto), true);
 namespace mruv {
 namespace objects {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MaterialSize_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_objects_2fobjects_2eproto);
+  return file_level_enum_descriptors_objects_2fobjects_2eproto[0];
+}
+bool MaterialSize_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 10:
+    case 20:
+    case 30:
+    case 40:
+    case 50:
+    case 60:
+    case 70:
+    case 80:
+    case 90:
+    case 100:
+    case 110:
+    case 120:
+    case 130:
+    case 140:
+      return true;
+    default:
+      return false;
+  }
+}
+
+
+// ===================================================================
+
+Object_MaterialsEntry_DoNotUse::Object_MaterialsEntry_DoNotUse() {}
+Object_MaterialsEntry_DoNotUse::Object_MaterialsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Object_MaterialsEntry_DoNotUse::MergeFrom(const Object_MaterialsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Object_MaterialsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void Object_MaterialsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+Object_MaterialTextsEntry_DoNotUse::Object_MaterialTextsEntry_DoNotUse() {}
+Object_MaterialTextsEntry_DoNotUse::Object_MaterialTextsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void Object_MaterialTextsEntry_DoNotUse::MergeFrom(const Object_MaterialTextsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata Object_MaterialTextsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void Object_MaterialTextsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
 
 // ===================================================================
 
@@ -358,6 +1076,8 @@ Object::Object(const Object& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  materials_.MergeFrom(from.materials_);
+  material_texts_.MergeFrom(from.material_texts_);
   ::memcpy(&model_, &from.model_,
     static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
     reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
@@ -365,6 +1085,7 @@ Object::Object(const Object& from)
 }
 
 void Object::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Object_objects_2fobjects_2eproto.base);
   ::memset(&model_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&estate_id_) -
       reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
@@ -393,6 +1114,8 @@ void Object::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  materials_.Clear();
+  material_texts_.Clear();
   ::memset(&model_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&estate_id_) -
       reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
@@ -511,6 +1234,30 @@ const char* Object::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // map<uint32, .mruv.objects.Material> materials = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(&materials_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<uint32, .mruv.objects.MaterialText> material_texts = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(&material_texts_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<146>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -627,6 +1374,68 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(16, this->_internal_estate_id(), target);
   }
 
+  // map<uint32, .mruv.objects.Material> materials = 17;
+  if (!this->_internal_materials().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_materials().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_materials().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_iterator
+          it = this->_internal_materials().begin();
+          it != this->_internal_materials().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Object_MaterialsEntry_DoNotUse::Funcs::InternalSerialize(17, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_iterator
+          it = this->_internal_materials().begin();
+          it != this->_internal_materials().end(); ++it) {
+        target = Object_MaterialsEntry_DoNotUse::Funcs::InternalSerialize(17, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  // map<uint32, .mruv.objects.MaterialText> material_texts = 18;
+  if (!this->_internal_material_texts().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_material_texts().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_material_texts().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_iterator
+          it = this->_internal_material_texts().begin();
+          it != this->_internal_material_texts().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = Object_MaterialTextsEntry_DoNotUse::Funcs::InternalSerialize(18, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_iterator
+          it = this->_internal_material_texts().begin();
+          it != this->_internal_material_texts().end(); ++it) {
+        target = Object_MaterialTextsEntry_DoNotUse::Funcs::InternalSerialize(18, it->first, it->second, target, stream);
+      }
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -642,6 +1451,24 @@ size_t Object::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.Material> materials = 17;
+  total_size += 2 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_materials_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_iterator
+      it = this->_internal_materials().begin();
+      it != this->_internal_materials().end(); ++it) {
+    total_size += Object_MaterialsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<uint32, .mruv.objects.MaterialText> material_texts = 18;
+  total_size += 2 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_material_texts_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_iterator
+      it = this->_internal_material_texts().begin();
+      it != this->_internal_material_texts().end(); ++it) {
+    total_size += Object_MaterialTextsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
 
   // uint32 model = 1;
   if (this->model() != 0) {
@@ -763,6 +1590,8 @@ void Object::MergeFrom(const Object& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  materials_.MergeFrom(from.materials_);
+  material_texts_.MergeFrom(from.material_texts_);
   if (from.model() != 0) {
     _internal_set_model(from._internal_model());
   }
@@ -831,6 +1660,8 @@ bool Object::IsInitialized() const {
 void Object::InternalSwap(Object* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  materials_.Swap(&other->materials_);
+  material_texts_.Swap(&other->material_texts_);
   swap(model_, other->model_);
   swap(x_, other->x_);
   swap(y_, other->y_);
@@ -849,6 +1680,691 @@ void Object::InternalSwap(Object* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Object::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void Material::InitAsDefaultInstance() {
+}
+class Material::_Internal {
+ public:
+};
+
+Material::Material()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.Material)
+}
+Material::Material(const Material& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  txd_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_txd_name().empty()) {
+    txd_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.txd_name_);
+  }
+  texture_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_texture_name().empty()) {
+    texture_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.texture_name_);
+  }
+  ::memcpy(&model_id_, &from.model_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&material_color_) -
+    reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.Material)
+}
+
+void Material::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Material_objects_2fobjects_2eproto.base);
+  txd_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  texture_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&model_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&material_color_) -
+      reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
+}
+
+Material::~Material() {
+  // @@protoc_insertion_point(destructor:mruv.objects.Material)
+  SharedDtor();
+}
+
+void Material::SharedDtor() {
+  txd_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  texture_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Material::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Material& Material::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Material_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Material::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.Material)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  txd_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  texture_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&model_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&material_color_) -
+      reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
+  _internal_metadata_.Clear();
+}
+
+const char* Material::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 model_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          model_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string txd_name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_txd_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.objects.Material.txd_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string texture_name = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_texture_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.objects.Material.texture_name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 material_color = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          material_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Material::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.Material)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 model_id = 1;
+  if (this->model_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_model_id(), target);
+  }
+
+  // string txd_name = 2;
+  if (this->txd_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_txd_name().data(), static_cast<int>(this->_internal_txd_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.objects.Material.txd_name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_txd_name(), target);
+  }
+
+  // string texture_name = 3;
+  if (this->texture_name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_texture_name().data(), static_cast<int>(this->_internal_texture_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.objects.Material.texture_name");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_texture_name(), target);
+  }
+
+  // int32 material_color = 4;
+  if (this->material_color() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_material_color(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.Material)
+  return target;
+}
+
+size_t Material::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.Material)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string txd_name = 2;
+  if (this->txd_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_txd_name());
+  }
+
+  // string texture_name = 3;
+  if (this->texture_name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_texture_name());
+  }
+
+  // int32 model_id = 1;
+  if (this->model_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_model_id());
+  }
+
+  // int32 material_color = 4;
+  if (this->material_color() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_material_color());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Material::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.Material)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Material* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Material>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.Material)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.Material)
+    MergeFrom(*source);
+  }
+}
+
+void Material::MergeFrom(const Material& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.Material)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.txd_name().size() > 0) {
+
+    txd_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.txd_name_);
+  }
+  if (from.texture_name().size() > 0) {
+
+    texture_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.texture_name_);
+  }
+  if (from.model_id() != 0) {
+    _internal_set_model_id(from._internal_model_id());
+  }
+  if (from.material_color() != 0) {
+    _internal_set_material_color(from._internal_material_color());
+  }
+}
+
+void Material::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.Material)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Material::CopyFrom(const Material& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.Material)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Material::IsInitialized() const {
+  return true;
+}
+
+void Material::InternalSwap(Material* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  txd_name_.Swap(&other->txd_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  texture_name_.Swap(&other->texture_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(model_id_, other->model_id_);
+  swap(material_color_, other->material_color_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Material::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void MaterialText::InitAsDefaultInstance() {
+}
+class MaterialText::_Internal {
+ public:
+};
+
+MaterialText::MaterialText()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.MaterialText)
+}
+MaterialText::MaterialText(const MaterialText& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_text().empty()) {
+    text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
+  }
+  font_face_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_font_face().empty()) {
+    font_face_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.font_face_);
+  }
+  ::memcpy(&material_size_, &from.material_size_,
+    static_cast<size_t>(reinterpret_cast<char*>(&text_alignment_) -
+    reinterpret_cast<char*>(&material_size_)) + sizeof(text_alignment_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.MaterialText)
+}
+
+void MaterialText::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MaterialText_objects_2fobjects_2eproto.base);
+  text_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  font_face_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&material_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&text_alignment_) -
+      reinterpret_cast<char*>(&material_size_)) + sizeof(text_alignment_));
+}
+
+MaterialText::~MaterialText() {
+  // @@protoc_insertion_point(destructor:mruv.objects.MaterialText)
+  SharedDtor();
+}
+
+void MaterialText::SharedDtor() {
+  text_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  font_face_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void MaterialText::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const MaterialText& MaterialText::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MaterialText_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void MaterialText::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.MaterialText)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  text_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  font_face_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&material_size_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&text_alignment_) -
+      reinterpret_cast<char*>(&material_size_)) + sizeof(text_alignment_));
+  _internal_metadata_.Clear();
+}
+
+const char* MaterialText::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string text = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_text();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.objects.MaterialText.text"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.objects.MaterialSize material_size = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_material_size(static_cast<::mruv::objects::MaterialSize>(val));
+        } else goto handle_unusual;
+        continue;
+      // string font_face = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_font_face();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.objects.MaterialText.font_face"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 font_size = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          font_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool bold = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          bold_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 font_color = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          font_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 back_color = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          back_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 text_alignment = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          text_alignment_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* MaterialText::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.MaterialText)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string text = 1;
+  if (this->text().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_text().data(), static_cast<int>(this->_internal_text().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.objects.MaterialText.text");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_text(), target);
+  }
+
+  // .mruv.objects.MaterialSize material_size = 2;
+  if (this->material_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_material_size(), target);
+  }
+
+  // string font_face = 3;
+  if (this->font_face().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_font_face().data(), static_cast<int>(this->_internal_font_face().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.objects.MaterialText.font_face");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_font_face(), target);
+  }
+
+  // uint32 font_size = 4;
+  if (this->font_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_font_size(), target);
+  }
+
+  // bool bold = 5;
+  if (this->bold() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_bold(), target);
+  }
+
+  // int32 font_color = 6;
+  if (this->font_color() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(6, this->_internal_font_color(), target);
+  }
+
+  // int32 back_color = 7;
+  if (this->back_color() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(7, this->_internal_back_color(), target);
+  }
+
+  // int32 text_alignment = 8;
+  if (this->text_alignment() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(8, this->_internal_text_alignment(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.MaterialText)
+  return target;
+}
+
+size_t MaterialText::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.MaterialText)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string text = 1;
+  if (this->text().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_text());
+  }
+
+  // string font_face = 3;
+  if (this->font_face().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_font_face());
+  }
+
+  // .mruv.objects.MaterialSize material_size = 2;
+  if (this->material_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_material_size());
+  }
+
+  // uint32 font_size = 4;
+  if (this->font_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_font_size());
+  }
+
+  // bool bold = 5;
+  if (this->bold() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // int32 font_color = 6;
+  if (this->font_color() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_font_color());
+  }
+
+  // int32 back_color = 7;
+  if (this->back_color() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_back_color());
+  }
+
+  // int32 text_alignment = 8;
+  if (this->text_alignment() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_text_alignment());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void MaterialText::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.MaterialText)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MaterialText* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MaterialText>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.MaterialText)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.MaterialText)
+    MergeFrom(*source);
+  }
+}
+
+void MaterialText::MergeFrom(const MaterialText& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.MaterialText)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.text().size() > 0) {
+
+    text_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.text_);
+  }
+  if (from.font_face().size() > 0) {
+
+    font_face_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.font_face_);
+  }
+  if (from.material_size() != 0) {
+    _internal_set_material_size(from._internal_material_size());
+  }
+  if (from.font_size() != 0) {
+    _internal_set_font_size(from._internal_font_size());
+  }
+  if (from.bold() != 0) {
+    _internal_set_bold(from._internal_bold());
+  }
+  if (from.font_color() != 0) {
+    _internal_set_font_color(from._internal_font_color());
+  }
+  if (from.back_color() != 0) {
+    _internal_set_back_color(from._internal_back_color());
+  }
+  if (from.text_alignment() != 0) {
+    _internal_set_text_alignment(from._internal_text_alignment());
+  }
+}
+
+void MaterialText::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.MaterialText)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MaterialText::CopyFrom(const MaterialText& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.MaterialText)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MaterialText::IsInitialized() const {
+  return true;
+}
+
+void MaterialText::InternalSwap(MaterialText* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  text_.Swap(&other->text_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  font_face_.Swap(&other->font_face_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(material_size_, other->material_size_);
+  swap(font_size_, other->font_size_);
+  swap(bold_, other->bold_);
+  swap(font_color_, other->font_color_);
+  swap(back_color_, other->back_color_);
+  swap(text_alignment_, other->text_alignment_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MaterialText::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -2359,12 +3875,2775 @@ void DeleteObjectResponse::InternalSwap(DeleteObjectResponse* other) {
 }
 
 
+// ===================================================================
+
+void AddObjectMaterialRequest::InitAsDefaultInstance() {
+  ::mruv::objects::_AddObjectMaterialRequest_default_instance_._instance.get_mutable()->material_ = const_cast< ::mruv::objects::Material*>(
+      ::mruv::objects::Material::internal_default_instance());
+}
+class AddObjectMaterialRequest::_Internal {
+ public:
+  static const ::mruv::objects::Material& material(const AddObjectMaterialRequest* msg);
+};
+
+const ::mruv::objects::Material&
+AddObjectMaterialRequest::_Internal::material(const AddObjectMaterialRequest* msg) {
+  return *msg->material_;
+}
+AddObjectMaterialRequest::AddObjectMaterialRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.AddObjectMaterialRequest)
+}
+AddObjectMaterialRequest::AddObjectMaterialRequest(const AddObjectMaterialRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_material()) {
+    material_ = new ::mruv::objects::Material(*from.material_);
+  } else {
+    material_ = nullptr;
+  }
+  ::memcpy(&object_id_, &from.object_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&index_) -
+    reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.AddObjectMaterialRequest)
+}
+
+void AddObjectMaterialRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto.base);
+  ::memset(&material_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&material_)) + sizeof(index_));
+}
+
+AddObjectMaterialRequest::~AddObjectMaterialRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.AddObjectMaterialRequest)
+  SharedDtor();
+}
+
+void AddObjectMaterialRequest::SharedDtor() {
+  if (this != internal_default_instance()) delete material_;
+}
+
+void AddObjectMaterialRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddObjectMaterialRequest& AddObjectMaterialRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddObjectMaterialRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.AddObjectMaterialRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && material_ != nullptr) {
+    delete material_;
+  }
+  material_ = nullptr;
+  ::memset(&object_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  _internal_metadata_.Clear();
+}
+
+const char* AddObjectMaterialRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 object_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          object_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.objects.Material material = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_material(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddObjectMaterialRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.AddObjectMaterialRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_object_id(), target);
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_index(), target);
+  }
+
+  // .mruv.objects.Material material = 3;
+  if (this->has_material()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::material(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.AddObjectMaterialRequest)
+  return target;
+}
+
+size_t AddObjectMaterialRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.AddObjectMaterialRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .mruv.objects.Material material = 3;
+  if (this->has_material()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *material_);
+  }
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_object_id());
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_index());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddObjectMaterialRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.AddObjectMaterialRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddObjectMaterialRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddObjectMaterialRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.AddObjectMaterialRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.AddObjectMaterialRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AddObjectMaterialRequest::MergeFrom(const AddObjectMaterialRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.AddObjectMaterialRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_material()) {
+    _internal_mutable_material()->::mruv::objects::Material::MergeFrom(from._internal_material());
+  }
+  if (from.object_id() != 0) {
+    _internal_set_object_id(from._internal_object_id());
+  }
+  if (from.index() != 0) {
+    _internal_set_index(from._internal_index());
+  }
+}
+
+void AddObjectMaterialRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.AddObjectMaterialRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddObjectMaterialRequest::CopyFrom(const AddObjectMaterialRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.AddObjectMaterialRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddObjectMaterialRequest::IsInitialized() const {
+  return true;
+}
+
+void AddObjectMaterialRequest::InternalSwap(AddObjectMaterialRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(material_, other->material_);
+  swap(object_id_, other->object_id_);
+  swap(index_, other->index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddObjectMaterialRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddObjectMaterialResponse::InitAsDefaultInstance() {
+}
+class AddObjectMaterialResponse::_Internal {
+ public:
+};
+
+AddObjectMaterialResponse::AddObjectMaterialResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.AddObjectMaterialResponse)
+}
+AddObjectMaterialResponse::AddObjectMaterialResponse(const AddObjectMaterialResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.AddObjectMaterialResponse)
+}
+
+void AddObjectMaterialResponse::SharedCtor() {
+}
+
+AddObjectMaterialResponse::~AddObjectMaterialResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.AddObjectMaterialResponse)
+  SharedDtor();
+}
+
+void AddObjectMaterialResponse::SharedDtor() {
+}
+
+void AddObjectMaterialResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddObjectMaterialResponse& AddObjectMaterialResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddObjectMaterialResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddObjectMaterialResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.AddObjectMaterialResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* AddObjectMaterialResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddObjectMaterialResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.AddObjectMaterialResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.AddObjectMaterialResponse)
+  return target;
+}
+
+size_t AddObjectMaterialResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.AddObjectMaterialResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddObjectMaterialResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.AddObjectMaterialResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddObjectMaterialResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddObjectMaterialResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.AddObjectMaterialResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.AddObjectMaterialResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AddObjectMaterialResponse::MergeFrom(const AddObjectMaterialResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.AddObjectMaterialResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void AddObjectMaterialResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.AddObjectMaterialResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddObjectMaterialResponse::CopyFrom(const AddObjectMaterialResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.AddObjectMaterialResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddObjectMaterialResponse::IsInitialized() const {
+  return true;
+}
+
+void AddObjectMaterialResponse::InternalSwap(AddObjectMaterialResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddObjectMaterialResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetObjectMaterialsRequest::InitAsDefaultInstance() {
+}
+class GetObjectMaterialsRequest::_Internal {
+ public:
+};
+
+GetObjectMaterialsRequest::GetObjectMaterialsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.GetObjectMaterialsRequest)
+}
+GetObjectMaterialsRequest::GetObjectMaterialsRequest(const GetObjectMaterialsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  object_id_ = from.object_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.GetObjectMaterialsRequest)
+}
+
+void GetObjectMaterialsRequest::SharedCtor() {
+  object_id_ = 0u;
+}
+
+GetObjectMaterialsRequest::~GetObjectMaterialsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.GetObjectMaterialsRequest)
+  SharedDtor();
+}
+
+void GetObjectMaterialsRequest::SharedDtor() {
+}
+
+void GetObjectMaterialsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetObjectMaterialsRequest& GetObjectMaterialsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetObjectMaterialsRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetObjectMaterialsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.GetObjectMaterialsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  object_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetObjectMaterialsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 object_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          object_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetObjectMaterialsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.GetObjectMaterialsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_object_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.GetObjectMaterialsRequest)
+  return target;
+}
+
+size_t GetObjectMaterialsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.GetObjectMaterialsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_object_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetObjectMaterialsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.GetObjectMaterialsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetObjectMaterialsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetObjectMaterialsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.GetObjectMaterialsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.GetObjectMaterialsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetObjectMaterialsRequest::MergeFrom(const GetObjectMaterialsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.GetObjectMaterialsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.object_id() != 0) {
+    _internal_set_object_id(from._internal_object_id());
+  }
+}
+
+void GetObjectMaterialsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.GetObjectMaterialsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetObjectMaterialsRequest::CopyFrom(const GetObjectMaterialsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.GetObjectMaterialsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetObjectMaterialsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetObjectMaterialsRequest::InternalSwap(GetObjectMaterialsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(object_id_, other->object_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetObjectMaterialsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse() {}
+GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::MergeFrom(const GetObjectMaterialsResponse_MaterialsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void GetObjectMaterialsResponse::InitAsDefaultInstance() {
+}
+class GetObjectMaterialsResponse::_Internal {
+ public:
+};
+
+GetObjectMaterialsResponse::GetObjectMaterialsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.GetObjectMaterialsResponse)
+}
+GetObjectMaterialsResponse::GetObjectMaterialsResponse(const GetObjectMaterialsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  materials_.MergeFrom(from.materials_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.GetObjectMaterialsResponse)
+}
+
+void GetObjectMaterialsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetObjectMaterialsResponse_objects_2fobjects_2eproto.base);
+}
+
+GetObjectMaterialsResponse::~GetObjectMaterialsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.GetObjectMaterialsResponse)
+  SharedDtor();
+}
+
+void GetObjectMaterialsResponse::SharedDtor() {
+}
+
+void GetObjectMaterialsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetObjectMaterialsResponse& GetObjectMaterialsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetObjectMaterialsResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetObjectMaterialsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.GetObjectMaterialsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  materials_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* GetObjectMaterialsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // map<uint32, .mruv.objects.Material> materials = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&materials_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetObjectMaterialsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.GetObjectMaterialsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.Material> materials = 1;
+  if (!this->_internal_materials().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_materials().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_materials().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_iterator
+          it = this->_internal_materials().begin();
+          it != this->_internal_materials().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_iterator
+          it = this->_internal_materials().begin();
+          it != this->_internal_materials().end(); ++it) {
+        target = GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.GetObjectMaterialsResponse)
+  return target;
+}
+
+size_t GetObjectMaterialsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.GetObjectMaterialsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.Material> materials = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_materials_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >::const_iterator
+      it = this->_internal_materials().begin();
+      it != this->_internal_materials().end(); ++it) {
+    total_size += GetObjectMaterialsResponse_MaterialsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetObjectMaterialsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.GetObjectMaterialsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetObjectMaterialsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetObjectMaterialsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.GetObjectMaterialsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.GetObjectMaterialsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetObjectMaterialsResponse::MergeFrom(const GetObjectMaterialsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.GetObjectMaterialsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  materials_.MergeFrom(from.materials_);
+}
+
+void GetObjectMaterialsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.GetObjectMaterialsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetObjectMaterialsResponse::CopyFrom(const GetObjectMaterialsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.GetObjectMaterialsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetObjectMaterialsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetObjectMaterialsResponse::InternalSwap(GetObjectMaterialsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  materials_.Swap(&other->materials_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetObjectMaterialsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteObjectMaterialRequest::InitAsDefaultInstance() {
+}
+class DeleteObjectMaterialRequest::_Internal {
+ public:
+};
+
+DeleteObjectMaterialRequest::DeleteObjectMaterialRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.DeleteObjectMaterialRequest)
+}
+DeleteObjectMaterialRequest::DeleteObjectMaterialRequest(const DeleteObjectMaterialRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&object_id_, &from.object_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&index_) -
+    reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.DeleteObjectMaterialRequest)
+}
+
+void DeleteObjectMaterialRequest::SharedCtor() {
+  ::memset(&object_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+}
+
+DeleteObjectMaterialRequest::~DeleteObjectMaterialRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.DeleteObjectMaterialRequest)
+  SharedDtor();
+}
+
+void DeleteObjectMaterialRequest::SharedDtor() {
+}
+
+void DeleteObjectMaterialRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteObjectMaterialRequest& DeleteObjectMaterialRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteObjectMaterialRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteObjectMaterialRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.DeleteObjectMaterialRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&object_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteObjectMaterialRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 object_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          object_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteObjectMaterialRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.DeleteObjectMaterialRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_object_id(), target);
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_index(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.DeleteObjectMaterialRequest)
+  return target;
+}
+
+size_t DeleteObjectMaterialRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.DeleteObjectMaterialRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_object_id());
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_index());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteObjectMaterialRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.DeleteObjectMaterialRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteObjectMaterialRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteObjectMaterialRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.DeleteObjectMaterialRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.DeleteObjectMaterialRequest)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteObjectMaterialRequest::MergeFrom(const DeleteObjectMaterialRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.DeleteObjectMaterialRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.object_id() != 0) {
+    _internal_set_object_id(from._internal_object_id());
+  }
+  if (from.index() != 0) {
+    _internal_set_index(from._internal_index());
+  }
+}
+
+void DeleteObjectMaterialRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.DeleteObjectMaterialRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteObjectMaterialRequest::CopyFrom(const DeleteObjectMaterialRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.DeleteObjectMaterialRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteObjectMaterialRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteObjectMaterialRequest::InternalSwap(DeleteObjectMaterialRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(object_id_, other->object_id_);
+  swap(index_, other->index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteObjectMaterialRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteObjectMaterialResponse::InitAsDefaultInstance() {
+}
+class DeleteObjectMaterialResponse::_Internal {
+ public:
+};
+
+DeleteObjectMaterialResponse::DeleteObjectMaterialResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.DeleteObjectMaterialResponse)
+}
+DeleteObjectMaterialResponse::DeleteObjectMaterialResponse(const DeleteObjectMaterialResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.DeleteObjectMaterialResponse)
+}
+
+void DeleteObjectMaterialResponse::SharedCtor() {
+}
+
+DeleteObjectMaterialResponse::~DeleteObjectMaterialResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.DeleteObjectMaterialResponse)
+  SharedDtor();
+}
+
+void DeleteObjectMaterialResponse::SharedDtor() {
+}
+
+void DeleteObjectMaterialResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteObjectMaterialResponse& DeleteObjectMaterialResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteObjectMaterialResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteObjectMaterialResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.DeleteObjectMaterialResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteObjectMaterialResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteObjectMaterialResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.DeleteObjectMaterialResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.DeleteObjectMaterialResponse)
+  return target;
+}
+
+size_t DeleteObjectMaterialResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.DeleteObjectMaterialResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteObjectMaterialResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.DeleteObjectMaterialResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteObjectMaterialResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteObjectMaterialResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.DeleteObjectMaterialResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.DeleteObjectMaterialResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteObjectMaterialResponse::MergeFrom(const DeleteObjectMaterialResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.DeleteObjectMaterialResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void DeleteObjectMaterialResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.DeleteObjectMaterialResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteObjectMaterialResponse::CopyFrom(const DeleteObjectMaterialResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.DeleteObjectMaterialResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteObjectMaterialResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteObjectMaterialResponse::InternalSwap(DeleteObjectMaterialResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteObjectMaterialResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddObjectMaterialTextRequest::InitAsDefaultInstance() {
+  ::mruv::objects::_AddObjectMaterialTextRequest_default_instance_._instance.get_mutable()->material_text_ = const_cast< ::mruv::objects::MaterialText*>(
+      ::mruv::objects::MaterialText::internal_default_instance());
+}
+class AddObjectMaterialTextRequest::_Internal {
+ public:
+  static const ::mruv::objects::MaterialText& material_text(const AddObjectMaterialTextRequest* msg);
+};
+
+const ::mruv::objects::MaterialText&
+AddObjectMaterialTextRequest::_Internal::material_text(const AddObjectMaterialTextRequest* msg) {
+  return *msg->material_text_;
+}
+AddObjectMaterialTextRequest::AddObjectMaterialTextRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.AddObjectMaterialTextRequest)
+}
+AddObjectMaterialTextRequest::AddObjectMaterialTextRequest(const AddObjectMaterialTextRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_material_text()) {
+    material_text_ = new ::mruv::objects::MaterialText(*from.material_text_);
+  } else {
+    material_text_ = nullptr;
+  }
+  ::memcpy(&object_id_, &from.object_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&index_) -
+    reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.AddObjectMaterialTextRequest)
+}
+
+void AddObjectMaterialTextRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto.base);
+  ::memset(&material_text_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&material_text_)) + sizeof(index_));
+}
+
+AddObjectMaterialTextRequest::~AddObjectMaterialTextRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.AddObjectMaterialTextRequest)
+  SharedDtor();
+}
+
+void AddObjectMaterialTextRequest::SharedDtor() {
+  if (this != internal_default_instance()) delete material_text_;
+}
+
+void AddObjectMaterialTextRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddObjectMaterialTextRequest& AddObjectMaterialTextRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddObjectMaterialTextRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.AddObjectMaterialTextRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && material_text_ != nullptr) {
+    delete material_text_;
+  }
+  material_text_ = nullptr;
+  ::memset(&object_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  _internal_metadata_.Clear();
+}
+
+const char* AddObjectMaterialTextRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 object_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          object_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.objects.MaterialText material_text = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_material_text(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddObjectMaterialTextRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.AddObjectMaterialTextRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_object_id(), target);
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_index(), target);
+  }
+
+  // .mruv.objects.MaterialText material_text = 3;
+  if (this->has_material_text()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::material_text(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.AddObjectMaterialTextRequest)
+  return target;
+}
+
+size_t AddObjectMaterialTextRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.AddObjectMaterialTextRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .mruv.objects.MaterialText material_text = 3;
+  if (this->has_material_text()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *material_text_);
+  }
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_object_id());
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_index());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddObjectMaterialTextRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.AddObjectMaterialTextRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddObjectMaterialTextRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddObjectMaterialTextRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.AddObjectMaterialTextRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.AddObjectMaterialTextRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AddObjectMaterialTextRequest::MergeFrom(const AddObjectMaterialTextRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.AddObjectMaterialTextRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_material_text()) {
+    _internal_mutable_material_text()->::mruv::objects::MaterialText::MergeFrom(from._internal_material_text());
+  }
+  if (from.object_id() != 0) {
+    _internal_set_object_id(from._internal_object_id());
+  }
+  if (from.index() != 0) {
+    _internal_set_index(from._internal_index());
+  }
+}
+
+void AddObjectMaterialTextRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.AddObjectMaterialTextRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddObjectMaterialTextRequest::CopyFrom(const AddObjectMaterialTextRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.AddObjectMaterialTextRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddObjectMaterialTextRequest::IsInitialized() const {
+  return true;
+}
+
+void AddObjectMaterialTextRequest::InternalSwap(AddObjectMaterialTextRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(material_text_, other->material_text_);
+  swap(object_id_, other->object_id_);
+  swap(index_, other->index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddObjectMaterialTextRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddObjectMaterialTextResponse::InitAsDefaultInstance() {
+}
+class AddObjectMaterialTextResponse::_Internal {
+ public:
+};
+
+AddObjectMaterialTextResponse::AddObjectMaterialTextResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.AddObjectMaterialTextResponse)
+}
+AddObjectMaterialTextResponse::AddObjectMaterialTextResponse(const AddObjectMaterialTextResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.AddObjectMaterialTextResponse)
+}
+
+void AddObjectMaterialTextResponse::SharedCtor() {
+}
+
+AddObjectMaterialTextResponse::~AddObjectMaterialTextResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.AddObjectMaterialTextResponse)
+  SharedDtor();
+}
+
+void AddObjectMaterialTextResponse::SharedDtor() {
+}
+
+void AddObjectMaterialTextResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddObjectMaterialTextResponse& AddObjectMaterialTextResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddObjectMaterialTextResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.AddObjectMaterialTextResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* AddObjectMaterialTextResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddObjectMaterialTextResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.AddObjectMaterialTextResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.AddObjectMaterialTextResponse)
+  return target;
+}
+
+size_t AddObjectMaterialTextResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.AddObjectMaterialTextResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddObjectMaterialTextResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.AddObjectMaterialTextResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddObjectMaterialTextResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddObjectMaterialTextResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.AddObjectMaterialTextResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.AddObjectMaterialTextResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AddObjectMaterialTextResponse::MergeFrom(const AddObjectMaterialTextResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.AddObjectMaterialTextResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void AddObjectMaterialTextResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.AddObjectMaterialTextResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddObjectMaterialTextResponse::CopyFrom(const AddObjectMaterialTextResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.AddObjectMaterialTextResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddObjectMaterialTextResponse::IsInitialized() const {
+  return true;
+}
+
+void AddObjectMaterialTextResponse::InternalSwap(AddObjectMaterialTextResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddObjectMaterialTextResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetObjectMaterialTextsRequest::InitAsDefaultInstance() {
+}
+class GetObjectMaterialTextsRequest::_Internal {
+ public:
+};
+
+GetObjectMaterialTextsRequest::GetObjectMaterialTextsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.GetObjectMaterialTextsRequest)
+}
+GetObjectMaterialTextsRequest::GetObjectMaterialTextsRequest(const GetObjectMaterialTextsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  object_id_ = from.object_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.GetObjectMaterialTextsRequest)
+}
+
+void GetObjectMaterialTextsRequest::SharedCtor() {
+  object_id_ = 0u;
+}
+
+GetObjectMaterialTextsRequest::~GetObjectMaterialTextsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.GetObjectMaterialTextsRequest)
+  SharedDtor();
+}
+
+void GetObjectMaterialTextsRequest::SharedDtor() {
+}
+
+void GetObjectMaterialTextsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetObjectMaterialTextsRequest& GetObjectMaterialTextsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetObjectMaterialTextsRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetObjectMaterialTextsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.GetObjectMaterialTextsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  object_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetObjectMaterialTextsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 object_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          object_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetObjectMaterialTextsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.GetObjectMaterialTextsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_object_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.GetObjectMaterialTextsRequest)
+  return target;
+}
+
+size_t GetObjectMaterialTextsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.GetObjectMaterialTextsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_object_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetObjectMaterialTextsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.GetObjectMaterialTextsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetObjectMaterialTextsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetObjectMaterialTextsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.GetObjectMaterialTextsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.GetObjectMaterialTextsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetObjectMaterialTextsRequest::MergeFrom(const GetObjectMaterialTextsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.GetObjectMaterialTextsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.object_id() != 0) {
+    _internal_set_object_id(from._internal_object_id());
+  }
+}
+
+void GetObjectMaterialTextsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.GetObjectMaterialTextsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetObjectMaterialTextsRequest::CopyFrom(const GetObjectMaterialTextsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.GetObjectMaterialTextsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetObjectMaterialTextsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetObjectMaterialTextsRequest::InternalSwap(GetObjectMaterialTextsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(object_id_, other->object_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetObjectMaterialTextsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse() {}
+GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::MergeFrom(const GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void GetObjectMaterialTextsResponse::InitAsDefaultInstance() {
+}
+class GetObjectMaterialTextsResponse::_Internal {
+ public:
+};
+
+GetObjectMaterialTextsResponse::GetObjectMaterialTextsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.GetObjectMaterialTextsResponse)
+}
+GetObjectMaterialTextsResponse::GetObjectMaterialTextsResponse(const GetObjectMaterialTextsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  material_texts_.MergeFrom(from.material_texts_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.GetObjectMaterialTextsResponse)
+}
+
+void GetObjectMaterialTextsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetObjectMaterialTextsResponse_objects_2fobjects_2eproto.base);
+}
+
+GetObjectMaterialTextsResponse::~GetObjectMaterialTextsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.GetObjectMaterialTextsResponse)
+  SharedDtor();
+}
+
+void GetObjectMaterialTextsResponse::SharedDtor() {
+}
+
+void GetObjectMaterialTextsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetObjectMaterialTextsResponse& GetObjectMaterialTextsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetObjectMaterialTextsResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetObjectMaterialTextsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.GetObjectMaterialTextsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  material_texts_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* GetObjectMaterialTextsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // map<uint32, .mruv.objects.MaterialText> material_texts = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&material_texts_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetObjectMaterialTextsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.GetObjectMaterialTextsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.MaterialText> material_texts = 1;
+  if (!this->_internal_material_texts().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_material_texts().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_material_texts().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_iterator
+          it = this->_internal_material_texts().begin();
+          it != this->_internal_material_texts().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_iterator
+          it = this->_internal_material_texts().begin();
+          it != this->_internal_material_texts().end(); ++it) {
+        target = GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.GetObjectMaterialTextsResponse)
+  return target;
+}
+
+size_t GetObjectMaterialTextsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.GetObjectMaterialTextsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.MaterialText> material_texts = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_material_texts_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >::const_iterator
+      it = this->_internal_material_texts().begin();
+      it != this->_internal_material_texts().end(); ++it) {
+    total_size += GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetObjectMaterialTextsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.GetObjectMaterialTextsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetObjectMaterialTextsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetObjectMaterialTextsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.GetObjectMaterialTextsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.GetObjectMaterialTextsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetObjectMaterialTextsResponse::MergeFrom(const GetObjectMaterialTextsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.GetObjectMaterialTextsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  material_texts_.MergeFrom(from.material_texts_);
+}
+
+void GetObjectMaterialTextsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.GetObjectMaterialTextsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetObjectMaterialTextsResponse::CopyFrom(const GetObjectMaterialTextsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.GetObjectMaterialTextsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetObjectMaterialTextsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetObjectMaterialTextsResponse::InternalSwap(GetObjectMaterialTextsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  material_texts_.Swap(&other->material_texts_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetObjectMaterialTextsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteObjectMaterialTextRequest::InitAsDefaultInstance() {
+}
+class DeleteObjectMaterialTextRequest::_Internal {
+ public:
+};
+
+DeleteObjectMaterialTextRequest::DeleteObjectMaterialTextRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.DeleteObjectMaterialTextRequest)
+}
+DeleteObjectMaterialTextRequest::DeleteObjectMaterialTextRequest(const DeleteObjectMaterialTextRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&object_id_, &from.object_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&index_) -
+    reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.DeleteObjectMaterialTextRequest)
+}
+
+void DeleteObjectMaterialTextRequest::SharedCtor() {
+  ::memset(&object_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+}
+
+DeleteObjectMaterialTextRequest::~DeleteObjectMaterialTextRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.DeleteObjectMaterialTextRequest)
+  SharedDtor();
+}
+
+void DeleteObjectMaterialTextRequest::SharedDtor() {
+}
+
+void DeleteObjectMaterialTextRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteObjectMaterialTextRequest& DeleteObjectMaterialTextRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteObjectMaterialTextRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteObjectMaterialTextRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&object_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&index_) -
+      reinterpret_cast<char*>(&object_id_)) + sizeof(index_));
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteObjectMaterialTextRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 object_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          object_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteObjectMaterialTextRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_object_id(), target);
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_index(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.DeleteObjectMaterialTextRequest)
+  return target;
+}
+
+size_t DeleteObjectMaterialTextRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 object_id = 1;
+  if (this->object_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_object_id());
+  }
+
+  // uint32 index = 2;
+  if (this->index() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_index());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteObjectMaterialTextRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteObjectMaterialTextRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteObjectMaterialTextRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.DeleteObjectMaterialTextRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.DeleteObjectMaterialTextRequest)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteObjectMaterialTextRequest::MergeFrom(const DeleteObjectMaterialTextRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.object_id() != 0) {
+    _internal_set_object_id(from._internal_object_id());
+  }
+  if (from.index() != 0) {
+    _internal_set_index(from._internal_index());
+  }
+}
+
+void DeleteObjectMaterialTextRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteObjectMaterialTextRequest::CopyFrom(const DeleteObjectMaterialTextRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.DeleteObjectMaterialTextRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteObjectMaterialTextRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteObjectMaterialTextRequest::InternalSwap(DeleteObjectMaterialTextRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(object_id_, other->object_id_);
+  swap(index_, other->index_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteObjectMaterialTextRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteObjectMaterialTextResponse::InitAsDefaultInstance() {
+}
+class DeleteObjectMaterialTextResponse::_Internal {
+ public:
+};
+
+DeleteObjectMaterialTextResponse::DeleteObjectMaterialTextResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.DeleteObjectMaterialTextResponse)
+}
+DeleteObjectMaterialTextResponse::DeleteObjectMaterialTextResponse(const DeleteObjectMaterialTextResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.DeleteObjectMaterialTextResponse)
+}
+
+void DeleteObjectMaterialTextResponse::SharedCtor() {
+}
+
+DeleteObjectMaterialTextResponse::~DeleteObjectMaterialTextResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.DeleteObjectMaterialTextResponse)
+  SharedDtor();
+}
+
+void DeleteObjectMaterialTextResponse::SharedDtor() {
+}
+
+void DeleteObjectMaterialTextResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteObjectMaterialTextResponse& DeleteObjectMaterialTextResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteObjectMaterialTextResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteObjectMaterialTextResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteObjectMaterialTextResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteObjectMaterialTextResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.DeleteObjectMaterialTextResponse)
+  return target;
+}
+
+size_t DeleteObjectMaterialTextResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteObjectMaterialTextResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteObjectMaterialTextResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteObjectMaterialTextResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.DeleteObjectMaterialTextResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.DeleteObjectMaterialTextResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteObjectMaterialTextResponse::MergeFrom(const DeleteObjectMaterialTextResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void DeleteObjectMaterialTextResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteObjectMaterialTextResponse::CopyFrom(const DeleteObjectMaterialTextResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.DeleteObjectMaterialTextResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteObjectMaterialTextResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteObjectMaterialTextResponse::InternalSwap(DeleteObjectMaterialTextResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteObjectMaterialTextResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void FetchAllRequest::InitAsDefaultInstance() {
+}
+class FetchAllRequest::_Internal {
+ public:
+};
+
+FetchAllRequest::FetchAllRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.FetchAllRequest)
+}
+FetchAllRequest::FetchAllRequest(const FetchAllRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.FetchAllRequest)
+}
+
+void FetchAllRequest::SharedCtor() {
+}
+
+FetchAllRequest::~FetchAllRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.FetchAllRequest)
+  SharedDtor();
+}
+
+void FetchAllRequest::SharedDtor() {
+}
+
+void FetchAllRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllRequest& FetchAllRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.FetchAllRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.FetchAllRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.FetchAllRequest)
+  return target;
+}
+
+size_t FetchAllRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.FetchAllRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.FetchAllRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.FetchAllRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.FetchAllRequest)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllRequest::MergeFrom(const FetchAllRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.FetchAllRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void FetchAllRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.FetchAllRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllRequest::CopyFrom(const FetchAllRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.FetchAllRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllRequest::IsInitialized() const {
+  return true;
+}
+
+void FetchAllRequest::InternalSwap(FetchAllRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void FetchAllResponse::InitAsDefaultInstance() {
+}
+class FetchAllResponse::_Internal {
+ public:
+};
+
+FetchAllResponse::FetchAllResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.FetchAllResponse)
+}
+FetchAllResponse::FetchAllResponse(const FetchAllResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      objects_(from.objects_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.FetchAllResponse)
+}
+
+void FetchAllResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FetchAllResponse_objects_2fobjects_2eproto.base);
+}
+
+FetchAllResponse::~FetchAllResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.FetchAllResponse)
+  SharedDtor();
+}
+
+void FetchAllResponse::SharedDtor() {
+}
+
+void FetchAllResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllResponse& FetchAllResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.FetchAllResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  objects_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .mruv.objects.Object objects = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_objects(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.FetchAllResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mruv.objects.Object objects = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_objects_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_objects(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.FetchAllResponse)
+  return target;
+}
+
+size_t FetchAllResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.FetchAllResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mruv.objects.Object objects = 1;
+  total_size += 1UL * this->_internal_objects_size();
+  for (const auto& msg : this->objects_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.FetchAllResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.FetchAllResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.FetchAllResponse)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllResponse::MergeFrom(const FetchAllResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.FetchAllResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  objects_.MergeFrom(from.objects_);
+}
+
+void FetchAllResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.FetchAllResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllResponse::CopyFrom(const FetchAllResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.FetchAllResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllResponse::IsInitialized() const {
+  return true;
+}
+
+void FetchAllResponse::InternalSwap(FetchAllResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  objects_.InternalSwap(&other->objects_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace objects
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::mruv::objects::Object_MaterialsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::objects::Object_MaterialsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::Object_MaterialsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::Object_MaterialTextsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::objects::Object_MaterialTextsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::Object_MaterialTextsEntry_DoNotUse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::mruv::objects::Object* Arena::CreateMaybeMessage< ::mruv::objects::Object >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::Object >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::Material* Arena::CreateMaybeMessage< ::mruv::objects::Material >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::Material >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::MaterialText* Arena::CreateMaybeMessage< ::mruv::objects::MaterialText >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::MaterialText >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::objects::CreateObjectRequest* Arena::CreateMaybeMessage< ::mruv::objects::CreateObjectRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::CreateObjectRequest >(arena);
@@ -2389,6 +6668,54 @@ template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectRequest* Arena::Create
 }
 template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectResponse* Arena::CreateMaybeMessage< ::mruv::objects::DeleteObjectResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::DeleteObjectResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::AddObjectMaterialRequest* Arena::CreateMaybeMessage< ::mruv::objects::AddObjectMaterialRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::AddObjectMaterialRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::AddObjectMaterialResponse* Arena::CreateMaybeMessage< ::mruv::objects::AddObjectMaterialResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::AddObjectMaterialResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetObjectMaterialsRequest* Arena::CreateMaybeMessage< ::mruv::objects::GetObjectMaterialsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetObjectMaterialsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetObjectMaterialsResponse* Arena::CreateMaybeMessage< ::mruv::objects::GetObjectMaterialsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetObjectMaterialsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectMaterialRequest* Arena::CreateMaybeMessage< ::mruv::objects::DeleteObjectMaterialRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::DeleteObjectMaterialRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectMaterialResponse* Arena::CreateMaybeMessage< ::mruv::objects::DeleteObjectMaterialResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::DeleteObjectMaterialResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::AddObjectMaterialTextRequest* Arena::CreateMaybeMessage< ::mruv::objects::AddObjectMaterialTextRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::AddObjectMaterialTextRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::AddObjectMaterialTextResponse* Arena::CreateMaybeMessage< ::mruv::objects::AddObjectMaterialTextResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::AddObjectMaterialTextResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetObjectMaterialTextsRequest* Arena::CreateMaybeMessage< ::mruv::objects::GetObjectMaterialTextsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetObjectMaterialTextsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetObjectMaterialTextsResponse* Arena::CreateMaybeMessage< ::mruv::objects::GetObjectMaterialTextsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetObjectMaterialTextsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectMaterialTextRequest* Arena::CreateMaybeMessage< ::mruv::objects::DeleteObjectMaterialTextRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::DeleteObjectMaterialTextRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectMaterialTextResponse* Arena::CreateMaybeMessage< ::mruv::objects::DeleteObjectMaterialTextResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::DeleteObjectMaterialTextResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::FetchAllRequest* Arena::CreateMaybeMessage< ::mruv::objects::FetchAllRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::FetchAllRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::FetchAllResponse* Arena::CreateMaybeMessage< ::mruv::objects::FetchAllResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::FetchAllResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

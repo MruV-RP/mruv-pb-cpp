@@ -14,7 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Object_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Object_objects_2fobjects_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fmovable_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_State_objects_2fmovable_2eproto;
 namespace mruv {
 namespace objects {

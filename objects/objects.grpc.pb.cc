@@ -27,6 +27,13 @@ static const char* MruVObjectsService_method_names[] = {
   "/mruv.objects.MruVObjectsService/GetObject",
   "/mruv.objects.MruVObjectsService/UpdateObject",
   "/mruv.objects.MruVObjectsService/DeleteObject",
+  "/mruv.objects.MruVObjectsService/AddObjectMaterial",
+  "/mruv.objects.MruVObjectsService/GetObjectMaterials",
+  "/mruv.objects.MruVObjectsService/DeleteObjectMaterial",
+  "/mruv.objects.MruVObjectsService/AddObjectMaterialText",
+  "/mruv.objects.MruVObjectsService/GetObjectMaterialTexts",
+  "/mruv.objects.MruVObjectsService/DeleteObjectMaterialText",
+  "/mruv.objects.MruVObjectsService/FetchAll",
 };
 
 std::unique_ptr< MruVObjectsService::Stub> MruVObjectsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -40,6 +47,13 @@ MruVObjectsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_GetObject_(MruVObjectsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateObject_(MruVObjectsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteObject_(MruVObjectsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddObjectMaterial_(MruVObjectsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetObjectMaterials_(MruVObjectsService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteObjectMaterial_(MruVObjectsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddObjectMaterialText_(MruVObjectsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetObjectMaterialTexts_(MruVObjectsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteObjectMaterialText_(MruVObjectsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchAll_(MruVObjectsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MruVObjectsService::Stub::CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::mruv::objects::CreateObjectResponse* response) {
@@ -154,6 +168,202 @@ void MruVObjectsService::Stub::experimental_async::DeleteObject(::grpc::ClientCo
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObject_, context, request, false);
 }
 
+::grpc::Status MruVObjectsService::Stub::AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::mruv::objects::AddObjectMaterialResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddObjectMaterial_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterial_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterial_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterial_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterial_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>* MruVObjectsService::Stub::AsyncAddObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::AddObjectMaterialResponse>::Create(channel_.get(), cq, rpcmethod_AddObjectMaterial_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>* MruVObjectsService::Stub::PrepareAsyncAddObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::AddObjectMaterialResponse>::Create(channel_.get(), cq, rpcmethod_AddObjectMaterial_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::mruv::objects::GetObjectMaterialsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetObjectMaterials_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterials_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterials_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterials_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterials_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>* MruVObjectsService::Stub::AsyncGetObjectMaterialsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectMaterialsResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectMaterials_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>* MruVObjectsService::Stub::PrepareAsyncGetObjectMaterialsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectMaterialsResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectMaterials_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::mruv::objects::DeleteObjectMaterialResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteObjectMaterial_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterial_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterial_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterial_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterial_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>* MruVObjectsService::Stub::AsyncDeleteObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectMaterialResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectMaterial_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectMaterialResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectMaterial_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::mruv::objects::AddObjectMaterialTextResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddObjectMaterialText_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterialText_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterialText_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterialText_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddObjectMaterialText_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>* MruVObjectsService::Stub::AsyncAddObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::AddObjectMaterialTextResponse>::Create(channel_.get(), cq, rpcmethod_AddObjectMaterialText_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>* MruVObjectsService::Stub::PrepareAsyncAddObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::AddObjectMaterialTextResponse>::Create(channel_.get(), cq, rpcmethod_AddObjectMaterialText_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::mruv::objects::GetObjectMaterialTextsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetObjectMaterialTexts_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterialTexts_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterialTexts_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterialTexts_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetObjectMaterialTexts_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>* MruVObjectsService::Stub::AsyncGetObjectMaterialTextsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectMaterialTextsResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectMaterialTexts_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>* MruVObjectsService::Stub::PrepareAsyncGetObjectMaterialTextsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetObjectMaterialTextsResponse>::Create(channel_.get(), cq, rpcmethod_GetObjectMaterialTexts_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::mruv::objects::DeleteObjectMaterialTextResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteObjectMaterialText_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterialText_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterialText_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterialText_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteObjectMaterialText_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>* MruVObjectsService::Stub::AsyncDeleteObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectMaterialTextResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectMaterialText_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectMaterialTextResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectMaterialText_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::mruv::objects::FetchAllResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_FetchAll_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>* MruVObjectsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::FetchAllResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>* MruVObjectsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::FetchAllResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false);
+}
+
 MruVObjectsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[0],
@@ -195,6 +405,76 @@ MruVObjectsService::Service::Service() {
              ::mruv::objects::DeleteObjectResponse* resp) {
                return service->DeleteObject(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::AddObjectMaterialRequest, ::mruv::objects::AddObjectMaterialResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::AddObjectMaterialRequest* req,
+             ::mruv::objects::AddObjectMaterialResponse* resp) {
+               return service->AddObjectMaterial(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::GetObjectMaterialsRequest, ::mruv::objects::GetObjectMaterialsResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::GetObjectMaterialsRequest* req,
+             ::mruv::objects::GetObjectMaterialsResponse* resp) {
+               return service->GetObjectMaterials(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::DeleteObjectMaterialRequest, ::mruv::objects::DeleteObjectMaterialResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::DeleteObjectMaterialRequest* req,
+             ::mruv::objects::DeleteObjectMaterialResponse* resp) {
+               return service->DeleteObjectMaterial(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::AddObjectMaterialTextRequest, ::mruv::objects::AddObjectMaterialTextResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::AddObjectMaterialTextRequest* req,
+             ::mruv::objects::AddObjectMaterialTextResponse* resp) {
+               return service->AddObjectMaterialText(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::GetObjectMaterialTextsRequest, ::mruv::objects::GetObjectMaterialTextsResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::GetObjectMaterialTextsRequest* req,
+             ::mruv::objects::GetObjectMaterialTextsResponse* resp) {
+               return service->GetObjectMaterialTexts(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::DeleteObjectMaterialTextRequest, ::mruv::objects::DeleteObjectMaterialTextResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::DeleteObjectMaterialTextRequest* req,
+             ::mruv::objects::DeleteObjectMaterialTextResponse* resp) {
+               return service->DeleteObjectMaterialText(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::FetchAllRequest* req,
+             ::mruv::objects::FetchAllResponse* resp) {
+               return service->FetchAll(ctx, req, resp);
+             }, this)));
 }
 
 MruVObjectsService::Service::~Service() {
@@ -222,6 +502,55 @@ MruVObjectsService::Service::~Service() {
 }
 
 ::grpc::Status MruVObjectsService::Service::DeleteObject(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::AddObjectMaterial(::grpc::ServerContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::GetObjectMaterials(::grpc::ServerContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::DeleteObjectMaterial(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::AddObjectMaterialText(::grpc::ServerContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::GetObjectMaterialTexts(::grpc::ServerContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::DeleteObjectMaterialText(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response) {
   (void) context;
   (void) request;
   (void) response;

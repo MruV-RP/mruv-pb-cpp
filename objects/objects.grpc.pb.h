@@ -70,6 +70,62 @@ class MruVObjectsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>> PrepareAsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>>(PrepareAsyncDeleteObjectRaw(context, request, cq));
     }
+    // Add a material to existing object.
+    virtual ::grpc::Status AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::mruv::objects::AddObjectMaterialResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialResponse>> AsyncAddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialResponse>>(AsyncAddObjectMaterialRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialResponse>> PrepareAsyncAddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialResponse>>(PrepareAsyncAddObjectMaterialRaw(context, request, cq));
+    }
+    // Get all object materials.
+    virtual ::grpc::Status GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::mruv::objects::GetObjectMaterialsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialsResponse>> AsyncGetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialsResponse>>(AsyncGetObjectMaterialsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialsResponse>> PrepareAsyncGetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialsResponse>>(PrepareAsyncGetObjectMaterialsRaw(context, request, cq));
+    }
+    // Delete a material assigned to an object.
+    virtual ::grpc::Status DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::mruv::objects::DeleteObjectMaterialResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialResponse>> AsyncDeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialResponse>>(AsyncDeleteObjectMaterialRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialResponse>> PrepareAsyncDeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialResponse>>(PrepareAsyncDeleteObjectMaterialRaw(context, request, cq));
+    }
+    // Add a material text to existing object.
+    virtual ::grpc::Status AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::mruv::objects::AddObjectMaterialTextResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialTextResponse>> AsyncAddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialTextResponse>>(AsyncAddObjectMaterialTextRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialTextResponse>> PrepareAsyncAddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialTextResponse>>(PrepareAsyncAddObjectMaterialTextRaw(context, request, cq));
+    }
+    // Get all object material texts.
+    virtual ::grpc::Status GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::mruv::objects::GetObjectMaterialTextsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialTextsResponse>> AsyncGetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialTextsResponse>>(AsyncGetObjectMaterialTextsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialTextsResponse>> PrepareAsyncGetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialTextsResponse>>(PrepareAsyncGetObjectMaterialTextsRaw(context, request, cq));
+    }
+    // Delete a material text assigned to an object.
+    virtual ::grpc::Status DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::mruv::objects::DeleteObjectMaterialTextResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialTextResponse>> AsyncDeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialTextResponse>>(AsyncDeleteObjectMaterialTextRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialTextResponse>> PrepareAsyncDeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialTextResponse>>(PrepareAsyncDeleteObjectMaterialTextRaw(context, request, cq));
+    }
+    // Fetch all existing objects.
+    virtual ::grpc::Status FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::mruv::objects::FetchAllResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::FetchAllResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::FetchAllResponse>>(AsyncFetchAllRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::FetchAllResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::FetchAllResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -125,6 +181,97 @@ class MruVObjectsService final {
       #else
       virtual void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Add a material to existing object.
+      virtual void AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Get all object materials.
+      virtual void GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Delete a material assigned to an object.
+      virtual void DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Add a material text to existing object.
+      virtual void AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Get all object material texts.
+      virtual void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Delete a material text assigned to an object.
+      virtual void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      // Fetch all existing objects.
+      virtual void FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -142,6 +289,20 @@ class MruVObjectsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectResponse>* PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>* AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectResponse>* PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialResponse>* AsyncAddObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialResponse>* PrepareAsyncAddObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialsResponse>* AsyncGetObjectMaterialsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialsResponse>* PrepareAsyncGetObjectMaterialsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialResponse>* AsyncDeleteObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialResponse>* PrepareAsyncDeleteObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialTextResponse>* AsyncAddObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::AddObjectMaterialTextResponse>* PrepareAsyncAddObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialTextsResponse>* AsyncGetObjectMaterialTextsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetObjectMaterialTextsResponse>* PrepareAsyncGetObjectMaterialTextsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialTextResponse>* AsyncDeleteObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectMaterialTextResponse>* PrepareAsyncDeleteObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::FetchAllResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::FetchAllResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -173,6 +334,55 @@ class MruVObjectsService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>> PrepareAsyncDeleteObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>>(PrepareAsyncDeleteObjectRaw(context, request, cq));
+    }
+    ::grpc::Status AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::mruv::objects::AddObjectMaterialResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>> AsyncAddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>>(AsyncAddObjectMaterialRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>> PrepareAsyncAddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>>(PrepareAsyncAddObjectMaterialRaw(context, request, cq));
+    }
+    ::grpc::Status GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::mruv::objects::GetObjectMaterialsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>> AsyncGetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>>(AsyncGetObjectMaterialsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>> PrepareAsyncGetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>>(PrepareAsyncGetObjectMaterialsRaw(context, request, cq));
+    }
+    ::grpc::Status DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::mruv::objects::DeleteObjectMaterialResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>> AsyncDeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>>(AsyncDeleteObjectMaterialRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>> PrepareAsyncDeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>>(PrepareAsyncDeleteObjectMaterialRaw(context, request, cq));
+    }
+    ::grpc::Status AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::mruv::objects::AddObjectMaterialTextResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>> AsyncAddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>>(AsyncAddObjectMaterialTextRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>> PrepareAsyncAddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>>(PrepareAsyncAddObjectMaterialTextRaw(context, request, cq));
+    }
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::mruv::objects::GetObjectMaterialTextsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>> AsyncGetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>>(AsyncGetObjectMaterialTextsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>> PrepareAsyncGetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>>(PrepareAsyncGetObjectMaterialTextsRaw(context, request, cq));
+    }
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::mruv::objects::DeleteObjectMaterialTextResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>> AsyncDeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>>(AsyncDeleteObjectMaterialTextRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>> PrepareAsyncDeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>>(PrepareAsyncDeleteObjectMaterialTextRaw(context, request, cq));
+    }
+    ::grpc::Status FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::mruv::objects::FetchAllResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>>(AsyncFetchAllRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -225,6 +435,90 @@ class MruVObjectsService final {
       #else
       void DeleteObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void AddObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void AddObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetObjectMaterials(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetObjectMaterials(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteObjectMaterial(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteObjectMaterial(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void AddObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void AddObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetObjectMaterialTexts(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectMaterialTextsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteObjectMaterialText(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, std::function<void(::grpc::Status)>) override;
+      void FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void FetchAll(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::FetchAllResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -244,10 +538,31 @@ class MruVObjectsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectResponse>* PrepareAsyncUpdateObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>* AsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectResponse>* PrepareAsyncDeleteObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>* AsyncAddObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialResponse>* PrepareAsyncAddObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>* AsyncGetObjectMaterialsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialsResponse>* PrepareAsyncGetObjectMaterialsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>* AsyncDeleteObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialResponse>* PrepareAsyncDeleteObjectMaterialRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>* AsyncAddObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::AddObjectMaterialTextResponse>* PrepareAsyncAddObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::AddObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>* AsyncGetObjectMaterialTextsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetObjectMaterialTextsResponse>* PrepareAsyncGetObjectMaterialTextsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>* AsyncDeleteObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectMaterialTextResponse>* PrepareAsyncDeleteObjectMaterialTextRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::objects::FetchAllResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateObject_;
     const ::grpc::internal::RpcMethod rpcmethod_GetObject_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateObject_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteObject_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddObjectMaterial_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetObjectMaterials_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteObjectMaterial_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddObjectMaterialText_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetObjectMaterialTexts_;
+    const ::grpc::internal::RpcMethod rpcmethod_DeleteObjectMaterialText_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -263,6 +578,20 @@ class MruVObjectsService final {
     virtual ::grpc::Status UpdateObject(::grpc::ServerContext* context, const ::mruv::objects::UpdateObjectRequest* request, ::mruv::objects::UpdateObjectResponse* response);
     // Delete an object.
     virtual ::grpc::Status DeleteObject(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectRequest* request, ::mruv::objects::DeleteObjectResponse* response);
+    // Add a material to existing object.
+    virtual ::grpc::Status AddObjectMaterial(::grpc::ServerContext* context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response);
+    // Get all object materials.
+    virtual ::grpc::Status GetObjectMaterials(::grpc::ServerContext* context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response);
+    // Delete a material assigned to an object.
+    virtual ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response);
+    // Add a material text to existing object.
+    virtual ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response);
+    // Get all object material texts.
+    virtual ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response);
+    // Delete a material text assigned to an object.
+    virtual ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response);
+    // Fetch all existing objects.
+    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateObject : public BaseClass {
@@ -344,7 +673,147 @@ class MruVObjectsService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateObject<WithAsyncMethod_GetObject<WithAsyncMethod_UpdateObject<WithAsyncMethod_DeleteObject<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_AddObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_AddObjectMaterial() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_AddObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddObjectMaterial(::grpc::ServerContext* context, ::mruv::objects::AddObjectMaterialRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::AddObjectMaterialResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetObjectMaterials : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetObjectMaterials() {
+      ::grpc::Service::MarkMethodAsync(5);
+    }
+    ~WithAsyncMethod_GetObjectMaterials() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterials(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetObjectMaterials(::grpc::ServerContext* context, ::mruv::objects::GetObjectMaterialsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::GetObjectMaterialsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DeleteObjectMaterial() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_DeleteObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteObjectMaterial(::grpc::ServerContext* context, ::mruv::objects::DeleteObjectMaterialRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::DeleteObjectMaterialResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_AddObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_AddObjectMaterialText() {
+      ::grpc::Service::MarkMethodAsync(7);
+    }
+    ~WithAsyncMethod_AddObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddObjectMaterialText(::grpc::ServerContext* context, ::mruv::objects::AddObjectMaterialTextRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::AddObjectMaterialTextResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetObjectMaterialTexts : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetObjectMaterialTexts() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_GetObjectMaterialTexts() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetObjectMaterialTexts(::grpc::ServerContext* context, ::mruv::objects::GetObjectMaterialTextsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::GetObjectMaterialTextsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DeleteObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_DeleteObjectMaterialText() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_DeleteObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteObjectMaterialText(::grpc::ServerContext* context, ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::DeleteObjectMaterialTextResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_FetchAll() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::objects::FetchAllRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::objects::FetchAllResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateObject<WithAsyncMethod_GetObject<WithAsyncMethod_UpdateObject<WithAsyncMethod_DeleteObject<WithAsyncMethod_AddObjectMaterial<WithAsyncMethod_GetObjectMaterials<WithAsyncMethod_DeleteObjectMaterial<WithAsyncMethod_AddObjectMaterialText<WithAsyncMethod_GetObjectMaterialTexts<WithAsyncMethod_DeleteObjectMaterialText<WithAsyncMethod_FetchAll<Service > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateObject : public BaseClass {
    private:
@@ -533,11 +1002,340 @@ class MruVObjectsService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_AddObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_AddObjectMaterial() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::AddObjectMaterialRequest, ::mruv::objects::AddObjectMaterialResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::AddObjectMaterialRequest* request, ::mruv::objects::AddObjectMaterialResponse* response) { return this->AddObjectMaterial(context, request, response); }));}
+    void SetMessageAllocatorFor_AddObjectMaterial(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::AddObjectMaterialRequest, ::mruv::objects::AddObjectMaterialResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::AddObjectMaterialRequest, ::mruv::objects::AddObjectMaterialResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_AddObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* AddObjectMaterial(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* AddObjectMaterial(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetObjectMaterials : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_GetObjectMaterials() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectMaterialsRequest, ::mruv::objects::GetObjectMaterialsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::GetObjectMaterialsRequest* request, ::mruv::objects::GetObjectMaterialsResponse* response) { return this->GetObjectMaterials(context, request, response); }));}
+    void SetMessageAllocatorFor_GetObjectMaterials(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::GetObjectMaterialsRequest, ::mruv::objects::GetObjectMaterialsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectMaterialsRequest, ::mruv::objects::GetObjectMaterialsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetObjectMaterials() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterials(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetObjectMaterials(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetObjectMaterials(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DeleteObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DeleteObjectMaterial() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectMaterialRequest, ::mruv::objects::DeleteObjectMaterialResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::DeleteObjectMaterialRequest* request, ::mruv::objects::DeleteObjectMaterialResponse* response) { return this->DeleteObjectMaterial(context, request, response); }));}
+    void SetMessageAllocatorFor_DeleteObjectMaterial(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::DeleteObjectMaterialRequest, ::mruv::objects::DeleteObjectMaterialResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectMaterialRequest, ::mruv::objects::DeleteObjectMaterialResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DeleteObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteObjectMaterial(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteObjectMaterial(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_AddObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_AddObjectMaterialText() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::AddObjectMaterialTextRequest, ::mruv::objects::AddObjectMaterialTextResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::AddObjectMaterialTextRequest* request, ::mruv::objects::AddObjectMaterialTextResponse* response) { return this->AddObjectMaterialText(context, request, response); }));}
+    void SetMessageAllocatorFor_AddObjectMaterialText(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::AddObjectMaterialTextRequest, ::mruv::objects::AddObjectMaterialTextResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::AddObjectMaterialTextRequest, ::mruv::objects::AddObjectMaterialTextResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_AddObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* AddObjectMaterialText(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* AddObjectMaterialText(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_GetObjectMaterialTexts : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_GetObjectMaterialTexts() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectMaterialTextsRequest, ::mruv::objects::GetObjectMaterialTextsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::GetObjectMaterialTextsRequest* request, ::mruv::objects::GetObjectMaterialTextsResponse* response) { return this->GetObjectMaterialTexts(context, request, response); }));}
+    void SetMessageAllocatorFor_GetObjectMaterialTexts(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::GetObjectMaterialTextsRequest, ::mruv::objects::GetObjectMaterialTextsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectMaterialTextsRequest, ::mruv::objects::GetObjectMaterialTextsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_GetObjectMaterialTexts() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetObjectMaterialTexts(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetObjectMaterialTexts(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_DeleteObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_DeleteObjectMaterialText() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectMaterialTextRequest, ::mruv::objects::DeleteObjectMaterialTextResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response) { return this->DeleteObjectMaterialText(context, request, response); }));}
+    void SetMessageAllocatorFor_DeleteObjectMaterialText(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::DeleteObjectMaterialTextRequest, ::mruv::objects::DeleteObjectMaterialTextResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectMaterialTextRequest, ::mruv::objects::DeleteObjectMaterialTextResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_DeleteObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteObjectMaterialText(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteObjectMaterialText(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(10,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::objects::FetchAllRequest* request, ::mruv::objects::FetchAllResponse* response) { return this->FetchAll(context, request, response); }));}
+    void SetMessageAllocatorFor_FetchAll(
+        ::grpc::experimental::MessageAllocator< ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<Service > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<ExperimentalWithCallbackMethod_AddObjectMaterial<ExperimentalWithCallbackMethod_GetObjectMaterials<ExperimentalWithCallbackMethod_DeleteObjectMaterial<ExperimentalWithCallbackMethod_AddObjectMaterialText<ExperimentalWithCallbackMethod_GetObjectMaterialTexts<ExperimentalWithCallbackMethod_DeleteObjectMaterialText<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<Service > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<ExperimentalWithCallbackMethod_AddObjectMaterial<ExperimentalWithCallbackMethod_GetObjectMaterials<ExperimentalWithCallbackMethod_DeleteObjectMaterial<ExperimentalWithCallbackMethod_AddObjectMaterialText<ExperimentalWithCallbackMethod_GetObjectMaterialTexts<ExperimentalWithCallbackMethod_DeleteObjectMaterialText<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateObject : public BaseClass {
    private:
@@ -602,6 +1400,125 @@ class MruVObjectsService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteObject(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectRequest* /*request*/, ::mruv::objects::DeleteObjectResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_AddObjectMaterial() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_AddObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetObjectMaterials : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetObjectMaterials() {
+      ::grpc::Service::MarkMethodGeneric(5);
+    }
+    ~WithGenericMethod_GetObjectMaterials() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterials(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DeleteObjectMaterial() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_DeleteObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_AddObjectMaterialText() {
+      ::grpc::Service::MarkMethodGeneric(7);
+    }
+    ~WithGenericMethod_AddObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetObjectMaterialTexts : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetObjectMaterialTexts() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_GetObjectMaterialTexts() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DeleteObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_DeleteObjectMaterialText() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_DeleteObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_FetchAll() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -684,6 +1601,146 @@ class MruVObjectsService final {
     }
     void RequestDeleteObject(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AddObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_AddObjectMaterial() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_AddObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddObjectMaterial(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetObjectMaterials : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetObjectMaterials() {
+      ::grpc::Service::MarkMethodRaw(5);
+    }
+    ~WithRawMethod_GetObjectMaterials() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterials(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetObjectMaterials(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DeleteObjectMaterial() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_DeleteObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteObjectMaterial(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AddObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_AddObjectMaterialText() {
+      ::grpc::Service::MarkMethodRaw(7);
+    }
+    ~WithRawMethod_AddObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddObjectMaterialText(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetObjectMaterialTexts : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetObjectMaterialTexts() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_GetObjectMaterialTexts() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetObjectMaterialTexts(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DeleteObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_DeleteObjectMaterialText() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_DeleteObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDeleteObjectMaterialText(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_FetchAll() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -839,6 +1896,272 @@ class MruVObjectsService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_AddObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_AddObjectMaterial() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddObjectMaterial(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_AddObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* AddObjectMaterial(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* AddObjectMaterial(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetObjectMaterials : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetObjectMaterials() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetObjectMaterials(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetObjectMaterials() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterials(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetObjectMaterials(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetObjectMaterials(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DeleteObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DeleteObjectMaterial() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteObjectMaterial(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DeleteObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteObjectMaterial(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteObjectMaterial(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_AddObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_AddObjectMaterialText() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddObjectMaterialText(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_AddObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* AddObjectMaterialText(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* AddObjectMaterialText(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_GetObjectMaterialTexts : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_GetObjectMaterialTexts() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetObjectMaterialTexts(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_GetObjectMaterialTexts() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* GetObjectMaterialTexts(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* GetObjectMaterialTexts(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_DeleteObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_DeleteObjectMaterialText() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteObjectMaterialText(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_DeleteObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* DeleteObjectMaterialText(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* DeleteObjectMaterialText(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(10,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->FetchAll(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateObject : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -946,9 +2269,198 @@ class MruVObjectsService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedDeleteObject(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::DeleteObjectRequest,::mruv::objects::DeleteObjectResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_AddObjectMaterial() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::AddObjectMaterialRequest, ::mruv::objects::AddObjectMaterialResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::AddObjectMaterialRequest, ::mruv::objects::AddObjectMaterialResponse>* streamer) {
+                       return this->StreamedAddObjectMaterial(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_AddObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialRequest* /*request*/, ::mruv::objects::AddObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddObjectMaterial(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::AddObjectMaterialRequest,::mruv::objects::AddObjectMaterialResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetObjectMaterials : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetObjectMaterials() {
+      ::grpc::Service::MarkMethodStreamed(5,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::GetObjectMaterialsRequest, ::mruv::objects::GetObjectMaterialsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::GetObjectMaterialsRequest, ::mruv::objects::GetObjectMaterialsResponse>* streamer) {
+                       return this->StreamedGetObjectMaterials(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetObjectMaterials() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetObjectMaterials(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialsRequest* /*request*/, ::mruv::objects::GetObjectMaterialsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetObjectMaterials(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::GetObjectMaterialsRequest,::mruv::objects::GetObjectMaterialsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteObjectMaterial : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DeleteObjectMaterial() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::DeleteObjectMaterialRequest, ::mruv::objects::DeleteObjectMaterialResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::DeleteObjectMaterialRequest, ::mruv::objects::DeleteObjectMaterialResponse>* streamer) {
+                       return this->StreamedDeleteObjectMaterial(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DeleteObjectMaterial() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteObjectMaterial(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteObjectMaterial(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::DeleteObjectMaterialRequest,::mruv::objects::DeleteObjectMaterialResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_AddObjectMaterialText() {
+      ::grpc::Service::MarkMethodStreamed(7,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::AddObjectMaterialTextRequest, ::mruv::objects::AddObjectMaterialTextResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::AddObjectMaterialTextRequest, ::mruv::objects::AddObjectMaterialTextResponse>* streamer) {
+                       return this->StreamedAddObjectMaterialText(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_AddObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::AddObjectMaterialTextRequest* /*request*/, ::mruv::objects::AddObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddObjectMaterialText(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::AddObjectMaterialTextRequest,::mruv::objects::AddObjectMaterialTextResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetObjectMaterialTexts : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetObjectMaterialTexts() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::GetObjectMaterialTextsRequest, ::mruv::objects::GetObjectMaterialTextsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::GetObjectMaterialTextsRequest, ::mruv::objects::GetObjectMaterialTextsResponse>* streamer) {
+                       return this->StreamedGetObjectMaterialTexts(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetObjectMaterialTexts() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetObjectMaterialTexts(::grpc::ServerContext* /*context*/, const ::mruv::objects::GetObjectMaterialTextsRequest* /*request*/, ::mruv::objects::GetObjectMaterialTextsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetObjectMaterialTexts(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::GetObjectMaterialTextsRequest,::mruv::objects::GetObjectMaterialTextsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DeleteObjectMaterialText : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_DeleteObjectMaterialText() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::DeleteObjectMaterialTextRequest, ::mruv::objects::DeleteObjectMaterialTextResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::DeleteObjectMaterialTextRequest, ::mruv::objects::DeleteObjectMaterialTextResponse>* streamer) {
+                       return this->StreamedDeleteObjectMaterialText(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_DeleteObjectMaterialText() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DeleteObjectMaterialText(::grpc::ServerContext* /*context*/, const ::mruv::objects::DeleteObjectMaterialTextRequest* /*request*/, ::mruv::objects::DeleteObjectMaterialTextResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDeleteObjectMaterialText(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::DeleteObjectMaterialTextRequest,::mruv::objects::DeleteObjectMaterialTextResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_FetchAll() {
+      ::grpc::Service::MarkMethodStreamed(10,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>* streamer) {
+                       return this->StreamedFetchAll(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllRequest* /*request*/, ::mruv::objects::FetchAllResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::objects::FetchAllRequest,::mruv::objects::FetchAllResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<WithStreamedUnaryMethod_AddObjectMaterial<WithStreamedUnaryMethod_GetObjectMaterials<WithStreamedUnaryMethod_DeleteObjectMaterial<WithStreamedUnaryMethod_AddObjectMaterialText<WithStreamedUnaryMethod_GetObjectMaterialTexts<WithStreamedUnaryMethod_DeleteObjectMaterialText<WithStreamedUnaryMethod_FetchAll<Service > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<WithStreamedUnaryMethod_AddObjectMaterial<WithStreamedUnaryMethod_GetObjectMaterials<WithStreamedUnaryMethod_DeleteObjectMaterial<WithStreamedUnaryMethod_AddObjectMaterialText<WithStreamedUnaryMethod_GetObjectMaterialTexts<WithStreamedUnaryMethod_DeleteObjectMaterialText<WithStreamedUnaryMethod_FetchAll<Service > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace objects

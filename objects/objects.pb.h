@@ -31,6 +31,10 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
 // @@protoc_insertion_point(includes)
@@ -48,7 +52,7 @@ struct TableStruct_objects_2fobjects_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,27 +61,87 @@ struct TableStruct_objects_2fobjects_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fobjects_2eproto;
 namespace mruv {
 namespace objects {
+class AddObjectMaterialRequest;
+class AddObjectMaterialRequestDefaultTypeInternal;
+extern AddObjectMaterialRequestDefaultTypeInternal _AddObjectMaterialRequest_default_instance_;
+class AddObjectMaterialResponse;
+class AddObjectMaterialResponseDefaultTypeInternal;
+extern AddObjectMaterialResponseDefaultTypeInternal _AddObjectMaterialResponse_default_instance_;
+class AddObjectMaterialTextRequest;
+class AddObjectMaterialTextRequestDefaultTypeInternal;
+extern AddObjectMaterialTextRequestDefaultTypeInternal _AddObjectMaterialTextRequest_default_instance_;
+class AddObjectMaterialTextResponse;
+class AddObjectMaterialTextResponseDefaultTypeInternal;
+extern AddObjectMaterialTextResponseDefaultTypeInternal _AddObjectMaterialTextResponse_default_instance_;
 class CreateObjectRequest;
 class CreateObjectRequestDefaultTypeInternal;
 extern CreateObjectRequestDefaultTypeInternal _CreateObjectRequest_default_instance_;
 class CreateObjectResponse;
 class CreateObjectResponseDefaultTypeInternal;
 extern CreateObjectResponseDefaultTypeInternal _CreateObjectResponse_default_instance_;
+class DeleteObjectMaterialRequest;
+class DeleteObjectMaterialRequestDefaultTypeInternal;
+extern DeleteObjectMaterialRequestDefaultTypeInternal _DeleteObjectMaterialRequest_default_instance_;
+class DeleteObjectMaterialResponse;
+class DeleteObjectMaterialResponseDefaultTypeInternal;
+extern DeleteObjectMaterialResponseDefaultTypeInternal _DeleteObjectMaterialResponse_default_instance_;
+class DeleteObjectMaterialTextRequest;
+class DeleteObjectMaterialTextRequestDefaultTypeInternal;
+extern DeleteObjectMaterialTextRequestDefaultTypeInternal _DeleteObjectMaterialTextRequest_default_instance_;
+class DeleteObjectMaterialTextResponse;
+class DeleteObjectMaterialTextResponseDefaultTypeInternal;
+extern DeleteObjectMaterialTextResponseDefaultTypeInternal _DeleteObjectMaterialTextResponse_default_instance_;
 class DeleteObjectRequest;
 class DeleteObjectRequestDefaultTypeInternal;
 extern DeleteObjectRequestDefaultTypeInternal _DeleteObjectRequest_default_instance_;
 class DeleteObjectResponse;
 class DeleteObjectResponseDefaultTypeInternal;
 extern DeleteObjectResponseDefaultTypeInternal _DeleteObjectResponse_default_instance_;
+class FetchAllRequest;
+class FetchAllRequestDefaultTypeInternal;
+extern FetchAllRequestDefaultTypeInternal _FetchAllRequest_default_instance_;
+class FetchAllResponse;
+class FetchAllResponseDefaultTypeInternal;
+extern FetchAllResponseDefaultTypeInternal _FetchAllResponse_default_instance_;
+class GetObjectMaterialTextsRequest;
+class GetObjectMaterialTextsRequestDefaultTypeInternal;
+extern GetObjectMaterialTextsRequestDefaultTypeInternal _GetObjectMaterialTextsRequest_default_instance_;
+class GetObjectMaterialTextsResponse;
+class GetObjectMaterialTextsResponseDefaultTypeInternal;
+extern GetObjectMaterialTextsResponseDefaultTypeInternal _GetObjectMaterialTextsResponse_default_instance_;
+class GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse;
+class GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUseDefaultTypeInternal;
+extern GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUseDefaultTypeInternal _GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_default_instance_;
+class GetObjectMaterialsRequest;
+class GetObjectMaterialsRequestDefaultTypeInternal;
+extern GetObjectMaterialsRequestDefaultTypeInternal _GetObjectMaterialsRequest_default_instance_;
+class GetObjectMaterialsResponse;
+class GetObjectMaterialsResponseDefaultTypeInternal;
+extern GetObjectMaterialsResponseDefaultTypeInternal _GetObjectMaterialsResponse_default_instance_;
+class GetObjectMaterialsResponse_MaterialsEntry_DoNotUse;
+class GetObjectMaterialsResponse_MaterialsEntry_DoNotUseDefaultTypeInternal;
+extern GetObjectMaterialsResponse_MaterialsEntry_DoNotUseDefaultTypeInternal _GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_default_instance_;
 class GetObjectRequest;
 class GetObjectRequestDefaultTypeInternal;
 extern GetObjectRequestDefaultTypeInternal _GetObjectRequest_default_instance_;
 class GetObjectResponse;
 class GetObjectResponseDefaultTypeInternal;
 extern GetObjectResponseDefaultTypeInternal _GetObjectResponse_default_instance_;
+class Material;
+class MaterialDefaultTypeInternal;
+extern MaterialDefaultTypeInternal _Material_default_instance_;
+class MaterialText;
+class MaterialTextDefaultTypeInternal;
+extern MaterialTextDefaultTypeInternal _MaterialText_default_instance_;
 class Object;
 class ObjectDefaultTypeInternal;
 extern ObjectDefaultTypeInternal _Object_default_instance_;
+class Object_MaterialTextsEntry_DoNotUse;
+class Object_MaterialTextsEntry_DoNotUseDefaultTypeInternal;
+extern Object_MaterialTextsEntry_DoNotUseDefaultTypeInternal _Object_MaterialTextsEntry_DoNotUse_default_instance_;
+class Object_MaterialsEntry_DoNotUse;
+class Object_MaterialsEntry_DoNotUseDefaultTypeInternal;
+extern Object_MaterialsEntry_DoNotUseDefaultTypeInternal _Object_MaterialsEntry_DoNotUse_default_instance_;
 class UpdateObjectRequest;
 class UpdateObjectRequestDefaultTypeInternal;
 extern UpdateObjectRequestDefaultTypeInternal _UpdateObjectRequest_default_instance_;
@@ -87,20 +151,138 @@ extern UpdateObjectResponseDefaultTypeInternal _UpdateObjectResponse_default_ins
 }  // namespace objects
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
+template<> ::mruv::objects::AddObjectMaterialRequest* Arena::CreateMaybeMessage<::mruv::objects::AddObjectMaterialRequest>(Arena*);
+template<> ::mruv::objects::AddObjectMaterialResponse* Arena::CreateMaybeMessage<::mruv::objects::AddObjectMaterialResponse>(Arena*);
+template<> ::mruv::objects::AddObjectMaterialTextRequest* Arena::CreateMaybeMessage<::mruv::objects::AddObjectMaterialTextRequest>(Arena*);
+template<> ::mruv::objects::AddObjectMaterialTextResponse* Arena::CreateMaybeMessage<::mruv::objects::AddObjectMaterialTextResponse>(Arena*);
 template<> ::mruv::objects::CreateObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::CreateObjectRequest>(Arena*);
 template<> ::mruv::objects::CreateObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::CreateObjectResponse>(Arena*);
+template<> ::mruv::objects::DeleteObjectMaterialRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectMaterialRequest>(Arena*);
+template<> ::mruv::objects::DeleteObjectMaterialResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectMaterialResponse>(Arena*);
+template<> ::mruv::objects::DeleteObjectMaterialTextRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectMaterialTextRequest>(Arena*);
+template<> ::mruv::objects::DeleteObjectMaterialTextResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectMaterialTextResponse>(Arena*);
 template<> ::mruv::objects::DeleteObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectRequest>(Arena*);
 template<> ::mruv::objects::DeleteObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectResponse>(Arena*);
+template<> ::mruv::objects::FetchAllRequest* Arena::CreateMaybeMessage<::mruv::objects::FetchAllRequest>(Arena*);
+template<> ::mruv::objects::FetchAllResponse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllResponse>(Arena*);
+template<> ::mruv::objects::GetObjectMaterialTextsRequest* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialTextsRequest>(Arena*);
+template<> ::mruv::objects::GetObjectMaterialTextsResponse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialTextsResponse>(Arena*);
+template<> ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse>(Arena*);
+template<> ::mruv::objects::GetObjectMaterialsRequest* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialsRequest>(Arena*);
+template<> ::mruv::objects::GetObjectMaterialsResponse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialsResponse>(Arena*);
+template<> ::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse>(Arena*);
 template<> ::mruv::objects::GetObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::GetObjectRequest>(Arena*);
 template<> ::mruv::objects::GetObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectResponse>(Arena*);
+template<> ::mruv::objects::Material* Arena::CreateMaybeMessage<::mruv::objects::Material>(Arena*);
+template<> ::mruv::objects::MaterialText* Arena::CreateMaybeMessage<::mruv::objects::MaterialText>(Arena*);
 template<> ::mruv::objects::Object* Arena::CreateMaybeMessage<::mruv::objects::Object>(Arena*);
+template<> ::mruv::objects::Object_MaterialTextsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::Object_MaterialTextsEntry_DoNotUse>(Arena*);
+template<> ::mruv::objects::Object_MaterialsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::Object_MaterialsEntry_DoNotUse>(Arena*);
 template<> ::mruv::objects::UpdateObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::UpdateObjectRequest>(Arena*);
 template<> ::mruv::objects::UpdateObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::UpdateObjectResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
 namespace objects {
 
+enum MaterialSize : int {
+  OBJECT_MATERIAL_SIZE_0 = 0,
+  OBJECT_MATERIAL_SIZE_32X32 = 10,
+  OBJECT_MATERIAL_SIZE_64X32 = 20,
+  OBJECT_MATERIAL_SIZE_64X64 = 30,
+  OBJECT_MATERIAL_SIZE_128X32 = 40,
+  OBJECT_MATERIAL_SIZE_128X64 = 50,
+  OBJECT_MATERIAL_SIZE_128X128 = 60,
+  OBJECT_MATERIAL_SIZE_256X32 = 70,
+  OBJECT_MATERIAL_SIZE_256X64 = 80,
+  OBJECT_MATERIAL_SIZE_256X128 = 90,
+  OBJECT_MATERIAL_SIZE_256X256 = 100,
+  OBJECT_MATERIAL_SIZE_512X64 = 110,
+  OBJECT_MATERIAL_SIZE_512X128 = 120,
+  OBJECT_MATERIAL_SIZE_512X256 = 130,
+  OBJECT_MATERIAL_SIZE_512X512 = 140,
+  MaterialSize_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  MaterialSize_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool MaterialSize_IsValid(int value);
+constexpr MaterialSize MaterialSize_MIN = OBJECT_MATERIAL_SIZE_0;
+constexpr MaterialSize MaterialSize_MAX = OBJECT_MATERIAL_SIZE_512X512;
+constexpr int MaterialSize_ARRAYSIZE = MaterialSize_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MaterialSize_descriptor();
+template<typename T>
+inline const std::string& MaterialSize_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, MaterialSize>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function MaterialSize_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    MaterialSize_descriptor(), enum_t_value);
+}
+inline bool MaterialSize_Parse(
+    const std::string& name, MaterialSize* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MaterialSize>(
+    MaterialSize_descriptor(), name, value);
+}
 // ===================================================================
+
+class Object_MaterialsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Object_MaterialsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Object_MaterialsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  Object_MaterialsEntry_DoNotUse();
+  Object_MaterialsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Object_MaterialsEntry_DoNotUse& other);
+  static const Object_MaterialsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Object_MaterialsEntry_DoNotUse*>(&_Object_MaterialsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[0];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class Object_MaterialTextsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Object_MaterialTextsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<Object_MaterialTextsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  Object_MaterialTextsEntry_DoNotUse();
+  Object_MaterialTextsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const Object_MaterialTextsEntry_DoNotUse& other);
+  static const Object_MaterialTextsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Object_MaterialTextsEntry_DoNotUse*>(&_Object_MaterialTextsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[1];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
 
 class Object :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.Object) */ {
@@ -144,7 +326,7 @@ class Object :
                &_Object_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(Object& a, Object& b) {
     a.Swap(&b);
@@ -205,9 +387,12 @@ class Object :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   enum : int {
+    kMaterialsFieldNumber = 17,
+    kMaterialTextsFieldNumber = 18,
     kModelFieldNumber = 1,
     kXFieldNumber = 2,
     kYFieldNumber = 3,
@@ -224,6 +409,40 @@ class Object :
     kPriorityFieldNumber = 15,
     kEstateIdFieldNumber = 16,
   };
+  // map<uint32, .mruv.objects.Material> materials = 17;
+  int materials_size() const;
+  private:
+  int _internal_materials_size() const;
+  public:
+  void clear_materials();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+      _internal_materials() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+      _internal_mutable_materials();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+      materials() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+      mutable_materials();
+
+  // map<uint32, .mruv.objects.MaterialText> material_texts = 18;
+  int material_texts_size() const;
+  private:
+  int _internal_material_texts_size() const;
+  public:
+  void clear_material_texts();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+      _internal_material_texts() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+      _internal_mutable_material_texts();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+      material_texts() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+      mutable_material_texts();
+
   // uint32 model = 1;
   void clear_model();
   ::PROTOBUF_NAMESPACE_ID::uint32 model() const;
@@ -364,6 +583,18 @@ class Object :
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Object_MaterialsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > materials_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      Object_MaterialTextsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > material_texts_;
   ::PROTOBUF_NAMESPACE_ID::uint32 model_;
   float x_;
   float y_;
@@ -379,6 +610,400 @@ class Object :
   float draw_distance_;
   ::PROTOBUF_NAMESPACE_ID::int32 priority_;
   ::PROTOBUF_NAMESPACE_ID::uint32 estate_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Material :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.Material) */ {
+ public:
+  Material();
+  virtual ~Material();
+
+  Material(const Material& from);
+  Material(Material&& from) noexcept
+    : Material() {
+    *this = ::std::move(from);
+  }
+
+  inline Material& operator=(const Material& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Material& operator=(Material&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Material& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Material* internal_default_instance() {
+    return reinterpret_cast<const Material*>(
+               &_Material_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(Material& a, Material& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Material* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Material* New() const final {
+    return CreateMaybeMessage<Material>(nullptr);
+  }
+
+  Material* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Material>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Material& from);
+  void MergeFrom(const Material& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Material* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.Material";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTxdNameFieldNumber = 2,
+    kTextureNameFieldNumber = 3,
+    kModelIdFieldNumber = 1,
+    kMaterialColorFieldNumber = 4,
+  };
+  // string txd_name = 2;
+  void clear_txd_name();
+  const std::string& txd_name() const;
+  void set_txd_name(const std::string& value);
+  void set_txd_name(std::string&& value);
+  void set_txd_name(const char* value);
+  void set_txd_name(const char* value, size_t size);
+  std::string* mutable_txd_name();
+  std::string* release_txd_name();
+  void set_allocated_txd_name(std::string* txd_name);
+  private:
+  const std::string& _internal_txd_name() const;
+  void _internal_set_txd_name(const std::string& value);
+  std::string* _internal_mutable_txd_name();
+  public:
+
+  // string texture_name = 3;
+  void clear_texture_name();
+  const std::string& texture_name() const;
+  void set_texture_name(const std::string& value);
+  void set_texture_name(std::string&& value);
+  void set_texture_name(const char* value);
+  void set_texture_name(const char* value, size_t size);
+  std::string* mutable_texture_name();
+  std::string* release_texture_name();
+  void set_allocated_texture_name(std::string* texture_name);
+  private:
+  const std::string& _internal_texture_name() const;
+  void _internal_set_texture_name(const std::string& value);
+  std::string* _internal_mutable_texture_name();
+  public:
+
+  // int32 model_id = 1;
+  void clear_model_id();
+  ::PROTOBUF_NAMESPACE_ID::int32 model_id() const;
+  void set_model_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_model_id() const;
+  void _internal_set_model_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 material_color = 4;
+  void clear_material_color();
+  ::PROTOBUF_NAMESPACE_ID::int32 material_color() const;
+  void set_material_color(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_material_color() const;
+  void _internal_set_material_color(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.Material)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr txd_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr texture_name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 model_id_;
+  ::PROTOBUF_NAMESPACE_ID::int32 material_color_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MaterialText :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.MaterialText) */ {
+ public:
+  MaterialText();
+  virtual ~MaterialText();
+
+  MaterialText(const MaterialText& from);
+  MaterialText(MaterialText&& from) noexcept
+    : MaterialText() {
+    *this = ::std::move(from);
+  }
+
+  inline MaterialText& operator=(const MaterialText& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MaterialText& operator=(MaterialText&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const MaterialText& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MaterialText* internal_default_instance() {
+    return reinterpret_cast<const MaterialText*>(
+               &_MaterialText_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(MaterialText& a, MaterialText& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(MaterialText* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MaterialText* New() const final {
+    return CreateMaybeMessage<MaterialText>(nullptr);
+  }
+
+  MaterialText* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MaterialText>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const MaterialText& from);
+  void MergeFrom(const MaterialText& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MaterialText* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.MaterialText";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTextFieldNumber = 1,
+    kFontFaceFieldNumber = 3,
+    kMaterialSizeFieldNumber = 2,
+    kFontSizeFieldNumber = 4,
+    kBoldFieldNumber = 5,
+    kFontColorFieldNumber = 6,
+    kBackColorFieldNumber = 7,
+    kTextAlignmentFieldNumber = 8,
+  };
+  // string text = 1;
+  void clear_text();
+  const std::string& text() const;
+  void set_text(const std::string& value);
+  void set_text(std::string&& value);
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  std::string* mutable_text();
+  std::string* release_text();
+  void set_allocated_text(std::string* text);
+  private:
+  const std::string& _internal_text() const;
+  void _internal_set_text(const std::string& value);
+  std::string* _internal_mutable_text();
+  public:
+
+  // string font_face = 3;
+  void clear_font_face();
+  const std::string& font_face() const;
+  void set_font_face(const std::string& value);
+  void set_font_face(std::string&& value);
+  void set_font_face(const char* value);
+  void set_font_face(const char* value, size_t size);
+  std::string* mutable_font_face();
+  std::string* release_font_face();
+  void set_allocated_font_face(std::string* font_face);
+  private:
+  const std::string& _internal_font_face() const;
+  void _internal_set_font_face(const std::string& value);
+  std::string* _internal_mutable_font_face();
+  public:
+
+  // .mruv.objects.MaterialSize material_size = 2;
+  void clear_material_size();
+  ::mruv::objects::MaterialSize material_size() const;
+  void set_material_size(::mruv::objects::MaterialSize value);
+  private:
+  ::mruv::objects::MaterialSize _internal_material_size() const;
+  void _internal_set_material_size(::mruv::objects::MaterialSize value);
+  public:
+
+  // uint32 font_size = 4;
+  void clear_font_size();
+  ::PROTOBUF_NAMESPACE_ID::uint32 font_size() const;
+  void set_font_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_font_size() const;
+  void _internal_set_font_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // bool bold = 5;
+  void clear_bold();
+  bool bold() const;
+  void set_bold(bool value);
+  private:
+  bool _internal_bold() const;
+  void _internal_set_bold(bool value);
+  public:
+
+  // int32 font_color = 6;
+  void clear_font_color();
+  ::PROTOBUF_NAMESPACE_ID::int32 font_color() const;
+  void set_font_color(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_font_color() const;
+  void _internal_set_font_color(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 back_color = 7;
+  void clear_back_color();
+  ::PROTOBUF_NAMESPACE_ID::int32 back_color() const;
+  void set_back_color(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_back_color() const;
+  void _internal_set_back_color(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // int32 text_alignment = 8;
+  void clear_text_alignment();
+  ::PROTOBUF_NAMESPACE_ID::int32 text_alignment() const;
+  void set_text_alignment(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_text_alignment() const;
+  void _internal_set_text_alignment(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.MaterialText)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr text_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr font_face_;
+  int material_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 font_size_;
+  bool bold_;
+  ::PROTOBUF_NAMESPACE_ID::int32 font_color_;
+  ::PROTOBUF_NAMESPACE_ID::int32 back_color_;
+  ::PROTOBUF_NAMESPACE_ID::int32 text_alignment_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
@@ -426,7 +1051,7 @@ class CreateObjectRequest :
                &_CreateObjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    5;
 
   friend void swap(CreateObjectRequest& a, CreateObjectRequest& b) {
     a.Swap(&b);
@@ -560,7 +1185,7 @@ class CreateObjectResponse :
                &_CreateObjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    6;
 
   friend void swap(CreateObjectResponse& a, CreateObjectResponse& b) {
     a.Swap(&b);
@@ -688,7 +1313,7 @@ class GetObjectRequest :
                &_GetObjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    7;
 
   friend void swap(GetObjectRequest& a, GetObjectRequest& b) {
     a.Swap(&b);
@@ -816,7 +1441,7 @@ class GetObjectResponse :
                &_GetObjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    8;
 
   friend void swap(GetObjectResponse& a, GetObjectResponse& b) {
     a.Swap(&b);
@@ -950,7 +1575,7 @@ class UpdateObjectRequest :
                &_UpdateObjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    9;
 
   friend void swap(UpdateObjectRequest& a, UpdateObjectRequest& b) {
     a.Swap(&b);
@@ -1095,7 +1720,7 @@ class UpdateObjectResponse :
                &_UpdateObjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    10;
 
   friend void swap(UpdateObjectResponse& a, UpdateObjectResponse& b) {
     a.Swap(&b);
@@ -1210,7 +1835,7 @@ class DeleteObjectRequest :
                &_DeleteObjectRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    11;
 
   friend void swap(DeleteObjectRequest& a, DeleteObjectRequest& b) {
     a.Swap(&b);
@@ -1338,7 +1963,7 @@ class DeleteObjectResponse :
                &_DeleteObjectResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(DeleteObjectResponse& a, DeleteObjectResponse& b) {
     a.Swap(&b);
@@ -1409,6 +2034,1908 @@ class DeleteObjectResponse :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
+// -------------------------------------------------------------------
+
+class AddObjectMaterialRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.AddObjectMaterialRequest) */ {
+ public:
+  AddObjectMaterialRequest();
+  virtual ~AddObjectMaterialRequest();
+
+  AddObjectMaterialRequest(const AddObjectMaterialRequest& from);
+  AddObjectMaterialRequest(AddObjectMaterialRequest&& from) noexcept
+    : AddObjectMaterialRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddObjectMaterialRequest& operator=(const AddObjectMaterialRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddObjectMaterialRequest& operator=(AddObjectMaterialRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AddObjectMaterialRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AddObjectMaterialRequest* internal_default_instance() {
+    return reinterpret_cast<const AddObjectMaterialRequest*>(
+               &_AddObjectMaterialRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(AddObjectMaterialRequest& a, AddObjectMaterialRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddObjectMaterialRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddObjectMaterialRequest* New() const final {
+    return CreateMaybeMessage<AddObjectMaterialRequest>(nullptr);
+  }
+
+  AddObjectMaterialRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddObjectMaterialRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AddObjectMaterialRequest& from);
+  void MergeFrom(const AddObjectMaterialRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddObjectMaterialRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.AddObjectMaterialRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMaterialFieldNumber = 3,
+    kObjectIdFieldNumber = 1,
+    kIndexFieldNumber = 2,
+  };
+  // .mruv.objects.Material material = 3;
+  bool has_material() const;
+  private:
+  bool _internal_has_material() const;
+  public:
+  void clear_material();
+  const ::mruv::objects::Material& material() const;
+  ::mruv::objects::Material* release_material();
+  ::mruv::objects::Material* mutable_material();
+  void set_allocated_material(::mruv::objects::Material* material);
+  private:
+  const ::mruv::objects::Material& _internal_material() const;
+  ::mruv::objects::Material* _internal_mutable_material();
+  public:
+
+  // uint32 object_id = 1;
+  void clear_object_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id() const;
+  void set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_object_id() const;
+  void _internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 index = 2;
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::uint32 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.AddObjectMaterialRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::mruv::objects::Material* material_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 index_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddObjectMaterialResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.AddObjectMaterialResponse) */ {
+ public:
+  AddObjectMaterialResponse();
+  virtual ~AddObjectMaterialResponse();
+
+  AddObjectMaterialResponse(const AddObjectMaterialResponse& from);
+  AddObjectMaterialResponse(AddObjectMaterialResponse&& from) noexcept
+    : AddObjectMaterialResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddObjectMaterialResponse& operator=(const AddObjectMaterialResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddObjectMaterialResponse& operator=(AddObjectMaterialResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AddObjectMaterialResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AddObjectMaterialResponse* internal_default_instance() {
+    return reinterpret_cast<const AddObjectMaterialResponse*>(
+               &_AddObjectMaterialResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(AddObjectMaterialResponse& a, AddObjectMaterialResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddObjectMaterialResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddObjectMaterialResponse* New() const final {
+    return CreateMaybeMessage<AddObjectMaterialResponse>(nullptr);
+  }
+
+  AddObjectMaterialResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddObjectMaterialResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AddObjectMaterialResponse& from);
+  void MergeFrom(const AddObjectMaterialResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddObjectMaterialResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.AddObjectMaterialResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.AddObjectMaterialResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetObjectMaterialsRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectMaterialsRequest) */ {
+ public:
+  GetObjectMaterialsRequest();
+  virtual ~GetObjectMaterialsRequest();
+
+  GetObjectMaterialsRequest(const GetObjectMaterialsRequest& from);
+  GetObjectMaterialsRequest(GetObjectMaterialsRequest&& from) noexcept
+    : GetObjectMaterialsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetObjectMaterialsRequest& operator=(const GetObjectMaterialsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetObjectMaterialsRequest& operator=(GetObjectMaterialsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetObjectMaterialsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetObjectMaterialsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetObjectMaterialsRequest*>(
+               &_GetObjectMaterialsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(GetObjectMaterialsRequest& a, GetObjectMaterialsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetObjectMaterialsRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetObjectMaterialsRequest* New() const final {
+    return CreateMaybeMessage<GetObjectMaterialsRequest>(nullptr);
+  }
+
+  GetObjectMaterialsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetObjectMaterialsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetObjectMaterialsRequest& from);
+  void MergeFrom(const GetObjectMaterialsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetObjectMaterialsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.GetObjectMaterialsRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kObjectIdFieldNumber = 1,
+  };
+  // uint32 object_id = 1;
+  void clear_object_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id() const;
+  void set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_object_id() const;
+  void _internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectMaterialsRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetObjectMaterialsResponse_MaterialsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetObjectMaterialsResponse_MaterialsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetObjectMaterialsResponse_MaterialsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  GetObjectMaterialsResponse_MaterialsEntry_DoNotUse();
+  GetObjectMaterialsResponse_MaterialsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const GetObjectMaterialsResponse_MaterialsEntry_DoNotUse& other);
+  static const GetObjectMaterialsResponse_MaterialsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const GetObjectMaterialsResponse_MaterialsEntry_DoNotUse*>(&_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[16];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class GetObjectMaterialsResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectMaterialsResponse) */ {
+ public:
+  GetObjectMaterialsResponse();
+  virtual ~GetObjectMaterialsResponse();
+
+  GetObjectMaterialsResponse(const GetObjectMaterialsResponse& from);
+  GetObjectMaterialsResponse(GetObjectMaterialsResponse&& from) noexcept
+    : GetObjectMaterialsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetObjectMaterialsResponse& operator=(const GetObjectMaterialsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetObjectMaterialsResponse& operator=(GetObjectMaterialsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetObjectMaterialsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetObjectMaterialsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetObjectMaterialsResponse*>(
+               &_GetObjectMaterialsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(GetObjectMaterialsResponse& a, GetObjectMaterialsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetObjectMaterialsResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetObjectMaterialsResponse* New() const final {
+    return CreateMaybeMessage<GetObjectMaterialsResponse>(nullptr);
+  }
+
+  GetObjectMaterialsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetObjectMaterialsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetObjectMaterialsResponse& from);
+  void MergeFrom(const GetObjectMaterialsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetObjectMaterialsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.GetObjectMaterialsResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMaterialsFieldNumber = 1,
+  };
+  // map<uint32, .mruv.objects.Material> materials = 1;
+  int materials_size() const;
+  private:
+  int _internal_materials_size() const;
+  public:
+  void clear_materials();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+      _internal_materials() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+      _internal_mutable_materials();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+      materials() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+      mutable_materials();
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectMaterialsResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      GetObjectMaterialsResponse_MaterialsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > materials_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteObjectMaterialRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectMaterialRequest) */ {
+ public:
+  DeleteObjectMaterialRequest();
+  virtual ~DeleteObjectMaterialRequest();
+
+  DeleteObjectMaterialRequest(const DeleteObjectMaterialRequest& from);
+  DeleteObjectMaterialRequest(DeleteObjectMaterialRequest&& from) noexcept
+    : DeleteObjectMaterialRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteObjectMaterialRequest& operator=(const DeleteObjectMaterialRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteObjectMaterialRequest& operator=(DeleteObjectMaterialRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DeleteObjectMaterialRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteObjectMaterialRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteObjectMaterialRequest*>(
+               &_DeleteObjectMaterialRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(DeleteObjectMaterialRequest& a, DeleteObjectMaterialRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteObjectMaterialRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteObjectMaterialRequest* New() const final {
+    return CreateMaybeMessage<DeleteObjectMaterialRequest>(nullptr);
+  }
+
+  DeleteObjectMaterialRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteObjectMaterialRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DeleteObjectMaterialRequest& from);
+  void MergeFrom(const DeleteObjectMaterialRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteObjectMaterialRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.DeleteObjectMaterialRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kObjectIdFieldNumber = 1,
+    kIndexFieldNumber = 2,
+  };
+  // uint32 object_id = 1;
+  void clear_object_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id() const;
+  void set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_object_id() const;
+  void _internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 index = 2;
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::uint32 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectMaterialRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 index_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteObjectMaterialResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectMaterialResponse) */ {
+ public:
+  DeleteObjectMaterialResponse();
+  virtual ~DeleteObjectMaterialResponse();
+
+  DeleteObjectMaterialResponse(const DeleteObjectMaterialResponse& from);
+  DeleteObjectMaterialResponse(DeleteObjectMaterialResponse&& from) noexcept
+    : DeleteObjectMaterialResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteObjectMaterialResponse& operator=(const DeleteObjectMaterialResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteObjectMaterialResponse& operator=(DeleteObjectMaterialResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DeleteObjectMaterialResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteObjectMaterialResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteObjectMaterialResponse*>(
+               &_DeleteObjectMaterialResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(DeleteObjectMaterialResponse& a, DeleteObjectMaterialResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteObjectMaterialResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteObjectMaterialResponse* New() const final {
+    return CreateMaybeMessage<DeleteObjectMaterialResponse>(nullptr);
+  }
+
+  DeleteObjectMaterialResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteObjectMaterialResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DeleteObjectMaterialResponse& from);
+  void MergeFrom(const DeleteObjectMaterialResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteObjectMaterialResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.DeleteObjectMaterialResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectMaterialResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddObjectMaterialTextRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.AddObjectMaterialTextRequest) */ {
+ public:
+  AddObjectMaterialTextRequest();
+  virtual ~AddObjectMaterialTextRequest();
+
+  AddObjectMaterialTextRequest(const AddObjectMaterialTextRequest& from);
+  AddObjectMaterialTextRequest(AddObjectMaterialTextRequest&& from) noexcept
+    : AddObjectMaterialTextRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddObjectMaterialTextRequest& operator=(const AddObjectMaterialTextRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddObjectMaterialTextRequest& operator=(AddObjectMaterialTextRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AddObjectMaterialTextRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AddObjectMaterialTextRequest* internal_default_instance() {
+    return reinterpret_cast<const AddObjectMaterialTextRequest*>(
+               &_AddObjectMaterialTextRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(AddObjectMaterialTextRequest& a, AddObjectMaterialTextRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddObjectMaterialTextRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddObjectMaterialTextRequest* New() const final {
+    return CreateMaybeMessage<AddObjectMaterialTextRequest>(nullptr);
+  }
+
+  AddObjectMaterialTextRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddObjectMaterialTextRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AddObjectMaterialTextRequest& from);
+  void MergeFrom(const AddObjectMaterialTextRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddObjectMaterialTextRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.AddObjectMaterialTextRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMaterialTextFieldNumber = 3,
+    kObjectIdFieldNumber = 1,
+    kIndexFieldNumber = 2,
+  };
+  // .mruv.objects.MaterialText material_text = 3;
+  bool has_material_text() const;
+  private:
+  bool _internal_has_material_text() const;
+  public:
+  void clear_material_text();
+  const ::mruv::objects::MaterialText& material_text() const;
+  ::mruv::objects::MaterialText* release_material_text();
+  ::mruv::objects::MaterialText* mutable_material_text();
+  void set_allocated_material_text(::mruv::objects::MaterialText* material_text);
+  private:
+  const ::mruv::objects::MaterialText& _internal_material_text() const;
+  ::mruv::objects::MaterialText* _internal_mutable_material_text();
+  public:
+
+  // uint32 object_id = 1;
+  void clear_object_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id() const;
+  void set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_object_id() const;
+  void _internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 index = 2;
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::uint32 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.AddObjectMaterialTextRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::mruv::objects::MaterialText* material_text_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 index_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddObjectMaterialTextResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.AddObjectMaterialTextResponse) */ {
+ public:
+  AddObjectMaterialTextResponse();
+  virtual ~AddObjectMaterialTextResponse();
+
+  AddObjectMaterialTextResponse(const AddObjectMaterialTextResponse& from);
+  AddObjectMaterialTextResponse(AddObjectMaterialTextResponse&& from) noexcept
+    : AddObjectMaterialTextResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddObjectMaterialTextResponse& operator=(const AddObjectMaterialTextResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddObjectMaterialTextResponse& operator=(AddObjectMaterialTextResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const AddObjectMaterialTextResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AddObjectMaterialTextResponse* internal_default_instance() {
+    return reinterpret_cast<const AddObjectMaterialTextResponse*>(
+               &_AddObjectMaterialTextResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(AddObjectMaterialTextResponse& a, AddObjectMaterialTextResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddObjectMaterialTextResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddObjectMaterialTextResponse* New() const final {
+    return CreateMaybeMessage<AddObjectMaterialTextResponse>(nullptr);
+  }
+
+  AddObjectMaterialTextResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<AddObjectMaterialTextResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const AddObjectMaterialTextResponse& from);
+  void MergeFrom(const AddObjectMaterialTextResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddObjectMaterialTextResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.AddObjectMaterialTextResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.AddObjectMaterialTextResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetObjectMaterialTextsRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectMaterialTextsRequest) */ {
+ public:
+  GetObjectMaterialTextsRequest();
+  virtual ~GetObjectMaterialTextsRequest();
+
+  GetObjectMaterialTextsRequest(const GetObjectMaterialTextsRequest& from);
+  GetObjectMaterialTextsRequest(GetObjectMaterialTextsRequest&& from) noexcept
+    : GetObjectMaterialTextsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetObjectMaterialTextsRequest& operator=(const GetObjectMaterialTextsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetObjectMaterialTextsRequest& operator=(GetObjectMaterialTextsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetObjectMaterialTextsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetObjectMaterialTextsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetObjectMaterialTextsRequest*>(
+               &_GetObjectMaterialTextsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(GetObjectMaterialTextsRequest& a, GetObjectMaterialTextsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetObjectMaterialTextsRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetObjectMaterialTextsRequest* New() const final {
+    return CreateMaybeMessage<GetObjectMaterialTextsRequest>(nullptr);
+  }
+
+  GetObjectMaterialTextsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetObjectMaterialTextsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetObjectMaterialTextsRequest& from);
+  void MergeFrom(const GetObjectMaterialTextsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetObjectMaterialTextsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.GetObjectMaterialTextsRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kObjectIdFieldNumber = 1,
+  };
+  // uint32 object_id = 1;
+  void clear_object_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id() const;
+  void set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_object_id() const;
+  void _internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectMaterialTextsRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse();
+  GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse& other);
+  static const GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse*>(&_GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[23];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class GetObjectMaterialTextsResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.GetObjectMaterialTextsResponse) */ {
+ public:
+  GetObjectMaterialTextsResponse();
+  virtual ~GetObjectMaterialTextsResponse();
+
+  GetObjectMaterialTextsResponse(const GetObjectMaterialTextsResponse& from);
+  GetObjectMaterialTextsResponse(GetObjectMaterialTextsResponse&& from) noexcept
+    : GetObjectMaterialTextsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetObjectMaterialTextsResponse& operator=(const GetObjectMaterialTextsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetObjectMaterialTextsResponse& operator=(GetObjectMaterialTextsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetObjectMaterialTextsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetObjectMaterialTextsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetObjectMaterialTextsResponse*>(
+               &_GetObjectMaterialTextsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(GetObjectMaterialTextsResponse& a, GetObjectMaterialTextsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetObjectMaterialTextsResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetObjectMaterialTextsResponse* New() const final {
+    return CreateMaybeMessage<GetObjectMaterialTextsResponse>(nullptr);
+  }
+
+  GetObjectMaterialTextsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetObjectMaterialTextsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetObjectMaterialTextsResponse& from);
+  void MergeFrom(const GetObjectMaterialTextsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetObjectMaterialTextsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.GetObjectMaterialTextsResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMaterialTextsFieldNumber = 1,
+  };
+  // map<uint32, .mruv.objects.MaterialText> material_texts = 1;
+  int material_texts_size() const;
+  private:
+  int _internal_material_texts_size() const;
+  public:
+  void clear_material_texts();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+      _internal_material_texts() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+      _internal_mutable_material_texts();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+      material_texts() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+      mutable_material_texts();
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.GetObjectMaterialTextsResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > material_texts_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteObjectMaterialTextRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectMaterialTextRequest) */ {
+ public:
+  DeleteObjectMaterialTextRequest();
+  virtual ~DeleteObjectMaterialTextRequest();
+
+  DeleteObjectMaterialTextRequest(const DeleteObjectMaterialTextRequest& from);
+  DeleteObjectMaterialTextRequest(DeleteObjectMaterialTextRequest&& from) noexcept
+    : DeleteObjectMaterialTextRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteObjectMaterialTextRequest& operator=(const DeleteObjectMaterialTextRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteObjectMaterialTextRequest& operator=(DeleteObjectMaterialTextRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DeleteObjectMaterialTextRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteObjectMaterialTextRequest* internal_default_instance() {
+    return reinterpret_cast<const DeleteObjectMaterialTextRequest*>(
+               &_DeleteObjectMaterialTextRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(DeleteObjectMaterialTextRequest& a, DeleteObjectMaterialTextRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteObjectMaterialTextRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteObjectMaterialTextRequest* New() const final {
+    return CreateMaybeMessage<DeleteObjectMaterialTextRequest>(nullptr);
+  }
+
+  DeleteObjectMaterialTextRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteObjectMaterialTextRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DeleteObjectMaterialTextRequest& from);
+  void MergeFrom(const DeleteObjectMaterialTextRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteObjectMaterialTextRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.DeleteObjectMaterialTextRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kObjectIdFieldNumber = 1,
+    kIndexFieldNumber = 2,
+  };
+  // uint32 object_id = 1;
+  void clear_object_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id() const;
+  void set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_object_id() const;
+  void _internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 index = 2;
+  void clear_index();
+  ::PROTOBUF_NAMESPACE_ID::uint32 index() const;
+  void set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_index() const;
+  void _internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectMaterialTextRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 object_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 index_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeleteObjectMaterialTextResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.DeleteObjectMaterialTextResponse) */ {
+ public:
+  DeleteObjectMaterialTextResponse();
+  virtual ~DeleteObjectMaterialTextResponse();
+
+  DeleteObjectMaterialTextResponse(const DeleteObjectMaterialTextResponse& from);
+  DeleteObjectMaterialTextResponse(DeleteObjectMaterialTextResponse&& from) noexcept
+    : DeleteObjectMaterialTextResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline DeleteObjectMaterialTextResponse& operator=(const DeleteObjectMaterialTextResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeleteObjectMaterialTextResponse& operator=(DeleteObjectMaterialTextResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const DeleteObjectMaterialTextResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DeleteObjectMaterialTextResponse* internal_default_instance() {
+    return reinterpret_cast<const DeleteObjectMaterialTextResponse*>(
+               &_DeleteObjectMaterialTextResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(DeleteObjectMaterialTextResponse& a, DeleteObjectMaterialTextResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeleteObjectMaterialTextResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DeleteObjectMaterialTextResponse* New() const final {
+    return CreateMaybeMessage<DeleteObjectMaterialTextResponse>(nullptr);
+  }
+
+  DeleteObjectMaterialTextResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<DeleteObjectMaterialTextResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const DeleteObjectMaterialTextResponse& from);
+  void MergeFrom(const DeleteObjectMaterialTextResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DeleteObjectMaterialTextResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.DeleteObjectMaterialTextResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.DeleteObjectMaterialTextResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchAllRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllRequest) */ {
+ public:
+  FetchAllRequest();
+  virtual ~FetchAllRequest();
+
+  FetchAllRequest(const FetchAllRequest& from);
+  FetchAllRequest(FetchAllRequest&& from) noexcept
+    : FetchAllRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllRequest& operator=(const FetchAllRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllRequest& operator=(FetchAllRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchAllRequest*>(
+               &_FetchAllRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(FetchAllRequest& a, FetchAllRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllRequest* New() const final {
+    return CreateMaybeMessage<FetchAllRequest>(nullptr);
+  }
+
+  FetchAllRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllRequest& from);
+  void MergeFrom(const FetchAllRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.FetchAllRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchAllResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllResponse) */ {
+ public:
+  FetchAllResponse();
+  virtual ~FetchAllResponse();
+
+  FetchAllResponse(const FetchAllResponse& from);
+  FetchAllResponse(FetchAllResponse&& from) noexcept
+    : FetchAllResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllResponse& operator=(const FetchAllResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllResponse& operator=(FetchAllResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchAllResponse*>(
+               &_FetchAllResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(FetchAllResponse& a, FetchAllResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllResponse* New() const final {
+    return CreateMaybeMessage<FetchAllResponse>(nullptr);
+  }
+
+  FetchAllResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllResponse& from);
+  void MergeFrom(const FetchAllResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.FetchAllResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fobjects_2eproto);
+    return ::descriptor_table_objects_2fobjects_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kObjectsFieldNumber = 1,
+  };
+  // repeated .mruv.objects.Object objects = 1;
+  int objects_size() const;
+  private:
+  int _internal_objects_size() const;
+  public:
+  void clear_objects();
+  ::mruv::objects::Object* mutable_objects(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::Object >*
+      mutable_objects();
+  private:
+  const ::mruv::objects::Object& _internal_objects(int index) const;
+  ::mruv::objects::Object* _internal_add_objects();
+  public:
+  const ::mruv::objects::Object& objects(int index) const;
+  ::mruv::objects::Object* add_objects();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::Object >&
+      objects() const;
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::Object > objects_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fobjects_2eproto;
+};
 // ===================================================================
 
 
@@ -1418,6 +3945,10 @@ class DeleteObjectResponse :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // Object
 
 // uint32 model = 1;
@@ -1720,6 +4251,472 @@ inline void Object::set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:mruv.objects.Object.estate_id)
 }
 
+// map<uint32, .mruv.objects.Material> materials = 17;
+inline int Object::_internal_materials_size() const {
+  return materials_.size();
+}
+inline int Object::materials_size() const {
+  return _internal_materials_size();
+}
+inline void Object::clear_materials() {
+  materials_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+Object::_internal_materials() const {
+  return materials_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+Object::materials() const {
+  // @@protoc_insertion_point(field_map:mruv.objects.Object.materials)
+  return _internal_materials();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+Object::_internal_mutable_materials() {
+  return materials_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+Object::mutable_materials() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.objects.Object.materials)
+  return _internal_mutable_materials();
+}
+
+// map<uint32, .mruv.objects.MaterialText> material_texts = 18;
+inline int Object::_internal_material_texts_size() const {
+  return material_texts_.size();
+}
+inline int Object::material_texts_size() const {
+  return _internal_material_texts_size();
+}
+inline void Object::clear_material_texts() {
+  material_texts_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+Object::_internal_material_texts() const {
+  return material_texts_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+Object::material_texts() const {
+  // @@protoc_insertion_point(field_map:mruv.objects.Object.material_texts)
+  return _internal_material_texts();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+Object::_internal_mutable_material_texts() {
+  return material_texts_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+Object::mutable_material_texts() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.objects.Object.material_texts)
+  return _internal_mutable_material_texts();
+}
+
+// -------------------------------------------------------------------
+
+// Material
+
+// int32 model_id = 1;
+inline void Material::clear_model_id() {
+  model_id_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Material::_internal_model_id() const {
+  return model_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Material::model_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.Material.model_id)
+  return _internal_model_id();
+}
+inline void Material::_internal_set_model_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  model_id_ = value;
+}
+inline void Material::set_model_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_model_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.Material.model_id)
+}
+
+// string txd_name = 2;
+inline void Material::clear_txd_name() {
+  txd_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Material::txd_name() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.Material.txd_name)
+  return _internal_txd_name();
+}
+inline void Material::set_txd_name(const std::string& value) {
+  _internal_set_txd_name(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.Material.txd_name)
+}
+inline std::string* Material::mutable_txd_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.Material.txd_name)
+  return _internal_mutable_txd_name();
+}
+inline const std::string& Material::_internal_txd_name() const {
+  return txd_name_.GetNoArena();
+}
+inline void Material::_internal_set_txd_name(const std::string& value) {
+  
+  txd_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Material::set_txd_name(std::string&& value) {
+  
+  txd_name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.Material.txd_name)
+}
+inline void Material::set_txd_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  txd_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.objects.Material.txd_name)
+}
+inline void Material::set_txd_name(const char* value, size_t size) {
+  
+  txd_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.Material.txd_name)
+}
+inline std::string* Material::_internal_mutable_txd_name() {
+  
+  return txd_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Material::release_txd_name() {
+  // @@protoc_insertion_point(field_release:mruv.objects.Material.txd_name)
+  
+  return txd_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Material::set_allocated_txd_name(std::string* txd_name) {
+  if (txd_name != nullptr) {
+    
+  } else {
+    
+  }
+  txd_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), txd_name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.Material.txd_name)
+}
+
+// string texture_name = 3;
+inline void Material::clear_texture_name() {
+  texture_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Material::texture_name() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.Material.texture_name)
+  return _internal_texture_name();
+}
+inline void Material::set_texture_name(const std::string& value) {
+  _internal_set_texture_name(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.Material.texture_name)
+}
+inline std::string* Material::mutable_texture_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.Material.texture_name)
+  return _internal_mutable_texture_name();
+}
+inline const std::string& Material::_internal_texture_name() const {
+  return texture_name_.GetNoArena();
+}
+inline void Material::_internal_set_texture_name(const std::string& value) {
+  
+  texture_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Material::set_texture_name(std::string&& value) {
+  
+  texture_name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.Material.texture_name)
+}
+inline void Material::set_texture_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  texture_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.objects.Material.texture_name)
+}
+inline void Material::set_texture_name(const char* value, size_t size) {
+  
+  texture_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.Material.texture_name)
+}
+inline std::string* Material::_internal_mutable_texture_name() {
+  
+  return texture_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Material::release_texture_name() {
+  // @@protoc_insertion_point(field_release:mruv.objects.Material.texture_name)
+  
+  return texture_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Material::set_allocated_texture_name(std::string* texture_name) {
+  if (texture_name != nullptr) {
+    
+  } else {
+    
+  }
+  texture_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), texture_name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.Material.texture_name)
+}
+
+// int32 material_color = 4;
+inline void Material::clear_material_color() {
+  material_color_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Material::_internal_material_color() const {
+  return material_color_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 Material::material_color() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.Material.material_color)
+  return _internal_material_color();
+}
+inline void Material::_internal_set_material_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  material_color_ = value;
+}
+inline void Material::set_material_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_material_color(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.Material.material_color)
+}
+
+// -------------------------------------------------------------------
+
+// MaterialText
+
+// string text = 1;
+inline void MaterialText::clear_text() {
+  text_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& MaterialText::text() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.text)
+  return _internal_text();
+}
+inline void MaterialText::set_text(const std::string& value) {
+  _internal_set_text(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.text)
+}
+inline std::string* MaterialText::mutable_text() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.MaterialText.text)
+  return _internal_mutable_text();
+}
+inline const std::string& MaterialText::_internal_text() const {
+  return text_.GetNoArena();
+}
+inline void MaterialText::_internal_set_text(const std::string& value) {
+  
+  text_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void MaterialText::set_text(std::string&& value) {
+  
+  text_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.MaterialText.text)
+}
+inline void MaterialText::set_text(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  text_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.objects.MaterialText.text)
+}
+inline void MaterialText::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.MaterialText.text)
+}
+inline std::string* MaterialText::_internal_mutable_text() {
+  
+  return text_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* MaterialText::release_text() {
+  // @@protoc_insertion_point(field_release:mruv.objects.MaterialText.text)
+  
+  return text_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void MaterialText::set_allocated_text(std::string* text) {
+  if (text != nullptr) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.MaterialText.text)
+}
+
+// .mruv.objects.MaterialSize material_size = 2;
+inline void MaterialText::clear_material_size() {
+  material_size_ = 0;
+}
+inline ::mruv::objects::MaterialSize MaterialText::_internal_material_size() const {
+  return static_cast< ::mruv::objects::MaterialSize >(material_size_);
+}
+inline ::mruv::objects::MaterialSize MaterialText::material_size() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.material_size)
+  return _internal_material_size();
+}
+inline void MaterialText::_internal_set_material_size(::mruv::objects::MaterialSize value) {
+  
+  material_size_ = value;
+}
+inline void MaterialText::set_material_size(::mruv::objects::MaterialSize value) {
+  _internal_set_material_size(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.material_size)
+}
+
+// string font_face = 3;
+inline void MaterialText::clear_font_face() {
+  font_face_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& MaterialText::font_face() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.font_face)
+  return _internal_font_face();
+}
+inline void MaterialText::set_font_face(const std::string& value) {
+  _internal_set_font_face(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.font_face)
+}
+inline std::string* MaterialText::mutable_font_face() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.MaterialText.font_face)
+  return _internal_mutable_font_face();
+}
+inline const std::string& MaterialText::_internal_font_face() const {
+  return font_face_.GetNoArena();
+}
+inline void MaterialText::_internal_set_font_face(const std::string& value) {
+  
+  font_face_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void MaterialText::set_font_face(std::string&& value) {
+  
+  font_face_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.objects.MaterialText.font_face)
+}
+inline void MaterialText::set_font_face(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  font_face_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.objects.MaterialText.font_face)
+}
+inline void MaterialText::set_font_face(const char* value, size_t size) {
+  
+  font_face_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.objects.MaterialText.font_face)
+}
+inline std::string* MaterialText::_internal_mutable_font_face() {
+  
+  return font_face_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* MaterialText::release_font_face() {
+  // @@protoc_insertion_point(field_release:mruv.objects.MaterialText.font_face)
+  
+  return font_face_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void MaterialText::set_allocated_font_face(std::string* font_face) {
+  if (font_face != nullptr) {
+    
+  } else {
+    
+  }
+  font_face_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), font_face);
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.MaterialText.font_face)
+}
+
+// uint32 font_size = 4;
+inline void MaterialText::clear_font_size() {
+  font_size_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MaterialText::_internal_font_size() const {
+  return font_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MaterialText::font_size() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.font_size)
+  return _internal_font_size();
+}
+inline void MaterialText::_internal_set_font_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  font_size_ = value;
+}
+inline void MaterialText::set_font_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_font_size(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.font_size)
+}
+
+// bool bold = 5;
+inline void MaterialText::clear_bold() {
+  bold_ = false;
+}
+inline bool MaterialText::_internal_bold() const {
+  return bold_;
+}
+inline bool MaterialText::bold() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.bold)
+  return _internal_bold();
+}
+inline void MaterialText::_internal_set_bold(bool value) {
+  
+  bold_ = value;
+}
+inline void MaterialText::set_bold(bool value) {
+  _internal_set_bold(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.bold)
+}
+
+// int32 font_color = 6;
+inline void MaterialText::clear_font_color() {
+  font_color_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MaterialText::_internal_font_color() const {
+  return font_color_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MaterialText::font_color() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.font_color)
+  return _internal_font_color();
+}
+inline void MaterialText::_internal_set_font_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  font_color_ = value;
+}
+inline void MaterialText::set_font_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_font_color(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.font_color)
+}
+
+// int32 back_color = 7;
+inline void MaterialText::clear_back_color() {
+  back_color_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MaterialText::_internal_back_color() const {
+  return back_color_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MaterialText::back_color() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.back_color)
+  return _internal_back_color();
+}
+inline void MaterialText::_internal_set_back_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  back_color_ = value;
+}
+inline void MaterialText::set_back_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_back_color(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.back_color)
+}
+
+// int32 text_alignment = 8;
+inline void MaterialText::clear_text_alignment() {
+  text_alignment_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MaterialText::_internal_text_alignment() const {
+  return text_alignment_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 MaterialText::text_alignment() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.MaterialText.text_alignment)
+  return _internal_text_alignment();
+}
+inline void MaterialText::_internal_set_text_alignment(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  text_alignment_ = value;
+}
+inline void MaterialText::set_text_alignment(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_text_alignment(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.MaterialText.text_alignment)
+}
+
 // -------------------------------------------------------------------
 
 // CreateObjectRequest
@@ -2012,9 +5009,526 @@ inline void DeleteObjectRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
 // DeleteObjectResponse
 
+// -------------------------------------------------------------------
+
+// AddObjectMaterialRequest
+
+// uint32 object_id = 1;
+inline void AddObjectMaterialRequest::clear_object_id() {
+  object_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialRequest::_internal_object_id() const {
+  return object_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialRequest::object_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.AddObjectMaterialRequest.object_id)
+  return _internal_object_id();
+}
+inline void AddObjectMaterialRequest::_internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  object_id_ = value;
+}
+inline void AddObjectMaterialRequest::set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_object_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.AddObjectMaterialRequest.object_id)
+}
+
+// uint32 index = 2;
+inline void AddObjectMaterialRequest::clear_index() {
+  index_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialRequest::_internal_index() const {
+  return index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialRequest::index() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.AddObjectMaterialRequest.index)
+  return _internal_index();
+}
+inline void AddObjectMaterialRequest::_internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  index_ = value;
+}
+inline void AddObjectMaterialRequest::set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_index(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.AddObjectMaterialRequest.index)
+}
+
+// .mruv.objects.Material material = 3;
+inline bool AddObjectMaterialRequest::_internal_has_material() const {
+  return this != internal_default_instance() && material_ != nullptr;
+}
+inline bool AddObjectMaterialRequest::has_material() const {
+  return _internal_has_material();
+}
+inline void AddObjectMaterialRequest::clear_material() {
+  if (GetArenaNoVirtual() == nullptr && material_ != nullptr) {
+    delete material_;
+  }
+  material_ = nullptr;
+}
+inline const ::mruv::objects::Material& AddObjectMaterialRequest::_internal_material() const {
+  const ::mruv::objects::Material* p = material_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::Material*>(
+      &::mruv::objects::_Material_default_instance_);
+}
+inline const ::mruv::objects::Material& AddObjectMaterialRequest::material() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.AddObjectMaterialRequest.material)
+  return _internal_material();
+}
+inline ::mruv::objects::Material* AddObjectMaterialRequest::release_material() {
+  // @@protoc_insertion_point(field_release:mruv.objects.AddObjectMaterialRequest.material)
+  
+  ::mruv::objects::Material* temp = material_;
+  material_ = nullptr;
+  return temp;
+}
+inline ::mruv::objects::Material* AddObjectMaterialRequest::_internal_mutable_material() {
+  
+  if (material_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::objects::Material>(GetArenaNoVirtual());
+    material_ = p;
+  }
+  return material_;
+}
+inline ::mruv::objects::Material* AddObjectMaterialRequest::mutable_material() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.AddObjectMaterialRequest.material)
+  return _internal_mutable_material();
+}
+inline void AddObjectMaterialRequest::set_allocated_material(::mruv::objects::Material* material) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete material_;
+  }
+  if (material) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      material = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, material, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  material_ = material;
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.AddObjectMaterialRequest.material)
+}
+
+// -------------------------------------------------------------------
+
+// AddObjectMaterialResponse
+
+// -------------------------------------------------------------------
+
+// GetObjectMaterialsRequest
+
+// uint32 object_id = 1;
+inline void GetObjectMaterialsRequest::clear_object_id() {
+  object_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectMaterialsRequest::_internal_object_id() const {
+  return object_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectMaterialsRequest::object_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.GetObjectMaterialsRequest.object_id)
+  return _internal_object_id();
+}
+inline void GetObjectMaterialsRequest::_internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  object_id_ = value;
+}
+inline void GetObjectMaterialsRequest::set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_object_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.GetObjectMaterialsRequest.object_id)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// GetObjectMaterialsResponse
+
+// map<uint32, .mruv.objects.Material> materials = 1;
+inline int GetObjectMaterialsResponse::_internal_materials_size() const {
+  return materials_.size();
+}
+inline int GetObjectMaterialsResponse::materials_size() const {
+  return _internal_materials_size();
+}
+inline void GetObjectMaterialsResponse::clear_materials() {
+  materials_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+GetObjectMaterialsResponse::_internal_materials() const {
+  return materials_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >&
+GetObjectMaterialsResponse::materials() const {
+  // @@protoc_insertion_point(field_map:mruv.objects.GetObjectMaterialsResponse.materials)
+  return _internal_materials();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+GetObjectMaterialsResponse::_internal_mutable_materials() {
+  return materials_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Material >*
+GetObjectMaterialsResponse::mutable_materials() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.objects.GetObjectMaterialsResponse.materials)
+  return _internal_mutable_materials();
+}
+
+// -------------------------------------------------------------------
+
+// DeleteObjectMaterialRequest
+
+// uint32 object_id = 1;
+inline void DeleteObjectMaterialRequest::clear_object_id() {
+  object_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialRequest::_internal_object_id() const {
+  return object_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialRequest::object_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.DeleteObjectMaterialRequest.object_id)
+  return _internal_object_id();
+}
+inline void DeleteObjectMaterialRequest::_internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  object_id_ = value;
+}
+inline void DeleteObjectMaterialRequest::set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_object_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.DeleteObjectMaterialRequest.object_id)
+}
+
+// uint32 index = 2;
+inline void DeleteObjectMaterialRequest::clear_index() {
+  index_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialRequest::_internal_index() const {
+  return index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialRequest::index() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.DeleteObjectMaterialRequest.index)
+  return _internal_index();
+}
+inline void DeleteObjectMaterialRequest::_internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  index_ = value;
+}
+inline void DeleteObjectMaterialRequest::set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_index(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.DeleteObjectMaterialRequest.index)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteObjectMaterialResponse
+
+// -------------------------------------------------------------------
+
+// AddObjectMaterialTextRequest
+
+// uint32 object_id = 1;
+inline void AddObjectMaterialTextRequest::clear_object_id() {
+  object_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialTextRequest::_internal_object_id() const {
+  return object_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialTextRequest::object_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.AddObjectMaterialTextRequest.object_id)
+  return _internal_object_id();
+}
+inline void AddObjectMaterialTextRequest::_internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  object_id_ = value;
+}
+inline void AddObjectMaterialTextRequest::set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_object_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.AddObjectMaterialTextRequest.object_id)
+}
+
+// uint32 index = 2;
+inline void AddObjectMaterialTextRequest::clear_index() {
+  index_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialTextRequest::_internal_index() const {
+  return index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AddObjectMaterialTextRequest::index() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.AddObjectMaterialTextRequest.index)
+  return _internal_index();
+}
+inline void AddObjectMaterialTextRequest::_internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  index_ = value;
+}
+inline void AddObjectMaterialTextRequest::set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_index(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.AddObjectMaterialTextRequest.index)
+}
+
+// .mruv.objects.MaterialText material_text = 3;
+inline bool AddObjectMaterialTextRequest::_internal_has_material_text() const {
+  return this != internal_default_instance() && material_text_ != nullptr;
+}
+inline bool AddObjectMaterialTextRequest::has_material_text() const {
+  return _internal_has_material_text();
+}
+inline void AddObjectMaterialTextRequest::clear_material_text() {
+  if (GetArenaNoVirtual() == nullptr && material_text_ != nullptr) {
+    delete material_text_;
+  }
+  material_text_ = nullptr;
+}
+inline const ::mruv::objects::MaterialText& AddObjectMaterialTextRequest::_internal_material_text() const {
+  const ::mruv::objects::MaterialText* p = material_text_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::objects::MaterialText*>(
+      &::mruv::objects::_MaterialText_default_instance_);
+}
+inline const ::mruv::objects::MaterialText& AddObjectMaterialTextRequest::material_text() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.AddObjectMaterialTextRequest.material_text)
+  return _internal_material_text();
+}
+inline ::mruv::objects::MaterialText* AddObjectMaterialTextRequest::release_material_text() {
+  // @@protoc_insertion_point(field_release:mruv.objects.AddObjectMaterialTextRequest.material_text)
+  
+  ::mruv::objects::MaterialText* temp = material_text_;
+  material_text_ = nullptr;
+  return temp;
+}
+inline ::mruv::objects::MaterialText* AddObjectMaterialTextRequest::_internal_mutable_material_text() {
+  
+  if (material_text_ == nullptr) {
+    auto* p = CreateMaybeMessage<::mruv::objects::MaterialText>(GetArenaNoVirtual());
+    material_text_ = p;
+  }
+  return material_text_;
+}
+inline ::mruv::objects::MaterialText* AddObjectMaterialTextRequest::mutable_material_text() {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.AddObjectMaterialTextRequest.material_text)
+  return _internal_mutable_material_text();
+}
+inline void AddObjectMaterialTextRequest::set_allocated_material_text(::mruv::objects::MaterialText* material_text) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete material_text_;
+  }
+  if (material_text) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      material_text = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, material_text, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  material_text_ = material_text;
+  // @@protoc_insertion_point(field_set_allocated:mruv.objects.AddObjectMaterialTextRequest.material_text)
+}
+
+// -------------------------------------------------------------------
+
+// AddObjectMaterialTextResponse
+
+// -------------------------------------------------------------------
+
+// GetObjectMaterialTextsRequest
+
+// uint32 object_id = 1;
+inline void GetObjectMaterialTextsRequest::clear_object_id() {
+  object_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectMaterialTextsRequest::_internal_object_id() const {
+  return object_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 GetObjectMaterialTextsRequest::object_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.GetObjectMaterialTextsRequest.object_id)
+  return _internal_object_id();
+}
+inline void GetObjectMaterialTextsRequest::_internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  object_id_ = value;
+}
+inline void GetObjectMaterialTextsRequest::set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_object_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.GetObjectMaterialTextsRequest.object_id)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// GetObjectMaterialTextsResponse
+
+// map<uint32, .mruv.objects.MaterialText> material_texts = 1;
+inline int GetObjectMaterialTextsResponse::_internal_material_texts_size() const {
+  return material_texts_.size();
+}
+inline int GetObjectMaterialTextsResponse::material_texts_size() const {
+  return _internal_material_texts_size();
+}
+inline void GetObjectMaterialTextsResponse::clear_material_texts() {
+  material_texts_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+GetObjectMaterialTextsResponse::_internal_material_texts() const {
+  return material_texts_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >&
+GetObjectMaterialTextsResponse::material_texts() const {
+  // @@protoc_insertion_point(field_map:mruv.objects.GetObjectMaterialTextsResponse.material_texts)
+  return _internal_material_texts();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+GetObjectMaterialTextsResponse::_internal_mutable_material_texts() {
+  return material_texts_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
+GetObjectMaterialTextsResponse::mutable_material_texts() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.objects.GetObjectMaterialTextsResponse.material_texts)
+  return _internal_mutable_material_texts();
+}
+
+// -------------------------------------------------------------------
+
+// DeleteObjectMaterialTextRequest
+
+// uint32 object_id = 1;
+inline void DeleteObjectMaterialTextRequest::clear_object_id() {
+  object_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialTextRequest::_internal_object_id() const {
+  return object_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialTextRequest::object_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.DeleteObjectMaterialTextRequest.object_id)
+  return _internal_object_id();
+}
+inline void DeleteObjectMaterialTextRequest::_internal_set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  object_id_ = value;
+}
+inline void DeleteObjectMaterialTextRequest::set_object_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_object_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.DeleteObjectMaterialTextRequest.object_id)
+}
+
+// uint32 index = 2;
+inline void DeleteObjectMaterialTextRequest::clear_index() {
+  index_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialTextRequest::_internal_index() const {
+  return index_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteObjectMaterialTextRequest::index() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.DeleteObjectMaterialTextRequest.index)
+  return _internal_index();
+}
+inline void DeleteObjectMaterialTextRequest::_internal_set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  index_ = value;
+}
+inline void DeleteObjectMaterialTextRequest::set_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_index(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.DeleteObjectMaterialTextRequest.index)
+}
+
+// -------------------------------------------------------------------
+
+// DeleteObjectMaterialTextResponse
+
+// -------------------------------------------------------------------
+
+// FetchAllRequest
+
+// -------------------------------------------------------------------
+
+// FetchAllResponse
+
+// repeated .mruv.objects.Object objects = 1;
+inline int FetchAllResponse::_internal_objects_size() const {
+  return objects_.size();
+}
+inline int FetchAllResponse::objects_size() const {
+  return _internal_objects_size();
+}
+inline void FetchAllResponse::clear_objects() {
+  objects_.Clear();
+}
+inline ::mruv::objects::Object* FetchAllResponse::mutable_objects(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.FetchAllResponse.objects)
+  return objects_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::Object >*
+FetchAllResponse::mutable_objects() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.objects.FetchAllResponse.objects)
+  return &objects_;
+}
+inline const ::mruv::objects::Object& FetchAllResponse::_internal_objects(int index) const {
+  return objects_.Get(index);
+}
+inline const ::mruv::objects::Object& FetchAllResponse::objects(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.objects.FetchAllResponse.objects)
+  return _internal_objects(index);
+}
+inline ::mruv::objects::Object* FetchAllResponse::_internal_add_objects() {
+  return objects_.Add();
+}
+inline ::mruv::objects::Object* FetchAllResponse::add_objects() {
+  // @@protoc_insertion_point(field_add:mruv.objects.FetchAllResponse.objects)
+  return _internal_add_objects();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::Object >&
+FetchAllResponse::objects() const {
+  // @@protoc_insertion_point(field_list:mruv.objects.FetchAllResponse.objects)
+  return objects_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -2036,6 +5550,16 @@ inline void DeleteObjectRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
 }  // namespace objects
 }  // namespace mruv
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::mruv::objects::MaterialSize> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::mruv::objects::MaterialSize>() {
+  return ::mruv::objects::MaterialSize_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 
