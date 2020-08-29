@@ -753,7 +753,6 @@ class Material :
     kTextureNameFieldNumber = 3,
     kModelIdFieldNumber = 1,
     kMaterialColorFieldNumber = 4,
-    kEstateIdFieldNumber = 5,
   };
   // string txd_name = 2;
   void clear_txd_name();
@@ -805,15 +804,6 @@ class Material :
   void _internal_set_material_color(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint32 estate_id = 5;
-  void clear_estate_id();
-  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id() const;
-  void set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_estate_id() const;
-  void _internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:mruv.objects.Material)
  private:
   class _Internal;
@@ -823,7 +813,6 @@ class Material :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr texture_name_;
   ::PROTOBUF_NAMESPACE_ID::int32 model_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 material_color_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
@@ -1159,6 +1148,7 @@ class RemovedBuilding :
     kYFieldNumber = 3,
     kZFieldNumber = 4,
     kRadiusFieldNumber = 5,
+    kEstateIdFieldNumber = 6,
   };
   // uint32 model = 1;
   void clear_model();
@@ -1205,6 +1195,15 @@ class RemovedBuilding :
   void _internal_set_radius(float value);
   public:
 
+  // uint32 estate_id = 6;
+  void clear_estate_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id() const;
+  void set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_estate_id() const;
+  void _internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:mruv.objects.RemovedBuilding)
  private:
   class _Internal;
@@ -1215,6 +1214,7 @@ class RemovedBuilding :
   float y_;
   float z_;
   float radius_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
@@ -5454,26 +5454,6 @@ inline void Material::set_material_color(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:mruv.objects.Material.material_color)
 }
 
-// uint32 estate_id = 5;
-inline void Material::clear_estate_id() {
-  estate_id_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Material::_internal_estate_id() const {
-  return estate_id_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Material::estate_id() const {
-  // @@protoc_insertion_point(field_get:mruv.objects.Material.estate_id)
-  return _internal_estate_id();
-}
-inline void Material::_internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  estate_id_ = value;
-}
-inline void Material::set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_estate_id(value);
-  // @@protoc_insertion_point(field_set:mruv.objects.Material.estate_id)
-}
-
 // -------------------------------------------------------------------
 
 // MaterialText
@@ -5820,6 +5800,26 @@ inline void RemovedBuilding::_internal_set_radius(float value) {
 inline void RemovedBuilding::set_radius(float value) {
   _internal_set_radius(value);
   // @@protoc_insertion_point(field_set:mruv.objects.RemovedBuilding.radius)
+}
+
+// uint32 estate_id = 6;
+inline void RemovedBuilding::clear_estate_id() {
+  estate_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 RemovedBuilding::_internal_estate_id() const {
+  return estate_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 RemovedBuilding::estate_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.RemovedBuilding.estate_id)
+  return _internal_estate_id();
+}
+inline void RemovedBuilding::_internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  estate_id_ = value;
+}
+inline void RemovedBuilding::set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_estate_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.RemovedBuilding.estate_id)
 }
 
 // -------------------------------------------------------------------

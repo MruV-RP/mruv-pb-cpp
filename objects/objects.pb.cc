@@ -740,7 +740,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, txd_name_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, texture_name_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, material_color_),
-  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, estate_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -764,6 +763,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, y_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, z_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, radius_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, estate_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::CreateObjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -955,8 +955,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 9, 16, sizeof(::mruv::objects::Object_MaterialTextsEntry_DoNotUse)},
   { 18, -1, sizeof(::mruv::objects::Object)},
   { 40, -1, sizeof(::mruv::objects::Material)},
-  { 50, -1, sizeof(::mruv::objects::MaterialText)},
-  { 63, -1, sizeof(::mruv::objects::RemovedBuilding)},
+  { 49, -1, sizeof(::mruv::objects::MaterialText)},
+  { 62, -1, sizeof(::mruv::objects::RemovedBuilding)},
   { 73, -1, sizeof(::mruv::objects::CreateObjectRequest)},
   { 79, -1, sizeof(::mruv::objects::CreateObjectResponse)},
   { 85, -1, sizeof(::mruv::objects::GetObjectRequest)},
@@ -1044,16 +1044,16 @@ const char descriptor_table_protodef_objects_2fobjects_2eproto[] PROTOBUF_SECTIO
   "lue\030\002 \001(\0132\026.mruv.objects.Material:\0028\001\032P\n"
   "\022MaterialTextsEntry\022\013\n\003key\030\001 \001(\r\022)\n\005valu"
   "e\030\002 \001(\0132\032.mruv.objects.MaterialText:\0028\001\""
-  "o\n\010Material\022\020\n\010model_id\030\001 \001(\005\022\020\n\010txd_nam"
+  "\\\n\010Material\022\020\n\010model_id\030\001 \001(\005\022\020\n\010txd_nam"
   "e\030\002 \001(\t\022\024\n\014texture_name\030\003 \001(\t\022\026\n\016materia"
-  "l_color\030\004 \001(\005\022\021\n\testate_id\030\005 \001(\r\"\303\001\n\014Mat"
-  "erialText\022\014\n\004text\030\001 \001(\t\0221\n\rmaterial_size"
-  "\030\002 \001(\0162\032.mruv.objects.MaterialSize\022\021\n\tfo"
-  "nt_face\030\003 \001(\t\022\021\n\tfont_size\030\004 \001(\r\022\014\n\004bold"
-  "\030\005 \001(\010\022\022\n\nfont_color\030\006 \001(\005\022\022\n\nback_color"
-  "\030\007 \001(\005\022\026\n\016text_alignment\030\010 \001(\005\"Q\n\017Remove"
-  "dBuilding\022\r\n\005model\030\001 \001(\r\022\t\n\001x\030\002 \001(\002\022\t\n\001y"
-  "\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\022\016\n\006radius\030\005 \001(\002\";\n\023Cre"
+  "l_color\030\004 \001(\005\"\303\001\n\014MaterialText\022\014\n\004text\030\001"
+  " \001(\t\0221\n\rmaterial_size\030\002 \001(\0162\032.mruv.objec"
+  "ts.MaterialSize\022\021\n\tfont_face\030\003 \001(\t\022\021\n\tfo"
+  "nt_size\030\004 \001(\r\022\014\n\004bold\030\005 \001(\010\022\022\n\nfont_colo"
+  "r\030\006 \001(\005\022\022\n\nback_color\030\007 \001(\005\022\026\n\016text_alig"
+  "nment\030\010 \001(\005\"d\n\017RemovedBuilding\022\r\n\005model\030"
+  "\001 \001(\r\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\022\016"
+  "\n\006radius\030\005 \001(\002\022\021\n\testate_id\030\006 \001(\r\";\n\023Cre"
   "ateObjectRequest\022$\n\006object\030\001 \001(\0132\024.mruv."
   "objects.Object\"\"\n\024CreateObjectResponse\022\n"
   "\n\002id\030\001 \001(\r\"\036\n\020GetObjectRequest\022\n\n\002id\030\001 \001"
@@ -1928,8 +1928,8 @@ Material::Material(const Material& from)
     texture_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.texture_name_);
   }
   ::memcpy(&model_id_, &from.model_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
-    reinterpret_cast<char*>(&model_id_)) + sizeof(estate_id_));
+    static_cast<size_t>(reinterpret_cast<char*>(&material_color_) -
+    reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
   // @@protoc_insertion_point(copy_constructor:mruv.objects.Material)
 }
 
@@ -1938,8 +1938,8 @@ void Material::SharedCtor() {
   txd_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   texture_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&model_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&estate_id_) -
-      reinterpret_cast<char*>(&model_id_)) + sizeof(estate_id_));
+      reinterpret_cast<char*>(&material_color_) -
+      reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
 }
 
 Material::~Material() {
@@ -1970,8 +1970,8 @@ void Material::Clear() {
   txd_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   texture_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&model_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&estate_id_) -
-      reinterpret_cast<char*>(&model_id_)) + sizeof(estate_id_));
+      reinterpret_cast<char*>(&material_color_) -
+      reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
   _internal_metadata_.Clear();
 }
 
@@ -2011,13 +2011,6 @@ const char* Material::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           material_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 estate_id = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2079,12 +2072,6 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_material_color(), target);
   }
 
-  // uint32 estate_id = 5;
-  if (this->estate_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_estate_id(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -2127,13 +2114,6 @@ size_t Material::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_material_color());
-  }
-
-  // uint32 estate_id = 5;
-  if (this->estate_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_estate_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2181,9 +2161,6 @@ void Material::MergeFrom(const Material& from) {
   if (from.material_color() != 0) {
     _internal_set_material_color(from._internal_material_color());
   }
-  if (from.estate_id() != 0) {
-    _internal_set_estate_id(from._internal_estate_id());
-  }
 }
 
 void Material::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2213,7 +2190,6 @@ void Material::InternalSwap(Material* other) {
     GetArenaNoVirtual());
   swap(model_id_, other->model_id_);
   swap(material_color_, other->material_color_);
-  swap(estate_id_, other->estate_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Material::GetMetadata() const {
@@ -2629,15 +2605,15 @@ RemovedBuilding::RemovedBuilding(const RemovedBuilding& from)
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&model_, &from.model_,
-    static_cast<size_t>(reinterpret_cast<char*>(&radius_) -
-    reinterpret_cast<char*>(&model_)) + sizeof(radius_));
+    static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
+    reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
   // @@protoc_insertion_point(copy_constructor:mruv.objects.RemovedBuilding)
 }
 
 void RemovedBuilding::SharedCtor() {
   ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&radius_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(radius_));
+      reinterpret_cast<char*>(&estate_id_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
 }
 
 RemovedBuilding::~RemovedBuilding() {
@@ -2664,8 +2640,8 @@ void RemovedBuilding::Clear() {
   (void) cached_has_bits;
 
   ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&radius_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(radius_));
+      reinterpret_cast<char*>(&estate_id_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(estate_id_));
   _internal_metadata_.Clear();
 }
 
@@ -2709,6 +2685,13 @@ const char* RemovedBuilding::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
           radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // uint32 estate_id = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2767,6 +2750,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_radius(), target);
   }
 
+  // uint32 estate_id = 6;
+  if (this->estate_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_estate_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -2808,6 +2797,13 @@ size_t RemovedBuilding::ByteSizeLong() const {
   // float radius = 5;
   if (!(this->radius() <= 0 && this->radius() >= 0)) {
     total_size += 1 + 4;
+  }
+
+  // uint32 estate_id = 6;
+  if (this->estate_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_estate_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2856,6 +2852,9 @@ void RemovedBuilding::MergeFrom(const RemovedBuilding& from) {
   if (!(from.radius() <= 0 && from.radius() >= 0)) {
     _internal_set_radius(from._internal_radius());
   }
+  if (from.estate_id() != 0) {
+    _internal_set_estate_id(from._internal_estate_id());
+  }
 }
 
 void RemovedBuilding::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -2884,6 +2883,7 @@ void RemovedBuilding::InternalSwap(RemovedBuilding* other) {
   swap(y_, other->y_);
   swap(z_, other->z_);
   swap(radius_, other->radius_);
+  swap(estate_id_, other->estate_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemovedBuilding::GetMetadata() const {
