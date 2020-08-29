@@ -33,6 +33,9 @@ static const char* MruVObjectsService_method_names[] = {
   "/mruv.objects.MruVObjectsService/AddObjectMaterialText",
   "/mruv.objects.MruVObjectsService/GetObjectMaterialTexts",
   "/mruv.objects.MruVObjectsService/DeleteObjectMaterialText",
+  "/mruv.objects.MruVObjectsService/AddRemoveBuilding",
+  "/mruv.objects.MruVObjectsService/GetRemovedBuildings",
+  "/mruv.objects.MruVObjectsService/DeleteRemoveBuilding",
   "/mruv.objects.MruVObjectsService/FetchAll",
 };
 
@@ -53,7 +56,10 @@ MruVObjectsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_AddObjectMaterialText_(MruVObjectsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetObjectMaterialTexts_(MruVObjectsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteObjectMaterialText_(MruVObjectsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_FetchAll_(MruVObjectsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddRemoveBuilding_(MruVObjectsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetRemovedBuildings_(MruVObjectsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteRemoveBuilding_(MruVObjectsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchAll_(MruVObjectsService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status MruVObjectsService::Stub::CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::mruv::objects::CreateObjectResponse* response) {
@@ -336,6 +342,90 @@ void MruVObjectsService::Stub::experimental_async::DeleteObjectMaterialText(::gr
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectMaterialTextResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectMaterialText_, context, request, false);
 }
 
+::grpc::Status MruVObjectsService::Stub::AddRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::AddRemoveBuildingRequest& request, ::mruv::objects::AddRemoveBuildingResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AddRemoveBuilding_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::AddRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::AddRemoveBuildingRequest* request, ::mruv::objects::AddRemoveBuildingResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddRemoveBuilding_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::AddRemoveBuilding(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddRemoveBuildingResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddRemoveBuilding_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::AddRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::AddRemoveBuildingRequest* request, ::mruv::objects::AddRemoveBuildingResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddRemoveBuilding_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::AddRemoveBuilding(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::AddRemoveBuildingResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddRemoveBuilding_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::AddRemoveBuildingResponse>* MruVObjectsService::Stub::AsyncAddRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::AddRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::AddRemoveBuildingResponse>::Create(channel_.get(), cq, rpcmethod_AddRemoveBuilding_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::AddRemoveBuildingResponse>* MruVObjectsService::Stub::PrepareAsyncAddRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::AddRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::AddRemoveBuildingResponse>::Create(channel_.get(), cq, rpcmethod_AddRemoveBuilding_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::GetRemovedBuildings(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest& request, ::mruv::objects::GetRemovedBuildingsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetRemovedBuildings_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::GetRemovedBuildings(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest* request, ::mruv::objects::GetRemovedBuildingsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRemovedBuildings_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::GetRemovedBuildings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetRemovedBuildingsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRemovedBuildings_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::GetRemovedBuildings(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest* request, ::mruv::objects::GetRemovedBuildingsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetRemovedBuildings_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::GetRemovedBuildings(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetRemovedBuildingsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetRemovedBuildings_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetRemovedBuildingsResponse>* MruVObjectsService::Stub::AsyncGetRemovedBuildingsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetRemovedBuildingsResponse>::Create(channel_.get(), cq, rpcmethod_GetRemovedBuildings_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetRemovedBuildingsResponse>* MruVObjectsService::Stub::PrepareAsyncGetRemovedBuildingsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetRemovedBuildingsResponse>::Create(channel_.get(), cq, rpcmethod_GetRemovedBuildings_, context, request, false);
+}
+
+::grpc::Status MruVObjectsService::Stub::DeleteRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::mruv::objects::DeleteRemoveBuildingResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteRemoveBuilding_, context, request, response);
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest* request, ::mruv::objects::DeleteRemoveBuildingResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteRemoveBuilding_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteRemoveBuilding(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteRemoveBuildingResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteRemoveBuilding_, context, request, response, std::move(f));
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest* request, ::mruv::objects::DeleteRemoveBuildingResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteRemoveBuilding_, context, request, response, reactor);
+}
+
+void MruVObjectsService::Stub::experimental_async::DeleteRemoveBuilding(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteRemoveBuildingResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteRemoveBuilding_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteRemoveBuildingResponse>* MruVObjectsService::Stub::AsyncDeleteRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteRemoveBuildingResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRemoveBuilding_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteRemoveBuildingResponse>* MruVObjectsService::Stub::PrepareAsyncDeleteRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteRemoveBuildingResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRemoveBuilding_, context, request, false);
+}
+
 ::grpc::Status MruVObjectsService::Stub::FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::mruv::objects::FetchAllResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_FetchAll_, context, request, response);
 }
@@ -468,6 +558,36 @@ MruVObjectsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::AddRemoveBuildingRequest, ::mruv::objects::AddRemoveBuildingResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::AddRemoveBuildingRequest* req,
+             ::mruv::objects::AddRemoveBuildingResponse* resp) {
+               return service->AddRemoveBuilding(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[11],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::GetRemovedBuildingsRequest, ::mruv::objects::GetRemovedBuildingsResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::GetRemovedBuildingsRequest* req,
+             ::mruv::objects::GetRemovedBuildingsResponse* resp) {
+               return service->GetRemovedBuildings(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::DeleteRemoveBuildingRequest, ::mruv::objects::DeleteRemoveBuildingResponse>(
+          [](MruVObjectsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::objects::DeleteRemoveBuildingRequest* req,
+             ::mruv::objects::DeleteRemoveBuildingResponse* resp) {
+               return service->DeleteRemoveBuilding(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVObjectsService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVObjectsService::Service, ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>(
           [](MruVObjectsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
@@ -544,6 +664,27 @@ MruVObjectsService::Service::~Service() {
 }
 
 ::grpc::Status MruVObjectsService::Service::DeleteObjectMaterialText(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectMaterialTextRequest* request, ::mruv::objects::DeleteObjectMaterialTextResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::AddRemoveBuilding(::grpc::ServerContext* context, const ::mruv::objects::AddRemoveBuildingRequest* request, ::mruv::objects::AddRemoveBuildingResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::GetRemovedBuildings(::grpc::ServerContext* context, const ::mruv::objects::GetRemovedBuildingsRequest* request, ::mruv::objects::GetRemovedBuildingsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVObjectsService::Service::DeleteRemoveBuilding(::grpc::ServerContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest* request, ::mruv::objects::DeleteRemoveBuildingResponse* response) {
   (void) context;
   (void) request;
   (void) response;

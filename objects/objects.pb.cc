@@ -21,6 +21,7 @@ extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_I
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Object_objects_2fobjects_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemovedBuilding_objects_2fobjects_2eproto;
 namespace mruv {
 namespace objects {
 class Object_MaterialsEntry_DoNotUseDefaultTypeInternal {
@@ -43,6 +44,10 @@ class MaterialTextDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MaterialText> _instance;
 } _MaterialText_default_instance_;
+class RemovedBuildingDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RemovedBuilding> _instance;
+} _RemovedBuilding_default_instance_;
 class CreateObjectRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateObjectRequest> _instance;
@@ -131,6 +136,30 @@ class DeleteObjectMaterialTextResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteObjectMaterialTextResponse> _instance;
 } _DeleteObjectMaterialTextResponse_default_instance_;
+class AddRemoveBuildingRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddRemoveBuildingRequest> _instance;
+} _AddRemoveBuildingRequest_default_instance_;
+class AddRemoveBuildingResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AddRemoveBuildingResponse> _instance;
+} _AddRemoveBuildingResponse_default_instance_;
+class GetRemovedBuildingsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetRemovedBuildingsRequest> _instance;
+} _GetRemovedBuildingsRequest_default_instance_;
+class GetRemovedBuildingsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetRemovedBuildingsResponse> _instance;
+} _GetRemovedBuildingsResponse_default_instance_;
+class DeleteRemoveBuildingRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteRemoveBuildingRequest> _instance;
+} _DeleteRemoveBuildingRequest_default_instance_;
+class DeleteRemoveBuildingResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteRemoveBuildingResponse> _instance;
+} _DeleteRemoveBuildingResponse_default_instance_;
 class FetchAllRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllRequest> _instance;
@@ -198,6 +227,35 @@ static void InitDefaultsscc_info_AddObjectMaterialTextResponse_objects_2fobjects
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_AddRemoveBuildingRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_AddRemoveBuildingRequest_default_instance_;
+    new (ptr) ::mruv::objects::AddRemoveBuildingRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::AddRemoveBuildingRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_AddRemoveBuildingRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_AddRemoveBuildingRequest_objects_2fobjects_2eproto}, {
+      &scc_info_RemovedBuilding_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_AddRemoveBuildingResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_AddRemoveBuildingResponse_default_instance_;
+    new (ptr) ::mruv::objects::AddRemoveBuildingResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::AddRemoveBuildingResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AddRemoveBuildingResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AddRemoveBuildingResponse_objects_2fobjects_2eproto}, {}};
 
 static void InitDefaultsscc_info_CreateObjectRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -311,6 +369,34 @@ static void InitDefaultsscc_info_DeleteObjectResponse_objects_2fobjects_2eproto(
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteObjectResponse_objects_2fobjects_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteObjectResponse_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteRemoveBuildingRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_DeleteRemoveBuildingRequest_default_instance_;
+    new (ptr) ::mruv::objects::DeleteRemoveBuildingRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::DeleteRemoveBuildingRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteRemoveBuildingRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteRemoveBuildingRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_DeleteRemoveBuildingResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_DeleteRemoveBuildingResponse_default_instance_;
+    new (ptr) ::mruv::objects::DeleteRemoveBuildingResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::DeleteRemoveBuildingResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteRemoveBuildingResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteRemoveBuildingResponse_objects_2fobjects_2eproto}, {}};
 
 static void InitDefaultsscc_info_FetchAllRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -456,6 +542,35 @@ static void InitDefaultsscc_info_GetObjectResponse_objects_2fobjects_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetObjectResponse_objects_2fobjects_2eproto}, {
       &scc_info_Object_objects_2fobjects_2eproto.base,}};
 
+static void InitDefaultsscc_info_GetRemovedBuildingsRequest_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetRemovedBuildingsRequest_default_instance_;
+    new (ptr) ::mruv::objects::GetRemovedBuildingsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::GetRemovedBuildingsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetRemovedBuildingsRequest_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetRemovedBuildingsRequest_objects_2fobjects_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetRemovedBuildingsResponse_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_GetRemovedBuildingsResponse_default_instance_;
+    new (ptr) ::mruv::objects::GetRemovedBuildingsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::GetRemovedBuildingsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetRemovedBuildingsResponse_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetRemovedBuildingsResponse_objects_2fobjects_2eproto}, {
+      &scc_info_RemovedBuilding_objects_2fobjects_2eproto.base,}};
+
 static void InitDefaultsscc_info_Material_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -528,6 +643,20 @@ static void InitDefaultsscc_info_Object_MaterialsEntry_DoNotUse_objects_2fobject
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto}, {
       &scc_info_Material_objects_2fobjects_2eproto.base,}};
 
+static void InitDefaultsscc_info_RemovedBuilding_objects_2fobjects_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_RemovedBuilding_default_instance_;
+    new (ptr) ::mruv::objects::RemovedBuilding();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::RemovedBuilding::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemovedBuilding_objects_2fobjects_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_RemovedBuilding_objects_2fobjects_2eproto}, {}};
+
 static void InitDefaultsscc_info_UpdateObjectRequest_objects_2fobjects_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -557,7 +686,7 @@ static void InitDefaultsscc_info_UpdateObjectResponse_objects_2fobjects_2eproto(
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateObjectResponse_objects_2fobjects_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateObjectResponse_objects_2fobjects_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_objects_2fobjects_2eproto[29];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_objects_2fobjects_2eproto[36];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_objects_2fobjects_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_objects_2fobjects_2eproto = nullptr;
 
@@ -611,6 +740,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, txd_name_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, texture_name_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, material_color_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::Material, estate_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -624,6 +754,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, font_color_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, back_color_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MaterialText, text_alignment_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, model_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, x_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, y_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, z_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::RemovedBuilding, radius_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::CreateObjectRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -764,6 +904,41 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fobjects_2eproto::off
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddRemoveBuildingRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddRemoveBuildingRequest, removed_building_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddRemoveBuildingResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::AddRemoveBuildingResponse, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetRemovedBuildingsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetRemovedBuildingsRequest, estate_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetRemovedBuildingsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::GetRemovedBuildingsResponse, removed_building_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteRemoveBuildingRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteRemoveBuildingRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::DeleteRemoveBuildingResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -780,31 +955,38 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 9, 16, sizeof(::mruv::objects::Object_MaterialTextsEntry_DoNotUse)},
   { 18, -1, sizeof(::mruv::objects::Object)},
   { 40, -1, sizeof(::mruv::objects::Material)},
-  { 49, -1, sizeof(::mruv::objects::MaterialText)},
-  { 62, -1, sizeof(::mruv::objects::CreateObjectRequest)},
-  { 68, -1, sizeof(::mruv::objects::CreateObjectResponse)},
-  { 74, -1, sizeof(::mruv::objects::GetObjectRequest)},
-  { 80, -1, sizeof(::mruv::objects::GetObjectResponse)},
-  { 86, -1, sizeof(::mruv::objects::UpdateObjectRequest)},
-  { 93, -1, sizeof(::mruv::objects::UpdateObjectResponse)},
-  { 98, -1, sizeof(::mruv::objects::DeleteObjectRequest)},
-  { 104, -1, sizeof(::mruv::objects::DeleteObjectResponse)},
-  { 109, -1, sizeof(::mruv::objects::AddObjectMaterialRequest)},
-  { 117, -1, sizeof(::mruv::objects::AddObjectMaterialResponse)},
-  { 122, -1, sizeof(::mruv::objects::GetObjectMaterialsRequest)},
-  { 128, 135, sizeof(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse)},
-  { 137, -1, sizeof(::mruv::objects::GetObjectMaterialsResponse)},
-  { 143, -1, sizeof(::mruv::objects::DeleteObjectMaterialRequest)},
-  { 150, -1, sizeof(::mruv::objects::DeleteObjectMaterialResponse)},
-  { 155, -1, sizeof(::mruv::objects::AddObjectMaterialTextRequest)},
-  { 163, -1, sizeof(::mruv::objects::AddObjectMaterialTextResponse)},
-  { 168, -1, sizeof(::mruv::objects::GetObjectMaterialTextsRequest)},
-  { 174, 181, sizeof(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse)},
-  { 183, -1, sizeof(::mruv::objects::GetObjectMaterialTextsResponse)},
-  { 189, -1, sizeof(::mruv::objects::DeleteObjectMaterialTextRequest)},
-  { 196, -1, sizeof(::mruv::objects::DeleteObjectMaterialTextResponse)},
-  { 201, -1, sizeof(::mruv::objects::FetchAllRequest)},
-  { 206, -1, sizeof(::mruv::objects::FetchAllResponse)},
+  { 50, -1, sizeof(::mruv::objects::MaterialText)},
+  { 63, -1, sizeof(::mruv::objects::RemovedBuilding)},
+  { 73, -1, sizeof(::mruv::objects::CreateObjectRequest)},
+  { 79, -1, sizeof(::mruv::objects::CreateObjectResponse)},
+  { 85, -1, sizeof(::mruv::objects::GetObjectRequest)},
+  { 91, -1, sizeof(::mruv::objects::GetObjectResponse)},
+  { 97, -1, sizeof(::mruv::objects::UpdateObjectRequest)},
+  { 104, -1, sizeof(::mruv::objects::UpdateObjectResponse)},
+  { 109, -1, sizeof(::mruv::objects::DeleteObjectRequest)},
+  { 115, -1, sizeof(::mruv::objects::DeleteObjectResponse)},
+  { 120, -1, sizeof(::mruv::objects::AddObjectMaterialRequest)},
+  { 128, -1, sizeof(::mruv::objects::AddObjectMaterialResponse)},
+  { 133, -1, sizeof(::mruv::objects::GetObjectMaterialsRequest)},
+  { 139, 146, sizeof(::mruv::objects::GetObjectMaterialsResponse_MaterialsEntry_DoNotUse)},
+  { 148, -1, sizeof(::mruv::objects::GetObjectMaterialsResponse)},
+  { 154, -1, sizeof(::mruv::objects::DeleteObjectMaterialRequest)},
+  { 161, -1, sizeof(::mruv::objects::DeleteObjectMaterialResponse)},
+  { 166, -1, sizeof(::mruv::objects::AddObjectMaterialTextRequest)},
+  { 174, -1, sizeof(::mruv::objects::AddObjectMaterialTextResponse)},
+  { 179, -1, sizeof(::mruv::objects::GetObjectMaterialTextsRequest)},
+  { 185, 192, sizeof(::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse)},
+  { 194, -1, sizeof(::mruv::objects::GetObjectMaterialTextsResponse)},
+  { 200, -1, sizeof(::mruv::objects::DeleteObjectMaterialTextRequest)},
+  { 207, -1, sizeof(::mruv::objects::DeleteObjectMaterialTextResponse)},
+  { 212, -1, sizeof(::mruv::objects::AddRemoveBuildingRequest)},
+  { 218, -1, sizeof(::mruv::objects::AddRemoveBuildingResponse)},
+  { 224, -1, sizeof(::mruv::objects::GetRemovedBuildingsRequest)},
+  { 230, -1, sizeof(::mruv::objects::GetRemovedBuildingsResponse)},
+  { 236, -1, sizeof(::mruv::objects::DeleteRemoveBuildingRequest)},
+  { 242, -1, sizeof(::mruv::objects::DeleteRemoveBuildingResponse)},
+  { 247, -1, sizeof(::mruv::objects::FetchAllRequest)},
+  { 252, -1, sizeof(::mruv::objects::FetchAllResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -813,6 +995,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_Object_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_Material_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_MaterialText_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_RemovedBuilding_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_CreateObjectRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_CreateObjectResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectRequest_default_instance_),
@@ -835,6 +1018,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetObjectMaterialTextsResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectMaterialTextRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteObjectMaterialTextResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_AddRemoveBuildingRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_AddRemoveBuildingResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetRemovedBuildingsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_GetRemovedBuildingsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteRemoveBuildingRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_DeleteRemoveBuildingResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllResponse_default_instance_),
 };
@@ -855,46 +1044,57 @@ const char descriptor_table_protodef_objects_2fobjects_2eproto[] PROTOBUF_SECTIO
   "lue\030\002 \001(\0132\026.mruv.objects.Material:\0028\001\032P\n"
   "\022MaterialTextsEntry\022\013\n\003key\030\001 \001(\r\022)\n\005valu"
   "e\030\002 \001(\0132\032.mruv.objects.MaterialText:\0028\001\""
-  "\\\n\010Material\022\020\n\010model_id\030\001 \001(\005\022\020\n\010txd_nam"
+  "o\n\010Material\022\020\n\010model_id\030\001 \001(\005\022\020\n\010txd_nam"
   "e\030\002 \001(\t\022\024\n\014texture_name\030\003 \001(\t\022\026\n\016materia"
-  "l_color\030\004 \001(\005\"\303\001\n\014MaterialText\022\014\n\004text\030\001"
-  " \001(\t\0221\n\rmaterial_size\030\002 \001(\0162\032.mruv.objec"
-  "ts.MaterialSize\022\021\n\tfont_face\030\003 \001(\t\022\021\n\tfo"
-  "nt_size\030\004 \001(\r\022\014\n\004bold\030\005 \001(\010\022\022\n\nfont_colo"
-  "r\030\006 \001(\005\022\022\n\nback_color\030\007 \001(\005\022\026\n\016text_alig"
-  "nment\030\010 \001(\005\";\n\023CreateObjectRequest\022$\n\006ob"
-  "ject\030\001 \001(\0132\024.mruv.objects.Object\"\"\n\024Crea"
-  "teObjectResponse\022\n\n\002id\030\001 \001(\r\"\036\n\020GetObjec"
-  "tRequest\022\n\n\002id\030\001 \001(\r\"9\n\021GetObjectRespons"
-  "e\022$\n\006object\030\001 \001(\0132\024.mruv.objects.Object\""
-  "G\n\023UpdateObjectRequest\022\n\n\002id\030\001 \001(\r\022$\n\006ob"
-  "ject\030\002 \001(\0132\024.mruv.objects.Object\"\026\n\024Upda"
-  "teObjectResponse\"!\n\023DeleteObjectRequest\022"
-  "\n\n\002id\030\001 \001(\r\"\026\n\024DeleteObjectResponse\"f\n\030A"
-  "ddObjectMaterialRequest\022\021\n\tobject_id\030\001 \001"
-  "(\r\022\r\n\005index\030\002 \001(\r\022(\n\010material\030\003 \001(\0132\026.mr"
-  "uv.objects.Material\"\033\n\031AddObjectMaterial"
-  "Response\".\n\031GetObjectMaterialsRequest\022\021\n"
-  "\tobject_id\030\001 \001(\r\"\262\001\n\032GetObjectMaterialsR"
-  "esponse\022J\n\tmaterials\030\001 \003(\01327.mruv.object"
-  "s.GetObjectMaterialsResponse.MaterialsEn"
-  "try\032H\n\016MaterialsEntry\022\013\n\003key\030\001 \001(\r\022%\n\005va"
-  "lue\030\002 \001(\0132\026.mruv.objects.Material:\0028\001\"\?\n"
-  "\033DeleteObjectMaterialRequest\022\021\n\tobject_i"
-  "d\030\001 \001(\r\022\r\n\005index\030\002 \001(\r\"\036\n\034DeleteObjectMa"
-  "terialResponse\"s\n\034AddObjectMaterialTextR"
-  "equest\022\021\n\tobject_id\030\001 \001(\r\022\r\n\005index\030\002 \001(\r"
-  "\0221\n\rmaterial_text\030\003 \001(\0132\032.mruv.objects.M"
-  "aterialText\"\037\n\035AddObjectMaterialTextResp"
-  "onse\"2\n\035GetObjectMaterialTextsRequest\022\021\n"
-  "\tobject_id\030\001 \001(\r\"\313\001\n\036GetObjectMaterialTe"
-  "xtsResponse\022W\n\016material_texts\030\001 \003(\0132\?.mr"
-  "uv.objects.GetObjectMaterialTextsRespons"
-  "e.MaterialTextsEntry\032P\n\022MaterialTextsEnt"
-  "ry\022\013\n\003key\030\001 \001(\r\022)\n\005value\030\002 \001(\0132\032.mruv.ob"
-  "jects.MaterialText:\0028\001\"C\n\037DeleteObjectMa"
-  "terialTextRequest\022\021\n\tobject_id\030\001 \001(\r\022\r\n\005"
-  "index\030\002 \001(\r\"\"\n DeleteObjectMaterialTextR"
+  "l_color\030\004 \001(\005\022\021\n\testate_id\030\005 \001(\r\"\303\001\n\014Mat"
+  "erialText\022\014\n\004text\030\001 \001(\t\0221\n\rmaterial_size"
+  "\030\002 \001(\0162\032.mruv.objects.MaterialSize\022\021\n\tfo"
+  "nt_face\030\003 \001(\t\022\021\n\tfont_size\030\004 \001(\r\022\014\n\004bold"
+  "\030\005 \001(\010\022\022\n\nfont_color\030\006 \001(\005\022\022\n\nback_color"
+  "\030\007 \001(\005\022\026\n\016text_alignment\030\010 \001(\005\"Q\n\017Remove"
+  "dBuilding\022\r\n\005model\030\001 \001(\r\022\t\n\001x\030\002 \001(\002\022\t\n\001y"
+  "\030\003 \001(\002\022\t\n\001z\030\004 \001(\002\022\016\n\006radius\030\005 \001(\002\";\n\023Cre"
+  "ateObjectRequest\022$\n\006object\030\001 \001(\0132\024.mruv."
+  "objects.Object\"\"\n\024CreateObjectResponse\022\n"
+  "\n\002id\030\001 \001(\r\"\036\n\020GetObjectRequest\022\n\n\002id\030\001 \001"
+  "(\r\"9\n\021GetObjectResponse\022$\n\006object\030\001 \001(\0132"
+  "\024.mruv.objects.Object\"G\n\023UpdateObjectReq"
+  "uest\022\n\n\002id\030\001 \001(\r\022$\n\006object\030\002 \001(\0132\024.mruv."
+  "objects.Object\"\026\n\024UpdateObjectResponse\"!"
+  "\n\023DeleteObjectRequest\022\n\n\002id\030\001 \001(\r\"\026\n\024Del"
+  "eteObjectResponse\"f\n\030AddObjectMaterialRe"
+  "quest\022\021\n\tobject_id\030\001 \001(\r\022\r\n\005index\030\002 \001(\r\022"
+  "(\n\010material\030\003 \001(\0132\026.mruv.objects.Materia"
+  "l\"\033\n\031AddObjectMaterialResponse\".\n\031GetObj"
+  "ectMaterialsRequest\022\021\n\tobject_id\030\001 \001(\r\"\262"
+  "\001\n\032GetObjectMaterialsResponse\022J\n\tmateria"
+  "ls\030\001 \003(\01327.mruv.objects.GetObjectMateria"
+  "lsResponse.MaterialsEntry\032H\n\016MaterialsEn"
+  "try\022\013\n\003key\030\001 \001(\r\022%\n\005value\030\002 \001(\0132\026.mruv.o"
+  "bjects.Material:\0028\001\"\?\n\033DeleteObjectMater"
+  "ialRequest\022\021\n\tobject_id\030\001 \001(\r\022\r\n\005index\030\002"
+  " \001(\r\"\036\n\034DeleteObjectMaterialResponse\"s\n\034"
+  "AddObjectMaterialTextRequest\022\021\n\tobject_i"
+  "d\030\001 \001(\r\022\r\n\005index\030\002 \001(\r\0221\n\rmaterial_text\030"
+  "\003 \001(\0132\032.mruv.objects.MaterialText\"\037\n\035Add"
+  "ObjectMaterialTextResponse\"2\n\035GetObjectM"
+  "aterialTextsRequest\022\021\n\tobject_id\030\001 \001(\r\"\313"
+  "\001\n\036GetObjectMaterialTextsResponse\022W\n\016mat"
+  "erial_texts\030\001 \003(\0132\?.mruv.objects.GetObje"
+  "ctMaterialTextsResponse.MaterialTextsEnt"
+  "ry\032P\n\022MaterialTextsEntry\022\013\n\003key\030\001 \001(\r\022)\n"
+  "\005value\030\002 \001(\0132\032.mruv.objects.MaterialText"
+  ":\0028\001\"C\n\037DeleteObjectMaterialTextRequest\022"
+  "\021\n\tobject_id\030\001 \001(\r\022\r\n\005index\030\002 \001(\r\"\"\n Del"
+  "eteObjectMaterialTextResponse\"S\n\030AddRemo"
+  "veBuildingRequest\0227\n\020removed_building\030\001 "
+  "\001(\0132\035.mruv.objects.RemovedBuilding\"\'\n\031Ad"
+  "dRemoveBuildingResponse\022\n\n\002id\030\001 \001(\r\"/\n\032G"
+  "etRemovedBuildingsRequest\022\021\n\testate_id\030\001"
+  " \001(\r\"V\n\033GetRemovedBuildingsResponse\0227\n\020r"
+  "emoved_building\030\001 \003(\0132\035.mruv.objects.Rem"
+  "ovedBuilding\")\n\033DeleteRemoveBuildingRequ"
+  "est\022\n\n\002id\030\001 \001(\r\"\036\n\034DeleteRemoveBuildingR"
   "esponse\"\021\n\017FetchAllRequest\"9\n\020FetchAllRe"
   "sponse\022%\n\007objects\030\001 \003(\0132\024.mruv.objects.O"
   "bject*\375\003\n\014MaterialSize\022\032\n\026OBJECT_MATERIA"
@@ -909,7 +1109,7 @@ const char descriptor_table_protodef_objects_2fobjects_2eproto[] PROTOBUF_SECTIO
   "ERIAL_SIZE_256X256\020d\022\037\n\033OBJECT_MATERIAL_"
   "SIZE_512X64\020n\022 \n\034OBJECT_MATERIAL_SIZE_51"
   "2X128\020x\022!\n\034OBJECT_MATERIAL_SIZE_512X256\020"
-  "\202\001\022!\n\034OBJECT_MATERIAL_SIZE_512X512\020\214\0012\346\013"
+  "\202\001\022!\n\034OBJECT_MATERIAL_SIZE_512X512\020\214\0012\206\017"
   "\n\022MruVObjectsService\022j\n\014CreateObject\022!.m"
   "ruv.objects.CreateObjectRequest\032\".mruv.o"
   "bjects.CreateObjectResponse\"\023\202\323\344\223\002\r\"\013/v1"
@@ -945,19 +1145,32 @@ const char descriptor_table_protodef_objects_2fobjects_2eproto[] PROTOBUF_SECTIO
   "objects.DeleteObjectMaterialTextRequest\032"
   "..mruv.objects.DeleteObjectMaterialTextR"
   "esponse\"-\202\323\344\223\002\'*%/v1/objects/{object_id}"
-  "/materialTexts\022^\n\010FetchAll\022\035.mruv.object"
-  "s.FetchAllRequest\032\036.mruv.objects.FetchAl"
-  "lResponse\"\023\202\323\344\223\002\r\022\013/v1/objectsB\'Z%github"
-  ".com/MruV-RP/mruv-pb-go/objectsb\006proto3"
+  "/materialTexts\022\201\001\n\021AddRemoveBuilding\022&.m"
+  "ruv.objects.AddRemoveBuildingRequest\032\'.m"
+  "ruv.objects.AddRemoveBuildingResponse\"\033\202"
+  "\323\344\223\002\025\"\023/v1/objects/removed\022\207\001\n\023GetRemove"
+  "dBuildings\022(.mruv.objects.GetRemovedBuil"
+  "dingsRequest\032).mruv.objects.GetRemovedBu"
+  "ildingsResponse\"\033\202\323\344\223\002\025\022\023/v1/objects/rem"
+  "oved\022\217\001\n\024DeleteRemoveBuilding\022).mruv.obj"
+  "ects.DeleteRemoveBuildingRequest\032*.mruv."
+  "objects.DeleteRemoveBuildingResponse\" \202\323"
+  "\344\223\002\032*\030/v1/objects/removed/{id}\022^\n\010FetchA"
+  "ll\022\035.mruv.objects.FetchAllRequest\032\036.mruv"
+  ".objects.FetchAllResponse\"\023\202\323\344\223\002\r\022\013/v1/o"
+  "bjectsB\'Z%github.com/MruV-RP/mruv-pb-go/"
+  "objectsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_objects_2fobjects_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_objects_2fobjects_2eproto_sccs[29] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_objects_2fobjects_2eproto_sccs[36] = {
   &scc_info_AddObjectMaterialRequest_objects_2fobjects_2eproto.base,
   &scc_info_AddObjectMaterialResponse_objects_2fobjects_2eproto.base,
   &scc_info_AddObjectMaterialTextRequest_objects_2fobjects_2eproto.base,
   &scc_info_AddObjectMaterialTextResponse_objects_2fobjects_2eproto.base,
+  &scc_info_AddRemoveBuildingRequest_objects_2fobjects_2eproto.base,
+  &scc_info_AddRemoveBuildingResponse_objects_2fobjects_2eproto.base,
   &scc_info_CreateObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_CreateObjectResponse_objects_2fobjects_2eproto.base,
   &scc_info_DeleteObjectMaterialRequest_objects_2fobjects_2eproto.base,
@@ -966,6 +1179,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_obj
   &scc_info_DeleteObjectMaterialTextResponse_objects_2fobjects_2eproto.base,
   &scc_info_DeleteObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_DeleteObjectResponse_objects_2fobjects_2eproto.base,
+  &scc_info_DeleteRemoveBuildingRequest_objects_2fobjects_2eproto.base,
+  &scc_info_DeleteRemoveBuildingResponse_objects_2fobjects_2eproto.base,
   &scc_info_FetchAllRequest_objects_2fobjects_2eproto.base,
   &scc_info_FetchAllResponse_objects_2fobjects_2eproto.base,
   &scc_info_GetObjectMaterialTextsRequest_objects_2fobjects_2eproto.base,
@@ -976,21 +1191,24 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_obj
   &scc_info_GetObjectMaterialsResponse_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto.base,
   &scc_info_GetObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_GetObjectResponse_objects_2fobjects_2eproto.base,
+  &scc_info_GetRemovedBuildingsRequest_objects_2fobjects_2eproto.base,
+  &scc_info_GetRemovedBuildingsResponse_objects_2fobjects_2eproto.base,
   &scc_info_Material_objects_2fobjects_2eproto.base,
   &scc_info_MaterialText_objects_2fobjects_2eproto.base,
   &scc_info_Object_objects_2fobjects_2eproto.base,
   &scc_info_Object_MaterialTextsEntry_DoNotUse_objects_2fobjects_2eproto.base,
   &scc_info_Object_MaterialsEntry_DoNotUse_objects_2fobjects_2eproto.base,
+  &scc_info_RemovedBuilding_objects_2fobjects_2eproto.base,
   &scc_info_UpdateObjectRequest_objects_2fobjects_2eproto.base,
   &scc_info_UpdateObjectResponse_objects_2fobjects_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_objects_2fobjects_2eproto_once;
 static bool descriptor_table_objects_2fobjects_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fobjects_2eproto = {
-  &descriptor_table_objects_2fobjects_2eproto_initialized, descriptor_table_protodef_objects_2fobjects_2eproto, "objects/objects.proto", 4359,
-  &descriptor_table_objects_2fobjects_2eproto_once, descriptor_table_objects_2fobjects_2eproto_sccs, descriptor_table_objects_2fobjects_2eproto_deps, 29, 1,
+  &descriptor_table_objects_2fobjects_2eproto_initialized, descriptor_table_protodef_objects_2fobjects_2eproto, "objects/objects.proto", 5215,
+  &descriptor_table_objects_2fobjects_2eproto_once, descriptor_table_objects_2fobjects_2eproto_sccs, descriptor_table_objects_2fobjects_2eproto_deps, 36, 1,
   schemas, file_default_instances, TableStruct_objects_2fobjects_2eproto::offsets,
-  file_level_metadata_objects_2fobjects_2eproto, 29, file_level_enum_descriptors_objects_2fobjects_2eproto, file_level_service_descriptors_objects_2fobjects_2eproto,
+  file_level_metadata_objects_2fobjects_2eproto, 36, file_level_enum_descriptors_objects_2fobjects_2eproto, file_level_service_descriptors_objects_2fobjects_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1710,8 +1928,8 @@ Material::Material(const Material& from)
     texture_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.texture_name_);
   }
   ::memcpy(&model_id_, &from.model_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&material_color_) -
-    reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
+    static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
+    reinterpret_cast<char*>(&model_id_)) + sizeof(estate_id_));
   // @@protoc_insertion_point(copy_constructor:mruv.objects.Material)
 }
 
@@ -1720,8 +1938,8 @@ void Material::SharedCtor() {
   txd_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   texture_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&model_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&material_color_) -
-      reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
+      reinterpret_cast<char*>(&estate_id_) -
+      reinterpret_cast<char*>(&model_id_)) + sizeof(estate_id_));
 }
 
 Material::~Material() {
@@ -1752,8 +1970,8 @@ void Material::Clear() {
   txd_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   texture_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&model_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&material_color_) -
-      reinterpret_cast<char*>(&model_id_)) + sizeof(material_color_));
+      reinterpret_cast<char*>(&estate_id_) -
+      reinterpret_cast<char*>(&model_id_)) + sizeof(estate_id_));
   _internal_metadata_.Clear();
 }
 
@@ -1793,6 +2011,13 @@ const char* Material::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           material_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 estate_id = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1854,6 +2079,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_material_color(), target);
   }
 
+  // uint32 estate_id = 5;
+  if (this->estate_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_estate_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -1896,6 +2127,13 @@ size_t Material::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_material_color());
+  }
+
+  // uint32 estate_id = 5;
+  if (this->estate_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_estate_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1943,6 +2181,9 @@ void Material::MergeFrom(const Material& from) {
   if (from.material_color() != 0) {
     _internal_set_material_color(from._internal_material_color());
   }
+  if (from.estate_id() != 0) {
+    _internal_set_estate_id(from._internal_estate_id());
+  }
 }
 
 void Material::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1972,6 +2213,7 @@ void Material::InternalSwap(Material* other) {
     GetArenaNoVirtual());
   swap(model_id_, other->model_id_);
   swap(material_color_, other->material_color_);
+  swap(estate_id_, other->estate_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Material::GetMetadata() const {
@@ -2365,6 +2607,286 @@ void MaterialText::InternalSwap(MaterialText* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MaterialText::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void RemovedBuilding::InitAsDefaultInstance() {
+}
+class RemovedBuilding::_Internal {
+ public:
+};
+
+RemovedBuilding::RemovedBuilding()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.RemovedBuilding)
+}
+RemovedBuilding::RemovedBuilding(const RemovedBuilding& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&model_, &from.model_,
+    static_cast<size_t>(reinterpret_cast<char*>(&radius_) -
+    reinterpret_cast<char*>(&model_)) + sizeof(radius_));
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.RemovedBuilding)
+}
+
+void RemovedBuilding::SharedCtor() {
+  ::memset(&model_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&radius_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(radius_));
+}
+
+RemovedBuilding::~RemovedBuilding() {
+  // @@protoc_insertion_point(destructor:mruv.objects.RemovedBuilding)
+  SharedDtor();
+}
+
+void RemovedBuilding::SharedDtor() {
+}
+
+void RemovedBuilding::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const RemovedBuilding& RemovedBuilding::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RemovedBuilding_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void RemovedBuilding::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.RemovedBuilding)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&model_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&radius_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(radius_));
+  _internal_metadata_.Clear();
+}
+
+const char* RemovedBuilding::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 model = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          model_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // float x = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float y = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float z = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float radius = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RemovedBuilding::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.RemovedBuilding)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 model = 1;
+  if (this->model() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_model(), target);
+  }
+
+  // float x = 2;
+  if (!(this->x() <= 0 && this->x() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_x(), target);
+  }
+
+  // float y = 3;
+  if (!(this->y() <= 0 && this->y() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_y(), target);
+  }
+
+  // float z = 4;
+  if (!(this->z() <= 0 && this->z() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_z(), target);
+  }
+
+  // float radius = 5;
+  if (!(this->radius() <= 0 && this->radius() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_radius(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.RemovedBuilding)
+  return target;
+}
+
+size_t RemovedBuilding::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.RemovedBuilding)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 model = 1;
+  if (this->model() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_model());
+  }
+
+  // float x = 2;
+  if (!(this->x() <= 0 && this->x() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float y = 3;
+  if (!(this->y() <= 0 && this->y() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float z = 4;
+  if (!(this->z() <= 0 && this->z() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float radius = 5;
+  if (!(this->radius() <= 0 && this->radius() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RemovedBuilding::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.RemovedBuilding)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RemovedBuilding* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RemovedBuilding>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.RemovedBuilding)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.RemovedBuilding)
+    MergeFrom(*source);
+  }
+}
+
+void RemovedBuilding::MergeFrom(const RemovedBuilding& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.RemovedBuilding)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.model() != 0) {
+    _internal_set_model(from._internal_model());
+  }
+  if (!(from.x() <= 0 && from.x() >= 0)) {
+    _internal_set_x(from._internal_x());
+  }
+  if (!(from.y() <= 0 && from.y() >= 0)) {
+    _internal_set_y(from._internal_y());
+  }
+  if (!(from.z() <= 0 && from.z() >= 0)) {
+    _internal_set_z(from._internal_z());
+  }
+  if (!(from.radius() <= 0 && from.radius() >= 0)) {
+    _internal_set_radius(from._internal_radius());
+  }
+}
+
+void RemovedBuilding::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.RemovedBuilding)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RemovedBuilding::CopyFrom(const RemovedBuilding& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.RemovedBuilding)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RemovedBuilding::IsInitialized() const {
+  return true;
+}
+
+void RemovedBuilding::InternalSwap(RemovedBuilding* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(model_, other->model_);
+  swap(x_, other->x_);
+  swap(y_, other->y_);
+  swap(z_, other->z_);
+  swap(radius_, other->radius_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RemovedBuilding::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6283,6 +6805,1113 @@ void DeleteObjectMaterialTextResponse::InternalSwap(DeleteObjectMaterialTextResp
 
 // ===================================================================
 
+void AddRemoveBuildingRequest::InitAsDefaultInstance() {
+  ::mruv::objects::_AddRemoveBuildingRequest_default_instance_._instance.get_mutable()->removed_building_ = const_cast< ::mruv::objects::RemovedBuilding*>(
+      ::mruv::objects::RemovedBuilding::internal_default_instance());
+}
+class AddRemoveBuildingRequest::_Internal {
+ public:
+  static const ::mruv::objects::RemovedBuilding& removed_building(const AddRemoveBuildingRequest* msg);
+};
+
+const ::mruv::objects::RemovedBuilding&
+AddRemoveBuildingRequest::_Internal::removed_building(const AddRemoveBuildingRequest* msg) {
+  return *msg->removed_building_;
+}
+AddRemoveBuildingRequest::AddRemoveBuildingRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.AddRemoveBuildingRequest)
+}
+AddRemoveBuildingRequest::AddRemoveBuildingRequest(const AddRemoveBuildingRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from._internal_has_removed_building()) {
+    removed_building_ = new ::mruv::objects::RemovedBuilding(*from.removed_building_);
+  } else {
+    removed_building_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.AddRemoveBuildingRequest)
+}
+
+void AddRemoveBuildingRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AddRemoveBuildingRequest_objects_2fobjects_2eproto.base);
+  removed_building_ = nullptr;
+}
+
+AddRemoveBuildingRequest::~AddRemoveBuildingRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.AddRemoveBuildingRequest)
+  SharedDtor();
+}
+
+void AddRemoveBuildingRequest::SharedDtor() {
+  if (this != internal_default_instance()) delete removed_building_;
+}
+
+void AddRemoveBuildingRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddRemoveBuildingRequest& AddRemoveBuildingRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddRemoveBuildingRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddRemoveBuildingRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.AddRemoveBuildingRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == nullptr && removed_building_ != nullptr) {
+    delete removed_building_;
+  }
+  removed_building_ = nullptr;
+  _internal_metadata_.Clear();
+}
+
+const char* AddRemoveBuildingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .mruv.objects.RemovedBuilding removed_building = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_removed_building(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddRemoveBuildingRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.AddRemoveBuildingRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mruv.objects.RemovedBuilding removed_building = 1;
+  if (this->has_removed_building()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::removed_building(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.AddRemoveBuildingRequest)
+  return target;
+}
+
+size_t AddRemoveBuildingRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.AddRemoveBuildingRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .mruv.objects.RemovedBuilding removed_building = 1;
+  if (this->has_removed_building()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *removed_building_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddRemoveBuildingRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.AddRemoveBuildingRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddRemoveBuildingRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddRemoveBuildingRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.AddRemoveBuildingRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.AddRemoveBuildingRequest)
+    MergeFrom(*source);
+  }
+}
+
+void AddRemoveBuildingRequest::MergeFrom(const AddRemoveBuildingRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.AddRemoveBuildingRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_removed_building()) {
+    _internal_mutable_removed_building()->::mruv::objects::RemovedBuilding::MergeFrom(from._internal_removed_building());
+  }
+}
+
+void AddRemoveBuildingRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.AddRemoveBuildingRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddRemoveBuildingRequest::CopyFrom(const AddRemoveBuildingRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.AddRemoveBuildingRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddRemoveBuildingRequest::IsInitialized() const {
+  return true;
+}
+
+void AddRemoveBuildingRequest::InternalSwap(AddRemoveBuildingRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(removed_building_, other->removed_building_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddRemoveBuildingRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AddRemoveBuildingResponse::InitAsDefaultInstance() {
+}
+class AddRemoveBuildingResponse::_Internal {
+ public:
+};
+
+AddRemoveBuildingResponse::AddRemoveBuildingResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.AddRemoveBuildingResponse)
+}
+AddRemoveBuildingResponse::AddRemoveBuildingResponse(const AddRemoveBuildingResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_ = from.id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.AddRemoveBuildingResponse)
+}
+
+void AddRemoveBuildingResponse::SharedCtor() {
+  id_ = 0u;
+}
+
+AddRemoveBuildingResponse::~AddRemoveBuildingResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.AddRemoveBuildingResponse)
+  SharedDtor();
+}
+
+void AddRemoveBuildingResponse::SharedDtor() {
+}
+
+void AddRemoveBuildingResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AddRemoveBuildingResponse& AddRemoveBuildingResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AddRemoveBuildingResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AddRemoveBuildingResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.AddRemoveBuildingResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* AddRemoveBuildingResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AddRemoveBuildingResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.AddRemoveBuildingResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.AddRemoveBuildingResponse)
+  return target;
+}
+
+size_t AddRemoveBuildingResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.AddRemoveBuildingResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AddRemoveBuildingResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.AddRemoveBuildingResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AddRemoveBuildingResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AddRemoveBuildingResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.AddRemoveBuildingResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.AddRemoveBuildingResponse)
+    MergeFrom(*source);
+  }
+}
+
+void AddRemoveBuildingResponse::MergeFrom(const AddRemoveBuildingResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.AddRemoveBuildingResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void AddRemoveBuildingResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.AddRemoveBuildingResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AddRemoveBuildingResponse::CopyFrom(const AddRemoveBuildingResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.AddRemoveBuildingResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AddRemoveBuildingResponse::IsInitialized() const {
+  return true;
+}
+
+void AddRemoveBuildingResponse::InternalSwap(AddRemoveBuildingResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AddRemoveBuildingResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetRemovedBuildingsRequest::InitAsDefaultInstance() {
+}
+class GetRemovedBuildingsRequest::_Internal {
+ public:
+};
+
+GetRemovedBuildingsRequest::GetRemovedBuildingsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.GetRemovedBuildingsRequest)
+}
+GetRemovedBuildingsRequest::GetRemovedBuildingsRequest(const GetRemovedBuildingsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  estate_id_ = from.estate_id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.GetRemovedBuildingsRequest)
+}
+
+void GetRemovedBuildingsRequest::SharedCtor() {
+  estate_id_ = 0u;
+}
+
+GetRemovedBuildingsRequest::~GetRemovedBuildingsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.GetRemovedBuildingsRequest)
+  SharedDtor();
+}
+
+void GetRemovedBuildingsRequest::SharedDtor() {
+}
+
+void GetRemovedBuildingsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetRemovedBuildingsRequest& GetRemovedBuildingsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetRemovedBuildingsRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetRemovedBuildingsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.GetRemovedBuildingsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  estate_id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* GetRemovedBuildingsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 estate_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetRemovedBuildingsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.GetRemovedBuildingsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 estate_id = 1;
+  if (this->estate_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_estate_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.GetRemovedBuildingsRequest)
+  return target;
+}
+
+size_t GetRemovedBuildingsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.GetRemovedBuildingsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 estate_id = 1;
+  if (this->estate_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_estate_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetRemovedBuildingsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.GetRemovedBuildingsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetRemovedBuildingsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetRemovedBuildingsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.GetRemovedBuildingsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.GetRemovedBuildingsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetRemovedBuildingsRequest::MergeFrom(const GetRemovedBuildingsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.GetRemovedBuildingsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.estate_id() != 0) {
+    _internal_set_estate_id(from._internal_estate_id());
+  }
+}
+
+void GetRemovedBuildingsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.GetRemovedBuildingsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetRemovedBuildingsRequest::CopyFrom(const GetRemovedBuildingsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.GetRemovedBuildingsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRemovedBuildingsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetRemovedBuildingsRequest::InternalSwap(GetRemovedBuildingsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(estate_id_, other->estate_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRemovedBuildingsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetRemovedBuildingsResponse::InitAsDefaultInstance() {
+}
+class GetRemovedBuildingsResponse::_Internal {
+ public:
+};
+
+GetRemovedBuildingsResponse::GetRemovedBuildingsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.GetRemovedBuildingsResponse)
+}
+GetRemovedBuildingsResponse::GetRemovedBuildingsResponse(const GetRemovedBuildingsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      removed_building_(from.removed_building_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.GetRemovedBuildingsResponse)
+}
+
+void GetRemovedBuildingsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetRemovedBuildingsResponse_objects_2fobjects_2eproto.base);
+}
+
+GetRemovedBuildingsResponse::~GetRemovedBuildingsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.GetRemovedBuildingsResponse)
+  SharedDtor();
+}
+
+void GetRemovedBuildingsResponse::SharedDtor() {
+}
+
+void GetRemovedBuildingsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetRemovedBuildingsResponse& GetRemovedBuildingsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetRemovedBuildingsResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetRemovedBuildingsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.GetRemovedBuildingsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  removed_building_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* GetRemovedBuildingsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .mruv.objects.RemovedBuilding removed_building = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_removed_building(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetRemovedBuildingsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.GetRemovedBuildingsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mruv.objects.RemovedBuilding removed_building = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_removed_building_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_removed_building(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.GetRemovedBuildingsResponse)
+  return target;
+}
+
+size_t GetRemovedBuildingsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.GetRemovedBuildingsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mruv.objects.RemovedBuilding removed_building = 1;
+  total_size += 1UL * this->_internal_removed_building_size();
+  for (const auto& msg : this->removed_building_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetRemovedBuildingsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.GetRemovedBuildingsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetRemovedBuildingsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetRemovedBuildingsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.GetRemovedBuildingsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.GetRemovedBuildingsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetRemovedBuildingsResponse::MergeFrom(const GetRemovedBuildingsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.GetRemovedBuildingsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  removed_building_.MergeFrom(from.removed_building_);
+}
+
+void GetRemovedBuildingsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.GetRemovedBuildingsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetRemovedBuildingsResponse::CopyFrom(const GetRemovedBuildingsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.GetRemovedBuildingsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetRemovedBuildingsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetRemovedBuildingsResponse::InternalSwap(GetRemovedBuildingsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  removed_building_.InternalSwap(&other->removed_building_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetRemovedBuildingsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteRemoveBuildingRequest::InitAsDefaultInstance() {
+}
+class DeleteRemoveBuildingRequest::_Internal {
+ public:
+};
+
+DeleteRemoveBuildingRequest::DeleteRemoveBuildingRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.DeleteRemoveBuildingRequest)
+}
+DeleteRemoveBuildingRequest::DeleteRemoveBuildingRequest(const DeleteRemoveBuildingRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_ = from.id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.DeleteRemoveBuildingRequest)
+}
+
+void DeleteRemoveBuildingRequest::SharedCtor() {
+  id_ = 0u;
+}
+
+DeleteRemoveBuildingRequest::~DeleteRemoveBuildingRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.DeleteRemoveBuildingRequest)
+  SharedDtor();
+}
+
+void DeleteRemoveBuildingRequest::SharedDtor() {
+}
+
+void DeleteRemoveBuildingRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteRemoveBuildingRequest& DeleteRemoveBuildingRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteRemoveBuildingRequest_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteRemoveBuildingRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.DeleteRemoveBuildingRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteRemoveBuildingRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteRemoveBuildingRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.DeleteRemoveBuildingRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.DeleteRemoveBuildingRequest)
+  return target;
+}
+
+size_t DeleteRemoveBuildingRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.DeleteRemoveBuildingRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteRemoveBuildingRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.DeleteRemoveBuildingRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteRemoveBuildingRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteRemoveBuildingRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.DeleteRemoveBuildingRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.DeleteRemoveBuildingRequest)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteRemoveBuildingRequest::MergeFrom(const DeleteRemoveBuildingRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.DeleteRemoveBuildingRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void DeleteRemoveBuildingRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.DeleteRemoveBuildingRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteRemoveBuildingRequest::CopyFrom(const DeleteRemoveBuildingRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.DeleteRemoveBuildingRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteRemoveBuildingRequest::IsInitialized() const {
+  return true;
+}
+
+void DeleteRemoveBuildingRequest::InternalSwap(DeleteRemoveBuildingRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteRemoveBuildingRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void DeleteRemoveBuildingResponse::InitAsDefaultInstance() {
+}
+class DeleteRemoveBuildingResponse::_Internal {
+ public:
+};
+
+DeleteRemoveBuildingResponse::DeleteRemoveBuildingResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.DeleteRemoveBuildingResponse)
+}
+DeleteRemoveBuildingResponse::DeleteRemoveBuildingResponse(const DeleteRemoveBuildingResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.DeleteRemoveBuildingResponse)
+}
+
+void DeleteRemoveBuildingResponse::SharedCtor() {
+}
+
+DeleteRemoveBuildingResponse::~DeleteRemoveBuildingResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.DeleteRemoveBuildingResponse)
+  SharedDtor();
+}
+
+void DeleteRemoveBuildingResponse::SharedDtor() {
+}
+
+void DeleteRemoveBuildingResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const DeleteRemoveBuildingResponse& DeleteRemoveBuildingResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_DeleteRemoveBuildingResponse_objects_2fobjects_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void DeleteRemoveBuildingResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.DeleteRemoveBuildingResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* DeleteRemoveBuildingResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* DeleteRemoveBuildingResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.DeleteRemoveBuildingResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.DeleteRemoveBuildingResponse)
+  return target;
+}
+
+size_t DeleteRemoveBuildingResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.DeleteRemoveBuildingResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DeleteRemoveBuildingResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.DeleteRemoveBuildingResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DeleteRemoveBuildingResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteRemoveBuildingResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.DeleteRemoveBuildingResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.DeleteRemoveBuildingResponse)
+    MergeFrom(*source);
+  }
+}
+
+void DeleteRemoveBuildingResponse::MergeFrom(const DeleteRemoveBuildingResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.DeleteRemoveBuildingResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void DeleteRemoveBuildingResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.DeleteRemoveBuildingResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DeleteRemoveBuildingResponse::CopyFrom(const DeleteRemoveBuildingResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.DeleteRemoveBuildingResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeleteRemoveBuildingResponse::IsInitialized() const {
+  return true;
+}
+
+void DeleteRemoveBuildingResponse::InternalSwap(DeleteRemoveBuildingResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeleteRemoveBuildingResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void FetchAllRequest::InitAsDefaultInstance() {
 }
 class FetchAllRequest::_Internal {
@@ -6645,6 +8274,9 @@ template<> PROTOBUF_NOINLINE ::mruv::objects::Material* Arena::CreateMaybeMessag
 template<> PROTOBUF_NOINLINE ::mruv::objects::MaterialText* Arena::CreateMaybeMessage< ::mruv::objects::MaterialText >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::MaterialText >(arena);
 }
+template<> PROTOBUF_NOINLINE ::mruv::objects::RemovedBuilding* Arena::CreateMaybeMessage< ::mruv::objects::RemovedBuilding >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::RemovedBuilding >(arena);
+}
 template<> PROTOBUF_NOINLINE ::mruv::objects::CreateObjectRequest* Arena::CreateMaybeMessage< ::mruv::objects::CreateObjectRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::CreateObjectRequest >(arena);
 }
@@ -6710,6 +8342,24 @@ template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectMaterialTextRequest* A
 }
 template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteObjectMaterialTextResponse* Arena::CreateMaybeMessage< ::mruv::objects::DeleteObjectMaterialTextResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::DeleteObjectMaterialTextResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::AddRemoveBuildingRequest* Arena::CreateMaybeMessage< ::mruv::objects::AddRemoveBuildingRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::AddRemoveBuildingRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::AddRemoveBuildingResponse* Arena::CreateMaybeMessage< ::mruv::objects::AddRemoveBuildingResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::AddRemoveBuildingResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetRemovedBuildingsRequest* Arena::CreateMaybeMessage< ::mruv::objects::GetRemovedBuildingsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetRemovedBuildingsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::GetRemovedBuildingsResponse* Arena::CreateMaybeMessage< ::mruv::objects::GetRemovedBuildingsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::GetRemovedBuildingsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteRemoveBuildingRequest* Arena::CreateMaybeMessage< ::mruv::objects::DeleteRemoveBuildingRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::DeleteRemoveBuildingRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::DeleteRemoveBuildingResponse* Arena::CreateMaybeMessage< ::mruv::objects::DeleteRemoveBuildingResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::DeleteRemoveBuildingResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::objects::FetchAllRequest* Arena::CreateMaybeMessage< ::mruv::objects::FetchAllRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::FetchAllRequest >(arena);
