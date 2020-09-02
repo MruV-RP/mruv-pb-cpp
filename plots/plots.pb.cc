@@ -17,6 +17,10 @@
 extern PROTOBUF_INTERNAL_EXPORT_common_2fspatial_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Position_common_2fspatial_2eproto;
 namespace mruv {
 namespace plots {
+class PlotDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Plot> _instance;
+} _Plot_default_instance_;
 class CreatePlotRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreatePlotRequest> _instance;
@@ -137,6 +141,21 @@ static void InitDefaultsscc_info_GetPlotResponse_plots_2fplots_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetPlotResponse_plots_2fplots_2eproto}, {
       &scc_info_Position_common_2fspatial_2eproto.base,}};
 
+static void InitDefaultsscc_info_Plot_plots_2fplots_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::plots::_Plot_default_instance_;
+    new (ptr) ::mruv::plots::Plot();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::plots::Plot::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Plot_plots_2fplots_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_Plot_plots_2fplots_2eproto}, {
+      &scc_info_Position_common_2fspatial_2eproto.base,}};
+
 static void InitDefaultsscc_info_UpdatePlotRequest_plots_2fplots_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -165,11 +184,19 @@ static void InitDefaultsscc_info_UpdatePlotResponse_plots_2fplots_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdatePlotResponse_plots_2fplots_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdatePlotResponse_plots_2fplots_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_plots_2fplots_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_plots_2fplots_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_plots_2fplots_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_plots_2fplots_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_plots_2fplots_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::plots::Plot, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::plots::Plot, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::plots::Plot, description_),
+  PROTOBUF_FIELD_OFFSET(::mruv::plots::Plot, points_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::plots::CreatePlotRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -225,17 +252,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_plots_2fplots_2eproto::offsets
   ~0u,  // no _weak_field_map_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::plots::CreatePlotRequest)},
-  { 8, -1, sizeof(::mruv::plots::CreatePlotResponse)},
-  { 14, -1, sizeof(::mruv::plots::GetPlotRequest)},
-  { 20, -1, sizeof(::mruv::plots::GetPlotResponse)},
-  { 29, -1, sizeof(::mruv::plots::UpdatePlotRequest)},
-  { 37, -1, sizeof(::mruv::plots::UpdatePlotResponse)},
-  { 42, -1, sizeof(::mruv::plots::DeletePlotRequest)},
-  { 48, -1, sizeof(::mruv::plots::DeletePlotResponse)},
+  { 0, -1, sizeof(::mruv::plots::Plot)},
+  { 8, -1, sizeof(::mruv::plots::CreatePlotRequest)},
+  { 16, -1, sizeof(::mruv::plots::CreatePlotResponse)},
+  { 22, -1, sizeof(::mruv::plots::GetPlotRequest)},
+  { 28, -1, sizeof(::mruv::plots::GetPlotResponse)},
+  { 37, -1, sizeof(::mruv::plots::UpdatePlotRequest)},
+  { 45, -1, sizeof(::mruv::plots::UpdatePlotResponse)},
+  { 50, -1, sizeof(::mruv::plots::DeletePlotRequest)},
+  { 56, -1, sizeof(::mruv::plots::DeletePlotResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::plots::_Plot_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::plots::_CreatePlotRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::plots::_CreatePlotResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::plots::_GetPlotRequest_default_instance_),
@@ -249,56 +278,331 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_plots_2fplots_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021plots/plots.proto\022\nmruv.plots\032\034google/"
   "api/annotations.proto\032\024common/spatial.pr"
-  "oto\"V\n\021CreatePlotRequest\022\014\n\004name\030\001 \001(\t\022\023"
-  "\n\013description\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mr"
-  "uv.Position\" \n\022CreatePlotResponse\022\n\n\002id\030"
-  "\001 \001(\r\"\034\n\016GetPlotRequest\022\n\n\002id\030\001 \001(\r\"b\n\017G"
-  "etPlotResponse\022\014\n\004name\030\001 \001(\t\022\023\n\013descript"
-  "ion\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Positio"
-  "n\022\014\n\004area\030\004 \001(\001\"B\n\021UpdatePlotRequest\022\n\n\002"
-  "id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 "
-  "\001(\t\"\024\n\022UpdatePlotResponse\"\037\n\021DeletePlotR"
-  "equest\022\n\n\002id\030\001 \001(\r\"\024\n\022DeletePlotResponse"
-  "2\230\003\n\020MruVPlotsService\022^\n\nCreatePlot\022\035.mr"
-  "uv.plots.CreatePlotRequest\032\036.mruv.plots."
-  "CreatePlotResponse\"\021\202\323\344\223\002\013\"\t/v1/plots\022Z\n"
-  "\007GetPlot\022\032.mruv.plots.GetPlotRequest\032\033.m"
-  "ruv.plots.GetPlotResponse\"\026\202\323\344\223\002\020\022\016/v1/p"
-  "lots/{id}\022c\n\nUpdatePlot\022\035.mruv.plots.Upd"
-  "atePlotRequest\032\036.mruv.plots.UpdatePlotRe"
-  "sponse\"\026\202\323\344\223\002\0202\016/v1/plots/{id}\022c\n\nDelete"
-  "Plot\022\035.mruv.plots.DeletePlotRequest\032\036.mr"
-  "uv.plots.DeletePlotResponse\"\026\202\323\344\223\002\020*\016/v1"
-  "/plots/{id}B%Z#github.com/MruV-RP/mruv-p"
-  "b-go/plotsb\006proto3"
+  "oto\"I\n\004Plot\022\014\n\004name\030\001 \001(\t\022\023\n\013description"
+  "\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Position\"V"
+  "\n\021CreatePlotRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013des"
+  "cription\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Po"
+  "sition\" \n\022CreatePlotResponse\022\n\n\002id\030\001 \001(\r"
+  "\"\034\n\016GetPlotRequest\022\n\n\002id\030\001 \001(\r\"b\n\017GetPlo"
+  "tResponse\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002"
+  " \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Position\022\014\n\004"
+  "area\030\004 \001(\001\"B\n\021UpdatePlotRequest\022\n\n\002id\030\001 "
+  "\001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\024"
+  "\n\022UpdatePlotResponse\"\037\n\021DeletePlotReques"
+  "t\022\n\n\002id\030\001 \001(\r\"\024\n\022DeletePlotResponse2\230\003\n\020"
+  "MruVPlotsService\022^\n\nCreatePlot\022\035.mruv.pl"
+  "ots.CreatePlotRequest\032\036.mruv.plots.Creat"
+  "ePlotResponse\"\021\202\323\344\223\002\013\"\t/v1/plots\022Z\n\007GetP"
+  "lot\022\032.mruv.plots.GetPlotRequest\032\033.mruv.p"
+  "lots.GetPlotResponse\"\026\202\323\344\223\002\020\022\016/v1/plots/"
+  "{id}\022c\n\nUpdatePlot\022\035.mruv.plots.UpdatePl"
+  "otRequest\032\036.mruv.plots.UpdatePlotRespons"
+  "e\"\026\202\323\344\223\002\0202\016/v1/plots/{id}\022c\n\nDeletePlot\022"
+  "\035.mruv.plots.DeletePlotRequest\032\036.mruv.pl"
+  "ots.DeletePlotResponse\"\026\202\323\344\223\002\020*\016/v1/plot"
+  "s/{id}B%Z#github.com/MruV-RP/mruv-pb-go/"
+  "plotsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_plots_2fplots_2eproto_deps[2] = {
   &::descriptor_table_common_2fspatial_2eproto,
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_plots_2fplots_2eproto_sccs[8] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_plots_2fplots_2eproto_sccs[9] = {
   &scc_info_CreatePlotRequest_plots_2fplots_2eproto.base,
   &scc_info_CreatePlotResponse_plots_2fplots_2eproto.base,
   &scc_info_DeletePlotRequest_plots_2fplots_2eproto.base,
   &scc_info_DeletePlotResponse_plots_2fplots_2eproto.base,
   &scc_info_GetPlotRequest_plots_2fplots_2eproto.base,
   &scc_info_GetPlotResponse_plots_2fplots_2eproto.base,
+  &scc_info_Plot_plots_2fplots_2eproto.base,
   &scc_info_UpdatePlotRequest_plots_2fplots_2eproto.base,
   &scc_info_UpdatePlotResponse_plots_2fplots_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_plots_2fplots_2eproto_once;
 static bool descriptor_table_plots_2fplots_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_plots_2fplots_2eproto = {
-  &descriptor_table_plots_2fplots_2eproto_initialized, descriptor_table_protodef_plots_2fplots_2eproto, "plots/plots.proto", 938,
-  &descriptor_table_plots_2fplots_2eproto_once, descriptor_table_plots_2fplots_2eproto_sccs, descriptor_table_plots_2fplots_2eproto_deps, 8, 2,
+  &descriptor_table_plots_2fplots_2eproto_initialized, descriptor_table_protodef_plots_2fplots_2eproto, "plots/plots.proto", 1013,
+  &descriptor_table_plots_2fplots_2eproto_once, descriptor_table_plots_2fplots_2eproto_sccs, descriptor_table_plots_2fplots_2eproto_deps, 9, 2,
   schemas, file_default_instances, TableStruct_plots_2fplots_2eproto::offsets,
-  file_level_metadata_plots_2fplots_2eproto, 8, file_level_enum_descriptors_plots_2fplots_2eproto, file_level_service_descriptors_plots_2fplots_2eproto,
+  file_level_metadata_plots_2fplots_2eproto, 9, file_level_enum_descriptors_plots_2fplots_2eproto, file_level_service_descriptors_plots_2fplots_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_plots_2fplots_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_plots_2fplots_2eproto), true);
 namespace mruv {
 namespace plots {
+
+// ===================================================================
+
+void Plot::InitAsDefaultInstance() {
+}
+class Plot::_Internal {
+ public:
+};
+
+void Plot::clear_points() {
+  points_.Clear();
+}
+Plot::Plot()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.plots.Plot)
+}
+Plot::Plot(const Plot& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      points_(from.points_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.plots.Plot)
+}
+
+void Plot::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Plot_plots_2fplots_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+Plot::~Plot() {
+  // @@protoc_insertion_point(destructor:mruv.plots.Plot)
+  SharedDtor();
+}
+
+void Plot::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void Plot::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Plot& Plot::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Plot_plots_2fplots_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Plot::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.plots.Plot)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  points_.Clear();
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+const char* Plot::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.plots.Plot.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.plots.Plot.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .mruv.Position points = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_points(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Plot::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.plots.Plot)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.plots.Plot.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  // string description = 2;
+  if (this->description().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.plots.Plot.description");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_description(), target);
+  }
+
+  // repeated .mruv.Position points = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_points_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_points(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.plots.Plot)
+  return target;
+}
+
+size_t Plot::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.plots.Plot)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mruv.Position points = 3;
+  total_size += 1UL * this->_internal_points_size();
+  for (const auto& msg : this->points_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string description = 2;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Plot::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.plots.Plot)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Plot* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Plot>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.plots.Plot)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.plots.Plot)
+    MergeFrom(*source);
+  }
+}
+
+void Plot::MergeFrom(const Plot& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.plots.Plot)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  points_.MergeFrom(from.points_);
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+}
+
+void Plot::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.plots.Plot)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Plot::CopyFrom(const Plot& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.plots.Plot)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Plot::IsInitialized() const {
+  return true;
+}
+
+void Plot::InternalSwap(Plot* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  points_.InternalSwap(&other->points_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Plot::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
 
 // ===================================================================
 
@@ -2004,6 +2308,9 @@ void DeletePlotResponse::InternalSwap(DeletePlotResponse* other) {
 }  // namespace plots
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::mruv::plots::Plot* Arena::CreateMaybeMessage< ::mruv::plots::Plot >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::plots::Plot >(arena);
+}
 template<> PROTOBUF_NOINLINE ::mruv::plots::CreatePlotRequest* Arena::CreateMaybeMessage< ::mruv::plots::CreatePlotRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::plots::CreatePlotRequest >(arena);
 }

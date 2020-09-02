@@ -426,20 +426,20 @@ void MruVObjectsService::Stub::experimental_async::DeleteRemoveBuilding(::grpc::
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteRemoveBuildingResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRemoveBuilding_, context, request, false);
 }
 
-::grpc::ClientReader< ::mruv::objects::FetchAllResponse>* MruVObjectsService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
 }
 
-void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::objects::FetchAllResponse>* MruVObjectsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::objects::FetchAllResponse>* MruVObjectsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
 }
 
 MruVObjectsService::Service::Service() {
@@ -576,11 +576,11 @@ MruVObjectsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVObjectsService_method_names[13],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVObjectsService::Service, ::mruv::objects::FetchAllRequest, ::mruv::objects::FetchAllResponse>(
+      new ::grpc::internal::ServerStreamingHandler< MruVObjectsService::Service, ::mruv::objects::FetchAllObjectsRequest, ::mruv::objects::FetchAllObjectsResponse>(
           [](MruVObjectsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::objects::FetchAllRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::objects::FetchAllResponse>* writer) {
+             const ::mruv::objects::FetchAllObjectsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::objects::FetchAllObjectsResponse>* writer) {
                return service->FetchAll(ctx, req, writer);
              }, this)));
 }
@@ -679,7 +679,7 @@ MruVObjectsService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllResponse>* writer) {
+::grpc::Status MruVObjectsService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;

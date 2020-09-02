@@ -16,13 +16,40 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_entrances_2fentrances_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Entrance_entrances_2fentrances_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Estate_estates_2festates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_FullEstate_estates_2festates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_EntrancesEntry_DoNotUse_estates_2festates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_GatesEntry_DoNotUse_estates_2festates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_ObjectsEntry_DoNotUse_estates_2festates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_estates_2festates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_RemovedBuildingsEntry_DoNotUse_estates_2festates_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_gates_2fgates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Gate_gates_2fgates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Object_objects_2fobjects_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RemovedBuilding_objects_2fobjects_2eproto;
 namespace mruv {
 namespace estates {
 class EstateDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Estate> _instance;
 } _Estate_default_instance_;
+class FullEstate_ObjectsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FullEstate_ObjectsEntry_DoNotUse> _instance;
+} _FullEstate_ObjectsEntry_DoNotUse_default_instance_;
+class FullEstate_RemovedBuildingsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FullEstate_RemovedBuildingsEntry_DoNotUse> _instance;
+} _FullEstate_RemovedBuildingsEntry_DoNotUse_default_instance_;
+class FullEstate_EntrancesEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FullEstate_EntrancesEntry_DoNotUse> _instance;
+} _FullEstate_EntrancesEntry_DoNotUse_default_instance_;
+class FullEstate_GatesEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FullEstate_GatesEntry_DoNotUse> _instance;
+} _FullEstate_GatesEntry_DoNotUse_default_instance_;
+class FullEstateDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FullEstate> _instance;
+} _FullEstate_default_instance_;
 class CreateEstateRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateEstateRequest> _instance;
@@ -107,6 +134,14 @@ class GetEstateEntrancesResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetEstateEntrancesResponse> _instance;
 } _GetEstateEntrancesResponse_default_instance_;
+class FetchAllEstatesRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllEstatesRequest> _instance;
+} _FetchAllEstatesRequest_default_instance_;
+class FetchAllEstatesResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllEstatesResponse> _instance;
+} _FetchAllEstatesResponse_default_instance_;
 }  // namespace estates
 }  // namespace mruv
 static void InitDefaultsscc_info_AddEntranceRequest_estates_2festates_2eproto() {
@@ -234,6 +269,109 @@ static void InitDefaultsscc_info_Estate_estates_2festates_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Estate_estates_2festates_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Estate_estates_2festates_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllEstatesRequest_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FetchAllEstatesRequest_default_instance_;
+    new (ptr) ::mruv::estates::FetchAllEstatesRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::estates::FetchAllEstatesRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FetchAllEstatesRequest_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FetchAllEstatesRequest_estates_2festates_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllEstatesResponse_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FetchAllEstatesResponse_default_instance_;
+    new (ptr) ::mruv::estates::FetchAllEstatesResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::estates::FetchAllEstatesResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllEstatesResponse_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllEstatesResponse_estates_2festates_2eproto}, {
+      &scc_info_FullEstate_estates_2festates_2eproto.base,}};
+
+static void InitDefaultsscc_info_FullEstate_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FullEstate_default_instance_;
+    new (ptr) ::mruv::estates::FullEstate();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::estates::FullEstate::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_FullEstate_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_FullEstate_estates_2festates_2eproto}, {
+      &scc_info_FullEstate_ObjectsEntry_DoNotUse_estates_2festates_2eproto.base,
+      &scc_info_FullEstate_RemovedBuildingsEntry_DoNotUse_estates_2festates_2eproto.base,
+      &scc_info_FullEstate_EntrancesEntry_DoNotUse_estates_2festates_2eproto.base,
+      &scc_info_FullEstate_GatesEntry_DoNotUse_estates_2festates_2eproto.base,}};
+
+static void InitDefaultsscc_info_FullEstate_EntrancesEntry_DoNotUse_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FullEstate_EntrancesEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::estates::FullEstate_EntrancesEntry_DoNotUse();
+  }
+  ::mruv::estates::FullEstate_EntrancesEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_EntrancesEntry_DoNotUse_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FullEstate_EntrancesEntry_DoNotUse_estates_2festates_2eproto}, {
+      &scc_info_Entrance_entrances_2fentrances_2eproto.base,}};
+
+static void InitDefaultsscc_info_FullEstate_GatesEntry_DoNotUse_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FullEstate_GatesEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::estates::FullEstate_GatesEntry_DoNotUse();
+  }
+  ::mruv::estates::FullEstate_GatesEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_GatesEntry_DoNotUse_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FullEstate_GatesEntry_DoNotUse_estates_2festates_2eproto}, {
+      &scc_info_Gate_gates_2fgates_2eproto.base,}};
+
+static void InitDefaultsscc_info_FullEstate_ObjectsEntry_DoNotUse_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FullEstate_ObjectsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::estates::FullEstate_ObjectsEntry_DoNotUse();
+  }
+  ::mruv::estates::FullEstate_ObjectsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_ObjectsEntry_DoNotUse_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FullEstate_ObjectsEntry_DoNotUse_estates_2festates_2eproto}, {
+      &scc_info_Object_objects_2fobjects_2eproto.base,}};
+
+static void InitDefaultsscc_info_FullEstate_RemovedBuildingsEntry_DoNotUse_estates_2festates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::estates::_FullEstate_RemovedBuildingsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse();
+  }
+  ::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FullEstate_RemovedBuildingsEntry_DoNotUse_estates_2festates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FullEstate_RemovedBuildingsEntry_DoNotUse_estates_2festates_2eproto}, {
+      &scc_info_RemovedBuilding_objects_2fobjects_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetEstateEntrancesRequest_estates_2festates_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -420,7 +558,7 @@ static void InitDefaultsscc_info_UpdateEstateResponse_estates_2festates_2eproto(
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateEstateResponse_estates_2festates_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateEstateResponse_estates_2festates_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_estates_2festates_2eproto[22];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_estates_2festates_2eproto[29];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_estates_2festates_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_estates_2festates_2eproto = nullptr;
 
@@ -437,6 +575,54 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_estates_2festates_2eproto::off
   PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, gates_),
   PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, rooms_),
   PROTOBUF_FIELD_OFFSET(::mruv::estates::Estate, product_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_ObjectsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_ObjectsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_ObjectsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_ObjectsEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_EntrancesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_EntrancesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_EntrancesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_EntrancesEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_GatesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_GatesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_GatesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate_GatesEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, description_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, objects_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, removed_buildings_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, entrances_),
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FullEstate, gates_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::mruv::estates::CreateEstateRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -565,34 +751,58 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_estates_2festates_2eproto::off
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::estates::GetEstateEntrancesResponse, entrances_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FetchAllEstatesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FetchAllEstatesRequest, chunk_size_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FetchAllEstatesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::estates::FetchAllEstatesResponse, estates_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::estates::Estate)},
-  { 12, -1, sizeof(::mruv::estates::CreateEstateRequest)},
-  { 19, -1, sizeof(::mruv::estates::CreateEstateResponse)},
-  { 25, -1, sizeof(::mruv::estates::GetEstateRequest)},
-  { 31, -1, sizeof(::mruv::estates::UpdateEstateRequest)},
-  { 39, -1, sizeof(::mruv::estates::UpdateEstateResponse)},
-  { 44, -1, sizeof(::mruv::estates::DeleteEstateRequest)},
-  { 50, -1, sizeof(::mruv::estates::DeleteEstateResponse)},
-  { 55, -1, sizeof(::mruv::estates::GetEstatesRequest)},
-  { 62, -1, sizeof(::mruv::estates::GetEstatesResponse)},
-  { 68, -1, sizeof(::mruv::estates::AddGateRequest)},
-  { 75, -1, sizeof(::mruv::estates::AddGateResponse)},
-  { 80, -1, sizeof(::mruv::estates::RemoveGateRequest)},
-  { 87, -1, sizeof(::mruv::estates::RemoveGateResponse)},
-  { 92, -1, sizeof(::mruv::estates::GetEstateGatesRequest)},
-  { 98, -1, sizeof(::mruv::estates::GetEstateGatesResponse)},
-  { 104, -1, sizeof(::mruv::estates::AddEntranceRequest)},
-  { 111, -1, sizeof(::mruv::estates::AddEntranceResponse)},
-  { 116, -1, sizeof(::mruv::estates::RemoveEntranceRequest)},
-  { 123, -1, sizeof(::mruv::estates::RemoveEntranceResponse)},
-  { 128, -1, sizeof(::mruv::estates::GetEstateEntrancesRequest)},
-  { 134, -1, sizeof(::mruv::estates::GetEstateEntrancesResponse)},
+  { 12, 19, sizeof(::mruv::estates::FullEstate_ObjectsEntry_DoNotUse)},
+  { 21, 28, sizeof(::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse)},
+  { 30, 37, sizeof(::mruv::estates::FullEstate_EntrancesEntry_DoNotUse)},
+  { 39, 46, sizeof(::mruv::estates::FullEstate_GatesEntry_DoNotUse)},
+  { 48, -1, sizeof(::mruv::estates::FullEstate)},
+  { 60, -1, sizeof(::mruv::estates::CreateEstateRequest)},
+  { 67, -1, sizeof(::mruv::estates::CreateEstateResponse)},
+  { 73, -1, sizeof(::mruv::estates::GetEstateRequest)},
+  { 79, -1, sizeof(::mruv::estates::UpdateEstateRequest)},
+  { 87, -1, sizeof(::mruv::estates::UpdateEstateResponse)},
+  { 92, -1, sizeof(::mruv::estates::DeleteEstateRequest)},
+  { 98, -1, sizeof(::mruv::estates::DeleteEstateResponse)},
+  { 103, -1, sizeof(::mruv::estates::GetEstatesRequest)},
+  { 110, -1, sizeof(::mruv::estates::GetEstatesResponse)},
+  { 116, -1, sizeof(::mruv::estates::AddGateRequest)},
+  { 123, -1, sizeof(::mruv::estates::AddGateResponse)},
+  { 128, -1, sizeof(::mruv::estates::RemoveGateRequest)},
+  { 135, -1, sizeof(::mruv::estates::RemoveGateResponse)},
+  { 140, -1, sizeof(::mruv::estates::GetEstateGatesRequest)},
+  { 146, -1, sizeof(::mruv::estates::GetEstateGatesResponse)},
+  { 152, -1, sizeof(::mruv::estates::AddEntranceRequest)},
+  { 159, -1, sizeof(::mruv::estates::AddEntranceResponse)},
+  { 164, -1, sizeof(::mruv::estates::RemoveEntranceRequest)},
+  { 171, -1, sizeof(::mruv::estates::RemoveEntranceResponse)},
+  { 176, -1, sizeof(::mruv::estates::GetEstateEntrancesRequest)},
+  { 182, -1, sizeof(::mruv::estates::GetEstateEntrancesResponse)},
+  { 188, -1, sizeof(::mruv::estates::FetchAllEstatesRequest)},
+  { 194, -1, sizeof(::mruv::estates::FetchAllEstatesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_Estate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FullEstate_ObjectsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FullEstate_RemovedBuildingsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FullEstate_EntrancesEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FullEstate_GatesEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FullEstate_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_CreateEstateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_CreateEstateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_GetEstateRequest_default_instance_),
@@ -614,81 +824,105 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_RemoveEntranceResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_GetEstateEntrancesRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_GetEstateEntrancesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FetchAllEstatesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::estates::_FetchAllEstatesResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_estates_2festates_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025estates/estates.proto\022\014mruv.estates\032\034g"
-  "oogle/api/annotations.proto\032\031entrances/e"
-  "ntrances.proto\032\021gates/gates.proto\"|\n\006Est"
-  "ate\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013descrip"
-  "tion\030\003 \001(\t\022\021\n\tentrances\030\004 \003(\r\022\r\n\005gates\030\005"
-  " \003(\r\022\r\n\005rooms\030\006 \003(\r\022\022\n\nproduct_id\030\007 \001(\r\""
-  "8\n\023CreateEstateRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013"
-  "description\030\002 \001(\t\"\"\n\024CreateEstateRespons"
-  "e\022\n\n\002id\030\001 \001(\r\"\036\n\020GetEstateRequest\022\n\n\002id\030"
-  "\001 \001(\r\"D\n\023UpdateEstateRequest\022\n\n\002id\030\001 \001(\r"
-  "\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\026\n\024U"
-  "pdateEstateResponse\"!\n\023DeleteEstateReque"
-  "st\022\n\n\002id\030\001 \001(\r\"\026\n\024DeleteEstateResponse\"0"
-  "\n\021GetEstatesRequest\022\014\n\004from\030\001 \001(\r\022\r\n\005lim"
-  "it\030\002 \001(\r\";\n\022GetEstatesResponse\022%\n\007estate"
-  "s\030\001 \003(\0132\024.mruv.estates.Estate\"4\n\016AddGate"
-  "Request\022\021\n\testate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 "
-  "\001(\r\"\021\n\017AddGateResponse\"7\n\021RemoveGateRequ"
-  "est\022\021\n\testate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001(\r\""
-  "\024\n\022RemoveGateResponse\"*\n\025GetEstateGatesR"
-  "equest\022\021\n\testate_id\030\001 \001(\r\"9\n\026GetEstateGa"
-  "tesResponse\022\037\n\005gates\030\001 \003(\0132\020.mruv.gates."
-  "Gate\"<\n\022AddEntranceRequest\022\021\n\testate_id\030"
-  "\001 \001(\r\022\023\n\013entrance_id\030\002 \001(\r\"\025\n\023AddEntranc"
-  "eResponse\"\?\n\025RemoveEntranceRequest\022\021\n\tes"
-  "tate_id\030\001 \001(\r\022\023\n\013entrance_id\030\002 \001(\r\"\030\n\026Re"
-  "moveEntranceResponse\".\n\031GetEstateEntranc"
-  "esRequest\022\021\n\testate_id\030\001 \001(\r\"I\n\032GetEstat"
-  "eEntrancesResponse\022+\n\tentrances\030\001 \003(\0132\030."
-  "mruv.entrances.Entrance2\304\n\n\021MruVEstateSe"
-  "rvice\022j\n\014CreateEstate\022!.mruv.estates.Cre"
-  "ateEstateRequest\032\".mruv.estates.CreateEs"
-  "tateResponse\"\023\202\323\344\223\002\r\"\013/v1/estates\022[\n\tGet"
-  "Estate\022\036.mruv.estates.GetEstateRequest\032\024"
-  ".mruv.estates.Estate\"\030\202\323\344\223\002\022\022\020/v1/estate"
-  "s/{id}\022o\n\014UpdateEstate\022!.mruv.estates.Up"
-  "dateEstateRequest\032\".mruv.estates.UpdateE"
-  "stateResponse\"\030\202\323\344\223\002\0222\020/v1/estates/{id}\022"
-  "o\n\014DeleteEstate\022!.mruv.estates.DeleteEst"
-  "ateRequest\032\".mruv.estates.DeleteEstateRe"
-  "sponse\"\030\202\323\344\223\002\022*\020/v1/estates/{id}\022d\n\nGetE"
-  "states\022\037.mruv.estates.GetEstatesRequest\032"
-  " .mruv.estates.GetEstatesResponse\"\023\202\323\344\223\002"
-  "\r\022\013/v1/estates\022m\n\007AddGate\022\034.mruv.estates"
-  ".AddGateRequest\032\035.mruv.estates.AddGateRe"
-  "sponse\"%\202\323\344\223\002\037\"\035/v1/estates/{estate_id}/"
-  "gates\022\200\001\n\nRemoveGate\022\037.mruv.estates.Remo"
-  "veGateRequest\032 .mruv.estates.RemoveGateR"
-  "esponse\"/\202\323\344\223\002)*\'/v1/estates/{estate_id}"
-  "/gates/{gate_id}\022\201\001\n\016GetEstateGates\022#.mr"
-  "uv.estates.GetEstateGatesRequest\032$.mruv."
-  "estates.GetEstateGatesResponse\"$\202\323\344\223\002\036\022\034"
-  "/v1/estate/{estate_id}/gates\022}\n\013AddEntra"
-  "nce\022 .mruv.estates.AddEntranceRequest\032!."
-  "mruv.estates.AddEntranceResponse\")\202\323\344\223\002#"
-  "\"!/v1/estates/{estate_id}/entrances\022\224\001\n\016"
-  "RemoveEntrance\022#.mruv.estates.RemoveEntr"
-  "anceRequest\032$.mruv.estates.RemoveEntranc"
-  "eResponse\"7\202\323\344\223\0021*//v1/estates/{estate_i"
-  "d}/entrances/{entrance_id}\022\221\001\n\022GetEstate"
-  "Entrances\022\'.mruv.estates.GetEstateEntran"
-  "cesRequest\032(.mruv.estates.GetEstateEntra"
-  "ncesResponse\"(\202\323\344\223\002\"\022 /v1/estate/{estate"
-  "_id}/entrancesB\'Z%github.com/MruV-RP/mru"
-  "v-pb-go/estatesb\006proto3"
+  "oogle/api/annotations.proto\032\025objects/obj"
+  "ects.proto\032\031entrances/entrances.proto\032\021g"
+  "ates/gates.proto\"|\n\006Estate\022\n\n\002id\030\001 \001(\r\022\014"
+  "\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\021\n\tent"
+  "rances\030\004 \003(\r\022\r\n\005gates\030\005 \003(\r\022\r\n\005rooms\030\006 \003"
+  "(\r\022\022\n\nproduct_id\030\007 \001(\r\"\330\004\n\nFullEstate\022\n\n"
+  "\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003"
+  " \001(\t\0226\n\007objects\030\004 \003(\0132%.mruv.estates.Ful"
+  "lEstate.ObjectsEntry\022I\n\021removed_building"
+  "s\030\005 \003(\0132..mruv.estates.FullEstate.Remove"
+  "dBuildingsEntry\022:\n\tentrances\030\006 \003(\0132\'.mru"
+  "v.estates.FullEstate.EntrancesEntry\0222\n\005g"
+  "ates\030\007 \003(\0132#.mruv.estates.FullEstate.Gat"
+  "esEntry\032D\n\014ObjectsEntry\022\013\n\003key\030\001 \001(\r\022#\n\005"
+  "value\030\002 \001(\0132\024.mruv.objects.Object:\0028\001\032V\n"
+  "\025RemovedBuildingsEntry\022\013\n\003key\030\001 \001(\r\022,\n\005v"
+  "alue\030\002 \001(\0132\035.mruv.objects.RemovedBuildin"
+  "g:\0028\001\032J\n\016EntrancesEntry\022\013\n\003key\030\001 \001(\r\022\'\n\005"
+  "value\030\002 \001(\0132\030.mruv.entrances.Entrance:\0028"
+  "\001\032>\n\nGatesEntry\022\013\n\003key\030\001 \001(\r\022\037\n\005value\030\002 "
+  "\001(\0132\020.mruv.gates.Gate:\0028\001\"8\n\023CreateEstat"
+  "eRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 "
+  "\001(\t\"\"\n\024CreateEstateResponse\022\n\n\002id\030\001 \001(\r\""
+  "\036\n\020GetEstateRequest\022\n\n\002id\030\001 \001(\r\"D\n\023Updat"
+  "eEstateRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t"
+  "\022\023\n\013description\030\003 \001(\t\"\026\n\024UpdateEstateRes"
+  "ponse\"!\n\023DeleteEstateRequest\022\n\n\002id\030\001 \001(\r"
+  "\"\026\n\024DeleteEstateResponse\"0\n\021GetEstatesRe"
+  "quest\022\014\n\004from\030\001 \001(\r\022\r\n\005limit\030\002 \001(\r\";\n\022Ge"
+  "tEstatesResponse\022%\n\007estates\030\001 \003(\0132\024.mruv"
+  ".estates.Estate\"4\n\016AddGateRequest\022\021\n\test"
+  "ate_id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001(\r\"\021\n\017AddGate"
+  "Response\"7\n\021RemoveGateRequest\022\021\n\testate_"
+  "id\030\001 \001(\r\022\017\n\007gate_id\030\002 \001(\r\"\024\n\022RemoveGateR"
+  "esponse\"*\n\025GetEstateGatesRequest\022\021\n\testa"
+  "te_id\030\001 \001(\r\"9\n\026GetEstateGatesResponse\022\037\n"
+  "\005gates\030\001 \003(\0132\020.mruv.gates.Gate\"<\n\022AddEnt"
+  "ranceRequest\022\021\n\testate_id\030\001 \001(\r\022\023\n\013entra"
+  "nce_id\030\002 \001(\r\"\025\n\023AddEntranceResponse\"\?\n\025R"
+  "emoveEntranceRequest\022\021\n\testate_id\030\001 \001(\r\022"
+  "\023\n\013entrance_id\030\002 \001(\r\"\030\n\026RemoveEntranceRe"
+  "sponse\".\n\031GetEstateEntrancesRequest\022\021\n\te"
+  "state_id\030\001 \001(\r\"I\n\032GetEstateEntrancesResp"
+  "onse\022+\n\tentrances\030\001 \003(\0132\030.mruv.entrances"
+  ".Entrance\",\n\026FetchAllEstatesRequest\022\022\n\nc"
+  "hunk_size\030\001 \001(\r\"D\n\027FetchAllEstatesRespon"
+  "se\022)\n\007estates\030\001 \003(\0132\030.mruv.estates.FullE"
+  "state2\241\013\n\021MruVEstateService\022j\n\014CreateEst"
+  "ate\022!.mruv.estates.CreateEstateRequest\032\""
+  ".mruv.estates.CreateEstateResponse\"\023\202\323\344\223"
+  "\002\r\"\013/v1/estates\022[\n\tGetEstate\022\036.mruv.esta"
+  "tes.GetEstateRequest\032\024.mruv.estates.Esta"
+  "te\"\030\202\323\344\223\002\022\022\020/v1/estates/{id}\022o\n\014UpdateEs"
+  "tate\022!.mruv.estates.UpdateEstateRequest\032"
+  "\".mruv.estates.UpdateEstateResponse\"\030\202\323\344"
+  "\223\002\0222\020/v1/estates/{id}\022o\n\014DeleteEstate\022!."
+  "mruv.estates.DeleteEstateRequest\032\".mruv."
+  "estates.DeleteEstateResponse\"\030\202\323\344\223\002\022*\020/v"
+  "1/estates/{id}\022d\n\nGetEstates\022\037.mruv.esta"
+  "tes.GetEstatesRequest\032 .mruv.estates.Get"
+  "EstatesResponse\"\023\202\323\344\223\002\r\022\013/v1/estates\022m\n\007"
+  "AddGate\022\034.mruv.estates.AddGateRequest\032\035."
+  "mruv.estates.AddGateResponse\"%\202\323\344\223\002\037\"\035/v"
+  "1/estates/{estate_id}/gates\022\200\001\n\nRemoveGa"
+  "te\022\037.mruv.estates.RemoveGateRequest\032 .mr"
+  "uv.estates.RemoveGateResponse\"/\202\323\344\223\002)*\'/"
+  "v1/estates/{estate_id}/gates/{gate_id}\022\201"
+  "\001\n\016GetEstateGates\022#.mruv.estates.GetEsta"
+  "teGatesRequest\032$.mruv.estates.GetEstateG"
+  "atesResponse\"$\202\323\344\223\002\036\022\034/v1/estate/{estate"
+  "_id}/gates\022}\n\013AddEntrance\022 .mruv.estates"
+  ".AddEntranceRequest\032!.mruv.estates.AddEn"
+  "tranceResponse\")\202\323\344\223\002#\"!/v1/estates/{est"
+  "ate_id}/entrances\022\224\001\n\016RemoveEntrance\022#.m"
+  "ruv.estates.RemoveEntranceRequest\032$.mruv"
+  ".estates.RemoveEntranceResponse\"7\202\323\344\223\0021*"
+  "//v1/estates/{estate_id}/entrances/{entr"
+  "ance_id}\022\221\001\n\022GetEstateEntrances\022\'.mruv.e"
+  "states.GetEstateEntrancesRequest\032(.mruv."
+  "estates.GetEstateEntrancesResponse\"(\202\323\344\223"
+  "\002\"\022 /v1/estate/{estate_id}/entrances\022[\n\010"
+  "FetchAll\022$.mruv.estates.FetchAllEstatesR"
+  "equest\032%.mruv.estates.FetchAllEstatesRes"
+  "ponse\"\0000\001B\'Z%github.com/MruV-RP/mruv-pb-"
+  "go/estatesb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_estates_2festates_2eproto_deps[3] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_estates_2festates_2eproto_deps[4] = {
   &::descriptor_table_entrances_2fentrances_2eproto,
   &::descriptor_table_gates_2fgates_2eproto,
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
+  &::descriptor_table_objects_2fobjects_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_estates_2festates_2eproto_sccs[22] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_estates_2festates_2eproto_sccs[29] = {
   &scc_info_AddEntranceRequest_estates_2festates_2eproto.base,
   &scc_info_AddEntranceResponse_estates_2festates_2eproto.base,
   &scc_info_AddGateRequest_estates_2festates_2eproto.base,
@@ -698,6 +932,13 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_est
   &scc_info_DeleteEstateRequest_estates_2festates_2eproto.base,
   &scc_info_DeleteEstateResponse_estates_2festates_2eproto.base,
   &scc_info_Estate_estates_2festates_2eproto.base,
+  &scc_info_FetchAllEstatesRequest_estates_2festates_2eproto.base,
+  &scc_info_FetchAllEstatesResponse_estates_2festates_2eproto.base,
+  &scc_info_FullEstate_estates_2festates_2eproto.base,
+  &scc_info_FullEstate_EntrancesEntry_DoNotUse_estates_2festates_2eproto.base,
+  &scc_info_FullEstate_GatesEntry_DoNotUse_estates_2festates_2eproto.base,
+  &scc_info_FullEstate_ObjectsEntry_DoNotUse_estates_2festates_2eproto.base,
+  &scc_info_FullEstate_RemovedBuildingsEntry_DoNotUse_estates_2festates_2eproto.base,
   &scc_info_GetEstateEntrancesRequest_estates_2festates_2eproto.base,
   &scc_info_GetEstateEntrancesResponse_estates_2festates_2eproto.base,
   &scc_info_GetEstateGatesRequest_estates_2festates_2eproto.base,
@@ -715,10 +956,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_est
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_estates_2festates_2eproto_once;
 static bool descriptor_table_estates_2festates_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_estates_2festates_2eproto = {
-  &descriptor_table_estates_2festates_2eproto_initialized, descriptor_table_protodef_estates_2festates_2eproto, "estates/estates.proto", 2583,
-  &descriptor_table_estates_2festates_2eproto_once, descriptor_table_estates_2festates_2eproto_sccs, descriptor_table_estates_2festates_2eproto_deps, 22, 3,
+  &descriptor_table_estates_2festates_2eproto_initialized, descriptor_table_protodef_estates_2festates_2eproto, "estates/estates.proto", 3418,
+  &descriptor_table_estates_2festates_2eproto_once, descriptor_table_estates_2festates_2eproto_sccs, descriptor_table_estates_2festates_2eproto_deps, 29, 4,
   schemas, file_default_instances, TableStruct_estates_2festates_2eproto::offsets,
-  file_level_metadata_estates_2festates_2eproto, 22, file_level_enum_descriptors_estates_2festates_2eproto, file_level_service_descriptors_estates_2festates_2eproto,
+  file_level_metadata_estates_2festates_2eproto, 29, file_level_enum_descriptors_estates_2festates_2eproto, file_level_service_descriptors_estates_2festates_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1131,6 +1372,575 @@ void Estate::InternalSwap(Estate* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Estate::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+FullEstate_ObjectsEntry_DoNotUse::FullEstate_ObjectsEntry_DoNotUse() {}
+FullEstate_ObjectsEntry_DoNotUse::FullEstate_ObjectsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FullEstate_ObjectsEntry_DoNotUse::MergeFrom(const FullEstate_ObjectsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FullEstate_ObjectsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FullEstate_ObjectsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+FullEstate_RemovedBuildingsEntry_DoNotUse::FullEstate_RemovedBuildingsEntry_DoNotUse() {}
+FullEstate_RemovedBuildingsEntry_DoNotUse::FullEstate_RemovedBuildingsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FullEstate_RemovedBuildingsEntry_DoNotUse::MergeFrom(const FullEstate_RemovedBuildingsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FullEstate_RemovedBuildingsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FullEstate_RemovedBuildingsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+FullEstate_EntrancesEntry_DoNotUse::FullEstate_EntrancesEntry_DoNotUse() {}
+FullEstate_EntrancesEntry_DoNotUse::FullEstate_EntrancesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FullEstate_EntrancesEntry_DoNotUse::MergeFrom(const FullEstate_EntrancesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FullEstate_EntrancesEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FullEstate_EntrancesEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+FullEstate_GatesEntry_DoNotUse::FullEstate_GatesEntry_DoNotUse() {}
+FullEstate_GatesEntry_DoNotUse::FullEstate_GatesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FullEstate_GatesEntry_DoNotUse::MergeFrom(const FullEstate_GatesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FullEstate_GatesEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FullEstate_GatesEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void FullEstate::InitAsDefaultInstance() {
+}
+class FullEstate::_Internal {
+ public:
+};
+
+void FullEstate::clear_objects() {
+  objects_.Clear();
+}
+void FullEstate::clear_removed_buildings() {
+  removed_buildings_.Clear();
+}
+void FullEstate::clear_entrances() {
+  entrances_.Clear();
+}
+void FullEstate::clear_gates() {
+  gates_.Clear();
+}
+FullEstate::FullEstate()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.estates.FullEstate)
+}
+FullEstate::FullEstate(const FullEstate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  objects_.MergeFrom(from.objects_);
+  removed_buildings_.MergeFrom(from.removed_buildings_);
+  entrances_.MergeFrom(from.entrances_);
+  gates_.MergeFrom(from.gates_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_name().empty()) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_description().empty()) {
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  id_ = from.id_;
+  // @@protoc_insertion_point(copy_constructor:mruv.estates.FullEstate)
+}
+
+void FullEstate::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FullEstate_estates_2festates_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
+}
+
+FullEstate::~FullEstate() {
+  // @@protoc_insertion_point(destructor:mruv.estates.FullEstate)
+  SharedDtor();
+}
+
+void FullEstate::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void FullEstate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FullEstate& FullEstate::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FullEstate_estates_2festates_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FullEstate::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.estates.FullEstate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  objects_.Clear();
+  removed_buildings_.Clear();
+  entrances_.Clear();
+  gates_.Clear();
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* FullEstate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.estates.FullEstate.name"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string description = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_description();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.estates.FullEstate.description"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // map<uint32, .mruv.objects.Object> objects = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&objects_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<uint32, .mruv.objects.RemovedBuilding> removed_buildings = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&removed_buildings_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<uint32, .mruv.entrances.Entrance> entrances = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&entrances_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<uint32, .mruv.gates.Gate> gates = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&gates_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FullEstate::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.estates.FullEstate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.estates.FullEstate.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string description = 3;
+  if (this->description().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_description().data(), static_cast<int>(this->_internal_description().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.estates.FullEstate.description");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_description(), target);
+  }
+
+  // map<uint32, .mruv.objects.Object> objects = 4;
+  if (!this->_internal_objects().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_objects().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_objects().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >::const_iterator
+          it = this->_internal_objects().begin();
+          it != this->_internal_objects().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FullEstate_ObjectsEntry_DoNotUse::Funcs::InternalSerialize(4, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >::const_iterator
+          it = this->_internal_objects().begin();
+          it != this->_internal_objects().end(); ++it) {
+        target = FullEstate_ObjectsEntry_DoNotUse::Funcs::InternalSerialize(4, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  // map<uint32, .mruv.objects.RemovedBuilding> removed_buildings = 5;
+  if (!this->_internal_removed_buildings().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_removed_buildings().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_removed_buildings().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >::const_iterator
+          it = this->_internal_removed_buildings().begin();
+          it != this->_internal_removed_buildings().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FullEstate_RemovedBuildingsEntry_DoNotUse::Funcs::InternalSerialize(5, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >::const_iterator
+          it = this->_internal_removed_buildings().begin();
+          it != this->_internal_removed_buildings().end(); ++it) {
+        target = FullEstate_RemovedBuildingsEntry_DoNotUse::Funcs::InternalSerialize(5, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  // map<uint32, .mruv.entrances.Entrance> entrances = 6;
+  if (!this->_internal_entrances().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_entrances().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_entrances().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_iterator
+          it = this->_internal_entrances().begin();
+          it != this->_internal_entrances().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FullEstate_EntrancesEntry_DoNotUse::Funcs::InternalSerialize(6, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_iterator
+          it = this->_internal_entrances().begin();
+          it != this->_internal_entrances().end(); ++it) {
+        target = FullEstate_EntrancesEntry_DoNotUse::Funcs::InternalSerialize(6, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  // map<uint32, .mruv.gates.Gate> gates = 7;
+  if (!this->_internal_gates().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_gates().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_gates().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_iterator
+          it = this->_internal_gates().begin();
+          it != this->_internal_gates().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FullEstate_GatesEntry_DoNotUse::Funcs::InternalSerialize(7, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_iterator
+          it = this->_internal_gates().begin();
+          it != this->_internal_gates().end(); ++it) {
+        target = FullEstate_GatesEntry_DoNotUse::Funcs::InternalSerialize(7, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.estates.FullEstate)
+  return target;
+}
+
+size_t FullEstate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.estates.FullEstate)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.Object> objects = 4;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_objects_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >::const_iterator
+      it = this->_internal_objects().begin();
+      it != this->_internal_objects().end(); ++it) {
+    total_size += FullEstate_ObjectsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<uint32, .mruv.objects.RemovedBuilding> removed_buildings = 5;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_removed_buildings_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >::const_iterator
+      it = this->_internal_removed_buildings().begin();
+      it != this->_internal_removed_buildings().end(); ++it) {
+    total_size += FullEstate_RemovedBuildingsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<uint32, .mruv.entrances.Entrance> entrances = 6;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_entrances_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_iterator
+      it = this->_internal_entrances().begin();
+      it != this->_internal_entrances().end(); ++it) {
+    total_size += FullEstate_EntrancesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<uint32, .mruv.gates.Gate> gates = 7;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_gates_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_iterator
+      it = this->_internal_gates().begin();
+      it != this->_internal_gates().end(); ++it) {
+    total_size += FullEstate_GatesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // string name = 2;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string description = 3;
+  if (this->description().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_description());
+  }
+
+  // uint32 id = 1;
+  if (this->id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FullEstate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.estates.FullEstate)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FullEstate* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FullEstate>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.estates.FullEstate)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.estates.FullEstate)
+    MergeFrom(*source);
+  }
+}
+
+void FullEstate::MergeFrom(const FullEstate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.estates.FullEstate)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  objects_.MergeFrom(from.objects_);
+  removed_buildings_.MergeFrom(from.removed_buildings_);
+  entrances_.MergeFrom(from.entrances_);
+  gates_.MergeFrom(from.gates_);
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.description().size() > 0) {
+
+    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+  }
+  if (from.id() != 0) {
+    _internal_set_id(from._internal_id());
+  }
+}
+
+void FullEstate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.estates.FullEstate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FullEstate::CopyFrom(const FullEstate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.estates.FullEstate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FullEstate::IsInitialized() const {
+  return true;
+}
+
+void FullEstate::InternalSwap(FullEstate* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  objects_.Swap(&other->objects_);
+  removed_buildings_.Swap(&other->removed_buildings_);
+  entrances_.Swap(&other->entrances_);
+  gates_.Swap(&other->gates_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(id_, other->id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FullEstate::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -5151,12 +5961,404 @@ void GetEstateEntrancesResponse::InternalSwap(GetEstateEntrancesResponse* other)
 }
 
 
+// ===================================================================
+
+void FetchAllEstatesRequest::InitAsDefaultInstance() {
+}
+class FetchAllEstatesRequest::_Internal {
+ public:
+};
+
+FetchAllEstatesRequest::FetchAllEstatesRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.estates.FetchAllEstatesRequest)
+}
+FetchAllEstatesRequest::FetchAllEstatesRequest(const FetchAllEstatesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  chunk_size_ = from.chunk_size_;
+  // @@protoc_insertion_point(copy_constructor:mruv.estates.FetchAllEstatesRequest)
+}
+
+void FetchAllEstatesRequest::SharedCtor() {
+  chunk_size_ = 0u;
+}
+
+FetchAllEstatesRequest::~FetchAllEstatesRequest() {
+  // @@protoc_insertion_point(destructor:mruv.estates.FetchAllEstatesRequest)
+  SharedDtor();
+}
+
+void FetchAllEstatesRequest::SharedDtor() {
+}
+
+void FetchAllEstatesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllEstatesRequest& FetchAllEstatesRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllEstatesRequest_estates_2festates_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllEstatesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.estates.FetchAllEstatesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  chunk_size_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllEstatesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 chunk_size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllEstatesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.estates.FetchAllEstatesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chunk_size(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.estates.FetchAllEstatesRequest)
+  return target;
+}
+
+size_t FetchAllEstatesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.estates.FetchAllEstatesRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chunk_size());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllEstatesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.estates.FetchAllEstatesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllEstatesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllEstatesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.estates.FetchAllEstatesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.estates.FetchAllEstatesRequest)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllEstatesRequest::MergeFrom(const FetchAllEstatesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.estates.FetchAllEstatesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.chunk_size() != 0) {
+    _internal_set_chunk_size(from._internal_chunk_size());
+  }
+}
+
+void FetchAllEstatesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.estates.FetchAllEstatesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllEstatesRequest::CopyFrom(const FetchAllEstatesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.estates.FetchAllEstatesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllEstatesRequest::IsInitialized() const {
+  return true;
+}
+
+void FetchAllEstatesRequest::InternalSwap(FetchAllEstatesRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chunk_size_, other->chunk_size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllEstatesRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void FetchAllEstatesResponse::InitAsDefaultInstance() {
+}
+class FetchAllEstatesResponse::_Internal {
+ public:
+};
+
+FetchAllEstatesResponse::FetchAllEstatesResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.estates.FetchAllEstatesResponse)
+}
+FetchAllEstatesResponse::FetchAllEstatesResponse(const FetchAllEstatesResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      estates_(from.estates_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.estates.FetchAllEstatesResponse)
+}
+
+void FetchAllEstatesResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FetchAllEstatesResponse_estates_2festates_2eproto.base);
+}
+
+FetchAllEstatesResponse::~FetchAllEstatesResponse() {
+  // @@protoc_insertion_point(destructor:mruv.estates.FetchAllEstatesResponse)
+  SharedDtor();
+}
+
+void FetchAllEstatesResponse::SharedDtor() {
+}
+
+void FetchAllEstatesResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllEstatesResponse& FetchAllEstatesResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllEstatesResponse_estates_2festates_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllEstatesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.estates.FetchAllEstatesResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  estates_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllEstatesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .mruv.estates.FullEstate estates = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_estates(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllEstatesResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.estates.FetchAllEstatesResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .mruv.estates.FullEstate estates = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_estates_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_estates(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.estates.FetchAllEstatesResponse)
+  return target;
+}
+
+size_t FetchAllEstatesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.estates.FetchAllEstatesResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .mruv.estates.FullEstate estates = 1;
+  total_size += 1UL * this->_internal_estates_size();
+  for (const auto& msg : this->estates_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllEstatesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.estates.FetchAllEstatesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllEstatesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllEstatesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.estates.FetchAllEstatesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.estates.FetchAllEstatesResponse)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllEstatesResponse::MergeFrom(const FetchAllEstatesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.estates.FetchAllEstatesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  estates_.MergeFrom(from.estates_);
+}
+
+void FetchAllEstatesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.estates.FetchAllEstatesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllEstatesResponse::CopyFrom(const FetchAllEstatesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.estates.FetchAllEstatesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllEstatesResponse::IsInitialized() const {
+  return true;
+}
+
+void FetchAllEstatesResponse::InternalSwap(FetchAllEstatesResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  estates_.InternalSwap(&other->estates_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllEstatesResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace estates
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::estates::Estate* Arena::CreateMaybeMessage< ::mruv::estates::Estate >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::estates::Estate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FullEstate_ObjectsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::estates::FullEstate_ObjectsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FullEstate_ObjectsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FullEstate_EntrancesEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::estates::FullEstate_EntrancesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FullEstate_EntrancesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FullEstate_GatesEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::estates::FullEstate_GatesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FullEstate_GatesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FullEstate* Arena::CreateMaybeMessage< ::mruv::estates::FullEstate >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FullEstate >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::estates::CreateEstateRequest* Arena::CreateMaybeMessage< ::mruv::estates::CreateEstateRequest >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::estates::CreateEstateRequest >(arena);
@@ -5220,6 +6422,12 @@ template<> PROTOBUF_NOINLINE ::mruv::estates::GetEstateEntrancesRequest* Arena::
 }
 template<> PROTOBUF_NOINLINE ::mruv::estates::GetEstateEntrancesResponse* Arena::CreateMaybeMessage< ::mruv::estates::GetEstateEntrancesResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::estates::GetEstateEntrancesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FetchAllEstatesRequest* Arena::CreateMaybeMessage< ::mruv::estates::FetchAllEstatesRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FetchAllEstatesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::estates::FetchAllEstatesResponse* Arena::CreateMaybeMessage< ::mruv::estates::FetchAllEstatesResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::estates::FetchAllEstatesResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

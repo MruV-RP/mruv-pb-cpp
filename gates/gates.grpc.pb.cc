@@ -32,6 +32,7 @@ static const char* MruVGatesService_method_names[] = {
   "/mruv.gates.MruVGatesService/Open",
   "/mruv.gates.MruVGatesService/Close",
   "/mruv.gates.MruVGatesService/FindNearestGate",
+  "/mruv.gates.MruVGatesService/FetchAll",
 };
 
 std::unique_ptr< MruVGatesService::Stub> MruVGatesService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -50,6 +51,7 @@ MruVGatesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
   , rpcmethod_Open_(MruVGatesService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_Close_(MruVGatesService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_FindNearestGate_(MruVGatesService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchAll_(MruVGatesService_method_names[9], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVGatesService::Stub::CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest& request, ::mruv::gates::CreateGateResponse* response) {
@@ -304,6 +306,22 @@ void MruVGatesService::Stub::experimental_async::FindNearestGate(::grpc::ClientC
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::FindNearestGateResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestGate_, context, request, false);
 }
 
+::grpc::ClientReader< ::mruv::gates::FetchAllGatesResponse>* MruVGatesService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+}
+
+void MruVGatesService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>* MruVGatesService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>* MruVGatesService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+}
+
 MruVGatesService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVGatesService_method_names[0],
@@ -395,6 +413,16 @@ MruVGatesService::Service::Service() {
              ::mruv::gates::FindNearestGateResponse* resp) {
                return service->FindNearestGate(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVGatesService_method_names[9],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< MruVGatesService::Service, ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
+          [](MruVGatesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::gates::FetchAllGatesRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::gates::FetchAllGatesResponse>* writer) {
+               return service->FetchAll(ctx, req, writer);
+             }, this)));
 }
 
 MruVGatesService::Service::~Service() {
@@ -460,6 +488,13 @@ MruVGatesService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVGatesService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::gates::FetchAllGatesRequest* request, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 

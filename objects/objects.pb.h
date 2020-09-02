@@ -109,15 +109,15 @@ extern DeleteRemoveBuildingRequestDefaultTypeInternal _DeleteRemoveBuildingReque
 class DeleteRemoveBuildingResponse;
 class DeleteRemoveBuildingResponseDefaultTypeInternal;
 extern DeleteRemoveBuildingResponseDefaultTypeInternal _DeleteRemoveBuildingResponse_default_instance_;
-class FetchAllRequest;
-class FetchAllRequestDefaultTypeInternal;
-extern FetchAllRequestDefaultTypeInternal _FetchAllRequest_default_instance_;
-class FetchAllResponse;
-class FetchAllResponseDefaultTypeInternal;
-extern FetchAllResponseDefaultTypeInternal _FetchAllResponse_default_instance_;
-class FetchAllResponse_ObjectsEntry_DoNotUse;
-class FetchAllResponse_ObjectsEntry_DoNotUseDefaultTypeInternal;
-extern FetchAllResponse_ObjectsEntry_DoNotUseDefaultTypeInternal _FetchAllResponse_ObjectsEntry_DoNotUse_default_instance_;
+class FetchAllObjectsRequest;
+class FetchAllObjectsRequestDefaultTypeInternal;
+extern FetchAllObjectsRequestDefaultTypeInternal _FetchAllObjectsRequest_default_instance_;
+class FetchAllObjectsResponse;
+class FetchAllObjectsResponseDefaultTypeInternal;
+extern FetchAllObjectsResponseDefaultTypeInternal _FetchAllObjectsResponse_default_instance_;
+class FetchAllObjectsResponse_ObjectsEntry_DoNotUse;
+class FetchAllObjectsResponse_ObjectsEntry_DoNotUseDefaultTypeInternal;
+extern FetchAllObjectsResponse_ObjectsEntry_DoNotUseDefaultTypeInternal _FetchAllObjectsResponse_ObjectsEntry_DoNotUse_default_instance_;
 class GetObjectMaterialTextsRequest;
 class GetObjectMaterialTextsRequestDefaultTypeInternal;
 extern GetObjectMaterialTextsRequestDefaultTypeInternal _GetObjectMaterialTextsRequest_default_instance_;
@@ -191,9 +191,9 @@ template<> ::mruv::objects::DeleteObjectRequest* Arena::CreateMaybeMessage<::mru
 template<> ::mruv::objects::DeleteObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteObjectResponse>(Arena*);
 template<> ::mruv::objects::DeleteRemoveBuildingRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteRemoveBuildingRequest>(Arena*);
 template<> ::mruv::objects::DeleteRemoveBuildingResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteRemoveBuildingResponse>(Arena*);
-template<> ::mruv::objects::FetchAllRequest* Arena::CreateMaybeMessage<::mruv::objects::FetchAllRequest>(Arena*);
-template<> ::mruv::objects::FetchAllResponse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllResponse>(Arena*);
-template<> ::mruv::objects::FetchAllResponse_ObjectsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllResponse_ObjectsEntry_DoNotUse>(Arena*);
+template<> ::mruv::objects::FetchAllObjectsRequest* Arena::CreateMaybeMessage<::mruv::objects::FetchAllObjectsRequest>(Arena*);
+template<> ::mruv::objects::FetchAllObjectsResponse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllObjectsResponse>(Arena*);
+template<> ::mruv::objects::FetchAllObjectsResponse_ObjectsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllObjectsResponse_ObjectsEntry_DoNotUse>(Arena*);
 template<> ::mruv::objects::GetObjectMaterialTextsRequest* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialTextsRequest>(Arena*);
 template<> ::mruv::objects::GetObjectMaterialTextsResponse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialTextsResponse>(Arena*);
 template<> ::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::GetObjectMaterialTextsResponse_MaterialTextsEntry_DoNotUse>(Arena*);
@@ -475,13 +475,13 @@ class Object :
   ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MaterialText >*
       mutable_material_texts();
 
-  // uint32 model = 1;
+  // int32 model = 1;
   void clear_model();
-  ::PROTOBUF_NAMESPACE_ID::uint32 model() const;
-  void set_model(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 model() const;
+  void set_model(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_model() const;
-  void _internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_model() const;
+  void _internal_set_model(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // float x = 2;
@@ -627,7 +627,7 @@ class Object :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
       0 > material_texts_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 model_;
+  ::PROTOBUF_NAMESPACE_ID::int32 model_;
   float x_;
   float y_;
   float z_;
@@ -4397,32 +4397,32 @@ class GetRemovedBuildingsResponse :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRemovedBuildingFieldNumber = 1,
+    kRemovedBuildingsFieldNumber = 1,
   };
-  // repeated .mruv.objects.RemovedBuilding removed_building = 1;
-  int removed_building_size() const;
+  // repeated .mruv.objects.RemovedBuilding removed_buildings = 1;
+  int removed_buildings_size() const;
   private:
-  int _internal_removed_building_size() const;
+  int _internal_removed_buildings_size() const;
   public:
-  void clear_removed_building();
-  ::mruv::objects::RemovedBuilding* mutable_removed_building(int index);
+  void clear_removed_buildings();
+  ::mruv::objects::RemovedBuilding* mutable_removed_buildings(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::RemovedBuilding >*
-      mutable_removed_building();
+      mutable_removed_buildings();
   private:
-  const ::mruv::objects::RemovedBuilding& _internal_removed_building(int index) const;
-  ::mruv::objects::RemovedBuilding* _internal_add_removed_building();
+  const ::mruv::objects::RemovedBuilding& _internal_removed_buildings(int index) const;
+  ::mruv::objects::RemovedBuilding* _internal_add_removed_buildings();
   public:
-  const ::mruv::objects::RemovedBuilding& removed_building(int index) const;
-  ::mruv::objects::RemovedBuilding* add_removed_building();
+  const ::mruv::objects::RemovedBuilding& removed_buildings(int index) const;
+  ::mruv::objects::RemovedBuilding* add_removed_buildings();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::RemovedBuilding >&
-      removed_building() const;
+      removed_buildings() const;
 
   // @@protoc_insertion_point(class_scope:mruv.objects.GetRemovedBuildingsResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::RemovedBuilding > removed_building_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::RemovedBuilding > removed_buildings_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
@@ -4671,23 +4671,23 @@ class DeleteRemoveBuildingResponse :
 };
 // -------------------------------------------------------------------
 
-class FetchAllRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllRequest) */ {
+class FetchAllObjectsRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllObjectsRequest) */ {
  public:
-  FetchAllRequest();
-  virtual ~FetchAllRequest();
+  FetchAllObjectsRequest();
+  virtual ~FetchAllObjectsRequest();
 
-  FetchAllRequest(const FetchAllRequest& from);
-  FetchAllRequest(FetchAllRequest&& from) noexcept
-    : FetchAllRequest() {
+  FetchAllObjectsRequest(const FetchAllObjectsRequest& from);
+  FetchAllObjectsRequest(FetchAllObjectsRequest&& from) noexcept
+    : FetchAllObjectsRequest() {
     *this = ::std::move(from);
   }
 
-  inline FetchAllRequest& operator=(const FetchAllRequest& from) {
+  inline FetchAllObjectsRequest& operator=(const FetchAllObjectsRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline FetchAllRequest& operator=(FetchAllRequest&& from) noexcept {
+  inline FetchAllObjectsRequest& operator=(FetchAllObjectsRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -4705,37 +4705,37 @@ class FetchAllRequest :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const FetchAllRequest& default_instance();
+  static const FetchAllObjectsRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FetchAllRequest* internal_default_instance() {
-    return reinterpret_cast<const FetchAllRequest*>(
-               &_FetchAllRequest_default_instance_);
+  static inline const FetchAllObjectsRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchAllObjectsRequest*>(
+               &_FetchAllObjectsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     34;
 
-  friend void swap(FetchAllRequest& a, FetchAllRequest& b) {
+  friend void swap(FetchAllObjectsRequest& a, FetchAllObjectsRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(FetchAllRequest* other) {
+  inline void Swap(FetchAllObjectsRequest* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline FetchAllRequest* New() const final {
-    return CreateMaybeMessage<FetchAllRequest>(nullptr);
+  inline FetchAllObjectsRequest* New() const final {
+    return CreateMaybeMessage<FetchAllObjectsRequest>(nullptr);
   }
 
-  FetchAllRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<FetchAllRequest>(arena);
+  FetchAllObjectsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllObjectsRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const FetchAllRequest& from);
-  void MergeFrom(const FetchAllRequest& from);
+  void CopyFrom(const FetchAllObjectsRequest& from);
+  void MergeFrom(const FetchAllObjectsRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -4749,10 +4749,10 @@ class FetchAllRequest :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(FetchAllRequest* other);
+  void InternalSwap(FetchAllObjectsRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.objects.FetchAllRequest";
+    return "mruv.objects.FetchAllObjectsRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -4778,6 +4778,7 @@ class FetchAllRequest :
 
   enum : int {
     kChunkSizeFieldNumber = 1,
+    kEstateIdFieldNumber = 2,
   };
   // uint32 chunk_size = 1;
   void clear_chunk_size();
@@ -4788,32 +4789,42 @@ class FetchAllRequest :
   void _internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllRequest)
+  // uint32 estate_id = 2;
+  void clear_estate_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id() const;
+  void set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_estate_id() const;
+  void _internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllObjectsRequest)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 estate_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fobjects_2eproto;
 };
 // -------------------------------------------------------------------
 
-class FetchAllResponse_ObjectsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllResponse_ObjectsEntry_DoNotUse, 
+class FetchAllObjectsResponse_ObjectsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllObjectsResponse_ObjectsEntry_DoNotUse, 
     ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
     0 > {
 public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllResponse_ObjectsEntry_DoNotUse, 
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllObjectsResponse_ObjectsEntry_DoNotUse, 
     ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
     0 > SuperType;
-  FetchAllResponse_ObjectsEntry_DoNotUse();
-  FetchAllResponse_ObjectsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const FetchAllResponse_ObjectsEntry_DoNotUse& other);
-  static const FetchAllResponse_ObjectsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FetchAllResponse_ObjectsEntry_DoNotUse*>(&_FetchAllResponse_ObjectsEntry_DoNotUse_default_instance_); }
+  FetchAllObjectsResponse_ObjectsEntry_DoNotUse();
+  FetchAllObjectsResponse_ObjectsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FetchAllObjectsResponse_ObjectsEntry_DoNotUse& other);
+  static const FetchAllObjectsResponse_ObjectsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FetchAllObjectsResponse_ObjectsEntry_DoNotUse*>(&_FetchAllObjectsResponse_ObjectsEntry_DoNotUse_default_instance_); }
   static bool ValidateKey(void*) { return true; }
   static bool ValidateValue(void*) { return true; }
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
@@ -4829,23 +4840,23 @@ public:
 
 // -------------------------------------------------------------------
 
-class FetchAllResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllResponse) */ {
+class FetchAllObjectsResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllObjectsResponse) */ {
  public:
-  FetchAllResponse();
-  virtual ~FetchAllResponse();
+  FetchAllObjectsResponse();
+  virtual ~FetchAllObjectsResponse();
 
-  FetchAllResponse(const FetchAllResponse& from);
-  FetchAllResponse(FetchAllResponse&& from) noexcept
-    : FetchAllResponse() {
+  FetchAllObjectsResponse(const FetchAllObjectsResponse& from);
+  FetchAllObjectsResponse(FetchAllObjectsResponse&& from) noexcept
+    : FetchAllObjectsResponse() {
     *this = ::std::move(from);
   }
 
-  inline FetchAllResponse& operator=(const FetchAllResponse& from) {
+  inline FetchAllObjectsResponse& operator=(const FetchAllObjectsResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline FetchAllResponse& operator=(FetchAllResponse&& from) noexcept {
+  inline FetchAllObjectsResponse& operator=(FetchAllObjectsResponse&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -4863,37 +4874,37 @@ class FetchAllResponse :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const FetchAllResponse& default_instance();
+  static const FetchAllObjectsResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FetchAllResponse* internal_default_instance() {
-    return reinterpret_cast<const FetchAllResponse*>(
-               &_FetchAllResponse_default_instance_);
+  static inline const FetchAllObjectsResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchAllObjectsResponse*>(
+               &_FetchAllObjectsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     36;
 
-  friend void swap(FetchAllResponse& a, FetchAllResponse& b) {
+  friend void swap(FetchAllObjectsResponse& a, FetchAllObjectsResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(FetchAllResponse* other) {
+  inline void Swap(FetchAllObjectsResponse* other) {
     if (other == this) return;
     InternalSwap(other);
   }
 
   // implements Message ----------------------------------------------
 
-  inline FetchAllResponse* New() const final {
-    return CreateMaybeMessage<FetchAllResponse>(nullptr);
+  inline FetchAllObjectsResponse* New() const final {
+    return CreateMaybeMessage<FetchAllObjectsResponse>(nullptr);
   }
 
-  FetchAllResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<FetchAllResponse>(arena);
+  FetchAllObjectsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllObjectsResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const FetchAllResponse& from);
-  void MergeFrom(const FetchAllResponse& from);
+  void CopyFrom(const FetchAllObjectsResponse& from);
+  void MergeFrom(const FetchAllObjectsResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -4907,10 +4918,10 @@ class FetchAllResponse :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(FetchAllResponse* other);
+  void InternalSwap(FetchAllObjectsResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.objects.FetchAllResponse";
+    return "mruv.objects.FetchAllObjectsResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -4955,13 +4966,13 @@ class FetchAllResponse :
   ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object >*
       mutable_objects();
 
-  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllResponse)
+  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllObjectsResponse)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      FetchAllResponse_ObjectsEntry_DoNotUse,
+      FetchAllObjectsResponse_ObjectsEntry_DoNotUse,
       ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
@@ -4984,22 +4995,22 @@ class FetchAllResponse :
 
 // Object
 
-// uint32 model = 1;
+// int32 model = 1;
 inline void Object::clear_model() {
-  model_ = 0u;
+  model_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::_internal_model() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Object::_internal_model() const {
   return model_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 Object::model() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Object::model() const {
   // @@protoc_insertion_point(field_get:mruv.objects.Object.model)
   return _internal_model();
 }
-inline void Object::_internal_set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void Object::_internal_set_model(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   model_ = value;
 }
-inline void Object::set_model(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void Object::set_model(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_model(value);
   // @@protoc_insertion_point(field_set:mruv.objects.Object.model)
 }
@@ -6712,43 +6723,43 @@ inline void GetRemovedBuildingsRequest::set_estate_id(::PROTOBUF_NAMESPACE_ID::u
 
 // GetRemovedBuildingsResponse
 
-// repeated .mruv.objects.RemovedBuilding removed_building = 1;
-inline int GetRemovedBuildingsResponse::_internal_removed_building_size() const {
-  return removed_building_.size();
+// repeated .mruv.objects.RemovedBuilding removed_buildings = 1;
+inline int GetRemovedBuildingsResponse::_internal_removed_buildings_size() const {
+  return removed_buildings_.size();
 }
-inline int GetRemovedBuildingsResponse::removed_building_size() const {
-  return _internal_removed_building_size();
+inline int GetRemovedBuildingsResponse::removed_buildings_size() const {
+  return _internal_removed_buildings_size();
 }
-inline void GetRemovedBuildingsResponse::clear_removed_building() {
-  removed_building_.Clear();
+inline void GetRemovedBuildingsResponse::clear_removed_buildings() {
+  removed_buildings_.Clear();
 }
-inline ::mruv::objects::RemovedBuilding* GetRemovedBuildingsResponse::mutable_removed_building(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.objects.GetRemovedBuildingsResponse.removed_building)
-  return removed_building_.Mutable(index);
+inline ::mruv::objects::RemovedBuilding* GetRemovedBuildingsResponse::mutable_removed_buildings(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.objects.GetRemovedBuildingsResponse.removed_buildings)
+  return removed_buildings_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::RemovedBuilding >*
-GetRemovedBuildingsResponse::mutable_removed_building() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.objects.GetRemovedBuildingsResponse.removed_building)
-  return &removed_building_;
+GetRemovedBuildingsResponse::mutable_removed_buildings() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.objects.GetRemovedBuildingsResponse.removed_buildings)
+  return &removed_buildings_;
 }
-inline const ::mruv::objects::RemovedBuilding& GetRemovedBuildingsResponse::_internal_removed_building(int index) const {
-  return removed_building_.Get(index);
+inline const ::mruv::objects::RemovedBuilding& GetRemovedBuildingsResponse::_internal_removed_buildings(int index) const {
+  return removed_buildings_.Get(index);
 }
-inline const ::mruv::objects::RemovedBuilding& GetRemovedBuildingsResponse::removed_building(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.objects.GetRemovedBuildingsResponse.removed_building)
-  return _internal_removed_building(index);
+inline const ::mruv::objects::RemovedBuilding& GetRemovedBuildingsResponse::removed_buildings(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.objects.GetRemovedBuildingsResponse.removed_buildings)
+  return _internal_removed_buildings(index);
 }
-inline ::mruv::objects::RemovedBuilding* GetRemovedBuildingsResponse::_internal_add_removed_building() {
-  return removed_building_.Add();
+inline ::mruv::objects::RemovedBuilding* GetRemovedBuildingsResponse::_internal_add_removed_buildings() {
+  return removed_buildings_.Add();
 }
-inline ::mruv::objects::RemovedBuilding* GetRemovedBuildingsResponse::add_removed_building() {
-  // @@protoc_insertion_point(field_add:mruv.objects.GetRemovedBuildingsResponse.removed_building)
-  return _internal_add_removed_building();
+inline ::mruv::objects::RemovedBuilding* GetRemovedBuildingsResponse::add_removed_buildings() {
+  // @@protoc_insertion_point(field_add:mruv.objects.GetRemovedBuildingsResponse.removed_buildings)
+  return _internal_add_removed_buildings();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::objects::RemovedBuilding >&
-GetRemovedBuildingsResponse::removed_building() const {
-  // @@protoc_insertion_point(field_list:mruv.objects.GetRemovedBuildingsResponse.removed_building)
-  return removed_building_;
+GetRemovedBuildingsResponse::removed_buildings() const {
+  // @@protoc_insertion_point(field_list:mruv.objects.GetRemovedBuildingsResponse.removed_buildings)
+  return removed_buildings_;
 }
 
 // -------------------------------------------------------------------
@@ -6781,60 +6792,80 @@ inline void DeleteRemoveBuildingRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 
 
 // -------------------------------------------------------------------
 
-// FetchAllRequest
+// FetchAllObjectsRequest
 
 // uint32 chunk_size = 1;
-inline void FetchAllRequest::clear_chunk_size() {
+inline void FetchAllObjectsRequest::clear_chunk_size() {
   chunk_size_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllRequest::_internal_chunk_size() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllObjectsRequest::_internal_chunk_size() const {
   return chunk_size_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllRequest::chunk_size() const {
-  // @@protoc_insertion_point(field_get:mruv.objects.FetchAllRequest.chunk_size)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllObjectsRequest::chunk_size() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.FetchAllObjectsRequest.chunk_size)
   return _internal_chunk_size();
 }
-inline void FetchAllRequest::_internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void FetchAllObjectsRequest::_internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   chunk_size_ = value;
 }
-inline void FetchAllRequest::set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void FetchAllObjectsRequest::set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_chunk_size(value);
-  // @@protoc_insertion_point(field_set:mruv.objects.FetchAllRequest.chunk_size)
+  // @@protoc_insertion_point(field_set:mruv.objects.FetchAllObjectsRequest.chunk_size)
+}
+
+// uint32 estate_id = 2;
+inline void FetchAllObjectsRequest::clear_estate_id() {
+  estate_id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllObjectsRequest::_internal_estate_id() const {
+  return estate_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllObjectsRequest::estate_id() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.FetchAllObjectsRequest.estate_id)
+  return _internal_estate_id();
+}
+inline void FetchAllObjectsRequest::_internal_set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  estate_id_ = value;
+}
+inline void FetchAllObjectsRequest::set_estate_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_estate_id(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.FetchAllObjectsRequest.estate_id)
 }
 
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
 
-// FetchAllResponse
+// FetchAllObjectsResponse
 
 // map<int32, .mruv.objects.Object> objects = 1;
-inline int FetchAllResponse::_internal_objects_size() const {
+inline int FetchAllObjectsResponse::_internal_objects_size() const {
   return objects_.size();
 }
-inline int FetchAllResponse::objects_size() const {
+inline int FetchAllObjectsResponse::objects_size() const {
   return _internal_objects_size();
 }
-inline void FetchAllResponse::clear_objects() {
+inline void FetchAllObjectsResponse::clear_objects() {
   objects_.Clear();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object >&
-FetchAllResponse::_internal_objects() const {
+FetchAllObjectsResponse::_internal_objects() const {
   return objects_.GetMap();
 }
 inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object >&
-FetchAllResponse::objects() const {
-  // @@protoc_insertion_point(field_map:mruv.objects.FetchAllResponse.objects)
+FetchAllObjectsResponse::objects() const {
+  // @@protoc_insertion_point(field_map:mruv.objects.FetchAllObjectsResponse.objects)
   return _internal_objects();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object >*
-FetchAllResponse::_internal_mutable_objects() {
+FetchAllObjectsResponse::_internal_mutable_objects() {
   return objects_.MutableMap();
 }
 inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::int32, ::mruv::objects::Object >*
-FetchAllResponse::mutable_objects() {
-  // @@protoc_insertion_point(field_mutable_map:mruv.objects.FetchAllResponse.objects)
+FetchAllObjectsResponse::mutable_objects() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.objects.FetchAllObjectsResponse.objects)
   return _internal_mutable_objects();
 }
 

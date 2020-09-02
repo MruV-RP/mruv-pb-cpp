@@ -14,6 +14,8 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_gates_2fgates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllGatesResponse_GatesEntry_DoNotUse_gates_2fgates_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_gates_2fgates_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Gate_gates_2fgates_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fmovable_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_MovableObject_objects_2fmovable_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_spots_2fspots_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Spot_spots_2fspots_2eproto;
 namespace mruv {
@@ -94,6 +96,18 @@ class FindNearestGateResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FindNearestGateResponse> _instance;
 } _FindNearestGateResponse_default_instance_;
+class FetchAllGatesRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllGatesRequest> _instance;
+} _FetchAllGatesRequest_default_instance_;
+class FetchAllGatesResponse_GatesEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllGatesResponse_GatesEntry_DoNotUse> _instance;
+} _FetchAllGatesResponse_GatesEntry_DoNotUse_default_instance_;
+class FetchAllGatesResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllGatesResponse> _instance;
+} _FetchAllGatesResponse_default_instance_;
 }  // namespace gates
 }  // namespace mruv
 static void InitDefaultsscc_info_CloseRequest_gates_2fgates_2eproto() {
@@ -181,6 +195,49 @@ static void InitDefaultsscc_info_DeleteGateResponse_gates_2fgates_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteGateResponse_gates_2fgates_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteGateResponse_gates_2fgates_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllGatesRequest_gates_2fgates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::gates::_FetchAllGatesRequest_default_instance_;
+    new (ptr) ::mruv::gates::FetchAllGatesRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::gates::FetchAllGatesRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FetchAllGatesRequest_gates_2fgates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FetchAllGatesRequest_gates_2fgates_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllGatesResponse_gates_2fgates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::gates::_FetchAllGatesResponse_default_instance_;
+    new (ptr) ::mruv::gates::FetchAllGatesResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::gates::FetchAllGatesResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllGatesResponse_gates_2fgates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllGatesResponse_gates_2fgates_2eproto}, {
+      &scc_info_FetchAllGatesResponse_GatesEntry_DoNotUse_gates_2fgates_2eproto.base,}};
+
+static void InitDefaultsscc_info_FetchAllGatesResponse_GatesEntry_DoNotUse_gates_2fgates_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::gates::_FetchAllGatesResponse_GatesEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse();
+  }
+  ::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllGatesResponse_GatesEntry_DoNotUse_gates_2fgates_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllGatesResponse_GatesEntry_DoNotUse_gates_2fgates_2eproto}, {
+      &scc_info_Gate_gates_2fgates_2eproto.base,}};
 
 static void InitDefaultsscc_info_FindNearestGateRequest_gates_2fgates_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -368,7 +425,7 @@ static void InitDefaultsscc_info_UpdateGateResponse_gates_2fgates_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateGateResponse_gates_2fgates_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateGateResponse_gates_2fgates_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_gates_2fgates_2eproto[19];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_gates_2fgates_2eproto[22];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_gates_2fgates_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_gates_2fgates_2eproto = nullptr;
 
@@ -498,6 +555,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_gates_2fgates_2eproto::offsets
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::gates::FindNearestGateResponse, id_),
   PROTOBUF_FIELD_OFFSET(::mruv::gates::FindNearestGateResponse, distance_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesRequest, chunk_size_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::gates::FetchAllGatesResponse, gates_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::gates::Gate)},
@@ -519,6 +597,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 104, -1, sizeof(::mruv::gates::CloseResponse)},
   { 109, -1, sizeof(::mruv::gates::FindNearestGateRequest)},
   { 118, -1, sizeof(::mruv::gates::FindNearestGateResponse)},
+  { 125, -1, sizeof(::mruv::gates::FetchAllGatesRequest)},
+  { 131, 138, sizeof(::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse)},
+  { 140, -1, sizeof(::mruv::gates::FetchAllGatesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -541,6 +622,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::gates::_CloseResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::gates::_FindNearestGateRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::gates::_FindNearestGateResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::gates::_FetchAllGatesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::gates::_FetchAllGatesResponse_GatesEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::gates::_FetchAllGatesResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_gates_2fgates_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -570,29 +654,36 @@ const char descriptor_table_protodef_gates_2fgates_2eproto[] PROTOBUF_SECTION_VA
   "onse\"O\n\026FindNearestGateRequest\022\t\n\001x\030\001 \001("
   "\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\024\n\014max_distance\030"
   "\004 \001(\002\"7\n\027FindNearestGateResponse\022\n\n\002id\030\001"
-  " \001(\r\022\020\n\010distance\030\002 \001(\0022\373\006\n\020MruVGatesServ"
-  "ice\022^\n\nCreateGate\022\035.mruv.gates.CreateGat"
-  "eRequest\032\036.mruv.gates.CreateGateResponse"
-  "\"\021\202\323\344\223\002\013\"\t/v1/gates\022Z\n\007GetGate\022\032.mruv.ga"
-  "tes.GetGateRequest\032\033.mruv.gates.GetGateR"
-  "esponse\"\026\202\323\344\223\002\020\022\016/v1/gates/{id}\022c\n\nUpdat"
-  "eGate\022\035.mruv.gates.UpdateGateRequest\032\036.m"
-  "ruv.gates.UpdateGateResponse\"\026\202\323\344\223\002\0202\016/v"
-  "1/gates/{id}\022c\n\nDeleteGate\022\035.mruv.gates."
-  "DeleteGateRequest\032\036.mruv.gates.DeleteGat"
-  "eResponse\"\026\202\323\344\223\002\020*\016/v1/gates/{id}\022V\n\004Loc"
-  "k\022\027.mruv.gates.LockRequest\032\030.mruv.gates."
-  "LockResponse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/loc"
-  "k\022^\n\006Unlock\022\031.mruv.gates.UnlockRequest\032\032"
-  ".mruv.gates.UnlockResponse\"\035\202\323\344\223\002\027\"\025/v1/"
-  "gates/{id}/unlock\022V\n\004Open\022\027.mruv.gates.O"
-  "penRequest\032\030.mruv.gates.OpenResponse\"\033\202\323"
-  "\344\223\002\025\"\023/v1/gates/{id}/open\022Z\n\005Close\022\030.mru"
-  "v.gates.CloseRequest\032\031.mruv.gates.CloseR"
-  "esponse\"\034\202\323\344\223\002\026\"\024/v1/gates/{id}/close\022u\n"
-  "\017FindNearestGate\022\".mruv.gates.FindNeares"
-  "tGateRequest\032#.mruv.gates.FindNearestGat"
-  "eResponse\"\031\202\323\344\223\002\023\022\021/v1/gates/nearestB%Z#"
+  " \001(\r\022\020\n\010distance\030\002 \001(\002\"*\n\024FetchAllGatesR"
+  "equest\022\022\n\nchunk_size\030\001 \001(\r\"\224\001\n\025FetchAllG"
+  "atesResponse\022;\n\005gates\030\001 \003(\0132,.mruv.gates"
+  ".FetchAllGatesResponse.GatesEntry\032>\n\nGat"
+  "esEntry\022\013\n\003key\030\001 \001(\r\022\037\n\005value\030\002 \001(\0132\020.mr"
+  "uv.gates.Gate:\0028\0012\320\007\n\020MruVGatesService\022^"
+  "\n\nCreateGate\022\035.mruv.gates.CreateGateRequ"
+  "est\032\036.mruv.gates.CreateGateResponse\"\021\202\323\344"
+  "\223\002\013\"\t/v1/gates\022Z\n\007GetGate\022\032.mruv.gates.G"
+  "etGateRequest\032\033.mruv.gates.GetGateRespon"
+  "se\"\026\202\323\344\223\002\020\022\016/v1/gates/{id}\022c\n\nUpdateGate"
+  "\022\035.mruv.gates.UpdateGateRequest\032\036.mruv.g"
+  "ates.UpdateGateResponse\"\026\202\323\344\223\002\0202\016/v1/gat"
+  "es/{id}\022c\n\nDeleteGate\022\035.mruv.gates.Delet"
+  "eGateRequest\032\036.mruv.gates.DeleteGateResp"
+  "onse\"\026\202\323\344\223\002\020*\016/v1/gates/{id}\022V\n\004Lock\022\027.m"
+  "ruv.gates.LockRequest\032\030.mruv.gates.LockR"
+  "esponse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/lock\022^\n\006"
+  "Unlock\022\031.mruv.gates.UnlockRequest\032\032.mruv"
+  ".gates.UnlockResponse\"\035\202\323\344\223\002\027\"\025/v1/gates"
+  "/{id}/unlock\022V\n\004Open\022\027.mruv.gates.OpenRe"
+  "quest\032\030.mruv.gates.OpenResponse\"\033\202\323\344\223\002\025\""
+  "\023/v1/gates/{id}/open\022Z\n\005Close\022\030.mruv.gat"
+  "es.CloseRequest\032\031.mruv.gates.CloseRespon"
+  "se\"\034\202\323\344\223\002\026\"\024/v1/gates/{id}/close\022u\n\017Find"
+  "NearestGate\022\".mruv.gates.FindNearestGate"
+  "Request\032#.mruv.gates.FindNearestGateResp"
+  "onse\"\031\202\323\344\223\002\023\022\021/v1/gates/nearest\022S\n\010Fetch"
+  "All\022 .mruv.gates.FetchAllGatesRequest\032!."
+  "mruv.gates.FetchAllGatesResponse\"\0000\001B%Z#"
   "github.com/MruV-RP/mruv-pb-go/gatesb\006pro"
   "to3"
   ;
@@ -601,13 +692,16 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_objects_2fmovable_2eproto,
   &::descriptor_table_spots_2fspots_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gates_2fgates_2eproto_sccs[19] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gates_2fgates_2eproto_sccs[22] = {
   &scc_info_CloseRequest_gates_2fgates_2eproto.base,
   &scc_info_CloseResponse_gates_2fgates_2eproto.base,
   &scc_info_CreateGateRequest_gates_2fgates_2eproto.base,
   &scc_info_CreateGateResponse_gates_2fgates_2eproto.base,
   &scc_info_DeleteGateRequest_gates_2fgates_2eproto.base,
   &scc_info_DeleteGateResponse_gates_2fgates_2eproto.base,
+  &scc_info_FetchAllGatesRequest_gates_2fgates_2eproto.base,
+  &scc_info_FetchAllGatesResponse_gates_2fgates_2eproto.base,
+  &scc_info_FetchAllGatesResponse_GatesEntry_DoNotUse_gates_2fgates_2eproto.base,
   &scc_info_FindNearestGateRequest_gates_2fgates_2eproto.base,
   &scc_info_FindNearestGateResponse_gates_2fgates_2eproto.base,
   &scc_info_Gate_gates_2fgates_2eproto.base,
@@ -625,10 +719,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gat
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_gates_2fgates_2eproto_once;
 static bool descriptor_table_gates_2fgates_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_gates_2fgates_2eproto = {
-  &descriptor_table_gates_2fgates_2eproto_initialized, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 2003,
-  &descriptor_table_gates_2fgates_2eproto_once, descriptor_table_gates_2fgates_2eproto_sccs, descriptor_table_gates_2fgates_2eproto_deps, 19, 3,
+  &descriptor_table_gates_2fgates_2eproto_initialized, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 2283,
+  &descriptor_table_gates_2fgates_2eproto_once, descriptor_table_gates_2fgates_2eproto_sccs, descriptor_table_gates_2fgates_2eproto_deps, 22, 3,
   schemas, file_default_instances, TableStruct_gates_2fgates_2eproto::offsets,
-  file_level_metadata_gates_2fgates_2eproto, 19, file_level_enum_descriptors_gates_2fgates_2eproto, file_level_service_descriptors_gates_2fgates_2eproto,
+  file_level_metadata_gates_2fgates_2eproto, 22, file_level_enum_descriptors_gates_2fgates_2eproto, file_level_service_descriptors_gates_2fgates_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -4579,6 +4673,425 @@ void FindNearestGateResponse::InternalSwap(FindNearestGateResponse* other) {
 }
 
 
+// ===================================================================
+
+void FetchAllGatesRequest::InitAsDefaultInstance() {
+}
+class FetchAllGatesRequest::_Internal {
+ public:
+};
+
+FetchAllGatesRequest::FetchAllGatesRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.gates.FetchAllGatesRequest)
+}
+FetchAllGatesRequest::FetchAllGatesRequest(const FetchAllGatesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  chunk_size_ = from.chunk_size_;
+  // @@protoc_insertion_point(copy_constructor:mruv.gates.FetchAllGatesRequest)
+}
+
+void FetchAllGatesRequest::SharedCtor() {
+  chunk_size_ = 0u;
+}
+
+FetchAllGatesRequest::~FetchAllGatesRequest() {
+  // @@protoc_insertion_point(destructor:mruv.gates.FetchAllGatesRequest)
+  SharedDtor();
+}
+
+void FetchAllGatesRequest::SharedDtor() {
+}
+
+void FetchAllGatesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllGatesRequest& FetchAllGatesRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllGatesRequest_gates_2fgates_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllGatesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.gates.FetchAllGatesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  chunk_size_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllGatesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 chunk_size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllGatesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.gates.FetchAllGatesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chunk_size(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.gates.FetchAllGatesRequest)
+  return target;
+}
+
+size_t FetchAllGatesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.gates.FetchAllGatesRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chunk_size());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllGatesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.gates.FetchAllGatesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllGatesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllGatesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.gates.FetchAllGatesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.gates.FetchAllGatesRequest)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllGatesRequest::MergeFrom(const FetchAllGatesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.gates.FetchAllGatesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.chunk_size() != 0) {
+    _internal_set_chunk_size(from._internal_chunk_size());
+  }
+}
+
+void FetchAllGatesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.gates.FetchAllGatesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllGatesRequest::CopyFrom(const FetchAllGatesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.gates.FetchAllGatesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllGatesRequest::IsInitialized() const {
+  return true;
+}
+
+void FetchAllGatesRequest::InternalSwap(FetchAllGatesRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chunk_size_, other->chunk_size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllGatesRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+FetchAllGatesResponse_GatesEntry_DoNotUse::FetchAllGatesResponse_GatesEntry_DoNotUse() {}
+FetchAllGatesResponse_GatesEntry_DoNotUse::FetchAllGatesResponse_GatesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FetchAllGatesResponse_GatesEntry_DoNotUse::MergeFrom(const FetchAllGatesResponse_GatesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllGatesResponse_GatesEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FetchAllGatesResponse_GatesEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void FetchAllGatesResponse::InitAsDefaultInstance() {
+}
+class FetchAllGatesResponse::_Internal {
+ public:
+};
+
+FetchAllGatesResponse::FetchAllGatesResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.gates.FetchAllGatesResponse)
+}
+FetchAllGatesResponse::FetchAllGatesResponse(const FetchAllGatesResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  gates_.MergeFrom(from.gates_);
+  // @@protoc_insertion_point(copy_constructor:mruv.gates.FetchAllGatesResponse)
+}
+
+void FetchAllGatesResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FetchAllGatesResponse_gates_2fgates_2eproto.base);
+}
+
+FetchAllGatesResponse::~FetchAllGatesResponse() {
+  // @@protoc_insertion_point(destructor:mruv.gates.FetchAllGatesResponse)
+  SharedDtor();
+}
+
+void FetchAllGatesResponse::SharedDtor() {
+}
+
+void FetchAllGatesResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllGatesResponse& FetchAllGatesResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllGatesResponse_gates_2fgates_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllGatesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.gates.FetchAllGatesResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  gates_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllGatesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // map<uint32, .mruv.gates.Gate> gates = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&gates_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllGatesResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.gates.FetchAllGatesResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.gates.Gate> gates = 1;
+  if (!this->_internal_gates().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_gates().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_gates().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_iterator
+          it = this->_internal_gates().begin();
+          it != this->_internal_gates().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FetchAllGatesResponse_GatesEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_iterator
+          it = this->_internal_gates().begin();
+          it != this->_internal_gates().end(); ++it) {
+        target = FetchAllGatesResponse_GatesEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.gates.FetchAllGatesResponse)
+  return target;
+}
+
+size_t FetchAllGatesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.gates.FetchAllGatesResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.gates.Gate> gates = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_gates_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >::const_iterator
+      it = this->_internal_gates().begin();
+      it != this->_internal_gates().end(); ++it) {
+    total_size += FetchAllGatesResponse_GatesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllGatesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.gates.FetchAllGatesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllGatesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllGatesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.gates.FetchAllGatesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.gates.FetchAllGatesResponse)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllGatesResponse::MergeFrom(const FetchAllGatesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.gates.FetchAllGatesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  gates_.MergeFrom(from.gates_);
+}
+
+void FetchAllGatesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.gates.FetchAllGatesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllGatesResponse::CopyFrom(const FetchAllGatesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.gates.FetchAllGatesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllGatesResponse::IsInitialized() const {
+  return true;
+}
+
+void FetchAllGatesResponse::InternalSwap(FetchAllGatesResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  gates_.Swap(&other->gates_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllGatesResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace gates
 }  // namespace mruv
@@ -4639,6 +5152,15 @@ template<> PROTOBUF_NOINLINE ::mruv::gates::FindNearestGateRequest* Arena::Creat
 }
 template<> PROTOBUF_NOINLINE ::mruv::gates::FindNearestGateResponse* Arena::CreateMaybeMessage< ::mruv::gates::FindNearestGateResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::gates::FindNearestGateResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::gates::FetchAllGatesRequest* Arena::CreateMaybeMessage< ::mruv::gates::FetchAllGatesRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::gates::FetchAllGatesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::gates::FetchAllGatesResponse_GatesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::gates::FetchAllGatesResponse* Arena::CreateMaybeMessage< ::mruv::gates::FetchAllGatesResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::gates::FetchAllGatesResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

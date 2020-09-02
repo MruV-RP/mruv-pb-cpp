@@ -31,8 +31,12 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
+#include "objects/objects.pb.h"
 #include "entrances/entrances.pb.h"
 #include "gates/gates.pb.h"
 // @@protoc_insertion_point(includes)
@@ -50,7 +54,7 @@ struct TableStruct_estates_2festates_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +90,27 @@ extern DeleteEstateResponseDefaultTypeInternal _DeleteEstateResponse_default_ins
 class Estate;
 class EstateDefaultTypeInternal;
 extern EstateDefaultTypeInternal _Estate_default_instance_;
+class FetchAllEstatesRequest;
+class FetchAllEstatesRequestDefaultTypeInternal;
+extern FetchAllEstatesRequestDefaultTypeInternal _FetchAllEstatesRequest_default_instance_;
+class FetchAllEstatesResponse;
+class FetchAllEstatesResponseDefaultTypeInternal;
+extern FetchAllEstatesResponseDefaultTypeInternal _FetchAllEstatesResponse_default_instance_;
+class FullEstate;
+class FullEstateDefaultTypeInternal;
+extern FullEstateDefaultTypeInternal _FullEstate_default_instance_;
+class FullEstate_EntrancesEntry_DoNotUse;
+class FullEstate_EntrancesEntry_DoNotUseDefaultTypeInternal;
+extern FullEstate_EntrancesEntry_DoNotUseDefaultTypeInternal _FullEstate_EntrancesEntry_DoNotUse_default_instance_;
+class FullEstate_GatesEntry_DoNotUse;
+class FullEstate_GatesEntry_DoNotUseDefaultTypeInternal;
+extern FullEstate_GatesEntry_DoNotUseDefaultTypeInternal _FullEstate_GatesEntry_DoNotUse_default_instance_;
+class FullEstate_ObjectsEntry_DoNotUse;
+class FullEstate_ObjectsEntry_DoNotUseDefaultTypeInternal;
+extern FullEstate_ObjectsEntry_DoNotUseDefaultTypeInternal _FullEstate_ObjectsEntry_DoNotUse_default_instance_;
+class FullEstate_RemovedBuildingsEntry_DoNotUse;
+class FullEstate_RemovedBuildingsEntry_DoNotUseDefaultTypeInternal;
+extern FullEstate_RemovedBuildingsEntry_DoNotUseDefaultTypeInternal _FullEstate_RemovedBuildingsEntry_DoNotUse_default_instance_;
 class GetEstateEntrancesRequest;
 class GetEstateEntrancesRequestDefaultTypeInternal;
 extern GetEstateEntrancesRequestDefaultTypeInternal _GetEstateEntrancesRequest_default_instance_;
@@ -137,6 +162,13 @@ template<> ::mruv::estates::CreateEstateResponse* Arena::CreateMaybeMessage<::mr
 template<> ::mruv::estates::DeleteEstateRequest* Arena::CreateMaybeMessage<::mruv::estates::DeleteEstateRequest>(Arena*);
 template<> ::mruv::estates::DeleteEstateResponse* Arena::CreateMaybeMessage<::mruv::estates::DeleteEstateResponse>(Arena*);
 template<> ::mruv::estates::Estate* Arena::CreateMaybeMessage<::mruv::estates::Estate>(Arena*);
+template<> ::mruv::estates::FetchAllEstatesRequest* Arena::CreateMaybeMessage<::mruv::estates::FetchAllEstatesRequest>(Arena*);
+template<> ::mruv::estates::FetchAllEstatesResponse* Arena::CreateMaybeMessage<::mruv::estates::FetchAllEstatesResponse>(Arena*);
+template<> ::mruv::estates::FullEstate* Arena::CreateMaybeMessage<::mruv::estates::FullEstate>(Arena*);
+template<> ::mruv::estates::FullEstate_EntrancesEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::estates::FullEstate_EntrancesEntry_DoNotUse>(Arena*);
+template<> ::mruv::estates::FullEstate_GatesEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::estates::FullEstate_GatesEntry_DoNotUse>(Arena*);
+template<> ::mruv::estates::FullEstate_ObjectsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::estates::FullEstate_ObjectsEntry_DoNotUse>(Arena*);
+template<> ::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::estates::FullEstate_RemovedBuildingsEntry_DoNotUse>(Arena*);
 template<> ::mruv::estates::GetEstateEntrancesRequest* Arena::CreateMaybeMessage<::mruv::estates::GetEstateEntrancesRequest>(Arena*);
 template<> ::mruv::estates::GetEstateEntrancesResponse* Arena::CreateMaybeMessage<::mruv::estates::GetEstateEntrancesResponse>(Arena*);
 template<> ::mruv::estates::GetEstateGatesRequest* Arena::CreateMaybeMessage<::mruv::estates::GetEstateGatesRequest>(Arena*);
@@ -406,6 +438,387 @@ class Estate :
 };
 // -------------------------------------------------------------------
 
+class FullEstate_ObjectsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_ObjectsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_ObjectsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  FullEstate_ObjectsEntry_DoNotUse();
+  FullEstate_ObjectsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FullEstate_ObjectsEntry_DoNotUse& other);
+  static const FullEstate_ObjectsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FullEstate_ObjectsEntry_DoNotUse*>(&_FullEstate_ObjectsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[1];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class FullEstate_RemovedBuildingsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_RemovedBuildingsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_RemovedBuildingsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  FullEstate_RemovedBuildingsEntry_DoNotUse();
+  FullEstate_RemovedBuildingsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FullEstate_RemovedBuildingsEntry_DoNotUse& other);
+  static const FullEstate_RemovedBuildingsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FullEstate_RemovedBuildingsEntry_DoNotUse*>(&_FullEstate_RemovedBuildingsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[2];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class FullEstate_EntrancesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_EntrancesEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_EntrancesEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  FullEstate_EntrancesEntry_DoNotUse();
+  FullEstate_EntrancesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FullEstate_EntrancesEntry_DoNotUse& other);
+  static const FullEstate_EntrancesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FullEstate_EntrancesEntry_DoNotUse*>(&_FullEstate_EntrancesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[3];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class FullEstate_GatesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_GatesEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FullEstate_GatesEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  FullEstate_GatesEntry_DoNotUse();
+  FullEstate_GatesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FullEstate_GatesEntry_DoNotUse& other);
+  static const FullEstate_GatesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FullEstate_GatesEntry_DoNotUse*>(&_FullEstate_GatesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[4];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class FullEstate :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.estates.FullEstate) */ {
+ public:
+  FullEstate();
+  virtual ~FullEstate();
+
+  FullEstate(const FullEstate& from);
+  FullEstate(FullEstate&& from) noexcept
+    : FullEstate() {
+    *this = ::std::move(from);
+  }
+
+  inline FullEstate& operator=(const FullEstate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FullEstate& operator=(FullEstate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FullEstate& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FullEstate* internal_default_instance() {
+    return reinterpret_cast<const FullEstate*>(
+               &_FullEstate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(FullEstate& a, FullEstate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FullEstate* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FullEstate* New() const final {
+    return CreateMaybeMessage<FullEstate>(nullptr);
+  }
+
+  FullEstate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FullEstate>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FullEstate& from);
+  void MergeFrom(const FullEstate& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FullEstate* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.estates.FullEstate";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kObjectsFieldNumber = 4,
+    kRemovedBuildingsFieldNumber = 5,
+    kEntrancesFieldNumber = 6,
+    kGatesFieldNumber = 7,
+    kNameFieldNumber = 2,
+    kDescriptionFieldNumber = 3,
+    kIdFieldNumber = 1,
+  };
+  // map<uint32, .mruv.objects.Object> objects = 4;
+  int objects_size() const;
+  private:
+  int _internal_objects_size() const;
+  public:
+  void clear_objects();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >&
+      _internal_objects() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >*
+      _internal_mutable_objects();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >&
+      objects() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >*
+      mutable_objects();
+
+  // map<uint32, .mruv.objects.RemovedBuilding> removed_buildings = 5;
+  int removed_buildings_size() const;
+  private:
+  int _internal_removed_buildings_size() const;
+  public:
+  void clear_removed_buildings();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >&
+      _internal_removed_buildings() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >*
+      _internal_mutable_removed_buildings();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >&
+      removed_buildings() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >*
+      mutable_removed_buildings();
+
+  // map<uint32, .mruv.entrances.Entrance> entrances = 6;
+  int entrances_size() const;
+  private:
+  int _internal_entrances_size() const;
+  public:
+  void clear_entrances();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >&
+      _internal_entrances() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >*
+      _internal_mutable_entrances();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >&
+      entrances() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >*
+      mutable_entrances();
+
+  // map<uint32, .mruv.gates.Gate> gates = 7;
+  int gates_size() const;
+  private:
+  int _internal_gates_size() const;
+  public:
+  void clear_gates();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >&
+      _internal_gates() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >*
+      _internal_mutable_gates();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >&
+      gates() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >*
+      mutable_gates();
+
+  // string name = 2;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string description = 3;
+  void clear_description();
+  const std::string& description() const;
+  void set_description(const std::string& value);
+  void set_description(std::string&& value);
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  std::string* mutable_description();
+  std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // uint32 id = 1;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.estates.FullEstate)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      FullEstate_ObjectsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > objects_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      FullEstate_RemovedBuildingsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > removed_buildings_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      FullEstate_EntrancesEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > entrances_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      FullEstate_GatesEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > gates_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_estates_2festates_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateEstateRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.estates.CreateEstateRequest) */ {
  public:
@@ -448,7 +861,7 @@ class CreateEstateRequest :
                &_CreateEstateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    6;
 
   friend void swap(CreateEstateRequest& a, CreateEstateRequest& b) {
     a.Swap(&b);
@@ -601,7 +1014,7 @@ class CreateEstateResponse :
                &_CreateEstateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    7;
 
   friend void swap(CreateEstateResponse& a, CreateEstateResponse& b) {
     a.Swap(&b);
@@ -729,7 +1142,7 @@ class GetEstateRequest :
                &_GetEstateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    8;
 
   friend void swap(GetEstateRequest& a, GetEstateRequest& b) {
     a.Swap(&b);
@@ -857,7 +1270,7 @@ class UpdateEstateRequest :
                &_UpdateEstateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    9;
 
   friend void swap(UpdateEstateRequest& a, UpdateEstateRequest& b) {
     a.Swap(&b);
@@ -1021,7 +1434,7 @@ class UpdateEstateResponse :
                &_UpdateEstateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    10;
 
   friend void swap(UpdateEstateResponse& a, UpdateEstateResponse& b) {
     a.Swap(&b);
@@ -1136,7 +1549,7 @@ class DeleteEstateRequest :
                &_DeleteEstateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    11;
 
   friend void swap(DeleteEstateRequest& a, DeleteEstateRequest& b) {
     a.Swap(&b);
@@ -1264,7 +1677,7 @@ class DeleteEstateResponse :
                &_DeleteEstateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    12;
 
   friend void swap(DeleteEstateResponse& a, DeleteEstateResponse& b) {
     a.Swap(&b);
@@ -1379,7 +1792,7 @@ class GetEstatesRequest :
                &_GetEstatesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    13;
 
   friend void swap(GetEstatesRequest& a, GetEstatesRequest& b) {
     a.Swap(&b);
@@ -1518,7 +1931,7 @@ class GetEstatesResponse :
                &_GetEstatesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    14;
 
   friend void swap(GetEstatesResponse& a, GetEstatesResponse& b) {
     a.Swap(&b);
@@ -1655,7 +2068,7 @@ class AddGateRequest :
                &_AddGateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    15;
 
   friend void swap(AddGateRequest& a, AddGateRequest& b) {
     a.Swap(&b);
@@ -1794,7 +2207,7 @@ class AddGateResponse :
                &_AddGateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    16;
 
   friend void swap(AddGateResponse& a, AddGateResponse& b) {
     a.Swap(&b);
@@ -1909,7 +2322,7 @@ class RemoveGateRequest :
                &_RemoveGateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    17;
 
   friend void swap(RemoveGateRequest& a, RemoveGateRequest& b) {
     a.Swap(&b);
@@ -2048,7 +2461,7 @@ class RemoveGateResponse :
                &_RemoveGateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    18;
 
   friend void swap(RemoveGateResponse& a, RemoveGateResponse& b) {
     a.Swap(&b);
@@ -2163,7 +2576,7 @@ class GetEstateGatesRequest :
                &_GetEstateGatesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    19;
 
   friend void swap(GetEstateGatesRequest& a, GetEstateGatesRequest& b) {
     a.Swap(&b);
@@ -2291,7 +2704,7 @@ class GetEstateGatesResponse :
                &_GetEstateGatesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    20;
 
   friend void swap(GetEstateGatesResponse& a, GetEstateGatesResponse& b) {
     a.Swap(&b);
@@ -2428,7 +2841,7 @@ class AddEntranceRequest :
                &_AddEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    21;
 
   friend void swap(AddEntranceRequest& a, AddEntranceRequest& b) {
     a.Swap(&b);
@@ -2567,7 +2980,7 @@ class AddEntranceResponse :
                &_AddEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    22;
 
   friend void swap(AddEntranceResponse& a, AddEntranceResponse& b) {
     a.Swap(&b);
@@ -2682,7 +3095,7 @@ class RemoveEntranceRequest :
                &_RemoveEntranceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    23;
 
   friend void swap(RemoveEntranceRequest& a, RemoveEntranceRequest& b) {
     a.Swap(&b);
@@ -2821,7 +3234,7 @@ class RemoveEntranceResponse :
                &_RemoveEntranceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    24;
 
   friend void swap(RemoveEntranceResponse& a, RemoveEntranceResponse& b) {
     a.Swap(&b);
@@ -2936,7 +3349,7 @@ class GetEstateEntrancesRequest :
                &_GetEstateEntrancesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    25;
 
   friend void swap(GetEstateEntrancesRequest& a, GetEstateEntrancesRequest& b) {
     a.Swap(&b);
@@ -3064,7 +3477,7 @@ class GetEstateEntrancesResponse :
                &_GetEstateEntrancesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    26;
 
   friend void swap(GetEstateEntrancesResponse& a, GetEstateEntrancesResponse& b) {
     a.Swap(&b);
@@ -3154,6 +3567,271 @@ class GetEstateEntrancesResponse :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::entrances::Entrance > entrances_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_estates_2festates_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchAllEstatesRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.estates.FetchAllEstatesRequest) */ {
+ public:
+  FetchAllEstatesRequest();
+  virtual ~FetchAllEstatesRequest();
+
+  FetchAllEstatesRequest(const FetchAllEstatesRequest& from);
+  FetchAllEstatesRequest(FetchAllEstatesRequest&& from) noexcept
+    : FetchAllEstatesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllEstatesRequest& operator=(const FetchAllEstatesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllEstatesRequest& operator=(FetchAllEstatesRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllEstatesRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllEstatesRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchAllEstatesRequest*>(
+               &_FetchAllEstatesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(FetchAllEstatesRequest& a, FetchAllEstatesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllEstatesRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllEstatesRequest* New() const final {
+    return CreateMaybeMessage<FetchAllEstatesRequest>(nullptr);
+  }
+
+  FetchAllEstatesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllEstatesRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllEstatesRequest& from);
+  void MergeFrom(const FetchAllEstatesRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllEstatesRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.estates.FetchAllEstatesRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kChunkSizeFieldNumber = 1,
+  };
+  // uint32 chunk_size = 1;
+  void clear_chunk_size();
+  ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size() const;
+  void set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_chunk_size() const;
+  void _internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.estates.FetchAllEstatesRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_estates_2festates_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchAllEstatesResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.estates.FetchAllEstatesResponse) */ {
+ public:
+  FetchAllEstatesResponse();
+  virtual ~FetchAllEstatesResponse();
+
+  FetchAllEstatesResponse(const FetchAllEstatesResponse& from);
+  FetchAllEstatesResponse(FetchAllEstatesResponse&& from) noexcept
+    : FetchAllEstatesResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllEstatesResponse& operator=(const FetchAllEstatesResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllEstatesResponse& operator=(FetchAllEstatesResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllEstatesResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllEstatesResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchAllEstatesResponse*>(
+               &_FetchAllEstatesResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(FetchAllEstatesResponse& a, FetchAllEstatesResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllEstatesResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllEstatesResponse* New() const final {
+    return CreateMaybeMessage<FetchAllEstatesResponse>(nullptr);
+  }
+
+  FetchAllEstatesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllEstatesResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllEstatesResponse& from);
+  void MergeFrom(const FetchAllEstatesResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllEstatesResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.estates.FetchAllEstatesResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_estates_2festates_2eproto);
+    return ::descriptor_table_estates_2festates_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEstatesFieldNumber = 1,
+  };
+  // repeated .mruv.estates.FullEstate estates = 1;
+  int estates_size() const;
+  private:
+  int _internal_estates_size() const;
+  public:
+  void clear_estates();
+  ::mruv::estates::FullEstate* mutable_estates(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::estates::FullEstate >*
+      mutable_estates();
+  private:
+  const ::mruv::estates::FullEstate& _internal_estates(int index) const;
+  ::mruv::estates::FullEstate* _internal_add_estates();
+  public:
+  const ::mruv::estates::FullEstate& estates(int index) const;
+  ::mruv::estates::FullEstate* add_estates();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::estates::FullEstate >&
+      estates() const;
+
+  // @@protoc_insertion_point(class_scope:mruv.estates.FetchAllEstatesResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::estates::FullEstate > estates_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_estates_2festates_2eproto;
 };
@@ -3467,6 +4145,262 @@ inline void Estate::_internal_set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 val
 inline void Estate::set_product_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_product_id(value);
   // @@protoc_insertion_point(field_set:mruv.estates.Estate.product_id)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// FullEstate
+
+// uint32 id = 1;
+inline void FullEstate::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FullEstate::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FullEstate::id() const {
+  // @@protoc_insertion_point(field_get:mruv.estates.FullEstate.id)
+  return _internal_id();
+}
+inline void FullEstate::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void FullEstate::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:mruv.estates.FullEstate.id)
+}
+
+// string name = 2;
+inline void FullEstate::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& FullEstate::name() const {
+  // @@protoc_insertion_point(field_get:mruv.estates.FullEstate.name)
+  return _internal_name();
+}
+inline void FullEstate::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:mruv.estates.FullEstate.name)
+}
+inline std::string* FullEstate::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.estates.FullEstate.name)
+  return _internal_mutable_name();
+}
+inline const std::string& FullEstate::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void FullEstate::_internal_set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void FullEstate::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.estates.FullEstate.name)
+}
+inline void FullEstate::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.estates.FullEstate.name)
+}
+inline void FullEstate::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.estates.FullEstate.name)
+}
+inline std::string* FullEstate::_internal_mutable_name() {
+  
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* FullEstate::release_name() {
+  // @@protoc_insertion_point(field_release:mruv.estates.FullEstate.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void FullEstate::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.estates.FullEstate.name)
+}
+
+// string description = 3;
+inline void FullEstate::clear_description() {
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& FullEstate::description() const {
+  // @@protoc_insertion_point(field_get:mruv.estates.FullEstate.description)
+  return _internal_description();
+}
+inline void FullEstate::set_description(const std::string& value) {
+  _internal_set_description(value);
+  // @@protoc_insertion_point(field_set:mruv.estates.FullEstate.description)
+}
+inline std::string* FullEstate::mutable_description() {
+  // @@protoc_insertion_point(field_mutable:mruv.estates.FullEstate.description)
+  return _internal_mutable_description();
+}
+inline const std::string& FullEstate::_internal_description() const {
+  return description_.GetNoArena();
+}
+inline void FullEstate::_internal_set_description(const std::string& value) {
+  
+  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void FullEstate::set_description(std::string&& value) {
+  
+  description_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.estates.FullEstate.description)
+}
+inline void FullEstate::set_description(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.estates.FullEstate.description)
+}
+inline void FullEstate::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.estates.FullEstate.description)
+}
+inline std::string* FullEstate::_internal_mutable_description() {
+  
+  return description_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* FullEstate::release_description() {
+  // @@protoc_insertion_point(field_release:mruv.estates.FullEstate.description)
+  
+  return description_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void FullEstate::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:mruv.estates.FullEstate.description)
+}
+
+// map<uint32, .mruv.objects.Object> objects = 4;
+inline int FullEstate::_internal_objects_size() const {
+  return objects_.size();
+}
+inline int FullEstate::objects_size() const {
+  return _internal_objects_size();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >&
+FullEstate::_internal_objects() const {
+  return objects_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >&
+FullEstate::objects() const {
+  // @@protoc_insertion_point(field_map:mruv.estates.FullEstate.objects)
+  return _internal_objects();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >*
+FullEstate::_internal_mutable_objects() {
+  return objects_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::Object >*
+FullEstate::mutable_objects() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.estates.FullEstate.objects)
+  return _internal_mutable_objects();
+}
+
+// map<uint32, .mruv.objects.RemovedBuilding> removed_buildings = 5;
+inline int FullEstate::_internal_removed_buildings_size() const {
+  return removed_buildings_.size();
+}
+inline int FullEstate::removed_buildings_size() const {
+  return _internal_removed_buildings_size();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >&
+FullEstate::_internal_removed_buildings() const {
+  return removed_buildings_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >&
+FullEstate::removed_buildings() const {
+  // @@protoc_insertion_point(field_map:mruv.estates.FullEstate.removed_buildings)
+  return _internal_removed_buildings();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >*
+FullEstate::_internal_mutable_removed_buildings() {
+  return removed_buildings_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::RemovedBuilding >*
+FullEstate::mutable_removed_buildings() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.estates.FullEstate.removed_buildings)
+  return _internal_mutable_removed_buildings();
+}
+
+// map<uint32, .mruv.entrances.Entrance> entrances = 6;
+inline int FullEstate::_internal_entrances_size() const {
+  return entrances_.size();
+}
+inline int FullEstate::entrances_size() const {
+  return _internal_entrances_size();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >&
+FullEstate::_internal_entrances() const {
+  return entrances_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >&
+FullEstate::entrances() const {
+  // @@protoc_insertion_point(field_map:mruv.estates.FullEstate.entrances)
+  return _internal_entrances();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >*
+FullEstate::_internal_mutable_entrances() {
+  return entrances_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >*
+FullEstate::mutable_entrances() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.estates.FullEstate.entrances)
+  return _internal_mutable_entrances();
+}
+
+// map<uint32, .mruv.gates.Gate> gates = 7;
+inline int FullEstate::_internal_gates_size() const {
+  return gates_.size();
+}
+inline int FullEstate::gates_size() const {
+  return _internal_gates_size();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >&
+FullEstate::_internal_gates() const {
+  return gates_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >&
+FullEstate::gates() const {
+  // @@protoc_insertion_point(field_map:mruv.estates.FullEstate.gates)
+  return _internal_gates();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >*
+FullEstate::_internal_mutable_gates() {
+  return gates_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::gates::Gate >*
+FullEstate::mutable_gates() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.estates.FullEstate.gates)
+  return _internal_mutable_gates();
 }
 
 // -------------------------------------------------------------------
@@ -4224,9 +5158,90 @@ GetEstateEntrancesResponse::entrances() const {
   return entrances_;
 }
 
+// -------------------------------------------------------------------
+
+// FetchAllEstatesRequest
+
+// uint32 chunk_size = 1;
+inline void FetchAllEstatesRequest::clear_chunk_size() {
+  chunk_size_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllEstatesRequest::_internal_chunk_size() const {
+  return chunk_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllEstatesRequest::chunk_size() const {
+  // @@protoc_insertion_point(field_get:mruv.estates.FetchAllEstatesRequest.chunk_size)
+  return _internal_chunk_size();
+}
+inline void FetchAllEstatesRequest::_internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  chunk_size_ = value;
+}
+inline void FetchAllEstatesRequest::set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_chunk_size(value);
+  // @@protoc_insertion_point(field_set:mruv.estates.FetchAllEstatesRequest.chunk_size)
+}
+
+// -------------------------------------------------------------------
+
+// FetchAllEstatesResponse
+
+// repeated .mruv.estates.FullEstate estates = 1;
+inline int FetchAllEstatesResponse::_internal_estates_size() const {
+  return estates_.size();
+}
+inline int FetchAllEstatesResponse::estates_size() const {
+  return _internal_estates_size();
+}
+inline void FetchAllEstatesResponse::clear_estates() {
+  estates_.Clear();
+}
+inline ::mruv::estates::FullEstate* FetchAllEstatesResponse::mutable_estates(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.estates.FetchAllEstatesResponse.estates)
+  return estates_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::estates::FullEstate >*
+FetchAllEstatesResponse::mutable_estates() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.estates.FetchAllEstatesResponse.estates)
+  return &estates_;
+}
+inline const ::mruv::estates::FullEstate& FetchAllEstatesResponse::_internal_estates(int index) const {
+  return estates_.Get(index);
+}
+inline const ::mruv::estates::FullEstate& FetchAllEstatesResponse::estates(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.estates.FetchAllEstatesResponse.estates)
+  return _internal_estates(index);
+}
+inline ::mruv::estates::FullEstate* FetchAllEstatesResponse::_internal_add_estates() {
+  return estates_.Add();
+}
+inline ::mruv::estates::FullEstate* FetchAllEstatesResponse::add_estates() {
+  // @@protoc_insertion_point(field_add:mruv.estates.FetchAllEstatesResponse.estates)
+  return _internal_add_estates();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::estates::FullEstate >&
+FetchAllEstatesResponse::estates() const {
+  // @@protoc_insertion_point(field_list:mruv.estates.FetchAllEstatesResponse.estates)
+  return estates_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

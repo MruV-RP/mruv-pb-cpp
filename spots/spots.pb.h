@@ -31,6 +31,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
 // @@protoc_insertion_point(includes)
@@ -48,7 +51,7 @@ struct TableStruct_spots_2fspots_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -69,6 +72,15 @@ extern DeleteSpotRequestDefaultTypeInternal _DeleteSpotRequest_default_instance_
 class DeleteSpotResponse;
 class DeleteSpotResponseDefaultTypeInternal;
 extern DeleteSpotResponseDefaultTypeInternal _DeleteSpotResponse_default_instance_;
+class FetchAllSpotsRequest;
+class FetchAllSpotsRequestDefaultTypeInternal;
+extern FetchAllSpotsRequestDefaultTypeInternal _FetchAllSpotsRequest_default_instance_;
+class FetchAllSpotsResponse;
+class FetchAllSpotsResponseDefaultTypeInternal;
+extern FetchAllSpotsResponseDefaultTypeInternal _FetchAllSpotsResponse_default_instance_;
+class FetchAllSpotsResponse_SpotsEntry_DoNotUse;
+class FetchAllSpotsResponse_SpotsEntry_DoNotUseDefaultTypeInternal;
+extern FetchAllSpotsResponse_SpotsEntry_DoNotUseDefaultTypeInternal _FetchAllSpotsResponse_SpotsEntry_DoNotUse_default_instance_;
 class GetSpotRequest;
 class GetSpotRequestDefaultTypeInternal;
 extern GetSpotRequestDefaultTypeInternal _GetSpotRequest_default_instance_;
@@ -91,6 +103,9 @@ template<> ::mruv::spots::CreateSpotRequest* Arena::CreateMaybeMessage<::mruv::s
 template<> ::mruv::spots::CreateSpotResponse* Arena::CreateMaybeMessage<::mruv::spots::CreateSpotResponse>(Arena*);
 template<> ::mruv::spots::DeleteSpotRequest* Arena::CreateMaybeMessage<::mruv::spots::DeleteSpotRequest>(Arena*);
 template<> ::mruv::spots::DeleteSpotResponse* Arena::CreateMaybeMessage<::mruv::spots::DeleteSpotResponse>(Arena*);
+template<> ::mruv::spots::FetchAllSpotsRequest* Arena::CreateMaybeMessage<::mruv::spots::FetchAllSpotsRequest>(Arena*);
+template<> ::mruv::spots::FetchAllSpotsResponse* Arena::CreateMaybeMessage<::mruv::spots::FetchAllSpotsResponse>(Arena*);
+template<> ::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse>(Arena*);
 template<> ::mruv::spots::GetSpotRequest* Arena::CreateMaybeMessage<::mruv::spots::GetSpotRequest>(Arena*);
 template<> ::mruv::spots::GetSpotResponse* Arena::CreateMaybeMessage<::mruv::spots::GetSpotResponse>(Arena*);
 template<> ::mruv::spots::Spot* Arena::CreateMaybeMessage<::mruv::spots::Spot>(Arena*);
@@ -1357,6 +1372,306 @@ class DeleteSpotResponse :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_spots_2fspots_2eproto;
 };
+// -------------------------------------------------------------------
+
+class FetchAllSpotsRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.spots.FetchAllSpotsRequest) */ {
+ public:
+  FetchAllSpotsRequest();
+  virtual ~FetchAllSpotsRequest();
+
+  FetchAllSpotsRequest(const FetchAllSpotsRequest& from);
+  FetchAllSpotsRequest(FetchAllSpotsRequest&& from) noexcept
+    : FetchAllSpotsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllSpotsRequest& operator=(const FetchAllSpotsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllSpotsRequest& operator=(FetchAllSpotsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllSpotsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllSpotsRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchAllSpotsRequest*>(
+               &_FetchAllSpotsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(FetchAllSpotsRequest& a, FetchAllSpotsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllSpotsRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllSpotsRequest* New() const final {
+    return CreateMaybeMessage<FetchAllSpotsRequest>(nullptr);
+  }
+
+  FetchAllSpotsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllSpotsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllSpotsRequest& from);
+  void MergeFrom(const FetchAllSpotsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllSpotsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.spots.FetchAllSpotsRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_spots_2fspots_2eproto);
+    return ::descriptor_table_spots_2fspots_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kChunkSizeFieldNumber = 1,
+  };
+  // uint32 chunk_size = 1;
+  void clear_chunk_size();
+  ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size() const;
+  void set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_chunk_size() const;
+  void _internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.spots.FetchAllSpotsRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_spots_2fspots_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchAllSpotsResponse_SpotsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllSpotsResponse_SpotsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllSpotsResponse_SpotsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  FetchAllSpotsResponse_SpotsEntry_DoNotUse();
+  FetchAllSpotsResponse_SpotsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FetchAllSpotsResponse_SpotsEntry_DoNotUse& other);
+  static const FetchAllSpotsResponse_SpotsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FetchAllSpotsResponse_SpotsEntry_DoNotUse*>(&_FetchAllSpotsResponse_SpotsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_spots_2fspots_2eproto);
+    return ::descriptor_table_spots_2fspots_2eproto.file_level_metadata[10];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class FetchAllSpotsResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.spots.FetchAllSpotsResponse) */ {
+ public:
+  FetchAllSpotsResponse();
+  virtual ~FetchAllSpotsResponse();
+
+  FetchAllSpotsResponse(const FetchAllSpotsResponse& from);
+  FetchAllSpotsResponse(FetchAllSpotsResponse&& from) noexcept
+    : FetchAllSpotsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllSpotsResponse& operator=(const FetchAllSpotsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllSpotsResponse& operator=(FetchAllSpotsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllSpotsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllSpotsResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchAllSpotsResponse*>(
+               &_FetchAllSpotsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(FetchAllSpotsResponse& a, FetchAllSpotsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllSpotsResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllSpotsResponse* New() const final {
+    return CreateMaybeMessage<FetchAllSpotsResponse>(nullptr);
+  }
+
+  FetchAllSpotsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllSpotsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllSpotsResponse& from);
+  void MergeFrom(const FetchAllSpotsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllSpotsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.spots.FetchAllSpotsResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_spots_2fspots_2eproto);
+    return ::descriptor_table_spots_2fspots_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSpotsFieldNumber = 1,
+  };
+  // map<uint32, .mruv.spots.Spot> spots = 1;
+  int spots_size() const;
+  private:
+  int _internal_spots_size() const;
+  public:
+  void clear_spots();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >&
+      _internal_spots() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >*
+      _internal_mutable_spots();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >&
+      spots() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >*
+      mutable_spots();
+
+  // @@protoc_insertion_point(class_scope:mruv.spots.FetchAllSpotsResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      FetchAllSpotsResponse_SpotsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > spots_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_spots_2fspots_2eproto;
+};
 // ===================================================================
 
 
@@ -1920,9 +2235,74 @@ inline void DeleteSpotRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 
 // DeleteSpotResponse
 
+// -------------------------------------------------------------------
+
+// FetchAllSpotsRequest
+
+// uint32 chunk_size = 1;
+inline void FetchAllSpotsRequest::clear_chunk_size() {
+  chunk_size_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllSpotsRequest::_internal_chunk_size() const {
+  return chunk_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllSpotsRequest::chunk_size() const {
+  // @@protoc_insertion_point(field_get:mruv.spots.FetchAllSpotsRequest.chunk_size)
+  return _internal_chunk_size();
+}
+inline void FetchAllSpotsRequest::_internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  chunk_size_ = value;
+}
+inline void FetchAllSpotsRequest::set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_chunk_size(value);
+  // @@protoc_insertion_point(field_set:mruv.spots.FetchAllSpotsRequest.chunk_size)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// FetchAllSpotsResponse
+
+// map<uint32, .mruv.spots.Spot> spots = 1;
+inline int FetchAllSpotsResponse::_internal_spots_size() const {
+  return spots_.size();
+}
+inline int FetchAllSpotsResponse::spots_size() const {
+  return _internal_spots_size();
+}
+inline void FetchAllSpotsResponse::clear_spots() {
+  spots_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >&
+FetchAllSpotsResponse::_internal_spots() const {
+  return spots_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >&
+FetchAllSpotsResponse::spots() const {
+  // @@protoc_insertion_point(field_map:mruv.spots.FetchAllSpotsResponse.spots)
+  return _internal_spots();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >*
+FetchAllSpotsResponse::_internal_mutable_spots() {
+  return spots_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >*
+FetchAllSpotsResponse::mutable_spots() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.spots.FetchAllSpotsResponse.spots)
+  return _internal_mutable_spots();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

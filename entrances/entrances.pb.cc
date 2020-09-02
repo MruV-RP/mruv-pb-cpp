@@ -14,6 +14,8 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_entrances_2fentrances_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Entrance_entrances_2fentrances_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_entrances_2fentrances_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_entrances_2fentrances_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_spots_2fspots_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Spot_spots_2fspots_2eproto;
 namespace mruv {
 namespace entrances {
@@ -93,6 +95,18 @@ class ExitResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ExitResponse> _instance;
 } _ExitResponse_default_instance_;
+class FetchAllEntrancesRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllEntrancesRequest> _instance;
+} _FetchAllEntrancesRequest_default_instance_;
+class FetchAllEntrancesResponse_EntrancesEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllEntrancesResponse_EntrancesEntry_DoNotUse> _instance;
+} _FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_default_instance_;
+class FetchAllEntrancesResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllEntrancesResponse> _instance;
+} _FetchAllEntrancesResponse_default_instance_;
 }  // namespace entrances
 }  // namespace mruv
 static void InitDefaultsscc_info_CreateEntranceRequest_entrances_2fentrances_2eproto() {
@@ -222,6 +236,49 @@ static void InitDefaultsscc_info_ExitResponse_entrances_2fentrances_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ExitResponse_entrances_2fentrances_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ExitResponse_entrances_2fentrances_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllEntrancesRequest_entrances_2fentrances_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::entrances::_FetchAllEntrancesRequest_default_instance_;
+    new (ptr) ::mruv::entrances::FetchAllEntrancesRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::entrances::FetchAllEntrancesRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FetchAllEntrancesRequest_entrances_2fentrances_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FetchAllEntrancesRequest_entrances_2fentrances_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllEntrancesResponse_entrances_2fentrances_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::entrances::_FetchAllEntrancesResponse_default_instance_;
+    new (ptr) ::mruv::entrances::FetchAllEntrancesResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::entrances::FetchAllEntrancesResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllEntrancesResponse_entrances_2fentrances_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllEntrancesResponse_entrances_2fentrances_2eproto}, {
+      &scc_info_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_entrances_2fentrances_2eproto.base,}};
+
+static void InitDefaultsscc_info_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_entrances_2fentrances_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::entrances::_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse();
+  }
+  ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_entrances_2fentrances_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_entrances_2fentrances_2eproto}, {
+      &scc_info_Entrance_entrances_2fentrances_2eproto.base,}};
 
 static void InitDefaultsscc_info_FindNearestEntranceRequest_entrances_2fentrances_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -364,7 +421,7 @@ static void InitDefaultsscc_info_UpdateEntranceResponse_entrances_2fentrances_2e
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateEntranceResponse_entrances_2fentrances_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateEntranceResponse_entrances_2fentrances_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_entrances_2fentrances_2eproto[19];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_entrances_2fentrances_2eproto[22];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_entrances_2fentrances_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_entrances_2fentrances_2eproto = nullptr;
 
@@ -490,6 +547,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_entrances_2fentrances_2eproto:
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesRequest, chunk_size_),
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::entrances::FetchAllEntrancesResponse, entrances_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::entrances::Entrance)},
@@ -511,6 +589,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 105, -1, sizeof(::mruv::entrances::EnterResponse)},
   { 110, -1, sizeof(::mruv::entrances::ExitRequest)},
   { 116, -1, sizeof(::mruv::entrances::ExitResponse)},
+  { 121, -1, sizeof(::mruv::entrances::FetchAllEntrancesRequest)},
+  { 127, 134, sizeof(::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse)},
+  { 136, -1, sizeof(::mruv::entrances::FetchAllEntrancesResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -533,6 +614,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::entrances::_EnterResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::entrances::_ExitRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::entrances::_ExitResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::entrances::_FetchAllEntrancesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::entrances::_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::entrances::_FetchAllEntrancesResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_entrances_2fentrances_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -560,41 +644,49 @@ const char descriptor_table_protodef_entrances_2fentrances_2eproto[] PROTOBUF_SE
   " \001(\r\022\020\n\010distance\030\002 \001(\002\022\016\n\006inside\030\003 \001(\010\"\032"
   "\n\014EnterRequest\022\n\n\002id\030\001 \001(\r\"\017\n\rEnterRespo"
   "nse\"\031\n\013ExitRequest\022\n\n\002id\030\001 \001(\r\"\016\n\014ExitRe"
-  "sponse2\250\010\n\024MruVEntrancesService\022v\n\016Creat"
-  "eEntrance\022%.mruv.entrances.CreateEntranc"
-  "eRequest\032&.mruv.entrances.CreateEntrance"
-  "Response\"\025\202\323\344\223\002\017\"\r/v1/entrances\022r\n\013GetEn"
-  "trance\022\".mruv.entrances.GetEntranceReque"
-  "st\032#.mruv.entrances.GetEntranceResponse\""
-  "\032\202\323\344\223\002\024\022\022/v1/entrances/{id}\022{\n\016UpdateEnt"
-  "rance\022%.mruv.entrances.UpdateEntranceReq"
-  "uest\032&.mruv.entrances.UpdateEntranceResp"
-  "onse\"\032\202\323\344\223\002\0242\022/v1/entrances/{id}\022{\n\016Dele"
-  "teEntrance\022%.mruv.entrances.DeleteEntran"
-  "ceRequest\032&.mruv.entrances.DeleteEntranc"
-  "eResponse\"\032\202\323\344\223\002\024*\022/v1/entrances/{id}\022b\n"
-  "\004Lock\022\033.mruv.entrances.LockRequest\032\034.mru"
-  "v.entrances.LockResponse\"\037\202\323\344\223\002\031\"\027/v1/en"
-  "trances/{id}/lock\022j\n\006Unlock\022\035.mruv.entra"
-  "nces.UnlockRequest\032\036.mruv.entrances.Unlo"
-  "ckResponse\"!\202\323\344\223\002\033\"\031/v1/entrances/{id}/u"
-  "nlock\022\215\001\n\023FindNearestEntrance\022*.mruv.ent"
-  "rances.FindNearestEntranceRequest\032+.mruv"
-  ".entrances.FindNearestEntranceResponse\"\035"
-  "\202\323\344\223\002\027\022\025/v1/entrances/nearest\022f\n\005Enter\022\034"
-  ".mruv.entrances.EnterRequest\032\035.mruv.entr"
-  "ances.EnterResponse\" \202\323\344\223\002\032\"\030/v1/entranc"
-  "es/{id}/enter\022b\n\004Exit\022\033.mruv.entrances.E"
-  "xitRequest\032\034.mruv.entrances.ExitResponse"
-  "\"\037\202\323\344\223\002\031\"\027/v1/entrances/{id}/exitB)Z\'git"
-  "hub.com/MruV-RP/mruv-pb-go/entrancesb\006pr"
-  "oto3"
+  "sponse\".\n\030FetchAllEntrancesRequest\022\022\n\nch"
+  "unk_size\030\001 \001(\r\"\264\001\n\031FetchAllEntrancesResp"
+  "onse\022K\n\tentrances\030\001 \003(\01328.mruv.entrances"
+  ".FetchAllEntrancesResponse.EntrancesEntr"
+  "y\032J\n\016EntrancesEntry\022\013\n\003key\030\001 \001(\r\022\'\n\005valu"
+  "e\030\002 \001(\0132\030.mruv.entrances.Entrance:\0028\0012\215\t"
+  "\n\024MruVEntrancesService\022v\n\016CreateEntrance"
+  "\022%.mruv.entrances.CreateEntranceRequest\032"
+  "&.mruv.entrances.CreateEntranceResponse\""
+  "\025\202\323\344\223\002\017\"\r/v1/entrances\022r\n\013GetEntrance\022\"."
+  "mruv.entrances.GetEntranceRequest\032#.mruv"
+  ".entrances.GetEntranceResponse\"\032\202\323\344\223\002\024\022\022"
+  "/v1/entrances/{id}\022{\n\016UpdateEntrance\022%.m"
+  "ruv.entrances.UpdateEntranceRequest\032&.mr"
+  "uv.entrances.UpdateEntranceResponse\"\032\202\323\344"
+  "\223\002\0242\022/v1/entrances/{id}\022{\n\016DeleteEntranc"
+  "e\022%.mruv.entrances.DeleteEntranceRequest"
+  "\032&.mruv.entrances.DeleteEntranceResponse"
+  "\"\032\202\323\344\223\002\024*\022/v1/entrances/{id}\022b\n\004Lock\022\033.m"
+  "ruv.entrances.LockRequest\032\034.mruv.entranc"
+  "es.LockResponse\"\037\202\323\344\223\002\031\"\027/v1/entrances/{"
+  "id}/lock\022j\n\006Unlock\022\035.mruv.entrances.Unlo"
+  "ckRequest\032\036.mruv.entrances.UnlockRespons"
+  "e\"!\202\323\344\223\002\033\"\031/v1/entrances/{id}/unlock\022\215\001\n"
+  "\023FindNearestEntrance\022*.mruv.entrances.Fi"
+  "ndNearestEntranceRequest\032+.mruv.entrance"
+  "s.FindNearestEntranceResponse\"\035\202\323\344\223\002\027\022\025/"
+  "v1/entrances/nearest\022f\n\005Enter\022\034.mruv.ent"
+  "rances.EnterRequest\032\035.mruv.entrances.Ent"
+  "erResponse\" \202\323\344\223\002\032\"\030/v1/entrances/{id}/e"
+  "nter\022b\n\004Exit\022\033.mruv.entrances.ExitReques"
+  "t\032\034.mruv.entrances.ExitResponse\"\037\202\323\344\223\002\031\""
+  "\027/v1/entrances/{id}/exit\022c\n\010FetchAll\022(.m"
+  "ruv.entrances.FetchAllEntrancesRequest\032)"
+  ".mruv.entrances.FetchAllEntrancesRespons"
+  "e\"\0000\001B)Z\'github.com/MruV-RP/mruv-pb-go/e"
+  "ntrancesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_entrances_2fentrances_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
   &::descriptor_table_spots_2fspots_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_entrances_2fentrances_2eproto_sccs[19] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_entrances_2fentrances_2eproto_sccs[22] = {
   &scc_info_CreateEntranceRequest_entrances_2fentrances_2eproto.base,
   &scc_info_CreateEntranceResponse_entrances_2fentrances_2eproto.base,
   &scc_info_DeleteEntranceRequest_entrances_2fentrances_2eproto.base,
@@ -604,6 +696,9 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ent
   &scc_info_Entrance_entrances_2fentrances_2eproto.base,
   &scc_info_ExitRequest_entrances_2fentrances_2eproto.base,
   &scc_info_ExitResponse_entrances_2fentrances_2eproto.base,
+  &scc_info_FetchAllEntrancesRequest_entrances_2fentrances_2eproto.base,
+  &scc_info_FetchAllEntrancesResponse_entrances_2fentrances_2eproto.base,
+  &scc_info_FetchAllEntrancesResponse_EntrancesEntry_DoNotUse_entrances_2fentrances_2eproto.base,
   &scc_info_FindNearestEntranceRequest_entrances_2fentrances_2eproto.base,
   &scc_info_FindNearestEntranceResponse_entrances_2fentrances_2eproto.base,
   &scc_info_GetEntranceRequest_entrances_2fentrances_2eproto.base,
@@ -618,10 +713,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ent
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_entrances_2fentrances_2eproto_once;
 static bool descriptor_table_entrances_2fentrances_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_entrances_2fentrances_2eproto = {
-  &descriptor_table_entrances_2fentrances_2eproto_initialized, descriptor_table_protodef_entrances_2fentrances_2eproto, "entrances/entrances.proto", 2084,
-  &descriptor_table_entrances_2fentrances_2eproto_once, descriptor_table_entrances_2fentrances_2eproto_sccs, descriptor_table_entrances_2fentrances_2eproto_deps, 19, 2,
+  &descriptor_table_entrances_2fentrances_2eproto_initialized, descriptor_table_protodef_entrances_2fentrances_2eproto, "entrances/entrances.proto", 2416,
+  &descriptor_table_entrances_2fentrances_2eproto_once, descriptor_table_entrances_2fentrances_2eproto_sccs, descriptor_table_entrances_2fentrances_2eproto_deps, 22, 2,
   schemas, file_default_instances, TableStruct_entrances_2fentrances_2eproto::offsets,
-  file_level_metadata_entrances_2fentrances_2eproto, 19, file_level_enum_descriptors_entrances_2fentrances_2eproto, file_level_service_descriptors_entrances_2fentrances_2eproto,
+  file_level_metadata_entrances_2fentrances_2eproto, 22, file_level_enum_descriptors_entrances_2fentrances_2eproto, file_level_service_descriptors_entrances_2fentrances_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -4487,6 +4582,425 @@ void ExitResponse::InternalSwap(ExitResponse* other) {
 }
 
 
+// ===================================================================
+
+void FetchAllEntrancesRequest::InitAsDefaultInstance() {
+}
+class FetchAllEntrancesRequest::_Internal {
+ public:
+};
+
+FetchAllEntrancesRequest::FetchAllEntrancesRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.entrances.FetchAllEntrancesRequest)
+}
+FetchAllEntrancesRequest::FetchAllEntrancesRequest(const FetchAllEntrancesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  chunk_size_ = from.chunk_size_;
+  // @@protoc_insertion_point(copy_constructor:mruv.entrances.FetchAllEntrancesRequest)
+}
+
+void FetchAllEntrancesRequest::SharedCtor() {
+  chunk_size_ = 0u;
+}
+
+FetchAllEntrancesRequest::~FetchAllEntrancesRequest() {
+  // @@protoc_insertion_point(destructor:mruv.entrances.FetchAllEntrancesRequest)
+  SharedDtor();
+}
+
+void FetchAllEntrancesRequest::SharedDtor() {
+}
+
+void FetchAllEntrancesRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllEntrancesRequest& FetchAllEntrancesRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllEntrancesRequest_entrances_2fentrances_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllEntrancesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.entrances.FetchAllEntrancesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  chunk_size_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllEntrancesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 chunk_size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllEntrancesRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.entrances.FetchAllEntrancesRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chunk_size(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.FetchAllEntrancesRequest)
+  return target;
+}
+
+size_t FetchAllEntrancesRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.entrances.FetchAllEntrancesRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chunk_size());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllEntrancesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.entrances.FetchAllEntrancesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllEntrancesRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllEntrancesRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.entrances.FetchAllEntrancesRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.entrances.FetchAllEntrancesRequest)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllEntrancesRequest::MergeFrom(const FetchAllEntrancesRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.FetchAllEntrancesRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.chunk_size() != 0) {
+    _internal_set_chunk_size(from._internal_chunk_size());
+  }
+}
+
+void FetchAllEntrancesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.entrances.FetchAllEntrancesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllEntrancesRequest::CopyFrom(const FetchAllEntrancesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.entrances.FetchAllEntrancesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllEntrancesRequest::IsInitialized() const {
+  return true;
+}
+
+void FetchAllEntrancesRequest::InternalSwap(FetchAllEntrancesRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chunk_size_, other->chunk_size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllEntrancesRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse() {}
+FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::MergeFrom(const FetchAllEntrancesResponse_EntrancesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void FetchAllEntrancesResponse::InitAsDefaultInstance() {
+}
+class FetchAllEntrancesResponse::_Internal {
+ public:
+};
+
+FetchAllEntrancesResponse::FetchAllEntrancesResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.entrances.FetchAllEntrancesResponse)
+}
+FetchAllEntrancesResponse::FetchAllEntrancesResponse(const FetchAllEntrancesResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  entrances_.MergeFrom(from.entrances_);
+  // @@protoc_insertion_point(copy_constructor:mruv.entrances.FetchAllEntrancesResponse)
+}
+
+void FetchAllEntrancesResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FetchAllEntrancesResponse_entrances_2fentrances_2eproto.base);
+}
+
+FetchAllEntrancesResponse::~FetchAllEntrancesResponse() {
+  // @@protoc_insertion_point(destructor:mruv.entrances.FetchAllEntrancesResponse)
+  SharedDtor();
+}
+
+void FetchAllEntrancesResponse::SharedDtor() {
+}
+
+void FetchAllEntrancesResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllEntrancesResponse& FetchAllEntrancesResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllEntrancesResponse_entrances_2fentrances_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllEntrancesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.entrances.FetchAllEntrancesResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  entrances_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllEntrancesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // map<uint32, .mruv.entrances.Entrance> entrances = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&entrances_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllEntrancesResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.entrances.FetchAllEntrancesResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.entrances.Entrance> entrances = 1;
+  if (!this->_internal_entrances().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_entrances().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_entrances().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_iterator
+          it = this->_internal_entrances().begin();
+          it != this->_internal_entrances().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_iterator
+          it = this->_internal_entrances().begin();
+          it != this->_internal_entrances().end(); ++it) {
+        target = FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.FetchAllEntrancesResponse)
+  return target;
+}
+
+size_t FetchAllEntrancesResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.entrances.FetchAllEntrancesResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.entrances.Entrance> entrances = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_entrances_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::entrances::Entrance >::const_iterator
+      it = this->_internal_entrances().begin();
+      it != this->_internal_entrances().end(); ++it) {
+    total_size += FetchAllEntrancesResponse_EntrancesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllEntrancesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.entrances.FetchAllEntrancesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllEntrancesResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllEntrancesResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.entrances.FetchAllEntrancesResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.entrances.FetchAllEntrancesResponse)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllEntrancesResponse::MergeFrom(const FetchAllEntrancesResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.FetchAllEntrancesResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  entrances_.MergeFrom(from.entrances_);
+}
+
+void FetchAllEntrancesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.entrances.FetchAllEntrancesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllEntrancesResponse::CopyFrom(const FetchAllEntrancesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.entrances.FetchAllEntrancesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllEntrancesResponse::IsInitialized() const {
+  return true;
+}
+
+void FetchAllEntrancesResponse::InternalSwap(FetchAllEntrancesResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  entrances_.Swap(&other->entrances_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllEntrancesResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace entrances
 }  // namespace mruv
@@ -4547,6 +5061,15 @@ template<> PROTOBUF_NOINLINE ::mruv::entrances::ExitRequest* Arena::CreateMaybeM
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::ExitResponse* Arena::CreateMaybeMessage< ::mruv::entrances::ExitResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::entrances::ExitResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::entrances::FetchAllEntrancesRequest* Arena::CreateMaybeMessage< ::mruv::entrances::FetchAllEntrancesRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::entrances::FetchAllEntrancesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::entrances::FetchAllEntrancesResponse* Arena::CreateMaybeMessage< ::mruv::entrances::FetchAllEntrancesResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::entrances::FetchAllEntrancesResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -110,6 +110,16 @@ class MruVEntrancesService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>> PrepareAsyncExit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>>(PrepareAsyncExitRaw(context, request, cq));
     }
+    //
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>>(FetchAllRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -230,6 +240,12 @@ class MruVEntrancesService final {
       #else
       virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      //
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) = 0;
+      #else
+      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -257,6 +273,9 @@ class MruVEntrancesService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::EnterResponse>* PrepareAsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>* AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::entrances::ExitResponse>* PrepareAsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::entrances::FetchAllEntrancesResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -323,6 +342,15 @@ class MruVEntrancesService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>> PrepareAsyncExit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>>(PrepareAsyncExitRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::entrances::FetchAllEntrancesResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::entrances::FetchAllEntrancesResponse>>(FetchAllRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -435,6 +463,11 @@ class MruVEntrancesService final {
       #else
       void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) override;
+      #else
+      void FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -464,6 +497,9 @@ class MruVEntrancesService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>* PrepareAsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* PrepareAsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::entrances::FetchAllEntrancesResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_GetEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateEntrance_;
@@ -473,6 +509,7 @@ class MruVEntrancesService final {
     const ::grpc::internal::RpcMethod rpcmethod_FindNearestEntrance_;
     const ::grpc::internal::RpcMethod rpcmethod_Enter_;
     const ::grpc::internal::RpcMethod rpcmethod_Exit_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -498,6 +535,8 @@ class MruVEntrancesService final {
     virtual ::grpc::Status Enter(::grpc::ServerContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response);
     // Exit from entrance (player teleport from out spot position to in spot position).
     virtual ::grpc::Status Exit(::grpc::ServerContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response);
+    //
+    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateEntrance : public BaseClass {
@@ -679,7 +718,27 @@ class MruVEntrancesService final {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateEntrance<WithAsyncMethod_GetEntrance<WithAsyncMethod_UpdateEntrance<WithAsyncMethod_DeleteEntrance<WithAsyncMethod_Lock<WithAsyncMethod_Unlock<WithAsyncMethod_FindNearestEntrance<WithAsyncMethod_Enter<WithAsyncMethod_Exit<Service > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_FetchAll() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::ServerAsyncWriter< ::mruv::entrances::FetchAllEntrancesResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(9, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateEntrance<WithAsyncMethod_GetEntrance<WithAsyncMethod_UpdateEntrance<WithAsyncMethod_DeleteEntrance<WithAsyncMethod_Lock<WithAsyncMethod_Unlock<WithAsyncMethod_FindNearestEntrance<WithAsyncMethod_Enter<WithAsyncMethod_Exit<WithAsyncMethod_FetchAll<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateEntrance : public BaseClass {
    private:
@@ -1103,11 +1162,49 @@ class MruVEntrancesService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::entrances::FetchAllEntrancesRequest* request) { return this->FetchAll(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::mruv::entrances::FetchAllEntrancesResponse>* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::entrances::FetchAllEntrancesResponse>* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<ExperimentalWithCallbackMethod_Exit<Service > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<ExperimentalWithCallbackMethod_Exit<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<ExperimentalWithCallbackMethod_Exit<Service > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateEntrance<ExperimentalWithCallbackMethod_GetEntrance<ExperimentalWithCallbackMethod_UpdateEntrance<ExperimentalWithCallbackMethod_DeleteEntrance<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_FindNearestEntrance<ExperimentalWithCallbackMethod_Enter<ExperimentalWithCallbackMethod_Exit<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateEntrance : public BaseClass {
    private:
@@ -1257,6 +1354,23 @@ class MruVEntrancesService final {
     }
     // disable synchronous version of this method
     ::grpc::Status Exit(::grpc::ServerContext* /*context*/, const ::mruv::entrances::ExitRequest* /*request*/, ::mruv::entrances::ExitResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_FetchAll() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1439,6 +1553,26 @@ class MruVEntrancesService final {
     }
     void RequestExit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_FetchAll() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(9, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1784,6 +1918,44 @@ class MruVEntrancesService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->FetchAll(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateEntrance : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -2027,8 +2199,35 @@ class MruVEntrancesService final {
     virtual ::grpc::Status StreamedExit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::entrances::ExitRequest,::mruv::entrances::ExitResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<WithStreamedUnaryMethod_Exit<Service > > > > > > > > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<WithStreamedUnaryMethod_Exit<Service > > > > > > > > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_FetchAll() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>* streamer) {
+                       return this->StreamedFetchAll(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::entrances::FetchAllEntrancesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::entrances::FetchAllEntrancesRequest,::mruv::entrances::FetchAllEntrancesResponse>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_FetchAll<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateEntrance<WithStreamedUnaryMethod_GetEntrance<WithStreamedUnaryMethod_UpdateEntrance<WithStreamedUnaryMethod_DeleteEntrance<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_FindNearestEntrance<WithStreamedUnaryMethod_Enter<WithStreamedUnaryMethod_Exit<WithSplitStreamingMethod_FetchAll<Service > > > > > > > > > > StreamedService;
 };
 
 }  // namespace entrances

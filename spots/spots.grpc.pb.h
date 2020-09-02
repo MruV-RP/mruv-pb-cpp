@@ -70,6 +70,16 @@ class MruVSpotsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::spots::DeleteSpotResponse>> PrepareAsyncDeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::spots::DeleteSpotResponse>>(PrepareAsyncDeleteSpotRaw(context, request, cq));
     }
+    // Fetch all spots.
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::spots::FetchAllSpotsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::spots::FetchAllSpotsResponse>>(FetchAllRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::spots::FetchAllSpotsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::spots::FetchAllSpotsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::spots::FetchAllSpotsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::spots::FetchAllSpotsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -125,6 +135,12 @@ class MruVSpotsService final {
       #else
       virtual void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      // Fetch all spots.
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) = 0;
+      #else
+      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -142,6 +158,9 @@ class MruVSpotsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::spots::UpdateSpotResponse>* PrepareAsyncUpdateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::spots::DeleteSpotResponse>* AsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::spots::DeleteSpotResponse>* PrepareAsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::spots::FetchAllSpotsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::spots::FetchAllSpotsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::spots::FetchAllSpotsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -173,6 +192,15 @@ class MruVSpotsService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>> PrepareAsyncDeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>>(PrepareAsyncDeleteSpotRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::spots::FetchAllSpotsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::spots::FetchAllSpotsResponse>>(FetchAllRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -225,6 +253,11 @@ class MruVSpotsService final {
       #else
       void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) override;
+      #else
+      void FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -244,10 +277,14 @@ class MruVSpotsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::spots::UpdateSpotResponse>* PrepareAsyncUpdateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>* AsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>* PrepareAsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::spots::FetchAllSpotsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateSpot_;
     const ::grpc::internal::RpcMethod rpcmethod_GetSpot_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateSpot_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteSpot_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -263,6 +300,8 @@ class MruVSpotsService final {
     virtual ::grpc::Status UpdateSpot(::grpc::ServerContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response);
     // Delete a spot.
     virtual ::grpc::Status DeleteSpot(::grpc::ServerContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response);
+    // Fetch all spots.
+    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateSpot : public BaseClass {
@@ -344,7 +383,27 @@ class MruVSpotsService final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateSpot<WithAsyncMethod_GetSpot<WithAsyncMethod_UpdateSpot<WithAsyncMethod_DeleteSpot<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_FetchAll() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::spots::FetchAllSpotsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateSpot<WithAsyncMethod_GetSpot<WithAsyncMethod_UpdateSpot<WithAsyncMethod_DeleteSpot<WithAsyncMethod_FetchAll<Service > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateSpot : public BaseClass {
    private:
@@ -533,11 +592,49 @@ class MruVSpotsService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::spots::FetchAllSpotsRequest* request) { return this->FetchAll(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::mruv::spots::FetchAllSpotsResponse>* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::spots::FetchAllSpotsResponse>* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateSpot<ExperimentalWithCallbackMethod_GetSpot<ExperimentalWithCallbackMethod_UpdateSpot<ExperimentalWithCallbackMethod_DeleteSpot<Service > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateSpot<ExperimentalWithCallbackMethod_GetSpot<ExperimentalWithCallbackMethod_UpdateSpot<ExperimentalWithCallbackMethod_DeleteSpot<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateSpot<ExperimentalWithCallbackMethod_GetSpot<ExperimentalWithCallbackMethod_UpdateSpot<ExperimentalWithCallbackMethod_DeleteSpot<Service > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateSpot<ExperimentalWithCallbackMethod_GetSpot<ExperimentalWithCallbackMethod_UpdateSpot<ExperimentalWithCallbackMethod_DeleteSpot<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateSpot : public BaseClass {
    private:
@@ -602,6 +699,23 @@ class MruVSpotsService final {
     }
     // disable synchronous version of this method
     ::grpc::Status DeleteSpot(::grpc::ServerContext* /*context*/, const ::mruv::spots::DeleteSpotRequest* /*request*/, ::mruv::spots::DeleteSpotResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_FetchAll() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -684,6 +798,26 @@ class MruVSpotsService final {
     }
     void RequestDeleteSpot(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_FetchAll() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -839,6 +973,44 @@ class MruVSpotsService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(4,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->FetchAll(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateSpot : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -947,8 +1119,35 @@ class MruVSpotsService final {
     virtual ::grpc::Status StreamedDeleteSpot(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::spots::DeleteSpotRequest,::mruv::spots::DeleteSpotResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateSpot<WithStreamedUnaryMethod_GetSpot<WithStreamedUnaryMethod_UpdateSpot<WithStreamedUnaryMethod_DeleteSpot<Service > > > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateSpot<WithStreamedUnaryMethod_GetSpot<WithStreamedUnaryMethod_UpdateSpot<WithStreamedUnaryMethod_DeleteSpot<Service > > > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_FetchAll() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>* streamer) {
+                       return this->StreamedFetchAll(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::spots::FetchAllSpotsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::spots::FetchAllSpotsRequest,::mruv::spots::FetchAllSpotsResponse>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_FetchAll<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateSpot<WithStreamedUnaryMethod_GetSpot<WithStreamedUnaryMethod_UpdateSpot<WithStreamedUnaryMethod_DeleteSpot<WithSplitStreamingMethod_FetchAll<Service > > > > > StreamedService;
 };
 
 }  // namespace spots

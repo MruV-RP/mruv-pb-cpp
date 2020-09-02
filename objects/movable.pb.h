@@ -31,6 +31,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
 #include "objects/objects.pb.h"
@@ -49,7 +52,7 @@ struct TableStruct_objects_2fmovable_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[19]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -70,6 +73,15 @@ extern DeleteMovableObjectRequestDefaultTypeInternal _DeleteMovableObjectRequest
 class DeleteMovableObjectResponse;
 class DeleteMovableObjectResponseDefaultTypeInternal;
 extern DeleteMovableObjectResponseDefaultTypeInternal _DeleteMovableObjectResponse_default_instance_;
+class FetchAllMovableObjectsRequest;
+class FetchAllMovableObjectsRequestDefaultTypeInternal;
+extern FetchAllMovableObjectsRequestDefaultTypeInternal _FetchAllMovableObjectsRequest_default_instance_;
+class FetchAllMovableObjectsResponse;
+class FetchAllMovableObjectsResponseDefaultTypeInternal;
+extern FetchAllMovableObjectsResponseDefaultTypeInternal _FetchAllMovableObjectsResponse_default_instance_;
+class FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse;
+class FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUseDefaultTypeInternal;
+extern FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUseDefaultTypeInternal _FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_default_instance_;
 class GetMovableObjectRequest;
 class GetMovableObjectRequestDefaultTypeInternal;
 extern GetMovableObjectRequestDefaultTypeInternal _GetMovableObjectRequest_default_instance_;
@@ -113,6 +125,9 @@ template<> ::mruv::objects::CreateMovableObjectRequest* Arena::CreateMaybeMessag
 template<> ::mruv::objects::CreateMovableObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::CreateMovableObjectResponse>(Arena*);
 template<> ::mruv::objects::DeleteMovableObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::DeleteMovableObjectRequest>(Arena*);
 template<> ::mruv::objects::DeleteMovableObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::DeleteMovableObjectResponse>(Arena*);
+template<> ::mruv::objects::FetchAllMovableObjectsRequest* Arena::CreateMaybeMessage<::mruv::objects::FetchAllMovableObjectsRequest>(Arena*);
+template<> ::mruv::objects::FetchAllMovableObjectsResponse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllMovableObjectsResponse>(Arena*);
+template<> ::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse* Arena::CreateMaybeMessage<::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse>(Arena*);
 template<> ::mruv::objects::GetMovableObjectRequest* Arena::CreateMaybeMessage<::mruv::objects::GetMovableObjectRequest>(Arena*);
 template<> ::mruv::objects::GetMovableObjectResponse* Arena::CreateMaybeMessage<::mruv::objects::GetMovableObjectResponse>(Arena*);
 template<> ::mruv::objects::MovableObject* Arena::CreateMaybeMessage<::mruv::objects::MovableObject>(Arena*);
@@ -2396,6 +2411,306 @@ class MoveObjectPreviousResponse :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_objects_2fmovable_2eproto;
 };
+// -------------------------------------------------------------------
+
+class FetchAllMovableObjectsRequest :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllMovableObjectsRequest) */ {
+ public:
+  FetchAllMovableObjectsRequest();
+  virtual ~FetchAllMovableObjectsRequest();
+
+  FetchAllMovableObjectsRequest(const FetchAllMovableObjectsRequest& from);
+  FetchAllMovableObjectsRequest(FetchAllMovableObjectsRequest&& from) noexcept
+    : FetchAllMovableObjectsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllMovableObjectsRequest& operator=(const FetchAllMovableObjectsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllMovableObjectsRequest& operator=(FetchAllMovableObjectsRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllMovableObjectsRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllMovableObjectsRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchAllMovableObjectsRequest*>(
+               &_FetchAllMovableObjectsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(FetchAllMovableObjectsRequest& a, FetchAllMovableObjectsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllMovableObjectsRequest* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllMovableObjectsRequest* New() const final {
+    return CreateMaybeMessage<FetchAllMovableObjectsRequest>(nullptr);
+  }
+
+  FetchAllMovableObjectsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllMovableObjectsRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllMovableObjectsRequest& from);
+  void MergeFrom(const FetchAllMovableObjectsRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllMovableObjectsRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.FetchAllMovableObjectsRequest";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fmovable_2eproto);
+    return ::descriptor_table_objects_2fmovable_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kChunkSizeFieldNumber = 1,
+  };
+  // uint32 chunk_size = 1;
+  void clear_chunk_size();
+  ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size() const;
+  void set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_chunk_size() const;
+  void _internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllMovableObjectsRequest)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 chunk_size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fmovable_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse();
+  FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse& other);
+  static const FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse*>(&_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fmovable_2eproto);
+    return ::descriptor_table_objects_2fmovable_2eproto.file_level_metadata[17];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class FetchAllMovableObjectsResponse :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.objects.FetchAllMovableObjectsResponse) */ {
+ public:
+  FetchAllMovableObjectsResponse();
+  virtual ~FetchAllMovableObjectsResponse();
+
+  FetchAllMovableObjectsResponse(const FetchAllMovableObjectsResponse& from);
+  FetchAllMovableObjectsResponse(FetchAllMovableObjectsResponse&& from) noexcept
+    : FetchAllMovableObjectsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchAllMovableObjectsResponse& operator=(const FetchAllMovableObjectsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchAllMovableObjectsResponse& operator=(FetchAllMovableObjectsResponse&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FetchAllMovableObjectsResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FetchAllMovableObjectsResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchAllMovableObjectsResponse*>(
+               &_FetchAllMovableObjectsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(FetchAllMovableObjectsResponse& a, FetchAllMovableObjectsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchAllMovableObjectsResponse* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FetchAllMovableObjectsResponse* New() const final {
+    return CreateMaybeMessage<FetchAllMovableObjectsResponse>(nullptr);
+  }
+
+  FetchAllMovableObjectsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FetchAllMovableObjectsResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FetchAllMovableObjectsResponse& from);
+  void MergeFrom(const FetchAllMovableObjectsResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchAllMovableObjectsResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.objects.FetchAllMovableObjectsResponse";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_objects_2fmovable_2eproto);
+    return ::descriptor_table_objects_2fmovable_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMovableObjectsFieldNumber = 1,
+  };
+  // map<uint32, .mruv.objects.MovableObject> movable_objects = 1;
+  int movable_objects_size() const;
+  private:
+  int _internal_movable_objects_size() const;
+  public:
+  void clear_movable_objects();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >&
+      _internal_movable_objects() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >*
+      _internal_mutable_movable_objects();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >&
+      movable_objects() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >*
+      mutable_movable_objects();
+
+  // @@protoc_insertion_point(class_scope:mruv.objects.FetchAllMovableObjectsResponse)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > movable_objects_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_objects_2fmovable_2eproto;
+};
 // ===================================================================
 
 
@@ -3385,9 +3700,74 @@ inline void MoveObjectPreviousResponse::set_allocated_state_name(std::string* st
   // @@protoc_insertion_point(field_set_allocated:mruv.objects.MoveObjectPreviousResponse.state_name)
 }
 
+// -------------------------------------------------------------------
+
+// FetchAllMovableObjectsRequest
+
+// uint32 chunk_size = 1;
+inline void FetchAllMovableObjectsRequest::clear_chunk_size() {
+  chunk_size_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllMovableObjectsRequest::_internal_chunk_size() const {
+  return chunk_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FetchAllMovableObjectsRequest::chunk_size() const {
+  // @@protoc_insertion_point(field_get:mruv.objects.FetchAllMovableObjectsRequest.chunk_size)
+  return _internal_chunk_size();
+}
+inline void FetchAllMovableObjectsRequest::_internal_set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  chunk_size_ = value;
+}
+inline void FetchAllMovableObjectsRequest::set_chunk_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_chunk_size(value);
+  // @@protoc_insertion_point(field_set:mruv.objects.FetchAllMovableObjectsRequest.chunk_size)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// FetchAllMovableObjectsResponse
+
+// map<uint32, .mruv.objects.MovableObject> movable_objects = 1;
+inline int FetchAllMovableObjectsResponse::_internal_movable_objects_size() const {
+  return movable_objects_.size();
+}
+inline int FetchAllMovableObjectsResponse::movable_objects_size() const {
+  return _internal_movable_objects_size();
+}
+inline void FetchAllMovableObjectsResponse::clear_movable_objects() {
+  movable_objects_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >&
+FetchAllMovableObjectsResponse::_internal_movable_objects() const {
+  return movable_objects_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >&
+FetchAllMovableObjectsResponse::movable_objects() const {
+  // @@protoc_insertion_point(field_map:mruv.objects.FetchAllMovableObjectsResponse.movable_objects)
+  return _internal_movable_objects();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >*
+FetchAllMovableObjectsResponse::_internal_mutable_movable_objects() {
+  return movable_objects_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >*
+FetchAllMovableObjectsResponse::mutable_movable_objects() {
+  // @@protoc_insertion_point(field_mutable_map:mruv.objects.FetchAllMovableObjectsResponse.movable_objects)
+  return _internal_mutable_movable_objects();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

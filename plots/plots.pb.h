@@ -49,7 +49,7 @@ struct TableStruct_plots_2fplots_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -76,6 +76,9 @@ extern GetPlotRequestDefaultTypeInternal _GetPlotRequest_default_instance_;
 class GetPlotResponse;
 class GetPlotResponseDefaultTypeInternal;
 extern GetPlotResponseDefaultTypeInternal _GetPlotResponse_default_instance_;
+class Plot;
+class PlotDefaultTypeInternal;
+extern PlotDefaultTypeInternal _Plot_default_instance_;
 class UpdatePlotRequest;
 class UpdatePlotRequestDefaultTypeInternal;
 extern UpdatePlotRequestDefaultTypeInternal _UpdatePlotRequest_default_instance_;
@@ -91,6 +94,7 @@ template<> ::mruv::plots::DeletePlotRequest* Arena::CreateMaybeMessage<::mruv::p
 template<> ::mruv::plots::DeletePlotResponse* Arena::CreateMaybeMessage<::mruv::plots::DeletePlotResponse>(Arena*);
 template<> ::mruv::plots::GetPlotRequest* Arena::CreateMaybeMessage<::mruv::plots::GetPlotRequest>(Arena*);
 template<> ::mruv::plots::GetPlotResponse* Arena::CreateMaybeMessage<::mruv::plots::GetPlotResponse>(Arena*);
+template<> ::mruv::plots::Plot* Arena::CreateMaybeMessage<::mruv::plots::Plot>(Arena*);
 template<> ::mruv::plots::UpdatePlotRequest* Arena::CreateMaybeMessage<::mruv::plots::UpdatePlotRequest>(Arena*);
 template<> ::mruv::plots::UpdatePlotResponse* Arena::CreateMaybeMessage<::mruv::plots::UpdatePlotResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -98,6 +102,179 @@ namespace mruv {
 namespace plots {
 
 // ===================================================================
+
+class Plot :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.plots.Plot) */ {
+ public:
+  Plot();
+  virtual ~Plot();
+
+  Plot(const Plot& from);
+  Plot(Plot&& from) noexcept
+    : Plot() {
+    *this = ::std::move(from);
+  }
+
+  inline Plot& operator=(const Plot& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Plot& operator=(Plot&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Plot& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Plot* internal_default_instance() {
+    return reinterpret_cast<const Plot*>(
+               &_Plot_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(Plot& a, Plot& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Plot* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Plot* New() const final {
+    return CreateMaybeMessage<Plot>(nullptr);
+  }
+
+  Plot* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Plot>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Plot& from);
+  void MergeFrom(const Plot& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Plot* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "mruv.plots.Plot";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_plots_2fplots_2eproto);
+    return ::descriptor_table_plots_2fplots_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPointsFieldNumber = 3,
+    kNameFieldNumber = 1,
+    kDescriptionFieldNumber = 2,
+  };
+  // repeated .mruv.Position points = 3;
+  int points_size() const;
+  private:
+  int _internal_points_size() const;
+  public:
+  void clear_points();
+  ::mruv::Position* mutable_points(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+      mutable_points();
+  private:
+  const ::mruv::Position& _internal_points(int index) const;
+  ::mruv::Position* _internal_add_points();
+  public:
+  const ::mruv::Position& points(int index) const;
+  ::mruv::Position* add_points();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+      points() const;
+
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string description = 2;
+  void clear_description();
+  const std::string& description() const;
+  void set_description(const std::string& value);
+  void set_description(std::string&& value);
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  std::string* mutable_description();
+  std::string* release_description();
+  void set_allocated_description(std::string* description);
+  private:
+  const std::string& _internal_description() const;
+  void _internal_set_description(const std::string& value);
+  std::string* _internal_mutable_description();
+  public:
+
+  // @@protoc_insertion_point(class_scope:mruv.plots.Plot)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position > points_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_plots_2fplots_2eproto;
+};
+// -------------------------------------------------------------------
 
 class CreatePlotRequest :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.plots.CreatePlotRequest) */ {
@@ -141,7 +318,7 @@ class CreatePlotRequest :
                &_CreatePlotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(CreatePlotRequest& a, CreatePlotRequest& b) {
     a.Swap(&b);
@@ -314,7 +491,7 @@ class CreatePlotResponse :
                &_CreatePlotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(CreatePlotResponse& a, CreatePlotResponse& b) {
     a.Swap(&b);
@@ -442,7 +619,7 @@ class GetPlotRequest :
                &_GetPlotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(GetPlotRequest& a, GetPlotRequest& b) {
     a.Swap(&b);
@@ -570,7 +747,7 @@ class GetPlotResponse :
                &_GetPlotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(GetPlotResponse& a, GetPlotResponse& b) {
     a.Swap(&b);
@@ -754,7 +931,7 @@ class UpdatePlotRequest :
                &_UpdatePlotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(UpdatePlotRequest& a, UpdatePlotRequest& b) {
     a.Swap(&b);
@@ -918,7 +1095,7 @@ class UpdatePlotResponse :
                &_UpdatePlotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(UpdatePlotResponse& a, UpdatePlotResponse& b) {
     a.Swap(&b);
@@ -1033,7 +1210,7 @@ class DeletePlotRequest :
                &_DeletePlotRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(DeletePlotRequest& a, DeletePlotRequest& b) {
     a.Swap(&b);
@@ -1161,7 +1338,7 @@ class DeletePlotResponse :
                &_DeletePlotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(DeletePlotResponse& a, DeletePlotResponse& b) {
     a.Swap(&b);
@@ -1241,6 +1418,166 @@ class DeletePlotResponse :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Plot
+
+// string name = 1;
+inline void Plot::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Plot::name() const {
+  // @@protoc_insertion_point(field_get:mruv.plots.Plot.name)
+  return _internal_name();
+}
+inline void Plot::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:mruv.plots.Plot.name)
+}
+inline std::string* Plot::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:mruv.plots.Plot.name)
+  return _internal_mutable_name();
+}
+inline const std::string& Plot::_internal_name() const {
+  return name_.GetNoArena();
+}
+inline void Plot::_internal_set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Plot::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.plots.Plot.name)
+}
+inline void Plot::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.plots.Plot.name)
+}
+inline void Plot::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.plots.Plot.name)
+}
+inline std::string* Plot::_internal_mutable_name() {
+  
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Plot::release_name() {
+  // @@protoc_insertion_point(field_release:mruv.plots.Plot.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Plot::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:mruv.plots.Plot.name)
+}
+
+// string description = 2;
+inline void Plot::clear_description() {
+  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& Plot::description() const {
+  // @@protoc_insertion_point(field_get:mruv.plots.Plot.description)
+  return _internal_description();
+}
+inline void Plot::set_description(const std::string& value) {
+  _internal_set_description(value);
+  // @@protoc_insertion_point(field_set:mruv.plots.Plot.description)
+}
+inline std::string* Plot::mutable_description() {
+  // @@protoc_insertion_point(field_mutable:mruv.plots.Plot.description)
+  return _internal_mutable_description();
+}
+inline const std::string& Plot::_internal_description() const {
+  return description_.GetNoArena();
+}
+inline void Plot::_internal_set_description(const std::string& value) {
+  
+  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void Plot::set_description(std::string&& value) {
+  
+  description_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:mruv.plots.Plot.description)
+}
+inline void Plot::set_description(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:mruv.plots.Plot.description)
+}
+inline void Plot::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:mruv.plots.Plot.description)
+}
+inline std::string* Plot::_internal_mutable_description() {
+  
+  return description_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* Plot::release_description() {
+  // @@protoc_insertion_point(field_release:mruv.plots.Plot.description)
+  
+  return description_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void Plot::set_allocated_description(std::string* description) {
+  if (description != nullptr) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:mruv.plots.Plot.description)
+}
+
+// repeated .mruv.Position points = 3;
+inline int Plot::_internal_points_size() const {
+  return points_.size();
+}
+inline int Plot::points_size() const {
+  return _internal_points_size();
+}
+inline ::mruv::Position* Plot::mutable_points(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.plots.Plot.points)
+  return points_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+Plot::mutable_points() {
+  // @@protoc_insertion_point(field_mutable_list:mruv.plots.Plot.points)
+  return &points_;
+}
+inline const ::mruv::Position& Plot::_internal_points(int index) const {
+  return points_.Get(index);
+}
+inline const ::mruv::Position& Plot::points(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.plots.Plot.points)
+  return _internal_points(index);
+}
+inline ::mruv::Position* Plot::_internal_add_points() {
+  return points_.Add();
+}
+inline ::mruv::Position* Plot::add_points() {
+  // @@protoc_insertion_point(field_add:mruv.plots.Plot.points)
+  return _internal_add_points();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+Plot::points() const {
+  // @@protoc_insertion_point(field_list:mruv.plots.Plot.points)
+  return points_;
+}
+
+// -------------------------------------------------------------------
+
 // CreatePlotRequest
 
 // string name = 1;
@@ -1806,6 +2143,8 @@ inline void DeletePlotRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

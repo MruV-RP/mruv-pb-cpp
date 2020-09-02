@@ -32,6 +32,7 @@ static const char* MruVEntrancesService_method_names[] = {
   "/mruv.entrances.MruVEntrancesService/FindNearestEntrance",
   "/mruv.entrances.MruVEntrancesService/Enter",
   "/mruv.entrances.MruVEntrancesService/Exit",
+  "/mruv.entrances.MruVEntrancesService/FetchAll",
 };
 
 std::unique_ptr< MruVEntrancesService::Stub> MruVEntrancesService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -50,6 +51,7 @@ MruVEntrancesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_FindNearestEntrance_(MruVEntrancesService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_Enter_(MruVEntrancesService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_Exit_(MruVEntrancesService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchAll_(MruVEntrancesService_method_names[9], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVEntrancesService::Stub::CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest& request, ::mruv::entrances::CreateEntranceResponse* response) {
@@ -304,6 +306,22 @@ void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext*
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::ExitResponse>::Create(channel_.get(), cq, rpcmethod_Exit_, context, request, false);
 }
 
+::grpc::ClientReader< ::mruv::entrances::FetchAllEntrancesResponse>* MruVEntrancesService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+}
+
+void MruVEntrancesService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>* MruVEntrancesService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>* MruVEntrancesService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+}
+
 MruVEntrancesService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEntrancesService_method_names[0],
@@ -395,6 +413,16 @@ MruVEntrancesService::Service::Service() {
              ::mruv::entrances::ExitResponse* resp) {
                return service->Exit(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVEntrancesService_method_names[9],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< MruVEntrancesService::Service, ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
+          [](MruVEntrancesService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::entrances::FetchAllEntrancesRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::entrances::FetchAllEntrancesResponse>* writer) {
+               return service->FetchAll(ctx, req, writer);
+             }, this)));
 }
 
 MruVEntrancesService::Service::~Service() {
@@ -460,6 +488,13 @@ MruVEntrancesService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVEntrancesService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::ServerWriter< ::mruv::entrances::FetchAllEntrancesResponse>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 

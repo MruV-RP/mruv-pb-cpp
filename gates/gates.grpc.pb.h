@@ -110,6 +110,16 @@ class MruVGatesService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::FindNearestGateResponse>> PrepareAsyncFindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::FindNearestGateResponse>>(PrepareAsyncFindNearestGateRaw(context, request, cq));
     }
+    //
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::gates::FetchAllGatesResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::gates::FetchAllGatesResponse>>(FetchAllRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::gates::FetchAllGatesResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::gates::FetchAllGatesResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::gates::FetchAllGatesResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::gates::FetchAllGatesResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -230,6 +240,12 @@ class MruVGatesService final {
       #else
       virtual void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      //
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) = 0;
+      #else
+      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) = 0;
+      #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     typedef class experimental_async_interface async_interface;
@@ -257,6 +273,9 @@ class MruVGatesService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::CloseResponse>* PrepareAsyncCloseRaw(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::FindNearestGateResponse>* AsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::gates::FindNearestGateResponse>* PrepareAsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::gates::FetchAllGatesResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::gates::FetchAllGatesResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::gates::FetchAllGatesResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -323,6 +342,15 @@ class MruVGatesService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>> PrepareAsyncFindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>>(PrepareAsyncFindNearestGateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::gates::FetchAllGatesResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::gates::FetchAllGatesResponse>>(FetchAllRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -435,6 +463,11 @@ class MruVGatesService final {
       #else
       void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) override;
+      #else
+      void FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) override;
+      #endif
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -464,6 +497,9 @@ class MruVGatesService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::gates::CloseResponse>* PrepareAsyncCloseRaw(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>* AsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>* PrepareAsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::gates::FetchAllGatesResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateGate_;
     const ::grpc::internal::RpcMethod rpcmethod_GetGate_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateGate_;
@@ -473,6 +509,7 @@ class MruVGatesService final {
     const ::grpc::internal::RpcMethod rpcmethod_Open_;
     const ::grpc::internal::RpcMethod rpcmethod_Close_;
     const ::grpc::internal::RpcMethod rpcmethod_FindNearestGate_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -498,6 +535,8 @@ class MruVGatesService final {
     virtual ::grpc::Status Close(::grpc::ServerContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response);
     // Find gate that is closest to a specific position.
     virtual ::grpc::Status FindNearestGate(::grpc::ServerContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response);
+    //
+    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::gates::FetchAllGatesRequest* request, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateGate : public BaseClass {
@@ -679,7 +718,27 @@ class MruVGatesService final {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateGate<WithAsyncMethod_GetGate<WithAsyncMethod_UpdateGate<WithAsyncMethod_DeleteGate<WithAsyncMethod_Lock<WithAsyncMethod_Unlock<WithAsyncMethod_Open<WithAsyncMethod_Close<WithAsyncMethod_FindNearestGate<Service > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_FetchAll() {
+      ::grpc::Service::MarkMethodAsync(9);
+    }
+    ~WithAsyncMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::ServerAsyncWriter< ::mruv::gates::FetchAllGatesResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(9, context, request, writer, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_CreateGate<WithAsyncMethod_GetGate<WithAsyncMethod_UpdateGate<WithAsyncMethod_DeleteGate<WithAsyncMethod_Lock<WithAsyncMethod_Unlock<WithAsyncMethod_Open<WithAsyncMethod_Close<WithAsyncMethod_FindNearestGate<WithAsyncMethod_FetchAll<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateGate : public BaseClass {
    private:
@@ -1103,11 +1162,49 @@ class MruVGatesService final {
     #endif
       { return nullptr; }
   };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(9,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::gates::FetchAllGatesRequest* request) { return this->FetchAll(context, request); }));
+    }
+    ~ExperimentalWithCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::mruv::gates::FetchAllGatesResponse>* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::gates::FetchAllGatesResponse>* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/)
+    #endif
+      { return nullptr; }
+  };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateGate<ExperimentalWithCallbackMethod_GetGate<ExperimentalWithCallbackMethod_UpdateGate<ExperimentalWithCallbackMethod_DeleteGate<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_Open<ExperimentalWithCallbackMethod_Close<ExperimentalWithCallbackMethod_FindNearestGate<Service > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateGate<ExperimentalWithCallbackMethod_GetGate<ExperimentalWithCallbackMethod_UpdateGate<ExperimentalWithCallbackMethod_DeleteGate<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_Open<ExperimentalWithCallbackMethod_Close<ExperimentalWithCallbackMethod_FindNearestGate<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateGate<ExperimentalWithCallbackMethod_GetGate<ExperimentalWithCallbackMethod_UpdateGate<ExperimentalWithCallbackMethod_DeleteGate<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_Open<ExperimentalWithCallbackMethod_Close<ExperimentalWithCallbackMethod_FindNearestGate<Service > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateGate<ExperimentalWithCallbackMethod_GetGate<ExperimentalWithCallbackMethod_UpdateGate<ExperimentalWithCallbackMethod_DeleteGate<ExperimentalWithCallbackMethod_Lock<ExperimentalWithCallbackMethod_Unlock<ExperimentalWithCallbackMethod_Open<ExperimentalWithCallbackMethod_Close<ExperimentalWithCallbackMethod_FindNearestGate<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateGate : public BaseClass {
    private:
@@ -1257,6 +1354,23 @@ class MruVGatesService final {
     }
     // disable synchronous version of this method
     ::grpc::Status FindNearestGate(::grpc::ServerContext* /*context*/, const ::mruv::gates::FindNearestGateRequest* /*request*/, ::mruv::gates::FindNearestGateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_FetchAll() {
+      ::grpc::Service::MarkMethodGeneric(9);
+    }
+    ~WithGenericMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1439,6 +1553,26 @@ class MruVGatesService final {
     }
     void RequestFindNearestGate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_FetchAll() {
+      ::grpc::Service::MarkMethodRaw(9);
+    }
+    ~WithRawMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(9, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1784,6 +1918,44 @@ class MruVGatesService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_FetchAll() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(9,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const::grpc::ByteBuffer* request) { return this->FetchAll(context, request); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #else
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_CreateGate : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -2027,8 +2199,35 @@ class MruVGatesService final {
     virtual ::grpc::Status StreamedFindNearestGate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::gates::FindNearestGateRequest,::mruv::gates::FindNearestGateResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateGate<WithStreamedUnaryMethod_GetGate<WithStreamedUnaryMethod_UpdateGate<WithStreamedUnaryMethod_DeleteGate<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_Open<WithStreamedUnaryMethod_Close<WithStreamedUnaryMethod_FindNearestGate<Service > > > > > > > > > StreamedUnaryService;
-  typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateGate<WithStreamedUnaryMethod_GetGate<WithStreamedUnaryMethod_UpdateGate<WithStreamedUnaryMethod_DeleteGate<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_Open<WithStreamedUnaryMethod_Close<WithStreamedUnaryMethod_FindNearestGate<Service > > > > > > > > > StreamedService;
+  template <class BaseClass>
+  class WithSplitStreamingMethod_FetchAll : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithSplitStreamingMethod_FetchAll() {
+      ::grpc::Service::MarkMethodStreamed(9,
+        new ::grpc::internal::SplitServerStreamingHandler<
+          ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerSplitStreamer<
+                     ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>* streamer) {
+                       return this->StreamedFetchAll(context,
+                         streamer);
+                  }));
+    }
+    ~WithSplitStreamingMethod_FetchAll() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::gates::FetchAllGatesRequest* /*request*/, ::grpc::ServerWriter< ::mruv::gates::FetchAllGatesResponse>* /*writer*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with split streamed
+    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::gates::FetchAllGatesRequest,::mruv::gates::FetchAllGatesResponse>* server_split_streamer) = 0;
+  };
+  typedef WithSplitStreamingMethod_FetchAll<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateGate<WithStreamedUnaryMethod_GetGate<WithStreamedUnaryMethod_UpdateGate<WithStreamedUnaryMethod_DeleteGate<WithStreamedUnaryMethod_Lock<WithStreamedUnaryMethod_Unlock<WithStreamedUnaryMethod_Open<WithStreamedUnaryMethod_Close<WithStreamedUnaryMethod_FindNearestGate<WithSplitStreamingMethod_FetchAll<Service > > > > > > > > > > StreamedService;
 };
 
 }  // namespace gates

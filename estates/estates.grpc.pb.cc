@@ -34,6 +34,7 @@ static const char* MruVEstateService_method_names[] = {
   "/mruv.estates.MruVEstateService/AddEntrance",
   "/mruv.estates.MruVEstateService/RemoveEntrance",
   "/mruv.estates.MruVEstateService/GetEstateEntrances",
+  "/mruv.estates.MruVEstateService/FetchAll",
 };
 
 std::unique_ptr< MruVEstateService::Stub> MruVEstateService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -54,6 +55,7 @@ MruVEstateService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_AddEntrance_(MruVEstateService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RemoveEntrance_(MruVEstateService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetEstateEntrances_(MruVEstateService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchAll_(MruVEstateService_method_names[11], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVEstateService::Stub::CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest& request, ::mruv::estates::CreateEstateResponse* response) {
@@ -364,6 +366,22 @@ void MruVEstateService::Stub::experimental_async::GetEstateEntrances(::grpc::Cli
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateEntrances_, context, request, false);
 }
 
+::grpc::ClientReader< ::mruv::estates::FetchAllEstatesResponse>* MruVEstateService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::estates::FetchAllEstatesRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+}
+
+void MruVEstateService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::estates::FetchAllEstatesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::estates::FetchAllEstatesResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::mruv::estates::FetchAllEstatesResponse>* MruVEstateService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::estates::FetchAllEstatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::mruv::estates::FetchAllEstatesResponse>* MruVEstateService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::estates::FetchAllEstatesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+}
+
 MruVEstateService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVEstateService_method_names[0],
@@ -475,6 +493,16 @@ MruVEstateService::Service::Service() {
              ::mruv::estates::GetEstateEntrancesResponse* resp) {
                return service->GetEstateEntrances(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVEstateService_method_names[11],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< MruVEstateService::Service, ::mruv::estates::FetchAllEstatesRequest, ::mruv::estates::FetchAllEstatesResponse>(
+          [](MruVEstateService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::estates::FetchAllEstatesRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::estates::FetchAllEstatesResponse>* writer) {
+               return service->FetchAll(ctx, req, writer);
+             }, this)));
 }
 
 MruVEstateService::Service::~Service() {
@@ -554,6 +582,13 @@ MruVEstateService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVEstateService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::estates::FetchAllEstatesRequest* request, ::grpc::ServerWriter< ::mruv::estates::FetchAllEstatesResponse>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 

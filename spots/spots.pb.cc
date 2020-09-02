@@ -14,6 +14,7 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_spots_2fspots_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllSpotsResponse_SpotsEntry_DoNotUse_spots_2fspots_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_spots_2fspots_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Spot_spots_2fspots_2eproto;
 namespace mruv {
 namespace spots {
@@ -53,6 +54,18 @@ class DeleteSpotResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeleteSpotResponse> _instance;
 } _DeleteSpotResponse_default_instance_;
+class FetchAllSpotsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllSpotsRequest> _instance;
+} _FetchAllSpotsRequest_default_instance_;
+class FetchAllSpotsResponse_SpotsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllSpotsResponse_SpotsEntry_DoNotUse> _instance;
+} _FetchAllSpotsResponse_SpotsEntry_DoNotUse_default_instance_;
+class FetchAllSpotsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllSpotsResponse> _instance;
+} _FetchAllSpotsResponse_default_instance_;
 }  // namespace spots
 }  // namespace mruv
 static void InitDefaultsscc_info_CreateSpotRequest_spots_2fspots_2eproto() {
@@ -111,6 +124,49 @@ static void InitDefaultsscc_info_DeleteSpotResponse_spots_2fspots_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteSpotResponse_spots_2fspots_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteSpotResponse_spots_2fspots_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllSpotsRequest_spots_2fspots_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::spots::_FetchAllSpotsRequest_default_instance_;
+    new (ptr) ::mruv::spots::FetchAllSpotsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::spots::FetchAllSpotsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FetchAllSpotsRequest_spots_2fspots_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FetchAllSpotsRequest_spots_2fspots_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllSpotsResponse_spots_2fspots_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::spots::_FetchAllSpotsResponse_default_instance_;
+    new (ptr) ::mruv::spots::FetchAllSpotsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::spots::FetchAllSpotsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllSpotsResponse_spots_2fspots_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllSpotsResponse_spots_2fspots_2eproto}, {
+      &scc_info_FetchAllSpotsResponse_SpotsEntry_DoNotUse_spots_2fspots_2eproto.base,}};
+
+static void InitDefaultsscc_info_FetchAllSpotsResponse_SpotsEntry_DoNotUse_spots_2fspots_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::spots::_FetchAllSpotsResponse_SpotsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse();
+  }
+  ::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllSpotsResponse_SpotsEntry_DoNotUse_spots_2fspots_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllSpotsResponse_SpotsEntry_DoNotUse_spots_2fspots_2eproto}, {
+      &scc_info_Spot_spots_2fspots_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetSpotRequest_spots_2fspots_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -184,7 +240,7 @@ static void InitDefaultsscc_info_UpdateSpotResponse_spots_2fspots_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateSpotResponse_spots_2fspots_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateSpotResponse_spots_2fspots_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_spots_2fspots_2eproto[9];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_spots_2fspots_2eproto[12];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_spots_2fspots_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_spots_2fspots_2eproto = nullptr;
 
@@ -250,6 +306,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_spots_2fspots_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsRequest, chunk_size_),
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::spots::FetchAllSpotsResponse, spots_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::spots::Spot)},
@@ -261,6 +338,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 45, -1, sizeof(::mruv::spots::UpdateSpotResponse)},
   { 50, -1, sizeof(::mruv::spots::DeleteSpotRequest)},
   { 56, -1, sizeof(::mruv::spots::DeleteSpotResponse)},
+  { 61, -1, sizeof(::mruv::spots::FetchAllSpotsRequest)},
+  { 67, 74, sizeof(::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse)},
+  { 76, -1, sizeof(::mruv::spots::FetchAllSpotsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -273,6 +353,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::spots::_UpdateSpotResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::spots::_DeleteSpotRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::spots::_DeleteSpotResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::spots::_FetchAllSpotsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::spots::_FetchAllSpotsResponse_SpotsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::spots::_FetchAllSpotsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_spots_2fspots_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -288,27 +371,37 @@ const char descriptor_table_protodef_spots_2fspots_2eproto[] PROTOBUF_SECTION_VA
   "UpdateSpotRequest\022\n\n\002id\030\001 \001(\r\022\036\n\004spot\030\002 "
   "\001(\0132\020.mruv.spots.Spot\"\024\n\022UpdateSpotRespo"
   "nse\"\037\n\021DeleteSpotRequest\022\n\n\002id\030\001 \001(\r\"\024\n\022"
-  "DeleteSpotResponse2\230\003\n\020MruVSpotsService\022"
-  "^\n\nCreateSpot\022\035.mruv.spots.CreateSpotReq"
-  "uest\032\036.mruv.spots.CreateSpotResponse\"\021\202\323"
-  "\344\223\002\013\"\t/v1/spots\022Z\n\007GetSpot\022\032.mruv.spots."
-  "GetSpotRequest\032\033.mruv.spots.GetSpotRespo"
-  "nse\"\026\202\323\344\223\002\020\022\016/v1/spots/{id}\022c\n\nUpdateSpo"
-  "t\022\035.mruv.spots.UpdateSpotRequest\032\036.mruv."
-  "spots.UpdateSpotResponse\"\026\202\323\344\223\002\0202\016/v1/sp"
-  "ots/{id}\022c\n\nDeleteSpot\022\035.mruv.spots.Dele"
-  "teSpotRequest\032\036.mruv.spots.DeleteSpotRes"
-  "ponse\"\026\202\323\344\223\002\020*\016/v1/spots/{id}B%Z#github."
+  "DeleteSpotResponse\"*\n\024FetchAllSpotsReque"
+  "st\022\022\n\nchunk_size\030\001 \001(\r\"\224\001\n\025FetchAllSpots"
+  "Response\022;\n\005spots\030\001 \003(\0132,.mruv.spots.Fet"
+  "chAllSpotsResponse.SpotsEntry\032>\n\nSpotsEn"
+  "try\022\013\n\003key\030\001 \001(\r\022\037\n\005value\030\002 \001(\0132\020.mruv.s"
+  "pots.Spot:\0028\0012\355\003\n\020MruVSpotsService\022^\n\nCr"
+  "eateSpot\022\035.mruv.spots.CreateSpotRequest\032"
+  "\036.mruv.spots.CreateSpotResponse\"\021\202\323\344\223\002\013\""
+  "\t/v1/spots\022Z\n\007GetSpot\022\032.mruv.spots.GetSp"
+  "otRequest\032\033.mruv.spots.GetSpotResponse\"\026"
+  "\202\323\344\223\002\020\022\016/v1/spots/{id}\022c\n\nUpdateSpot\022\035.m"
+  "ruv.spots.UpdateSpotRequest\032\036.mruv.spots"
+  ".UpdateSpotResponse\"\026\202\323\344\223\002\0202\016/v1/spots/{"
+  "id}\022c\n\nDeleteSpot\022\035.mruv.spots.DeleteSpo"
+  "tRequest\032\036.mruv.spots.DeleteSpotResponse"
+  "\"\026\202\323\344\223\002\020*\016/v1/spots/{id}\022S\n\010FetchAll\022 .m"
+  "ruv.spots.FetchAllSpotsRequest\032!.mruv.sp"
+  "ots.FetchAllSpotsResponse\"\0000\001B%Z#github."
   "com/MruV-RP/mruv-pb-go/spotsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_spots_2fspots_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_spots_2fspots_2eproto_sccs[9] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_spots_2fspots_2eproto_sccs[12] = {
   &scc_info_CreateSpotRequest_spots_2fspots_2eproto.base,
   &scc_info_CreateSpotResponse_spots_2fspots_2eproto.base,
   &scc_info_DeleteSpotRequest_spots_2fspots_2eproto.base,
   &scc_info_DeleteSpotResponse_spots_2fspots_2eproto.base,
+  &scc_info_FetchAllSpotsRequest_spots_2fspots_2eproto.base,
+  &scc_info_FetchAllSpotsResponse_spots_2fspots_2eproto.base,
+  &scc_info_FetchAllSpotsResponse_SpotsEntry_DoNotUse_spots_2fspots_2eproto.base,
   &scc_info_GetSpotRequest_spots_2fspots_2eproto.base,
   &scc_info_GetSpotResponse_spots_2fspots_2eproto.base,
   &scc_info_Spot_spots_2fspots_2eproto.base,
@@ -318,10 +411,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_spo
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_spots_2fspots_2eproto_once;
 static bool descriptor_table_spots_2fspots_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_spots_2fspots_2eproto = {
-  &descriptor_table_spots_2fspots_2eproto_initialized, descriptor_table_protodef_spots_2fspots_2eproto, "spots/spots.proto", 956,
-  &descriptor_table_spots_2fspots_2eproto_once, descriptor_table_spots_2fspots_2eproto_sccs, descriptor_table_spots_2fspots_2eproto_deps, 9, 1,
+  &descriptor_table_spots_2fspots_2eproto_initialized, descriptor_table_protodef_spots_2fspots_2eproto, "spots/spots.proto", 1236,
+  &descriptor_table_spots_2fspots_2eproto_once, descriptor_table_spots_2fspots_2eproto_sccs, descriptor_table_spots_2fspots_2eproto_deps, 12, 1,
   schemas, file_default_instances, TableStruct_spots_2fspots_2eproto::offsets,
-  file_level_metadata_spots_2fspots_2eproto, 9, file_level_enum_descriptors_spots_2fspots_2eproto, file_level_service_descriptors_spots_2fspots_2eproto,
+  file_level_metadata_spots_2fspots_2eproto, 12, file_level_enum_descriptors_spots_2fspots_2eproto, file_level_service_descriptors_spots_2fspots_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -2244,6 +2337,425 @@ void DeleteSpotResponse::InternalSwap(DeleteSpotResponse* other) {
 }
 
 
+// ===================================================================
+
+void FetchAllSpotsRequest::InitAsDefaultInstance() {
+}
+class FetchAllSpotsRequest::_Internal {
+ public:
+};
+
+FetchAllSpotsRequest::FetchAllSpotsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.spots.FetchAllSpotsRequest)
+}
+FetchAllSpotsRequest::FetchAllSpotsRequest(const FetchAllSpotsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  chunk_size_ = from.chunk_size_;
+  // @@protoc_insertion_point(copy_constructor:mruv.spots.FetchAllSpotsRequest)
+}
+
+void FetchAllSpotsRequest::SharedCtor() {
+  chunk_size_ = 0u;
+}
+
+FetchAllSpotsRequest::~FetchAllSpotsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.spots.FetchAllSpotsRequest)
+  SharedDtor();
+}
+
+void FetchAllSpotsRequest::SharedDtor() {
+}
+
+void FetchAllSpotsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllSpotsRequest& FetchAllSpotsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllSpotsRequest_spots_2fspots_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllSpotsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.spots.FetchAllSpotsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  chunk_size_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllSpotsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 chunk_size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllSpotsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.spots.FetchAllSpotsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chunk_size(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.spots.FetchAllSpotsRequest)
+  return target;
+}
+
+size_t FetchAllSpotsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.spots.FetchAllSpotsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chunk_size());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllSpotsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.spots.FetchAllSpotsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllSpotsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllSpotsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.spots.FetchAllSpotsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.spots.FetchAllSpotsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllSpotsRequest::MergeFrom(const FetchAllSpotsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.spots.FetchAllSpotsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.chunk_size() != 0) {
+    _internal_set_chunk_size(from._internal_chunk_size());
+  }
+}
+
+void FetchAllSpotsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.spots.FetchAllSpotsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllSpotsRequest::CopyFrom(const FetchAllSpotsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.spots.FetchAllSpotsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllSpotsRequest::IsInitialized() const {
+  return true;
+}
+
+void FetchAllSpotsRequest::InternalSwap(FetchAllSpotsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chunk_size_, other->chunk_size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllSpotsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+FetchAllSpotsResponse_SpotsEntry_DoNotUse::FetchAllSpotsResponse_SpotsEntry_DoNotUse() {}
+FetchAllSpotsResponse_SpotsEntry_DoNotUse::FetchAllSpotsResponse_SpotsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FetchAllSpotsResponse_SpotsEntry_DoNotUse::MergeFrom(const FetchAllSpotsResponse_SpotsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllSpotsResponse_SpotsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FetchAllSpotsResponse_SpotsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void FetchAllSpotsResponse::InitAsDefaultInstance() {
+}
+class FetchAllSpotsResponse::_Internal {
+ public:
+};
+
+FetchAllSpotsResponse::FetchAllSpotsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.spots.FetchAllSpotsResponse)
+}
+FetchAllSpotsResponse::FetchAllSpotsResponse(const FetchAllSpotsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  spots_.MergeFrom(from.spots_);
+  // @@protoc_insertion_point(copy_constructor:mruv.spots.FetchAllSpotsResponse)
+}
+
+void FetchAllSpotsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FetchAllSpotsResponse_spots_2fspots_2eproto.base);
+}
+
+FetchAllSpotsResponse::~FetchAllSpotsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.spots.FetchAllSpotsResponse)
+  SharedDtor();
+}
+
+void FetchAllSpotsResponse::SharedDtor() {
+}
+
+void FetchAllSpotsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllSpotsResponse& FetchAllSpotsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllSpotsResponse_spots_2fspots_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllSpotsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.spots.FetchAllSpotsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  spots_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllSpotsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // map<uint32, .mruv.spots.Spot> spots = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&spots_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllSpotsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.spots.FetchAllSpotsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.spots.Spot> spots = 1;
+  if (!this->_internal_spots().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_spots().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_spots().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >::const_iterator
+          it = this->_internal_spots().begin();
+          it != this->_internal_spots().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FetchAllSpotsResponse_SpotsEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >::const_iterator
+          it = this->_internal_spots().begin();
+          it != this->_internal_spots().end(); ++it) {
+        target = FetchAllSpotsResponse_SpotsEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.spots.FetchAllSpotsResponse)
+  return target;
+}
+
+size_t FetchAllSpotsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.spots.FetchAllSpotsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.spots.Spot> spots = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_spots_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::spots::Spot >::const_iterator
+      it = this->_internal_spots().begin();
+      it != this->_internal_spots().end(); ++it) {
+    total_size += FetchAllSpotsResponse_SpotsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllSpotsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.spots.FetchAllSpotsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllSpotsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllSpotsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.spots.FetchAllSpotsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.spots.FetchAllSpotsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllSpotsResponse::MergeFrom(const FetchAllSpotsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.spots.FetchAllSpotsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  spots_.MergeFrom(from.spots_);
+}
+
+void FetchAllSpotsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.spots.FetchAllSpotsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllSpotsResponse::CopyFrom(const FetchAllSpotsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.spots.FetchAllSpotsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllSpotsResponse::IsInitialized() const {
+  return true;
+}
+
+void FetchAllSpotsResponse::InternalSwap(FetchAllSpotsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  spots_.Swap(&other->spots_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllSpotsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace spots
 }  // namespace mruv
@@ -2274,6 +2786,15 @@ template<> PROTOBUF_NOINLINE ::mruv::spots::DeleteSpotRequest* Arena::CreateMayb
 }
 template<> PROTOBUF_NOINLINE ::mruv::spots::DeleteSpotResponse* Arena::CreateMaybeMessage< ::mruv::spots::DeleteSpotResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::spots::DeleteSpotResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::spots::FetchAllSpotsRequest* Arena::CreateMaybeMessage< ::mruv::spots::FetchAllSpotsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::spots::FetchAllSpotsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::spots::FetchAllSpotsResponse_SpotsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::spots::FetchAllSpotsResponse* Arena::CreateMaybeMessage< ::mruv::spots::FetchAllSpotsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::spots::FetchAllSpotsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -14,6 +14,8 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fmovable_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_objects_2fmovable_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_objects_2fmovable_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_MovableObject_objects_2fmovable_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fobjects_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_Object_objects_2fobjects_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_objects_2fmovable_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_State_objects_2fmovable_2eproto;
 namespace mruv {
@@ -82,6 +84,18 @@ class MoveObjectPreviousResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MoveObjectPreviousResponse> _instance;
 } _MoveObjectPreviousResponse_default_instance_;
+class FetchAllMovableObjectsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllMovableObjectsRequest> _instance;
+} _FetchAllMovableObjectsRequest_default_instance_;
+class FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse> _instance;
+} _FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_default_instance_;
+class FetchAllMovableObjectsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FetchAllMovableObjectsResponse> _instance;
+} _FetchAllMovableObjectsResponse_default_instance_;
 }  // namespace objects
 }  // namespace mruv
 static void InitDefaultsscc_info_CreateMovableObjectRequest_objects_2fmovable_2eproto() {
@@ -141,6 +155,49 @@ static void InitDefaultsscc_info_DeleteMovableObjectResponse_objects_2fmovable_2
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteMovableObjectResponse_objects_2fmovable_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DeleteMovableObjectResponse_objects_2fmovable_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllMovableObjectsRequest_objects_2fmovable_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_FetchAllMovableObjectsRequest_default_instance_;
+    new (ptr) ::mruv::objects::FetchAllMovableObjectsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::FetchAllMovableObjectsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FetchAllMovableObjectsRequest_objects_2fmovable_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FetchAllMovableObjectsRequest_objects_2fmovable_2eproto}, {}};
+
+static void InitDefaultsscc_info_FetchAllMovableObjectsResponse_objects_2fmovable_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_FetchAllMovableObjectsResponse_default_instance_;
+    new (ptr) ::mruv::objects::FetchAllMovableObjectsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::objects::FetchAllMovableObjectsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllMovableObjectsResponse_objects_2fmovable_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllMovableObjectsResponse_objects_2fmovable_2eproto}, {
+      &scc_info_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_objects_2fmovable_2eproto.base,}};
+
+static void InitDefaultsscc_info_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_objects_2fmovable_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::objects::_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_default_instance_;
+    new (ptr) ::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse();
+  }
+  ::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_objects_2fmovable_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_objects_2fmovable_2eproto}, {
+      &scc_info_MovableObject_objects_2fmovable_2eproto.base,}};
 
 static void InitDefaultsscc_info_GetMovableObjectRequest_objects_2fmovable_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -315,7 +372,7 @@ static void InitDefaultsscc_info_UpdateMovableObjectResponse_objects_2fmovable_2
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateMovableObjectResponse_objects_2fmovable_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateMovableObjectResponse_objects_2fmovable_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_objects_2fmovable_2eproto[16];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_objects_2fmovable_2eproto[19];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_objects_2fmovable_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_objects_2fmovable_2eproto = nullptr;
 
@@ -429,6 +486,27 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_objects_2fmovable_2eproto::off
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MoveObjectPreviousResponse, state_id_),
   PROTOBUF_FIELD_OFFSET(::mruv::objects::MoveObjectPreviousResponse, state_name_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsRequest, chunk_size_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::objects::FetchAllMovableObjectsResponse, movable_objects_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::mruv::objects::State)},
@@ -447,6 +525,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 89, -1, sizeof(::mruv::objects::MoveObjectNextResponse)},
   { 96, -1, sizeof(::mruv::objects::MoveObjectPreviousRequest)},
   { 102, -1, sizeof(::mruv::objects::MoveObjectPreviousResponse)},
+  { 109, -1, sizeof(::mruv::objects::FetchAllMovableObjectsRequest)},
+  { 115, 122, sizeof(::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse)},
+  { 124, -1, sizeof(::mruv::objects::FetchAllMovableObjectsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -466,6 +547,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_MoveObjectNextResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_MoveObjectPreviousRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_MoveObjectPreviousResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllMovableObjectsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::objects::_FetchAllMovableObjectsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_objects_2fmovable_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -496,43 +580,55 @@ const char descriptor_table_protodef_objects_2fmovable_2eproto[] PROTOBUF_SECTIO
   "Response\022\020\n\010state_id\030\001 \001(\r\022\022\n\nstate_name"
   "\030\002 \001(\t\"\'\n\031MoveObjectPreviousRequest\022\n\n\002i"
   "d\030\001 \001(\r\"B\n\032MoveObjectPreviousResponse\022\020\n"
-  "\010state_id\030\001 \001(\r\022\022\n\nstate_name\030\002 \001(\t2\302\007\n\031"
-  "MruVMovableObjectsService\022\206\001\n\023CreateMova"
-  "bleObject\022(.mruv.objects.CreateMovableOb"
-  "jectRequest\032).mruv.objects.CreateMovable"
-  "ObjectResponse\"\032\202\323\344\223\002\024\"\022/v1/movableObjec"
-  "ts\022}\n\020GetMovableObject\022%.mruv.objects.Ge"
-  "tMovableObjectRequest\032&.mruv.objects.Get"
-  "MovableObjectResponse\"\032\202\323\344\223\002\024\022\022/v1/movab"
-  "leObjects\022\206\001\n\023UpdateMovableObject\022(.mruv"
-  ".objects.UpdateMovableObjectRequest\032).mr"
-  "uv.objects.UpdateMovableObjectResponse\"\032"
-  "\202\323\344\223\002\0242\022/v1/movableObjects\022\206\001\n\023DeleteMov"
-  "ableObject\022(.mruv.objects.DeleteMovableO"
-  "bjectRequest\032).mruv.objects.DeleteMovabl"
-  "eObjectResponse\"\032\202\323\344\223\002\024*\022/v1/movableObje"
-  "cts\022q\n\nMoveObject\022\037.mruv.objects.MoveObj"
-  "ectRequest\032 .mruv.objects.MoveObjectResp"
-  "onse\" \202\323\344\223\002\032\"\030/v1/movableObjects/moves\022\202"
-  "\001\n\016MoveObjectNext\022#.mruv.objects.MoveObj"
-  "ectNextRequest\032$.mruv.objects.MoveObject"
-  "NextResponse\"%\202\323\344\223\002\037\"\035/v1/movableObjects"
-  "/moves/next\022\222\001\n\022MoveObjectPrevious\022\'.mru"
-  "v.objects.MoveObjectPreviousRequest\032(.mr"
-  "uv.objects.MoveObjectPreviousResponse\")\202"
-  "\323\344\223\002#\"!/v1/movableObjects/moves/previous"
-  "B\'Z%github.com/MruV-RP/mruv-pb-go/object"
-  "sb\006proto3"
+  "\010state_id\030\001 \001(\r\022\022\n\nstate_name\030\002 \001(\t\"3\n\035F"
+  "etchAllMovableObjectsRequest\022\022\n\nchunk_si"
+  "ze\030\001 \001(\r\"\317\001\n\036FetchAllMovableObjectsRespo"
+  "nse\022Y\n\017movable_objects\030\001 \003(\0132@.mruv.obje"
+  "cts.FetchAllMovableObjectsResponse.Movab"
+  "leObjectsEntry\032R\n\023MovableObjectsEntry\022\013\n"
+  "\003key\030\001 \001(\r\022*\n\005value\030\002 \001(\0132\033.mruv.objects"
+  ".MovableObject:\0028\0012\275\010\n\031MruVMovableObject"
+  "sService\022\206\001\n\023CreateMovableObject\022(.mruv."
+  "objects.CreateMovableObjectRequest\032).mru"
+  "v.objects.CreateMovableObjectResponse\"\032\202"
+  "\323\344\223\002\024\"\022/v1/movableObjects\022\202\001\n\020GetMovable"
+  "Object\022%.mruv.objects.GetMovableObjectRe"
+  "quest\032&.mruv.objects.GetMovableObjectRes"
+  "ponse\"\037\202\323\344\223\002\031\022\027/v1/movableObjects/{id}\022\213"
+  "\001\n\023UpdateMovableObject\022(.mruv.objects.Up"
+  "dateMovableObjectRequest\032).mruv.objects."
+  "UpdateMovableObjectResponse\"\037\202\323\344\223\002\0312\027/v1"
+  "/movableObjects/{id}\022\213\001\n\023DeleteMovableOb"
+  "ject\022(.mruv.objects.DeleteMovableObjectR"
+  "equest\032).mruv.objects.DeleteMovableObjec"
+  "tResponse\"\037\202\323\344\223\002\031*\027/v1/movableObjects/{i"
+  "d}\022q\n\nMoveObject\022\037.mruv.objects.MoveObje"
+  "ctRequest\032 .mruv.objects.MoveObjectRespo"
+  "nse\" \202\323\344\223\002\032\"\030/v1/movableObjects/moves\022\202\001"
+  "\n\016MoveObjectNext\022#.mruv.objects.MoveObje"
+  "ctNextRequest\032$.mruv.objects.MoveObjectN"
+  "extResponse\"%\202\323\344\223\002\037\"\035/v1/movableObjects/"
+  "moves/next\022\222\001\n\022MoveObjectPrevious\022\'.mruv"
+  ".objects.MoveObjectPreviousRequest\032(.mru"
+  "v.objects.MoveObjectPreviousResponse\")\202\323"
+  "\344\223\002#\"!/v1/movableObjects/moves/previous\022"
+  "i\n\010FetchAll\022+.mruv.objects.FetchAllMovab"
+  "leObjectsRequest\032,.mruv.objects.FetchAll"
+  "MovableObjectsResponse\"\0000\001B\'Z%github.com"
+  "/MruV-RP/mruv-pb-go/objectsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_objects_2fmovable_2eproto_deps[2] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
   &::descriptor_table_objects_2fobjects_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_objects_2fmovable_2eproto_sccs[16] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_objects_2fmovable_2eproto_sccs[19] = {
   &scc_info_CreateMovableObjectRequest_objects_2fmovable_2eproto.base,
   &scc_info_CreateMovableObjectResponse_objects_2fmovable_2eproto.base,
   &scc_info_DeleteMovableObjectRequest_objects_2fmovable_2eproto.base,
   &scc_info_DeleteMovableObjectResponse_objects_2fmovable_2eproto.base,
+  &scc_info_FetchAllMovableObjectsRequest_objects_2fmovable_2eproto.base,
+  &scc_info_FetchAllMovableObjectsResponse_objects_2fmovable_2eproto.base,
+  &scc_info_FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse_objects_2fmovable_2eproto.base,
   &scc_info_GetMovableObjectRequest_objects_2fmovable_2eproto.base,
   &scc_info_GetMovableObjectResponse_objects_2fmovable_2eproto.base,
   &scc_info_MovableObject_objects_2fmovable_2eproto.base,
@@ -549,10 +645,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_obj
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_objects_2fmovable_2eproto_once;
 static bool descriptor_table_objects_2fmovable_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fmovable_2eproto = {
-  &descriptor_table_objects_2fmovable_2eproto_initialized, descriptor_table_protodef_objects_2fmovable_2eproto, "objects/movable.proto", 2129,
-  &descriptor_table_objects_2fmovable_2eproto_once, descriptor_table_objects_2fmovable_2eproto_sccs, descriptor_table_objects_2fmovable_2eproto_deps, 16, 2,
+  &descriptor_table_objects_2fmovable_2eproto_initialized, descriptor_table_protodef_objects_2fmovable_2eproto, "objects/movable.proto", 2515,
+  &descriptor_table_objects_2fmovable_2eproto_once, descriptor_table_objects_2fmovable_2eproto_sccs, descriptor_table_objects_2fmovable_2eproto_deps, 19, 2,
   schemas, file_default_instances, TableStruct_objects_2fmovable_2eproto::offsets,
-  file_level_metadata_objects_2fmovable_2eproto, 16, file_level_enum_descriptors_objects_2fmovable_2eproto, file_level_service_descriptors_objects_2fmovable_2eproto,
+  file_level_metadata_objects_2fmovable_2eproto, 19, file_level_enum_descriptors_objects_2fmovable_2eproto, file_level_service_descriptors_objects_2fmovable_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -3990,6 +4086,425 @@ void MoveObjectPreviousResponse::InternalSwap(MoveObjectPreviousResponse* other)
 }
 
 
+// ===================================================================
+
+void FetchAllMovableObjectsRequest::InitAsDefaultInstance() {
+}
+class FetchAllMovableObjectsRequest::_Internal {
+ public:
+};
+
+FetchAllMovableObjectsRequest::FetchAllMovableObjectsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.FetchAllMovableObjectsRequest)
+}
+FetchAllMovableObjectsRequest::FetchAllMovableObjectsRequest(const FetchAllMovableObjectsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  chunk_size_ = from.chunk_size_;
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.FetchAllMovableObjectsRequest)
+}
+
+void FetchAllMovableObjectsRequest::SharedCtor() {
+  chunk_size_ = 0u;
+}
+
+FetchAllMovableObjectsRequest::~FetchAllMovableObjectsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.objects.FetchAllMovableObjectsRequest)
+  SharedDtor();
+}
+
+void FetchAllMovableObjectsRequest::SharedDtor() {
+}
+
+void FetchAllMovableObjectsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllMovableObjectsRequest& FetchAllMovableObjectsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllMovableObjectsRequest_objects_2fmovable_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllMovableObjectsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.FetchAllMovableObjectsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  chunk_size_ = 0u;
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllMovableObjectsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 chunk_size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllMovableObjectsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.FetchAllMovableObjectsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_chunk_size(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.FetchAllMovableObjectsRequest)
+  return target;
+}
+
+size_t FetchAllMovableObjectsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.FetchAllMovableObjectsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 chunk_size = 1;
+  if (this->chunk_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_chunk_size());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllMovableObjectsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.FetchAllMovableObjectsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllMovableObjectsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllMovableObjectsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.FetchAllMovableObjectsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.FetchAllMovableObjectsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllMovableObjectsRequest::MergeFrom(const FetchAllMovableObjectsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.FetchAllMovableObjectsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.chunk_size() != 0) {
+    _internal_set_chunk_size(from._internal_chunk_size());
+  }
+}
+
+void FetchAllMovableObjectsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.FetchAllMovableObjectsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllMovableObjectsRequest::CopyFrom(const FetchAllMovableObjectsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.FetchAllMovableObjectsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllMovableObjectsRequest::IsInitialized() const {
+  return true;
+}
+
+void FetchAllMovableObjectsRequest::InternalSwap(FetchAllMovableObjectsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(chunk_size_, other->chunk_size_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllMovableObjectsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse() {}
+FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::MergeFrom(const FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void FetchAllMovableObjectsResponse::InitAsDefaultInstance() {
+}
+class FetchAllMovableObjectsResponse::_Internal {
+ public:
+};
+
+FetchAllMovableObjectsResponse::FetchAllMovableObjectsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.objects.FetchAllMovableObjectsResponse)
+}
+FetchAllMovableObjectsResponse::FetchAllMovableObjectsResponse(const FetchAllMovableObjectsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  movable_objects_.MergeFrom(from.movable_objects_);
+  // @@protoc_insertion_point(copy_constructor:mruv.objects.FetchAllMovableObjectsResponse)
+}
+
+void FetchAllMovableObjectsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FetchAllMovableObjectsResponse_objects_2fmovable_2eproto.base);
+}
+
+FetchAllMovableObjectsResponse::~FetchAllMovableObjectsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.objects.FetchAllMovableObjectsResponse)
+  SharedDtor();
+}
+
+void FetchAllMovableObjectsResponse::SharedDtor() {
+}
+
+void FetchAllMovableObjectsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const FetchAllMovableObjectsResponse& FetchAllMovableObjectsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FetchAllMovableObjectsResponse_objects_2fmovable_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void FetchAllMovableObjectsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.objects.FetchAllMovableObjectsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  movable_objects_.Clear();
+  _internal_metadata_.Clear();
+}
+
+const char* FetchAllMovableObjectsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // map<uint32, .mruv.objects.MovableObject> movable_objects = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&movable_objects_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* FetchAllMovableObjectsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.objects.FetchAllMovableObjectsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.MovableObject> movable_objects = 1;
+  if (!this->_internal_movable_objects().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >::const_pointer
+        ConstPtr;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::SortItem< ::PROTOBUF_NAMESPACE_ID::uint32, ConstPtr > SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByFirstField<SortItem> Less;
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_movable_objects().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_movable_objects().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >::const_iterator
+          it = this->_internal_movable_objects().begin();
+          it != this->_internal_movable_objects().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)].second->first, items[static_cast<ptrdiff_t>(i)].second->second, target, stream);
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >::const_iterator
+          it = this->_internal_movable_objects().begin();
+          it != this->_internal_movable_objects().end(); ++it) {
+        target = FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
+      }
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.objects.FetchAllMovableObjectsResponse)
+  return target;
+}
+
+size_t FetchAllMovableObjectsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.objects.FetchAllMovableObjectsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<uint32, .mruv.objects.MovableObject> movable_objects = 1;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_movable_objects_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint32, ::mruv::objects::MovableObject >::const_iterator
+      it = this->_internal_movable_objects().begin();
+      it != this->_internal_movable_objects().end(); ++it) {
+    total_size += FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void FetchAllMovableObjectsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.objects.FetchAllMovableObjectsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const FetchAllMovableObjectsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchAllMovableObjectsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.objects.FetchAllMovableObjectsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.objects.FetchAllMovableObjectsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void FetchAllMovableObjectsResponse::MergeFrom(const FetchAllMovableObjectsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.objects.FetchAllMovableObjectsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  movable_objects_.MergeFrom(from.movable_objects_);
+}
+
+void FetchAllMovableObjectsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.objects.FetchAllMovableObjectsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void FetchAllMovableObjectsResponse::CopyFrom(const FetchAllMovableObjectsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.objects.FetchAllMovableObjectsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FetchAllMovableObjectsResponse::IsInitialized() const {
+  return true;
+}
+
+void FetchAllMovableObjectsResponse::InternalSwap(FetchAllMovableObjectsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  movable_objects_.Swap(&other->movable_objects_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FetchAllMovableObjectsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace objects
 }  // namespace mruv
@@ -4041,6 +4556,15 @@ template<> PROTOBUF_NOINLINE ::mruv::objects::MoveObjectPreviousRequest* Arena::
 }
 template<> PROTOBUF_NOINLINE ::mruv::objects::MoveObjectPreviousResponse* Arena::CreateMaybeMessage< ::mruv::objects::MoveObjectPreviousResponse >(Arena* arena) {
   return Arena::CreateInternal< ::mruv::objects::MoveObjectPreviousResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::FetchAllMovableObjectsRequest* Arena::CreateMaybeMessage< ::mruv::objects::FetchAllMovableObjectsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::FetchAllMovableObjectsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::FetchAllMovableObjectsResponse_MovableObjectsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::objects::FetchAllMovableObjectsResponse* Arena::CreateMaybeMessage< ::mruv::objects::FetchAllMovableObjectsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::objects::FetchAllMovableObjectsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

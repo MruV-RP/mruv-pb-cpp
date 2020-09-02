@@ -27,6 +27,7 @@ static const char* MruVSpotsService_method_names[] = {
   "/mruv.spots.MruVSpotsService/GetSpot",
   "/mruv.spots.MruVSpotsService/UpdateSpot",
   "/mruv.spots.MruVSpotsService/DeleteSpot",
+  "/mruv.spots.MruVSpotsService/FetchAll",
 };
 
 std::unique_ptr< MruVSpotsService::Stub> MruVSpotsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -40,6 +41,7 @@ MruVSpotsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
   , rpcmethod_GetSpot_(MruVSpotsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateSpot_(MruVSpotsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteSpot_(MruVSpotsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchAll_(MruVSpotsService_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVSpotsService::Stub::CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest& request, ::mruv::spots::CreateSpotResponse* response) {
@@ -154,6 +156,22 @@ void MruVSpotsService::Stub::experimental_async::DeleteSpot(::grpc::ClientContex
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::DeleteSpotResponse>::Create(channel_.get(), cq, rpcmethod_DeleteSpot_, context, request, false);
 }
 
+::grpc::ClientReader< ::mruv::spots::FetchAllSpotsResponse>* MruVSpotsService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+}
+
+void MruVSpotsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+}
+
+::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>* MruVSpotsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+}
+
+::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>* MruVSpotsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+}
+
 MruVSpotsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVSpotsService_method_names[0],
@@ -195,6 +213,16 @@ MruVSpotsService::Service::Service() {
              ::mruv::spots::DeleteSpotResponse* resp) {
                return service->DeleteSpot(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVSpotsService_method_names[4],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< MruVSpotsService::Service, ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
+          [](MruVSpotsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::spots::FetchAllSpotsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::spots::FetchAllSpotsResponse>* writer) {
+               return service->FetchAll(ctx, req, writer);
+             }, this)));
 }
 
 MruVSpotsService::Service::~Service() {
@@ -225,6 +253,13 @@ MruVSpotsService::Service::~Service() {
   (void) context;
   (void) request;
   (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVSpotsService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::ServerWriter< ::mruv::spots::FetchAllSpotsResponse>* writer) {
+  (void) context;
+  (void) request;
+  (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
