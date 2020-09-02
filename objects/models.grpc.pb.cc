@@ -27,7 +27,7 @@ static const char* MruVObjectModelsService_method_names[] = {
   "/mruv.objects.MruVObjectModelsService/GetObjectModel",
   "/mruv.objects.MruVObjectModelsService/UpdateObjectModel",
   "/mruv.objects.MruVObjectModelsService/DeleteObjectModel",
-  "/mruv.objects.MruVObjectModelsService/FetchAll",
+  "/mruv.objects.MruVObjectModelsService/FetchAllModels",
 };
 
 std::unique_ptr< MruVObjectModelsService::Stub> MruVObjectModelsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -41,7 +41,7 @@ MruVObjectModelsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterf
   , rpcmethod_GetObjectModel_(MruVObjectModelsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateObjectModel_(MruVObjectModelsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteObjectModel_(MruVObjectModelsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_FetchAll_(MruVObjectModelsService_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_FetchAllModels_(MruVObjectModelsService_method_names[4], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVObjectModelsService::Stub::CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest& request, ::mruv::objects::CreateObjectModelResponse* response) {
@@ -156,20 +156,20 @@ void MruVObjectModelsService::Stub::experimental_async::DeleteObjectModel(::grpc
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteObjectModelResponse>::Create(channel_.get(), cq, rpcmethod_DeleteObjectModel_, context, request, false);
 }
 
-::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>* MruVObjectModelsService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>* MruVObjectModelsService::Stub::FetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(channel_.get(), rpcmethod_FetchAllModels_, context, request);
 }
 
-void MruVObjectModelsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+void MruVObjectModelsService::Stub::experimental_async::FetchAllModels(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAllModels_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* MruVObjectModelsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* MruVObjectModelsService::Stub::AsyncFetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllModels_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* MruVObjectModelsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* MruVObjectModelsService::Stub::PrepareAsyncFetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllModelsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllModels_, context, request, false, nullptr);
 }
 
 MruVObjectModelsService::Service::Service() {
@@ -221,7 +221,7 @@ MruVObjectModelsService::Service::Service() {
              ::grpc_impl::ServerContext* ctx,
              const ::mruv::objects::FetchAllModelsRequest* req,
              ::grpc_impl::ServerWriter<::mruv::objects::FetchAllModelsResponse>* writer) {
-               return service->FetchAll(ctx, req, writer);
+               return service->FetchAllModels(ctx, req, writer);
              }, this)));
 }
 
@@ -256,7 +256,7 @@ MruVObjectModelsService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectModelsService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* writer) {
+::grpc::Status MruVObjectModelsService::Service::FetchAllModels(::grpc::ServerContext* context, const ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;

@@ -71,14 +71,14 @@ class MruVObjectModelsService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>>(PrepareAsyncDeleteObjectModelRaw(context, request, cq));
     }
     // Get all models.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllModelsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllModelsResponse>>(FetchAllRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllModelsResponse>> FetchAllModels(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllModelsResponse>>(FetchAllModelsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>> AsyncFetchAllModels(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>>(AsyncFetchAllModelsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>> PrepareAsyncFetchAllModels(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>>(PrepareAsyncFetchAllModelsRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -137,9 +137,9 @@ class MruVObjectModelsService final {
       #endif
       // Get all models.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) = 0;
+      virtual void FetchAllModels(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) = 0;
       #else
-      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) = 0;
+      virtual void FetchAllModels(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -158,9 +158,9 @@ class MruVObjectModelsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::UpdateObjectModelResponse>* PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>* AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteObjectModelResponse>* PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllModelsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllModelsResponse>* FetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>* AsyncFetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllModelsResponse>* PrepareAsyncFetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -193,14 +193,14 @@ class MruVObjectModelsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>> PrepareAsyncDeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>>(PrepareAsyncDeleteObjectModelRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>>(FetchAllRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>> FetchAllModels(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>>(FetchAllModelsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>> AsyncFetchAllModels(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>>(AsyncFetchAllModelsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>> PrepareAsyncFetchAllModels(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>>(PrepareAsyncFetchAllModelsRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -254,9 +254,9 @@ class MruVObjectModelsService final {
       void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) override;
+      void FetchAllModels(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) override;
       #else
-      void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) override;
+      void FetchAllModels(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -277,14 +277,14 @@ class MruVObjectModelsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateObjectModelResponse>* PrepareAsyncUpdateObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>* AsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteObjectModelResponse>* PrepareAsyncDeleteObjectModelRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::objects::FetchAllModelsResponse>* FetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* AsyncFetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllModelsResponse>* PrepareAsyncFetchAllModelsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllModelsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateObjectModel_;
     const ::grpc::internal::RpcMethod rpcmethod_GetObjectModel_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateObjectModel_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteObjectModel_;
-    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAllModels_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -301,7 +301,7 @@ class MruVObjectModelsService final {
     // Delete an object model.
     virtual ::grpc::Status DeleteObjectModel(::grpc::ServerContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response);
     // Get all models.
-    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* writer);
+    virtual ::grpc::Status FetchAllModels(::grpc::ServerContext* context, const ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateObjectModel : public BaseClass {
@@ -384,26 +384,26 @@ class MruVObjectModelsService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_FetchAll : public BaseClass {
+  class WithAsyncMethod_FetchAllModels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_FetchAll() {
+    WithAsyncMethod_FetchAllModels() {
       ::grpc::Service::MarkMethodAsync(4);
     }
-    ~WithAsyncMethod_FetchAll() override {
+    ~WithAsyncMethod_FetchAllModels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllModels(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::objects::FetchAllModelsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFetchAllModels(::grpc::ServerContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::objects::FetchAllModelsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateObjectModel<WithAsyncMethod_GetObjectModel<WithAsyncMethod_UpdateObjectModel<WithAsyncMethod_DeleteObjectModel<WithAsyncMethod_FetchAll<Service > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateObjectModel<WithAsyncMethod_GetObjectModel<WithAsyncMethod_UpdateObjectModel<WithAsyncMethod_DeleteObjectModel<WithAsyncMethod_FetchAllModels<Service > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateObjectModel : public BaseClass {
    private:
@@ -593,11 +593,11 @@ class MruVObjectModelsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+  class ExperimentalWithCallbackMethod_FetchAllModels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_FetchAll() {
+    ExperimentalWithCallbackMethod_FetchAllModels() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -611,30 +611,30 @@ class MruVObjectModelsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::objects::FetchAllModelsRequest* request) { return this->FetchAll(context, request); }));
+                     context, const ::mruv::objects::FetchAllModelsRequest* request) { return this->FetchAllModels(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_FetchAll() override {
+    ~ExperimentalWithCallbackMethod_FetchAllModels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllModels(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::objects::FetchAllModelsResponse>* FetchAll(
+    virtual ::grpc::ServerWriteReactor< ::mruv::objects::FetchAllModelsResponse>* FetchAllModels(
       ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::objects::FetchAllModelsResponse>* FetchAll(
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::objects::FetchAllModelsResponse>* FetchAllModels(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateObjectModel<ExperimentalWithCallbackMethod_GetObjectModel<ExperimentalWithCallbackMethod_UpdateObjectModel<ExperimentalWithCallbackMethod_DeleteObjectModel<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateObjectModel<ExperimentalWithCallbackMethod_GetObjectModel<ExperimentalWithCallbackMethod_UpdateObjectModel<ExperimentalWithCallbackMethod_DeleteObjectModel<ExperimentalWithCallbackMethod_FetchAllModels<Service > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateObjectModel<ExperimentalWithCallbackMethod_GetObjectModel<ExperimentalWithCallbackMethod_UpdateObjectModel<ExperimentalWithCallbackMethod_DeleteObjectModel<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateObjectModel<ExperimentalWithCallbackMethod_GetObjectModel<ExperimentalWithCallbackMethod_UpdateObjectModel<ExperimentalWithCallbackMethod_DeleteObjectModel<ExperimentalWithCallbackMethod_FetchAllModels<Service > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateObjectModel : public BaseClass {
    private:
@@ -704,18 +704,18 @@ class MruVObjectModelsService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_FetchAll : public BaseClass {
+  class WithGenericMethod_FetchAllModels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_FetchAll() {
+    WithGenericMethod_FetchAllModels() {
       ::grpc::Service::MarkMethodGeneric(4);
     }
-    ~WithGenericMethod_FetchAll() override {
+    ~WithGenericMethod_FetchAllModels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllModels(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -801,22 +801,22 @@ class MruVObjectModelsService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_FetchAll : public BaseClass {
+  class WithRawMethod_FetchAllModels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_FetchAll() {
+    WithRawMethod_FetchAllModels() {
       ::grpc::Service::MarkMethodRaw(4);
     }
-    ~WithRawMethod_FetchAll() override {
+    ~WithRawMethod_FetchAllModels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllModels(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFetchAllModels(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(4, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
@@ -973,11 +973,11 @@ class MruVObjectModelsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_FetchAllModels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_FetchAll() {
+    ExperimentalWithRawCallbackMethod_FetchAllModels() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -991,21 +991,21 @@ class MruVObjectModelsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const::grpc::ByteBuffer* request) { return this->FetchAll(context, request); }));
+                     context, const::grpc::ByteBuffer* request) { return this->FetchAllModels(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+    ~ExperimentalWithRawCallbackMethod_FetchAllModels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllModels(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAllModels(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAllModels(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #endif
       { return nullptr; }
@@ -1120,34 +1120,34 @@ class MruVObjectModelsService final {
   };
   typedef WithStreamedUnaryMethod_CreateObjectModel<WithStreamedUnaryMethod_GetObjectModel<WithStreamedUnaryMethod_UpdateObjectModel<WithStreamedUnaryMethod_DeleteObjectModel<Service > > > > StreamedUnaryService;
   template <class BaseClass>
-  class WithSplitStreamingMethod_FetchAll : public BaseClass {
+  class WithSplitStreamingMethod_FetchAllModels : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithSplitStreamingMethod_FetchAll() {
+    WithSplitStreamingMethod_FetchAllModels() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::objects::FetchAllModelsRequest, ::mruv::objects::FetchAllModelsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
                      ::mruv::objects::FetchAllModelsRequest, ::mruv::objects::FetchAllModelsResponse>* streamer) {
-                       return this->StreamedFetchAll(context,
+                       return this->StreamedFetchAllModels(context,
                          streamer);
                   }));
     }
-    ~WithSplitStreamingMethod_FetchAll() override {
+    ~WithSplitStreamingMethod_FetchAllModels() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllModels(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllModelsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllModelsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::objects::FetchAllModelsRequest,::mruv::objects::FetchAllModelsResponse>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedFetchAllModels(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::objects::FetchAllModelsRequest,::mruv::objects::FetchAllModelsResponse>* server_split_streamer) = 0;
   };
-  typedef WithSplitStreamingMethod_FetchAll<Service > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateObjectModel<WithStreamedUnaryMethod_GetObjectModel<WithStreamedUnaryMethod_UpdateObjectModel<WithStreamedUnaryMethod_DeleteObjectModel<WithSplitStreamingMethod_FetchAll<Service > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_FetchAllModels<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateObjectModel<WithStreamedUnaryMethod_GetObjectModel<WithStreamedUnaryMethod_UpdateObjectModel<WithStreamedUnaryMethod_DeleteObjectModel<WithSplitStreamingMethod_FetchAllModels<Service > > > > > StreamedService;
 };
 
 }  // namespace objects

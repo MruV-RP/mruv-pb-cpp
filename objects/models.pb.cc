@@ -388,7 +388,7 @@ const char descriptor_table_protodef_objects_2fmodels_2eproto[] PROTOBUF_SECTION
   "\022@\n\006models\030\001 \003(\01320.mruv.objects.FetchAll"
   "ModelsResponse.ModelsEntry\032H\n\013ModelsEntr"
   "y\022\013\n\003key\030\001 \001(\005\022(\n\005value\030\002 \001(\0132\031.mruv.obj"
-  "ects.ObjectModel:\0028\0012\244\005\n\027MruVObjectModel"
+  "ects.ObjectModel:\0028\0012\252\005\n\027MruVObjectModel"
   "sService\022}\n\021CreateObjectModel\022&.mruv.obj"
   "ects.CreateObjectModelRequest\032\'.mruv.obj"
   "ects.CreateObjectModelResponse\"\027\202\323\344\223\002\021\"\017"
@@ -402,11 +402,11 @@ const char descriptor_table_protodef_objects_2fmodels_2eproto[] PROTOBUF_SECTION
   "pe.model}\022\205\001\n\021DeleteObjectModel\022&.mruv.o"
   "bjects.DeleteObjectModelRequest\032\'.mruv.o"
   "bjects.DeleteObjectModelResponse\"\037\202\323\344\223\002\031"
-  "*\027/v1/objectTypes/{model}\022p\n\010FetchAll\022#."
-  "mruv.objects.FetchAllModelsRequest\032$.mru"
-  "v.objects.FetchAllModelsResponse\"\027\202\323\344\223\002\021"
-  "\022\017/v1/objectTypes0\001B\'Z%github.com/MruV-R"
-  "P/mruv-pb-go/objectsb\006proto3"
+  "*\027/v1/objectTypes/{model}\022v\n\016FetchAllMod"
+  "els\022#.mruv.objects.FetchAllModelsRequest"
+  "\032$.mruv.objects.FetchAllModelsResponse\"\027"
+  "\202\323\344\223\002\021\022\017/v1/objectTypes0\001B\'Z%github.com/"
+  "MruV-RP/mruv-pb-go/objectsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_objects_2fmodels_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -428,7 +428,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_obj
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_objects_2fmodels_2eproto_once;
 static bool descriptor_table_objects_2fmodels_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_objects_2fmodels_2eproto = {
-  &descriptor_table_objects_2fmodels_2eproto_initialized, descriptor_table_protodef_objects_2fmodels_2eproto, "objects/models.proto", 1708,
+  &descriptor_table_objects_2fmodels_2eproto_initialized, descriptor_table_protodef_objects_2fmodels_2eproto, "objects/models.proto", 1714,
   &descriptor_table_objects_2fmodels_2eproto_once, descriptor_table_objects_2fmodels_2eproto_sccs, descriptor_table_objects_2fmodels_2eproto_deps, 12, 1,
   schemas, file_default_instances, TableStruct_objects_2fmodels_2eproto::offsets,
   file_level_metadata_objects_2fmodels_2eproto, 12, file_level_enum_descriptors_objects_2fmodels_2eproto, file_level_service_descriptors_objects_2fmodels_2eproto,

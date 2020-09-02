@@ -36,7 +36,7 @@ static const char* MruVObjectsService_method_names[] = {
   "/mruv.objects.MruVObjectsService/AddRemoveBuilding",
   "/mruv.objects.MruVObjectsService/GetRemovedBuildings",
   "/mruv.objects.MruVObjectsService/DeleteRemoveBuilding",
-  "/mruv.objects.MruVObjectsService/FetchAll",
+  "/mruv.objects.MruVObjectsService/FetchAllObjects",
 };
 
 std::unique_ptr< MruVObjectsService::Stub> MruVObjectsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -59,7 +59,7 @@ MruVObjectsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
   , rpcmethod_AddRemoveBuilding_(MruVObjectsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetRemovedBuildings_(MruVObjectsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DeleteRemoveBuilding_(MruVObjectsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_FetchAll_(MruVObjectsService_method_names[13], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_FetchAllObjects_(MruVObjectsService_method_names[13], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
 ::grpc::Status MruVObjectsService::Stub::CreateObject(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectRequest& request, ::mruv::objects::CreateObjectResponse* response) {
@@ -426,20 +426,20 @@ void MruVObjectsService::Stub::experimental_async::DeleteRemoveBuilding(::grpc::
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteRemoveBuildingResponse>::Create(channel_.get(), cq, rpcmethod_DeleteRemoveBuilding_, context, request, false);
 }
 
-::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::FetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), rpcmethod_FetchAllObjects_, context, request);
 }
 
-void MruVObjectsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+void MruVObjectsService::Stub::experimental_async::FetchAllObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAllObjects_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::AsyncFetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllObjects_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* MruVObjectsService::Stub::PrepareAsyncFetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllObjects_, context, request, false, nullptr);
 }
 
 MruVObjectsService::Service::Service() {
@@ -581,7 +581,7 @@ MruVObjectsService::Service::Service() {
              ::grpc_impl::ServerContext* ctx,
              const ::mruv::objects::FetchAllObjectsRequest* req,
              ::grpc_impl::ServerWriter<::mruv::objects::FetchAllObjectsResponse>* writer) {
-               return service->FetchAll(ctx, req, writer);
+               return service->FetchAllObjects(ctx, req, writer);
              }, this)));
 }
 
@@ -679,7 +679,7 @@ MruVObjectsService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVObjectsService::Service::FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* writer) {
+::grpc::Status MruVObjectsService::Service::FetchAllObjects(::grpc::ServerContext* context, const ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;

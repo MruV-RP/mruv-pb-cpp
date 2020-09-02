@@ -143,14 +143,14 @@ class MruVObjectsService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteRemoveBuildingResponse>>(PrepareAsyncDeleteRemoveBuildingRaw(context, request, cq));
     }
     // Fetch all existing objects.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllObjectsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllObjectsResponse>>(FetchAllRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllObjectsResponse>> FetchAllObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllObjectsResponse>>(FetchAllObjectsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>> AsyncFetchAllObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>>(AsyncFetchAllObjectsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>> PrepareAsyncFetchAllObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>>(PrepareAsyncFetchAllObjectsRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -326,9 +326,9 @@ class MruVObjectsService final {
       #endif
       // Fetch all existing objects.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) = 0;
+      virtual void FetchAllObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) = 0;
       #else
-      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) = 0;
+      virtual void FetchAllObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -365,9 +365,9 @@ class MruVObjectsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::GetRemovedBuildingsResponse>* PrepareAsyncGetRemovedBuildingsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteRemoveBuildingResponse>* AsyncDeleteRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::DeleteRemoveBuildingResponse>* PrepareAsyncDeleteRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllObjectsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllObjectsResponse>* FetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>* AsyncFetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllObjectsResponse>* PrepareAsyncFetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -463,14 +463,14 @@ class MruVObjectsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteRemoveBuildingResponse>> PrepareAsyncDeleteRemoveBuilding(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteRemoveBuildingResponse>>(PrepareAsyncDeleteRemoveBuildingRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>>(FetchAllRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>> FetchAllObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>>(FetchAllObjectsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>> AsyncFetchAllObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>>(AsyncFetchAllObjectsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>> PrepareAsyncFetchAllObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>>(PrepareAsyncFetchAllObjectsRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -632,9 +632,9 @@ class MruVObjectsService final {
       void DeleteRemoveBuilding(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteRemoveBuildingResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) override;
+      void FetchAllObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) override;
       #else
-      void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) override;
+      void FetchAllObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllObjectsResponse>* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -673,9 +673,9 @@ class MruVObjectsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetRemovedBuildingsResponse>* PrepareAsyncGetRemovedBuildingsRaw(::grpc::ClientContext* context, const ::mruv::objects::GetRemovedBuildingsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteRemoveBuildingResponse>* AsyncDeleteRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteRemoveBuildingResponse>* PrepareAsyncDeleteRemoveBuildingRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::objects::FetchAllObjectsResponse>* FetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* AsyncFetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllObjectsResponse>* PrepareAsyncFetchAllObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllObjectsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateObject_;
     const ::grpc::internal::RpcMethod rpcmethod_GetObject_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateObject_;
@@ -689,7 +689,7 @@ class MruVObjectsService final {
     const ::grpc::internal::RpcMethod rpcmethod_AddRemoveBuilding_;
     const ::grpc::internal::RpcMethod rpcmethod_GetRemovedBuildings_;
     const ::grpc::internal::RpcMethod rpcmethod_DeleteRemoveBuilding_;
-    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAllObjects_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -724,7 +724,7 @@ class MruVObjectsService final {
     // Delete removed buildings.
     virtual ::grpc::Status DeleteRemoveBuilding(::grpc::ServerContext* context, const ::mruv::objects::DeleteRemoveBuildingRequest* request, ::mruv::objects::DeleteRemoveBuildingResponse* response);
     // Fetch all existing objects.
-    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* writer);
+    virtual ::grpc::Status FetchAllObjects(::grpc::ServerContext* context, const ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateObject : public BaseClass {
@@ -987,26 +987,26 @@ class MruVObjectsService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_FetchAll : public BaseClass {
+  class WithAsyncMethod_FetchAllObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_FetchAll() {
+    WithAsyncMethod_FetchAllObjects() {
       ::grpc::Service::MarkMethodAsync(13);
     }
-    ~WithAsyncMethod_FetchAll() override {
+    ~WithAsyncMethod_FetchAllObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::objects::FetchAllObjectsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFetchAllObjects(::grpc::ServerContext* context, ::mruv::objects::FetchAllObjectsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::objects::FetchAllObjectsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(13, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateObject<WithAsyncMethod_GetObject<WithAsyncMethod_UpdateObject<WithAsyncMethod_DeleteObject<WithAsyncMethod_AddObjectMaterial<WithAsyncMethod_GetObjectMaterials<WithAsyncMethod_DeleteObjectMaterial<WithAsyncMethod_AddObjectMaterialText<WithAsyncMethod_GetObjectMaterialTexts<WithAsyncMethod_DeleteObjectMaterialText<WithAsyncMethod_AddRemoveBuilding<WithAsyncMethod_GetRemovedBuildings<WithAsyncMethod_DeleteRemoveBuilding<WithAsyncMethod_FetchAll<Service > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateObject<WithAsyncMethod_GetObject<WithAsyncMethod_UpdateObject<WithAsyncMethod_DeleteObject<WithAsyncMethod_AddObjectMaterial<WithAsyncMethod_GetObjectMaterials<WithAsyncMethod_DeleteObjectMaterial<WithAsyncMethod_AddObjectMaterialText<WithAsyncMethod_GetObjectMaterialTexts<WithAsyncMethod_DeleteObjectMaterialText<WithAsyncMethod_AddRemoveBuilding<WithAsyncMethod_GetRemovedBuildings<WithAsyncMethod_DeleteRemoveBuilding<WithAsyncMethod_FetchAllObjects<Service > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateObject : public BaseClass {
    private:
@@ -1619,11 +1619,11 @@ class MruVObjectsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+  class ExperimentalWithCallbackMethod_FetchAllObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_FetchAll() {
+    ExperimentalWithCallbackMethod_FetchAllObjects() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -1637,30 +1637,30 @@ class MruVObjectsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::objects::FetchAllObjectsRequest* request) { return this->FetchAll(context, request); }));
+                     context, const ::mruv::objects::FetchAllObjectsRequest* request) { return this->FetchAllObjects(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_FetchAll() override {
+    ~ExperimentalWithCallbackMethod_FetchAllObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::objects::FetchAllObjectsResponse>* FetchAll(
+    virtual ::grpc::ServerWriteReactor< ::mruv::objects::FetchAllObjectsResponse>* FetchAllObjects(
       ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::objects::FetchAllObjectsResponse>* FetchAll(
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::objects::FetchAllObjectsResponse>* FetchAllObjects(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<ExperimentalWithCallbackMethod_AddObjectMaterial<ExperimentalWithCallbackMethod_GetObjectMaterials<ExperimentalWithCallbackMethod_DeleteObjectMaterial<ExperimentalWithCallbackMethod_AddObjectMaterialText<ExperimentalWithCallbackMethod_GetObjectMaterialTexts<ExperimentalWithCallbackMethod_DeleteObjectMaterialText<ExperimentalWithCallbackMethod_AddRemoveBuilding<ExperimentalWithCallbackMethod_GetRemovedBuildings<ExperimentalWithCallbackMethod_DeleteRemoveBuilding<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<ExperimentalWithCallbackMethod_AddObjectMaterial<ExperimentalWithCallbackMethod_GetObjectMaterials<ExperimentalWithCallbackMethod_DeleteObjectMaterial<ExperimentalWithCallbackMethod_AddObjectMaterialText<ExperimentalWithCallbackMethod_GetObjectMaterialTexts<ExperimentalWithCallbackMethod_DeleteObjectMaterialText<ExperimentalWithCallbackMethod_AddRemoveBuilding<ExperimentalWithCallbackMethod_GetRemovedBuildings<ExperimentalWithCallbackMethod_DeleteRemoveBuilding<ExperimentalWithCallbackMethod_FetchAllObjects<Service > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<ExperimentalWithCallbackMethod_AddObjectMaterial<ExperimentalWithCallbackMethod_GetObjectMaterials<ExperimentalWithCallbackMethod_DeleteObjectMaterial<ExperimentalWithCallbackMethod_AddObjectMaterialText<ExperimentalWithCallbackMethod_GetObjectMaterialTexts<ExperimentalWithCallbackMethod_DeleteObjectMaterialText<ExperimentalWithCallbackMethod_AddRemoveBuilding<ExperimentalWithCallbackMethod_GetRemovedBuildings<ExperimentalWithCallbackMethod_DeleteRemoveBuilding<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateObject<ExperimentalWithCallbackMethod_GetObject<ExperimentalWithCallbackMethod_UpdateObject<ExperimentalWithCallbackMethod_DeleteObject<ExperimentalWithCallbackMethod_AddObjectMaterial<ExperimentalWithCallbackMethod_GetObjectMaterials<ExperimentalWithCallbackMethod_DeleteObjectMaterial<ExperimentalWithCallbackMethod_AddObjectMaterialText<ExperimentalWithCallbackMethod_GetObjectMaterialTexts<ExperimentalWithCallbackMethod_DeleteObjectMaterialText<ExperimentalWithCallbackMethod_AddRemoveBuilding<ExperimentalWithCallbackMethod_GetRemovedBuildings<ExperimentalWithCallbackMethod_DeleteRemoveBuilding<ExperimentalWithCallbackMethod_FetchAllObjects<Service > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateObject : public BaseClass {
    private:
@@ -1883,18 +1883,18 @@ class MruVObjectsService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_FetchAll : public BaseClass {
+  class WithGenericMethod_FetchAllObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_FetchAll() {
+    WithGenericMethod_FetchAllObjects() {
       ::grpc::Service::MarkMethodGeneric(13);
     }
-    ~WithGenericMethod_FetchAll() override {
+    ~WithGenericMethod_FetchAllObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2160,22 +2160,22 @@ class MruVObjectsService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_FetchAll : public BaseClass {
+  class WithRawMethod_FetchAllObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_FetchAll() {
+    WithRawMethod_FetchAllObjects() {
       ::grpc::Service::MarkMethodRaw(13);
     }
-    ~WithRawMethod_FetchAll() override {
+    ~WithRawMethod_FetchAllObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFetchAllObjects(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(13, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
@@ -2674,11 +2674,11 @@ class MruVObjectsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_FetchAllObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_FetchAll() {
+    ExperimentalWithRawCallbackMethod_FetchAllObjects() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -2692,21 +2692,21 @@ class MruVObjectsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const::grpc::ByteBuffer* request) { return this->FetchAll(context, request); }));
+                     context, const::grpc::ByteBuffer* request) { return this->FetchAllObjects(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+    ~ExperimentalWithRawCallbackMethod_FetchAllObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAllObjects(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAllObjects(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #endif
       { return nullptr; }
@@ -3064,34 +3064,34 @@ class MruVObjectsService final {
   };
   typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<WithStreamedUnaryMethod_AddObjectMaterial<WithStreamedUnaryMethod_GetObjectMaterials<WithStreamedUnaryMethod_DeleteObjectMaterial<WithStreamedUnaryMethod_AddObjectMaterialText<WithStreamedUnaryMethod_GetObjectMaterialTexts<WithStreamedUnaryMethod_DeleteObjectMaterialText<WithStreamedUnaryMethod_AddRemoveBuilding<WithStreamedUnaryMethod_GetRemovedBuildings<WithStreamedUnaryMethod_DeleteRemoveBuilding<Service > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
-  class WithSplitStreamingMethod_FetchAll : public BaseClass {
+  class WithSplitStreamingMethod_FetchAllObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithSplitStreamingMethod_FetchAll() {
+    WithSplitStreamingMethod_FetchAllObjects() {
       ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::objects::FetchAllObjectsRequest, ::mruv::objects::FetchAllObjectsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
                      ::mruv::objects::FetchAllObjectsRequest, ::mruv::objects::FetchAllObjectsResponse>* streamer) {
-                       return this->StreamedFetchAll(context,
+                       return this->StreamedFetchAllObjects(context,
                          streamer);
                   }));
     }
-    ~WithSplitStreamingMethod_FetchAll() override {
+    ~WithSplitStreamingMethod_FetchAllObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::objects::FetchAllObjectsRequest,::mruv::objects::FetchAllObjectsResponse>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedFetchAllObjects(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::objects::FetchAllObjectsRequest,::mruv::objects::FetchAllObjectsResponse>* server_split_streamer) = 0;
   };
-  typedef WithSplitStreamingMethod_FetchAll<Service > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<WithStreamedUnaryMethod_AddObjectMaterial<WithStreamedUnaryMethod_GetObjectMaterials<WithStreamedUnaryMethod_DeleteObjectMaterial<WithStreamedUnaryMethod_AddObjectMaterialText<WithStreamedUnaryMethod_GetObjectMaterialTexts<WithStreamedUnaryMethod_DeleteObjectMaterialText<WithStreamedUnaryMethod_AddRemoveBuilding<WithStreamedUnaryMethod_GetRemovedBuildings<WithStreamedUnaryMethod_DeleteRemoveBuilding<WithSplitStreamingMethod_FetchAll<Service > > > > > > > > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_FetchAllObjects<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateObject<WithStreamedUnaryMethod_GetObject<WithStreamedUnaryMethod_UpdateObject<WithStreamedUnaryMethod_DeleteObject<WithStreamedUnaryMethod_AddObjectMaterial<WithStreamedUnaryMethod_GetObjectMaterials<WithStreamedUnaryMethod_DeleteObjectMaterial<WithStreamedUnaryMethod_AddObjectMaterialText<WithStreamedUnaryMethod_GetObjectMaterialTexts<WithStreamedUnaryMethod_DeleteObjectMaterialText<WithStreamedUnaryMethod_AddRemoveBuilding<WithStreamedUnaryMethod_GetRemovedBuildings<WithStreamedUnaryMethod_DeleteRemoveBuilding<WithSplitStreamingMethod_FetchAllObjects<Service > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace objects

@@ -95,14 +95,14 @@ class MruVMovableObjectsService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::MoveObjectPreviousResponse>>(PrepareAsyncMoveObjectPreviousRaw(context, request, cq));
     }
     //
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>>(FetchAllRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>> FetchAllMovableObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>>(FetchAllMovableObjectsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>> AsyncFetchAllMovableObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>>(AsyncFetchAllMovableObjectsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>> PrepareAsyncFetchAllMovableObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>>(PrepareAsyncFetchAllMovableObjectsRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -200,9 +200,9 @@ class MruVMovableObjectsService final {
       #endif
       //
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) = 0;
+      virtual void FetchAllMovableObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) = 0;
       #else
-      virtual void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) = 0;
+      virtual void FetchAllMovableObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -227,9 +227,9 @@ class MruVMovableObjectsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::MoveObjectNextResponse>* PrepareAsyncMoveObjectNextRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::MoveObjectPreviousResponse>* AsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::objects::MoveObjectPreviousResponse>* PrepareAsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>* AsyncFetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::objects::FetchAllMovableObjectsResponse>* PrepareAsyncFetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -283,14 +283,14 @@ class MruVMovableObjectsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>> PrepareAsyncMoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>>(PrepareAsyncMoveObjectPreviousRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>> FetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>>(FetchAllRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>> FetchAllMovableObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>>(FetchAllMovableObjectsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>> AsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>>(AsyncFetchAllRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>> AsyncFetchAllMovableObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>>(AsyncFetchAllMovableObjectsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>> PrepareAsyncFetchAll(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>>(PrepareAsyncFetchAllRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>> PrepareAsyncFetchAllMovableObjects(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>>(PrepareAsyncFetchAllMovableObjectsRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -380,9 +380,9 @@ class MruVMovableObjectsService final {
       void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) override;
+      void FetchAllMovableObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) override;
       #else
-      void FetchAll(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) override;
+      void FetchAllMovableObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -409,9 +409,9 @@ class MruVMovableObjectsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectNextResponse>* PrepareAsyncMoveObjectNextRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>* AsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>* PrepareAsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>* AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>* PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>* AsyncFetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>* PrepareAsyncFetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateMovableObject_;
     const ::grpc::internal::RpcMethod rpcmethod_GetMovableObject_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateMovableObject_;
@@ -419,7 +419,7 @@ class MruVMovableObjectsService final {
     const ::grpc::internal::RpcMethod rpcmethod_MoveObject_;
     const ::grpc::internal::RpcMethod rpcmethod_MoveObjectNext_;
     const ::grpc::internal::RpcMethod rpcmethod_MoveObjectPrevious_;
-    const ::grpc::internal::RpcMethod rpcmethod_FetchAll_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchAllMovableObjects_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -442,7 +442,7 @@ class MruVMovableObjectsService final {
     // Move an object to previous state.
     virtual ::grpc::Status MoveObjectPrevious(::grpc::ServerContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response);
     //
-    virtual ::grpc::Status FetchAll(::grpc::ServerContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* writer);
+    virtual ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* writer);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateMovableObject : public BaseClass {
@@ -585,26 +585,26 @@ class MruVMovableObjectsService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_FetchAll : public BaseClass {
+  class WithAsyncMethod_FetchAllMovableObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_FetchAll() {
+    WithAsyncMethod_FetchAllMovableObjects() {
       ::grpc::Service::MarkMethodAsync(7);
     }
-    ~WithAsyncMethod_FetchAll() override {
+    ~WithAsyncMethod_FetchAllMovableObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFetchAll(::grpc::ServerContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFetchAllMovableObjects(::grpc::ServerContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(7, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateMovableObject<WithAsyncMethod_GetMovableObject<WithAsyncMethod_UpdateMovableObject<WithAsyncMethod_DeleteMovableObject<WithAsyncMethod_MoveObject<WithAsyncMethod_MoveObjectNext<WithAsyncMethod_MoveObjectPrevious<WithAsyncMethod_FetchAll<Service > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateMovableObject<WithAsyncMethod_GetMovableObject<WithAsyncMethod_UpdateMovableObject<WithAsyncMethod_DeleteMovableObject<WithAsyncMethod_MoveObject<WithAsyncMethod_MoveObjectNext<WithAsyncMethod_MoveObjectPrevious<WithAsyncMethod_FetchAllMovableObjects<Service > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_CreateMovableObject : public BaseClass {
    private:
@@ -935,11 +935,11 @@ class MruVMovableObjectsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_FetchAll : public BaseClass {
+  class ExperimentalWithCallbackMethod_FetchAllMovableObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_FetchAll() {
+    ExperimentalWithCallbackMethod_FetchAllMovableObjects() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -953,30 +953,30 @@ class MruVMovableObjectsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::objects::FetchAllMovableObjectsRequest* request) { return this->FetchAll(context, request); }));
+                     context, const ::mruv::objects::FetchAllMovableObjectsRequest* request) { return this->FetchAllMovableObjects(context, request); }));
     }
-    ~ExperimentalWithCallbackMethod_FetchAll() override {
+    ~ExperimentalWithCallbackMethod_FetchAllMovableObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAll(
+    virtual ::grpc::ServerWriteReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAllMovableObjects(
       ::grpc::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAll(
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* FetchAllMovableObjects(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_CreateMovableObject<ExperimentalWithCallbackMethod_GetMovableObject<ExperimentalWithCallbackMethod_UpdateMovableObject<ExperimentalWithCallbackMethod_DeleteMovableObject<ExperimentalWithCallbackMethod_MoveObject<ExperimentalWithCallbackMethod_MoveObjectNext<ExperimentalWithCallbackMethod_MoveObjectPrevious<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateMovableObject<ExperimentalWithCallbackMethod_GetMovableObject<ExperimentalWithCallbackMethod_UpdateMovableObject<ExperimentalWithCallbackMethod_DeleteMovableObject<ExperimentalWithCallbackMethod_MoveObject<ExperimentalWithCallbackMethod_MoveObjectNext<ExperimentalWithCallbackMethod_MoveObjectPrevious<ExperimentalWithCallbackMethod_FetchAllMovableObjects<Service > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_CreateMovableObject<ExperimentalWithCallbackMethod_GetMovableObject<ExperimentalWithCallbackMethod_UpdateMovableObject<ExperimentalWithCallbackMethod_DeleteMovableObject<ExperimentalWithCallbackMethod_MoveObject<ExperimentalWithCallbackMethod_MoveObjectNext<ExperimentalWithCallbackMethod_MoveObjectPrevious<ExperimentalWithCallbackMethod_FetchAll<Service > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_CreateMovableObject<ExperimentalWithCallbackMethod_GetMovableObject<ExperimentalWithCallbackMethod_UpdateMovableObject<ExperimentalWithCallbackMethod_DeleteMovableObject<ExperimentalWithCallbackMethod_MoveObject<ExperimentalWithCallbackMethod_MoveObjectNext<ExperimentalWithCallbackMethod_MoveObjectPrevious<ExperimentalWithCallbackMethod_FetchAllMovableObjects<Service > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateMovableObject : public BaseClass {
    private:
@@ -1097,18 +1097,18 @@ class MruVMovableObjectsService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_FetchAll : public BaseClass {
+  class WithGenericMethod_FetchAllMovableObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_FetchAll() {
+    WithGenericMethod_FetchAllMovableObjects() {
       ::grpc::Service::MarkMethodGeneric(7);
     }
-    ~WithGenericMethod_FetchAll() override {
+    ~WithGenericMethod_FetchAllMovableObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1254,22 +1254,22 @@ class MruVMovableObjectsService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_FetchAll : public BaseClass {
+  class WithRawMethod_FetchAllMovableObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_FetchAll() {
+    WithRawMethod_FetchAllMovableObjects() {
       ::grpc::Service::MarkMethodRaw(7);
     }
-    ~WithRawMethod_FetchAll() override {
+    ~WithRawMethod_FetchAllMovableObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestFetchAll(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestFetchAllMovableObjects(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncServerStreaming(7, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
@@ -1540,11 +1540,11 @@ class MruVMovableObjectsService final {
       { return nullptr; }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_FetchAll : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_FetchAllMovableObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_FetchAll() {
+    ExperimentalWithRawCallbackMethod_FetchAllMovableObjects() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -1558,21 +1558,21 @@ class MruVMovableObjectsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const::grpc::ByteBuffer* request) { return this->FetchAll(context, request); }));
+                     context, const::grpc::ByteBuffer* request) { return this->FetchAllMovableObjects(context, request); }));
     }
-    ~ExperimentalWithRawCallbackMethod_FetchAll() override {
+    ~ExperimentalWithRawCallbackMethod_FetchAllMovableObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+    virtual ::grpc::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAllMovableObjects(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAll(
+    virtual ::grpc::experimental::ServerWriteReactor< ::grpc::ByteBuffer>* FetchAllMovableObjects(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/)
     #endif
       { return nullptr; }
@@ -1768,34 +1768,34 @@ class MruVMovableObjectsService final {
   };
   typedef WithStreamedUnaryMethod_CreateMovableObject<WithStreamedUnaryMethod_GetMovableObject<WithStreamedUnaryMethod_UpdateMovableObject<WithStreamedUnaryMethod_DeleteMovableObject<WithStreamedUnaryMethod_MoveObject<WithStreamedUnaryMethod_MoveObjectNext<WithStreamedUnaryMethod_MoveObjectPrevious<Service > > > > > > > StreamedUnaryService;
   template <class BaseClass>
-  class WithSplitStreamingMethod_FetchAll : public BaseClass {
+  class WithSplitStreamingMethod_FetchAllMovableObjects : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithSplitStreamingMethod_FetchAll() {
+    WithSplitStreamingMethod_FetchAllMovableObjects() {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
                      ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>* streamer) {
-                       return this->StreamedFetchAll(context,
+                       return this->StreamedFetchAllMovableObjects(context,
                          streamer);
                   }));
     }
-    ~WithSplitStreamingMethod_FetchAll() override {
+    ~WithSplitStreamingMethod_FetchAllMovableObjects() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status FetchAll(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
+    ::grpc::Status FetchAllMovableObjects(::grpc::ServerContext* /*context*/, const ::mruv::objects::FetchAllMovableObjectsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::objects::FetchAllMovableObjectsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedFetchAll(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::objects::FetchAllMovableObjectsRequest,::mruv::objects::FetchAllMovableObjectsResponse>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedFetchAllMovableObjects(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::objects::FetchAllMovableObjectsRequest,::mruv::objects::FetchAllMovableObjectsResponse>* server_split_streamer) = 0;
   };
-  typedef WithSplitStreamingMethod_FetchAll<Service > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateMovableObject<WithStreamedUnaryMethod_GetMovableObject<WithStreamedUnaryMethod_UpdateMovableObject<WithStreamedUnaryMethod_DeleteMovableObject<WithStreamedUnaryMethod_MoveObject<WithStreamedUnaryMethod_MoveObjectNext<WithStreamedUnaryMethod_MoveObjectPrevious<WithSplitStreamingMethod_FetchAll<Service > > > > > > > > StreamedService;
+  typedef WithSplitStreamingMethod_FetchAllMovableObjects<Service > SplitStreamedService;
+  typedef WithStreamedUnaryMethod_CreateMovableObject<WithStreamedUnaryMethod_GetMovableObject<WithStreamedUnaryMethod_UpdateMovableObject<WithStreamedUnaryMethod_DeleteMovableObject<WithStreamedUnaryMethod_MoveObject<WithStreamedUnaryMethod_MoveObjectNext<WithStreamedUnaryMethod_MoveObjectPrevious<WithSplitStreamingMethod_FetchAllMovableObjects<Service > > > > > > > > StreamedService;
 };
 
 }  // namespace objects
