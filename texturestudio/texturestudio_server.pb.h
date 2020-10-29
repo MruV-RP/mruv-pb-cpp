@@ -56,6 +56,7 @@ struct TableStruct_texturestudio_2ftexturestudio_5fserver_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_texturestudio_2ftexturestudio_5fserver_2eproto;
+namespace mruv {
 namespace texture_studio {
 class GetProjectRequest;
 class GetProjectRequestDefaultTypeInternal;
@@ -106,24 +107,26 @@ class UploadProjectResponse;
 class UploadProjectResponseDefaultTypeInternal;
 extern UploadProjectResponseDefaultTypeInternal _UploadProjectResponse_default_instance_;
 }  // namespace texture_studio
+}  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::texture_studio::GetProjectRequest* Arena::CreateMaybeMessage<::texture_studio::GetProjectRequest>(Arena*);
-template<> ::texture_studio::GetProjectResponse* Arena::CreateMaybeMessage<::texture_studio::GetProjectResponse>(Arena*);
-template<> ::texture_studio::GetProjectsRequest* Arena::CreateMaybeMessage<::texture_studio::GetProjectsRequest>(Arena*);
-template<> ::texture_studio::GetProjectsResponse* Arena::CreateMaybeMessage<::texture_studio::GetProjectsResponse>(Arena*);
-template<> ::texture_studio::RestartServerRequest* Arena::CreateMaybeMessage<::texture_studio::RestartServerRequest>(Arena*);
-template<> ::texture_studio::RestartServerResponse* Arena::CreateMaybeMessage<::texture_studio::RestartServerResponse>(Arena*);
-template<> ::texture_studio::ServerStatusRequest* Arena::CreateMaybeMessage<::texture_studio::ServerStatusRequest>(Arena*);
-template<> ::texture_studio::ServerStatusResponse* Arena::CreateMaybeMessage<::texture_studio::ServerStatusResponse>(Arena*);
-template<> ::texture_studio::StartServerRequest* Arena::CreateMaybeMessage<::texture_studio::StartServerRequest>(Arena*);
-template<> ::texture_studio::StartServerResponse* Arena::CreateMaybeMessage<::texture_studio::StartServerResponse>(Arena*);
-template<> ::texture_studio::StopServerRequest* Arena::CreateMaybeMessage<::texture_studio::StopServerRequest>(Arena*);
-template<> ::texture_studio::StopServerResponse* Arena::CreateMaybeMessage<::texture_studio::StopServerResponse>(Arena*);
-template<> ::texture_studio::SubscribeToProjectsChangesRequest* Arena::CreateMaybeMessage<::texture_studio::SubscribeToProjectsChangesRequest>(Arena*);
-template<> ::texture_studio::SubscribeToProjectsChangesResponse* Arena::CreateMaybeMessage<::texture_studio::SubscribeToProjectsChangesResponse>(Arena*);
-template<> ::texture_studio::UploadProjectRequest* Arena::CreateMaybeMessage<::texture_studio::UploadProjectRequest>(Arena*);
-template<> ::texture_studio::UploadProjectResponse* Arena::CreateMaybeMessage<::texture_studio::UploadProjectResponse>(Arena*);
+template<> ::mruv::texture_studio::GetProjectRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::GetProjectRequest>(Arena*);
+template<> ::mruv::texture_studio::GetProjectResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::GetProjectResponse>(Arena*);
+template<> ::mruv::texture_studio::GetProjectsRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::GetProjectsRequest>(Arena*);
+template<> ::mruv::texture_studio::GetProjectsResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::GetProjectsResponse>(Arena*);
+template<> ::mruv::texture_studio::RestartServerRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::RestartServerRequest>(Arena*);
+template<> ::mruv::texture_studio::RestartServerResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::RestartServerResponse>(Arena*);
+template<> ::mruv::texture_studio::ServerStatusRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::ServerStatusRequest>(Arena*);
+template<> ::mruv::texture_studio::ServerStatusResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::ServerStatusResponse>(Arena*);
+template<> ::mruv::texture_studio::StartServerRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::StartServerRequest>(Arena*);
+template<> ::mruv::texture_studio::StartServerResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::StartServerResponse>(Arena*);
+template<> ::mruv::texture_studio::StopServerRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::StopServerRequest>(Arena*);
+template<> ::mruv::texture_studio::StopServerResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::StopServerResponse>(Arena*);
+template<> ::mruv::texture_studio::SubscribeToProjectsChangesRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::SubscribeToProjectsChangesRequest>(Arena*);
+template<> ::mruv::texture_studio::SubscribeToProjectsChangesResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::SubscribeToProjectsChangesResponse>(Arena*);
+template<> ::mruv::texture_studio::UploadProjectRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::UploadProjectRequest>(Arena*);
+template<> ::mruv::texture_studio::UploadProjectResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::UploadProjectResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace mruv {
 namespace texture_studio {
 
 enum ServerStatus : int {
@@ -155,7 +158,7 @@ inline bool ServerStatus_Parse(
 // ===================================================================
 
 class StartServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.StartServerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.StartServerRequest) */ {
  public:
   StartServerRequest();
   virtual ~StartServerRequest();
@@ -235,7 +238,7 @@ class StartServerRequest :
   void InternalSwap(StartServerRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.StartServerRequest";
+    return "mruv.texture_studio.StartServerRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -271,7 +274,7 @@ class StartServerRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.StartServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.StartServerRequest)
  private:
   class _Internal;
 
@@ -283,7 +286,7 @@ class StartServerRequest :
 // -------------------------------------------------------------------
 
 class StartServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.StartServerResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.StartServerResponse) */ {
  public:
   StartServerResponse();
   virtual ~StartServerResponse();
@@ -363,7 +366,7 @@ class StartServerResponse :
   void InternalSwap(StartServerResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.StartServerResponse";
+    return "mruv.texture_studio.StartServerResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -387,7 +390,7 @@ class StartServerResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.StartServerResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.StartServerResponse)
  private:
   class _Internal;
 
@@ -398,7 +401,7 @@ class StartServerResponse :
 // -------------------------------------------------------------------
 
 class StopServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.StopServerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.StopServerRequest) */ {
  public:
   StopServerRequest();
   virtual ~StopServerRequest();
@@ -478,7 +481,7 @@ class StopServerRequest :
   void InternalSwap(StopServerRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.StopServerRequest";
+    return "mruv.texture_studio.StopServerRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -514,7 +517,7 @@ class StopServerRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.StopServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.StopServerRequest)
  private:
   class _Internal;
 
@@ -526,7 +529,7 @@ class StopServerRequest :
 // -------------------------------------------------------------------
 
 class StopServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.StopServerResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.StopServerResponse) */ {
  public:
   StopServerResponse();
   virtual ~StopServerResponse();
@@ -606,7 +609,7 @@ class StopServerResponse :
   void InternalSwap(StopServerResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.StopServerResponse";
+    return "mruv.texture_studio.StopServerResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -630,7 +633,7 @@ class StopServerResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.StopServerResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.StopServerResponse)
  private:
   class _Internal;
 
@@ -641,7 +644,7 @@ class StopServerResponse :
 // -------------------------------------------------------------------
 
 class RestartServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.RestartServerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.RestartServerRequest) */ {
  public:
   RestartServerRequest();
   virtual ~RestartServerRequest();
@@ -721,7 +724,7 @@ class RestartServerRequest :
   void InternalSwap(RestartServerRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.RestartServerRequest";
+    return "mruv.texture_studio.RestartServerRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -757,7 +760,7 @@ class RestartServerRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.RestartServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.RestartServerRequest)
  private:
   class _Internal;
 
@@ -769,7 +772,7 @@ class RestartServerRequest :
 // -------------------------------------------------------------------
 
 class RestartServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.RestartServerResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.RestartServerResponse) */ {
  public:
   RestartServerResponse();
   virtual ~RestartServerResponse();
@@ -849,7 +852,7 @@ class RestartServerResponse :
   void InternalSwap(RestartServerResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.RestartServerResponse";
+    return "mruv.texture_studio.RestartServerResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -873,7 +876,7 @@ class RestartServerResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.RestartServerResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.RestartServerResponse)
  private:
   class _Internal;
 
@@ -884,7 +887,7 @@ class RestartServerResponse :
 // -------------------------------------------------------------------
 
 class ServerStatusRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.ServerStatusRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.ServerStatusRequest) */ {
  public:
   ServerStatusRequest();
   virtual ~ServerStatusRequest();
@@ -964,7 +967,7 @@ class ServerStatusRequest :
   void InternalSwap(ServerStatusRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.ServerStatusRequest";
+    return "mruv.texture_studio.ServerStatusRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1000,7 +1003,7 @@ class ServerStatusRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.ServerStatusRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.ServerStatusRequest)
  private:
   class _Internal;
 
@@ -1012,7 +1015,7 @@ class ServerStatusRequest :
 // -------------------------------------------------------------------
 
 class ServerStatusResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.ServerStatusResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.ServerStatusResponse) */ {
  public:
   ServerStatusResponse();
   virtual ~ServerStatusResponse();
@@ -1092,7 +1095,7 @@ class ServerStatusResponse :
   void InternalSwap(ServerStatusResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.ServerStatusResponse";
+    return "mruv.texture_studio.ServerStatusResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1129,16 +1132,16 @@ class ServerStatusResponse :
   void _internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .texture_studio.ServerStatus status = 2;
+  // .mruv.texture_studio.ServerStatus status = 2;
   void clear_status();
-  ::texture_studio::ServerStatus status() const;
-  void set_status(::texture_studio::ServerStatus value);
+  ::mruv::texture_studio::ServerStatus status() const;
+  void set_status(::mruv::texture_studio::ServerStatus value);
   private:
-  ::texture_studio::ServerStatus _internal_status() const;
-  void _internal_set_status(::texture_studio::ServerStatus value);
+  ::mruv::texture_studio::ServerStatus _internal_status() const;
+  void _internal_set_status(::mruv::texture_studio::ServerStatus value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.ServerStatusResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.ServerStatusResponse)
  private:
   class _Internal;
 
@@ -1151,7 +1154,7 @@ class ServerStatusResponse :
 // -------------------------------------------------------------------
 
 class UploadProjectRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.UploadProjectRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.UploadProjectRequest) */ {
  public:
   UploadProjectRequest();
   virtual ~UploadProjectRequest();
@@ -1237,7 +1240,7 @@ class UploadProjectRequest :
   void InternalSwap(UploadProjectRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.UploadProjectRequest";
+    return "mruv.texture_studio.UploadProjectRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1332,7 +1335,7 @@ class UploadProjectRequest :
 
   void clear_project();
   ProjectCase project_case() const;
-  // @@protoc_insertion_point(class_scope:texture_studio.UploadProjectRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.UploadProjectRequest)
  private:
   class _Internal;
   void set_has_code();
@@ -1357,7 +1360,7 @@ class UploadProjectRequest :
 // -------------------------------------------------------------------
 
 class UploadProjectResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.UploadProjectResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.UploadProjectResponse) */ {
  public:
   UploadProjectResponse();
   virtual ~UploadProjectResponse();
@@ -1437,7 +1440,7 @@ class UploadProjectResponse :
   void InternalSwap(UploadProjectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.UploadProjectResponse";
+    return "mruv.texture_studio.UploadProjectResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1461,7 +1464,7 @@ class UploadProjectResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.UploadProjectResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.UploadProjectResponse)
  private:
   class _Internal;
 
@@ -1472,7 +1475,7 @@ class UploadProjectResponse :
 // -------------------------------------------------------------------
 
 class GetProjectRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.GetProjectRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.GetProjectRequest) */ {
  public:
   GetProjectRequest();
   virtual ~GetProjectRequest();
@@ -1552,7 +1555,7 @@ class GetProjectRequest :
   void InternalSwap(GetProjectRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.GetProjectRequest";
+    return "mruv.texture_studio.GetProjectRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1605,7 +1608,7 @@ class GetProjectRequest :
   void _internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.GetProjectRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.GetProjectRequest)
  private:
   class _Internal;
 
@@ -1618,7 +1621,7 @@ class GetProjectRequest :
 // -------------------------------------------------------------------
 
 class GetProjectResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.GetProjectResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.GetProjectResponse) */ {
  public:
   GetProjectResponse();
   virtual ~GetProjectResponse();
@@ -1698,7 +1701,7 @@ class GetProjectResponse :
   void InternalSwap(GetProjectResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.GetProjectResponse";
+    return "mruv.texture_studio.GetProjectResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1741,7 +1744,7 @@ class GetProjectResponse :
   std::string* _internal_mutable_code();
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.GetProjectResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.GetProjectResponse)
  private:
   class _Internal;
 
@@ -1753,7 +1756,7 @@ class GetProjectResponse :
 // -------------------------------------------------------------------
 
 class GetProjectsRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.GetProjectsRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.GetProjectsRequest) */ {
  public:
   GetProjectsRequest();
   virtual ~GetProjectsRequest();
@@ -1833,7 +1836,7 @@ class GetProjectsRequest :
   void InternalSwap(GetProjectsRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.GetProjectsRequest";
+    return "mruv.texture_studio.GetProjectsRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1869,7 +1872,7 @@ class GetProjectsRequest :
   void _internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.GetProjectsRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.GetProjectsRequest)
  private:
   class _Internal;
 
@@ -1881,7 +1884,7 @@ class GetProjectsRequest :
 // -------------------------------------------------------------------
 
 class GetProjectsResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.GetProjectsResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.GetProjectsResponse) */ {
  public:
   GetProjectsResponse();
   virtual ~GetProjectsResponse();
@@ -1961,7 +1964,7 @@ class GetProjectsResponse :
   void InternalSwap(GetProjectsResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.GetProjectsResponse";
+    return "mruv.texture_studio.GetProjectsResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2012,7 +2015,7 @@ class GetProjectsResponse :
   std::string* _internal_add_names();
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.GetProjectsResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.GetProjectsResponse)
  private:
   class _Internal;
 
@@ -2024,7 +2027,7 @@ class GetProjectsResponse :
 // -------------------------------------------------------------------
 
 class SubscribeToProjectsChangesRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.SubscribeToProjectsChangesRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.SubscribeToProjectsChangesRequest) */ {
  public:
   SubscribeToProjectsChangesRequest();
   virtual ~SubscribeToProjectsChangesRequest();
@@ -2104,7 +2107,7 @@ class SubscribeToProjectsChangesRequest :
   void InternalSwap(SubscribeToProjectsChangesRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.SubscribeToProjectsChangesRequest";
+    return "mruv.texture_studio.SubscribeToProjectsChangesRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2140,7 +2143,7 @@ class SubscribeToProjectsChangesRequest :
   void _internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.SubscribeToProjectsChangesRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.SubscribeToProjectsChangesRequest)
  private:
   class _Internal;
 
@@ -2152,7 +2155,7 @@ class SubscribeToProjectsChangesRequest :
 // -------------------------------------------------------------------
 
 class SubscribeToProjectsChangesResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.SubscribeToProjectsChangesResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.SubscribeToProjectsChangesResponse) */ {
  public:
   SubscribeToProjectsChangesResponse();
   virtual ~SubscribeToProjectsChangesResponse();
@@ -2232,7 +2235,7 @@ class SubscribeToProjectsChangesResponse :
   void InternalSwap(SubscribeToProjectsChangesResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.SubscribeToProjectsChangesResponse";
+    return "mruv.texture_studio.SubscribeToProjectsChangesResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -2275,7 +2278,7 @@ class SubscribeToProjectsChangesResponse :
   std::string* _internal_mutable_name();
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.SubscribeToProjectsChangesResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.SubscribeToProjectsChangesResponse)
  private:
   class _Internal;
 
@@ -2303,7 +2306,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 StartServerRequest::_internal_id() const 
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 StartServerRequest::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.StartServerRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.StartServerRequest.id)
   return _internal_id();
 }
 inline void StartServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2312,7 +2315,7 @@ inline void StartServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32
 }
 inline void StartServerRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.StartServerRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.StartServerRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -2331,7 +2334,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 StopServerRequest::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 StopServerRequest::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.StopServerRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.StopServerRequest.id)
   return _internal_id();
 }
 inline void StopServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2340,7 +2343,7 @@ inline void StopServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 
 }
 inline void StopServerRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.StopServerRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.StopServerRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -2359,7 +2362,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 RestartServerRequest::_internal_id() cons
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 RestartServerRequest::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.RestartServerRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.RestartServerRequest.id)
   return _internal_id();
 }
 inline void RestartServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2368,7 +2371,7 @@ inline void RestartServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint
 }
 inline void RestartServerRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.RestartServerRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.RestartServerRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -2387,7 +2390,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerStatusRequest::_internal_id() const
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerStatusRequest::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.ServerStatusRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.ServerStatusRequest.id)
   return _internal_id();
 }
 inline void ServerStatusRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2396,7 +2399,7 @@ inline void ServerStatusRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void ServerStatusRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.ServerStatusRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.ServerStatusRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -2411,7 +2414,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerStatusResponse::_internal_port() co
   return port_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServerStatusResponse::port() const {
-  // @@protoc_insertion_point(field_get:texture_studio.ServerStatusResponse.port)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.ServerStatusResponse.port)
   return _internal_port();
 }
 inline void ServerStatusResponse::_internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2420,27 +2423,27 @@ inline void ServerStatusResponse::_internal_set_port(::PROTOBUF_NAMESPACE_ID::ui
 }
 inline void ServerStatusResponse::set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_port(value);
-  // @@protoc_insertion_point(field_set:texture_studio.ServerStatusResponse.port)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.ServerStatusResponse.port)
 }
 
-// .texture_studio.ServerStatus status = 2;
+// .mruv.texture_studio.ServerStatus status = 2;
 inline void ServerStatusResponse::clear_status() {
   status_ = 0;
 }
-inline ::texture_studio::ServerStatus ServerStatusResponse::_internal_status() const {
-  return static_cast< ::texture_studio::ServerStatus >(status_);
+inline ::mruv::texture_studio::ServerStatus ServerStatusResponse::_internal_status() const {
+  return static_cast< ::mruv::texture_studio::ServerStatus >(status_);
 }
-inline ::texture_studio::ServerStatus ServerStatusResponse::status() const {
-  // @@protoc_insertion_point(field_get:texture_studio.ServerStatusResponse.status)
+inline ::mruv::texture_studio::ServerStatus ServerStatusResponse::status() const {
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.ServerStatusResponse.status)
   return _internal_status();
 }
-inline void ServerStatusResponse::_internal_set_status(::texture_studio::ServerStatus value) {
+inline void ServerStatusResponse::_internal_set_status(::mruv::texture_studio::ServerStatus value) {
   
   status_ = value;
 }
-inline void ServerStatusResponse::set_status(::texture_studio::ServerStatus value) {
+inline void ServerStatusResponse::set_status(::mruv::texture_studio::ServerStatus value) {
   _internal_set_status(value);
-  // @@protoc_insertion_point(field_set:texture_studio.ServerStatusResponse.status)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.ServerStatusResponse.status)
 }
 
 // -------------------------------------------------------------------
@@ -2455,7 +2458,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 UploadProjectRequest::_internal_server_id
   return server_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 UploadProjectRequest::server_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.UploadProjectRequest.server_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.UploadProjectRequest.server_id)
   return _internal_server_id();
 }
 inline void UploadProjectRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2464,7 +2467,7 @@ inline void UploadProjectRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_I
 }
 inline void UploadProjectRequest::set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_server_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.UploadProjectRequest.server_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.UploadProjectRequest.server_id)
 }
 
 // string project_name = 2;
@@ -2472,15 +2475,15 @@ inline void UploadProjectRequest::clear_project_name() {
   project_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& UploadProjectRequest::project_name() const {
-  // @@protoc_insertion_point(field_get:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.UploadProjectRequest.project_name)
   return _internal_project_name();
 }
 inline void UploadProjectRequest::set_project_name(const std::string& value) {
   _internal_set_project_name(value);
-  // @@protoc_insertion_point(field_set:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.UploadProjectRequest.project_name)
 }
 inline std::string* UploadProjectRequest::mutable_project_name() {
-  // @@protoc_insertion_point(field_mutable:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.UploadProjectRequest.project_name)
   return _internal_mutable_project_name();
 }
 inline const std::string& UploadProjectRequest::_internal_project_name() const {
@@ -2494,26 +2497,26 @@ inline void UploadProjectRequest::set_project_name(std::string&& value) {
   
   project_name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.texture_studio.UploadProjectRequest.project_name)
 }
 inline void UploadProjectRequest::set_project_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   project_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.UploadProjectRequest.project_name)
 }
 inline void UploadProjectRequest::set_project_name(const char* value, size_t size) {
   
   project_name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.UploadProjectRequest.project_name)
 }
 inline std::string* UploadProjectRequest::_internal_mutable_project_name() {
   
   return project_name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* UploadProjectRequest::release_project_name() {
-  // @@protoc_insertion_point(field_release:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_release:mruv.texture_studio.UploadProjectRequest.project_name)
   
   return project_name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2524,7 +2527,7 @@ inline void UploadProjectRequest::set_allocated_project_name(std::string* projec
     
   }
   project_name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), project_name);
-  // @@protoc_insertion_point(field_set_allocated:texture_studio.UploadProjectRequest.project_name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.texture_studio.UploadProjectRequest.project_name)
 }
 
 // string code = 4;
@@ -2541,15 +2544,15 @@ inline void UploadProjectRequest::clear_code() {
   }
 }
 inline const std::string& UploadProjectRequest::code() const {
-  // @@protoc_insertion_point(field_get:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.UploadProjectRequest.code)
   return _internal_code();
 }
 inline void UploadProjectRequest::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.UploadProjectRequest.code)
 }
 inline std::string* UploadProjectRequest::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.UploadProjectRequest.code)
   return _internal_mutable_code();
 }
 inline const std::string& UploadProjectRequest::_internal_code() const {
@@ -2567,14 +2570,14 @@ inline void UploadProjectRequest::_internal_set_code(const std::string& value) {
   project_.code_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void UploadProjectRequest::set_code(std::string&& value) {
-  // @@protoc_insertion_point(field_set:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.UploadProjectRequest.code)
   if (!_internal_has_code()) {
     clear_project();
     set_has_code();
     project_.code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
   project_.code_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.texture_studio.UploadProjectRequest.code)
 }
 inline void UploadProjectRequest::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
@@ -2585,7 +2588,7 @@ inline void UploadProjectRequest::set_code(const char* value) {
   }
   project_.code_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.UploadProjectRequest.code)
 }
 inline void UploadProjectRequest::set_code(const char* value, size_t size) {
   if (!_internal_has_code()) {
@@ -2595,7 +2598,7 @@ inline void UploadProjectRequest::set_code(const char* value, size_t size) {
   }
   project_.code_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.UploadProjectRequest.code)
 }
 inline std::string* UploadProjectRequest::_internal_mutable_code() {
   if (!_internal_has_code()) {
@@ -2606,7 +2609,7 @@ inline std::string* UploadProjectRequest::_internal_mutable_code() {
   return project_.code_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* UploadProjectRequest::release_code() {
-  // @@protoc_insertion_point(field_release:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_release:mruv.texture_studio.UploadProjectRequest.code)
   if (_internal_has_code()) {
     clear_has_project();
     return project_.code_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -2622,7 +2625,7 @@ inline void UploadProjectRequest::set_allocated_code(std::string* code) {
     set_has_code();
     project_.code_.UnsafeSetDefault(code);
   }
-  // @@protoc_insertion_point(field_set_allocated:texture_studio.UploadProjectRequest.code)
+  // @@protoc_insertion_point(field_set_allocated:mruv.texture_studio.UploadProjectRequest.code)
 }
 
 // bytes file = 5;
@@ -2639,15 +2642,15 @@ inline void UploadProjectRequest::clear_file() {
   }
 }
 inline const std::string& UploadProjectRequest::file() const {
-  // @@protoc_insertion_point(field_get:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.UploadProjectRequest.file)
   return _internal_file();
 }
 inline void UploadProjectRequest::set_file(const std::string& value) {
   _internal_set_file(value);
-  // @@protoc_insertion_point(field_set:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.UploadProjectRequest.file)
 }
 inline std::string* UploadProjectRequest::mutable_file() {
-  // @@protoc_insertion_point(field_mutable:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.UploadProjectRequest.file)
   return _internal_mutable_file();
 }
 inline const std::string& UploadProjectRequest::_internal_file() const {
@@ -2665,14 +2668,14 @@ inline void UploadProjectRequest::_internal_set_file(const std::string& value) {
   project_.file_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void UploadProjectRequest::set_file(std::string&& value) {
-  // @@protoc_insertion_point(field_set:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.UploadProjectRequest.file)
   if (!_internal_has_file()) {
     clear_project();
     set_has_file();
     project_.file_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   }
   project_.file_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.texture_studio.UploadProjectRequest.file)
 }
 inline void UploadProjectRequest::set_file(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
@@ -2683,7 +2686,7 @@ inline void UploadProjectRequest::set_file(const char* value) {
   }
   project_.file_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.UploadProjectRequest.file)
 }
 inline void UploadProjectRequest::set_file(const void* value, size_t size) {
   if (!_internal_has_file()) {
@@ -2693,7 +2696,7 @@ inline void UploadProjectRequest::set_file(const void* value, size_t size) {
   }
   project_.file_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.UploadProjectRequest.file)
 }
 inline std::string* UploadProjectRequest::_internal_mutable_file() {
   if (!_internal_has_file()) {
@@ -2704,7 +2707,7 @@ inline std::string* UploadProjectRequest::_internal_mutable_file() {
   return project_.file_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* UploadProjectRequest::release_file() {
-  // @@protoc_insertion_point(field_release:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_release:mruv.texture_studio.UploadProjectRequest.file)
   if (_internal_has_file()) {
     clear_has_project();
     return project_.file_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -2720,7 +2723,7 @@ inline void UploadProjectRequest::set_allocated_file(std::string* file) {
     set_has_file();
     project_.file_.UnsafeSetDefault(file);
   }
-  // @@protoc_insertion_point(field_set_allocated:texture_studio.UploadProjectRequest.file)
+  // @@protoc_insertion_point(field_set_allocated:mruv.texture_studio.UploadProjectRequest.file)
 }
 
 inline bool UploadProjectRequest::has_project() const {
@@ -2748,7 +2751,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetProjectRequest::_internal_server_id() 
   return server_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetProjectRequest::server_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.GetProjectRequest.server_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.GetProjectRequest.server_id)
   return _internal_server_id();
 }
 inline void GetProjectRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2757,7 +2760,7 @@ inline void GetProjectRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID::
 }
 inline void GetProjectRequest::set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_server_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.GetProjectRequest.server_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetProjectRequest.server_id)
 }
 
 // string name = 2;
@@ -2765,15 +2768,15 @@ inline void GetProjectRequest::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& GetProjectRequest::name() const {
-  // @@protoc_insertion_point(field_get:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.GetProjectRequest.name)
   return _internal_name();
 }
 inline void GetProjectRequest::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetProjectRequest.name)
 }
 inline std::string* GetProjectRequest::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.GetProjectRequest.name)
   return _internal_mutable_name();
 }
 inline const std::string& GetProjectRequest::_internal_name() const {
@@ -2787,26 +2790,26 @@ inline void GetProjectRequest::set_name(std::string&& value) {
   
   name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.texture_studio.GetProjectRequest.name)
 }
 inline void GetProjectRequest::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.GetProjectRequest.name)
 }
 inline void GetProjectRequest::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.GetProjectRequest.name)
 }
 inline std::string* GetProjectRequest::_internal_mutable_name() {
   
   return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* GetProjectRequest::release_name() {
-  // @@protoc_insertion_point(field_release:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_release:mruv.texture_studio.GetProjectRequest.name)
   
   return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2817,7 +2820,7 @@ inline void GetProjectRequest::set_allocated_name(std::string* name) {
     
   }
   name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:texture_studio.GetProjectRequest.name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.texture_studio.GetProjectRequest.name)
 }
 
 // -------------------------------------------------------------------
@@ -2829,15 +2832,15 @@ inline void GetProjectResponse::clear_code() {
   code_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& GetProjectResponse::code() const {
-  // @@protoc_insertion_point(field_get:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.GetProjectResponse.code)
   return _internal_code();
 }
 inline void GetProjectResponse::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetProjectResponse.code)
 }
 inline std::string* GetProjectResponse::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.GetProjectResponse.code)
   return _internal_mutable_code();
 }
 inline const std::string& GetProjectResponse::_internal_code() const {
@@ -2851,26 +2854,26 @@ inline void GetProjectResponse::set_code(std::string&& value) {
   
   code_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.texture_studio.GetProjectResponse.code)
 }
 inline void GetProjectResponse::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.GetProjectResponse.code)
 }
 inline void GetProjectResponse::set_code(const char* value, size_t size) {
   
   code_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.GetProjectResponse.code)
 }
 inline std::string* GetProjectResponse::_internal_mutable_code() {
   
   return code_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* GetProjectResponse::release_code() {
-  // @@protoc_insertion_point(field_release:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_release:mruv.texture_studio.GetProjectResponse.code)
   
   return code_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2881,7 +2884,7 @@ inline void GetProjectResponse::set_allocated_code(std::string* code) {
     
   }
   code_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code);
-  // @@protoc_insertion_point(field_set_allocated:texture_studio.GetProjectResponse.code)
+  // @@protoc_insertion_point(field_set_allocated:mruv.texture_studio.GetProjectResponse.code)
 }
 
 // -------------------------------------------------------------------
@@ -2896,7 +2899,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetProjectsRequest::_internal_server_id()
   return server_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetProjectsRequest::server_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.GetProjectsRequest.server_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.GetProjectsRequest.server_id)
   return _internal_server_id();
 }
 inline void GetProjectsRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2905,7 +2908,7 @@ inline void GetProjectsRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID:
 }
 inline void GetProjectsRequest::set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_server_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.GetProjectsRequest.server_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetProjectsRequest.server_id)
 }
 
 // -------------------------------------------------------------------
@@ -2923,66 +2926,66 @@ inline void GetProjectsResponse::clear_names() {
   names_.Clear();
 }
 inline std::string* GetProjectsResponse::add_names() {
-  // @@protoc_insertion_point(field_add_mutable:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_add_mutable:mruv.texture_studio.GetProjectsResponse.names)
   return _internal_add_names();
 }
 inline const std::string& GetProjectsResponse::_internal_names(int index) const {
   return names_.Get(index);
 }
 inline const std::string& GetProjectsResponse::names(int index) const {
-  // @@protoc_insertion_point(field_get:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.GetProjectsResponse.names)
   return _internal_names(index);
 }
 inline std::string* GetProjectsResponse::mutable_names(int index) {
-  // @@protoc_insertion_point(field_mutable:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.GetProjectsResponse.names)
   return names_.Mutable(index);
 }
 inline void GetProjectsResponse::set_names(int index, const std::string& value) {
-  // @@protoc_insertion_point(field_set:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetProjectsResponse.names)
   names_.Mutable(index)->assign(value);
 }
 inline void GetProjectsResponse::set_names(int index, std::string&& value) {
-  // @@protoc_insertion_point(field_set:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetProjectsResponse.names)
   names_.Mutable(index)->assign(std::move(value));
 }
 inline void GetProjectsResponse::set_names(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   names_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.GetProjectsResponse.names)
 }
 inline void GetProjectsResponse::set_names(int index, const char* value, size_t size) {
   names_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.GetProjectsResponse.names)
 }
 inline std::string* GetProjectsResponse::_internal_add_names() {
   return names_.Add();
 }
 inline void GetProjectsResponse::add_names(const std::string& value) {
   names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_add:mruv.texture_studio.GetProjectsResponse.names)
 }
 inline void GetProjectsResponse::add_names(std::string&& value) {
   names_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_add:mruv.texture_studio.GetProjectsResponse.names)
 }
 inline void GetProjectsResponse::add_names(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   names_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_add_char:mruv.texture_studio.GetProjectsResponse.names)
 }
 inline void GetProjectsResponse::add_names(const char* value, size_t size) {
   names_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_add_pointer:mruv.texture_studio.GetProjectsResponse.names)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 GetProjectsResponse::names() const {
-  // @@protoc_insertion_point(field_list:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_list:mruv.texture_studio.GetProjectsResponse.names)
   return names_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 GetProjectsResponse::mutable_names() {
-  // @@protoc_insertion_point(field_mutable_list:texture_studio.GetProjectsResponse.names)
+  // @@protoc_insertion_point(field_mutable_list:mruv.texture_studio.GetProjectsResponse.names)
   return &names_;
 }
 
@@ -2998,7 +3001,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 SubscribeToProjectsChangesRequest::_inter
   return server_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 SubscribeToProjectsChangesRequest::server_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.SubscribeToProjectsChangesRequest.server_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.SubscribeToProjectsChangesRequest.server_id)
   return _internal_server_id();
 }
 inline void SubscribeToProjectsChangesRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3007,7 +3010,7 @@ inline void SubscribeToProjectsChangesRequest::_internal_set_server_id(::PROTOBU
 }
 inline void SubscribeToProjectsChangesRequest::set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_server_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.SubscribeToProjectsChangesRequest.server_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.SubscribeToProjectsChangesRequest.server_id)
 }
 
 // -------------------------------------------------------------------
@@ -3019,15 +3022,15 @@ inline void SubscribeToProjectsChangesResponse::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& SubscribeToProjectsChangesResponse::name() const {
-  // @@protoc_insertion_point(field_get:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
   return _internal_name();
 }
 inline void SubscribeToProjectsChangesResponse::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
 }
 inline std::string* SubscribeToProjectsChangesResponse::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_mutable:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
   return _internal_mutable_name();
 }
 inline const std::string& SubscribeToProjectsChangesResponse::_internal_name() const {
@@ -3041,26 +3044,26 @@ inline void SubscribeToProjectsChangesResponse::set_name(std::string&& value) {
   
   name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
 }
 inline void SubscribeToProjectsChangesResponse::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_set_char:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
 }
 inline void SubscribeToProjectsChangesResponse::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
 }
 inline std::string* SubscribeToProjectsChangesResponse::_internal_mutable_name() {
   
   return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* SubscribeToProjectsChangesResponse::release_name() {
-  // @@protoc_insertion_point(field_release:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_release:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
   
   return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -3071,7 +3074,7 @@ inline void SubscribeToProjectsChangesResponse::set_allocated_name(std::string* 
     
   }
   name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:texture_studio.SubscribeToProjectsChangesResponse.name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.texture_studio.SubscribeToProjectsChangesResponse.name)
 }
 
 #ifdef __GNUC__
@@ -3111,13 +3114,14 @@ inline void SubscribeToProjectsChangesResponse::set_allocated_name(std::string* 
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace texture_studio
+}  // namespace mruv
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::texture_studio::ServerStatus> : ::std::true_type {};
+template <> struct is_proto_enum< ::mruv::texture_studio::ServerStatus> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::texture_studio::ServerStatus>() {
-  return ::texture_studio::ServerStatus_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::mruv::texture_studio::ServerStatus>() {
+  return ::mruv::texture_studio::ServerStatus_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

@@ -16,6 +16,7 @@
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_characters_2fcharacters_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Character_characters_2fcharacters_2eproto;
 namespace mruv {
+namespace characters {
 class CharacterDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Character> _instance;
@@ -72,16 +73,17 @@ class DeathStreamResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DeathStreamResponse> _instance;
 } _DeathStreamResponse_default_instance_;
+}  // namespace characters
 }  // namespace mruv
 static void InitDefaultsscc_info_ChangeClothesRequest_characters_2fcharacters_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_ChangeClothesRequest_default_instance_;
-    new (ptr) ::mruv::ChangeClothesRequest();
+    void* ptr = &::mruv::characters::_ChangeClothesRequest_default_instance_;
+    new (ptr) ::mruv::characters::ChangeClothesRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::ChangeClothesRequest::InitAsDefaultInstance();
+  ::mruv::characters::ChangeClothesRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ChangeClothesRequest_characters_2fcharacters_2eproto =
@@ -91,11 +93,11 @@ static void InitDefaultsscc_info_ChangeClothesResponse_characters_2fcharacters_2
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_ChangeClothesResponse_default_instance_;
-    new (ptr) ::mruv::ChangeClothesResponse();
+    void* ptr = &::mruv::characters::_ChangeClothesResponse_default_instance_;
+    new (ptr) ::mruv::characters::ChangeClothesResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::ChangeClothesResponse::InitAsDefaultInstance();
+  ::mruv::characters::ChangeClothesResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ChangeClothesResponse_characters_2fcharacters_2eproto =
@@ -105,11 +107,11 @@ static void InitDefaultsscc_info_Character_characters_2fcharacters_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_Character_default_instance_;
-    new (ptr) ::mruv::Character();
+    void* ptr = &::mruv::characters::_Character_default_instance_;
+    new (ptr) ::mruv::characters::Character();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::Character::InitAsDefaultInstance();
+  ::mruv::characters::Character::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Character_characters_2fcharacters_2eproto =
@@ -119,11 +121,11 @@ static void InitDefaultsscc_info_CharacterID_characters_2fcharacters_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_CharacterID_default_instance_;
-    new (ptr) ::mruv::CharacterID();
+    void* ptr = &::mruv::characters::_CharacterID_default_instance_;
+    new (ptr) ::mruv::characters::CharacterID();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::CharacterID::InitAsDefaultInstance();
+  ::mruv::characters::CharacterID::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CharacterID_characters_2fcharacters_2eproto =
@@ -133,11 +135,11 @@ static void InitDefaultsscc_info_CreateCharacterRequest_characters_2fcharacters_
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_CreateCharacterRequest_default_instance_;
-    new (ptr) ::mruv::CreateCharacterRequest();
+    void* ptr = &::mruv::characters::_CreateCharacterRequest_default_instance_;
+    new (ptr) ::mruv::characters::CreateCharacterRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::CreateCharacterRequest::InitAsDefaultInstance();
+  ::mruv::characters::CreateCharacterRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateCharacterRequest_characters_2fcharacters_2eproto =
@@ -147,11 +149,11 @@ static void InitDefaultsscc_info_CreateCharacterResponse_characters_2fcharacters
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_CreateCharacterResponse_default_instance_;
-    new (ptr) ::mruv::CreateCharacterResponse();
+    void* ptr = &::mruv::characters::_CreateCharacterResponse_default_instance_;
+    new (ptr) ::mruv::characters::CreateCharacterResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::CreateCharacterResponse::InitAsDefaultInstance();
+  ::mruv::characters::CreateCharacterResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateCharacterResponse_characters_2fcharacters_2eproto =
@@ -161,11 +163,11 @@ static void InitDefaultsscc_info_DeathStreamRequest_characters_2fcharacters_2epr
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_DeathStreamRequest_default_instance_;
-    new (ptr) ::mruv::DeathStreamRequest();
+    void* ptr = &::mruv::characters::_DeathStreamRequest_default_instance_;
+    new (ptr) ::mruv::characters::DeathStreamRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::DeathStreamRequest::InitAsDefaultInstance();
+  ::mruv::characters::DeathStreamRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeathStreamRequest_characters_2fcharacters_2eproto =
@@ -175,11 +177,11 @@ static void InitDefaultsscc_info_DeathStreamResponse_characters_2fcharacters_2ep
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_DeathStreamResponse_default_instance_;
-    new (ptr) ::mruv::DeathStreamResponse();
+    void* ptr = &::mruv::characters::_DeathStreamResponse_default_instance_;
+    new (ptr) ::mruv::characters::DeathStreamResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::DeathStreamResponse::InitAsDefaultInstance();
+  ::mruv::characters::DeathStreamResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DeathStreamResponse_characters_2fcharacters_2eproto =
@@ -190,11 +192,11 @@ static void InitDefaultsscc_info_DeleteCharacterRequest_characters_2fcharacters_
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_DeleteCharacterRequest_default_instance_;
-    new (ptr) ::mruv::DeleteCharacterRequest();
+    void* ptr = &::mruv::characters::_DeleteCharacterRequest_default_instance_;
+    new (ptr) ::mruv::characters::DeleteCharacterRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::DeleteCharacterRequest::InitAsDefaultInstance();
+  ::mruv::characters::DeleteCharacterRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteCharacterRequest_characters_2fcharacters_2eproto =
@@ -204,11 +206,11 @@ static void InitDefaultsscc_info_DeleteCharacterResponse_characters_2fcharacters
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_DeleteCharacterResponse_default_instance_;
-    new (ptr) ::mruv::DeleteCharacterResponse();
+    void* ptr = &::mruv::characters::_DeleteCharacterResponse_default_instance_;
+    new (ptr) ::mruv::characters::DeleteCharacterResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::DeleteCharacterResponse::InitAsDefaultInstance();
+  ::mruv::characters::DeleteCharacterResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DeleteCharacterResponse_characters_2fcharacters_2eproto =
@@ -218,11 +220,11 @@ static void InitDefaultsscc_info_GetCharacterRequest_characters_2fcharacters_2ep
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetCharacterRequest_default_instance_;
-    new (ptr) ::mruv::GetCharacterRequest();
+    void* ptr = &::mruv::characters::_GetCharacterRequest_default_instance_;
+    new (ptr) ::mruv::characters::GetCharacterRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetCharacterRequest::InitAsDefaultInstance();
+  ::mruv::characters::GetCharacterRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetCharacterRequest_characters_2fcharacters_2eproto =
@@ -232,11 +234,11 @@ static void InitDefaultsscc_info_GetCharacterResponse_characters_2fcharacters_2e
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetCharacterResponse_default_instance_;
-    new (ptr) ::mruv::GetCharacterResponse();
+    void* ptr = &::mruv::characters::_GetCharacterResponse_default_instance_;
+    new (ptr) ::mruv::characters::GetCharacterResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetCharacterResponse::InitAsDefaultInstance();
+  ::mruv::characters::GetCharacterResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetCharacterResponse_characters_2fcharacters_2eproto =
@@ -246,11 +248,11 @@ static void InitDefaultsscc_info_UpdateCharacterRequest_characters_2fcharacters_
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_UpdateCharacterRequest_default_instance_;
-    new (ptr) ::mruv::UpdateCharacterRequest();
+    void* ptr = &::mruv::characters::_UpdateCharacterRequest_default_instance_;
+    new (ptr) ::mruv::characters::UpdateCharacterRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::UpdateCharacterRequest::InitAsDefaultInstance();
+  ::mruv::characters::UpdateCharacterRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateCharacterRequest_characters_2fcharacters_2eproto =
@@ -260,11 +262,11 @@ static void InitDefaultsscc_info_UpdateCharacterResponse_characters_2fcharacters
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_UpdateCharacterResponse_default_instance_;
-    new (ptr) ::mruv::UpdateCharacterResponse();
+    void* ptr = &::mruv::characters::_UpdateCharacterResponse_default_instance_;
+    new (ptr) ::mruv::characters::UpdateCharacterResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::UpdateCharacterResponse::InitAsDefaultInstance();
+  ::mruv::characters::UpdateCharacterResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateCharacterResponse_characters_2fcharacters_2eproto =
@@ -276,201 +278,206 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_characters_2fcharacters_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, owner_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, first_name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, second_name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, age_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, sex_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, clothes_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, x_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, y_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Character, z_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, first_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, second_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, age_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, sex_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, clothes_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, x_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, y_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::Character, z_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::CharacterID, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CharacterID, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::CharacterID, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CharacterID, id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, owner_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, first_name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, second_name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, age_),
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterRequest, sex_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, first_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, second_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, age_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterRequest, sex_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::CreateCharacterResponse, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::CreateCharacterResponse, id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterRequest, id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, owner_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, first_name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, second_name_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, age_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, sex_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, clothes_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, x_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, y_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetCharacterResponse, z_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, owner_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, first_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, second_name_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, age_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, sex_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, clothes_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, x_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, y_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::GetCharacterResponse, z_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::UpdateCharacterRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::UpdateCharacterRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::UpdateCharacterRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::UpdateCharacterRequest, id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::UpdateCharacterResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeleteCharacterRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeleteCharacterRequest, id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeleteCharacterResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::UpdateCharacterResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::ChangeClothesRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeleteCharacterRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::ChangeClothesRequest, id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::ChangeClothesRequest, clothes_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeleteCharacterRequest, id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::ChangeClothesResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeleteCharacterResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeathStreamRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::ChangeClothesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeathStreamRequest, death_types_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::ChangeClothesRequest, id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::ChangeClothesRequest, clothes_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeathStreamResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::ChangeClothesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::DeathStreamResponse, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::DeathStreamResponse, death_type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeathStreamRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeathStreamRequest, death_types_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeathStreamResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeathStreamResponse, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::characters::DeathStreamResponse, death_type_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::Character)},
-  { 15, -1, sizeof(::mruv::CharacterID)},
-  { 21, -1, sizeof(::mruv::CreateCharacterRequest)},
-  { 32, -1, sizeof(::mruv::CreateCharacterResponse)},
-  { 38, -1, sizeof(::mruv::GetCharacterRequest)},
-  { 44, -1, sizeof(::mruv::GetCharacterResponse)},
-  { 59, -1, sizeof(::mruv::UpdateCharacterRequest)},
-  { 65, -1, sizeof(::mruv::UpdateCharacterResponse)},
-  { 70, -1, sizeof(::mruv::DeleteCharacterRequest)},
-  { 76, -1, sizeof(::mruv::DeleteCharacterResponse)},
-  { 81, -1, sizeof(::mruv::ChangeClothesRequest)},
-  { 88, -1, sizeof(::mruv::ChangeClothesResponse)},
-  { 93, -1, sizeof(::mruv::DeathStreamRequest)},
-  { 99, -1, sizeof(::mruv::DeathStreamResponse)},
+  { 0, -1, sizeof(::mruv::characters::Character)},
+  { 15, -1, sizeof(::mruv::characters::CharacterID)},
+  { 21, -1, sizeof(::mruv::characters::CreateCharacterRequest)},
+  { 32, -1, sizeof(::mruv::characters::CreateCharacterResponse)},
+  { 38, -1, sizeof(::mruv::characters::GetCharacterRequest)},
+  { 44, -1, sizeof(::mruv::characters::GetCharacterResponse)},
+  { 59, -1, sizeof(::mruv::characters::UpdateCharacterRequest)},
+  { 65, -1, sizeof(::mruv::characters::UpdateCharacterResponse)},
+  { 70, -1, sizeof(::mruv::characters::DeleteCharacterRequest)},
+  { 76, -1, sizeof(::mruv::characters::DeleteCharacterResponse)},
+  { 81, -1, sizeof(::mruv::characters::ChangeClothesRequest)},
+  { 88, -1, sizeof(::mruv::characters::ChangeClothesResponse)},
+  { 93, -1, sizeof(::mruv::characters::DeathStreamRequest)},
+  { 99, -1, sizeof(::mruv::characters::DeathStreamResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_Character_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_CharacterID_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_CreateCharacterRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_CreateCharacterResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetCharacterRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetCharacterResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_UpdateCharacterRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_UpdateCharacterResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeleteCharacterRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeleteCharacterResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_ChangeClothesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_ChangeClothesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeathStreamRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_DeathStreamResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_Character_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_CharacterID_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_CreateCharacterRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_CreateCharacterResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_GetCharacterRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_GetCharacterResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_UpdateCharacterRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_UpdateCharacterResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_DeleteCharacterRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_DeleteCharacterResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_ChangeClothesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_ChangeClothesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_DeathStreamRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::characters::_DeathStreamResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_characters_2fcharacters_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\033characters/characters.proto\022\004mruv\032\034goo"
-  "gle/api/annotations.proto\032\023common/health"
-  ".proto\"\241\001\n\tCharacter\022\n\n\002id\030\001 \001(\r\022\020\n\010owne"
-  "r_id\030\002 \001(\r\022\022\n\nfirst_name\030\003 \001(\t\022\023\n\013second"
-  "_name\030\004 \001(\t\022\013\n\003age\030\005 \001(\r\022\013\n\003sex\030\006 \001(\r\022\022\n"
-  "\nclothes_id\030\007 \001(\r\022\t\n\001x\030\010 \001(\002\022\t\n\001y\030\t \001(\002\022"
-  "\t\n\001z\030\n \001(\002\"\031\n\013CharacterID\022\n\n\002id\030\001 \001(\r\"y\n"
-  "\026CreateCharacterRequest\022\n\n\002id\030\001 \001(\r\022\020\n\010o"
-  "wner_id\030\002 \001(\r\022\022\n\nfirst_name\030\003 \001(\t\022\023\n\013sec"
-  "ond_name\030\004 \001(\t\022\013\n\003age\030\005 \001(\r\022\013\n\003sex\030\006 \001(\r"
-  "\"%\n\027CreateCharacterResponse\022\n\n\002id\030\001 \001(\r\""
-  "!\n\023GetCharacterRequest\022\n\n\002id\030\001 \001(\r\"\254\001\n\024G"
-  "etCharacterResponse\022\n\n\002id\030\001 \001(\r\022\020\n\010owner"
-  "_id\030\002 \001(\r\022\022\n\nfirst_name\030\003 \001(\t\022\023\n\013second_"
-  "name\030\004 \001(\t\022\013\n\003age\030\005 \001(\r\022\013\n\003sex\030\006 \001(\r\022\022\n\n"
-  "clothes_id\030\007 \001(\r\022\t\n\001x\030\010 \001(\002\022\t\n\001y\030\t \001(\002\022\t"
-  "\n\001z\030\n \001(\002\"$\n\026UpdateCharacterRequest\022\n\n\002i"
-  "d\030\001 \001(\r\"\031\n\027UpdateCharacterResponse\"$\n\026De"
-  "leteCharacterRequest\022\n\n\002id\030\001 \001(\r\"\031\n\027Dele"
-  "teCharacterResponse\"6\n\024ChangeClothesRequ"
-  "est\022\n\n\002id\030\001 \001(\r\022\022\n\nclothes_id\030\002 \001(\r\"\027\n\025C"
-  "hangeClothesResponse\":\n\022DeathStreamReque"
-  "st\022$\n\013death_types\030\001 \003(\0162\017.mruv.DeathType"
-  "\"^\n\023DeathStreamResponse\022\"\n\tcharacter\030\001 \001"
-  "(\0132\017.mruv.Character\022#\n\ndeath_type\030\002 \001(\0162"
-  "\017.mruv.DeathType*^\n\tDeathType\022\023\n\017DEATH_T"
-  "YPE_NONE\020\000\022\021\n\rDEATH_TYPE_BW\020\001\022\026\n\022DEATH_T"
-  "YPE_BW_KILL\020\002\022\021\n\rDEATH_TYPE_CK\020\0032\272\007\n\025Mru"
-  "VCharactersService\022f\n\017CreateCharacter\022\034."
-  "mruv.CreateCharacterRequest\032\035.mruv.Creat"
-  "eCharacterResponse\"\026\202\323\344\223\002\020\"\016/v1/characte"
-  "rs\022b\n\014GetCharacter\022\031.mruv.GetCharacterRe"
-  "quest\032\032.mruv.GetCharacterResponse\"\033\202\323\344\223\002"
-  "\025\022\023/v1/characters/{id}\022k\n\017UpdateCharacte"
-  "r\022\034.mruv.UpdateCharacterRequest\032\035.mruv.U"
-  "pdateCharacterResponse\"\033\202\323\344\223\002\0252\023/v1/char"
-  "acters/{id}\022k\n\017DeleteCharacter\022\034.mruv.De"
-  "leteCharacterRequest\032\035.mruv.DeleteCharac"
-  "terResponse\"\033\202\323\344\223\002\025*\023/v1/characters/{id}"
-  "\022i\n\026PermanentCharacterKill\022\021.mruv.Charac"
-  "terID\032\021.mruv.CharacterID\")\202\323\344\223\002#*!/v1/ch"
-  "aracters/permanentKill/{id}\022y\n\rChangeClo"
-  "thes\022\032.mruv.ChangeClothesRequest\032\033.mruv."
-  "ChangeClothesResponse\"/\202\323\344\223\002)\032\'/v1/chara"
-  "cter/{id}/clothes/{clothes_id}\022G\n\014Deaths"
-  "Stream\022\030.mruv.DeathStreamRequest\032\031.mruv."
-  "DeathStreamResponse\"\0000\001\022j\n\020GetServiceSta"
-  "tus\022\032.mruv.ServiceStatusRequest\032\033.mruv.S"
-  "erviceStatusResponse\"\035\202\323\344\223\002\027\022\025/v1/charac"
-  "ters/status\022`\n\021GetServiceVersion\022\024.mruv."
-  "VersionRequest\032\025.mruv.VersionResponse\"\036\202"
-  "\323\344\223\002\030\022\026/v1/characters/versionB*Z(github."
-  "com/MruV-RP/mruv-pb-go/charactersb\006proto"
-  "3"
+  "\n\033characters/characters.proto\022\017mruv.char"
+  "acters\032\034google/api/annotations.proto\032\023co"
+  "mmon/health.proto\"\241\001\n\tCharacter\022\n\n\002id\030\001 "
+  "\001(\r\022\020\n\010owner_id\030\002 \001(\r\022\022\n\nfirst_name\030\003 \001("
+  "\t\022\023\n\013second_name\030\004 \001(\t\022\013\n\003age\030\005 \001(\r\022\013\n\003s"
+  "ex\030\006 \001(\r\022\022\n\nclothes_id\030\007 \001(\r\022\t\n\001x\030\010 \001(\002\022"
+  "\t\n\001y\030\t \001(\002\022\t\n\001z\030\n \001(\002\"\031\n\013CharacterID\022\n\n\002"
+  "id\030\001 \001(\r\"y\n\026CreateCharacterRequest\022\n\n\002id"
+  "\030\001 \001(\r\022\020\n\010owner_id\030\002 \001(\r\022\022\n\nfirst_name\030\003"
+  " \001(\t\022\023\n\013second_name\030\004 \001(\t\022\013\n\003age\030\005 \001(\r\022\013"
+  "\n\003sex\030\006 \001(\r\"%\n\027CreateCharacterResponse\022\n"
+  "\n\002id\030\001 \001(\r\"!\n\023GetCharacterRequest\022\n\n\002id\030"
+  "\001 \001(\r\"\254\001\n\024GetCharacterResponse\022\n\n\002id\030\001 \001"
+  "(\r\022\020\n\010owner_id\030\002 \001(\r\022\022\n\nfirst_name\030\003 \001(\t"
+  "\022\023\n\013second_name\030\004 \001(\t\022\013\n\003age\030\005 \001(\r\022\013\n\003se"
+  "x\030\006 \001(\r\022\022\n\nclothes_id\030\007 \001(\r\022\t\n\001x\030\010 \001(\002\022\t"
+  "\n\001y\030\t \001(\002\022\t\n\001z\030\n \001(\002\"$\n\026UpdateCharacterR"
+  "equest\022\n\n\002id\030\001 \001(\r\"\031\n\027UpdateCharacterRes"
+  "ponse\"$\n\026DeleteCharacterRequest\022\n\n\002id\030\001 "
+  "\001(\r\"\031\n\027DeleteCharacterResponse\"6\n\024Change"
+  "ClothesRequest\022\n\n\002id\030\001 \001(\r\022\022\n\nclothes_id"
+  "\030\002 \001(\r\"\027\n\025ChangeClothesResponse\"E\n\022Death"
+  "StreamRequest\022/\n\013death_types\030\001 \003(\0162\032.mru"
+  "v.characters.DeathType\"t\n\023DeathStreamRes"
+  "ponse\022-\n\tcharacter\030\001 \001(\0132\032.mruv.characte"
+  "rs.Character\022.\n\ndeath_type\030\002 \001(\0162\032.mruv."
+  "characters.DeathType*^\n\tDeathType\022\023\n\017DEA"
+  "TH_TYPE_NONE\020\000\022\021\n\rDEATH_TYPE_BW\020\001\022\026\n\022DEA"
+  "TH_TYPE_BW_KILL\020\002\022\021\n\rDEATH_TYPE_CK\020\0032\327\010\n"
+  "\025MruVCharactersService\022|\n\017CreateCharacte"
+  "r\022\'.mruv.characters.CreateCharacterReque"
+  "st\032(.mruv.characters.CreateCharacterResp"
+  "onse\"\026\202\323\344\223\002\020\"\016/v1/characters\022x\n\014GetChara"
+  "cter\022$.mruv.characters.GetCharacterReque"
+  "st\032%.mruv.characters.GetCharacterRespons"
+  "e\"\033\202\323\344\223\002\025\022\023/v1/characters/{id}\022\201\001\n\017Updat"
+  "eCharacter\022\'.mruv.characters.UpdateChara"
+  "cterRequest\032(.mruv.characters.UpdateChar"
+  "acterResponse\"\033\202\323\344\223\002\0252\023/v1/characters/{i"
+  "d}\022\201\001\n\017DeleteCharacter\022\'.mruv.characters"
+  ".DeleteCharacterRequest\032(.mruv.character"
+  "s.DeleteCharacterResponse\"\033\202\323\344\223\002\025*\023/v1/c"
+  "haracters/{id}\022\177\n\026PermanentCharacterKill"
+  "\022\034.mruv.characters.CharacterID\032\034.mruv.ch"
+  "aracters.CharacterID\")\202\323\344\223\002#*!/v1/charac"
+  "ters/permanentKill/{id}\022\217\001\n\rChangeClothe"
+  "s\022%.mruv.characters.ChangeClothesRequest"
+  "\032&.mruv.characters.ChangeClothesResponse"
+  "\"/\202\323\344\223\002)\032\'/v1/character/{id}/clothes/{cl"
+  "othes_id}\022]\n\014DeathsStream\022#.mruv.charact"
+  "ers.DeathStreamRequest\032$.mruv.characters"
+  ".DeathStreamResponse\"\0000\001\022j\n\020GetServiceSt"
+  "atus\022\032.mruv.ServiceStatusRequest\032\033.mruv."
+  "ServiceStatusResponse\"\035\202\323\344\223\002\027\022\025/v1/chara"
+  "cters/status\022`\n\021GetServiceVersion\022\024.mruv"
+  ".VersionRequest\032\025.mruv.VersionResponse\"\036"
+  "\202\323\344\223\002\030\022\026/v1/characters/versionB*Z(github"
+  ".com/MruV-RP/mruv-pb-go/charactersb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_characters_2fcharacters_2eproto_deps[2] = {
   &::descriptor_table_common_2fhealth_2eproto,
@@ -495,7 +502,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cha
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_characters_2fcharacters_2eproto_once;
 static bool descriptor_table_characters_2fcharacters_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_characters_2fcharacters_2eproto = {
-  &descriptor_table_characters_2fcharacters_2eproto_initialized, descriptor_table_protodef_characters_2fcharacters_2eproto, "characters/characters.proto", 2121,
+  &descriptor_table_characters_2fcharacters_2eproto_initialized, descriptor_table_protodef_characters_2fcharacters_2eproto, "characters/characters.proto", 2322,
   &descriptor_table_characters_2fcharacters_2eproto_once, descriptor_table_characters_2fcharacters_2eproto_sccs, descriptor_table_characters_2fcharacters_2eproto_deps, 14, 2,
   schemas, file_default_instances, TableStruct_characters_2fcharacters_2eproto::offsets,
   file_level_metadata_characters_2fcharacters_2eproto, 14, file_level_enum_descriptors_characters_2fcharacters_2eproto, file_level_service_descriptors_characters_2fcharacters_2eproto,
@@ -504,6 +511,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_charac
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_characters_2fcharacters_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_characters_2fcharacters_2eproto), true);
 namespace mruv {
+namespace characters {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DeathType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_characters_2fcharacters_2eproto);
   return file_level_enum_descriptors_characters_2fcharacters_2eproto[0];
@@ -532,7 +540,7 @@ class Character::_Internal {
 Character::Character()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.Character)
+  // @@protoc_insertion_point(constructor:mruv.characters.Character)
 }
 Character::Character(const Character& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -549,7 +557,7 @@ Character::Character(const Character& from)
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&z_) -
     reinterpret_cast<char*>(&id_)) + sizeof(z_));
-  // @@protoc_insertion_point(copy_constructor:mruv.Character)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.Character)
 }
 
 void Character::SharedCtor() {
@@ -562,7 +570,7 @@ void Character::SharedCtor() {
 }
 
 Character::~Character() {
-  // @@protoc_insertion_point(destructor:mruv.Character)
+  // @@protoc_insertion_point(destructor:mruv.characters.Character)
   SharedDtor();
 }
 
@@ -581,7 +589,7 @@ const Character& Character::default_instance() {
 
 
 void Character::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.Character)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.Character)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -620,7 +628,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_first_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.Character.first_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.characters.Character.first_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -629,7 +637,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_second_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.Character.second_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.characters.Character.second_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -697,7 +705,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Character::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.Character)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.Character)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -718,7 +726,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_first_name().data(), static_cast<int>(this->_internal_first_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.Character.first_name");
+      "mruv.characters.Character.first_name");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_first_name(), target);
   }
@@ -728,7 +736,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_second_name().data(), static_cast<int>(this->_internal_second_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.Character.second_name");
+      "mruv.characters.Character.second_name");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_second_name(), target);
   }
@@ -773,12 +781,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.Character)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.Character)
   return target;
 }
 
 size_t Character::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.Character)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.Character)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -859,22 +867,22 @@ size_t Character::ByteSizeLong() const {
 }
 
 void Character::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.Character)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.Character)
   GOOGLE_DCHECK_NE(&from, this);
   const Character* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Character>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.Character)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.Character)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.Character)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.Character)
     MergeFrom(*source);
   }
 }
 
 void Character::MergeFrom(const Character& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.Character)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.Character)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -915,14 +923,14 @@ void Character::MergeFrom(const Character& from) {
 }
 
 void Character::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.Character)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.Character)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Character::CopyFrom(const Character& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.Character)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.Character)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -965,14 +973,14 @@ class CharacterID::_Internal {
 CharacterID::CharacterID()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.CharacterID)
+  // @@protoc_insertion_point(constructor:mruv.characters.CharacterID)
 }
 CharacterID::CharacterID(const CharacterID& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.CharacterID)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.CharacterID)
 }
 
 void CharacterID::SharedCtor() {
@@ -980,7 +988,7 @@ void CharacterID::SharedCtor() {
 }
 
 CharacterID::~CharacterID() {
-  // @@protoc_insertion_point(destructor:mruv.CharacterID)
+  // @@protoc_insertion_point(destructor:mruv.characters.CharacterID)
   SharedDtor();
 }
 
@@ -997,7 +1005,7 @@ const CharacterID& CharacterID::default_instance() {
 
 
 void CharacterID::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.CharacterID)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.CharacterID)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1042,7 +1050,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* CharacterID::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.CharacterID)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.CharacterID)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1056,12 +1064,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.CharacterID)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.CharacterID)
   return target;
 }
 
 size_t CharacterID::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.CharacterID)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.CharacterID)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1085,22 +1093,22 @@ size_t CharacterID::ByteSizeLong() const {
 }
 
 void CharacterID::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.CharacterID)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.CharacterID)
   GOOGLE_DCHECK_NE(&from, this);
   const CharacterID* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CharacterID>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.CharacterID)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.CharacterID)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.CharacterID)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.CharacterID)
     MergeFrom(*source);
   }
 }
 
 void CharacterID::MergeFrom(const CharacterID& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.CharacterID)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.CharacterID)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1112,14 +1120,14 @@ void CharacterID::MergeFrom(const CharacterID& from) {
 }
 
 void CharacterID::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.CharacterID)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.CharacterID)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void CharacterID::CopyFrom(const CharacterID& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.CharacterID)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.CharacterID)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1151,7 +1159,7 @@ class CreateCharacterRequest::_Internal {
 CreateCharacterRequest::CreateCharacterRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(constructor:mruv.characters.CreateCharacterRequest)
 }
 CreateCharacterRequest::CreateCharacterRequest(const CreateCharacterRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1168,7 +1176,7 @@ CreateCharacterRequest::CreateCharacterRequest(const CreateCharacterRequest& fro
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&sex_) -
     reinterpret_cast<char*>(&id_)) + sizeof(sex_));
-  // @@protoc_insertion_point(copy_constructor:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.CreateCharacterRequest)
 }
 
 void CreateCharacterRequest::SharedCtor() {
@@ -1181,7 +1189,7 @@ void CreateCharacterRequest::SharedCtor() {
 }
 
 CreateCharacterRequest::~CreateCharacterRequest() {
-  // @@protoc_insertion_point(destructor:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(destructor:mruv.characters.CreateCharacterRequest)
   SharedDtor();
 }
 
@@ -1200,7 +1208,7 @@ const CreateCharacterRequest& CreateCharacterRequest::default_instance() {
 
 
 void CreateCharacterRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.CreateCharacterRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.CreateCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1239,7 +1247,7 @@ const char* CreateCharacterRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_first_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.CreateCharacterRequest.first_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.characters.CreateCharacterRequest.first_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1248,7 +1256,7 @@ const char* CreateCharacterRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_second_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.CreateCharacterRequest.second_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.characters.CreateCharacterRequest.second_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1288,7 +1296,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* CreateCharacterRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.CreateCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1309,7 +1317,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_first_name().data(), static_cast<int>(this->_internal_first_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.CreateCharacterRequest.first_name");
+      "mruv.characters.CreateCharacterRequest.first_name");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_first_name(), target);
   }
@@ -1319,7 +1327,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_second_name().data(), static_cast<int>(this->_internal_second_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.CreateCharacterRequest.second_name");
+      "mruv.characters.CreateCharacterRequest.second_name");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_second_name(), target);
   }
@@ -1340,12 +1348,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.CreateCharacterRequest)
   return target;
 }
 
 size_t CreateCharacterRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.CreateCharacterRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.CreateCharacterRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1404,22 +1412,22 @@ size_t CreateCharacterRequest::ByteSizeLong() const {
 }
 
 void CreateCharacterRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.CreateCharacterRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.CreateCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const CreateCharacterRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateCharacterRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.CreateCharacterRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.CreateCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.CreateCharacterRequest)
     MergeFrom(*source);
   }
 }
 
 void CreateCharacterRequest::MergeFrom(const CreateCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.CreateCharacterRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.CreateCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1448,14 +1456,14 @@ void CreateCharacterRequest::MergeFrom(const CreateCharacterRequest& from) {
 }
 
 void CreateCharacterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.CreateCharacterRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.CreateCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void CreateCharacterRequest::CopyFrom(const CreateCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.CreateCharacterRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.CreateCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1494,14 +1502,14 @@ class CreateCharacterResponse::_Internal {
 CreateCharacterResponse::CreateCharacterResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(constructor:mruv.characters.CreateCharacterResponse)
 }
 CreateCharacterResponse::CreateCharacterResponse(const CreateCharacterResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.CreateCharacterResponse)
 }
 
 void CreateCharacterResponse::SharedCtor() {
@@ -1509,7 +1517,7 @@ void CreateCharacterResponse::SharedCtor() {
 }
 
 CreateCharacterResponse::~CreateCharacterResponse() {
-  // @@protoc_insertion_point(destructor:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(destructor:mruv.characters.CreateCharacterResponse)
   SharedDtor();
 }
 
@@ -1526,7 +1534,7 @@ const CreateCharacterResponse& CreateCharacterResponse::default_instance() {
 
 
 void CreateCharacterResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.CreateCharacterResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.CreateCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1571,7 +1579,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* CreateCharacterResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.CreateCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1585,12 +1593,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.CreateCharacterResponse)
   return target;
 }
 
 size_t CreateCharacterResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.CreateCharacterResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.CreateCharacterResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1614,22 +1622,22 @@ size_t CreateCharacterResponse::ByteSizeLong() const {
 }
 
 void CreateCharacterResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.CreateCharacterResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.CreateCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const CreateCharacterResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CreateCharacterResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.CreateCharacterResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.CreateCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.CreateCharacterResponse)
     MergeFrom(*source);
   }
 }
 
 void CreateCharacterResponse::MergeFrom(const CreateCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.CreateCharacterResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.CreateCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1641,14 +1649,14 @@ void CreateCharacterResponse::MergeFrom(const CreateCharacterResponse& from) {
 }
 
 void CreateCharacterResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.CreateCharacterResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.CreateCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void CreateCharacterResponse::CopyFrom(const CreateCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.CreateCharacterResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.CreateCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1680,14 +1688,14 @@ class GetCharacterRequest::_Internal {
 GetCharacterRequest::GetCharacterRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(constructor:mruv.characters.GetCharacterRequest)
 }
 GetCharacterRequest::GetCharacterRequest(const GetCharacterRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.GetCharacterRequest)
 }
 
 void GetCharacterRequest::SharedCtor() {
@@ -1695,7 +1703,7 @@ void GetCharacterRequest::SharedCtor() {
 }
 
 GetCharacterRequest::~GetCharacterRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(destructor:mruv.characters.GetCharacterRequest)
   SharedDtor();
 }
 
@@ -1712,7 +1720,7 @@ const GetCharacterRequest& GetCharacterRequest::default_instance() {
 
 
 void GetCharacterRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetCharacterRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.GetCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1757,7 +1765,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetCharacterRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.GetCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1771,12 +1779,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.GetCharacterRequest)
   return target;
 }
 
 size_t GetCharacterRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetCharacterRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.GetCharacterRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1800,22 +1808,22 @@ size_t GetCharacterRequest::ByteSizeLong() const {
 }
 
 void GetCharacterRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetCharacterRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.GetCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetCharacterRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetCharacterRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.GetCharacterRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.GetCharacterRequest)
     MergeFrom(*source);
   }
 }
 
 void GetCharacterRequest::MergeFrom(const GetCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetCharacterRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.GetCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1827,14 +1835,14 @@ void GetCharacterRequest::MergeFrom(const GetCharacterRequest& from) {
 }
 
 void GetCharacterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetCharacterRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.GetCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetCharacterRequest::CopyFrom(const GetCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetCharacterRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.GetCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1866,7 +1874,7 @@ class GetCharacterResponse::_Internal {
 GetCharacterResponse::GetCharacterResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(constructor:mruv.characters.GetCharacterResponse)
 }
 GetCharacterResponse::GetCharacterResponse(const GetCharacterResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1883,7 +1891,7 @@ GetCharacterResponse::GetCharacterResponse(const GetCharacterResponse& from)
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&z_) -
     reinterpret_cast<char*>(&id_)) + sizeof(z_));
-  // @@protoc_insertion_point(copy_constructor:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.GetCharacterResponse)
 }
 
 void GetCharacterResponse::SharedCtor() {
@@ -1896,7 +1904,7 @@ void GetCharacterResponse::SharedCtor() {
 }
 
 GetCharacterResponse::~GetCharacterResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(destructor:mruv.characters.GetCharacterResponse)
   SharedDtor();
 }
 
@@ -1915,7 +1923,7 @@ const GetCharacterResponse& GetCharacterResponse::default_instance() {
 
 
 void GetCharacterResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetCharacterResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.GetCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1954,7 +1962,7 @@ const char* GetCharacterResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_first_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetCharacterResponse.first_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.characters.GetCharacterResponse.first_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1963,7 +1971,7 @@ const char* GetCharacterResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_second_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.GetCharacterResponse.second_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.characters.GetCharacterResponse.second_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2031,7 +2039,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetCharacterResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.GetCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2052,7 +2060,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_first_name().data(), static_cast<int>(this->_internal_first_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.GetCharacterResponse.first_name");
+      "mruv.characters.GetCharacterResponse.first_name");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_first_name(), target);
   }
@@ -2062,7 +2070,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_second_name().data(), static_cast<int>(this->_internal_second_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.GetCharacterResponse.second_name");
+      "mruv.characters.GetCharacterResponse.second_name");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_second_name(), target);
   }
@@ -2107,12 +2115,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.GetCharacterResponse)
   return target;
 }
 
 size_t GetCharacterResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetCharacterResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.GetCharacterResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2193,22 +2201,22 @@ size_t GetCharacterResponse::ByteSizeLong() const {
 }
 
 void GetCharacterResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetCharacterResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.GetCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetCharacterResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetCharacterResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.GetCharacterResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.GetCharacterResponse)
     MergeFrom(*source);
   }
 }
 
 void GetCharacterResponse::MergeFrom(const GetCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetCharacterResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.GetCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2249,14 +2257,14 @@ void GetCharacterResponse::MergeFrom(const GetCharacterResponse& from) {
 }
 
 void GetCharacterResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetCharacterResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.GetCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetCharacterResponse::CopyFrom(const GetCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetCharacterResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.GetCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2299,14 +2307,14 @@ class UpdateCharacterRequest::_Internal {
 UpdateCharacterRequest::UpdateCharacterRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(constructor:mruv.characters.UpdateCharacterRequest)
 }
 UpdateCharacterRequest::UpdateCharacterRequest(const UpdateCharacterRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.UpdateCharacterRequest)
 }
 
 void UpdateCharacterRequest::SharedCtor() {
@@ -2314,7 +2322,7 @@ void UpdateCharacterRequest::SharedCtor() {
 }
 
 UpdateCharacterRequest::~UpdateCharacterRequest() {
-  // @@protoc_insertion_point(destructor:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(destructor:mruv.characters.UpdateCharacterRequest)
   SharedDtor();
 }
 
@@ -2331,7 +2339,7 @@ const UpdateCharacterRequest& UpdateCharacterRequest::default_instance() {
 
 
 void UpdateCharacterRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.UpdateCharacterRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.UpdateCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2376,7 +2384,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UpdateCharacterRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.UpdateCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2390,12 +2398,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.UpdateCharacterRequest)
   return target;
 }
 
 size_t UpdateCharacterRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.UpdateCharacterRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.UpdateCharacterRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2419,22 +2427,22 @@ size_t UpdateCharacterRequest::ByteSizeLong() const {
 }
 
 void UpdateCharacterRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.UpdateCharacterRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.UpdateCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UpdateCharacterRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateCharacterRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.UpdateCharacterRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.UpdateCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.UpdateCharacterRequest)
     MergeFrom(*source);
   }
 }
 
 void UpdateCharacterRequest::MergeFrom(const UpdateCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.UpdateCharacterRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.UpdateCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2446,14 +2454,14 @@ void UpdateCharacterRequest::MergeFrom(const UpdateCharacterRequest& from) {
 }
 
 void UpdateCharacterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.UpdateCharacterRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.UpdateCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UpdateCharacterRequest::CopyFrom(const UpdateCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.UpdateCharacterRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.UpdateCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2485,20 +2493,20 @@ class UpdateCharacterResponse::_Internal {
 UpdateCharacterResponse::UpdateCharacterResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(constructor:mruv.characters.UpdateCharacterResponse)
 }
 UpdateCharacterResponse::UpdateCharacterResponse(const UpdateCharacterResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.UpdateCharacterResponse)
 }
 
 void UpdateCharacterResponse::SharedCtor() {
 }
 
 UpdateCharacterResponse::~UpdateCharacterResponse() {
-  // @@protoc_insertion_point(destructor:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(destructor:mruv.characters.UpdateCharacterResponse)
   SharedDtor();
 }
 
@@ -2515,7 +2523,7 @@ const UpdateCharacterResponse& UpdateCharacterResponse::default_instance() {
 
 
 void UpdateCharacterResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.UpdateCharacterResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.UpdateCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2547,7 +2555,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UpdateCharacterResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.UpdateCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2555,12 +2563,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.UpdateCharacterResponse)
   return target;
 }
 
 size_t UpdateCharacterResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.UpdateCharacterResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.UpdateCharacterResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2577,22 +2585,22 @@ size_t UpdateCharacterResponse::ByteSizeLong() const {
 }
 
 void UpdateCharacterResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.UpdateCharacterResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.UpdateCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UpdateCharacterResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UpdateCharacterResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.UpdateCharacterResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.UpdateCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.UpdateCharacterResponse)
     MergeFrom(*source);
   }
 }
 
 void UpdateCharacterResponse::MergeFrom(const UpdateCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.UpdateCharacterResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.UpdateCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2601,14 +2609,14 @@ void UpdateCharacterResponse::MergeFrom(const UpdateCharacterResponse& from) {
 }
 
 void UpdateCharacterResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.UpdateCharacterResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.UpdateCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UpdateCharacterResponse::CopyFrom(const UpdateCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.UpdateCharacterResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.UpdateCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2639,14 +2647,14 @@ class DeleteCharacterRequest::_Internal {
 DeleteCharacterRequest::DeleteCharacterRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(constructor:mruv.characters.DeleteCharacterRequest)
 }
 DeleteCharacterRequest::DeleteCharacterRequest(const DeleteCharacterRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.DeleteCharacterRequest)
 }
 
 void DeleteCharacterRequest::SharedCtor() {
@@ -2654,7 +2662,7 @@ void DeleteCharacterRequest::SharedCtor() {
 }
 
 DeleteCharacterRequest::~DeleteCharacterRequest() {
-  // @@protoc_insertion_point(destructor:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(destructor:mruv.characters.DeleteCharacterRequest)
   SharedDtor();
 }
 
@@ -2671,7 +2679,7 @@ const DeleteCharacterRequest& DeleteCharacterRequest::default_instance() {
 
 
 void DeleteCharacterRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.DeleteCharacterRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.DeleteCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2716,7 +2724,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DeleteCharacterRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.DeleteCharacterRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2730,12 +2738,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.DeleteCharacterRequest)
   return target;
 }
 
 size_t DeleteCharacterRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.DeleteCharacterRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.DeleteCharacterRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2759,22 +2767,22 @@ size_t DeleteCharacterRequest::ByteSizeLong() const {
 }
 
 void DeleteCharacterRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.DeleteCharacterRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.DeleteCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const DeleteCharacterRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteCharacterRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.DeleteCharacterRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.DeleteCharacterRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.DeleteCharacterRequest)
     MergeFrom(*source);
   }
 }
 
 void DeleteCharacterRequest::MergeFrom(const DeleteCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.DeleteCharacterRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.DeleteCharacterRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2786,14 +2794,14 @@ void DeleteCharacterRequest::MergeFrom(const DeleteCharacterRequest& from) {
 }
 
 void DeleteCharacterRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.DeleteCharacterRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.DeleteCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DeleteCharacterRequest::CopyFrom(const DeleteCharacterRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.DeleteCharacterRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.DeleteCharacterRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2825,20 +2833,20 @@ class DeleteCharacterResponse::_Internal {
 DeleteCharacterResponse::DeleteCharacterResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(constructor:mruv.characters.DeleteCharacterResponse)
 }
 DeleteCharacterResponse::DeleteCharacterResponse(const DeleteCharacterResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.DeleteCharacterResponse)
 }
 
 void DeleteCharacterResponse::SharedCtor() {
 }
 
 DeleteCharacterResponse::~DeleteCharacterResponse() {
-  // @@protoc_insertion_point(destructor:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(destructor:mruv.characters.DeleteCharacterResponse)
   SharedDtor();
 }
 
@@ -2855,7 +2863,7 @@ const DeleteCharacterResponse& DeleteCharacterResponse::default_instance() {
 
 
 void DeleteCharacterResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.DeleteCharacterResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.DeleteCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2887,7 +2895,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DeleteCharacterResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.DeleteCharacterResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2895,12 +2903,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.DeleteCharacterResponse)
   return target;
 }
 
 size_t DeleteCharacterResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.DeleteCharacterResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.DeleteCharacterResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2917,22 +2925,22 @@ size_t DeleteCharacterResponse::ByteSizeLong() const {
 }
 
 void DeleteCharacterResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.DeleteCharacterResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.DeleteCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const DeleteCharacterResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeleteCharacterResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.DeleteCharacterResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.DeleteCharacterResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.DeleteCharacterResponse)
     MergeFrom(*source);
   }
 }
 
 void DeleteCharacterResponse::MergeFrom(const DeleteCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.DeleteCharacterResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.DeleteCharacterResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2941,14 +2949,14 @@ void DeleteCharacterResponse::MergeFrom(const DeleteCharacterResponse& from) {
 }
 
 void DeleteCharacterResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.DeleteCharacterResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.DeleteCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DeleteCharacterResponse::CopyFrom(const DeleteCharacterResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.DeleteCharacterResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.DeleteCharacterResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2979,7 +2987,7 @@ class ChangeClothesRequest::_Internal {
 ChangeClothesRequest::ChangeClothesRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(constructor:mruv.characters.ChangeClothesRequest)
 }
 ChangeClothesRequest::ChangeClothesRequest(const ChangeClothesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2988,7 +2996,7 @@ ChangeClothesRequest::ChangeClothesRequest(const ChangeClothesRequest& from)
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&clothes_id_) -
     reinterpret_cast<char*>(&id_)) + sizeof(clothes_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.ChangeClothesRequest)
 }
 
 void ChangeClothesRequest::SharedCtor() {
@@ -2998,7 +3006,7 @@ void ChangeClothesRequest::SharedCtor() {
 }
 
 ChangeClothesRequest::~ChangeClothesRequest() {
-  // @@protoc_insertion_point(destructor:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(destructor:mruv.characters.ChangeClothesRequest)
   SharedDtor();
 }
 
@@ -3015,7 +3023,7 @@ const ChangeClothesRequest& ChangeClothesRequest::default_instance() {
 
 
 void ChangeClothesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.ChangeClothesRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.ChangeClothesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3069,7 +3077,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ChangeClothesRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.ChangeClothesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3089,12 +3097,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.ChangeClothesRequest)
   return target;
 }
 
 size_t ChangeClothesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.ChangeClothesRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.ChangeClothesRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3125,22 +3133,22 @@ size_t ChangeClothesRequest::ByteSizeLong() const {
 }
 
 void ChangeClothesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.ChangeClothesRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.ChangeClothesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const ChangeClothesRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ChangeClothesRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.ChangeClothesRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.ChangeClothesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.ChangeClothesRequest)
     MergeFrom(*source);
   }
 }
 
 void ChangeClothesRequest::MergeFrom(const ChangeClothesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.ChangeClothesRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.ChangeClothesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3155,14 +3163,14 @@ void ChangeClothesRequest::MergeFrom(const ChangeClothesRequest& from) {
 }
 
 void ChangeClothesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.ChangeClothesRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.ChangeClothesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ChangeClothesRequest::CopyFrom(const ChangeClothesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.ChangeClothesRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.ChangeClothesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3195,20 +3203,20 @@ class ChangeClothesResponse::_Internal {
 ChangeClothesResponse::ChangeClothesResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(constructor:mruv.characters.ChangeClothesResponse)
 }
 ChangeClothesResponse::ChangeClothesResponse(const ChangeClothesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.ChangeClothesResponse)
 }
 
 void ChangeClothesResponse::SharedCtor() {
 }
 
 ChangeClothesResponse::~ChangeClothesResponse() {
-  // @@protoc_insertion_point(destructor:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(destructor:mruv.characters.ChangeClothesResponse)
   SharedDtor();
 }
 
@@ -3225,7 +3233,7 @@ const ChangeClothesResponse& ChangeClothesResponse::default_instance() {
 
 
 void ChangeClothesResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.ChangeClothesResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.ChangeClothesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3257,7 +3265,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ChangeClothesResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.ChangeClothesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3265,12 +3273,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.ChangeClothesResponse)
   return target;
 }
 
 size_t ChangeClothesResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.ChangeClothesResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.ChangeClothesResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3287,22 +3295,22 @@ size_t ChangeClothesResponse::ByteSizeLong() const {
 }
 
 void ChangeClothesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.ChangeClothesResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.ChangeClothesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const ChangeClothesResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ChangeClothesResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.ChangeClothesResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.ChangeClothesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.ChangeClothesResponse)
     MergeFrom(*source);
   }
 }
 
 void ChangeClothesResponse::MergeFrom(const ChangeClothesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.ChangeClothesResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.ChangeClothesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3311,14 +3319,14 @@ void ChangeClothesResponse::MergeFrom(const ChangeClothesResponse& from) {
 }
 
 void ChangeClothesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.ChangeClothesResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.ChangeClothesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ChangeClothesResponse::CopyFrom(const ChangeClothesResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.ChangeClothesResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.ChangeClothesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3349,21 +3357,21 @@ class DeathStreamRequest::_Internal {
 DeathStreamRequest::DeathStreamRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(constructor:mruv.characters.DeathStreamRequest)
 }
 DeathStreamRequest::DeathStreamRequest(const DeathStreamRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       death_types_(from.death_types_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.DeathStreamRequest)
 }
 
 void DeathStreamRequest::SharedCtor() {
 }
 
 DeathStreamRequest::~DeathStreamRequest() {
-  // @@protoc_insertion_point(destructor:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(destructor:mruv.characters.DeathStreamRequest)
   SharedDtor();
 }
 
@@ -3380,7 +3388,7 @@ const DeathStreamRequest& DeathStreamRequest::default_instance() {
 
 
 void DeathStreamRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.DeathStreamRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.DeathStreamRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3396,7 +3404,7 @@ const char* DeathStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.DeathType death_types = 1;
+      // repeated .mruv.characters.DeathType death_types = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_death_types(), ptr, ctx);
@@ -3404,7 +3412,7 @@ const char* DeathStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_add_death_types(static_cast<::mruv::DeathType>(val));
+          _internal_add_death_types(static_cast<::mruv::characters::DeathType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3429,11 +3437,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DeathStreamRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.DeathStreamRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.DeathType death_types = 1;
+  // repeated .mruv.characters.DeathType death_types = 1;
   {
     int byte_size = _death_types_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
@@ -3446,19 +3454,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.DeathStreamRequest)
   return target;
 }
 
 size_t DeathStreamRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.DeathStreamRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.DeathStreamRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.DeathType death_types = 1;
+  // repeated .mruv.characters.DeathType death_types = 1;
   {
     size_t data_size = 0;
     unsigned int count = static_cast<unsigned int>(this->_internal_death_types_size());for (unsigned int i = 0; i < count; i++) {
@@ -3486,22 +3494,22 @@ size_t DeathStreamRequest::ByteSizeLong() const {
 }
 
 void DeathStreamRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.DeathStreamRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.DeathStreamRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const DeathStreamRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeathStreamRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.DeathStreamRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.DeathStreamRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.DeathStreamRequest)
     MergeFrom(*source);
   }
 }
 
 void DeathStreamRequest::MergeFrom(const DeathStreamRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.DeathStreamRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.DeathStreamRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3511,14 +3519,14 @@ void DeathStreamRequest::MergeFrom(const DeathStreamRequest& from) {
 }
 
 void DeathStreamRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.DeathStreamRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.DeathStreamRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DeathStreamRequest::CopyFrom(const DeathStreamRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.DeathStreamRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.DeathStreamRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3542,34 +3550,34 @@ void DeathStreamRequest::InternalSwap(DeathStreamRequest* other) {
 // ===================================================================
 
 void DeathStreamResponse::InitAsDefaultInstance() {
-  ::mruv::_DeathStreamResponse_default_instance_._instance.get_mutable()->character_ = const_cast< ::mruv::Character*>(
-      ::mruv::Character::internal_default_instance());
+  ::mruv::characters::_DeathStreamResponse_default_instance_._instance.get_mutable()->character_ = const_cast< ::mruv::characters::Character*>(
+      ::mruv::characters::Character::internal_default_instance());
 }
 class DeathStreamResponse::_Internal {
  public:
-  static const ::mruv::Character& character(const DeathStreamResponse* msg);
+  static const ::mruv::characters::Character& character(const DeathStreamResponse* msg);
 };
 
-const ::mruv::Character&
+const ::mruv::characters::Character&
 DeathStreamResponse::_Internal::character(const DeathStreamResponse* msg) {
   return *msg->character_;
 }
 DeathStreamResponse::DeathStreamResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(constructor:mruv.characters.DeathStreamResponse)
 }
 DeathStreamResponse::DeathStreamResponse(const DeathStreamResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from._internal_has_character()) {
-    character_ = new ::mruv::Character(*from.character_);
+    character_ = new ::mruv::characters::Character(*from.character_);
   } else {
     character_ = nullptr;
   }
   death_type_ = from.death_type_;
-  // @@protoc_insertion_point(copy_constructor:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.characters.DeathStreamResponse)
 }
 
 void DeathStreamResponse::SharedCtor() {
@@ -3580,7 +3588,7 @@ void DeathStreamResponse::SharedCtor() {
 }
 
 DeathStreamResponse::~DeathStreamResponse() {
-  // @@protoc_insertion_point(destructor:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(destructor:mruv.characters.DeathStreamResponse)
   SharedDtor();
 }
 
@@ -3598,7 +3606,7 @@ const DeathStreamResponse& DeathStreamResponse::default_instance() {
 
 
 void DeathStreamResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.DeathStreamResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.characters.DeathStreamResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3618,19 +3626,19 @@ const char* DeathStreamResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .mruv.Character character = 1;
+      // .mruv.characters.Character character = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_character(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .mruv.DeathType death_type = 2;
+      // .mruv.characters.DeathType death_type = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          _internal_set_death_type(static_cast<::mruv::DeathType>(val));
+          _internal_set_death_type(static_cast<::mruv::characters::DeathType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3655,11 +3663,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DeathStreamResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.characters.DeathStreamResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mruv.Character character = 1;
+  // .mruv.characters.Character character = 1;
   if (this->has_character()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3667,7 +3675,7 @@ failure:
         1, _Internal::character(this), target, stream);
   }
 
-  // .mruv.DeathType death_type = 2;
+  // .mruv.characters.DeathType death_type = 2;
   if (this->death_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -3678,26 +3686,26 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.characters.DeathStreamResponse)
   return target;
 }
 
 size_t DeathStreamResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.DeathStreamResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.characters.DeathStreamResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mruv.Character character = 1;
+  // .mruv.characters.Character character = 1;
   if (this->has_character()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *character_);
   }
 
-  // .mruv.DeathType death_type = 2;
+  // .mruv.characters.DeathType death_type = 2;
   if (this->death_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_death_type());
@@ -3713,29 +3721,29 @@ size_t DeathStreamResponse::ByteSizeLong() const {
 }
 
 void DeathStreamResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.DeathStreamResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.characters.DeathStreamResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const DeathStreamResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DeathStreamResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.characters.DeathStreamResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.DeathStreamResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.characters.DeathStreamResponse)
     MergeFrom(*source);
   }
 }
 
 void DeathStreamResponse::MergeFrom(const DeathStreamResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.DeathStreamResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.characters.DeathStreamResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_character()) {
-    _internal_mutable_character()->::mruv::Character::MergeFrom(from._internal_character());
+    _internal_mutable_character()->::mruv::characters::Character::MergeFrom(from._internal_character());
   }
   if (from.death_type() != 0) {
     _internal_set_death_type(from._internal_death_type());
@@ -3743,14 +3751,14 @@ void DeathStreamResponse::MergeFrom(const DeathStreamResponse& from) {
 }
 
 void DeathStreamResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.DeathStreamResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.characters.DeathStreamResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DeathStreamResponse::CopyFrom(const DeathStreamResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.DeathStreamResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.characters.DeathStreamResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3773,49 +3781,50 @@ void DeathStreamResponse::InternalSwap(DeathStreamResponse* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace characters
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::Character* Arena::CreateMaybeMessage< ::mruv::Character >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::Character >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::Character* Arena::CreateMaybeMessage< ::mruv::characters::Character >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::Character >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::CharacterID* Arena::CreateMaybeMessage< ::mruv::CharacterID >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::CharacterID >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::CharacterID* Arena::CreateMaybeMessage< ::mruv::characters::CharacterID >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::CharacterID >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::CreateCharacterRequest* Arena::CreateMaybeMessage< ::mruv::CreateCharacterRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::CreateCharacterRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::CreateCharacterRequest* Arena::CreateMaybeMessage< ::mruv::characters::CreateCharacterRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::CreateCharacterRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::CreateCharacterResponse* Arena::CreateMaybeMessage< ::mruv::CreateCharacterResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::CreateCharacterResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::CreateCharacterResponse* Arena::CreateMaybeMessage< ::mruv::characters::CreateCharacterResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::CreateCharacterResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetCharacterRequest* Arena::CreateMaybeMessage< ::mruv::GetCharacterRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::GetCharacterRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::GetCharacterRequest* Arena::CreateMaybeMessage< ::mruv::characters::GetCharacterRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::GetCharacterRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetCharacterResponse* Arena::CreateMaybeMessage< ::mruv::GetCharacterResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::GetCharacterResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::GetCharacterResponse* Arena::CreateMaybeMessage< ::mruv::characters::GetCharacterResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::GetCharacterResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::UpdateCharacterRequest* Arena::CreateMaybeMessage< ::mruv::UpdateCharacterRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::UpdateCharacterRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::UpdateCharacterRequest* Arena::CreateMaybeMessage< ::mruv::characters::UpdateCharacterRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::UpdateCharacterRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::UpdateCharacterResponse* Arena::CreateMaybeMessage< ::mruv::UpdateCharacterResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::UpdateCharacterResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::UpdateCharacterResponse* Arena::CreateMaybeMessage< ::mruv::characters::UpdateCharacterResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::UpdateCharacterResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::DeleteCharacterRequest* Arena::CreateMaybeMessage< ::mruv::DeleteCharacterRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::DeleteCharacterRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::DeleteCharacterRequest* Arena::CreateMaybeMessage< ::mruv::characters::DeleteCharacterRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::DeleteCharacterRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::DeleteCharacterResponse* Arena::CreateMaybeMessage< ::mruv::DeleteCharacterResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::DeleteCharacterResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::DeleteCharacterResponse* Arena::CreateMaybeMessage< ::mruv::characters::DeleteCharacterResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::DeleteCharacterResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::ChangeClothesRequest* Arena::CreateMaybeMessage< ::mruv::ChangeClothesRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::ChangeClothesRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::ChangeClothesRequest* Arena::CreateMaybeMessage< ::mruv::characters::ChangeClothesRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::ChangeClothesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::ChangeClothesResponse* Arena::CreateMaybeMessage< ::mruv::ChangeClothesResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::ChangeClothesResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::ChangeClothesResponse* Arena::CreateMaybeMessage< ::mruv::characters::ChangeClothesResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::ChangeClothesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::DeathStreamRequest* Arena::CreateMaybeMessage< ::mruv::DeathStreamRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::DeathStreamRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::DeathStreamRequest* Arena::CreateMaybeMessage< ::mruv::characters::DeathStreamRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::DeathStreamRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::DeathStreamResponse* Arena::CreateMaybeMessage< ::mruv::DeathStreamResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::DeathStreamResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::characters::DeathStreamResponse* Arena::CreateMaybeMessage< ::mruv::characters::DeathStreamResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::characters::DeathStreamResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

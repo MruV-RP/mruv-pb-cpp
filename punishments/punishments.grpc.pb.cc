@@ -20,39 +20,41 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace mruv {
-namespace economy {
+namespace punishments {
 
 static const char* MruVPunishmentsService_method_names[] = {
-  "/mruv.economy.MruVPunishmentsService/Ban",
-  "/mruv.economy.MruVPunishmentsService/Block",
-  "/mruv.economy.MruVPunishmentsService/Warn",
-  "/mruv.economy.MruVPunishmentsService/AdminJail",
-  "/mruv.economy.MruVPunishmentsService/MuteGlobalChats",
-  "/mruv.economy.MruVPunishmentsService/UnBan",
-  "/mruv.economy.MruVPunishmentsService/UnBlock",
-  "/mruv.economy.MruVPunishmentsService/UnWarn",
-  "/mruv.economy.MruVPunishmentsService/UnAdminJail",
-  "/mruv.economy.MruVPunishmentsService/UnMuteGlobalChats",
-  "/mruv.economy.MruVPunishmentsService/GetPlayerBans",
-  "/mruv.economy.MruVPunishmentsService/GetPlayerWarns",
-  "/mruv.economy.MruVPunishmentsService/GetPlayerAdminJail",
-  "/mruv.economy.MruVPunishmentsService/GetBan",
-  "/mruv.economy.MruVPunishmentsService/GetWarn",
-  "/mruv.economy.MruVPunishmentsService/GetBlock",
-  "/mruv.economy.MruVPunishmentsService/IsPlayerBanned",
-  "/mruv.economy.MruVPunishmentsService/IsCharacterBlocked",
-  "/mruv.economy.MruVPunishmentsService/IsCharacterJailed",
-  "/mruv.economy.MruVPunishmentsService/WatchBans",
-  "/mruv.economy.MruVPunishmentsService/WatchBlocks",
-  "/mruv.economy.MruVPunishmentsService/WatchWarns",
-  "/mruv.economy.MruVPunishmentsService/WatchAdminJails",
-  "/mruv.economy.MruVPunishmentsService/WatchUnBans",
-  "/mruv.economy.MruVPunishmentsService/WatchUnBlocks",
-  "/mruv.economy.MruVPunishmentsService/WatchUnWarns",
-  "/mruv.economy.MruVPunishmentsService/WatchUnAdminJails",
-  "/mruv.economy.MruVPunishmentsService/WatchPlayerPunishments",
-  "/mruv.economy.MruVPunishmentsService/WatchPlayerAcquittals",
-  "/mruv.economy.MruVPunishmentsService/WatchPunishments",
+  "/mruv.punishments.MruVPunishmentsService/Punish",
+  "/mruv.punishments.MruVPunishmentsService/Ban",
+  "/mruv.punishments.MruVPunishmentsService/Block",
+  "/mruv.punishments.MruVPunishmentsService/Warn",
+  "/mruv.punishments.MruVPunishmentsService/AdminJail",
+  "/mruv.punishments.MruVPunishmentsService/MuteGlobalChats",
+  "/mruv.punishments.MruVPunishmentsService/UnBan",
+  "/mruv.punishments.MruVPunishmentsService/UnBlock",
+  "/mruv.punishments.MruVPunishmentsService/UnWarn",
+  "/mruv.punishments.MruVPunishmentsService/UnAdminJail",
+  "/mruv.punishments.MruVPunishmentsService/UnMuteGlobalChats",
+  "/mruv.punishments.MruVPunishmentsService/GetPlayerBans",
+  "/mruv.punishments.MruVPunishmentsService/GetPlayerWarns",
+  "/mruv.punishments.MruVPunishmentsService/GetPlayerAdminJail",
+  "/mruv.punishments.MruVPunishmentsService/GetBan",
+  "/mruv.punishments.MruVPunishmentsService/GetWarn",
+  "/mruv.punishments.MruVPunishmentsService/GetBlock",
+  "/mruv.punishments.MruVPunishmentsService/IsPlayerBanned",
+  "/mruv.punishments.MruVPunishmentsService/IsCharacterBlocked",
+  "/mruv.punishments.MruVPunishmentsService/IsCharacterJailed",
+  "/mruv.punishments.MruVPunishmentsService/WatchBans",
+  "/mruv.punishments.MruVPunishmentsService/WatchBlocks",
+  "/mruv.punishments.MruVPunishmentsService/WatchWarns",
+  "/mruv.punishments.MruVPunishmentsService/WatchAdminJails",
+  "/mruv.punishments.MruVPunishmentsService/WatchUnBans",
+  "/mruv.punishments.MruVPunishmentsService/WatchUnBlocks",
+  "/mruv.punishments.MruVPunishmentsService/WatchUnWarns",
+  "/mruv.punishments.MruVPunishmentsService/WatchUnAdminJails",
+  "/mruv.punishments.MruVPunishmentsService/WatchPlayerPunishments",
+  "/mruv.punishments.MruVPunishmentsService/WatchPlayerAcquittals",
+  "/mruv.punishments.MruVPunishmentsService/WatchPunishments",
+  "/mruv.punishments.MruVPunishmentsService/WatchAcquittals",
 };
 
 std::unique_ptr< MruVPunishmentsService::Stub> MruVPunishmentsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -62,1263 +64,1355 @@ std::unique_ptr< MruVPunishmentsService::Stub> MruVPunishmentsService::NewStub(c
 }
 
 MruVPunishmentsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_Ban_(MruVPunishmentsService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Block_(MruVPunishmentsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_Warn_(MruVPunishmentsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AdminJail_(MruVPunishmentsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MuteGlobalChats_(MruVPunishmentsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnBan_(MruVPunishmentsService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnBlock_(MruVPunishmentsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnWarn_(MruVPunishmentsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnAdminJail_(MruVPunishmentsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UnMuteGlobalChats_(MruVPunishmentsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPlayerBans_(MruVPunishmentsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPlayerWarns_(MruVPunishmentsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPlayerAdminJail_(MruVPunishmentsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBan_(MruVPunishmentsService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetWarn_(MruVPunishmentsService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBlock_(MruVPunishmentsService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IsPlayerBanned_(MruVPunishmentsService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IsCharacterBlocked_(MruVPunishmentsService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_IsCharacterJailed_(MruVPunishmentsService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_WatchBans_(MruVPunishmentsService_method_names[19], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchBlocks_(MruVPunishmentsService_method_names[20], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchWarns_(MruVPunishmentsService_method_names[21], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchAdminJails_(MruVPunishmentsService_method_names[22], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnBans_(MruVPunishmentsService_method_names[23], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnBlocks_(MruVPunishmentsService_method_names[24], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnWarns_(MruVPunishmentsService_method_names[25], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchUnAdminJails_(MruVPunishmentsService_method_names[26], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchPlayerPunishments_(MruVPunishmentsService_method_names[27], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchPlayerAcquittals_(MruVPunishmentsService_method_names[28], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
-  , rpcmethod_WatchPunishments_(MruVPunishmentsService_method_names[29], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  : channel_(channel), rpcmethod_Punish_(MruVPunishmentsService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Ban_(MruVPunishmentsService_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Block_(MruVPunishmentsService_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Warn_(MruVPunishmentsService_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AdminJail_(MruVPunishmentsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MuteGlobalChats_(MruVPunishmentsService_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnBan_(MruVPunishmentsService_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnBlock_(MruVPunishmentsService_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnWarn_(MruVPunishmentsService_method_names[8], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnAdminJail_(MruVPunishmentsService_method_names[9], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UnMuteGlobalChats_(MruVPunishmentsService_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPlayerBans_(MruVPunishmentsService_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPlayerWarns_(MruVPunishmentsService_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPlayerAdminJail_(MruVPunishmentsService_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBan_(MruVPunishmentsService_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetWarn_(MruVPunishmentsService_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBlock_(MruVPunishmentsService_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsPlayerBanned_(MruVPunishmentsService_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsCharacterBlocked_(MruVPunishmentsService_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_IsCharacterJailed_(MruVPunishmentsService_method_names[19], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_WatchBans_(MruVPunishmentsService_method_names[20], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchBlocks_(MruVPunishmentsService_method_names[21], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchWarns_(MruVPunishmentsService_method_names[22], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchAdminJails_(MruVPunishmentsService_method_names[23], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnBans_(MruVPunishmentsService_method_names[24], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnBlocks_(MruVPunishmentsService_method_names[25], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnWarns_(MruVPunishmentsService_method_names[26], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchUnAdminJails_(MruVPunishmentsService_method_names[27], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchPlayerPunishments_(MruVPunishmentsService_method_names[28], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchPlayerAcquittals_(MruVPunishmentsService_method_names[29], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchPunishments_(MruVPunishmentsService_method_names[30], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
+  , rpcmethod_WatchAcquittals_(MruVPunishmentsService_method_names[31], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MruVPunishmentsService::Stub::Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::mruv::economy::BanResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::mruv::punishments::PunishResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Punish_, context, request, response);
+}
+
+void MruVPunishmentsService::Stub::experimental_async::Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Punish_, context, request, response, std::move(f));
+}
+
+void MruVPunishmentsService::Stub::experimental_async::Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Punish_, context, request, response, std::move(f));
+}
+
+void MruVPunishmentsService::Stub::experimental_async::Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Punish_, context, request, response, reactor);
+}
+
+void MruVPunishmentsService::Stub::experimental_async::Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Punish_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>* MruVPunishmentsService::Stub::AsyncPunishRaw(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::PunishResponse>::Create(channel_.get(), cq, rpcmethod_Punish_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>* MruVPunishmentsService::Stub::PrepareAsyncPunishRaw(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::PunishResponse>::Create(channel_.get(), cq, rpcmethod_Punish_, context, request, false);
+}
+
+::grpc::Status MruVPunishmentsService::Stub::Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::mruv::punishments::BanResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Ban_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Ban_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Ban_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Ban_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Ban_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>* MruVPunishmentsService::Stub::AsyncBanRaw(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BanResponse>::Create(channel_.get(), cq, rpcmethod_Ban_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>* MruVPunishmentsService::Stub::AsyncBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BanResponse>::Create(channel_.get(), cq, rpcmethod_Ban_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>* MruVPunishmentsService::Stub::PrepareAsyncBanRaw(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BanResponse>::Create(channel_.get(), cq, rpcmethod_Ban_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>* MruVPunishmentsService::Stub::PrepareAsyncBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BanResponse>::Create(channel_.get(), cq, rpcmethod_Ban_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::mruv::economy::BlockResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::mruv::punishments::BlockResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Block_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Block_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Block_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Block_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Block_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>* MruVPunishmentsService::Stub::AsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BlockResponse>::Create(channel_.get(), cq, rpcmethod_Block_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>* MruVPunishmentsService::Stub::AsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BlockResponse>::Create(channel_.get(), cq, rpcmethod_Block_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>* MruVPunishmentsService::Stub::PrepareAsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BlockResponse>::Create(channel_.get(), cq, rpcmethod_Block_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>* MruVPunishmentsService::Stub::PrepareAsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BlockResponse>::Create(channel_.get(), cq, rpcmethod_Block_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::mruv::economy::WarnResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::mruv::punishments::WarnResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Warn_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Warn_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Warn_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Warn_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Warn_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>* MruVPunishmentsService::Stub::AsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::WarnResponse>::Create(channel_.get(), cq, rpcmethod_Warn_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>* MruVPunishmentsService::Stub::AsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::WarnResponse>::Create(channel_.get(), cq, rpcmethod_Warn_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>* MruVPunishmentsService::Stub::PrepareAsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::WarnResponse>::Create(channel_.get(), cq, rpcmethod_Warn_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>* MruVPunishmentsService::Stub::PrepareAsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::WarnResponse>::Create(channel_.get(), cq, rpcmethod_Warn_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::mruv::economy::AdminJailResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::mruv::punishments::AdminJailResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_AdminJail_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AdminJail_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AdminJail_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AdminJail_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AdminJail_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>* MruVPunishmentsService::Stub::AsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::AdminJailResponse>::Create(channel_.get(), cq, rpcmethod_AdminJail_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>* MruVPunishmentsService::Stub::AsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::AdminJailResponse>::Create(channel_.get(), cq, rpcmethod_AdminJail_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>* MruVPunishmentsService::Stub::PrepareAsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::AdminJailResponse>::Create(channel_.get(), cq, rpcmethod_AdminJail_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>* MruVPunishmentsService::Stub::PrepareAsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::AdminJailResponse>::Create(channel_.get(), cq, rpcmethod_AdminJail_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::mruv::economy::MuteGlobalChatsResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::mruv::punishments::MuteGlobalChatsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_MuteGlobalChats_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MuteGlobalChats_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MuteGlobalChats_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MuteGlobalChats_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MuteGlobalChats_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>* MruVPunishmentsService::Stub::AsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::MuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_MuteGlobalChats_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>* MruVPunishmentsService::Stub::AsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::MuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_MuteGlobalChats_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>* MruVPunishmentsService::Stub::PrepareAsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::MuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_MuteGlobalChats_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>* MruVPunishmentsService::Stub::PrepareAsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::MuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_MuteGlobalChats_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::mruv::economy::UnBanResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::mruv::punishments::UnBanResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UnBan_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnBan_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnBan_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnBan_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnBan_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>* MruVPunishmentsService::Stub::AsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBanResponse>::Create(channel_.get(), cq, rpcmethod_UnBan_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>* MruVPunishmentsService::Stub::AsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnBanResponse>::Create(channel_.get(), cq, rpcmethod_UnBan_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBanResponse>::Create(channel_.get(), cq, rpcmethod_UnBan_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnBanResponse>::Create(channel_.get(), cq, rpcmethod_UnBan_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::mruv::economy::UnBlockResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::mruv::punishments::UnBlockResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UnBlock_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnBlock_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>* MruVPunishmentsService::Stub::AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBlockResponse>::Create(channel_.get(), cq, rpcmethod_UnBlock_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>* MruVPunishmentsService::Stub::AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnBlockResponse>::Create(channel_.get(), cq, rpcmethod_UnBlock_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnBlockResponse>::Create(channel_.get(), cq, rpcmethod_UnBlock_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnBlockResponse>::Create(channel_.get(), cq, rpcmethod_UnBlock_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::mruv::economy::UnWarnResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::mruv::punishments::UnWarnResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UnWarn_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnWarn_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnWarn_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnWarn_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnWarn_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>* MruVPunishmentsService::Stub::AsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnWarnResponse>::Create(channel_.get(), cq, rpcmethod_UnWarn_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>* MruVPunishmentsService::Stub::AsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnWarnResponse>::Create(channel_.get(), cq, rpcmethod_UnWarn_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnWarnResponse>::Create(channel_.get(), cq, rpcmethod_UnWarn_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnWarnResponse>::Create(channel_.get(), cq, rpcmethod_UnWarn_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::mruv::economy::UnAdminJailResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::mruv::punishments::UnAdminJailResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UnAdminJail_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnAdminJail_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnAdminJail_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnAdminJail_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnAdminJail_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>* MruVPunishmentsService::Stub::AsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_UnAdminJail_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>* MruVPunishmentsService::Stub::AsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_UnAdminJail_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_UnAdminJail_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_UnAdminJail_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::mruv::economy::UnMuteGlobalChatsResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::mruv::punishments::UnMuteGlobalChatsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UnMuteGlobalChats_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnMuteGlobalChats_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnMuteGlobalChats_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnMuteGlobalChats_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnMuteGlobalChats_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>* MruVPunishmentsService::Stub::AsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnMuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_UnMuteGlobalChats_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>* MruVPunishmentsService::Stub::AsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnMuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_UnMuteGlobalChats_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UnMuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_UnMuteGlobalChats_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>* MruVPunishmentsService::Stub::PrepareAsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::UnMuteGlobalChatsResponse>::Create(channel_.get(), cq, rpcmethod_UnMuteGlobalChats_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::mruv::economy::GetPlayerBansResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::mruv::punishments::GetPlayerBansResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetPlayerBans_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPlayerBans_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPlayerBans_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPlayerBans_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPlayerBans_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>* MruVPunishmentsService::Stub::AsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPlayerBansResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerBans_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>* MruVPunishmentsService::Stub::AsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::GetPlayerBansResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerBans_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>* MruVPunishmentsService::Stub::PrepareAsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPlayerBansResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerBans_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>* MruVPunishmentsService::Stub::PrepareAsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::GetPlayerBansResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerBans_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::mruv::economy::GetPlayerWarnsResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::mruv::punishments::GetPlayerWarnsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetPlayerWarns_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPlayerWarns_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPlayerWarns_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPlayerWarns_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPlayerWarns_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>* MruVPunishmentsService::Stub::AsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPlayerWarnsResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerWarns_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>* MruVPunishmentsService::Stub::AsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::GetPlayerWarnsResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerWarns_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>* MruVPunishmentsService::Stub::PrepareAsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPlayerWarnsResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerWarns_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>* MruVPunishmentsService::Stub::PrepareAsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::GetPlayerWarnsResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerWarns_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::mruv::economy::GetPlayerAdminJailResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::mruv::punishments::GetPlayerAdminJailResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetPlayerAdminJail_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPlayerAdminJail_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPlayerAdminJail_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPlayerAdminJail_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPlayerAdminJail_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>* MruVPunishmentsService::Stub::AsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPlayerAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerAdminJail_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>* MruVPunishmentsService::Stub::AsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::GetPlayerAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerAdminJail_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>* MruVPunishmentsService::Stub::PrepareAsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPlayerAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerAdminJail_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>* MruVPunishmentsService::Stub::PrepareAsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::GetPlayerAdminJailResponse>::Create(channel_.get(), cq, rpcmethod_GetPlayerAdminJail_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::mruv::economy::BanMessage* response) {
+::grpc::Status MruVPunishmentsService::Stub::GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::mruv::punishments::BanMessage* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBan_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBan_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBan_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBan_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBan_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>* MruVPunishmentsService::Stub::AsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BanMessage>::Create(channel_.get(), cq, rpcmethod_GetBan_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>* MruVPunishmentsService::Stub::AsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BanMessage>::Create(channel_.get(), cq, rpcmethod_GetBan_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>* MruVPunishmentsService::Stub::PrepareAsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BanMessage>::Create(channel_.get(), cq, rpcmethod_GetBan_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>* MruVPunishmentsService::Stub::PrepareAsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BanMessage>::Create(channel_.get(), cq, rpcmethod_GetBan_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::mruv::economy::WarnMessage* response) {
+::grpc::Status MruVPunishmentsService::Stub::GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::mruv::punishments::WarnMessage* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetWarn_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarn_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetWarn_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetWarn_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetWarn_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>* MruVPunishmentsService::Stub::AsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::WarnMessage>::Create(channel_.get(), cq, rpcmethod_GetWarn_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>* MruVPunishmentsService::Stub::AsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::WarnMessage>::Create(channel_.get(), cq, rpcmethod_GetWarn_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>* MruVPunishmentsService::Stub::PrepareAsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::WarnMessage>::Create(channel_.get(), cq, rpcmethod_GetWarn_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>* MruVPunishmentsService::Stub::PrepareAsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::WarnMessage>::Create(channel_.get(), cq, rpcmethod_GetWarn_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::mruv::economy::BlockMessage* response) {
+::grpc::Status MruVPunishmentsService::Stub::GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::mruv::punishments::BlockMessage* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetBlock_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBlock_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBlock_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBlock_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBlock_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>* MruVPunishmentsService::Stub::AsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BlockMessage>::Create(channel_.get(), cq, rpcmethod_GetBlock_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>* MruVPunishmentsService::Stub::AsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BlockMessage>::Create(channel_.get(), cq, rpcmethod_GetBlock_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>* MruVPunishmentsService::Stub::PrepareAsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BlockMessage>::Create(channel_.get(), cq, rpcmethod_GetBlock_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>* MruVPunishmentsService::Stub::PrepareAsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::BlockMessage>::Create(channel_.get(), cq, rpcmethod_GetBlock_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::mruv::economy::IsPlayerBannedResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::mruv::punishments::IsPlayerBannedResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_IsPlayerBanned_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsPlayerBanned_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsPlayerBanned_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsPlayerBanned_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsPlayerBanned_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>* MruVPunishmentsService::Stub::AsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::IsPlayerBannedResponse>::Create(channel_.get(), cq, rpcmethod_IsPlayerBanned_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>* MruVPunishmentsService::Stub::AsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::IsPlayerBannedResponse>::Create(channel_.get(), cq, rpcmethod_IsPlayerBanned_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>* MruVPunishmentsService::Stub::PrepareAsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::IsPlayerBannedResponse>::Create(channel_.get(), cq, rpcmethod_IsPlayerBanned_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>* MruVPunishmentsService::Stub::PrepareAsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::IsPlayerBannedResponse>::Create(channel_.get(), cq, rpcmethod_IsPlayerBanned_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::mruv::economy::IsCharacterBlockedResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::mruv::punishments::IsCharacterBlockedResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_IsCharacterBlocked_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsCharacterBlocked_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsCharacterBlocked_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsCharacterBlocked_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsCharacterBlocked_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>* MruVPunishmentsService::Stub::AsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::IsCharacterBlockedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterBlocked_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>* MruVPunishmentsService::Stub::AsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::IsCharacterBlockedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterBlocked_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>* MruVPunishmentsService::Stub::PrepareAsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::IsCharacterBlockedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterBlocked_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>* MruVPunishmentsService::Stub::PrepareAsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::IsCharacterBlockedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterBlocked_, context, request, false);
 }
 
-::grpc::Status MruVPunishmentsService::Stub::IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::mruv::economy::IsCharacterJailedResponse* response) {
+::grpc::Status MruVPunishmentsService::Stub::IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::mruv::punishments::IsCharacterJailedResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_IsCharacterJailed_, context, request, response);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsCharacterJailed_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsCharacterJailed_, context, request, response, std::move(f));
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsCharacterJailed_, context, request, response, reactor);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVPunishmentsService::Stub::experimental_async::IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsCharacterJailed_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>* MruVPunishmentsService::Stub::AsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::IsCharacterJailedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterJailed_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>* MruVPunishmentsService::Stub::AsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::IsCharacterJailedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterJailed_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>* MruVPunishmentsService::Stub::PrepareAsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::IsCharacterJailedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterJailed_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>* MruVPunishmentsService::Stub::PrepareAsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::IsCharacterJailedResponse>::Create(channel_.get(), cq, rpcmethod_IsCharacterJailed_, context, request, false);
 }
 
-::grpc::ClientReader< ::mruv::economy::BanMessage>* MruVPunishmentsService::Stub::WatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::BanMessage>::Create(channel_.get(), rpcmethod_WatchBans_, context, request);
+::grpc::ClientReader< ::mruv::punishments::BanMessage>* MruVPunishmentsService::Stub::WatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::BanMessage>::Create(channel_.get(), rpcmethod_WatchBans_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchBans(::grpc::ClientContext* context, ::mruv::economy::WatchBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::BanMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::BanMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBans_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchBans(::grpc::ClientContext* context, ::mruv::punishments::WatchBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::BanMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::BanMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBans_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>* MruVPunishmentsService::Stub::AsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::BanMessage>::Create(channel_.get(), cq, rpcmethod_WatchBans_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>* MruVPunishmentsService::Stub::AsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::BanMessage>::Create(channel_.get(), cq, rpcmethod_WatchBans_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::BanMessage>::Create(channel_.get(), cq, rpcmethod_WatchBans_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::BanMessage>::Create(channel_.get(), cq, rpcmethod_WatchBans_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::BlockMessage>* MruVPunishmentsService::Stub::WatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::BlockMessage>::Create(channel_.get(), rpcmethod_WatchBlocks_, context, request);
+::grpc::ClientReader< ::mruv::punishments::BlockMessage>* MruVPunishmentsService::Stub::WatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::BlockMessage>::Create(channel_.get(), rpcmethod_WatchBlocks_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::BlockMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::BlockMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBlocks_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::BlockMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::BlockMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBlocks_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>* MruVPunishmentsService::Stub::AsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::BlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchBlocks_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>* MruVPunishmentsService::Stub::AsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::BlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchBlocks_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::BlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchBlocks_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::BlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchBlocks_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::WarnMessage>* MruVPunishmentsService::Stub::WatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::WarnMessage>::Create(channel_.get(), rpcmethod_WatchWarns_, context, request);
+::grpc::ClientReader< ::mruv::punishments::WarnMessage>* MruVPunishmentsService::Stub::WatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::WarnMessage>::Create(channel_.get(), rpcmethod_WatchWarns_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchWarns(::grpc::ClientContext* context, ::mruv::economy::WatchWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WarnMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::WarnMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchWarns_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WarnMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::WarnMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchWarns_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>* MruVPunishmentsService::Stub::AsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchWarns_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>* MruVPunishmentsService::Stub::AsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchWarns_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchWarns_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchWarns_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::AdminJailMessage>* MruVPunishmentsService::Stub::WatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::AdminJailMessage>::Create(channel_.get(), rpcmethod_WatchAdminJails_, context, request);
+::grpc::ClientReader< ::mruv::punishments::AdminJailMessage>* MruVPunishmentsService::Stub::WatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::AdminJailMessage>::Create(channel_.get(), rpcmethod_WatchAdminJails_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::AdminJailMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::AdminJailMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchAdminJails_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::AdminJailMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::AdminJailMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchAdminJails_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>* MruVPunishmentsService::Stub::AsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::AdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchAdminJails_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>* MruVPunishmentsService::Stub::AsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::AdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchAdminJails_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::AdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchAdminJails_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::AdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchAdminJails_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::UnBanMessage>* MruVPunishmentsService::Stub::WatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::UnBanMessage>::Create(channel_.get(), rpcmethod_WatchUnBans_, context, request);
+::grpc::ClientReader< ::mruv::punishments::UnBanMessage>* MruVPunishmentsService::Stub::WatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::UnBanMessage>::Create(channel_.get(), rpcmethod_WatchUnBans_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchUnBans(::grpc::ClientContext* context, ::mruv::economy::WatchUnBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnBanMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::UnBanMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnBans_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchUnBans(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnBanMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::UnBanMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnBans_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>* MruVPunishmentsService::Stub::AsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnBanMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBans_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>* MruVPunishmentsService::Stub::AsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnBanMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBans_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnBanMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBans_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnBanMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBans_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::UnBlockMessage>* MruVPunishmentsService::Stub::WatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::UnBlockMessage>::Create(channel_.get(), rpcmethod_WatchUnBlocks_, context, request);
+::grpc::ClientReader< ::mruv::punishments::UnBlockMessage>* MruVPunishmentsService::Stub::WatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::UnBlockMessage>::Create(channel_.get(), rpcmethod_WatchUnBlocks_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchUnBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnBlockMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::UnBlockMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnBlocks_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchUnBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnBlockMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::UnBlockMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnBlocks_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>* MruVPunishmentsService::Stub::AsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnBlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBlocks_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>* MruVPunishmentsService::Stub::AsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnBlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBlocks_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnBlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBlocks_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnBlockMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnBlocks_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::UnWarnMessage>* MruVPunishmentsService::Stub::WatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::UnWarnMessage>::Create(channel_.get(), rpcmethod_WatchUnWarns_, context, request);
+::grpc::ClientReader< ::mruv::punishments::UnWarnMessage>* MruVPunishmentsService::Stub::WatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::UnWarnMessage>::Create(channel_.get(), rpcmethod_WatchUnWarns_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchUnWarns(::grpc::ClientContext* context, ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnWarnMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::UnWarnMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnWarns_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchUnWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnWarnMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::UnWarnMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnWarns_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>* MruVPunishmentsService::Stub::AsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnWarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnWarns_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>* MruVPunishmentsService::Stub::AsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnWarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnWarns_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnWarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnWarns_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnWarnMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnWarns_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::UnAdminJailMessage>* MruVPunishmentsService::Stub::WatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::UnAdminJailMessage>::Create(channel_.get(), rpcmethod_WatchUnAdminJails_, context, request);
+::grpc::ClientReader< ::mruv::punishments::UnAdminJailMessage>* MruVPunishmentsService::Stub::WatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::UnAdminJailMessage>::Create(channel_.get(), rpcmethod_WatchUnAdminJails_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnAdminJailMessage>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::UnAdminJailMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnAdminJails_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnAdminJailMessage>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::UnAdminJailMessage>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchUnAdminJails_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>* MruVPunishmentsService::Stub::AsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnAdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnAdminJails_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>* MruVPunishmentsService::Stub::AsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnAdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnAdminJails_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::UnAdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnAdminJails_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>* MruVPunishmentsService::Stub::PrepareAsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::UnAdminJailMessage>::Create(channel_.get(), cq, rpcmethod_WatchUnAdminJails_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::WatchPlayerPunishmentsResponse>* MruVPunishmentsService::Stub::WatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::WatchPlayerPunishmentsResponse>::Create(channel_.get(), rpcmethod_WatchPlayerPunishments_, context, request);
+::grpc::ClientReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>* MruVPunishmentsService::Stub::WatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::WatchPlayerPunishmentsResponse>::Create(channel_.get(), rpcmethod_WatchPlayerPunishments_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchPlayerPunishmentsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPlayerPunishments_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::WatchPlayerPunishmentsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPlayerPunishments_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>* MruVPunishmentsService::Stub::AsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPlayerPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerPunishments_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>* MruVPunishmentsService::Stub::AsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WatchPlayerPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerPunishments_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPlayerPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerPunishments_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WatchPlayerPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerPunishments_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::WatchPlayerAcquittalsResponse>* MruVPunishmentsService::Stub::WatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::WatchPlayerAcquittalsResponse>::Create(channel_.get(), rpcmethod_WatchPlayerAcquittals_, context, request);
+::grpc::ClientReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>* MruVPunishmentsService::Stub::WatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::WatchPlayerAcquittalsResponse>::Create(channel_.get(), rpcmethod_WatchPlayerAcquittals_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchPlayerAcquittalsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPlayerAcquittals_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::WatchPlayerAcquittalsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPlayerAcquittals_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>* MruVPunishmentsService::Stub::AsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPlayerAcquittalsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerAcquittals_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>* MruVPunishmentsService::Stub::AsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WatchPlayerAcquittalsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerAcquittals_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPlayerAcquittalsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerAcquittals_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WatchPlayerAcquittalsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPlayerAcquittals_, context, request, false, nullptr);
 }
 
-::grpc::ClientReader< ::mruv::economy::WatchPunishmentsResponse>* MruVPunishmentsService::Stub::WatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::WatchPunishmentsResponse>::Create(channel_.get(), rpcmethod_WatchPunishments_, context, request);
+::grpc::ClientReader< ::mruv::punishments::WatchPunishmentsResponse>* MruVPunishmentsService::Stub::WatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request) {
+  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::punishments::WatchPunishmentsResponse>::Create(channel_.get(), rpcmethod_WatchPunishments_, context, request);
 }
 
-void MruVPunishmentsService::Stub::experimental_async::WatchPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPunishmentsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchPunishmentsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPunishments_, context, request, reactor);
+void MruVPunishmentsService::Stub::experimental_async::WatchPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPunishmentsResponse>* reactor) {
+  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::punishments::WatchPunishmentsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPunishments_, context, request, reactor);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>* MruVPunishmentsService::Stub::AsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPunishments_, context, request, true, tag);
+::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>* MruVPunishmentsService::Stub::AsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WatchPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPunishments_, context, request, true, tag);
 }
 
-::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPunishments_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::punishments::WatchPunishmentsResponse>::Create(channel_.get(), cq, rpcmethod_WatchPunishments_, context, request, false, nullptr);
+}
+
+::grpc::Status MruVPunishmentsService::Stub::WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::mruv::punishments::WatchAcquittalsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_WatchAcquittals_, context, request, response);
+}
+
+void MruVPunishmentsService::Stub::experimental_async::WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_WatchAcquittals_, context, request, response, std::move(f));
+}
+
+void MruVPunishmentsService::Stub::experimental_async::WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_WatchAcquittals_, context, request, response, std::move(f));
+}
+
+void MruVPunishmentsService::Stub::experimental_async::WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_WatchAcquittals_, context, request, response, reactor);
+}
+
+void MruVPunishmentsService::Stub::experimental_async::WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_WatchAcquittals_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>* MruVPunishmentsService::Stub::AsyncWatchAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::WatchAcquittalsResponse>::Create(channel_.get(), cq, rpcmethod_WatchAcquittals_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>* MruVPunishmentsService::Stub::PrepareAsyncWatchAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::punishments::WatchAcquittalsResponse>::Create(channel_.get(), cq, rpcmethod_WatchAcquittals_, context, request, false);
 }
 
 MruVPunishmentsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::PunishRequest, ::mruv::punishments::PunishResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::BanRequest* req,
-             ::mruv::economy::BanResponse* resp) {
-               return service->Ban(ctx, req, resp);
+             const ::mruv::punishments::PunishRequest* req,
+             ::mruv::punishments::PunishResponse* resp) {
+               return service->Punish(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::BanRequest, ::mruv::punishments::BanResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::BlockRequest* req,
-             ::mruv::economy::BlockResponse* resp) {
-               return service->Block(ctx, req, resp);
+             const ::mruv::punishments::BanRequest* req,
+             ::mruv::punishments::BanResponse* resp) {
+               return service->Ban(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::BlockRequest, ::mruv::punishments::BlockResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WarnRequest* req,
-             ::mruv::economy::WarnResponse* resp) {
-               return service->Warn(ctx, req, resp);
+             const ::mruv::punishments::BlockRequest* req,
+             ::mruv::punishments::BlockResponse* resp) {
+               return service->Block(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::WarnRequest, ::mruv::punishments::WarnResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::AdminJailRequest* req,
-             ::mruv::economy::AdminJailResponse* resp) {
-               return service->AdminJail(ctx, req, resp);
+             const ::mruv::punishments::WarnRequest* req,
+             ::mruv::punishments::WarnResponse* resp) {
+               return service->Warn(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::AdminJailRequest, ::mruv::punishments::AdminJailResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::MuteGlobalChatsRequest* req,
-             ::mruv::economy::MuteGlobalChatsResponse* resp) {
-               return service->MuteGlobalChats(ctx, req, resp);
+             const ::mruv::punishments::AdminJailRequest* req,
+             ::mruv::punishments::AdminJailResponse* resp) {
+               return service->AdminJail(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::MuteGlobalChatsRequest, ::mruv::punishments::MuteGlobalChatsResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::UnBanRequest* req,
-             ::mruv::economy::UnBanResponse* resp) {
-               return service->UnBan(ctx, req, resp);
+             const ::mruv::punishments::MuteGlobalChatsRequest* req,
+             ::mruv::punishments::MuteGlobalChatsResponse* resp) {
+               return service->MuteGlobalChats(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::UnBanRequest, ::mruv::punishments::UnBanResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::UnBlockRequest* req,
-             ::mruv::economy::UnBlockResponse* resp) {
-               return service->UnBlock(ctx, req, resp);
+             const ::mruv::punishments::UnBanRequest* req,
+             ::mruv::punishments::UnBanResponse* resp) {
+               return service->UnBan(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::UnBlockRequest, ::mruv::punishments::UnBlockResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::UnWarnRequest* req,
-             ::mruv::economy::UnWarnResponse* resp) {
-               return service->UnWarn(ctx, req, resp);
+             const ::mruv::punishments::UnBlockRequest* req,
+             ::mruv::punishments::UnBlockResponse* resp) {
+               return service->UnBlock(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::UnWarnRequest, ::mruv::punishments::UnWarnResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::UnAdminJailRequest* req,
-             ::mruv::economy::UnAdminJailResponse* resp) {
-               return service->UnAdminJail(ctx, req, resp);
+             const ::mruv::punishments::UnWarnRequest* req,
+             ::mruv::punishments::UnWarnResponse* resp) {
+               return service->UnWarn(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::UnAdminJailRequest, ::mruv::punishments::UnAdminJailResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::UnMuteGlobalChatsRequest* req,
-             ::mruv::economy::UnMuteGlobalChatsResponse* resp) {
-               return service->UnMuteGlobalChats(ctx, req, resp);
+             const ::mruv::punishments::UnAdminJailRequest* req,
+             ::mruv::punishments::UnAdminJailResponse* resp) {
+               return service->UnAdminJail(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::UnMuteGlobalChatsRequest, ::mruv::punishments::UnMuteGlobalChatsResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::GetPlayerBansRequest* req,
-             ::mruv::economy::GetPlayerBansResponse* resp) {
-               return service->GetPlayerBans(ctx, req, resp);
+             const ::mruv::punishments::UnMuteGlobalChatsRequest* req,
+             ::mruv::punishments::UnMuteGlobalChatsResponse* resp) {
+               return service->UnMuteGlobalChats(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::GetPlayerBansRequest, ::mruv::punishments::GetPlayerBansResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::GetPlayerWarnsRequest* req,
-             ::mruv::economy::GetPlayerWarnsResponse* resp) {
-               return service->GetPlayerWarns(ctx, req, resp);
+             const ::mruv::punishments::GetPlayerBansRequest* req,
+             ::mruv::punishments::GetPlayerBansResponse* resp) {
+               return service->GetPlayerBans(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::GetPlayerWarnsRequest, ::mruv::punishments::GetPlayerWarnsResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::GetPlayerAdminJailRequest* req,
-             ::mruv::economy::GetPlayerAdminJailResponse* resp) {
-               return service->GetPlayerAdminJail(ctx, req, resp);
+             const ::mruv::punishments::GetPlayerWarnsRequest* req,
+             ::mruv::punishments::GetPlayerWarnsResponse* resp) {
+               return service->GetPlayerWarns(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::GetPlayerAdminJailRequest, ::mruv::punishments::GetPlayerAdminJailResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::GetBanRequest* req,
-             ::mruv::economy::BanMessage* resp) {
-               return service->GetBan(ctx, req, resp);
+             const ::mruv::punishments::GetPlayerAdminJailRequest* req,
+             ::mruv::punishments::GetPlayerAdminJailResponse* resp) {
+               return service->GetPlayerAdminJail(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::GetBanRequest, ::mruv::punishments::BanMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::GetWarnRequest* req,
-             ::mruv::economy::WarnMessage* resp) {
-               return service->GetWarn(ctx, req, resp);
+             const ::mruv::punishments::GetBanRequest* req,
+             ::mruv::punishments::BanMessage* resp) {
+               return service->GetBan(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::GetWarnRequest, ::mruv::punishments::WarnMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::GetBlockRequest* req,
-             ::mruv::economy::BlockMessage* resp) {
-               return service->GetBlock(ctx, req, resp);
+             const ::mruv::punishments::GetWarnRequest* req,
+             ::mruv::punishments::WarnMessage* resp) {
+               return service->GetWarn(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::GetBlockRequest, ::mruv::punishments::BlockMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::IsPlayerBannedRequest* req,
-             ::mruv::economy::IsPlayerBannedResponse* resp) {
-               return service->IsPlayerBanned(ctx, req, resp);
+             const ::mruv::punishments::GetBlockRequest* req,
+             ::mruv::punishments::BlockMessage* resp) {
+               return service->GetBlock(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::IsPlayerBannedRequest, ::mruv::punishments::IsPlayerBannedResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::IsCharacterBlockedRequest* req,
-             ::mruv::economy::IsCharacterBlockedResponse* resp) {
-               return service->IsCharacterBlocked(ctx, req, resp);
+             const ::mruv::punishments::IsPlayerBannedRequest* req,
+             ::mruv::punishments::IsPlayerBannedResponse* resp) {
+               return service->IsPlayerBanned(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::IsCharacterBlockedRequest, ::mruv::punishments::IsCharacterBlockedResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::IsCharacterJailedRequest* req,
-             ::mruv::economy::IsCharacterJailedResponse* resp) {
-               return service->IsCharacterJailed(ctx, req, resp);
+             const ::mruv::punishments::IsCharacterBlockedRequest* req,
+             ::mruv::punishments::IsCharacterBlockedResponse* resp) {
+               return service->IsCharacterBlocked(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[19],
-      ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>(
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::IsCharacterJailedRequest, ::mruv::punishments::IsCharacterJailedResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchBansRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::BanMessage>* writer) {
-               return service->WatchBans(ctx, req, writer);
+             const ::mruv::punishments::IsCharacterJailedRequest* req,
+             ::mruv::punishments::IsCharacterJailedResponse* resp) {
+               return service->IsCharacterJailed(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[20],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchBansRequest, ::mruv::punishments::BanMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchBlocksRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::BlockMessage>* writer) {
-               return service->WatchBlocks(ctx, req, writer);
+             const ::mruv::punishments::WatchBansRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::BanMessage>* writer) {
+               return service->WatchBans(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[21],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchBlocksRequest, ::mruv::punishments::BlockMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchWarnsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::WarnMessage>* writer) {
-               return service->WatchWarns(ctx, req, writer);
+             const ::mruv::punishments::WatchBlocksRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::BlockMessage>* writer) {
+               return service->WatchBlocks(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[22],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchWarnsRequest, ::mruv::punishments::WarnMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchAdminJailsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::AdminJailMessage>* writer) {
-               return service->WatchAdminJails(ctx, req, writer);
+             const ::mruv::punishments::WatchWarnsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::WarnMessage>* writer) {
+               return service->WatchWarns(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[23],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchAdminJailsRequest, ::mruv::punishments::AdminJailMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchUnBansRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::UnBanMessage>* writer) {
-               return service->WatchUnBans(ctx, req, writer);
+             const ::mruv::punishments::WatchAdminJailsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::AdminJailMessage>* writer) {
+               return service->WatchAdminJails(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[24],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchUnBansRequest, ::mruv::punishments::UnBanMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchUnBlocksRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::UnBlockMessage>* writer) {
-               return service->WatchUnBlocks(ctx, req, writer);
+             const ::mruv::punishments::WatchUnBansRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::UnBanMessage>* writer) {
+               return service->WatchUnBans(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[25],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchUnBlocksRequest, ::mruv::punishments::UnBlockMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchUnWarnsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::UnWarnMessage>* writer) {
-               return service->WatchUnWarns(ctx, req, writer);
+             const ::mruv::punishments::WatchUnBlocksRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::UnBlockMessage>* writer) {
+               return service->WatchUnBlocks(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[26],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchUnWarnsRequest, ::mruv::punishments::UnWarnMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchUnAdminJailsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::UnAdminJailMessage>* writer) {
-               return service->WatchUnAdminJails(ctx, req, writer);
+             const ::mruv::punishments::WatchUnWarnsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::UnWarnMessage>* writer) {
+               return service->WatchUnWarns(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[27],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchUnAdminJailsRequest, ::mruv::punishments::UnAdminJailMessage>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchPlayerPunishmentsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::WatchPlayerPunishmentsResponse>* writer) {
-               return service->WatchPlayerPunishments(ctx, req, writer);
+             const ::mruv::punishments::WatchUnAdminJailsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::UnAdminJailMessage>* writer) {
+               return service->WatchUnAdminJails(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[28],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchPlayerPunishmentsRequest, ::mruv::punishments::WatchPlayerPunishmentsResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchPlayerAcquittalsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::WatchPlayerAcquittalsResponse>* writer) {
-               return service->WatchPlayerAcquittals(ctx, req, writer);
+             const ::mruv::punishments::WatchPlayerPunishmentsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::WatchPlayerPunishmentsResponse>* writer) {
+               return service->WatchPlayerPunishments(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVPunishmentsService_method_names[29],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>(
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchPlayerAcquittalsRequest, ::mruv::punishments::WatchPlayerAcquittalsResponse>(
           [](MruVPunishmentsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::economy::WatchPunishmentsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::WatchPunishmentsResponse>* writer) {
+             const ::mruv::punishments::WatchPlayerAcquittalsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::WatchPlayerAcquittalsResponse>* writer) {
+               return service->WatchPlayerAcquittals(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVPunishmentsService_method_names[30],
+      ::grpc::internal::RpcMethod::SERVER_STREAMING,
+      new ::grpc::internal::ServerStreamingHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchPunishmentsRequest, ::mruv::punishments::WatchPunishmentsResponse>(
+          [](MruVPunishmentsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::punishments::WatchPunishmentsRequest* req,
+             ::grpc_impl::ServerWriter<::mruv::punishments::WatchPunishmentsResponse>* writer) {
                return service->WatchPunishments(ctx, req, writer);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      MruVPunishmentsService_method_names[31],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< MruVPunishmentsService::Service, ::mruv::punishments::WatchAcquittalsRequest, ::mruv::punishments::WatchAcquittalsResponse>(
+          [](MruVPunishmentsService::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::mruv::punishments::WatchAcquittalsRequest* req,
+             ::mruv::punishments::WatchAcquittalsResponse* resp) {
+               return service->WatchAcquittals(ctx, req, resp);
              }, this)));
 }
 
 MruVPunishmentsService::Service::~Service() {
 }
 
-::grpc::Status MruVPunishmentsService::Service::Ban(::grpc::ServerContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::Punish(::grpc::ServerContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::Block(::grpc::ServerContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::Ban(::grpc::ServerContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::Warn(::grpc::ServerContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::Block(::grpc::ServerContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::AdminJail(::grpc::ServerContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::Warn(::grpc::ServerContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::MuteGlobalChats(::grpc::ServerContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::AdminJail(::grpc::ServerContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::UnBan(::grpc::ServerContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::MuteGlobalChats(::grpc::ServerContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::UnBlock(::grpc::ServerContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::UnBan(::grpc::ServerContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::UnWarn(::grpc::ServerContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::UnBlock(::grpc::ServerContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::UnAdminJail(::grpc::ServerContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::UnWarn(::grpc::ServerContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::UnMuteGlobalChats(::grpc::ServerContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::UnAdminJail(::grpc::ServerContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::GetPlayerBans(::grpc::ServerContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::UnMuteGlobalChats(::grpc::ServerContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::GetPlayerWarns(::grpc::ServerContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::GetPlayerBans(::grpc::ServerContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::GetPlayerAdminJail(::grpc::ServerContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::GetPlayerWarns(::grpc::ServerContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::GetBan(::grpc::ServerContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response) {
+::grpc::Status MruVPunishmentsService::Service::GetPlayerAdminJail(::grpc::ServerContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::GetWarn(::grpc::ServerContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response) {
+::grpc::Status MruVPunishmentsService::Service::GetBan(::grpc::ServerContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::GetBlock(::grpc::ServerContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response) {
+::grpc::Status MruVPunishmentsService::Service::GetWarn(::grpc::ServerContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::IsPlayerBanned(::grpc::ServerContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::GetBlock(::grpc::ServerContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::IsCharacterBlocked(::grpc::ServerContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::IsPlayerBanned(::grpc::ServerContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::IsCharacterJailed(::grpc::ServerContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response) {
+::grpc::Status MruVPunishmentsService::Service::IsCharacterBlocked(::grpc::ServerContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchBans(::grpc::ServerContext* context, const ::mruv::economy::WatchBansRequest* request, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::IsCharacterJailed(::grpc::ServerContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVPunishmentsService::Service::WatchBans(::grpc::ServerContext* context, const ::mruv::punishments::WatchBansRequest* request, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchBlocks(::grpc::ServerContext* context, const ::mruv::economy::WatchBlocksRequest* request, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchBlocks(::grpc::ServerContext* context, const ::mruv::punishments::WatchBlocksRequest* request, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchWarns(::grpc::ServerContext* context, const ::mruv::economy::WatchWarnsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchWarns(::grpc::ServerContext* context, const ::mruv::punishments::WatchWarnsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchAdminJails(::grpc::ServerContext* context, const ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchAdminJails(::grpc::ServerContext* context, const ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchUnBans(::grpc::ServerContext* context, const ::mruv::economy::WatchUnBansRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchUnBans(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnBansRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchUnBlocks(::grpc::ServerContext* context, const ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchUnBlocks(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchUnWarns(::grpc::ServerContext* context, const ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchUnWarns(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchUnAdminJails(::grpc::ServerContext* context, const ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchUnAdminJails(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchPlayerPunishments(::grpc::ServerContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchPlayerPunishments(::grpc::ServerContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchPlayerAcquittals(::grpc::ServerContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchPlayerAcquittals(::grpc::ServerContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVPunishmentsService::Service::WatchPunishments(::grpc::ServerContext* context, const ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* writer) {
+::grpc::Status MruVPunishmentsService::Service::WatchPunishments(::grpc::ServerContext* context, const ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status MruVPunishmentsService::Service::WatchAcquittals(::grpc::ServerContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
 
 }  // namespace mruv
-}  // namespace economy
+}  // namespace punishments
 

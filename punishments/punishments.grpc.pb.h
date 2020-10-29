@@ -27,598 +27,640 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace mruv {
-namespace economy {
+namespace punishments {
 
 // This service provides interface for managing punishments for players.
 class MruVPunishmentsService final {
  public:
   static constexpr char const* service_full_name() {
-    return "mruv.economy.MruVPunishmentsService";
+    return "mruv.punishments.MruVPunishmentsService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
+    // Punish player with choosen punishment type.
+    virtual ::grpc::Status Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::mruv::punishments::PunishResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::PunishResponse>> AsyncPunish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::PunishResponse>>(AsyncPunishRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::PunishResponse>> PrepareAsyncPunish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::PunishResponse>>(PrepareAsyncPunishRaw(context, request, cq));
+    }
     // Ban player on account and/or ip.
     // If ban_time is 0, ban will never expire.
-    virtual ::grpc::Status Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::mruv::economy::BanResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanResponse>> AsyncBan(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanResponse>>(AsyncBanRaw(context, request, cq));
+    virtual ::grpc::Status Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::mruv::punishments::BanResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanResponse>> AsyncBan(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanResponse>>(AsyncBanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanResponse>> PrepareAsyncBan(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanResponse>>(PrepareAsyncBanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanResponse>> PrepareAsyncBan(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanResponse>>(PrepareAsyncBanRaw(context, request, cq));
     }
     // Block player character.
-    virtual ::grpc::Status Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::mruv::economy::BlockResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockResponse>> AsyncBlock(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockResponse>>(AsyncBlockRaw(context, request, cq));
+    virtual ::grpc::Status Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::mruv::punishments::BlockResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockResponse>> AsyncBlock(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockResponse>>(AsyncBlockRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockResponse>> PrepareAsyncBlock(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockResponse>>(PrepareAsyncBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockResponse>> PrepareAsyncBlock(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockResponse>>(PrepareAsyncBlockRaw(context, request, cq));
     }
     // Warn player.
     // If warn_time is 0, warn will never expire.
-    virtual ::grpc::Status Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::mruv::economy::WarnResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnResponse>> AsyncWarn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnResponse>>(AsyncWarnRaw(context, request, cq));
+    virtual ::grpc::Status Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::mruv::punishments::WarnResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnResponse>> AsyncWarn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnResponse>>(AsyncWarnRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnResponse>> PrepareAsyncWarn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnResponse>>(PrepareAsyncWarnRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnResponse>> PrepareAsyncWarn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnResponse>>(PrepareAsyncWarnRaw(context, request, cq));
     }
     // Put player in an admin jail.
-    virtual ::grpc::Status AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::mruv::economy::AdminJailResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::AdminJailResponse>> AsyncAdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::AdminJailResponse>>(AsyncAdminJailRaw(context, request, cq));
+    virtual ::grpc::Status AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::mruv::punishments::AdminJailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::AdminJailResponse>> AsyncAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::AdminJailResponse>>(AsyncAdminJailRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::AdminJailResponse>> PrepareAsyncAdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::AdminJailResponse>>(PrepareAsyncAdminJailRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::AdminJailResponse>> PrepareAsyncAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::AdminJailResponse>>(PrepareAsyncAdminJailRaw(context, request, cq));
     }
     // Mute player global chats.
-    virtual ::grpc::Status MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::mruv::economy::MuteGlobalChatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::MuteGlobalChatsResponse>> AsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::MuteGlobalChatsResponse>>(AsyncMuteGlobalChatsRaw(context, request, cq));
+    virtual ::grpc::Status MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::mruv::punishments::MuteGlobalChatsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::MuteGlobalChatsResponse>> AsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::MuteGlobalChatsResponse>>(AsyncMuteGlobalChatsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::MuteGlobalChatsResponse>> PrepareAsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::MuteGlobalChatsResponse>>(PrepareAsyncMuteGlobalChatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::MuteGlobalChatsResponse>> PrepareAsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::MuteGlobalChatsResponse>>(PrepareAsyncMuteGlobalChatsRaw(context, request, cq));
     }
     // Deactivate a specific player ban.
-    virtual ::grpc::Status UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::mruv::economy::UnBanResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBanResponse>> AsyncUnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBanResponse>>(AsyncUnBanRaw(context, request, cq));
+    virtual ::grpc::Status UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::mruv::punishments::UnBanResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBanResponse>> AsyncUnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBanResponse>>(AsyncUnBanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBanResponse>> PrepareAsyncUnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBanResponse>>(PrepareAsyncUnBanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBanResponse>> PrepareAsyncUnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBanResponse>>(PrepareAsyncUnBanRaw(context, request, cq));
     }
     // Deactivate a character block.
-    virtual ::grpc::Status UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::mruv::economy::UnBlockResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBlockResponse>> AsyncUnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBlockResponse>>(AsyncUnBlockRaw(context, request, cq));
+    virtual ::grpc::Status UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::mruv::punishments::UnBlockResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBlockResponse>> AsyncUnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBlockResponse>>(AsyncUnBlockRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBlockResponse>> PrepareAsyncUnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBlockResponse>>(PrepareAsyncUnBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBlockResponse>> PrepareAsyncUnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBlockResponse>>(PrepareAsyncUnBlockRaw(context, request, cq));
     }
     // Deactivate a specific player warning. If a player was banned by reaching the warning limit, a player will be unbanned.
-    virtual ::grpc::Status UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::mruv::economy::UnWarnResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnWarnResponse>> AsyncUnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnWarnResponse>>(AsyncUnWarnRaw(context, request, cq));
+    virtual ::grpc::Status UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::mruv::punishments::UnWarnResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnWarnResponse>> AsyncUnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnWarnResponse>>(AsyncUnWarnRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnWarnResponse>> PrepareAsyncUnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnWarnResponse>>(PrepareAsyncUnWarnRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnWarnResponse>> PrepareAsyncUnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnWarnResponse>>(PrepareAsyncUnWarnRaw(context, request, cq));
     }
     // Remove player from admin jail.
-    virtual ::grpc::Status UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::mruv::economy::UnAdminJailResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnAdminJailResponse>> AsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnAdminJailResponse>>(AsyncUnAdminJailRaw(context, request, cq));
+    virtual ::grpc::Status UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::mruv::punishments::UnAdminJailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnAdminJailResponse>> AsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnAdminJailResponse>>(AsyncUnAdminJailRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnAdminJailResponse>> PrepareAsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnAdminJailResponse>>(PrepareAsyncUnAdminJailRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnAdminJailResponse>> PrepareAsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnAdminJailResponse>>(PrepareAsyncUnAdminJailRaw(context, request, cq));
     }
     //
-    virtual ::grpc::Status UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::mruv::economy::UnMuteGlobalChatsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnMuteGlobalChatsResponse>> AsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnMuteGlobalChatsResponse>>(AsyncUnMuteGlobalChatsRaw(context, request, cq));
+    virtual ::grpc::Status UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::mruv::punishments::UnMuteGlobalChatsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnMuteGlobalChatsResponse>> AsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnMuteGlobalChatsResponse>>(AsyncUnMuteGlobalChatsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnMuteGlobalChatsResponse>> PrepareAsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnMuteGlobalChatsResponse>>(PrepareAsyncUnMuteGlobalChatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnMuteGlobalChatsResponse>> PrepareAsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnMuteGlobalChatsResponse>>(PrepareAsyncUnMuteGlobalChatsRaw(context, request, cq));
     }
     // Get all player bans.
-    virtual ::grpc::Status GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::mruv::economy::GetPlayerBansResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerBansResponse>> AsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerBansResponse>>(AsyncGetPlayerBansRaw(context, request, cq));
+    virtual ::grpc::Status GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::mruv::punishments::GetPlayerBansResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerBansResponse>> AsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerBansResponse>>(AsyncGetPlayerBansRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerBansResponse>> PrepareAsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerBansResponse>>(PrepareAsyncGetPlayerBansRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerBansResponse>> PrepareAsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerBansResponse>>(PrepareAsyncGetPlayerBansRaw(context, request, cq));
     }
     // Get all player warns.
-    virtual ::grpc::Status GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::mruv::economy::GetPlayerWarnsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerWarnsResponse>> AsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerWarnsResponse>>(AsyncGetPlayerWarnsRaw(context, request, cq));
+    virtual ::grpc::Status GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::mruv::punishments::GetPlayerWarnsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerWarnsResponse>> AsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerWarnsResponse>>(AsyncGetPlayerWarnsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerWarnsResponse>> PrepareAsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerWarnsResponse>>(PrepareAsyncGetPlayerWarnsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerWarnsResponse>> PrepareAsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerWarnsResponse>>(PrepareAsyncGetPlayerWarnsRaw(context, request, cq));
     }
     // Get player admin jail time.
-    virtual ::grpc::Status GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::mruv::economy::GetPlayerAdminJailResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerAdminJailResponse>> AsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerAdminJailResponse>>(AsyncGetPlayerAdminJailRaw(context, request, cq));
+    virtual ::grpc::Status GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::mruv::punishments::GetPlayerAdminJailResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerAdminJailResponse>> AsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerAdminJailResponse>>(AsyncGetPlayerAdminJailRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerAdminJailResponse>> PrepareAsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerAdminJailResponse>>(PrepareAsyncGetPlayerAdminJailRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerAdminJailResponse>> PrepareAsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerAdminJailResponse>>(PrepareAsyncGetPlayerAdminJailRaw(context, request, cq));
     }
     // Get ban info.
-    virtual ::grpc::Status GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::mruv::economy::BanMessage* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanMessage>> AsyncGetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanMessage>>(AsyncGetBanRaw(context, request, cq));
+    virtual ::grpc::Status GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::mruv::punishments::BanMessage* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanMessage>> AsyncGetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanMessage>>(AsyncGetBanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanMessage>> PrepareAsyncGetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanMessage>>(PrepareAsyncGetBanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanMessage>> PrepareAsyncGetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanMessage>>(PrepareAsyncGetBanRaw(context, request, cq));
     }
     // Get warn info.
-    virtual ::grpc::Status GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::mruv::economy::WarnMessage* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnMessage>> AsyncGetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnMessage>>(AsyncGetWarnRaw(context, request, cq));
+    virtual ::grpc::Status GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::mruv::punishments::WarnMessage* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnMessage>> AsyncGetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnMessage>>(AsyncGetWarnRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnMessage>> PrepareAsyncGetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnMessage>>(PrepareAsyncGetWarnRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnMessage>> PrepareAsyncGetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnMessage>>(PrepareAsyncGetWarnRaw(context, request, cq));
     }
     // Get block info.
-    virtual ::grpc::Status GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::mruv::economy::BlockMessage* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockMessage>> AsyncGetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockMessage>>(AsyncGetBlockRaw(context, request, cq));
+    virtual ::grpc::Status GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::mruv::punishments::BlockMessage* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockMessage>> AsyncGetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockMessage>>(AsyncGetBlockRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockMessage>> PrepareAsyncGetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockMessage>>(PrepareAsyncGetBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockMessage>> PrepareAsyncGetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockMessage>>(PrepareAsyncGetBlockRaw(context, request, cq));
     }
     // Check is player or ip banned.
-    virtual ::grpc::Status IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::mruv::economy::IsPlayerBannedResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsPlayerBannedResponse>> AsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsPlayerBannedResponse>>(AsyncIsPlayerBannedRaw(context, request, cq));
+    virtual ::grpc::Status IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::mruv::punishments::IsPlayerBannedResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsPlayerBannedResponse>> AsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsPlayerBannedResponse>>(AsyncIsPlayerBannedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsPlayerBannedResponse>> PrepareAsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsPlayerBannedResponse>>(PrepareAsyncIsPlayerBannedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsPlayerBannedResponse>> PrepareAsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsPlayerBannedResponse>>(PrepareAsyncIsPlayerBannedRaw(context, request, cq));
     }
     // Check is character is blocked.
-    virtual ::grpc::Status IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::mruv::economy::IsCharacterBlockedResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterBlockedResponse>> AsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterBlockedResponse>>(AsyncIsCharacterBlockedRaw(context, request, cq));
+    virtual ::grpc::Status IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::mruv::punishments::IsCharacterBlockedResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterBlockedResponse>> AsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterBlockedResponse>>(AsyncIsCharacterBlockedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterBlockedResponse>> PrepareAsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterBlockedResponse>>(PrepareAsyncIsCharacterBlockedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterBlockedResponse>> PrepareAsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterBlockedResponse>>(PrepareAsyncIsCharacterBlockedRaw(context, request, cq));
     }
     //
-    virtual ::grpc::Status IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::mruv::economy::IsCharacterJailedResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterJailedResponse>> AsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterJailedResponse>>(AsyncIsCharacterJailedRaw(context, request, cq));
+    virtual ::grpc::Status IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::mruv::punishments::IsCharacterJailedResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterJailedResponse>> AsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterJailedResponse>>(AsyncIsCharacterJailedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterJailedResponse>> PrepareAsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterJailedResponse>>(PrepareAsyncIsCharacterJailedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterJailedResponse>> PrepareAsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterJailedResponse>>(PrepareAsyncIsCharacterJailedRaw(context, request, cq));
     }
     // Subscribe to ban events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::BanMessage>> WatchBans(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::BanMessage>>(WatchBansRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::BanMessage>> WatchBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::BanMessage>>(WatchBansRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BanMessage>> AsyncWatchBans(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BanMessage>>(AsyncWatchBansRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BanMessage>> AsyncWatchBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BanMessage>>(AsyncWatchBansRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BanMessage>> PrepareAsyncWatchBans(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BanMessage>>(PrepareAsyncWatchBansRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BanMessage>> PrepareAsyncWatchBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BanMessage>>(PrepareAsyncWatchBansRaw(context, request, cq));
     }
     // Subscribe to block events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::BlockMessage>> WatchBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::BlockMessage>>(WatchBlocksRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::BlockMessage>> WatchBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::BlockMessage>>(WatchBlocksRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BlockMessage>> AsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BlockMessage>>(AsyncWatchBlocksRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BlockMessage>> AsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BlockMessage>>(AsyncWatchBlocksRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BlockMessage>> PrepareAsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BlockMessage>>(PrepareAsyncWatchBlocksRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BlockMessage>> PrepareAsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BlockMessage>>(PrepareAsyncWatchBlocksRaw(context, request, cq));
     }
     // Subscribe to warn events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WarnMessage>> WatchWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WarnMessage>>(WatchWarnsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WarnMessage>> WatchWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WarnMessage>>(WatchWarnsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WarnMessage>> AsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WarnMessage>>(AsyncWatchWarnsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WarnMessage>> AsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WarnMessage>>(AsyncWatchWarnsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WarnMessage>> PrepareAsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WarnMessage>>(PrepareAsyncWatchWarnsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WarnMessage>> PrepareAsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WarnMessage>>(PrepareAsyncWatchWarnsRaw(context, request, cq));
     }
     // Subscribe to admin jail events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::AdminJailMessage>> WatchAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::AdminJailMessage>>(WatchAdminJailsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::AdminJailMessage>> WatchAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::AdminJailMessage>>(WatchAdminJailsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::AdminJailMessage>> AsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::AdminJailMessage>>(AsyncWatchAdminJailsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::AdminJailMessage>> AsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::AdminJailMessage>>(AsyncWatchAdminJailsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::AdminJailMessage>> PrepareAsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::AdminJailMessage>>(PrepareAsyncWatchAdminJailsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::AdminJailMessage>> PrepareAsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::AdminJailMessage>>(PrepareAsyncWatchAdminJailsRaw(context, request, cq));
     }
     // Subscribe to unban events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnBanMessage>> WatchUnBans(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnBanMessage>>(WatchUnBansRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnBanMessage>> WatchUnBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnBanMessage>>(WatchUnBansRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBanMessage>> AsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBanMessage>>(AsyncWatchUnBansRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBanMessage>> AsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBanMessage>>(AsyncWatchUnBansRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBanMessage>> PrepareAsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBanMessage>>(PrepareAsyncWatchUnBansRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBanMessage>> PrepareAsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBanMessage>>(PrepareAsyncWatchUnBansRaw(context, request, cq));
     }
     // Subscribe to unblock events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnBlockMessage>> WatchUnBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnBlockMessage>>(WatchUnBlocksRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnBlockMessage>> WatchUnBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnBlockMessage>>(WatchUnBlocksRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBlockMessage>> AsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBlockMessage>>(AsyncWatchUnBlocksRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBlockMessage>> AsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBlockMessage>>(AsyncWatchUnBlocksRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBlockMessage>> PrepareAsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBlockMessage>>(PrepareAsyncWatchUnBlocksRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBlockMessage>> PrepareAsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBlockMessage>>(PrepareAsyncWatchUnBlocksRaw(context, request, cq));
     }
     // Subscribe to unwarn events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnWarnMessage>> WatchUnWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnWarnMessage>>(WatchUnWarnsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnWarnMessage>> WatchUnWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnWarnMessage>>(WatchUnWarnsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnWarnMessage>> AsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnWarnMessage>>(AsyncWatchUnWarnsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnWarnMessage>> AsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnWarnMessage>>(AsyncWatchUnWarnsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnWarnMessage>> PrepareAsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnWarnMessage>>(PrepareAsyncWatchUnWarnsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnWarnMessage>> PrepareAsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnWarnMessage>>(PrepareAsyncWatchUnWarnsRaw(context, request, cq));
     }
     // Subscribe to admin jail release events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnAdminJailMessage>> WatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::UnAdminJailMessage>>(WatchUnAdminJailsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnAdminJailMessage>> WatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::UnAdminJailMessage>>(WatchUnAdminJailsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnAdminJailMessage>> AsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnAdminJailMessage>>(AsyncWatchUnAdminJailsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnAdminJailMessage>> AsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnAdminJailMessage>>(AsyncWatchUnAdminJailsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnAdminJailMessage>> PrepareAsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnAdminJailMessage>>(PrepareAsyncWatchUnAdminJailsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnAdminJailMessage>> PrepareAsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnAdminJailMessage>>(PrepareAsyncWatchUnAdminJailsRaw(context, request, cq));
     }
     // Subscribe to player punishments.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>> WatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>>(WatchPlayerPunishmentsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>> WatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>>(WatchPlayerPunishmentsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>> AsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>>(AsyncWatchPlayerPunishmentsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>> AsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>>(AsyncWatchPlayerPunishmentsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>> PrepareAsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>>(PrepareAsyncWatchPlayerPunishmentsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>> PrepareAsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>>(PrepareAsyncWatchPlayerPunishmentsRaw(context, request, cq));
     }
     // Subscribe to player acquittals.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>> WatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>>(WatchPlayerAcquittalsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>> WatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>>(WatchPlayerAcquittalsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>> AsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>>(AsyncWatchPlayerAcquittalsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>> AsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>>(AsyncWatchPlayerAcquittalsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>> PrepareAsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>>(PrepareAsyncWatchPlayerAcquittalsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>> PrepareAsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>>(PrepareAsyncWatchPlayerAcquittalsRaw(context, request, cq));
     }
-    // Subscribe to all punishments and acquittals events.
-    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WatchPunishmentsResponse>> WatchPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::economy::WatchPunishmentsResponse>>(WatchPunishmentsRaw(context, request));
+    // Subscribe to all punishments events.
+    std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>> WatchPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>>(WatchPunishmentsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPunishmentsResponse>> AsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPunishmentsResponse>>(AsyncWatchPunishmentsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>> AsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>>(AsyncWatchPunishmentsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPunishmentsResponse>> PrepareAsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPunishmentsResponse>>(PrepareAsyncWatchPunishmentsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>> PrepareAsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>>(PrepareAsyncWatchPunishmentsRaw(context, request, cq));
+    }
+    // Subscribe to all acquittals events.
+    virtual ::grpc::Status WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::mruv::punishments::WatchAcquittalsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WatchAcquittalsResponse>> AsyncWatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WatchAcquittalsResponse>>(AsyncWatchAcquittalsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WatchAcquittalsResponse>> PrepareAsyncWatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WatchAcquittalsResponse>>(PrepareAsyncWatchAcquittalsRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
+      // Punish player with choosen punishment type.
+      virtual void Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Ban player on account and/or ip.
       // If ban_time is 0, ban will never expire.
-      virtual void Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Block player character.
-      virtual void Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Warn player.
       // If warn_time is 0, warn will never expire.
-      virtual void Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Put player in an admin jail.
-      virtual void AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Mute player global chats.
-      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Deactivate a specific player ban.
-      virtual void UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Deactivate a character block.
-      virtual void UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Deactivate a specific player warning. If a player was banned by reaching the warning limit, a player will be unbanned.
-      virtual void UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Remove player from admin jail.
-      virtual void UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       //
-      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all player bans.
-      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all player warns.
-      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get player admin jail time.
-      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get ban info.
-      virtual void GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get warn info.
-      virtual void GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get block info.
-      virtual void GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Check is player or ip banned.
-      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Check is character is blocked.
-      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       //
-      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Subscribe to ban events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchBans(::grpc::ClientContext* context, ::mruv::economy::WatchBansRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::BanMessage>* reactor) = 0;
+      virtual void WatchBans(::grpc::ClientContext* context, ::mruv::punishments::WatchBansRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::BanMessage>* reactor) = 0;
       #else
-      virtual void WatchBans(::grpc::ClientContext* context, ::mruv::economy::WatchBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::BanMessage>* reactor) = 0;
+      virtual void WatchBans(::grpc::ClientContext* context, ::mruv::punishments::WatchBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::BanMessage>* reactor) = 0;
       #endif
       // Subscribe to block events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::BlockMessage>* reactor) = 0;
+      virtual void WatchBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::BlockMessage>* reactor) = 0;
       #else
-      virtual void WatchBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::BlockMessage>* reactor) = 0;
+      virtual void WatchBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::BlockMessage>* reactor) = 0;
       #endif
       // Subscribe to warn events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchWarns(::grpc::ClientContext* context, ::mruv::economy::WatchWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WarnMessage>* reactor) = 0;
+      virtual void WatchWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WarnMessage>* reactor) = 0;
       #else
-      virtual void WatchWarns(::grpc::ClientContext* context, ::mruv::economy::WatchWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WarnMessage>* reactor) = 0;
+      virtual void WatchWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WarnMessage>* reactor) = 0;
       #endif
       // Subscribe to admin jail events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::AdminJailMessage>* reactor) = 0;
+      virtual void WatchAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::AdminJailMessage>* reactor) = 0;
       #else
-      virtual void WatchAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::AdminJailMessage>* reactor) = 0;
+      virtual void WatchAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::AdminJailMessage>* reactor) = 0;
       #endif
       // Subscribe to unban events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchUnBans(::grpc::ClientContext* context, ::mruv::economy::WatchUnBansRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnBanMessage>* reactor) = 0;
+      virtual void WatchUnBans(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBansRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnBanMessage>* reactor) = 0;
       #else
-      virtual void WatchUnBans(::grpc::ClientContext* context, ::mruv::economy::WatchUnBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnBanMessage>* reactor) = 0;
+      virtual void WatchUnBans(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnBanMessage>* reactor) = 0;
       #endif
       // Subscribe to unblock events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnBlockMessage>* reactor) = 0;
+      virtual void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnBlockMessage>* reactor) = 0;
       #else
-      virtual void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnBlockMessage>* reactor) = 0;
+      virtual void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnBlockMessage>* reactor) = 0;
       #endif
       // Subscribe to unwarn events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchUnWarns(::grpc::ClientContext* context, ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnWarnMessage>* reactor) = 0;
+      virtual void WatchUnWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnWarnMessage>* reactor) = 0;
       #else
-      virtual void WatchUnWarns(::grpc::ClientContext* context, ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnWarnMessage>* reactor) = 0;
+      virtual void WatchUnWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnWarnMessage>* reactor) = 0;
       #endif
       // Subscribe to admin jail release events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnAdminJailMessage>* reactor) = 0;
+      virtual void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnAdminJailMessage>* reactor) = 0;
       #else
-      virtual void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnAdminJailMessage>* reactor) = 0;
+      virtual void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnAdminJailMessage>* reactor) = 0;
       #endif
       // Subscribe to player punishments.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* reactor) = 0;
+      virtual void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* reactor) = 0;
       #else
-      virtual void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* reactor) = 0;
+      virtual void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* reactor) = 0;
       #endif
       // Subscribe to player acquittals.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* reactor) = 0;
+      virtual void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* reactor) = 0;
       #else
-      virtual void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* reactor) = 0;
+      virtual void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* reactor) = 0;
       #endif
-      // Subscribe to all punishments and acquittals events.
+      // Subscribe to all punishments events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void WatchPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchPunishmentsResponse>* reactor) = 0;
+      virtual void WatchPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WatchPunishmentsResponse>* reactor) = 0;
       #else
-      virtual void WatchPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPunishmentsResponse>* reactor) = 0;
+      virtual void WatchPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPunishmentsResponse>* reactor) = 0;
+      #endif
+      // Subscribe to all acquittals events.
+      virtual void WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -629,598 +671,640 @@ class MruVPunishmentsService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanResponse>* AsyncBanRaw(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanResponse>* PrepareAsyncBanRaw(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockResponse>* AsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockResponse>* PrepareAsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnResponse>* AsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnResponse>* PrepareAsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::AdminJailResponse>* AsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::AdminJailResponse>* PrepareAsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::MuteGlobalChatsResponse>* AsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::MuteGlobalChatsResponse>* PrepareAsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBanResponse>* AsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBanResponse>* PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBlockResponse>* AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnBlockResponse>* PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnWarnResponse>* AsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnWarnResponse>* PrepareAsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnAdminJailResponse>* AsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnAdminJailResponse>* PrepareAsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnMuteGlobalChatsResponse>* AsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::UnMuteGlobalChatsResponse>* PrepareAsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerBansResponse>* AsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerBansResponse>* PrepareAsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerWarnsResponse>* AsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerWarnsResponse>* PrepareAsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerAdminJailResponse>* AsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::GetPlayerAdminJailResponse>* PrepareAsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanMessage>* AsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BanMessage>* PrepareAsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnMessage>* AsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::WarnMessage>* PrepareAsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockMessage>* AsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::BlockMessage>* PrepareAsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsPlayerBannedResponse>* AsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsPlayerBannedResponse>* PrepareAsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterBlockedResponse>* AsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterBlockedResponse>* PrepareAsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterJailedResponse>* AsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::economy::IsCharacterJailedResponse>* PrepareAsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::BanMessage>* WatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BanMessage>* AsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BanMessage>* PrepareAsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::BlockMessage>* WatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BlockMessage>* AsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::BlockMessage>* PrepareAsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::WarnMessage>* WatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WarnMessage>* AsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WarnMessage>* PrepareAsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::AdminJailMessage>* WatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::AdminJailMessage>* AsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::AdminJailMessage>* PrepareAsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::UnBanMessage>* WatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBanMessage>* AsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBanMessage>* PrepareAsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::UnBlockMessage>* WatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBlockMessage>* AsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnBlockMessage>* PrepareAsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::UnWarnMessage>* WatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnWarnMessage>* AsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnWarnMessage>* PrepareAsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::UnAdminJailMessage>* WatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnAdminJailMessage>* AsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::UnAdminJailMessage>* PrepareAsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>* WatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>* AsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerPunishmentsResponse>* PrepareAsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>* AsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPlayerAcquittalsResponse>* PrepareAsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientReaderInterface< ::mruv::economy::WatchPunishmentsResponse>* WatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPunishmentsResponse>* AsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
-    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::economy::WatchPunishmentsResponse>* PrepareAsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::PunishResponse>* AsyncPunishRaw(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::PunishResponse>* PrepareAsyncPunishRaw(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanResponse>* AsyncBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanResponse>* PrepareAsyncBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockResponse>* AsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockResponse>* PrepareAsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnResponse>* AsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnResponse>* PrepareAsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::AdminJailResponse>* AsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::AdminJailResponse>* PrepareAsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::MuteGlobalChatsResponse>* AsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::MuteGlobalChatsResponse>* PrepareAsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBanResponse>* AsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBanResponse>* PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBlockResponse>* AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnBlockResponse>* PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnWarnResponse>* AsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnWarnResponse>* PrepareAsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnAdminJailResponse>* AsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnAdminJailResponse>* PrepareAsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnMuteGlobalChatsResponse>* AsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::UnMuteGlobalChatsResponse>* PrepareAsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerBansResponse>* AsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerBansResponse>* PrepareAsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerWarnsResponse>* AsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerWarnsResponse>* PrepareAsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerAdminJailResponse>* AsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::GetPlayerAdminJailResponse>* PrepareAsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanMessage>* AsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BanMessage>* PrepareAsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnMessage>* AsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WarnMessage>* PrepareAsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockMessage>* AsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::BlockMessage>* PrepareAsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsPlayerBannedResponse>* AsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsPlayerBannedResponse>* PrepareAsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterBlockedResponse>* AsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterBlockedResponse>* PrepareAsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterJailedResponse>* AsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::IsCharacterJailedResponse>* PrepareAsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::BanMessage>* WatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BanMessage>* AsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BanMessage>* PrepareAsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::BlockMessage>* WatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BlockMessage>* AsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::BlockMessage>* PrepareAsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::WarnMessage>* WatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WarnMessage>* AsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WarnMessage>* PrepareAsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::AdminJailMessage>* WatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::AdminJailMessage>* AsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::AdminJailMessage>* PrepareAsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::UnBanMessage>* WatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBanMessage>* AsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBanMessage>* PrepareAsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::UnBlockMessage>* WatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBlockMessage>* AsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnBlockMessage>* PrepareAsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::UnWarnMessage>* WatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnWarnMessage>* AsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnWarnMessage>* PrepareAsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::UnAdminJailMessage>* WatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnAdminJailMessage>* AsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::UnAdminJailMessage>* PrepareAsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>* WatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>* AsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerPunishmentsResponse>* PrepareAsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>* AsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPlayerAcquittalsResponse>* PrepareAsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>* WatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>* AsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) = 0;
+    virtual ::grpc::ClientAsyncReaderInterface< ::mruv::punishments::WatchPunishmentsResponse>* PrepareAsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WatchAcquittalsResponse>* AsyncWatchAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::punishments::WatchAcquittalsResponse>* PrepareAsyncWatchAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::mruv::economy::BanResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>> AsyncBan(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>>(AsyncBanRaw(context, request, cq));
+    ::grpc::Status Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::mruv::punishments::PunishResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>> AsyncPunish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>>(AsyncPunishRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>> PrepareAsyncBan(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>>(PrepareAsyncBanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>> PrepareAsyncPunish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>>(PrepareAsyncPunishRaw(context, request, cq));
     }
-    ::grpc::Status Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::mruv::economy::BlockResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>> AsyncBlock(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>>(AsyncBlockRaw(context, request, cq));
+    ::grpc::Status Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::mruv::punishments::BanResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>> AsyncBan(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>>(AsyncBanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>> PrepareAsyncBlock(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>>(PrepareAsyncBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>> PrepareAsyncBan(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>>(PrepareAsyncBanRaw(context, request, cq));
     }
-    ::grpc::Status Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::mruv::economy::WarnResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>> AsyncWarn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>>(AsyncWarnRaw(context, request, cq));
+    ::grpc::Status Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::mruv::punishments::BlockResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>> AsyncBlock(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>>(AsyncBlockRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>> PrepareAsyncWarn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>>(PrepareAsyncWarnRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>> PrepareAsyncBlock(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>>(PrepareAsyncBlockRaw(context, request, cq));
     }
-    ::grpc::Status AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::mruv::economy::AdminJailResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>> AsyncAdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>>(AsyncAdminJailRaw(context, request, cq));
+    ::grpc::Status Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::mruv::punishments::WarnResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>> AsyncWarn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>>(AsyncWarnRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>> PrepareAsyncAdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>>(PrepareAsyncAdminJailRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>> PrepareAsyncWarn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>>(PrepareAsyncWarnRaw(context, request, cq));
     }
-    ::grpc::Status MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::mruv::economy::MuteGlobalChatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>> AsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>>(AsyncMuteGlobalChatsRaw(context, request, cq));
+    ::grpc::Status AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::mruv::punishments::AdminJailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>> AsyncAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>>(AsyncAdminJailRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>> PrepareAsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>>(PrepareAsyncMuteGlobalChatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>> PrepareAsyncAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>>(PrepareAsyncAdminJailRaw(context, request, cq));
     }
-    ::grpc::Status UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::mruv::economy::UnBanResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>> AsyncUnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>>(AsyncUnBanRaw(context, request, cq));
+    ::grpc::Status MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::mruv::punishments::MuteGlobalChatsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>> AsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>>(AsyncMuteGlobalChatsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>> PrepareAsyncUnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>>(PrepareAsyncUnBanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>> PrepareAsyncMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>>(PrepareAsyncMuteGlobalChatsRaw(context, request, cq));
     }
-    ::grpc::Status UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::mruv::economy::UnBlockResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>> AsyncUnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>>(AsyncUnBlockRaw(context, request, cq));
+    ::grpc::Status UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::mruv::punishments::UnBanResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>> AsyncUnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>>(AsyncUnBanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>> PrepareAsyncUnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>>(PrepareAsyncUnBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>> PrepareAsyncUnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>>(PrepareAsyncUnBanRaw(context, request, cq));
     }
-    ::grpc::Status UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::mruv::economy::UnWarnResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>> AsyncUnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>>(AsyncUnWarnRaw(context, request, cq));
+    ::grpc::Status UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::mruv::punishments::UnBlockResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>> AsyncUnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>>(AsyncUnBlockRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>> PrepareAsyncUnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>>(PrepareAsyncUnWarnRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>> PrepareAsyncUnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>>(PrepareAsyncUnBlockRaw(context, request, cq));
     }
-    ::grpc::Status UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::mruv::economy::UnAdminJailResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>> AsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>>(AsyncUnAdminJailRaw(context, request, cq));
+    ::grpc::Status UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::mruv::punishments::UnWarnResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>> AsyncUnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>>(AsyncUnWarnRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>> PrepareAsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>>(PrepareAsyncUnAdminJailRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>> PrepareAsyncUnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>>(PrepareAsyncUnWarnRaw(context, request, cq));
     }
-    ::grpc::Status UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::mruv::economy::UnMuteGlobalChatsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>> AsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>>(AsyncUnMuteGlobalChatsRaw(context, request, cq));
+    ::grpc::Status UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::mruv::punishments::UnAdminJailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>> AsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>>(AsyncUnAdminJailRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>> PrepareAsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>>(PrepareAsyncUnMuteGlobalChatsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>> PrepareAsyncUnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>>(PrepareAsyncUnAdminJailRaw(context, request, cq));
     }
-    ::grpc::Status GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::mruv::economy::GetPlayerBansResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>> AsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>>(AsyncGetPlayerBansRaw(context, request, cq));
+    ::grpc::Status UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::mruv::punishments::UnMuteGlobalChatsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>> AsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>>(AsyncUnMuteGlobalChatsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>> PrepareAsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>>(PrepareAsyncGetPlayerBansRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>> PrepareAsyncUnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>>(PrepareAsyncUnMuteGlobalChatsRaw(context, request, cq));
     }
-    ::grpc::Status GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::mruv::economy::GetPlayerWarnsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>> AsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>>(AsyncGetPlayerWarnsRaw(context, request, cq));
+    ::grpc::Status GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::mruv::punishments::GetPlayerBansResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>> AsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>>(AsyncGetPlayerBansRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>> PrepareAsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>>(PrepareAsyncGetPlayerWarnsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>> PrepareAsyncGetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>>(PrepareAsyncGetPlayerBansRaw(context, request, cq));
     }
-    ::grpc::Status GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::mruv::economy::GetPlayerAdminJailResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>> AsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>>(AsyncGetPlayerAdminJailRaw(context, request, cq));
+    ::grpc::Status GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::mruv::punishments::GetPlayerWarnsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>> AsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>>(AsyncGetPlayerWarnsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>> PrepareAsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>>(PrepareAsyncGetPlayerAdminJailRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>> PrepareAsyncGetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>>(PrepareAsyncGetPlayerWarnsRaw(context, request, cq));
     }
-    ::grpc::Status GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::mruv::economy::BanMessage* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>> AsyncGetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>>(AsyncGetBanRaw(context, request, cq));
+    ::grpc::Status GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::mruv::punishments::GetPlayerAdminJailResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>> AsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>>(AsyncGetPlayerAdminJailRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>> PrepareAsyncGetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>>(PrepareAsyncGetBanRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>> PrepareAsyncGetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>>(PrepareAsyncGetPlayerAdminJailRaw(context, request, cq));
     }
-    ::grpc::Status GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::mruv::economy::WarnMessage* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>> AsyncGetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>>(AsyncGetWarnRaw(context, request, cq));
+    ::grpc::Status GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::mruv::punishments::BanMessage* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>> AsyncGetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>>(AsyncGetBanRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>> PrepareAsyncGetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>>(PrepareAsyncGetWarnRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>> PrepareAsyncGetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>>(PrepareAsyncGetBanRaw(context, request, cq));
     }
-    ::grpc::Status GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::mruv::economy::BlockMessage* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>> AsyncGetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>>(AsyncGetBlockRaw(context, request, cq));
+    ::grpc::Status GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::mruv::punishments::WarnMessage* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>> AsyncGetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>>(AsyncGetWarnRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>> PrepareAsyncGetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>>(PrepareAsyncGetBlockRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>> PrepareAsyncGetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>>(PrepareAsyncGetWarnRaw(context, request, cq));
     }
-    ::grpc::Status IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::mruv::economy::IsPlayerBannedResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>> AsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>>(AsyncIsPlayerBannedRaw(context, request, cq));
+    ::grpc::Status GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::mruv::punishments::BlockMessage* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>> AsyncGetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>>(AsyncGetBlockRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>> PrepareAsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>>(PrepareAsyncIsPlayerBannedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>> PrepareAsyncGetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>>(PrepareAsyncGetBlockRaw(context, request, cq));
     }
-    ::grpc::Status IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::mruv::economy::IsCharacterBlockedResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>> AsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>>(AsyncIsCharacterBlockedRaw(context, request, cq));
+    ::grpc::Status IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::mruv::punishments::IsPlayerBannedResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>> AsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>>(AsyncIsPlayerBannedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>> PrepareAsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>>(PrepareAsyncIsCharacterBlockedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>> PrepareAsyncIsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>>(PrepareAsyncIsPlayerBannedRaw(context, request, cq));
     }
-    ::grpc::Status IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::mruv::economy::IsCharacterJailedResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>> AsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>>(AsyncIsCharacterJailedRaw(context, request, cq));
+    ::grpc::Status IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::mruv::punishments::IsCharacterBlockedResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>> AsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>>(AsyncIsCharacterBlockedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>> PrepareAsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>>(PrepareAsyncIsCharacterJailedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>> PrepareAsyncIsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>>(PrepareAsyncIsCharacterBlockedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::BanMessage>> WatchBans(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::BanMessage>>(WatchBansRaw(context, request));
+    ::grpc::Status IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::mruv::punishments::IsCharacterJailedResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>> AsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>>(AsyncIsCharacterJailedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>> AsyncWatchBans(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>>(AsyncWatchBansRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>> PrepareAsyncIsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>>(PrepareAsyncIsCharacterJailedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>> PrepareAsyncWatchBans(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>>(PrepareAsyncWatchBansRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::BanMessage>> WatchBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::BanMessage>>(WatchBansRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::BlockMessage>> WatchBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::BlockMessage>>(WatchBlocksRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>> AsyncWatchBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>>(AsyncWatchBansRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>> AsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>>(AsyncWatchBlocksRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>> PrepareAsyncWatchBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>>(PrepareAsyncWatchBansRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>> PrepareAsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>>(PrepareAsyncWatchBlocksRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::BlockMessage>> WatchBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::BlockMessage>>(WatchBlocksRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WarnMessage>> WatchWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WarnMessage>>(WatchWarnsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>> AsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>>(AsyncWatchBlocksRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>> AsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>>(AsyncWatchWarnsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>> PrepareAsyncWatchBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>>(PrepareAsyncWatchBlocksRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>> PrepareAsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>>(PrepareAsyncWatchWarnsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WarnMessage>> WatchWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WarnMessage>>(WatchWarnsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::AdminJailMessage>> WatchAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::AdminJailMessage>>(WatchAdminJailsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>> AsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>>(AsyncWatchWarnsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>> AsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>>(AsyncWatchAdminJailsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>> PrepareAsyncWatchWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>>(PrepareAsyncWatchWarnsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>> PrepareAsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>>(PrepareAsyncWatchAdminJailsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::AdminJailMessage>> WatchAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::AdminJailMessage>>(WatchAdminJailsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnBanMessage>> WatchUnBans(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnBanMessage>>(WatchUnBansRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>> AsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>>(AsyncWatchAdminJailsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>> AsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>>(AsyncWatchUnBansRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>> PrepareAsyncWatchAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>>(PrepareAsyncWatchAdminJailsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>> PrepareAsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>>(PrepareAsyncWatchUnBansRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnBanMessage>> WatchUnBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnBanMessage>>(WatchUnBansRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnBlockMessage>> WatchUnBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnBlockMessage>>(WatchUnBlocksRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>> AsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>>(AsyncWatchUnBansRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>> AsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>>(AsyncWatchUnBlocksRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>> PrepareAsyncWatchUnBans(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>>(PrepareAsyncWatchUnBansRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>> PrepareAsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>>(PrepareAsyncWatchUnBlocksRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnBlockMessage>> WatchUnBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnBlockMessage>>(WatchUnBlocksRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnWarnMessage>> WatchUnWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnWarnMessage>>(WatchUnWarnsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>> AsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>>(AsyncWatchUnBlocksRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>> AsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>>(AsyncWatchUnWarnsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>> PrepareAsyncWatchUnBlocks(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>>(PrepareAsyncWatchUnBlocksRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>> PrepareAsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>>(PrepareAsyncWatchUnWarnsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnWarnMessage>> WatchUnWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnWarnMessage>>(WatchUnWarnsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnAdminJailMessage>> WatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::UnAdminJailMessage>>(WatchUnAdminJailsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>> AsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>>(AsyncWatchUnWarnsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>> AsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>>(AsyncWatchUnAdminJailsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>> PrepareAsyncWatchUnWarns(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>>(PrepareAsyncWatchUnWarnsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>> PrepareAsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>>(PrepareAsyncWatchUnAdminJailsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnAdminJailMessage>> WatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::UnAdminJailMessage>>(WatchUnAdminJailsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WatchPlayerPunishmentsResponse>> WatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WatchPlayerPunishmentsResponse>>(WatchPlayerPunishmentsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>> AsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>>(AsyncWatchUnAdminJailsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>> AsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>>(AsyncWatchPlayerPunishmentsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>> PrepareAsyncWatchUnAdminJails(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>>(PrepareAsyncWatchUnAdminJailsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>> PrepareAsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>>(PrepareAsyncWatchPlayerPunishmentsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>> WatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>>(WatchPlayerPunishmentsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WatchPlayerAcquittalsResponse>> WatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WatchPlayerAcquittalsResponse>>(WatchPlayerAcquittalsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>> AsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>>(AsyncWatchPlayerPunishmentsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>> AsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>>(AsyncWatchPlayerAcquittalsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>> PrepareAsyncWatchPlayerPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>>(PrepareAsyncWatchPlayerPunishmentsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>> PrepareAsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>>(PrepareAsyncWatchPlayerAcquittalsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>> WatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>>(WatchPlayerAcquittalsRaw(context, request));
     }
-    std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WatchPunishmentsResponse>> WatchPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request) {
-      return std::unique_ptr< ::grpc::ClientReader< ::mruv::economy::WatchPunishmentsResponse>>(WatchPunishmentsRaw(context, request));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>> AsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>>(AsyncWatchPlayerAcquittalsRaw(context, request, cq, tag));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>> AsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>>(AsyncWatchPunishmentsRaw(context, request, cq, tag));
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>> PrepareAsyncWatchPlayerAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>>(PrepareAsyncWatchPlayerAcquittalsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>> PrepareAsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>>(PrepareAsyncWatchPunishmentsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WatchPunishmentsResponse>> WatchPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request) {
+      return std::unique_ptr< ::grpc::ClientReader< ::mruv::punishments::WatchPunishmentsResponse>>(WatchPunishmentsRaw(context, request));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>> AsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>>(AsyncWatchPunishmentsRaw(context, request, cq, tag));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>> PrepareAsyncWatchPunishments(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>>(PrepareAsyncWatchPunishmentsRaw(context, request, cq));
+    }
+    ::grpc::Status WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::mruv::punishments::WatchAcquittalsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>> AsyncWatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>>(AsyncWatchAcquittalsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>> PrepareAsyncWatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>>(PrepareAsyncWatchAcquittalsRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, std::function<void(::grpc::Status)>) override;
-      void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, std::function<void(::grpc::Status)>) override;
+      void Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, std::function<void(::grpc::Status)>) override;
+      void Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void Ban(::grpc::ClientContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Punish(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Punish(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::PunishResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, std::function<void(::grpc::Status)>) override;
-      void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, std::function<void(::grpc::Status)>) override;
+      void Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, std::function<void(::grpc::Status)>) override;
+      void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void Block(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, std::function<void(::grpc::Status)>) override;
-      void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Warn(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Ban(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Ban(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, std::function<void(::grpc::Status)>) override;
-      void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, std::function<void(::grpc::Status)>) override;
+      void Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, std::function<void(::grpc::Status)>) override;
+      void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void AdminJail(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Block(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Block(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, std::function<void(::grpc::Status)>) override;
+      void Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, std::function<void(::grpc::Status)>) override;
+      void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UnBan(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnBlock(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Warn(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void Warn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, std::function<void(::grpc::Status)>) override;
+      void AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, std::function<void(::grpc::Status)>) override;
+      void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UnWarn(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnAdminJail(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AdminJail(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::AdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
+      void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
+      void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void MuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void MuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::MuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnBan(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBanResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, std::function<void(::grpc::Status)>) override;
-      void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, std::function<void(::grpc::Status)>) override;
+      void UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetBan(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, std::function<void(::grpc::Status)>) override;
-      void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetWarn(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnBlock(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnBlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, std::function<void(::grpc::Status)>) override;
-      void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, std::function<void(::grpc::Status)>) override;
+      void UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetBlock(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) override;
-      void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnWarn(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnWarnResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) override;
-      void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) override;
-      void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UnAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
+      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchBans(::grpc::ClientContext* context, ::mruv::economy::WatchBansRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::BanMessage>* reactor) override;
+      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchBans(::grpc::ClientContext* context, ::mruv::economy::WatchBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::BanMessage>* reactor) override;
+      void UnMuteGlobalChats(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetPlayerBans(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::BlockMessage>* reactor) override;
+      void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::BlockMessage>* reactor) override;
+      void GetPlayerBans(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerBansResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetPlayerWarns(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchWarns(::grpc::ClientContext* context, ::mruv::economy::WatchWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WarnMessage>* reactor) override;
+      void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchWarns(::grpc::ClientContext* context, ::mruv::economy::WatchWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WarnMessage>* reactor) override;
+      void GetPlayerWarns(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerWarnsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::AdminJailMessage>* reactor) override;
+      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::AdminJailMessage>* reactor) override;
+      void GetPlayerAdminJail(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::GetPlayerAdminJailResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, std::function<void(::grpc::Status)>) override;
+      void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetBan(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchUnBans(::grpc::ClientContext* context, ::mruv::economy::WatchUnBansRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnBanMessage>* reactor) override;
+      void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchUnBans(::grpc::ClientContext* context, ::mruv::economy::WatchUnBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnBanMessage>* reactor) override;
+      void GetBan(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BanMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, std::function<void(::grpc::Status)>) override;
+      void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetWarn(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnBlockMessage>* reactor) override;
+      void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnBlockMessage>* reactor) override;
+      void GetWarn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WarnMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, std::function<void(::grpc::Status)>) override;
+      void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void GetBlock(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchUnWarns(::grpc::ClientContext* context, ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnWarnMessage>* reactor) override;
+      void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchUnWarns(::grpc::ClientContext* context, ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnWarnMessage>* reactor) override;
+      void GetBlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::BlockMessage* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) override;
+      void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void IsPlayerBanned(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::UnAdminJailMessage>* reactor) override;
+      void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::UnAdminJailMessage>* reactor) override;
+      void IsPlayerBanned(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsPlayerBannedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) override;
+      void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void IsCharacterBlocked(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* reactor) override;
+      void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* reactor) override;
+      void IsCharacterBlocked(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterBlockedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) override;
+      void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void IsCharacterJailed(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* reactor) override;
+      void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* reactor) override;
+      void IsCharacterJailed(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::IsCharacterJailedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void WatchPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchPunishmentsResponse>* reactor) override;
+      void WatchBans(::grpc::ClientContext* context, ::mruv::punishments::WatchBansRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::BanMessage>* reactor) override;
       #else
-      void WatchPunishments(::grpc::ClientContext* context, ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPunishmentsResponse>* reactor) override;
+      void WatchBans(::grpc::ClientContext* context, ::mruv::punishments::WatchBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::BanMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::BlockMessage>* reactor) override;
+      #else
+      void WatchBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::BlockMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WarnMessage>* reactor) override;
+      #else
+      void WatchWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WarnMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::AdminJailMessage>* reactor) override;
+      #else
+      void WatchAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::AdminJailMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchUnBans(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBansRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnBanMessage>* reactor) override;
+      #else
+      void WatchUnBans(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBansRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnBanMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnBlockMessage>* reactor) override;
+      #else
+      void WatchUnBlocks(::grpc::ClientContext* context, ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnBlockMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchUnWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnWarnMessage>* reactor) override;
+      #else
+      void WatchUnWarns(::grpc::ClientContext* context, ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnWarnMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::UnAdminJailMessage>* reactor) override;
+      #else
+      void WatchUnAdminJails(::grpc::ClientContext* context, ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::UnAdminJailMessage>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* reactor) override;
+      #else
+      void WatchPlayerPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* reactor) override;
+      #else
+      void WatchPlayerAcquittals(::grpc::ClientContext* context, ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::ClientReadReactor< ::mruv::punishments::WatchPunishmentsResponse>* reactor) override;
+      #else
+      void WatchPunishments(::grpc::ClientContext* context, ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::punishments::WatchPunishmentsResponse>* reactor) override;
+      #endif
+      void WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, std::function<void(::grpc::Status)>) override;
+      void WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void WatchAcquittals(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void WatchAcquittals(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::punishments::WatchAcquittalsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -1233,77 +1317,82 @@ class MruVPunishmentsService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>* AsyncBanRaw(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanResponse>* PrepareAsyncBanRaw(::grpc::ClientContext* context, const ::mruv::economy::BanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>* AsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockResponse>* PrepareAsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::BlockRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>* AsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnResponse>* PrepareAsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::WarnRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>* AsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::AdminJailResponse>* PrepareAsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::AdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>* AsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::MuteGlobalChatsResponse>* PrepareAsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>* AsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBanResponse>* PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>* AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnBlockResponse>* PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::UnBlockRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>* AsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnWarnResponse>* PrepareAsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::UnWarnRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>* AsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnAdminJailResponse>* PrepareAsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>* AsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::UnMuteGlobalChatsResponse>* PrepareAsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>* AsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerBansResponse>* PrepareAsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>* AsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerWarnsResponse>* PrepareAsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>* AsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPlayerAdminJailResponse>* PrepareAsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>* AsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BanMessage>* PrepareAsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBanRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>* AsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::WarnMessage>* PrepareAsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::economy::GetWarnRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>* AsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::BlockMessage>* PrepareAsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::economy::GetBlockRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>* AsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsPlayerBannedResponse>* PrepareAsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>* AsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterBlockedResponse>* PrepareAsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>* AsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::economy::IsCharacterJailedResponse>* PrepareAsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::economy::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::BanMessage>* WatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>* AsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::BanMessage>* PrepareAsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBansRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::BlockMessage>* WatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>* AsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::BlockMessage>* PrepareAsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::WarnMessage>* WatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>* AsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WarnMessage>* PrepareAsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::AdminJailMessage>* WatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>* AsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::AdminJailMessage>* PrepareAsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::UnBanMessage>* WatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>* AsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnBanMessage>* PrepareAsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::UnBlockMessage>* WatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>* AsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnBlockMessage>* PrepareAsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::UnWarnMessage>* WatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>* AsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnWarnMessage>* PrepareAsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::UnAdminJailMessage>* WatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>* AsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::UnAdminJailMessage>* PrepareAsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::WatchPlayerPunishmentsResponse>* WatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>* AsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerPunishmentsResponse>* PrepareAsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>* AsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WatchPlayerAcquittalsResponse>* PrepareAsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientReader< ::mruv::economy::WatchPunishmentsResponse>* WatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>* AsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
-    ::grpc::ClientAsyncReader< ::mruv::economy::WatchPunishmentsResponse>* PrepareAsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>* AsyncPunishRaw(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::PunishResponse>* PrepareAsyncPunishRaw(::grpc::ClientContext* context, const ::mruv::punishments::PunishRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>* AsyncBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanResponse>* PrepareAsyncBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::BanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>* AsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockResponse>* PrepareAsyncBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::BlockRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>* AsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnResponse>* PrepareAsyncWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::WarnRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>* AsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::AdminJailResponse>* PrepareAsyncAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::AdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>* AsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::MuteGlobalChatsResponse>* PrepareAsyncMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::MuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>* AsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBanResponse>* PrepareAsyncUnBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>* AsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnBlockResponse>* PrepareAsyncUnBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnBlockRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>* AsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnWarnResponse>* PrepareAsyncUnWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnWarnRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>* AsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnAdminJailResponse>* PrepareAsyncUnAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>* AsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::UnMuteGlobalChatsResponse>* PrepareAsyncUnMuteGlobalChatsRaw(::grpc::ClientContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>* AsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerBansResponse>* PrepareAsyncGetPlayerBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerBansRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>* AsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerWarnsResponse>* PrepareAsyncGetPlayerWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>* AsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::GetPlayerAdminJailResponse>* PrepareAsyncGetPlayerAdminJailRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>* AsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BanMessage>* PrepareAsyncGetBanRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBanRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>* AsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WarnMessage>* PrepareAsyncGetWarnRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetWarnRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>* AsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::BlockMessage>* PrepareAsyncGetBlockRaw(::grpc::ClientContext* context, const ::mruv::punishments::GetBlockRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>* AsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsPlayerBannedResponse>* PrepareAsyncIsPlayerBannedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsPlayerBannedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>* AsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterBlockedResponse>* PrepareAsyncIsCharacterBlockedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterBlockedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>* AsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::IsCharacterJailedResponse>* PrepareAsyncIsCharacterJailedRaw(::grpc::ClientContext* context, const ::mruv::punishments::IsCharacterJailedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::BanMessage>* WatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>* AsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::BanMessage>* PrepareAsyncWatchBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBansRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::BlockMessage>* WatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>* AsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::BlockMessage>* PrepareAsyncWatchBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchBlocksRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::WarnMessage>* WatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>* AsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WarnMessage>* PrepareAsyncWatchWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::AdminJailMessage>* WatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>* AsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::AdminJailMessage>* PrepareAsyncWatchAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAdminJailsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::UnBanMessage>* WatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>* AsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnBanMessage>* PrepareAsyncWatchUnBansRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBansRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::UnBlockMessage>* WatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>* AsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnBlockMessage>* PrepareAsyncWatchUnBlocksRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnBlocksRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::UnWarnMessage>* WatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>* AsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnWarnMessage>* PrepareAsyncWatchUnWarnsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnWarnsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::UnAdminJailMessage>* WatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>* AsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::UnAdminJailMessage>* PrepareAsyncWatchUnAdminJailsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>* WatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>* AsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerPunishmentsResponse>* PrepareAsyncWatchPlayerPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>* AsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPlayerAcquittalsResponse>* PrepareAsyncWatchPlayerAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientReader< ::mruv::punishments::WatchPunishmentsResponse>* WatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>* AsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq, void* tag) override;
+    ::grpc::ClientAsyncReader< ::mruv::punishments::WatchPunishmentsResponse>* PrepareAsyncWatchPunishmentsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchPunishmentsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>* AsyncWatchAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::punishments::WatchAcquittalsResponse>* PrepareAsyncWatchAcquittalsRaw(::grpc::ClientContext* context, const ::mruv::punishments::WatchAcquittalsRequest& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_Punish_;
     const ::grpc::internal::RpcMethod rpcmethod_Ban_;
     const ::grpc::internal::RpcMethod rpcmethod_Block_;
     const ::grpc::internal::RpcMethod rpcmethod_Warn_;
@@ -1334,6 +1423,7 @@ class MruVPunishmentsService final {
     const ::grpc::internal::RpcMethod rpcmethod_WatchPlayerPunishments_;
     const ::grpc::internal::RpcMethod rpcmethod_WatchPlayerAcquittals_;
     const ::grpc::internal::RpcMethod rpcmethod_WatchPunishments_;
+    const ::grpc::internal::RpcMethod rpcmethod_WatchAcquittals_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1341,68 +1431,92 @@ class MruVPunishmentsService final {
    public:
     Service();
     virtual ~Service();
+    // Punish player with choosen punishment type.
+    virtual ::grpc::Status Punish(::grpc::ServerContext* context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response);
     // Ban player on account and/or ip.
     // If ban_time is 0, ban will never expire.
-    virtual ::grpc::Status Ban(::grpc::ServerContext* context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response);
+    virtual ::grpc::Status Ban(::grpc::ServerContext* context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response);
     // Block player character.
-    virtual ::grpc::Status Block(::grpc::ServerContext* context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response);
+    virtual ::grpc::Status Block(::grpc::ServerContext* context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response);
     // Warn player.
     // If warn_time is 0, warn will never expire.
-    virtual ::grpc::Status Warn(::grpc::ServerContext* context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response);
+    virtual ::grpc::Status Warn(::grpc::ServerContext* context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response);
     // Put player in an admin jail.
-    virtual ::grpc::Status AdminJail(::grpc::ServerContext* context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response);
+    virtual ::grpc::Status AdminJail(::grpc::ServerContext* context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response);
     // Mute player global chats.
-    virtual ::grpc::Status MuteGlobalChats(::grpc::ServerContext* context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response);
+    virtual ::grpc::Status MuteGlobalChats(::grpc::ServerContext* context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response);
     // Deactivate a specific player ban.
-    virtual ::grpc::Status UnBan(::grpc::ServerContext* context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response);
+    virtual ::grpc::Status UnBan(::grpc::ServerContext* context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response);
     // Deactivate a character block.
-    virtual ::grpc::Status UnBlock(::grpc::ServerContext* context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response);
+    virtual ::grpc::Status UnBlock(::grpc::ServerContext* context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response);
     // Deactivate a specific player warning. If a player was banned by reaching the warning limit, a player will be unbanned.
-    virtual ::grpc::Status UnWarn(::grpc::ServerContext* context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response);
+    virtual ::grpc::Status UnWarn(::grpc::ServerContext* context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response);
     // Remove player from admin jail.
-    virtual ::grpc::Status UnAdminJail(::grpc::ServerContext* context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response);
+    virtual ::grpc::Status UnAdminJail(::grpc::ServerContext* context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response);
     //
-    virtual ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response);
+    virtual ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response);
     // Get all player bans.
-    virtual ::grpc::Status GetPlayerBans(::grpc::ServerContext* context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response);
+    virtual ::grpc::Status GetPlayerBans(::grpc::ServerContext* context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response);
     // Get all player warns.
-    virtual ::grpc::Status GetPlayerWarns(::grpc::ServerContext* context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response);
+    virtual ::grpc::Status GetPlayerWarns(::grpc::ServerContext* context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response);
     // Get player admin jail time.
-    virtual ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response);
+    virtual ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response);
     // Get ban info.
-    virtual ::grpc::Status GetBan(::grpc::ServerContext* context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response);
+    virtual ::grpc::Status GetBan(::grpc::ServerContext* context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response);
     // Get warn info.
-    virtual ::grpc::Status GetWarn(::grpc::ServerContext* context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response);
+    virtual ::grpc::Status GetWarn(::grpc::ServerContext* context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response);
     // Get block info.
-    virtual ::grpc::Status GetBlock(::grpc::ServerContext* context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response);
+    virtual ::grpc::Status GetBlock(::grpc::ServerContext* context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response);
     // Check is player or ip banned.
-    virtual ::grpc::Status IsPlayerBanned(::grpc::ServerContext* context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response);
+    virtual ::grpc::Status IsPlayerBanned(::grpc::ServerContext* context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response);
     // Check is character is blocked.
-    virtual ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response);
+    virtual ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response);
     //
-    virtual ::grpc::Status IsCharacterJailed(::grpc::ServerContext* context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response);
+    virtual ::grpc::Status IsCharacterJailed(::grpc::ServerContext* context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response);
     // Subscribe to ban events.
-    virtual ::grpc::Status WatchBans(::grpc::ServerContext* context, const ::mruv::economy::WatchBansRequest* request, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* writer);
+    virtual ::grpc::Status WatchBans(::grpc::ServerContext* context, const ::mruv::punishments::WatchBansRequest* request, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* writer);
     // Subscribe to block events.
-    virtual ::grpc::Status WatchBlocks(::grpc::ServerContext* context, const ::mruv::economy::WatchBlocksRequest* request, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* writer);
+    virtual ::grpc::Status WatchBlocks(::grpc::ServerContext* context, const ::mruv::punishments::WatchBlocksRequest* request, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* writer);
     // Subscribe to warn events.
-    virtual ::grpc::Status WatchWarns(::grpc::ServerContext* context, const ::mruv::economy::WatchWarnsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* writer);
+    virtual ::grpc::Status WatchWarns(::grpc::ServerContext* context, const ::mruv::punishments::WatchWarnsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* writer);
     // Subscribe to admin jail events.
-    virtual ::grpc::Status WatchAdminJails(::grpc::ServerContext* context, const ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* writer);
+    virtual ::grpc::Status WatchAdminJails(::grpc::ServerContext* context, const ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* writer);
     // Subscribe to unban events.
-    virtual ::grpc::Status WatchUnBans(::grpc::ServerContext* context, const ::mruv::economy::WatchUnBansRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* writer);
+    virtual ::grpc::Status WatchUnBans(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnBansRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* writer);
     // Subscribe to unblock events.
-    virtual ::grpc::Status WatchUnBlocks(::grpc::ServerContext* context, const ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* writer);
+    virtual ::grpc::Status WatchUnBlocks(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* writer);
     // Subscribe to unwarn events.
-    virtual ::grpc::Status WatchUnWarns(::grpc::ServerContext* context, const ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* writer);
+    virtual ::grpc::Status WatchUnWarns(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* writer);
     // Subscribe to admin jail release events.
-    virtual ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* context, const ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* writer);
+    virtual ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* context, const ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* writer);
     // Subscribe to player punishments.
-    virtual ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* context, const ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* writer);
+    virtual ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* context, const ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* writer);
     // Subscribe to player acquittals.
-    virtual ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* context, const ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* writer);
-    // Subscribe to all punishments and acquittals events.
-    virtual ::grpc::Status WatchPunishments(::grpc::ServerContext* context, const ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* writer);
+    virtual ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* context, const ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* writer);
+    // Subscribe to all punishments events.
+    virtual ::grpc::Status WatchPunishments(::grpc::ServerContext* context, const ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* writer);
+    // Subscribe to all acquittals events.
+    virtual ::grpc::Status WatchAcquittals(::grpc::ServerContext* context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response);
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_Punish : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_Punish() {
+      ::grpc::Service::MarkMethodAsync(0);
+    }
+    ~WithAsyncMethod_Punish() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Punish(::grpc::ServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestPunish(::grpc::ServerContext* context, ::mruv::punishments::PunishRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::PunishResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    }
   };
   template <class BaseClass>
   class WithAsyncMethod_Ban : public BaseClass {
@@ -1410,18 +1524,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Ban() {
-      ::grpc::Service::MarkMethodAsync(0);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_Ban() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/) override {
+    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestBan(::grpc::ServerContext* context, ::mruv::economy::BanRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::BanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestBan(::grpc::ServerContext* context, ::mruv::punishments::BanRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::BanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1430,18 +1544,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Block() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_Block() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/) override {
+    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestBlock(::grpc::ServerContext* context, ::mruv::economy::BlockRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::BlockResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestBlock(::grpc::ServerContext* context, ::mruv::punishments::BlockRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::BlockResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1450,18 +1564,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_Warn() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_Warn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/) override {
+    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWarn(::grpc::ServerContext* context, ::mruv::economy::WarnRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::WarnResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestWarn(::grpc::ServerContext* context, ::mruv::punishments::WarnRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::WarnResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1470,18 +1584,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AdminJail() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_AdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/) override {
+    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAdminJail(::grpc::ServerContext* context, ::mruv::economy::AdminJailRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::AdminJailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestAdminJail(::grpc::ServerContext* context, ::mruv::punishments::AdminJailRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::AdminJailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1490,18 +1604,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MuteGlobalChats() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_MuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestMuteGlobalChats(::grpc::ServerContext* context, ::mruv::economy::MuteGlobalChatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::MuteGlobalChatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestMuteGlobalChats(::grpc::ServerContext* context, ::mruv::punishments::MuteGlobalChatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::MuteGlobalChatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1510,18 +1624,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UnBan() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_UnBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/) override {
+    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUnBan(::grpc::ServerContext* context, ::mruv::economy::UnBanRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::UnBanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestUnBan(::grpc::ServerContext* context, ::mruv::punishments::UnBanRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::UnBanResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1530,18 +1644,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UnBlock() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_UnBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/) override {
+    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUnBlock(::grpc::ServerContext* context, ::mruv::economy::UnBlockRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::UnBlockResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestUnBlock(::grpc::ServerContext* context, ::mruv::punishments::UnBlockRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::UnBlockResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1550,18 +1664,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UnWarn() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_UnWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/) override {
+    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUnWarn(::grpc::ServerContext* context, ::mruv::economy::UnWarnRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::UnWarnResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestUnWarn(::grpc::ServerContext* context, ::mruv::punishments::UnWarnRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::UnWarnResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1570,18 +1684,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UnAdminJail() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_UnAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/) override {
+    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUnAdminJail(::grpc::ServerContext* context, ::mruv::economy::UnAdminJailRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::UnAdminJailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestUnAdminJail(::grpc::ServerContext* context, ::mruv::punishments::UnAdminJailRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::UnAdminJailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1590,18 +1704,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UnMuteGlobalChats() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_UnMuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUnMuteGlobalChats(::grpc::ServerContext* context, ::mruv::economy::UnMuteGlobalChatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::UnMuteGlobalChatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestUnMuteGlobalChats(::grpc::ServerContext* context, ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::UnMuteGlobalChatsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1610,18 +1724,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPlayerBans() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_GetPlayerBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/) override {
+    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetPlayerBans(::grpc::ServerContext* context, ::mruv::economy::GetPlayerBansRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::GetPlayerBansResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestGetPlayerBans(::grpc::ServerContext* context, ::mruv::punishments::GetPlayerBansRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::GetPlayerBansResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1630,18 +1744,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPlayerWarns() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_GetPlayerWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/) override {
+    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetPlayerWarns(::grpc::ServerContext* context, ::mruv::economy::GetPlayerWarnsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::GetPlayerWarnsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestGetPlayerWarns(::grpc::ServerContext* context, ::mruv::punishments::GetPlayerWarnsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::GetPlayerWarnsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1650,18 +1764,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPlayerAdminJail() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_GetPlayerAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/) override {
+    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetPlayerAdminJail(::grpc::ServerContext* context, ::mruv::economy::GetPlayerAdminJailRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::GetPlayerAdminJailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestGetPlayerAdminJail(::grpc::ServerContext* context, ::mruv::punishments::GetPlayerAdminJailRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::GetPlayerAdminJailResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1670,18 +1784,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetBan() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_GetBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/) override {
+    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetBan(::grpc::ServerContext* context, ::mruv::economy::GetBanRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::BanMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestGetBan(::grpc::ServerContext* context, ::mruv::punishments::GetBanRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::BanMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1690,18 +1804,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetWarn() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_GetWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/) override {
+    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetWarn(::grpc::ServerContext* context, ::mruv::economy::GetWarnRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::WarnMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestGetWarn(::grpc::ServerContext* context, ::mruv::punishments::GetWarnRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::WarnMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1710,18 +1824,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetBlock() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_GetBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/) override {
+    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetBlock(::grpc::ServerContext* context, ::mruv::economy::GetBlockRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::BlockMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestGetBlock(::grpc::ServerContext* context, ::mruv::punishments::GetBlockRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::BlockMessage>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1730,18 +1844,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_IsPlayerBanned() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_IsPlayerBanned() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/) override {
+    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestIsPlayerBanned(::grpc::ServerContext* context, ::mruv::economy::IsPlayerBannedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::IsPlayerBannedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestIsPlayerBanned(::grpc::ServerContext* context, ::mruv::punishments::IsPlayerBannedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::IsPlayerBannedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1750,18 +1864,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_IsCharacterBlocked() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_IsCharacterBlocked() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestIsCharacterBlocked(::grpc::ServerContext* context, ::mruv::economy::IsCharacterBlockedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::IsCharacterBlockedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestIsCharacterBlocked(::grpc::ServerContext* context, ::mruv::punishments::IsCharacterBlockedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::IsCharacterBlockedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1770,18 +1884,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_IsCharacterJailed() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_IsCharacterJailed() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestIsCharacterJailed(::grpc::ServerContext* context, ::mruv::economy::IsCharacterJailedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::economy::IsCharacterJailedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+    void RequestIsCharacterJailed(::grpc::ServerContext* context, ::mruv::punishments::IsCharacterJailedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::IsCharacterJailedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1790,18 +1904,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchBans() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_WatchBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* /*writer*/) override {
+    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchBans(::grpc::ServerContext* context, ::mruv::economy::WatchBansRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::BanMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(19, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchBans(::grpc::ServerContext* context, ::mruv::punishments::WatchBansRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::BanMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(20, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1810,18 +1924,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchBlocks() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_WatchBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchBlocks(::grpc::ServerContext* context, ::mruv::economy::WatchBlocksRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::BlockMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(20, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchBlocks(::grpc::ServerContext* context, ::mruv::punishments::WatchBlocksRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::BlockMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(21, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1830,18 +1944,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchWarns() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_WatchWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchWarns(::grpc::ServerContext* context, ::mruv::economy::WatchWarnsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::WarnMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(21, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchWarns(::grpc::ServerContext* context, ::mruv::punishments::WatchWarnsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::WarnMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(22, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1850,18 +1964,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchAdminJails() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_WatchAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchAdminJails(::grpc::ServerContext* context, ::mruv::economy::WatchAdminJailsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::AdminJailMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(22, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchAdminJails(::grpc::ServerContext* context, ::mruv::punishments::WatchAdminJailsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::AdminJailMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(23, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1870,18 +1984,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchUnBans() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_WatchUnBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchUnBans(::grpc::ServerContext* context, ::mruv::economy::WatchUnBansRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::UnBanMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(23, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchUnBans(::grpc::ServerContext* context, ::mruv::punishments::WatchUnBansRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::UnBanMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(24, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1890,18 +2004,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchUnBlocks() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_WatchUnBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchUnBlocks(::grpc::ServerContext* context, ::mruv::economy::WatchUnBlocksRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::UnBlockMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(24, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchUnBlocks(::grpc::ServerContext* context, ::mruv::punishments::WatchUnBlocksRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::UnBlockMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(25, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1910,18 +2024,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchUnWarns() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_WatchUnWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchUnWarns(::grpc::ServerContext* context, ::mruv::economy::WatchUnWarnsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::UnWarnMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(25, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchUnWarns(::grpc::ServerContext* context, ::mruv::punishments::WatchUnWarnsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::UnWarnMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(26, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1930,18 +2044,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchUnAdminJails() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_WatchUnAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchUnAdminJails(::grpc::ServerContext* context, ::mruv::economy::WatchUnAdminJailsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::UnAdminJailMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(26, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchUnAdminJails(::grpc::ServerContext* context, ::mruv::punishments::WatchUnAdminJailsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::UnAdminJailMessage>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(27, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1950,18 +2064,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchPlayerPunishments() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_WatchPlayerPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchPlayerPunishments(::grpc::ServerContext* context, ::mruv::economy::WatchPlayerPunishmentsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(27, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchPlayerPunishments(::grpc::ServerContext* context, ::mruv::punishments::WatchPlayerPunishmentsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(28, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1970,18 +2084,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchPlayerAcquittals() {
-      ::grpc::Service::MarkMethodAsync(28);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_WatchPlayerAcquittals() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchPlayerAcquittals(::grpc::ServerContext* context, ::mruv::economy::WatchPlayerAcquittalsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(28, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchPlayerAcquittals(::grpc::ServerContext* context, ::mruv::punishments::WatchPlayerAcquittalsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(29, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1990,21 +2104,88 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_WatchPunishments() {
-      ::grpc::Service::MarkMethodAsync(29);
+      ::grpc::Service::MarkMethodAsync(30);
     }
     ~WithAsyncMethod_WatchPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestWatchPunishments(::grpc::ServerContext* context, ::mruv::economy::WatchPunishmentsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::economy::WatchPunishmentsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(29, context, request, writer, new_call_cq, notification_cq, tag);
+    void RequestWatchPunishments(::grpc::ServerContext* context, ::mruv::punishments::WatchPunishmentsRequest* request, ::grpc::ServerAsyncWriter< ::mruv::punishments::WatchPunishmentsResponse>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncServerStreaming(30, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_Ban<WithAsyncMethod_Block<WithAsyncMethod_Warn<WithAsyncMethod_AdminJail<WithAsyncMethod_MuteGlobalChats<WithAsyncMethod_UnBan<WithAsyncMethod_UnBlock<WithAsyncMethod_UnWarn<WithAsyncMethod_UnAdminJail<WithAsyncMethod_UnMuteGlobalChats<WithAsyncMethod_GetPlayerBans<WithAsyncMethod_GetPlayerWarns<WithAsyncMethod_GetPlayerAdminJail<WithAsyncMethod_GetBan<WithAsyncMethod_GetWarn<WithAsyncMethod_GetBlock<WithAsyncMethod_IsPlayerBanned<WithAsyncMethod_IsCharacterBlocked<WithAsyncMethod_IsCharacterJailed<WithAsyncMethod_WatchBans<WithAsyncMethod_WatchBlocks<WithAsyncMethod_WatchWarns<WithAsyncMethod_WatchAdminJails<WithAsyncMethod_WatchUnBans<WithAsyncMethod_WatchUnBlocks<WithAsyncMethod_WatchUnWarns<WithAsyncMethod_WatchUnAdminJails<WithAsyncMethod_WatchPlayerPunishments<WithAsyncMethod_WatchPlayerAcquittals<WithAsyncMethod_WatchPunishments<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_WatchAcquittals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_WatchAcquittals() {
+      ::grpc::Service::MarkMethodAsync(31);
+    }
+    ~WithAsyncMethod_WatchAcquittals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status WatchAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestWatchAcquittals(::grpc::ServerContext* context, ::mruv::punishments::WatchAcquittalsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::punishments::WatchAcquittalsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_Punish<WithAsyncMethod_Ban<WithAsyncMethod_Block<WithAsyncMethod_Warn<WithAsyncMethod_AdminJail<WithAsyncMethod_MuteGlobalChats<WithAsyncMethod_UnBan<WithAsyncMethod_UnBlock<WithAsyncMethod_UnWarn<WithAsyncMethod_UnAdminJail<WithAsyncMethod_UnMuteGlobalChats<WithAsyncMethod_GetPlayerBans<WithAsyncMethod_GetPlayerWarns<WithAsyncMethod_GetPlayerAdminJail<WithAsyncMethod_GetBan<WithAsyncMethod_GetWarn<WithAsyncMethod_GetBlock<WithAsyncMethod_IsPlayerBanned<WithAsyncMethod_IsCharacterBlocked<WithAsyncMethod_IsCharacterJailed<WithAsyncMethod_WatchBans<WithAsyncMethod_WatchBlocks<WithAsyncMethod_WatchWarns<WithAsyncMethod_WatchAdminJails<WithAsyncMethod_WatchUnBans<WithAsyncMethod_WatchUnBlocks<WithAsyncMethod_WatchUnWarns<WithAsyncMethod_WatchUnAdminJails<WithAsyncMethod_WatchPlayerPunishments<WithAsyncMethod_WatchPlayerAcquittals<WithAsyncMethod_WatchPunishments<WithAsyncMethod_WatchAcquittals<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_Punish : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_Punish() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(0,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::PunishRequest, ::mruv::punishments::PunishResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::punishments::PunishRequest* request, ::mruv::punishments::PunishResponse* response) { return this->Punish(context, request, response); }));}
+    void SetMessageAllocatorFor_Punish(
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::PunishRequest, ::mruv::punishments::PunishResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::PunishRequest, ::mruv::punishments::PunishResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_Punish() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Punish(::grpc::ServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* Punish(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* Punish(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/)
+    #endif
+      { return nullptr; }
+  };
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_Ban : public BaseClass {
    private:
@@ -2016,39 +2197,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>(
+        MarkMethodCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::BanRequest, ::mruv::punishments::BanResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::BanRequest* request, ::mruv::economy::BanResponse* response) { return this->Ban(context, request, response); }));}
+                     context, const ::mruv::punishments::BanRequest* request, ::mruv::punishments::BanResponse* response) { return this->Ban(context, request, response); }));}
     void SetMessageAllocatorFor_Ban(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::BanRequest, ::mruv::punishments::BanResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::BanRequest, ::mruv::punishments::BanResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Ban() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/) override {
+    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* Ban(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* Ban(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2063,39 +2244,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>(
+        MarkMethodCallback(2,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::BlockRequest, ::mruv::punishments::BlockResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::BlockRequest* request, ::mruv::economy::BlockResponse* response) { return this->Block(context, request, response); }));}
+                     context, const ::mruv::punishments::BlockRequest* request, ::mruv::punishments::BlockResponse* response) { return this->Block(context, request, response); }));}
     void SetMessageAllocatorFor_Block(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::BlockRequest, ::mruv::punishments::BlockResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::BlockRequest, ::mruv::punishments::BlockResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Block() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/) override {
+    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* Block(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* Block(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2110,39 +2291,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>(
+        MarkMethodCallback(3,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::WarnRequest, ::mruv::punishments::WarnResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WarnRequest* request, ::mruv::economy::WarnResponse* response) { return this->Warn(context, request, response); }));}
+                     context, const ::mruv::punishments::WarnRequest* request, ::mruv::punishments::WarnResponse* response) { return this->Warn(context, request, response); }));}
     void SetMessageAllocatorFor_Warn(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::WarnRequest, ::mruv::punishments::WarnResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::WarnRequest, ::mruv::punishments::WarnResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Warn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/) override {
+    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* Warn(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* Warn(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2157,39 +2338,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>(
+        MarkMethodCallback(4,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::AdminJailRequest, ::mruv::punishments::AdminJailResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::AdminJailRequest* request, ::mruv::economy::AdminJailResponse* response) { return this->AdminJail(context, request, response); }));}
+                     context, const ::mruv::punishments::AdminJailRequest* request, ::mruv::punishments::AdminJailResponse* response) { return this->AdminJail(context, request, response); }));}
     void SetMessageAllocatorFor_AdminJail(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::AdminJailRequest, ::mruv::punishments::AdminJailResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::AdminJailRequest, ::mruv::punishments::AdminJailResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/) override {
+    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* AdminJail(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* AdminJail(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2204,39 +2385,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>(
+        MarkMethodCallback(5,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::MuteGlobalChatsRequest, ::mruv::punishments::MuteGlobalChatsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::MuteGlobalChatsRequest* request, ::mruv::economy::MuteGlobalChatsResponse* response) { return this->MuteGlobalChats(context, request, response); }));}
+                     context, const ::mruv::punishments::MuteGlobalChatsRequest* request, ::mruv::punishments::MuteGlobalChatsResponse* response) { return this->MuteGlobalChats(context, request, response); }));}
     void SetMessageAllocatorFor_MuteGlobalChats(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::MuteGlobalChatsRequest, ::mruv::punishments::MuteGlobalChatsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::MuteGlobalChatsRequest, ::mruv::punishments::MuteGlobalChatsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_MuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* MuteGlobalChats(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* MuteGlobalChats(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2251,39 +2432,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>(
+        MarkMethodCallback(6,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnBanRequest, ::mruv::punishments::UnBanResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::UnBanRequest* request, ::mruv::economy::UnBanResponse* response) { return this->UnBan(context, request, response); }));}
+                     context, const ::mruv::punishments::UnBanRequest* request, ::mruv::punishments::UnBanResponse* response) { return this->UnBan(context, request, response); }));}
     void SetMessageAllocatorFor_UnBan(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::UnBanRequest, ::mruv::punishments::UnBanResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnBanRequest, ::mruv::punishments::UnBanResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/) override {
+    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UnBan(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UnBan(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2298,39 +2479,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>(
+        MarkMethodCallback(7,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnBlockRequest, ::mruv::punishments::UnBlockResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::UnBlockRequest* request, ::mruv::economy::UnBlockResponse* response) { return this->UnBlock(context, request, response); }));}
+                     context, const ::mruv::punishments::UnBlockRequest* request, ::mruv::punishments::UnBlockResponse* response) { return this->UnBlock(context, request, response); }));}
     void SetMessageAllocatorFor_UnBlock(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::UnBlockRequest, ::mruv::punishments::UnBlockResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnBlockRequest, ::mruv::punishments::UnBlockResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/) override {
+    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UnBlock(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UnBlock(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2345,39 +2526,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>(
+        MarkMethodCallback(8,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnWarnRequest, ::mruv::punishments::UnWarnResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::UnWarnRequest* request, ::mruv::economy::UnWarnResponse* response) { return this->UnWarn(context, request, response); }));}
+                     context, const ::mruv::punishments::UnWarnRequest* request, ::mruv::punishments::UnWarnResponse* response) { return this->UnWarn(context, request, response); }));}
     void SetMessageAllocatorFor_UnWarn(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::UnWarnRequest, ::mruv::punishments::UnWarnResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnWarnRequest, ::mruv::punishments::UnWarnResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/) override {
+    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UnWarn(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UnWarn(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2392,39 +2573,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>(
+        MarkMethodCallback(9,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnAdminJailRequest, ::mruv::punishments::UnAdminJailResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::UnAdminJailRequest* request, ::mruv::economy::UnAdminJailResponse* response) { return this->UnAdminJail(context, request, response); }));}
+                     context, const ::mruv::punishments::UnAdminJailRequest* request, ::mruv::punishments::UnAdminJailResponse* response) { return this->UnAdminJail(context, request, response); }));}
     void SetMessageAllocatorFor_UnAdminJail(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::UnAdminJailRequest, ::mruv::punishments::UnAdminJailResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnAdminJailRequest, ::mruv::punishments::UnAdminJailResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/) override {
+    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UnAdminJail(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UnAdminJail(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2439,39 +2620,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>(
+        MarkMethodCallback(10,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnMuteGlobalChatsRequest, ::mruv::punishments::UnMuteGlobalChatsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::UnMuteGlobalChatsRequest* request, ::mruv::economy::UnMuteGlobalChatsResponse* response) { return this->UnMuteGlobalChats(context, request, response); }));}
+                     context, const ::mruv::punishments::UnMuteGlobalChatsRequest* request, ::mruv::punishments::UnMuteGlobalChatsResponse* response) { return this->UnMuteGlobalChats(context, request, response); }));}
     void SetMessageAllocatorFor_UnMuteGlobalChats(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::UnMuteGlobalChatsRequest, ::mruv::punishments::UnMuteGlobalChatsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::UnMuteGlobalChatsRequest, ::mruv::punishments::UnMuteGlobalChatsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnMuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UnMuteGlobalChats(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UnMuteGlobalChats(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2486,39 +2667,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(10,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>(
+        MarkMethodCallback(11,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetPlayerBansRequest, ::mruv::punishments::GetPlayerBansResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::GetPlayerBansRequest* request, ::mruv::economy::GetPlayerBansResponse* response) { return this->GetPlayerBans(context, request, response); }));}
+                     context, const ::mruv::punishments::GetPlayerBansRequest* request, ::mruv::punishments::GetPlayerBansResponse* response) { return this->GetPlayerBans(context, request, response); }));}
     void SetMessageAllocatorFor_GetPlayerBans(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::GetPlayerBansRequest, ::mruv::punishments::GetPlayerBansResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetPlayerBansRequest, ::mruv::punishments::GetPlayerBansResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPlayerBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/) override {
+    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetPlayerBans(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetPlayerBans(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2533,39 +2714,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(11,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>(
+        MarkMethodCallback(12,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetPlayerWarnsRequest, ::mruv::punishments::GetPlayerWarnsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::GetPlayerWarnsRequest* request, ::mruv::economy::GetPlayerWarnsResponse* response) { return this->GetPlayerWarns(context, request, response); }));}
+                     context, const ::mruv::punishments::GetPlayerWarnsRequest* request, ::mruv::punishments::GetPlayerWarnsResponse* response) { return this->GetPlayerWarns(context, request, response); }));}
     void SetMessageAllocatorFor_GetPlayerWarns(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::GetPlayerWarnsRequest, ::mruv::punishments::GetPlayerWarnsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetPlayerWarnsRequest, ::mruv::punishments::GetPlayerWarnsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPlayerWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/) override {
+    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetPlayerWarns(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetPlayerWarns(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2580,39 +2761,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(12,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>(
+        MarkMethodCallback(13,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetPlayerAdminJailRequest, ::mruv::punishments::GetPlayerAdminJailResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::GetPlayerAdminJailRequest* request, ::mruv::economy::GetPlayerAdminJailResponse* response) { return this->GetPlayerAdminJail(context, request, response); }));}
+                     context, const ::mruv::punishments::GetPlayerAdminJailRequest* request, ::mruv::punishments::GetPlayerAdminJailResponse* response) { return this->GetPlayerAdminJail(context, request, response); }));}
     void SetMessageAllocatorFor_GetPlayerAdminJail(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::GetPlayerAdminJailRequest, ::mruv::punishments::GetPlayerAdminJailResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetPlayerAdminJailRequest, ::mruv::punishments::GetPlayerAdminJailResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPlayerAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/) override {
+    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetPlayerAdminJail(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetPlayerAdminJail(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2627,39 +2808,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(13,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>(
+        MarkMethodCallback(14,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetBanRequest, ::mruv::punishments::BanMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::GetBanRequest* request, ::mruv::economy::BanMessage* response) { return this->GetBan(context, request, response); }));}
+                     context, const ::mruv::punishments::GetBanRequest* request, ::mruv::punishments::BanMessage* response) { return this->GetBan(context, request, response); }));}
     void SetMessageAllocatorFor_GetBan(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::GetBanRequest, ::mruv::punishments::BanMessage>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetBanRequest, ::mruv::punishments::BanMessage>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/) override {
+    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetBan(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetBan(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2674,39 +2855,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(14,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>(
+        MarkMethodCallback(15,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetWarnRequest, ::mruv::punishments::WarnMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::GetWarnRequest* request, ::mruv::economy::WarnMessage* response) { return this->GetWarn(context, request, response); }));}
+                     context, const ::mruv::punishments::GetWarnRequest* request, ::mruv::punishments::WarnMessage* response) { return this->GetWarn(context, request, response); }));}
     void SetMessageAllocatorFor_GetWarn(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::GetWarnRequest, ::mruv::punishments::WarnMessage>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetWarnRequest, ::mruv::punishments::WarnMessage>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/) override {
+    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetWarn(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetWarn(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2721,39 +2902,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(15,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>(
+        MarkMethodCallback(16,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetBlockRequest, ::mruv::punishments::BlockMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::GetBlockRequest* request, ::mruv::economy::BlockMessage* response) { return this->GetBlock(context, request, response); }));}
+                     context, const ::mruv::punishments::GetBlockRequest* request, ::mruv::punishments::BlockMessage* response) { return this->GetBlock(context, request, response); }));}
     void SetMessageAllocatorFor_GetBlock(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::GetBlockRequest, ::mruv::punishments::BlockMessage>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::GetBlockRequest, ::mruv::punishments::BlockMessage>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/) override {
+    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetBlock(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetBlock(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2768,39 +2949,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(16,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>(
+        MarkMethodCallback(17,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::IsPlayerBannedRequest, ::mruv::punishments::IsPlayerBannedResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::IsPlayerBannedRequest* request, ::mruv::economy::IsPlayerBannedResponse* response) { return this->IsPlayerBanned(context, request, response); }));}
+                     context, const ::mruv::punishments::IsPlayerBannedRequest* request, ::mruv::punishments::IsPlayerBannedResponse* response) { return this->IsPlayerBanned(context, request, response); }));}
     void SetMessageAllocatorFor_IsPlayerBanned(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::IsPlayerBannedRequest, ::mruv::punishments::IsPlayerBannedResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::IsPlayerBannedRequest, ::mruv::punishments::IsPlayerBannedResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_IsPlayerBanned() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/) override {
+    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* IsPlayerBanned(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* IsPlayerBanned(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2815,39 +2996,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(17,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>(
+        MarkMethodCallback(18,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::IsCharacterBlockedRequest, ::mruv::punishments::IsCharacterBlockedResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::IsCharacterBlockedRequest* request, ::mruv::economy::IsCharacterBlockedResponse* response) { return this->IsCharacterBlocked(context, request, response); }));}
+                     context, const ::mruv::punishments::IsCharacterBlockedRequest* request, ::mruv::punishments::IsCharacterBlockedResponse* response) { return this->IsCharacterBlocked(context, request, response); }));}
     void SetMessageAllocatorFor_IsCharacterBlocked(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::IsCharacterBlockedRequest, ::mruv::punishments::IsCharacterBlockedResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::IsCharacterBlockedRequest, ::mruv::punishments::IsCharacterBlockedResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_IsCharacterBlocked() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* IsCharacterBlocked(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* IsCharacterBlocked(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2862,39 +3043,39 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(18,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>(
+        MarkMethodCallback(19,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::IsCharacterJailedRequest, ::mruv::punishments::IsCharacterJailedResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::IsCharacterJailedRequest* request, ::mruv::economy::IsCharacterJailedResponse* response) { return this->IsCharacterJailed(context, request, response); }));}
+                     context, const ::mruv::punishments::IsCharacterJailedRequest* request, ::mruv::punishments::IsCharacterJailedResponse* response) { return this->IsCharacterJailed(context, request, response); }));}
     void SetMessageAllocatorFor_IsCharacterJailed(
-        ::grpc::experimental::MessageAllocator< ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::IsCharacterJailedRequest, ::mruv::punishments::IsCharacterJailedResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::IsCharacterJailedRequest, ::mruv::punishments::IsCharacterJailedResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_IsCharacterJailed() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* IsCharacterJailed(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* IsCharacterJailed(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2909,30 +3090,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(19,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>(
+        MarkMethodCallback(20,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchBansRequest, ::mruv::punishments::BanMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchBansRequest* request) { return this->WatchBans(context, request); }));
+                     context, const ::mruv::punishments::WatchBansRequest* request) { return this->WatchBans(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* /*writer*/) override {
+    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::BanMessage>* WatchBans(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::BanMessage>* WatchBans(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::BanMessage>* WatchBans(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::BanMessage>* WatchBans(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -2947,30 +3128,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(20,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>(
+        MarkMethodCallback(21,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchBlocksRequest, ::mruv::punishments::BlockMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchBlocksRequest* request) { return this->WatchBlocks(context, request); }));
+                     context, const ::mruv::punishments::WatchBlocksRequest* request) { return this->WatchBlocks(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::BlockMessage>* WatchBlocks(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::BlockMessage>* WatchBlocks(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::BlockMessage>* WatchBlocks(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::BlockMessage>* WatchBlocks(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -2985,30 +3166,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(21,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>(
+        MarkMethodCallback(22,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchWarnsRequest, ::mruv::punishments::WarnMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchWarnsRequest* request) { return this->WatchWarns(context, request); }));
+                     context, const ::mruv::punishments::WatchWarnsRequest* request) { return this->WatchWarns(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::WarnMessage>* WatchWarns(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::WarnMessage>* WatchWarns(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::WarnMessage>* WatchWarns(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::WarnMessage>* WatchWarns(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3023,30 +3204,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(22,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>(
+        MarkMethodCallback(23,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchAdminJailsRequest, ::mruv::punishments::AdminJailMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchAdminJailsRequest* request) { return this->WatchAdminJails(context, request); }));
+                     context, const ::mruv::punishments::WatchAdminJailsRequest* request) { return this->WatchAdminJails(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::AdminJailMessage>* WatchAdminJails(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::AdminJailMessage>* WatchAdminJails(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::AdminJailMessage>* WatchAdminJails(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::AdminJailMessage>* WatchAdminJails(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3061,30 +3242,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(23,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>(
+        MarkMethodCallback(24,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchUnBansRequest, ::mruv::punishments::UnBanMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchUnBansRequest* request) { return this->WatchUnBans(context, request); }));
+                     context, const ::mruv::punishments::WatchUnBansRequest* request) { return this->WatchUnBans(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchUnBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::UnBanMessage>* WatchUnBans(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::UnBanMessage>* WatchUnBans(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::UnBanMessage>* WatchUnBans(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::UnBanMessage>* WatchUnBans(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3099,30 +3280,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(24,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>(
+        MarkMethodCallback(25,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchUnBlocksRequest, ::mruv::punishments::UnBlockMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchUnBlocksRequest* request) { return this->WatchUnBlocks(context, request); }));
+                     context, const ::mruv::punishments::WatchUnBlocksRequest* request) { return this->WatchUnBlocks(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchUnBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::UnBlockMessage>* WatchUnBlocks(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::UnBlockMessage>* WatchUnBlocks(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::UnBlockMessage>* WatchUnBlocks(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::UnBlockMessage>* WatchUnBlocks(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3137,30 +3318,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(25,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>(
+        MarkMethodCallback(26,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchUnWarnsRequest, ::mruv::punishments::UnWarnMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchUnWarnsRequest* request) { return this->WatchUnWarns(context, request); }));
+                     context, const ::mruv::punishments::WatchUnWarnsRequest* request) { return this->WatchUnWarns(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchUnWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::UnWarnMessage>* WatchUnWarns(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::UnWarnMessage>* WatchUnWarns(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::UnWarnMessage>* WatchUnWarns(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::UnWarnMessage>* WatchUnWarns(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3175,30 +3356,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(26,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>(
+        MarkMethodCallback(27,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchUnAdminJailsRequest, ::mruv::punishments::UnAdminJailMessage>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchUnAdminJailsRequest* request) { return this->WatchUnAdminJails(context, request); }));
+                     context, const ::mruv::punishments::WatchUnAdminJailsRequest* request) { return this->WatchUnAdminJails(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchUnAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::UnAdminJailMessage>* WatchUnAdminJails(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::UnAdminJailMessage>* WatchUnAdminJails(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::UnAdminJailMessage>* WatchUnAdminJails(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::UnAdminJailMessage>* WatchUnAdminJails(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3213,30 +3394,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(27,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>(
+        MarkMethodCallback(28,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchPlayerPunishmentsRequest, ::mruv::punishments::WatchPlayerPunishmentsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchPlayerPunishmentsRequest* request) { return this->WatchPlayerPunishments(context, request); }));
+                     context, const ::mruv::punishments::WatchPlayerPunishmentsRequest* request) { return this->WatchPlayerPunishments(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchPlayerPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* WatchPlayerPunishments(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* WatchPlayerPunishments(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::WatchPlayerPunishmentsResponse>* WatchPlayerPunishments(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::WatchPlayerPunishmentsResponse>* WatchPlayerPunishments(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3251,30 +3432,30 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(28,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>(
+        MarkMethodCallback(29,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchPlayerAcquittalsRequest, ::mruv::punishments::WatchPlayerAcquittalsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchPlayerAcquittalsRequest* request) { return this->WatchPlayerAcquittals(context, request); }));
+                     context, const ::mruv::punishments::WatchPlayerAcquittalsRequest* request) { return this->WatchPlayerAcquittals(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchPlayerAcquittals() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittals(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittals(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittals(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::WatchPlayerAcquittalsResponse>* WatchPlayerAcquittals(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/)
     #endif
       { return nullptr; }
   };
@@ -3289,51 +3470,115 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(29,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>(
+        MarkMethodCallback(30,
+          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::punishments::WatchPunishmentsRequest, ::mruv::punishments::WatchPunishmentsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::economy::WatchPunishmentsRequest* request) { return this->WatchPunishments(context, request); }));
+                     context, const ::mruv::punishments::WatchPunishmentsRequest* request) { return this->WatchPunishments(context, request); }));
     }
     ~ExperimentalWithCallbackMethod_WatchPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerWriteReactor< ::mruv::economy::WatchPunishmentsResponse>* WatchPunishments(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/)
+    virtual ::grpc::ServerWriteReactor< ::mruv::punishments::WatchPunishmentsResponse>* WatchPunishments(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/)
     #else
-    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::economy::WatchPunishmentsResponse>* WatchPunishments(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/)
+    virtual ::grpc::experimental::ServerWriteReactor< ::mruv::punishments::WatchPunishmentsResponse>* WatchPunishments(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithCallbackMethod_WatchAcquittals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_WatchAcquittals() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(31,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::WatchAcquittalsRequest, ::mruv::punishments::WatchAcquittalsResponse>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::mruv::punishments::WatchAcquittalsRequest* request, ::mruv::punishments::WatchAcquittalsResponse* response) { return this->WatchAcquittals(context, request, response); }));}
+    void SetMessageAllocatorFor_WatchAcquittals(
+        ::grpc::experimental::MessageAllocator< ::mruv::punishments::WatchAcquittalsRequest, ::mruv::punishments::WatchAcquittalsResponse>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(31);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::punishments::WatchAcquittalsRequest, ::mruv::punishments::WatchAcquittalsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_WatchAcquittals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status WatchAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* WatchAcquittals(
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* WatchAcquittals(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_Ban<ExperimentalWithCallbackMethod_Block<ExperimentalWithCallbackMethod_Warn<ExperimentalWithCallbackMethod_AdminJail<ExperimentalWithCallbackMethod_MuteGlobalChats<ExperimentalWithCallbackMethod_UnBan<ExperimentalWithCallbackMethod_UnBlock<ExperimentalWithCallbackMethod_UnWarn<ExperimentalWithCallbackMethod_UnAdminJail<ExperimentalWithCallbackMethod_UnMuteGlobalChats<ExperimentalWithCallbackMethod_GetPlayerBans<ExperimentalWithCallbackMethod_GetPlayerWarns<ExperimentalWithCallbackMethod_GetPlayerAdminJail<ExperimentalWithCallbackMethod_GetBan<ExperimentalWithCallbackMethod_GetWarn<ExperimentalWithCallbackMethod_GetBlock<ExperimentalWithCallbackMethod_IsPlayerBanned<ExperimentalWithCallbackMethod_IsCharacterBlocked<ExperimentalWithCallbackMethod_IsCharacterJailed<ExperimentalWithCallbackMethod_WatchBans<ExperimentalWithCallbackMethod_WatchBlocks<ExperimentalWithCallbackMethod_WatchWarns<ExperimentalWithCallbackMethod_WatchAdminJails<ExperimentalWithCallbackMethod_WatchUnBans<ExperimentalWithCallbackMethod_WatchUnBlocks<ExperimentalWithCallbackMethod_WatchUnWarns<ExperimentalWithCallbackMethod_WatchUnAdminJails<ExperimentalWithCallbackMethod_WatchPlayerPunishments<ExperimentalWithCallbackMethod_WatchPlayerAcquittals<ExperimentalWithCallbackMethod_WatchPunishments<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_Punish<ExperimentalWithCallbackMethod_Ban<ExperimentalWithCallbackMethod_Block<ExperimentalWithCallbackMethod_Warn<ExperimentalWithCallbackMethod_AdminJail<ExperimentalWithCallbackMethod_MuteGlobalChats<ExperimentalWithCallbackMethod_UnBan<ExperimentalWithCallbackMethod_UnBlock<ExperimentalWithCallbackMethod_UnWarn<ExperimentalWithCallbackMethod_UnAdminJail<ExperimentalWithCallbackMethod_UnMuteGlobalChats<ExperimentalWithCallbackMethod_GetPlayerBans<ExperimentalWithCallbackMethod_GetPlayerWarns<ExperimentalWithCallbackMethod_GetPlayerAdminJail<ExperimentalWithCallbackMethod_GetBan<ExperimentalWithCallbackMethod_GetWarn<ExperimentalWithCallbackMethod_GetBlock<ExperimentalWithCallbackMethod_IsPlayerBanned<ExperimentalWithCallbackMethod_IsCharacterBlocked<ExperimentalWithCallbackMethod_IsCharacterJailed<ExperimentalWithCallbackMethod_WatchBans<ExperimentalWithCallbackMethod_WatchBlocks<ExperimentalWithCallbackMethod_WatchWarns<ExperimentalWithCallbackMethod_WatchAdminJails<ExperimentalWithCallbackMethod_WatchUnBans<ExperimentalWithCallbackMethod_WatchUnBlocks<ExperimentalWithCallbackMethod_WatchUnWarns<ExperimentalWithCallbackMethod_WatchUnAdminJails<ExperimentalWithCallbackMethod_WatchPlayerPunishments<ExperimentalWithCallbackMethod_WatchPlayerAcquittals<ExperimentalWithCallbackMethod_WatchPunishments<ExperimentalWithCallbackMethod_WatchAcquittals<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_Ban<ExperimentalWithCallbackMethod_Block<ExperimentalWithCallbackMethod_Warn<ExperimentalWithCallbackMethod_AdminJail<ExperimentalWithCallbackMethod_MuteGlobalChats<ExperimentalWithCallbackMethod_UnBan<ExperimentalWithCallbackMethod_UnBlock<ExperimentalWithCallbackMethod_UnWarn<ExperimentalWithCallbackMethod_UnAdminJail<ExperimentalWithCallbackMethod_UnMuteGlobalChats<ExperimentalWithCallbackMethod_GetPlayerBans<ExperimentalWithCallbackMethod_GetPlayerWarns<ExperimentalWithCallbackMethod_GetPlayerAdminJail<ExperimentalWithCallbackMethod_GetBan<ExperimentalWithCallbackMethod_GetWarn<ExperimentalWithCallbackMethod_GetBlock<ExperimentalWithCallbackMethod_IsPlayerBanned<ExperimentalWithCallbackMethod_IsCharacterBlocked<ExperimentalWithCallbackMethod_IsCharacterJailed<ExperimentalWithCallbackMethod_WatchBans<ExperimentalWithCallbackMethod_WatchBlocks<ExperimentalWithCallbackMethod_WatchWarns<ExperimentalWithCallbackMethod_WatchAdminJails<ExperimentalWithCallbackMethod_WatchUnBans<ExperimentalWithCallbackMethod_WatchUnBlocks<ExperimentalWithCallbackMethod_WatchUnWarns<ExperimentalWithCallbackMethod_WatchUnAdminJails<ExperimentalWithCallbackMethod_WatchPlayerPunishments<ExperimentalWithCallbackMethod_WatchPlayerAcquittals<ExperimentalWithCallbackMethod_WatchPunishments<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_Punish<ExperimentalWithCallbackMethod_Ban<ExperimentalWithCallbackMethod_Block<ExperimentalWithCallbackMethod_Warn<ExperimentalWithCallbackMethod_AdminJail<ExperimentalWithCallbackMethod_MuteGlobalChats<ExperimentalWithCallbackMethod_UnBan<ExperimentalWithCallbackMethod_UnBlock<ExperimentalWithCallbackMethod_UnWarn<ExperimentalWithCallbackMethod_UnAdminJail<ExperimentalWithCallbackMethod_UnMuteGlobalChats<ExperimentalWithCallbackMethod_GetPlayerBans<ExperimentalWithCallbackMethod_GetPlayerWarns<ExperimentalWithCallbackMethod_GetPlayerAdminJail<ExperimentalWithCallbackMethod_GetBan<ExperimentalWithCallbackMethod_GetWarn<ExperimentalWithCallbackMethod_GetBlock<ExperimentalWithCallbackMethod_IsPlayerBanned<ExperimentalWithCallbackMethod_IsCharacterBlocked<ExperimentalWithCallbackMethod_IsCharacterJailed<ExperimentalWithCallbackMethod_WatchBans<ExperimentalWithCallbackMethod_WatchBlocks<ExperimentalWithCallbackMethod_WatchWarns<ExperimentalWithCallbackMethod_WatchAdminJails<ExperimentalWithCallbackMethod_WatchUnBans<ExperimentalWithCallbackMethod_WatchUnBlocks<ExperimentalWithCallbackMethod_WatchUnWarns<ExperimentalWithCallbackMethod_WatchUnAdminJails<ExperimentalWithCallbackMethod_WatchPlayerPunishments<ExperimentalWithCallbackMethod_WatchPlayerAcquittals<ExperimentalWithCallbackMethod_WatchPunishments<ExperimentalWithCallbackMethod_WatchAcquittals<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  template <class BaseClass>
+  class WithGenericMethod_Punish : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_Punish() {
+      ::grpc::Service::MarkMethodGeneric(0);
+    }
+    ~WithGenericMethod_Punish() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Punish(::grpc::ServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
   template <class BaseClass>
   class WithGenericMethod_Ban : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Ban() {
-      ::grpc::Service::MarkMethodGeneric(0);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_Ban() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/) override {
+    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3344,13 +3589,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Block() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_Block() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/) override {
+    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3361,13 +3606,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_Warn() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_Warn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/) override {
+    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3378,13 +3623,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AdminJail() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_AdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/) override {
+    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3395,13 +3640,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MuteGlobalChats() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_MuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3412,13 +3657,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UnBan() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_UnBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/) override {
+    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3429,13 +3674,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UnBlock() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_UnBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/) override {
+    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3446,13 +3691,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UnWarn() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_UnWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/) override {
+    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3463,13 +3708,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UnAdminJail() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_UnAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/) override {
+    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3480,13 +3725,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UnMuteGlobalChats() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_UnMuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3497,13 +3742,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPlayerBans() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_GetPlayerBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/) override {
+    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3514,13 +3759,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPlayerWarns() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_GetPlayerWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/) override {
+    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3531,13 +3776,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPlayerAdminJail() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_GetPlayerAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/) override {
+    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3548,13 +3793,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetBan() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_GetBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/) override {
+    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3565,13 +3810,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetWarn() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_GetWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/) override {
+    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3582,13 +3827,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetBlock() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_GetBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/) override {
+    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3599,13 +3844,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_IsPlayerBanned() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_IsPlayerBanned() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/) override {
+    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3616,13 +3861,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_IsCharacterBlocked() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_IsCharacterBlocked() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3633,13 +3878,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_IsCharacterJailed() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_IsCharacterJailed() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3650,13 +3895,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchBans() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_WatchBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* /*writer*/) override {
+    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3667,13 +3912,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchBlocks() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_WatchBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3684,13 +3929,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchWarns() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_WatchWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3701,13 +3946,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchAdminJails() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_WatchAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3718,13 +3963,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchUnBans() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_WatchUnBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3735,13 +3980,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchUnBlocks() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_WatchUnBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3752,13 +3997,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchUnWarns() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_WatchUnWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3769,13 +4014,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchUnAdminJails() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_WatchUnAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3786,13 +4031,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchPlayerPunishments() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_WatchPlayerPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3803,13 +4048,13 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchPlayerAcquittals() {
-      ::grpc::Service::MarkMethodGeneric(28);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_WatchPlayerAcquittals() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3820,15 +4065,52 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_WatchPunishments() {
-      ::grpc::Service::MarkMethodGeneric(29);
+      ::grpc::Service::MarkMethodGeneric(30);
     }
     ~WithGenericMethod_WatchPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_WatchAcquittals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_WatchAcquittals() {
+      ::grpc::Service::MarkMethodGeneric(31);
+    }
+    ~WithGenericMethod_WatchAcquittals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status WatchAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_Punish : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_Punish() {
+      ::grpc::Service::MarkMethodRaw(0);
+    }
+    ~WithRawMethod_Punish() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Punish(::grpc::ServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestPunish(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3837,18 +4119,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Ban() {
-      ::grpc::Service::MarkMethodRaw(0);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_Ban() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/) override {
+    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestBan(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3857,18 +4139,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Block() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_Block() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/) override {
+    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestBlock(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3877,18 +4159,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_Warn() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_Warn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/) override {
+    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWarn(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3897,18 +4179,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AdminJail() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_AdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/) override {
+    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAdminJail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3917,18 +4199,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MuteGlobalChats() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_MuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMuteGlobalChats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3937,18 +4219,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UnBan() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_UnBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/) override {
+    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUnBan(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3957,18 +4239,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UnBlock() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_UnBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/) override {
+    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUnBlock(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3977,18 +4259,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UnWarn() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_UnWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/) override {
+    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUnWarn(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3997,18 +4279,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UnAdminJail() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_UnAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/) override {
+    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUnAdminJail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4017,18 +4299,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UnMuteGlobalChats() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_UnMuteGlobalChats() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUnMuteGlobalChats(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4037,18 +4319,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPlayerBans() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_GetPlayerBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/) override {
+    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPlayerBans(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4057,18 +4339,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPlayerWarns() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_GetPlayerWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/) override {
+    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPlayerWarns(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4077,18 +4359,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPlayerAdminJail() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_GetPlayerAdminJail() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/) override {
+    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPlayerAdminJail(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4097,18 +4379,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetBan() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_GetBan() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/) override {
+    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBan(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4117,18 +4399,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetWarn() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_GetWarn() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/) override {
+    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetWarn(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4137,18 +4419,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetBlock() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_GetBlock() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/) override {
+    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBlock(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4157,18 +4439,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_IsPlayerBanned() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_IsPlayerBanned() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/) override {
+    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestIsPlayerBanned(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4177,18 +4459,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_IsCharacterBlocked() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_IsCharacterBlocked() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestIsCharacterBlocked(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4197,18 +4479,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_IsCharacterJailed() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_IsCharacterJailed() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestIsCharacterJailed(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4217,18 +4499,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchBans() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_WatchBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* /*writer*/) override {
+    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchBans(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(19, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(20, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4237,18 +4519,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchBlocks() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_WatchBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchBlocks(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(20, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(21, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4257,18 +4539,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchWarns() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_WatchWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchWarns(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(21, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(22, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4277,18 +4559,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchAdminJails() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_WatchAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchAdminJails(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(22, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(23, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4297,18 +4579,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchUnBans() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_WatchUnBans() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchUnBans(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(23, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(24, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4317,18 +4599,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchUnBlocks() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_WatchUnBlocks() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchUnBlocks(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(24, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(25, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4337,18 +4619,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchUnWarns() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_WatchUnWarns() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchUnWarns(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(25, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(26, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4357,18 +4639,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchUnAdminJails() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_WatchUnAdminJails() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchUnAdminJails(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(26, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(27, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4377,18 +4659,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchPlayerPunishments() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_WatchPlayerPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchPlayerPunishments(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(27, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(28, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4397,18 +4679,18 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchPlayerAcquittals() {
-      ::grpc::Service::MarkMethodRaw(28);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_WatchPlayerAcquittals() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchPlayerAcquittals(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(28, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(29, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4417,26 +4699,46 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_WatchPunishments() {
-      ::grpc::Service::MarkMethodRaw(29);
+      ::grpc::Service::MarkMethodRaw(30);
     }
     ~WithRawMethod_WatchPunishments() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestWatchPunishments(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncWriter< ::grpc::ByteBuffer>* writer, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncServerStreaming(29, context, request, writer, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncServerStreaming(30, context, request, writer, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_Ban : public BaseClass {
+  class WithRawMethod_WatchAcquittals : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_Ban() {
+    WithRawMethod_WatchAcquittals() {
+      ::grpc::Service::MarkMethodRaw(31);
+    }
+    ~WithRawMethod_WatchAcquittals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status WatchAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestWatchAcquittals(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_Punish : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_Punish() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -4450,13 +4752,51 @@ class MruVPunishmentsService final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Punish(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_Punish() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Punish(::grpc::ServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* Punish(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* Punish(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_Ban : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_Ban() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(1,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
                      context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->Ban(context, request, response); }));
     }
     ~ExperimentalWithRawCallbackMethod_Ban() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/) override {
+    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4480,7 +4820,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(1,
+        MarkMethodRawCallback(2,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4494,7 +4834,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/) override {
+    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4518,7 +4858,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(2,
+        MarkMethodRawCallback(3,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4532,7 +4872,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/) override {
+    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4556,7 +4896,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(3,
+        MarkMethodRawCallback(4,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4570,7 +4910,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/) override {
+    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4594,7 +4934,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(4,
+        MarkMethodRawCallback(5,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4608,7 +4948,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4632,7 +4972,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(5,
+        MarkMethodRawCallback(6,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4646,7 +4986,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/) override {
+    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4670,7 +5010,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(6,
+        MarkMethodRawCallback(7,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4684,7 +5024,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/) override {
+    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4708,7 +5048,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(7,
+        MarkMethodRawCallback(8,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4722,7 +5062,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/) override {
+    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4746,7 +5086,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(8,
+        MarkMethodRawCallback(9,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4760,7 +5100,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/) override {
+    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4784,7 +5124,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(9,
+        MarkMethodRawCallback(10,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4798,7 +5138,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4822,7 +5162,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(10,
+        MarkMethodRawCallback(11,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4836,7 +5176,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/) override {
+    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4860,7 +5200,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(11,
+        MarkMethodRawCallback(12,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4874,7 +5214,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/) override {
+    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4898,7 +5238,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(12,
+        MarkMethodRawCallback(13,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4912,7 +5252,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/) override {
+    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4936,7 +5276,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(13,
+        MarkMethodRawCallback(14,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4950,7 +5290,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/) override {
+    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4974,7 +5314,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(14,
+        MarkMethodRawCallback(15,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -4988,7 +5328,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/) override {
+    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5012,7 +5352,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(15,
+        MarkMethodRawCallback(16,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5026,7 +5366,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/) override {
+    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5050,7 +5390,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(16,
+        MarkMethodRawCallback(17,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5064,7 +5404,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/) override {
+    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5088,7 +5428,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(17,
+        MarkMethodRawCallback(18,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5102,7 +5442,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5126,7 +5466,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(18,
+        MarkMethodRawCallback(19,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5140,7 +5480,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5164,7 +5504,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(19,
+        MarkMethodRawCallback(20,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5178,7 +5518,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* /*writer*/) override {
+    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5202,7 +5542,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(20,
+        MarkMethodRawCallback(21,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5216,7 +5556,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5240,7 +5580,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(21,
+        MarkMethodRawCallback(22,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5254,7 +5594,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5278,7 +5618,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(22,
+        MarkMethodRawCallback(23,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5292,7 +5632,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5316,7 +5656,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(23,
+        MarkMethodRawCallback(24,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5330,7 +5670,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5354,7 +5694,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(24,
+        MarkMethodRawCallback(25,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5368,7 +5708,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5392,7 +5732,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(25,
+        MarkMethodRawCallback(26,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5406,7 +5746,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5430,7 +5770,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(26,
+        MarkMethodRawCallback(27,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5444,7 +5784,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5468,7 +5808,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(27,
+        MarkMethodRawCallback(28,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5482,7 +5822,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5506,7 +5846,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(28,
+        MarkMethodRawCallback(29,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5520,7 +5860,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5544,7 +5884,7 @@ class MruVPunishmentsService final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(29,
+        MarkMethodRawCallback(30,
           new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -5558,7 +5898,7 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -5572,17 +5912,82 @@ class MruVPunishmentsService final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_WatchAcquittals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_WatchAcquittals() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(31,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->WatchAcquittals(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_WatchAcquittals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status WatchAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* WatchAcquittals(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* WatchAcquittals(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Punish : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_Punish() {
+      ::grpc::Service::MarkMethodStreamed(0,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::punishments::PunishRequest, ::mruv::punishments::PunishResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::punishments::PunishRequest, ::mruv::punishments::PunishResponse>* streamer) {
+                       return this->StreamedPunish(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_Punish() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Punish(::grpc::ServerContext* /*context*/, const ::mruv::punishments::PunishRequest* /*request*/, ::mruv::punishments::PunishResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedPunish(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::PunishRequest,::mruv::punishments::PunishResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_Ban : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Ban() {
-      ::grpc::Service::MarkMethodStreamed(0,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>(
+          ::mruv::punishments::BanRequest, ::mruv::punishments::BanResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::BanRequest, ::mruv::economy::BanResponse>* streamer) {
+                     ::mruv::punishments::BanRequest, ::mruv::punishments::BanResponse>* streamer) {
                        return this->StreamedBan(context,
                          streamer);
                   }));
@@ -5591,12 +5996,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::economy::BanRequest* /*request*/, ::mruv::economy::BanResponse* /*response*/) override {
+    ::grpc::Status Ban(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BanRequest* /*request*/, ::mruv::punishments::BanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::BanRequest,::mruv::economy::BanResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedBan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::BanRequest,::mruv::punishments::BanResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_Block : public BaseClass {
@@ -5604,12 +6009,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Block() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>(
+          ::mruv::punishments::BlockRequest, ::mruv::punishments::BlockResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::BlockRequest, ::mruv::economy::BlockResponse>* streamer) {
+                     ::mruv::punishments::BlockRequest, ::mruv::punishments::BlockResponse>* streamer) {
                        return this->StreamedBlock(context,
                          streamer);
                   }));
@@ -5618,12 +6023,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::economy::BlockRequest* /*request*/, ::mruv::economy::BlockResponse* /*response*/) override {
+    ::grpc::Status Block(::grpc::ServerContext* /*context*/, const ::mruv::punishments::BlockRequest* /*request*/, ::mruv::punishments::BlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBlock(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::BlockRequest,::mruv::economy::BlockResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedBlock(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::BlockRequest,::mruv::punishments::BlockResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_Warn : public BaseClass {
@@ -5631,12 +6036,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_Warn() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>(
+          ::mruv::punishments::WarnRequest, ::mruv::punishments::WarnResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::WarnRequest, ::mruv::economy::WarnResponse>* streamer) {
+                     ::mruv::punishments::WarnRequest, ::mruv::punishments::WarnResponse>* streamer) {
                        return this->StreamedWarn(context,
                          streamer);
                   }));
@@ -5645,12 +6050,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::economy::WarnRequest* /*request*/, ::mruv::economy::WarnResponse* /*response*/) override {
+    ::grpc::Status Warn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WarnRequest* /*request*/, ::mruv::punishments::WarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedWarn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::WarnRequest,::mruv::economy::WarnResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedWarn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::WarnRequest,::mruv::punishments::WarnResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_AdminJail : public BaseClass {
@@ -5658,12 +6063,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AdminJail() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>(
+          ::mruv::punishments::AdminJailRequest, ::mruv::punishments::AdminJailResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::AdminJailRequest, ::mruv::economy::AdminJailResponse>* streamer) {
+                     ::mruv::punishments::AdminJailRequest, ::mruv::punishments::AdminJailResponse>* streamer) {
                        return this->StreamedAdminJail(context,
                          streamer);
                   }));
@@ -5672,12 +6077,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::AdminJailRequest* /*request*/, ::mruv::economy::AdminJailResponse* /*response*/) override {
+    ::grpc::Status AdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::AdminJailRequest* /*request*/, ::mruv::punishments::AdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAdminJail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::AdminJailRequest,::mruv::economy::AdminJailResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAdminJail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::AdminJailRequest,::mruv::punishments::AdminJailResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_MuteGlobalChats : public BaseClass {
@@ -5685,12 +6090,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_MuteGlobalChats() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>(
+          ::mruv::punishments::MuteGlobalChatsRequest, ::mruv::punishments::MuteGlobalChatsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::MuteGlobalChatsRequest, ::mruv::economy::MuteGlobalChatsResponse>* streamer) {
+                     ::mruv::punishments::MuteGlobalChatsRequest, ::mruv::punishments::MuteGlobalChatsResponse>* streamer) {
                        return this->StreamedMuteGlobalChats(context,
                          streamer);
                   }));
@@ -5699,12 +6104,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::MuteGlobalChatsRequest* /*request*/, ::mruv::economy::MuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status MuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::MuteGlobalChatsRequest* /*request*/, ::mruv::punishments::MuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedMuteGlobalChats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::MuteGlobalChatsRequest,::mruv::economy::MuteGlobalChatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedMuteGlobalChats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::MuteGlobalChatsRequest,::mruv::punishments::MuteGlobalChatsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UnBan : public BaseClass {
@@ -5712,12 +6117,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UnBan() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>(
+          ::mruv::punishments::UnBanRequest, ::mruv::punishments::UnBanResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::UnBanRequest, ::mruv::economy::UnBanResponse>* streamer) {
+                     ::mruv::punishments::UnBanRequest, ::mruv::punishments::UnBanResponse>* streamer) {
                        return this->StreamedUnBan(context,
                          streamer);
                   }));
@@ -5726,12 +6131,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBanRequest* /*request*/, ::mruv::economy::UnBanResponse* /*response*/) override {
+    ::grpc::Status UnBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBanRequest* /*request*/, ::mruv::punishments::UnBanResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUnBan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::UnBanRequest,::mruv::economy::UnBanResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUnBan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::UnBanRequest,::mruv::punishments::UnBanResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UnBlock : public BaseClass {
@@ -5739,12 +6144,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UnBlock() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>(
+          ::mruv::punishments::UnBlockRequest, ::mruv::punishments::UnBlockResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::UnBlockRequest, ::mruv::economy::UnBlockResponse>* streamer) {
+                     ::mruv::punishments::UnBlockRequest, ::mruv::punishments::UnBlockResponse>* streamer) {
                        return this->StreamedUnBlock(context,
                          streamer);
                   }));
@@ -5753,12 +6158,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnBlockRequest* /*request*/, ::mruv::economy::UnBlockResponse* /*response*/) override {
+    ::grpc::Status UnBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnBlockRequest* /*request*/, ::mruv::punishments::UnBlockResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUnBlock(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::UnBlockRequest,::mruv::economy::UnBlockResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUnBlock(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::UnBlockRequest,::mruv::punishments::UnBlockResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UnWarn : public BaseClass {
@@ -5766,12 +6171,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UnWarn() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>(
+          ::mruv::punishments::UnWarnRequest, ::mruv::punishments::UnWarnResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::UnWarnRequest, ::mruv::economy::UnWarnResponse>* streamer) {
+                     ::mruv::punishments::UnWarnRequest, ::mruv::punishments::UnWarnResponse>* streamer) {
                        return this->StreamedUnWarn(context,
                          streamer);
                   }));
@@ -5780,12 +6185,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnWarnRequest* /*request*/, ::mruv::economy::UnWarnResponse* /*response*/) override {
+    ::grpc::Status UnWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnWarnRequest* /*request*/, ::mruv::punishments::UnWarnResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUnWarn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::UnWarnRequest,::mruv::economy::UnWarnResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUnWarn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::UnWarnRequest,::mruv::punishments::UnWarnResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UnAdminJail : public BaseClass {
@@ -5793,12 +6198,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UnAdminJail() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>(
+          ::mruv::punishments::UnAdminJailRequest, ::mruv::punishments::UnAdminJailResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::UnAdminJailRequest, ::mruv::economy::UnAdminJailResponse>* streamer) {
+                     ::mruv::punishments::UnAdminJailRequest, ::mruv::punishments::UnAdminJailResponse>* streamer) {
                        return this->StreamedUnAdminJail(context,
                          streamer);
                   }));
@@ -5807,12 +6212,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnAdminJailRequest* /*request*/, ::mruv::economy::UnAdminJailResponse* /*response*/) override {
+    ::grpc::Status UnAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnAdminJailRequest* /*request*/, ::mruv::punishments::UnAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUnAdminJail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::UnAdminJailRequest,::mruv::economy::UnAdminJailResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUnAdminJail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::UnAdminJailRequest,::mruv::punishments::UnAdminJailResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UnMuteGlobalChats : public BaseClass {
@@ -5820,12 +6225,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UnMuteGlobalChats() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>(
+          ::mruv::punishments::UnMuteGlobalChatsRequest, ::mruv::punishments::UnMuteGlobalChatsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::UnMuteGlobalChatsRequest, ::mruv::economy::UnMuteGlobalChatsResponse>* streamer) {
+                     ::mruv::punishments::UnMuteGlobalChatsRequest, ::mruv::punishments::UnMuteGlobalChatsResponse>* streamer) {
                        return this->StreamedUnMuteGlobalChats(context,
                          streamer);
                   }));
@@ -5834,12 +6239,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::economy::UnMuteGlobalChatsRequest* /*request*/, ::mruv::economy::UnMuteGlobalChatsResponse* /*response*/) override {
+    ::grpc::Status UnMuteGlobalChats(::grpc::ServerContext* /*context*/, const ::mruv::punishments::UnMuteGlobalChatsRequest* /*request*/, ::mruv::punishments::UnMuteGlobalChatsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUnMuteGlobalChats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::UnMuteGlobalChatsRequest,::mruv::economy::UnMuteGlobalChatsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUnMuteGlobalChats(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::UnMuteGlobalChatsRequest,::mruv::punishments::UnMuteGlobalChatsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetPlayerBans : public BaseClass {
@@ -5847,12 +6252,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetPlayerBans() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>(
+          ::mruv::punishments::GetPlayerBansRequest, ::mruv::punishments::GetPlayerBansResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::GetPlayerBansRequest, ::mruv::economy::GetPlayerBansResponse>* streamer) {
+                     ::mruv::punishments::GetPlayerBansRequest, ::mruv::punishments::GetPlayerBansResponse>* streamer) {
                        return this->StreamedGetPlayerBans(context,
                          streamer);
                   }));
@@ -5861,12 +6266,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerBansRequest* /*request*/, ::mruv::economy::GetPlayerBansResponse* /*response*/) override {
+    ::grpc::Status GetPlayerBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerBansRequest* /*request*/, ::mruv::punishments::GetPlayerBansResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetPlayerBans(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::GetPlayerBansRequest,::mruv::economy::GetPlayerBansResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetPlayerBans(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::GetPlayerBansRequest,::mruv::punishments::GetPlayerBansResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetPlayerWarns : public BaseClass {
@@ -5874,12 +6279,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetPlayerWarns() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>(
+          ::mruv::punishments::GetPlayerWarnsRequest, ::mruv::punishments::GetPlayerWarnsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::GetPlayerWarnsRequest, ::mruv::economy::GetPlayerWarnsResponse>* streamer) {
+                     ::mruv::punishments::GetPlayerWarnsRequest, ::mruv::punishments::GetPlayerWarnsResponse>* streamer) {
                        return this->StreamedGetPlayerWarns(context,
                          streamer);
                   }));
@@ -5888,12 +6293,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerWarnsRequest* /*request*/, ::mruv::economy::GetPlayerWarnsResponse* /*response*/) override {
+    ::grpc::Status GetPlayerWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerWarnsRequest* /*request*/, ::mruv::punishments::GetPlayerWarnsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetPlayerWarns(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::GetPlayerWarnsRequest,::mruv::economy::GetPlayerWarnsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetPlayerWarns(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::GetPlayerWarnsRequest,::mruv::punishments::GetPlayerWarnsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetPlayerAdminJail : public BaseClass {
@@ -5901,12 +6306,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetPlayerAdminJail() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>(
+          ::mruv::punishments::GetPlayerAdminJailRequest, ::mruv::punishments::GetPlayerAdminJailResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::GetPlayerAdminJailRequest, ::mruv::economy::GetPlayerAdminJailResponse>* streamer) {
+                     ::mruv::punishments::GetPlayerAdminJailRequest, ::mruv::punishments::GetPlayerAdminJailResponse>* streamer) {
                        return this->StreamedGetPlayerAdminJail(context,
                          streamer);
                   }));
@@ -5915,12 +6320,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetPlayerAdminJailRequest* /*request*/, ::mruv::economy::GetPlayerAdminJailResponse* /*response*/) override {
+    ::grpc::Status GetPlayerAdminJail(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetPlayerAdminJailRequest* /*request*/, ::mruv::punishments::GetPlayerAdminJailResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetPlayerAdminJail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::GetPlayerAdminJailRequest,::mruv::economy::GetPlayerAdminJailResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetPlayerAdminJail(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::GetPlayerAdminJailRequest,::mruv::punishments::GetPlayerAdminJailResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetBan : public BaseClass {
@@ -5928,12 +6333,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetBan() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>(
+          ::mruv::punishments::GetBanRequest, ::mruv::punishments::BanMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::GetBanRequest, ::mruv::economy::BanMessage>* streamer) {
+                     ::mruv::punishments::GetBanRequest, ::mruv::punishments::BanMessage>* streamer) {
                        return this->StreamedGetBan(context,
                          streamer);
                   }));
@@ -5942,12 +6347,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBanRequest* /*request*/, ::mruv::economy::BanMessage* /*response*/) override {
+    ::grpc::Status GetBan(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBanRequest* /*request*/, ::mruv::punishments::BanMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetBan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::GetBanRequest,::mruv::economy::BanMessage>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetBan(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::GetBanRequest,::mruv::punishments::BanMessage>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetWarn : public BaseClass {
@@ -5955,12 +6360,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetWarn() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>(
+          ::mruv::punishments::GetWarnRequest, ::mruv::punishments::WarnMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::GetWarnRequest, ::mruv::economy::WarnMessage>* streamer) {
+                     ::mruv::punishments::GetWarnRequest, ::mruv::punishments::WarnMessage>* streamer) {
                        return this->StreamedGetWarn(context,
                          streamer);
                   }));
@@ -5969,12 +6374,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetWarnRequest* /*request*/, ::mruv::economy::WarnMessage* /*response*/) override {
+    ::grpc::Status GetWarn(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetWarnRequest* /*request*/, ::mruv::punishments::WarnMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetWarn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::GetWarnRequest,::mruv::economy::WarnMessage>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetWarn(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::GetWarnRequest,::mruv::punishments::WarnMessage>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetBlock : public BaseClass {
@@ -5982,12 +6387,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetBlock() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>(
+          ::mruv::punishments::GetBlockRequest, ::mruv::punishments::BlockMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::GetBlockRequest, ::mruv::economy::BlockMessage>* streamer) {
+                     ::mruv::punishments::GetBlockRequest, ::mruv::punishments::BlockMessage>* streamer) {
                        return this->StreamedGetBlock(context,
                          streamer);
                   }));
@@ -5996,12 +6401,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::economy::GetBlockRequest* /*request*/, ::mruv::economy::BlockMessage* /*response*/) override {
+    ::grpc::Status GetBlock(::grpc::ServerContext* /*context*/, const ::mruv::punishments::GetBlockRequest* /*request*/, ::mruv::punishments::BlockMessage* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetBlock(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::GetBlockRequest,::mruv::economy::BlockMessage>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetBlock(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::GetBlockRequest,::mruv::punishments::BlockMessage>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_IsPlayerBanned : public BaseClass {
@@ -6009,12 +6414,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_IsPlayerBanned() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>(
+          ::mruv::punishments::IsPlayerBannedRequest, ::mruv::punishments::IsPlayerBannedResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::IsPlayerBannedRequest, ::mruv::economy::IsPlayerBannedResponse>* streamer) {
+                     ::mruv::punishments::IsPlayerBannedRequest, ::mruv::punishments::IsPlayerBannedResponse>* streamer) {
                        return this->StreamedIsPlayerBanned(context,
                          streamer);
                   }));
@@ -6023,12 +6428,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsPlayerBannedRequest* /*request*/, ::mruv::economy::IsPlayerBannedResponse* /*response*/) override {
+    ::grpc::Status IsPlayerBanned(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsPlayerBannedRequest* /*request*/, ::mruv::punishments::IsPlayerBannedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedIsPlayerBanned(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::IsPlayerBannedRequest,::mruv::economy::IsPlayerBannedResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedIsPlayerBanned(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::IsPlayerBannedRequest,::mruv::punishments::IsPlayerBannedResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_IsCharacterBlocked : public BaseClass {
@@ -6036,12 +6441,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_IsCharacterBlocked() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>(
+          ::mruv::punishments::IsCharacterBlockedRequest, ::mruv::punishments::IsCharacterBlockedResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::IsCharacterBlockedRequest, ::mruv::economy::IsCharacterBlockedResponse>* streamer) {
+                     ::mruv::punishments::IsCharacterBlockedRequest, ::mruv::punishments::IsCharacterBlockedResponse>* streamer) {
                        return this->StreamedIsCharacterBlocked(context,
                          streamer);
                   }));
@@ -6050,12 +6455,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterBlockedRequest* /*request*/, ::mruv::economy::IsCharacterBlockedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterBlocked(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterBlockedRequest* /*request*/, ::mruv::punishments::IsCharacterBlockedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedIsCharacterBlocked(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::IsCharacterBlockedRequest,::mruv::economy::IsCharacterBlockedResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedIsCharacterBlocked(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::IsCharacterBlockedRequest,::mruv::punishments::IsCharacterBlockedResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_IsCharacterJailed : public BaseClass {
@@ -6063,12 +6468,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_IsCharacterJailed() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>(
+          ::mruv::punishments::IsCharacterJailedRequest, ::mruv::punishments::IsCharacterJailedResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::economy::IsCharacterJailedRequest, ::mruv::economy::IsCharacterJailedResponse>* streamer) {
+                     ::mruv::punishments::IsCharacterJailedRequest, ::mruv::punishments::IsCharacterJailedResponse>* streamer) {
                        return this->StreamedIsCharacterJailed(context,
                          streamer);
                   }));
@@ -6077,26 +6482,53 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::economy::IsCharacterJailedRequest* /*request*/, ::mruv::economy::IsCharacterJailedResponse* /*response*/) override {
+    ::grpc::Status IsCharacterJailed(::grpc::ServerContext* /*context*/, const ::mruv::punishments::IsCharacterJailedRequest* /*request*/, ::mruv::punishments::IsCharacterJailedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedIsCharacterJailed(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::economy::IsCharacterJailedRequest,::mruv::economy::IsCharacterJailedResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedIsCharacterJailed(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::IsCharacterJailedRequest,::mruv::punishments::IsCharacterJailedResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_Ban<WithStreamedUnaryMethod_Block<WithStreamedUnaryMethod_Warn<WithStreamedUnaryMethod_AdminJail<WithStreamedUnaryMethod_MuteGlobalChats<WithStreamedUnaryMethod_UnBan<WithStreamedUnaryMethod_UnBlock<WithStreamedUnaryMethod_UnWarn<WithStreamedUnaryMethod_UnAdminJail<WithStreamedUnaryMethod_UnMuteGlobalChats<WithStreamedUnaryMethod_GetPlayerBans<WithStreamedUnaryMethod_GetPlayerWarns<WithStreamedUnaryMethod_GetPlayerAdminJail<WithStreamedUnaryMethod_GetBan<WithStreamedUnaryMethod_GetWarn<WithStreamedUnaryMethod_GetBlock<WithStreamedUnaryMethod_IsPlayerBanned<WithStreamedUnaryMethod_IsCharacterBlocked<WithStreamedUnaryMethod_IsCharacterJailed<Service > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_WatchAcquittals : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_WatchAcquittals() {
+      ::grpc::Service::MarkMethodStreamed(31,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::mruv::punishments::WatchAcquittalsRequest, ::mruv::punishments::WatchAcquittalsResponse>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::mruv::punishments::WatchAcquittalsRequest, ::mruv::punishments::WatchAcquittalsResponse>* streamer) {
+                       return this->StreamedWatchAcquittals(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_WatchAcquittals() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status WatchAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAcquittalsRequest* /*request*/, ::mruv::punishments::WatchAcquittalsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedWatchAcquittals(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::punishments::WatchAcquittalsRequest,::mruv::punishments::WatchAcquittalsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_Punish<WithStreamedUnaryMethod_Ban<WithStreamedUnaryMethod_Block<WithStreamedUnaryMethod_Warn<WithStreamedUnaryMethod_AdminJail<WithStreamedUnaryMethod_MuteGlobalChats<WithStreamedUnaryMethod_UnBan<WithStreamedUnaryMethod_UnBlock<WithStreamedUnaryMethod_UnWarn<WithStreamedUnaryMethod_UnAdminJail<WithStreamedUnaryMethod_UnMuteGlobalChats<WithStreamedUnaryMethod_GetPlayerBans<WithStreamedUnaryMethod_GetPlayerWarns<WithStreamedUnaryMethod_GetPlayerAdminJail<WithStreamedUnaryMethod_GetBan<WithStreamedUnaryMethod_GetWarn<WithStreamedUnaryMethod_GetBlock<WithStreamedUnaryMethod_IsPlayerBanned<WithStreamedUnaryMethod_IsCharacterBlocked<WithStreamedUnaryMethod_IsCharacterJailed<WithStreamedUnaryMethod_WatchAcquittals<Service > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchBans : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchBans() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>(
+          ::mruv::punishments::WatchBansRequest, ::mruv::punishments::BanMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchBansRequest, ::mruv::economy::BanMessage>* streamer) {
+                     ::mruv::punishments::WatchBansRequest, ::mruv::punishments::BanMessage>* streamer) {
                        return this->StreamedWatchBans(context,
                          streamer);
                   }));
@@ -6105,12 +6537,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BanMessage>* /*writer*/) override {
+    ::grpc::Status WatchBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchBans(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchBansRequest,::mruv::economy::BanMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchBans(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchBansRequest,::mruv::punishments::BanMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchBlocks : public BaseClass {
@@ -6118,12 +6550,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchBlocks() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>(
+          ::mruv::punishments::WatchBlocksRequest, ::mruv::punishments::BlockMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchBlocksRequest, ::mruv::economy::BlockMessage>* streamer) {
+                     ::mruv::punishments::WatchBlocksRequest, ::mruv::punishments::BlockMessage>* streamer) {
                        return this->StreamedWatchBlocks(context,
                          streamer);
                   }));
@@ -6132,12 +6564,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::BlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::BlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchBlocks(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchBlocksRequest,::mruv::economy::BlockMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchBlocks(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchBlocksRequest,::mruv::punishments::BlockMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchWarns : public BaseClass {
@@ -6145,12 +6577,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchWarns() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>(
+          ::mruv::punishments::WatchWarnsRequest, ::mruv::punishments::WarnMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchWarnsRequest, ::mruv::economy::WarnMessage>* streamer) {
+                     ::mruv::punishments::WatchWarnsRequest, ::mruv::punishments::WarnMessage>* streamer) {
                        return this->StreamedWatchWarns(context,
                          streamer);
                   }));
@@ -6159,12 +6591,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchWarns(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchWarnsRequest,::mruv::economy::WarnMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchWarns(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchWarnsRequest,::mruv::punishments::WarnMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchAdminJails : public BaseClass {
@@ -6172,12 +6604,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchAdminJails() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>(
+          ::mruv::punishments::WatchAdminJailsRequest, ::mruv::punishments::AdminJailMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchAdminJailsRequest, ::mruv::economy::AdminJailMessage>* streamer) {
+                     ::mruv::punishments::WatchAdminJailsRequest, ::mruv::punishments::AdminJailMessage>* streamer) {
                        return this->StreamedWatchAdminJails(context,
                          streamer);
                   }));
@@ -6186,12 +6618,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::AdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::AdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchAdminJails(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchAdminJailsRequest,::mruv::economy::AdminJailMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchAdminJails(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchAdminJailsRequest,::mruv::punishments::AdminJailMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchUnBans : public BaseClass {
@@ -6199,12 +6631,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchUnBans() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>(
+          ::mruv::punishments::WatchUnBansRequest, ::mruv::punishments::UnBanMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchUnBansRequest, ::mruv::economy::UnBanMessage>* streamer) {
+                     ::mruv::punishments::WatchUnBansRequest, ::mruv::punishments::UnBanMessage>* streamer) {
                        return this->StreamedWatchUnBans(context,
                          streamer);
                   }));
@@ -6213,12 +6645,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBanMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBans(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBansRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBanMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchUnBans(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchUnBansRequest,::mruv::economy::UnBanMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchUnBans(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchUnBansRequest,::mruv::punishments::UnBanMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchUnBlocks : public BaseClass {
@@ -6226,12 +6658,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchUnBlocks() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>(
+          ::mruv::punishments::WatchUnBlocksRequest, ::mruv::punishments::UnBlockMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchUnBlocksRequest, ::mruv::economy::UnBlockMessage>* streamer) {
+                     ::mruv::punishments::WatchUnBlocksRequest, ::mruv::punishments::UnBlockMessage>* streamer) {
                        return this->StreamedWatchUnBlocks(context,
                          streamer);
                   }));
@@ -6240,12 +6672,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnBlockMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnBlocks(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnBlocksRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnBlockMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchUnBlocks(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchUnBlocksRequest,::mruv::economy::UnBlockMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchUnBlocks(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchUnBlocksRequest,::mruv::punishments::UnBlockMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchUnWarns : public BaseClass {
@@ -6253,12 +6685,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchUnWarns() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>(
+          ::mruv::punishments::WatchUnWarnsRequest, ::mruv::punishments::UnWarnMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchUnWarnsRequest, ::mruv::economy::UnWarnMessage>* streamer) {
+                     ::mruv::punishments::WatchUnWarnsRequest, ::mruv::punishments::UnWarnMessage>* streamer) {
                        return this->StreamedWatchUnWarns(context,
                          streamer);
                   }));
@@ -6267,12 +6699,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnWarnMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnWarns(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnWarnsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnWarnMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchUnWarns(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchUnWarnsRequest,::mruv::economy::UnWarnMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchUnWarns(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchUnWarnsRequest,::mruv::punishments::UnWarnMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchUnAdminJails : public BaseClass {
@@ -6280,12 +6712,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchUnAdminJails() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>(
+          ::mruv::punishments::WatchUnAdminJailsRequest, ::mruv::punishments::UnAdminJailMessage>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchUnAdminJailsRequest, ::mruv::economy::UnAdminJailMessage>* streamer) {
+                     ::mruv::punishments::WatchUnAdminJailsRequest, ::mruv::punishments::UnAdminJailMessage>* streamer) {
                        return this->StreamedWatchUnAdminJails(context,
                          streamer);
                   }));
@@ -6294,12 +6726,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::UnAdminJailMessage>* /*writer*/) override {
+    ::grpc::Status WatchUnAdminJails(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchUnAdminJailsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::UnAdminJailMessage>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchUnAdminJails(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchUnAdminJailsRequest,::mruv::economy::UnAdminJailMessage>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchUnAdminJails(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchUnAdminJailsRequest,::mruv::punishments::UnAdminJailMessage>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchPlayerPunishments : public BaseClass {
@@ -6307,12 +6739,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchPlayerPunishments() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>(
+          ::mruv::punishments::WatchPlayerPunishmentsRequest, ::mruv::punishments::WatchPlayerPunishmentsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchPlayerPunishmentsRequest, ::mruv::economy::WatchPlayerPunishmentsResponse>* streamer) {
+                     ::mruv::punishments::WatchPlayerPunishmentsRequest, ::mruv::punishments::WatchPlayerPunishmentsResponse>* streamer) {
                        return this->StreamedWatchPlayerPunishments(context,
                          streamer);
                   }));
@@ -6321,12 +6753,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchPlayerPunishments(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchPlayerPunishmentsRequest,::mruv::economy::WatchPlayerPunishmentsResponse>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchPlayerPunishments(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchPlayerPunishmentsRequest,::mruv::punishments::WatchPlayerPunishmentsResponse>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchPlayerAcquittals : public BaseClass {
@@ -6334,12 +6766,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchPlayerAcquittals() {
-      ::grpc::Service::MarkMethodStreamed(28,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>(
+          ::mruv::punishments::WatchPlayerAcquittalsRequest, ::mruv::punishments::WatchPlayerAcquittalsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchPlayerAcquittalsRequest, ::mruv::economy::WatchPlayerAcquittalsResponse>* streamer) {
+                     ::mruv::punishments::WatchPlayerAcquittalsRequest, ::mruv::punishments::WatchPlayerAcquittalsResponse>* streamer) {
                        return this->StreamedWatchPlayerAcquittals(context,
                          streamer);
                   }));
@@ -6348,12 +6780,12 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPlayerAcquittalsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPlayerAcquittals(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPlayerAcquittalsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPlayerAcquittalsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchPlayerAcquittals(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchPlayerAcquittalsRequest,::mruv::economy::WatchPlayerAcquittalsResponse>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchPlayerAcquittals(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchPlayerAcquittalsRequest,::mruv::punishments::WatchPlayerAcquittalsResponse>* server_split_streamer) = 0;
   };
   template <class BaseClass>
   class WithSplitStreamingMethod_WatchPunishments : public BaseClass {
@@ -6361,12 +6793,12 @@ class MruVPunishmentsService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithSplitStreamingMethod_WatchPunishments() {
-      ::grpc::Service::MarkMethodStreamed(29,
+      ::grpc::Service::MarkMethodStreamed(30,
         new ::grpc::internal::SplitServerStreamingHandler<
-          ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>(
+          ::mruv::punishments::WatchPunishmentsRequest, ::mruv::punishments::WatchPunishmentsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerSplitStreamer<
-                     ::mruv::economy::WatchPunishmentsRequest, ::mruv::economy::WatchPunishmentsResponse>* streamer) {
+                     ::mruv::punishments::WatchPunishmentsRequest, ::mruv::punishments::WatchPunishmentsResponse>* streamer) {
                        return this->StreamedWatchPunishments(context,
                          streamer);
                   }));
@@ -6375,18 +6807,18 @@ class MruVPunishmentsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::economy::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::economy::WatchPunishmentsResponse>* /*writer*/) override {
+    ::grpc::Status WatchPunishments(::grpc::ServerContext* /*context*/, const ::mruv::punishments::WatchPunishmentsRequest* /*request*/, ::grpc::ServerWriter< ::mruv::punishments::WatchPunishmentsResponse>* /*writer*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with split streamed
-    virtual ::grpc::Status StreamedWatchPunishments(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::economy::WatchPunishmentsRequest,::mruv::economy::WatchPunishmentsResponse>* server_split_streamer) = 0;
+    virtual ::grpc::Status StreamedWatchPunishments(::grpc::ServerContext* context, ::grpc::ServerSplitStreamer< ::mruv::punishments::WatchPunishmentsRequest,::mruv::punishments::WatchPunishmentsResponse>* server_split_streamer) = 0;
   };
   typedef WithSplitStreamingMethod_WatchBans<WithSplitStreamingMethod_WatchBlocks<WithSplitStreamingMethod_WatchWarns<WithSplitStreamingMethod_WatchAdminJails<WithSplitStreamingMethod_WatchUnBans<WithSplitStreamingMethod_WatchUnBlocks<WithSplitStreamingMethod_WatchUnWarns<WithSplitStreamingMethod_WatchUnAdminJails<WithSplitStreamingMethod_WatchPlayerPunishments<WithSplitStreamingMethod_WatchPlayerAcquittals<WithSplitStreamingMethod_WatchPunishments<Service > > > > > > > > > > > SplitStreamedService;
-  typedef WithStreamedUnaryMethod_Ban<WithStreamedUnaryMethod_Block<WithStreamedUnaryMethod_Warn<WithStreamedUnaryMethod_AdminJail<WithStreamedUnaryMethod_MuteGlobalChats<WithStreamedUnaryMethod_UnBan<WithStreamedUnaryMethod_UnBlock<WithStreamedUnaryMethod_UnWarn<WithStreamedUnaryMethod_UnAdminJail<WithStreamedUnaryMethod_UnMuteGlobalChats<WithStreamedUnaryMethod_GetPlayerBans<WithStreamedUnaryMethod_GetPlayerWarns<WithStreamedUnaryMethod_GetPlayerAdminJail<WithStreamedUnaryMethod_GetBan<WithStreamedUnaryMethod_GetWarn<WithStreamedUnaryMethod_GetBlock<WithStreamedUnaryMethod_IsPlayerBanned<WithStreamedUnaryMethod_IsCharacterBlocked<WithStreamedUnaryMethod_IsCharacterJailed<WithSplitStreamingMethod_WatchBans<WithSplitStreamingMethod_WatchBlocks<WithSplitStreamingMethod_WatchWarns<WithSplitStreamingMethod_WatchAdminJails<WithSplitStreamingMethod_WatchUnBans<WithSplitStreamingMethod_WatchUnBlocks<WithSplitStreamingMethod_WatchUnWarns<WithSplitStreamingMethod_WatchUnAdminJails<WithSplitStreamingMethod_WatchPlayerPunishments<WithSplitStreamingMethod_WatchPlayerAcquittals<WithSplitStreamingMethod_WatchPunishments<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_Punish<WithStreamedUnaryMethod_Ban<WithStreamedUnaryMethod_Block<WithStreamedUnaryMethod_Warn<WithStreamedUnaryMethod_AdminJail<WithStreamedUnaryMethod_MuteGlobalChats<WithStreamedUnaryMethod_UnBan<WithStreamedUnaryMethod_UnBlock<WithStreamedUnaryMethod_UnWarn<WithStreamedUnaryMethod_UnAdminJail<WithStreamedUnaryMethod_UnMuteGlobalChats<WithStreamedUnaryMethod_GetPlayerBans<WithStreamedUnaryMethod_GetPlayerWarns<WithStreamedUnaryMethod_GetPlayerAdminJail<WithStreamedUnaryMethod_GetBan<WithStreamedUnaryMethod_GetWarn<WithStreamedUnaryMethod_GetBlock<WithStreamedUnaryMethod_IsPlayerBanned<WithStreamedUnaryMethod_IsCharacterBlocked<WithStreamedUnaryMethod_IsCharacterJailed<WithSplitStreamingMethod_WatchBans<WithSplitStreamingMethod_WatchBlocks<WithSplitStreamingMethod_WatchWarns<WithSplitStreamingMethod_WatchAdminJails<WithSplitStreamingMethod_WatchUnBans<WithSplitStreamingMethod_WatchUnBlocks<WithSplitStreamingMethod_WatchUnWarns<WithSplitStreamingMethod_WatchUnAdminJails<WithSplitStreamingMethod_WatchPlayerPunishments<WithSplitStreamingMethod_WatchPlayerAcquittals<WithSplitStreamingMethod_WatchPunishments<WithStreamedUnaryMethod_WatchAcquittals<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
-}  // namespace economy
+}  // namespace punishments
 }  // namespace mruv
 
 

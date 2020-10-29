@@ -27,12 +27,13 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace mruv {
+namespace items {
 
 // The MruV items service provides procedures for managing items and containers
 class MruVItemService final {
  public:
   static constexpr char const* service_full_name() {
-    return "mruv.MruVItemService";
+    return "mruv.items.MruVItemService";
   }
   class StubInterface {
    public:
@@ -62,12 +63,12 @@ class MruVItemService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemID>>(PrepareAsyncDeleteItemRaw(context, request, cq));
     }
     // Gets all items.
-    virtual ::grpc::Status GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::mruv::GetItemsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemsResponse>> AsyncGetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemsResponse>>(AsyncGetItemsRaw(context, request, cq));
+    virtual ::grpc::Status GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::mruv::items::GetItemsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemsResponse>> AsyncGetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemsResponse>>(AsyncGetItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemsResponse>> PrepareAsyncGetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemsResponse>>(PrepareAsyncGetItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemsResponse>> PrepareAsyncGetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemsResponse>>(PrepareAsyncGetItemsRaw(context, request, cq));
     }
     // Create item type.
     virtual ::grpc::Status CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::mruv::ItemTypeID* response) = 0;
@@ -94,12 +95,12 @@ class MruVItemService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemTypeID>>(PrepareAsyncDeleteItemTypeRaw(context, request, cq));
     }
     // Gets all item types.
-    virtual ::grpc::Status GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::mruv::GetItemTypesResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemTypesResponse>> AsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemTypesResponse>>(AsyncGetItemTypesRaw(context, request, cq));
+    virtual ::grpc::Status GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::mruv::items::GetItemTypesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemTypesResponse>> AsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemTypesResponse>>(AsyncGetItemTypesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemTypesResponse>> PrepareAsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemTypesResponse>>(PrepareAsyncGetItemTypesRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemTypesResponse>> PrepareAsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemTypesResponse>>(PrepareAsyncGetItemTypesRaw(context, request, cq));
     }
     // Create container.
     virtual ::grpc::Status CreateContainer(::grpc::ClientContext* context, const ::mruv::Container& request, ::mruv::ContainerID* response) = 0;
@@ -126,12 +127,12 @@ class MruVItemService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerID>>(PrepareAsyncDeleteContainerRaw(context, request, cq));
     }
     // Get all containers.
-    virtual ::grpc::Status GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::mruv::GetContainersResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>> AsyncGetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>>(AsyncGetContainersRaw(context, request, cq));
+    virtual ::grpc::Status GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::mruv::items::GetContainersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainersResponse>> AsyncGetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainersResponse>>(AsyncGetContainersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>> PrepareAsyncGetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>>(PrepareAsyncGetContainersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainersResponse>> PrepareAsyncGetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainersResponse>>(PrepareAsyncGetContainersRaw(context, request, cq));
     }
     // Create a container type.
     virtual ::grpc::Status CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::mruv::ContainerTypeID* response) = 0;
@@ -158,61 +159,61 @@ class MruVItemService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>>(PrepareAsyncDeleteContainerTypeRaw(context, request, cq));
     }
     // Get all container types.
-    virtual ::grpc::Status GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::mruv::GetContainerTypesResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerTypesResponse>> AsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerTypesResponse>>(AsyncGetContainerTypesRaw(context, request, cq));
+    virtual ::grpc::Status GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::mruv::items::GetContainerTypesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerTypesResponse>> AsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerTypesResponse>>(AsyncGetContainerTypesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerTypesResponse>> PrepareAsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerTypesResponse>>(PrepareAsyncGetContainerTypesRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerTypesResponse>> PrepareAsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerTypesResponse>>(PrepareAsyncGetContainerTypesRaw(context, request, cq));
     }
     // Get items inside a container.
-    virtual ::grpc::Status GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::mruv::GetContainerItemsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>> AsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>>(AsyncGetContainerItemsRaw(context, request, cq));
+    virtual ::grpc::Status GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::mruv::items::GetContainerItemsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerItemsResponse>> AsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerItemsResponse>>(AsyncGetContainerItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>> PrepareAsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>>(PrepareAsyncGetContainerItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerItemsResponse>> PrepareAsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerItemsResponse>>(PrepareAsyncGetContainerItemsRaw(context, request, cq));
     }
     // Pull an item from container.
-    virtual ::grpc::Status PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::mruv::Item* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>> AsyncPullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
+    virtual ::grpc::Status PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::mruv::Item* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>> AsyncPullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>>(AsyncPullItemRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>> PrepareAsyncPullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>> PrepareAsyncPullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>>(PrepareAsyncPullItemRaw(context, request, cq));
     }
     // Put an item into container.
-    virtual ::grpc::Status PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::mruv::PutItemResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>> AsyncPutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>>(AsyncPutItemRaw(context, request, cq));
+    virtual ::grpc::Status PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::mruv::items::PutItemResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::PutItemResponse>> AsyncPutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::PutItemResponse>>(AsyncPutItemRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>> PrepareAsyncPutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>>(PrepareAsyncPutItemRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::PutItemResponse>> PrepareAsyncPutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::PutItemResponse>>(PrepareAsyncPutItemRaw(context, request, cq));
     }
     // Sort items inside container.
     // This procedure change order of items inside container.
-    virtual ::grpc::Status SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::mruv::SortItemsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::SortItemsResponse>> AsyncSortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::SortItemsResponse>>(AsyncSortItemsRaw(context, request, cq));
+    virtual ::grpc::Status SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::mruv::items::SortItemsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::SortItemsResponse>> AsyncSortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::SortItemsResponse>>(AsyncSortItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::SortItemsResponse>> PrepareAsyncSortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::SortItemsResponse>>(PrepareAsyncSortItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::SortItemsResponse>> PrepareAsyncSortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::SortItemsResponse>>(PrepareAsyncSortItemsRaw(context, request, cq));
     }
     // Retrieves from the container the list of items nearest to the given position.
-    virtual ::grpc::Status GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::mruv::GetNearestItemsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetNearestItemsResponse>> AsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetNearestItemsResponse>>(AsyncGetNearestItemsRaw(context, request, cq));
+    virtual ::grpc::Status GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::mruv::items::GetNearestItemsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetNearestItemsResponse>> AsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetNearestItemsResponse>>(AsyncGetNearestItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetNearestItemsResponse>> PrepareAsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetNearestItemsResponse>>(PrepareAsyncGetNearestItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetNearestItemsResponse>> PrepareAsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetNearestItemsResponse>>(PrepareAsyncGetNearestItemsRaw(context, request, cq));
     }
     // Trigger action associated with the item usage.
-    virtual ::grpc::Status UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::mruv::UseItemResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UseItemResponse>> AsyncUseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UseItemResponse>>(AsyncUseItemRaw(context, request, cq));
+    virtual ::grpc::Status UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::mruv::items::UseItemResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::UseItemResponse>> AsyncUseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::UseItemResponse>>(AsyncUseItemRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UseItemResponse>> PrepareAsyncUseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UseItemResponse>>(PrepareAsyncUseItemRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::UseItemResponse>> PrepareAsyncUseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::UseItemResponse>>(PrepareAsyncUseItemRaw(context, request, cq));
     }
     // Get service health status.
     virtual ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) = 0;
@@ -273,17 +274,17 @@ class MruVItemService final {
       virtual void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Gets all items.
-      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Create item type.
       virtual void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) = 0;
@@ -325,17 +326,17 @@ class MruVItemService final {
       virtual void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Gets all item types.
-      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Create container.
       virtual void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) = 0;
@@ -377,17 +378,17 @@ class MruVItemService final {
       virtual void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all containers.
-      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Create a container type.
       virtual void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) = 0;
@@ -429,38 +430,38 @@ class MruVItemService final {
       virtual void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all container types.
-      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get items inside a container.
-      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Pull an item from container.
-      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -468,57 +469,57 @@ class MruVItemService final {
       virtual void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Put an item into container.
-      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::PutItemResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Sort items inside container.
       // This procedure change order of items inside container.
-      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::SortItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Retrieves from the container the list of items nearest to the given position.
-      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Trigger action associated with the item usage.
-      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::UseItemResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get service health status.
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -561,44 +562,44 @@ class MruVItemService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>* PrepareAsyncGetItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemID>* AsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemID>* PrepareAsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemsResponse>* AsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemsResponse>* PrepareAsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemsResponse>* AsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemsResponse>* PrepareAsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemTypeID>* AsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemTypeID>* PrepareAsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemType>* AsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemType>* PrepareAsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemTypeID>* AsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ItemTypeID>* PrepareAsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemTypesResponse>* AsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetItemTypesResponse>* PrepareAsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemTypesResponse>* AsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetItemTypesResponse>* PrepareAsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerID>* AsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerID>* PrepareAsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Container>* AsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Container>* PrepareAsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerID>* AsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerID>* PrepareAsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>* AsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainersResponse>* PrepareAsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainersResponse>* AsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainersResponse>* PrepareAsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>* AsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>* PrepareAsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerType>* AsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerType>* PrepareAsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>* AsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ContainerTypeID>* PrepareAsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerTypesResponse>* AsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerTypesResponse>* PrepareAsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>* AsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetContainerItemsResponse>* PrepareAsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>* AsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>* PrepareAsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>* AsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::PutItemResponse>* PrepareAsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::SortItemsResponse>* AsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::SortItemsResponse>* PrepareAsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetNearestItemsResponse>* AsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetNearestItemsResponse>* PrepareAsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UseItemResponse>* AsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UseItemResponse>* PrepareAsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerTypesResponse>* AsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerTypesResponse>* PrepareAsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerItemsResponse>* AsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetContainerItemsResponse>* PrepareAsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>* AsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::Item>* PrepareAsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::PutItemResponse>* AsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::PutItemResponse>* PrepareAsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::SortItemsResponse>* AsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::SortItemsResponse>* PrepareAsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetNearestItemsResponse>* AsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::GetNearestItemsResponse>* PrepareAsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::UseItemResponse>* AsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::items::UseItemResponse>* PrepareAsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -628,12 +629,12 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ItemID>> PrepareAsyncDeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ItemID>>(PrepareAsyncDeleteItemRaw(context, request, cq));
     }
-    ::grpc::Status GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::mruv::GetItemsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>> AsyncGetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>>(AsyncGetItemsRaw(context, request, cq));
+    ::grpc::Status GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::mruv::items::GetItemsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>> AsyncGetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>>(AsyncGetItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>> PrepareAsyncGetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>>(PrepareAsyncGetItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>> PrepareAsyncGetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>>(PrepareAsyncGetItemsRaw(context, request, cq));
     }
     ::grpc::Status CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::mruv::ItemTypeID* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>> AsyncCreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) {
@@ -656,12 +657,12 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>> PrepareAsyncDeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>>(PrepareAsyncDeleteItemTypeRaw(context, request, cq));
     }
-    ::grpc::Status GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::mruv::GetItemTypesResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>> AsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>>(AsyncGetItemTypesRaw(context, request, cq));
+    ::grpc::Status GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::mruv::items::GetItemTypesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>> AsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>>(AsyncGetItemTypesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>> PrepareAsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>>(PrepareAsyncGetItemTypesRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>> PrepareAsyncGetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>>(PrepareAsyncGetItemTypesRaw(context, request, cq));
     }
     ::grpc::Status CreateContainer(::grpc::ClientContext* context, const ::mruv::Container& request, ::mruv::ContainerID* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>> AsyncCreateContainer(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) {
@@ -684,12 +685,12 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>> PrepareAsyncDeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>>(PrepareAsyncDeleteContainerRaw(context, request, cq));
     }
-    ::grpc::Status GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::mruv::GetContainersResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>> AsyncGetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>>(AsyncGetContainersRaw(context, request, cq));
+    ::grpc::Status GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::mruv::items::GetContainersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>> AsyncGetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>>(AsyncGetContainersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>> PrepareAsyncGetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>>(PrepareAsyncGetContainersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>> PrepareAsyncGetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>>(PrepareAsyncGetContainersRaw(context, request, cq));
     }
     ::grpc::Status CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::mruv::ContainerTypeID* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>> AsyncCreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) {
@@ -712,54 +713,54 @@ class MruVItemService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>> PrepareAsyncDeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>>(PrepareAsyncDeleteContainerTypeRaw(context, request, cq));
     }
-    ::grpc::Status GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::mruv::GetContainerTypesResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>> AsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>>(AsyncGetContainerTypesRaw(context, request, cq));
+    ::grpc::Status GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::mruv::items::GetContainerTypesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>> AsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>>(AsyncGetContainerTypesRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>> PrepareAsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>>(PrepareAsyncGetContainerTypesRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>> PrepareAsyncGetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>>(PrepareAsyncGetContainerTypesRaw(context, request, cq));
     }
-    ::grpc::Status GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::mruv::GetContainerItemsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>> AsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>>(AsyncGetContainerItemsRaw(context, request, cq));
+    ::grpc::Status GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::mruv::items::GetContainerItemsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>> AsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>>(AsyncGetContainerItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>> PrepareAsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>>(PrepareAsyncGetContainerItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>> PrepareAsyncGetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>>(PrepareAsyncGetContainerItemsRaw(context, request, cq));
     }
-    ::grpc::Status PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::mruv::Item* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Item>> AsyncPullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
+    ::grpc::Status PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::mruv::Item* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Item>> AsyncPullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Item>>(AsyncPullItemRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Item>> PrepareAsyncPullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Item>> PrepareAsyncPullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::Item>>(PrepareAsyncPullItemRaw(context, request, cq));
     }
-    ::grpc::Status PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::mruv::PutItemResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>> AsyncPutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>>(AsyncPutItemRaw(context, request, cq));
+    ::grpc::Status PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::mruv::items::PutItemResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>> AsyncPutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>>(AsyncPutItemRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>> PrepareAsyncPutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>>(PrepareAsyncPutItemRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>> PrepareAsyncPutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>>(PrepareAsyncPutItemRaw(context, request, cq));
     }
-    ::grpc::Status SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::mruv::SortItemsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>> AsyncSortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>>(AsyncSortItemsRaw(context, request, cq));
+    ::grpc::Status SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::mruv::items::SortItemsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>> AsyncSortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>>(AsyncSortItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>> PrepareAsyncSortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>>(PrepareAsyncSortItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>> PrepareAsyncSortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>>(PrepareAsyncSortItemsRaw(context, request, cq));
     }
-    ::grpc::Status GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::mruv::GetNearestItemsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>> AsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>>(AsyncGetNearestItemsRaw(context, request, cq));
+    ::grpc::Status GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::mruv::items::GetNearestItemsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>> AsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>>(AsyncGetNearestItemsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>> PrepareAsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>>(PrepareAsyncGetNearestItemsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>> PrepareAsyncGetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>>(PrepareAsyncGetNearestItemsRaw(context, request, cq));
     }
-    ::grpc::Status UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::mruv::UseItemResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>> AsyncUseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>>(AsyncUseItemRaw(context, request, cq));
+    ::grpc::Status UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::mruv::items::UseItemResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>> AsyncUseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>>(AsyncUseItemRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>> PrepareAsyncUseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>>(PrepareAsyncUseItemRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>> PrepareAsyncUseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>>(PrepareAsyncUseItemRaw(context, request, cq));
     }
     ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
@@ -814,17 +815,17 @@ class MruVItemService final {
       #else
       void DeleteItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) override;
       void CreateItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)>) override;
@@ -862,17 +863,17 @@ class MruVItemService final {
       #else
       void DeleteItemType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemTypesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetItemTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) override;
       void CreateContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)>) override;
@@ -910,17 +911,17 @@ class MruVItemService final {
       #else
       void DeleteContainer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetContainers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) override;
       void CreateContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)>) override;
@@ -958,89 +959,89 @@ class MruVItemService final {
       #else
       void DeleteContainerType(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerTypesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetContainerTypes(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerItemsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetContainerItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
+      void PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
       void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void PullItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) override;
-      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)>) override;
+      void PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, std::function<void(::grpc::Status)>) override;
+      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::PutItemResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::PutItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void PutItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) override;
-      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::SortItemsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::SortItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void SortItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) override;
-      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetNearestItemsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetNearestItems(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, std::function<void(::grpc::Status)>) override;
+      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::UseItemResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::UseItemResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void UseItem(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::items::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
@@ -1083,44 +1084,44 @@ class MruVItemService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::Item>* PrepareAsyncGetItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemID>* AsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemID>* PrepareAsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>* AsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>* PrepareAsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>* AsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>* PrepareAsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* AsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* PrepareAsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemType>* AsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemType>* PrepareAsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* AsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* PrepareAsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>* AsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>* PrepareAsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>* AsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>* PrepareAsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* AsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* PrepareAsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::Container>* AsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::Container>* PrepareAsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* AsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* PrepareAsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>* AsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>* PrepareAsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>* AsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>* PrepareAsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* AsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* PrepareAsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerType>* AsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerType>* PrepareAsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* AsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* PrepareAsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>* AsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>* PrepareAsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>* AsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>* PrepareAsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::Item>* AsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::Item>* PrepareAsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>* AsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>* PrepareAsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>* AsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>* PrepareAsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>* AsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>* PrepareAsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>* AsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>* PrepareAsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>* AsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>* PrepareAsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>* AsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>* PrepareAsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::Item>* AsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::Item>* PrepareAsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>* AsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>* PrepareAsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>* AsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>* PrepareAsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>* AsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>* PrepareAsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>* AsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>* PrepareAsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1163,7 +1164,7 @@ class MruVItemService final {
     // Delete item by id.
     virtual ::grpc::Status DeleteItem(::grpc::ServerContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response);
     // Gets all items.
-    virtual ::grpc::Status GetItems(::grpc::ServerContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response);
+    virtual ::grpc::Status GetItems(::grpc::ServerContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response);
     // Create item type.
     virtual ::grpc::Status CreateItemType(::grpc::ServerContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response);
     // Get item type by id.
@@ -1171,7 +1172,7 @@ class MruVItemService final {
     // Delete item type by id.
     virtual ::grpc::Status DeleteItemType(::grpc::ServerContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response);
     // Gets all item types.
-    virtual ::grpc::Status GetItemTypes(::grpc::ServerContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response);
+    virtual ::grpc::Status GetItemTypes(::grpc::ServerContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response);
     // Create container.
     virtual ::grpc::Status CreateContainer(::grpc::ServerContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response);
     // Get container by id.
@@ -1179,7 +1180,7 @@ class MruVItemService final {
     // Delete container by id.
     virtual ::grpc::Status DeleteContainer(::grpc::ServerContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response);
     // Get all containers.
-    virtual ::grpc::Status GetContainers(::grpc::ServerContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response);
+    virtual ::grpc::Status GetContainers(::grpc::ServerContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response);
     // Create a container type.
     virtual ::grpc::Status CreateContainerType(::grpc::ServerContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response);
     // Get a container type by id.
@@ -1187,20 +1188,20 @@ class MruVItemService final {
     // Delete a container type by id.
     virtual ::grpc::Status DeleteContainerType(::grpc::ServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response);
     // Get all container types.
-    virtual ::grpc::Status GetContainerTypes(::grpc::ServerContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response);
+    virtual ::grpc::Status GetContainerTypes(::grpc::ServerContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response);
     // Get items inside a container.
-    virtual ::grpc::Status GetContainerItems(::grpc::ServerContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response);
+    virtual ::grpc::Status GetContainerItems(::grpc::ServerContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response);
     // Pull an item from container.
-    virtual ::grpc::Status PullItem(::grpc::ServerContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response);
+    virtual ::grpc::Status PullItem(::grpc::ServerContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response);
     // Put an item into container.
-    virtual ::grpc::Status PutItem(::grpc::ServerContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response);
+    virtual ::grpc::Status PutItem(::grpc::ServerContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response);
     // Sort items inside container.
     // This procedure change order of items inside container.
-    virtual ::grpc::Status SortItems(::grpc::ServerContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response);
+    virtual ::grpc::Status SortItems(::grpc::ServerContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response);
     // Retrieves from the container the list of items nearest to the given position.
-    virtual ::grpc::Status GetNearestItems(::grpc::ServerContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response);
+    virtual ::grpc::Status GetNearestItems(::grpc::ServerContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response);
     // Trigger action associated with the item usage.
-    virtual ::grpc::Status UseItem(::grpc::ServerContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response);
+    virtual ::grpc::Status UseItem(::grpc::ServerContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response);
     // Get service health status.
     virtual ::grpc::Status GetServiceStatus(::grpc::ServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response);
     // Get service current version.
@@ -1278,11 +1279,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) override {
+    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetItems(::grpc::ServerContext* context, ::mruv::GetItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetItems(::grpc::ServerContext* context, ::mruv::items::GetItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::GetItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1358,11 +1359,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) override {
+    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetItemTypes(::grpc::ServerContext* context, ::mruv::GetItemTypesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetItemTypesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetItemTypes(::grpc::ServerContext* context, ::mruv::items::GetItemTypesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::GetItemTypesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1438,11 +1439,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) override {
+    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetContainers(::grpc::ServerContext* context, ::mruv::GetContainersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetContainersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetContainers(::grpc::ServerContext* context, ::mruv::items::GetContainersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::GetContainersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1518,11 +1519,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) override {
+    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetContainerTypes(::grpc::ServerContext* context, ::mruv::GetContainerTypesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetContainerTypesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetContainerTypes(::grpc::ServerContext* context, ::mruv::items::GetContainerTypesRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::GetContainerTypesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1538,11 +1539,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) override {
+    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetContainerItems(::grpc::ServerContext* context, ::mruv::GetContainerItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetContainerItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetContainerItems(::grpc::ServerContext* context, ::mruv::items::GetContainerItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::GetContainerItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1558,11 +1559,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
+    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestPullItem(::grpc::ServerContext* context, ::mruv::PullItemRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::Item>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestPullItem(::grpc::ServerContext* context, ::mruv::items::PullItemRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::Item>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1578,11 +1579,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) override {
+    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestPutItem(::grpc::ServerContext* context, ::mruv::PutItemRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::PutItemResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestPutItem(::grpc::ServerContext* context, ::mruv::items::PutItemRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::PutItemResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1598,11 +1599,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) override {
+    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestSortItems(::grpc::ServerContext* context, ::mruv::SortItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::SortItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestSortItems(::grpc::ServerContext* context, ::mruv::items::SortItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::SortItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1618,11 +1619,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) override {
+    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetNearestItems(::grpc::ServerContext* context, ::mruv::GetNearestItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetNearestItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetNearestItems(::grpc::ServerContext* context, ::mruv::items::GetNearestItemsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::GetNearestItemsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1638,11 +1639,11 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) override {
+    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUseItem(::grpc::ServerContext* context, ::mruv::UseItemRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::UseItemResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUseItem(::grpc::ServerContext* context, ::mruv::items::UseItemRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::items::UseItemResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1840,38 +1841,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetItemsRequest, ::mruv::items::GetItemsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response) { return this->GetItems(context, request, response); }));}
+                     context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response) { return this->GetItems(context, request, response); }));}
     void SetMessageAllocatorFor_GetItems(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::GetItemsRequest, ::mruv::items::GetItemsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetItemsRequest, ::mruv::items::GetItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetItems() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) override {
+    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetItems(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetItems(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2028,38 +2029,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetItemTypesRequest, ::mruv::items::GetItemTypesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response) { return this->GetItemTypes(context, request, response); }));}
+                     context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response) { return this->GetItemTypes(context, request, response); }));}
     void SetMessageAllocatorFor_GetItemTypes(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::GetItemTypesRequest, ::mruv::items::GetItemTypesResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetItemTypesRequest, ::mruv::items::GetItemTypesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetItemTypes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) override {
+    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetItemTypes(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetItemTypes(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2216,38 +2217,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(11,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetContainersRequest, ::mruv::items::GetContainersResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response) { return this->GetContainers(context, request, response); }));}
+                     context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response) { return this->GetContainers(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainers(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::GetContainersRequest, ::mruv::items::GetContainersResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetContainersRequest, ::mruv::items::GetContainersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) override {
+    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetContainers(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetContainers(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2404,38 +2405,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(15,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetContainerTypesRequest, ::mruv::items::GetContainerTypesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response) { return this->GetContainerTypes(context, request, response); }));}
+                     context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response) { return this->GetContainerTypes(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainerTypes(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::GetContainerTypesRequest, ::mruv::items::GetContainerTypesResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetContainerTypesRequest, ::mruv::items::GetContainerTypesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainerTypes() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) override {
+    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetContainerTypes(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetContainerTypes(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2451,38 +2452,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(16,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetContainerItemsRequest, ::mruv::items::GetContainerItemsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response) { return this->GetContainerItems(context, request, response); }));}
+                     context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response) { return this->GetContainerItems(context, request, response); }));}
     void SetMessageAllocatorFor_GetContainerItems(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::GetContainerItemsRequest, ::mruv::items::GetContainerItemsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetContainerItemsRequest, ::mruv::items::GetContainerItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetContainerItems() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) override {
+    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetContainerItems(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetContainerItems(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2498,38 +2499,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(17,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::PullItemRequest, ::mruv::Item>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::PullItemRequest* request, ::mruv::Item* response) { return this->PullItem(context, request, response); }));}
+                     context, const ::mruv::items::PullItemRequest* request, ::mruv::Item* response) { return this->PullItem(context, request, response); }));}
     void SetMessageAllocatorFor_PullItem(
-        ::grpc::experimental::MessageAllocator< ::mruv::PullItemRequest, ::mruv::Item>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::PullItemRequest, ::mruv::Item>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PullItemRequest, ::mruv::Item>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::PullItemRequest, ::mruv::Item>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_PullItem() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
+    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PullItem(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* PullItem(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2545,38 +2546,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(18,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::PutItemRequest, ::mruv::items::PutItemResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response) { return this->PutItem(context, request, response); }));}
+                     context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response) { return this->PutItem(context, request, response); }));}
     void SetMessageAllocatorFor_PutItem(
-        ::grpc::experimental::MessageAllocator< ::mruv::PutItemRequest, ::mruv::PutItemResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::PutItemRequest, ::mruv::items::PutItemResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::PutItemRequest, ::mruv::PutItemResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::PutItemRequest, ::mruv::items::PutItemResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_PutItem() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) override {
+    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* PutItem(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* PutItem(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2592,38 +2593,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(19,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::SortItemsRequest, ::mruv::items::SortItemsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response) { return this->SortItems(context, request, response); }));}
+                     context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response) { return this->SortItems(context, request, response); }));}
     void SetMessageAllocatorFor_SortItems(
-        ::grpc::experimental::MessageAllocator< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::SortItemsRequest, ::mruv::items::SortItemsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(19);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::SortItemsRequest, ::mruv::items::SortItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SortItems() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) override {
+    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* SortItems(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* SortItems(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2639,38 +2640,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(20,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetNearestItemsRequest, ::mruv::items::GetNearestItemsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response) { return this->GetNearestItems(context, request, response); }));}
+                     context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response) { return this->GetNearestItems(context, request, response); }));}
     void SetMessageAllocatorFor_GetNearestItems(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::GetNearestItemsRequest, ::mruv::items::GetNearestItemsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(20);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::GetNearestItemsRequest, ::mruv::items::GetNearestItemsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetNearestItems() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) override {
+    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetNearestItems(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetNearestItems(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2686,38 +2687,38 @@ class MruVItemService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(21,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::UseItemRequest, ::mruv::items::UseItemResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response) { return this->UseItem(context, request, response); }));}
+                     context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response) { return this->UseItem(context, request, response); }));}
     void SetMessageAllocatorFor_UseItem(
-        ::grpc::experimental::MessageAllocator< ::mruv::UseItemRequest, ::mruv::UseItemResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::items::UseItemRequest, ::mruv::items::UseItemResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(21);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::UseItemRequest, ::mruv::UseItemResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::items::UseItemRequest, ::mruv::items::UseItemResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UseItem() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) override {
+    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UseItem(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UseItem(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2883,7 +2884,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) override {
+    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2951,7 +2952,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) override {
+    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3019,7 +3020,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) override {
+    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3087,7 +3088,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) override {
+    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3104,7 +3105,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) override {
+    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3121,7 +3122,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
+    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3138,7 +3139,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) override {
+    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3155,7 +3156,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) override {
+    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3172,7 +3173,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) override {
+    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3189,7 +3190,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) override {
+    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3300,7 +3301,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) override {
+    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3380,7 +3381,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) override {
+    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3460,7 +3461,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) override {
+    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3540,7 +3541,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) override {
+    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3560,7 +3561,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) override {
+    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3580,7 +3581,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
+    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3600,7 +3601,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) override {
+    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3620,7 +3621,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) override {
+    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3640,7 +3641,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) override {
+    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3660,7 +3661,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) override {
+    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3847,7 +3848,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) override {
+    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3999,7 +4000,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) override {
+    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4151,7 +4152,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) override {
+    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4303,7 +4304,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) override {
+    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4341,7 +4342,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) override {
+    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4379,7 +4380,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
+    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4417,7 +4418,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) override {
+    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4455,7 +4456,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) override {
+    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4493,7 +4494,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) override {
+    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4531,7 +4532,7 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) override {
+    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4709,10 +4710,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_GetItems() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
+          ::mruv::items::GetItemsRequest, ::mruv::items::GetItemsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>* streamer) {
+                     ::mruv::items::GetItemsRequest, ::mruv::items::GetItemsResponse>* streamer) {
                        return this->StreamedGetItems(context,
                          streamer);
                   }));
@@ -4721,12 +4722,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::GetItemsRequest* /*request*/, ::mruv::GetItemsResponse* /*response*/) override {
+    ::grpc::Status GetItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemsRequest* /*request*/, ::mruv::items::GetItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetItemsRequest,::mruv::GetItemsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::GetItemsRequest,::mruv::items::GetItemsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateItemType : public BaseClass {
@@ -4817,10 +4818,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_GetItemTypes() {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
+          ::mruv::items::GetItemTypesRequest, ::mruv::items::GetItemTypesResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>* streamer) {
+                     ::mruv::items::GetItemTypesRequest, ::mruv::items::GetItemTypesResponse>* streamer) {
                        return this->StreamedGetItemTypes(context,
                          streamer);
                   }));
@@ -4829,12 +4830,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetItemTypesRequest* /*request*/, ::mruv::GetItemTypesResponse* /*response*/) override {
+    ::grpc::Status GetItemTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetItemTypesRequest* /*request*/, ::mruv::items::GetItemTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetItemTypes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetItemTypesRequest,::mruv::GetItemTypesResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetItemTypes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::GetItemTypesRequest,::mruv::items::GetItemTypesResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateContainer : public BaseClass {
@@ -4925,10 +4926,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_GetContainers() {
       ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
+          ::mruv::items::GetContainersRequest, ::mruv::items::GetContainersResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>* streamer) {
+                     ::mruv::items::GetContainersRequest, ::mruv::items::GetContainersResponse>* streamer) {
                        return this->StreamedGetContainers(context,
                          streamer);
                   }));
@@ -4937,12 +4938,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::GetContainersRequest* /*request*/, ::mruv::GetContainersResponse* /*response*/) override {
+    ::grpc::Status GetContainers(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainersRequest* /*request*/, ::mruv::items::GetContainersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetContainers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetContainersRequest,::mruv::GetContainersResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetContainers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::GetContainersRequest,::mruv::items::GetContainersResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_CreateContainerType : public BaseClass {
@@ -5033,10 +5034,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_GetContainerTypes() {
       ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
+          ::mruv::items::GetContainerTypesRequest, ::mruv::items::GetContainerTypesResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>* streamer) {
+                     ::mruv::items::GetContainerTypesRequest, ::mruv::items::GetContainerTypesResponse>* streamer) {
                        return this->StreamedGetContainerTypes(context,
                          streamer);
                   }));
@@ -5045,12 +5046,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerTypesRequest* /*request*/, ::mruv::GetContainerTypesResponse* /*response*/) override {
+    ::grpc::Status GetContainerTypes(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerTypesRequest* /*request*/, ::mruv::items::GetContainerTypesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetContainerTypes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetContainerTypesRequest,::mruv::GetContainerTypesResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetContainerTypes(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::GetContainerTypesRequest,::mruv::items::GetContainerTypesResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetContainerItems : public BaseClass {
@@ -5060,10 +5061,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_GetContainerItems() {
       ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
+          ::mruv::items::GetContainerItemsRequest, ::mruv::items::GetContainerItemsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>* streamer) {
+                     ::mruv::items::GetContainerItemsRequest, ::mruv::items::GetContainerItemsResponse>* streamer) {
                        return this->StreamedGetContainerItems(context,
                          streamer);
                   }));
@@ -5072,12 +5073,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::GetContainerItemsRequest* /*request*/, ::mruv::GetContainerItemsResponse* /*response*/) override {
+    ::grpc::Status GetContainerItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetContainerItemsRequest* /*request*/, ::mruv::items::GetContainerItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetContainerItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetContainerItemsRequest,::mruv::GetContainerItemsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetContainerItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::GetContainerItemsRequest,::mruv::items::GetContainerItemsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_PullItem : public BaseClass {
@@ -5087,10 +5088,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_PullItem() {
       ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::PullItemRequest, ::mruv::Item>(
+          ::mruv::items::PullItemRequest, ::mruv::Item>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::PullItemRequest, ::mruv::Item>* streamer) {
+                     ::mruv::items::PullItemRequest, ::mruv::Item>* streamer) {
                        return this->StreamedPullItem(context,
                          streamer);
                   }));
@@ -5099,12 +5100,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
+    ::grpc::Status PullItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PullItemRequest* /*request*/, ::mruv::Item* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedPullItem(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::PullItemRequest,::mruv::Item>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedPullItem(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::PullItemRequest,::mruv::Item>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_PutItem : public BaseClass {
@@ -5114,10 +5115,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_PutItem() {
       ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
+          ::mruv::items::PutItemRequest, ::mruv::items::PutItemResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::PutItemRequest, ::mruv::PutItemResponse>* streamer) {
+                     ::mruv::items::PutItemRequest, ::mruv::items::PutItemResponse>* streamer) {
                        return this->StreamedPutItem(context,
                          streamer);
                   }));
@@ -5126,12 +5127,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::PutItemRequest* /*request*/, ::mruv::PutItemResponse* /*response*/) override {
+    ::grpc::Status PutItem(::grpc::ServerContext* /*context*/, const ::mruv::items::PutItemRequest* /*request*/, ::mruv::items::PutItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedPutItem(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::PutItemRequest,::mruv::PutItemResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedPutItem(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::PutItemRequest,::mruv::items::PutItemResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_SortItems : public BaseClass {
@@ -5141,10 +5142,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_SortItems() {
       ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
+          ::mruv::items::SortItemsRequest, ::mruv::items::SortItemsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>* streamer) {
+                     ::mruv::items::SortItemsRequest, ::mruv::items::SortItemsResponse>* streamer) {
                        return this->StreamedSortItems(context,
                          streamer);
                   }));
@@ -5153,12 +5154,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::SortItemsRequest* /*request*/, ::mruv::SortItemsResponse* /*response*/) override {
+    ::grpc::Status SortItems(::grpc::ServerContext* /*context*/, const ::mruv::items::SortItemsRequest* /*request*/, ::mruv::items::SortItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedSortItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::SortItemsRequest,::mruv::SortItemsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedSortItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::SortItemsRequest,::mruv::items::SortItemsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetNearestItems : public BaseClass {
@@ -5168,10 +5169,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_GetNearestItems() {
       ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
+          ::mruv::items::GetNearestItemsRequest, ::mruv::items::GetNearestItemsResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>* streamer) {
+                     ::mruv::items::GetNearestItemsRequest, ::mruv::items::GetNearestItemsResponse>* streamer) {
                        return this->StreamedGetNearestItems(context,
                          streamer);
                   }));
@@ -5180,12 +5181,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::GetNearestItemsRequest* /*request*/, ::mruv::GetNearestItemsResponse* /*response*/) override {
+    ::grpc::Status GetNearestItems(::grpc::ServerContext* /*context*/, const ::mruv::items::GetNearestItemsRequest* /*request*/, ::mruv::items::GetNearestItemsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetNearestItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetNearestItemsRequest,::mruv::GetNearestItemsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetNearestItems(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::GetNearestItemsRequest,::mruv::items::GetNearestItemsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UseItem : public BaseClass {
@@ -5195,10 +5196,10 @@ class MruVItemService final {
     WithStreamedUnaryMethod_UseItem() {
       ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
+          ::mruv::items::UseItemRequest, ::mruv::items::UseItemResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::mruv::UseItemRequest, ::mruv::UseItemResponse>* streamer) {
+                     ::mruv::items::UseItemRequest, ::mruv::items::UseItemResponse>* streamer) {
                        return this->StreamedUseItem(context,
                          streamer);
                   }));
@@ -5207,12 +5208,12 @@ class MruVItemService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::UseItemRequest* /*request*/, ::mruv::UseItemResponse* /*response*/) override {
+    ::grpc::Status UseItem(::grpc::ServerContext* /*context*/, const ::mruv::items::UseItemRequest* /*request*/, ::mruv::items::UseItemResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUseItem(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::UseItemRequest,::mruv::UseItemResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUseItem(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::items::UseItemRequest,::mruv::items::UseItemResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetServiceStatus : public BaseClass {
@@ -5273,6 +5274,7 @@ class MruVItemService final {
   typedef WithStreamedUnaryMethod_CreateItem<WithStreamedUnaryMethod_GetItem<WithStreamedUnaryMethod_DeleteItem<WithStreamedUnaryMethod_GetItems<WithStreamedUnaryMethod_CreateItemType<WithStreamedUnaryMethod_GetItemType<WithStreamedUnaryMethod_DeleteItemType<WithStreamedUnaryMethod_GetItemTypes<WithStreamedUnaryMethod_CreateContainer<WithStreamedUnaryMethod_GetContainer<WithStreamedUnaryMethod_DeleteContainer<WithStreamedUnaryMethod_GetContainers<WithStreamedUnaryMethod_CreateContainerType<WithStreamedUnaryMethod_GetContainerType<WithStreamedUnaryMethod_DeleteContainerType<WithStreamedUnaryMethod_GetContainerTypes<WithStreamedUnaryMethod_GetContainerItems<WithStreamedUnaryMethod_PullItem<WithStreamedUnaryMethod_PutItem<WithStreamedUnaryMethod_SortItems<WithStreamedUnaryMethod_GetNearestItems<WithStreamedUnaryMethod_UseItem<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
+}  // namespace items
 }  // namespace mruv
 
 

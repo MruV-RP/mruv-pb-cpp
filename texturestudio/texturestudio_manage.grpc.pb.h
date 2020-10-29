@@ -26,124 +26,125 @@
 #include <grpcpp/impl/codegen/stub_options.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 
+namespace mruv {
 namespace texture_studio {
 
 // Service to manage texture studio servers cluster.
 class TextureStudioManagerService final {
  public:
   static constexpr char const* service_full_name() {
-    return "texture_studio.TextureStudioManagerService";
+    return "mruv.texture_studio.TextureStudioManagerService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
     // Create a new texture studio server.
-    virtual ::grpc::Status CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::texture_studio::CreateServerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::CreateServerResponse>> AsyncCreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::CreateServerResponse>>(AsyncCreateServerRaw(context, request, cq));
+    virtual ::grpc::Status CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::mruv::texture_studio::CreateServerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::CreateServerResponse>> AsyncCreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::CreateServerResponse>>(AsyncCreateServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::CreateServerResponse>> PrepareAsyncCreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::CreateServerResponse>>(PrepareAsyncCreateServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::CreateServerResponse>> PrepareAsyncCreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::CreateServerResponse>>(PrepareAsyncCreateServerRaw(context, request, cq));
     }
     // Get all existing servers
-    virtual ::grpc::Status GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::texture_studio::GetServersResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::GetServersResponse>> AsyncGetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::GetServersResponse>>(AsyncGetServersRaw(context, request, cq));
+    virtual ::grpc::Status GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::mruv::texture_studio::GetServersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::GetServersResponse>> AsyncGetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::GetServersResponse>>(AsyncGetServersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::GetServersResponse>> PrepareAsyncGetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::GetServersResponse>>(PrepareAsyncGetServersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::GetServersResponse>> PrepareAsyncGetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::GetServersResponse>>(PrepareAsyncGetServersRaw(context, request, cq));
     }
     // Get texture studio server id for current user.
-    virtual ::grpc::Status MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::texture_studio::MyServerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::MyServerResponse>> AsyncMyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::MyServerResponse>>(AsyncMyServerRaw(context, request, cq));
+    virtual ::grpc::Status MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::mruv::texture_studio::MyServerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::MyServerResponse>> AsyncMyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::MyServerResponse>>(AsyncMyServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::MyServerResponse>> PrepareAsyncMyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::MyServerResponse>>(PrepareAsyncMyServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::MyServerResponse>> PrepareAsyncMyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::MyServerResponse>>(PrepareAsyncMyServerRaw(context, request, cq));
     }
     // Change owner of texture studio server.
-    virtual ::grpc::Status TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::texture_studio::TransferOwnershipResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::TransferOwnershipResponse>> AsyncTransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::TransferOwnershipResponse>>(AsyncTransferOwnershipRaw(context, request, cq));
+    virtual ::grpc::Status TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::mruv::texture_studio::TransferOwnershipResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::TransferOwnershipResponse>> AsyncTransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::TransferOwnershipResponse>>(AsyncTransferOwnershipRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::TransferOwnershipResponse>> PrepareAsyncTransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::TransferOwnershipResponse>>(PrepareAsyncTransferOwnershipRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::TransferOwnershipResponse>> PrepareAsyncTransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::TransferOwnershipResponse>>(PrepareAsyncTransferOwnershipRaw(context, request, cq));
     }
     // Delete a texture studio server.
-    virtual ::grpc::Status DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::texture_studio::DeleteServerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::DeleteServerResponse>> AsyncDeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::DeleteServerResponse>>(AsyncDeleteServerRaw(context, request, cq));
+    virtual ::grpc::Status DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::mruv::texture_studio::DeleteServerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::DeleteServerResponse>> AsyncDeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::DeleteServerResponse>>(AsyncDeleteServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::DeleteServerResponse>> PrepareAsyncDeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::DeleteServerResponse>>(PrepareAsyncDeleteServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::DeleteServerResponse>> PrepareAsyncDeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::DeleteServerResponse>>(PrepareAsyncDeleteServerRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       // Create a new texture studio server.
-      virtual void CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all existing servers
-      virtual void GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get texture studio server id for current user.
-      virtual void MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Change owner of texture studio server.
-      virtual void TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Delete a texture studio server.
-      virtual void DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -154,117 +155,117 @@ class TextureStudioManagerService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::CreateServerResponse>* AsyncCreateServerRaw(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::CreateServerResponse>* PrepareAsyncCreateServerRaw(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::GetServersResponse>* AsyncGetServersRaw(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::GetServersResponse>* PrepareAsyncGetServersRaw(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::MyServerResponse>* AsyncMyServerRaw(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::MyServerResponse>* PrepareAsyncMyServerRaw(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::TransferOwnershipResponse>* AsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::TransferOwnershipResponse>* PrepareAsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::DeleteServerResponse>* AsyncDeleteServerRaw(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::texture_studio::DeleteServerResponse>* PrepareAsyncDeleteServerRaw(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::CreateServerResponse>* AsyncCreateServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::CreateServerResponse>* PrepareAsyncCreateServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::GetServersResponse>* AsyncGetServersRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::GetServersResponse>* PrepareAsyncGetServersRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::MyServerResponse>* AsyncMyServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::MyServerResponse>* PrepareAsyncMyServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::TransferOwnershipResponse>* AsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::TransferOwnershipResponse>* PrepareAsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::DeleteServerResponse>* AsyncDeleteServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::texture_studio::DeleteServerResponse>* PrepareAsyncDeleteServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::texture_studio::CreateServerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::CreateServerResponse>> AsyncCreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::CreateServerResponse>>(AsyncCreateServerRaw(context, request, cq));
+    ::grpc::Status CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::mruv::texture_studio::CreateServerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::CreateServerResponse>> AsyncCreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::CreateServerResponse>>(AsyncCreateServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::CreateServerResponse>> PrepareAsyncCreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::CreateServerResponse>>(PrepareAsyncCreateServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::CreateServerResponse>> PrepareAsyncCreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::CreateServerResponse>>(PrepareAsyncCreateServerRaw(context, request, cq));
     }
-    ::grpc::Status GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::texture_studio::GetServersResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::GetServersResponse>> AsyncGetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::GetServersResponse>>(AsyncGetServersRaw(context, request, cq));
+    ::grpc::Status GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::mruv::texture_studio::GetServersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetServersResponse>> AsyncGetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetServersResponse>>(AsyncGetServersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::GetServersResponse>> PrepareAsyncGetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::GetServersResponse>>(PrepareAsyncGetServersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetServersResponse>> PrepareAsyncGetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetServersResponse>>(PrepareAsyncGetServersRaw(context, request, cq));
     }
-    ::grpc::Status MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::texture_studio::MyServerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::MyServerResponse>> AsyncMyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::MyServerResponse>>(AsyncMyServerRaw(context, request, cq));
+    ::grpc::Status MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::mruv::texture_studio::MyServerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::MyServerResponse>> AsyncMyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::MyServerResponse>>(AsyncMyServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::MyServerResponse>> PrepareAsyncMyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::MyServerResponse>>(PrepareAsyncMyServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::MyServerResponse>> PrepareAsyncMyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::MyServerResponse>>(PrepareAsyncMyServerRaw(context, request, cq));
     }
-    ::grpc::Status TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::texture_studio::TransferOwnershipResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::TransferOwnershipResponse>> AsyncTransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::TransferOwnershipResponse>>(AsyncTransferOwnershipRaw(context, request, cq));
+    ::grpc::Status TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::mruv::texture_studio::TransferOwnershipResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::TransferOwnershipResponse>> AsyncTransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::TransferOwnershipResponse>>(AsyncTransferOwnershipRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::TransferOwnershipResponse>> PrepareAsyncTransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::TransferOwnershipResponse>>(PrepareAsyncTransferOwnershipRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::TransferOwnershipResponse>> PrepareAsyncTransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::TransferOwnershipResponse>>(PrepareAsyncTransferOwnershipRaw(context, request, cq));
     }
-    ::grpc::Status DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::texture_studio::DeleteServerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::DeleteServerResponse>> AsyncDeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::DeleteServerResponse>>(AsyncDeleteServerRaw(context, request, cq));
+    ::grpc::Status DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::mruv::texture_studio::DeleteServerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::DeleteServerResponse>> AsyncDeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::DeleteServerResponse>>(AsyncDeleteServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::DeleteServerResponse>> PrepareAsyncDeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::texture_studio::DeleteServerResponse>>(PrepareAsyncDeleteServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::DeleteServerResponse>> PrepareAsyncDeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::DeleteServerResponse>>(PrepareAsyncDeleteServerRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::CreateServerResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void CreateServer(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateServer(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::CreateServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetServersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServers(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) override;
-      void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void MyServer(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetServers(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) override;
-      void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) override;
+      void MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) override;
+      void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::MyServerResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void TransferOwnership(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      void DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) override;
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteServer(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void MyServer(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void MyServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::MyServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) override;
+      void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::TransferOwnershipResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void TransferOwnership(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void TransferOwnership(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::TransferOwnershipResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      void DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::DeleteServerResponse* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteServer(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void DeleteServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::DeleteServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -277,16 +278,16 @@ class TextureStudioManagerService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::CreateServerResponse>* AsyncCreateServerRaw(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::CreateServerResponse>* PrepareAsyncCreateServerRaw(::grpc::ClientContext* context, const ::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::GetServersResponse>* AsyncGetServersRaw(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::GetServersResponse>* PrepareAsyncGetServersRaw(::grpc::ClientContext* context, const ::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::MyServerResponse>* AsyncMyServerRaw(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::MyServerResponse>* PrepareAsyncMyServerRaw(::grpc::ClientContext* context, const ::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::TransferOwnershipResponse>* AsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::TransferOwnershipResponse>* PrepareAsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::DeleteServerResponse>* AsyncDeleteServerRaw(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::texture_studio::DeleteServerResponse>* PrepareAsyncDeleteServerRaw(::grpc::ClientContext* context, const ::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::CreateServerResponse>* AsyncCreateServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::CreateServerResponse>* PrepareAsyncCreateServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::CreateServerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetServersResponse>* AsyncGetServersRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetServersResponse>* PrepareAsyncGetServersRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetServersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::MyServerResponse>* AsyncMyServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::MyServerResponse>* PrepareAsyncMyServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::MyServerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::TransferOwnershipResponse>* AsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::TransferOwnershipResponse>* PrepareAsyncTransferOwnershipRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::TransferOwnershipRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::DeleteServerResponse>* AsyncDeleteServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::DeleteServerResponse>* PrepareAsyncDeleteServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::DeleteServerRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateServer_;
     const ::grpc::internal::RpcMethod rpcmethod_GetServers_;
     const ::grpc::internal::RpcMethod rpcmethod_MyServer_;
@@ -300,15 +301,15 @@ class TextureStudioManagerService final {
     Service();
     virtual ~Service();
     // Create a new texture studio server.
-    virtual ::grpc::Status CreateServer(::grpc::ServerContext* context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response);
+    virtual ::grpc::Status CreateServer(::grpc::ServerContext* context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response);
     // Get all existing servers
-    virtual ::grpc::Status GetServers(::grpc::ServerContext* context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response);
+    virtual ::grpc::Status GetServers(::grpc::ServerContext* context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response);
     // Get texture studio server id for current user.
-    virtual ::grpc::Status MyServer(::grpc::ServerContext* context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response);
+    virtual ::grpc::Status MyServer(::grpc::ServerContext* context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response);
     // Change owner of texture studio server.
-    virtual ::grpc::Status TransferOwnership(::grpc::ServerContext* context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response);
+    virtual ::grpc::Status TransferOwnership(::grpc::ServerContext* context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response);
     // Delete a texture studio server.
-    virtual ::grpc::Status DeleteServer(::grpc::ServerContext* context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response);
+    virtual ::grpc::Status DeleteServer(::grpc::ServerContext* context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateServer : public BaseClass {
@@ -322,11 +323,11 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/) override {
+    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateServer(::grpc::ServerContext* context, ::texture_studio::CreateServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::texture_studio::CreateServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCreateServer(::grpc::ServerContext* context, ::mruv::texture_studio::CreateServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::texture_studio::CreateServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -342,11 +343,11 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/) override {
+    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServers(::grpc::ServerContext* context, ::texture_studio::GetServersRequest* request, ::grpc::ServerAsyncResponseWriter< ::texture_studio::GetServersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetServers(::grpc::ServerContext* context, ::mruv::texture_studio::GetServersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::texture_studio::GetServersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -362,11 +363,11 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/) override {
+    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestMyServer(::grpc::ServerContext* context, ::texture_studio::MyServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::texture_studio::MyServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestMyServer(::grpc::ServerContext* context, ::mruv::texture_studio::MyServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::texture_studio::MyServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -382,11 +383,11 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/) override {
+    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestTransferOwnership(::grpc::ServerContext* context, ::texture_studio::TransferOwnershipRequest* request, ::grpc::ServerAsyncResponseWriter< ::texture_studio::TransferOwnershipResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestTransferOwnership(::grpc::ServerContext* context, ::mruv::texture_studio::TransferOwnershipRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::texture_studio::TransferOwnershipResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -402,11 +403,11 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/) override {
+    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteServer(::grpc::ServerContext* context, ::texture_studio::DeleteServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::texture_studio::DeleteServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDeleteServer(::grpc::ServerContext* context, ::mruv::texture_studio::DeleteServerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::texture_studio::DeleteServerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -423,38 +424,38 @@ class TextureStudioManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::CreateServerRequest, ::mruv::texture_studio::CreateServerResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::texture_studio::CreateServerRequest* request, ::texture_studio::CreateServerResponse* response) { return this->CreateServer(context, request, response); }));}
+                     context, const ::mruv::texture_studio::CreateServerRequest* request, ::mruv::texture_studio::CreateServerResponse* response) { return this->CreateServer(context, request, response); }));}
     void SetMessageAllocatorFor_CreateServer(
-        ::grpc::experimental::MessageAllocator< ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::texture_studio::CreateServerRequest, ::mruv::texture_studio::CreateServerResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::CreateServerRequest, ::mruv::texture_studio::CreateServerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateServer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/) override {
+    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateServer(
-      ::grpc::CallbackServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* CreateServer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -470,38 +471,38 @@ class TextureStudioManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::GetServersRequest, ::mruv::texture_studio::GetServersResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::texture_studio::GetServersRequest* request, ::texture_studio::GetServersResponse* response) { return this->GetServers(context, request, response); }));}
+                     context, const ::mruv::texture_studio::GetServersRequest* request, ::mruv::texture_studio::GetServersResponse* response) { return this->GetServers(context, request, response); }));}
     void SetMessageAllocatorFor_GetServers(
-        ::grpc::experimental::MessageAllocator< ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::texture_studio::GetServersRequest, ::mruv::texture_studio::GetServersResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::GetServersRequest, ::mruv::texture_studio::GetServersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/) override {
+    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetServers(
-      ::grpc::CallbackServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetServers(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -517,38 +518,38 @@ class TextureStudioManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::MyServerRequest, ::mruv::texture_studio::MyServerResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::texture_studio::MyServerRequest* request, ::texture_studio::MyServerResponse* response) { return this->MyServer(context, request, response); }));}
+                     context, const ::mruv::texture_studio::MyServerRequest* request, ::mruv::texture_studio::MyServerResponse* response) { return this->MyServer(context, request, response); }));}
     void SetMessageAllocatorFor_MyServer(
-        ::grpc::experimental::MessageAllocator< ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::texture_studio::MyServerRequest, ::mruv::texture_studio::MyServerResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::MyServerRequest, ::mruv::texture_studio::MyServerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_MyServer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/) override {
+    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* MyServer(
-      ::grpc::CallbackServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* MyServer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -564,38 +565,38 @@ class TextureStudioManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::TransferOwnershipRequest, ::mruv::texture_studio::TransferOwnershipResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::texture_studio::TransferOwnershipRequest* request, ::texture_studio::TransferOwnershipResponse* response) { return this->TransferOwnership(context, request, response); }));}
+                     context, const ::mruv::texture_studio::TransferOwnershipRequest* request, ::mruv::texture_studio::TransferOwnershipResponse* response) { return this->TransferOwnership(context, request, response); }));}
     void SetMessageAllocatorFor_TransferOwnership(
-        ::grpc::experimental::MessageAllocator< ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::texture_studio::TransferOwnershipRequest, ::mruv::texture_studio::TransferOwnershipResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::TransferOwnershipRequest, ::mruv::texture_studio::TransferOwnershipResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_TransferOwnership() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/) override {
+    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* TransferOwnership(
-      ::grpc::CallbackServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* TransferOwnership(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -611,38 +612,38 @@ class TextureStudioManagerService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>(
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::DeleteServerRequest, ::mruv::texture_studio::DeleteServerResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::texture_studio::DeleteServerRequest* request, ::texture_studio::DeleteServerResponse* response) { return this->DeleteServer(context, request, response); }));}
+                     context, const ::mruv::texture_studio::DeleteServerRequest* request, ::mruv::texture_studio::DeleteServerResponse* response) { return this->DeleteServer(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteServer(
-        ::grpc::experimental::MessageAllocator< ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::texture_studio::DeleteServerRequest, ::mruv::texture_studio::DeleteServerResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>*>(handler)
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::texture_studio::DeleteServerRequest, ::mruv::texture_studio::DeleteServerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteServer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/) override {
+    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* DeleteServer(
-      ::grpc::CallbackServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* DeleteServer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -663,7 +664,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/) override {
+    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -680,7 +681,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/) override {
+    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -697,7 +698,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/) override {
+    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -714,7 +715,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/) override {
+    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -731,7 +732,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/) override {
+    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -748,7 +749,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/) override {
+    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -768,7 +769,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/) override {
+    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -788,7 +789,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/) override {
+    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -808,7 +809,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/) override {
+    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -828,7 +829,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/) override {
+    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -861,7 +862,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/) override {
+    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -899,7 +900,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/) override {
+    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -937,7 +938,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/) override {
+    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -975,7 +976,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/) override {
+    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1013,7 +1014,7 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/) override {
+    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1034,10 +1035,10 @@ class TextureStudioManagerService final {
     WithStreamedUnaryMethod_CreateServer() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>(
+          ::mruv::texture_studio::CreateServerRequest, ::mruv::texture_studio::CreateServerResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::texture_studio::CreateServerRequest, ::texture_studio::CreateServerResponse>* streamer) {
+                     ::mruv::texture_studio::CreateServerRequest, ::mruv::texture_studio::CreateServerResponse>* streamer) {
                        return this->StreamedCreateServer(context,
                          streamer);
                   }));
@@ -1046,12 +1047,12 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::texture_studio::CreateServerRequest* /*request*/, ::texture_studio::CreateServerResponse* /*response*/) override {
+    ::grpc::Status CreateServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::CreateServerRequest* /*request*/, ::mruv::texture_studio::CreateServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::texture_studio::CreateServerRequest,::texture_studio::CreateServerResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedCreateServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::texture_studio::CreateServerRequest,::mruv::texture_studio::CreateServerResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetServers : public BaseClass {
@@ -1061,10 +1062,10 @@ class TextureStudioManagerService final {
     WithStreamedUnaryMethod_GetServers() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>(
+          ::mruv::texture_studio::GetServersRequest, ::mruv::texture_studio::GetServersResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::texture_studio::GetServersRequest, ::texture_studio::GetServersResponse>* streamer) {
+                     ::mruv::texture_studio::GetServersRequest, ::mruv::texture_studio::GetServersResponse>* streamer) {
                        return this->StreamedGetServers(context,
                          streamer);
                   }));
@@ -1073,12 +1074,12 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::texture_studio::GetServersRequest* /*request*/, ::texture_studio::GetServersResponse* /*response*/) override {
+    ::grpc::Status GetServers(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::GetServersRequest* /*request*/, ::mruv::texture_studio::GetServersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetServers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::texture_studio::GetServersRequest,::texture_studio::GetServersResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetServers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::texture_studio::GetServersRequest,::mruv::texture_studio::GetServersResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_MyServer : public BaseClass {
@@ -1088,10 +1089,10 @@ class TextureStudioManagerService final {
     WithStreamedUnaryMethod_MyServer() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>(
+          ::mruv::texture_studio::MyServerRequest, ::mruv::texture_studio::MyServerResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::texture_studio::MyServerRequest, ::texture_studio::MyServerResponse>* streamer) {
+                     ::mruv::texture_studio::MyServerRequest, ::mruv::texture_studio::MyServerResponse>* streamer) {
                        return this->StreamedMyServer(context,
                          streamer);
                   }));
@@ -1100,12 +1101,12 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::texture_studio::MyServerRequest* /*request*/, ::texture_studio::MyServerResponse* /*response*/) override {
+    ::grpc::Status MyServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::MyServerRequest* /*request*/, ::mruv::texture_studio::MyServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedMyServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::texture_studio::MyServerRequest,::texture_studio::MyServerResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedMyServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::texture_studio::MyServerRequest,::mruv::texture_studio::MyServerResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_TransferOwnership : public BaseClass {
@@ -1115,10 +1116,10 @@ class TextureStudioManagerService final {
     WithStreamedUnaryMethod_TransferOwnership() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>(
+          ::mruv::texture_studio::TransferOwnershipRequest, ::mruv::texture_studio::TransferOwnershipResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::texture_studio::TransferOwnershipRequest, ::texture_studio::TransferOwnershipResponse>* streamer) {
+                     ::mruv::texture_studio::TransferOwnershipRequest, ::mruv::texture_studio::TransferOwnershipResponse>* streamer) {
                        return this->StreamedTransferOwnership(context,
                          streamer);
                   }));
@@ -1127,12 +1128,12 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::texture_studio::TransferOwnershipRequest* /*request*/, ::texture_studio::TransferOwnershipResponse* /*response*/) override {
+    ::grpc::Status TransferOwnership(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::TransferOwnershipRequest* /*request*/, ::mruv::texture_studio::TransferOwnershipResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedTransferOwnership(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::texture_studio::TransferOwnershipRequest,::texture_studio::TransferOwnershipResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedTransferOwnership(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::texture_studio::TransferOwnershipRequest,::mruv::texture_studio::TransferOwnershipResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteServer : public BaseClass {
@@ -1142,10 +1143,10 @@ class TextureStudioManagerService final {
     WithStreamedUnaryMethod_DeleteServer() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>(
+          ::mruv::texture_studio::DeleteServerRequest, ::mruv::texture_studio::DeleteServerResponse>(
             [this](::grpc_impl::ServerContext* context,
                    ::grpc_impl::ServerUnaryStreamer<
-                     ::texture_studio::DeleteServerRequest, ::texture_studio::DeleteServerResponse>* streamer) {
+                     ::mruv::texture_studio::DeleteServerRequest, ::mruv::texture_studio::DeleteServerResponse>* streamer) {
                        return this->StreamedDeleteServer(context,
                          streamer);
                   }));
@@ -1154,12 +1155,12 @@ class TextureStudioManagerService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::texture_studio::DeleteServerRequest* /*request*/, ::texture_studio::DeleteServerResponse* /*response*/) override {
+    ::grpc::Status DeleteServer(::grpc::ServerContext* /*context*/, const ::mruv::texture_studio::DeleteServerRequest* /*request*/, ::mruv::texture_studio::DeleteServerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedDeleteServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::texture_studio::DeleteServerRequest,::texture_studio::DeleteServerResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedDeleteServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::texture_studio::DeleteServerRequest,::mruv::texture_studio::DeleteServerResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateServer<WithStreamedUnaryMethod_GetServers<WithStreamedUnaryMethod_MyServer<WithStreamedUnaryMethod_TransferOwnership<WithStreamedUnaryMethod_DeleteServer<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
@@ -1167,6 +1168,7 @@ class TextureStudioManagerService final {
 };
 
 }  // namespace texture_studio
+}  // namespace mruv
 
 
 #endif  // GRPC_texturestudio_2ftexturestudio_5fmanage_2eproto__INCLUDED

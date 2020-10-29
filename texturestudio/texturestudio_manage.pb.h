@@ -55,6 +55,7 @@ struct TableStruct_texturestudio_2ftexturestudio_5fmanage_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto;
+namespace mruv {
 namespace texture_studio {
 class CreateServerRequest;
 class CreateServerRequestDefaultTypeInternal;
@@ -87,24 +88,26 @@ class TransferOwnershipResponse;
 class TransferOwnershipResponseDefaultTypeInternal;
 extern TransferOwnershipResponseDefaultTypeInternal _TransferOwnershipResponse_default_instance_;
 }  // namespace texture_studio
+}  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::texture_studio::CreateServerRequest* Arena::CreateMaybeMessage<::texture_studio::CreateServerRequest>(Arena*);
-template<> ::texture_studio::CreateServerResponse* Arena::CreateMaybeMessage<::texture_studio::CreateServerResponse>(Arena*);
-template<> ::texture_studio::DeleteServerRequest* Arena::CreateMaybeMessage<::texture_studio::DeleteServerRequest>(Arena*);
-template<> ::texture_studio::DeleteServerResponse* Arena::CreateMaybeMessage<::texture_studio::DeleteServerResponse>(Arena*);
-template<> ::texture_studio::GetServersRequest* Arena::CreateMaybeMessage<::texture_studio::GetServersRequest>(Arena*);
-template<> ::texture_studio::GetServersResponse* Arena::CreateMaybeMessage<::texture_studio::GetServersResponse>(Arena*);
-template<> ::texture_studio::MyServerRequest* Arena::CreateMaybeMessage<::texture_studio::MyServerRequest>(Arena*);
-template<> ::texture_studio::MyServerResponse* Arena::CreateMaybeMessage<::texture_studio::MyServerResponse>(Arena*);
-template<> ::texture_studio::TransferOwnershipRequest* Arena::CreateMaybeMessage<::texture_studio::TransferOwnershipRequest>(Arena*);
-template<> ::texture_studio::TransferOwnershipResponse* Arena::CreateMaybeMessage<::texture_studio::TransferOwnershipResponse>(Arena*);
+template<> ::mruv::texture_studio::CreateServerRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::CreateServerRequest>(Arena*);
+template<> ::mruv::texture_studio::CreateServerResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::CreateServerResponse>(Arena*);
+template<> ::mruv::texture_studio::DeleteServerRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::DeleteServerRequest>(Arena*);
+template<> ::mruv::texture_studio::DeleteServerResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::DeleteServerResponse>(Arena*);
+template<> ::mruv::texture_studio::GetServersRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::GetServersRequest>(Arena*);
+template<> ::mruv::texture_studio::GetServersResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::GetServersResponse>(Arena*);
+template<> ::mruv::texture_studio::MyServerRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::MyServerRequest>(Arena*);
+template<> ::mruv::texture_studio::MyServerResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::MyServerResponse>(Arena*);
+template<> ::mruv::texture_studio::TransferOwnershipRequest* Arena::CreateMaybeMessage<::mruv::texture_studio::TransferOwnershipRequest>(Arena*);
+template<> ::mruv::texture_studio::TransferOwnershipResponse* Arena::CreateMaybeMessage<::mruv::texture_studio::TransferOwnershipResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace mruv {
 namespace texture_studio {
 
 // ===================================================================
 
 class CreateServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.CreateServerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.CreateServerRequest) */ {
  public:
   CreateServerRequest();
   virtual ~CreateServerRequest();
@@ -184,7 +187,7 @@ class CreateServerRequest :
   void InternalSwap(CreateServerRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.CreateServerRequest";
+    return "mruv.texture_studio.CreateServerRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -220,7 +223,7 @@ class CreateServerRequest :
   void _internal_set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.CreateServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.CreateServerRequest)
  private:
   class _Internal;
 
@@ -232,7 +235,7 @@ class CreateServerRequest :
 // -------------------------------------------------------------------
 
 class CreateServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.CreateServerResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.CreateServerResponse) */ {
  public:
   CreateServerResponse();
   virtual ~CreateServerResponse();
@@ -312,7 +315,7 @@ class CreateServerResponse :
   void InternalSwap(CreateServerResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.CreateServerResponse";
+    return "mruv.texture_studio.CreateServerResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -358,7 +361,7 @@ class CreateServerResponse :
   void _internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.CreateServerResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.CreateServerResponse)
  private:
   class _Internal;
 
@@ -371,7 +374,7 @@ class CreateServerResponse :
 // -------------------------------------------------------------------
 
 class GetServersRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.GetServersRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.GetServersRequest) */ {
  public:
   GetServersRequest();
   virtual ~GetServersRequest();
@@ -451,7 +454,7 @@ class GetServersRequest :
   void InternalSwap(GetServersRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.GetServersRequest";
+    return "mruv.texture_studio.GetServersRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -475,7 +478,7 @@ class GetServersRequest :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.GetServersRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.GetServersRequest)
  private:
   class _Internal;
 
@@ -486,7 +489,7 @@ class GetServersRequest :
 // -------------------------------------------------------------------
 
 class GetServersResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.GetServersResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.GetServersResponse) */ {
  public:
   GetServersResponse();
   virtual ~GetServersResponse();
@@ -566,7 +569,7 @@ class GetServersResponse :
   void InternalSwap(GetServersResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.GetServersResponse";
+    return "mruv.texture_studio.GetServersResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -615,7 +618,7 @@ class GetServersResponse :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
       mutable_id();
 
-  // @@protoc_insertion_point(class_scope:texture_studio.GetServersResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.GetServersResponse)
  private:
   class _Internal;
 
@@ -628,7 +631,7 @@ class GetServersResponse :
 // -------------------------------------------------------------------
 
 class MyServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.MyServerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.MyServerRequest) */ {
  public:
   MyServerRequest();
   virtual ~MyServerRequest();
@@ -708,7 +711,7 @@ class MyServerRequest :
   void InternalSwap(MyServerRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.MyServerRequest";
+    return "mruv.texture_studio.MyServerRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -732,7 +735,7 @@ class MyServerRequest :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.MyServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.MyServerRequest)
  private:
   class _Internal;
 
@@ -743,7 +746,7 @@ class MyServerRequest :
 // -------------------------------------------------------------------
 
 class MyServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.MyServerResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.MyServerResponse) */ {
  public:
   MyServerResponse();
   virtual ~MyServerResponse();
@@ -823,7 +826,7 @@ class MyServerResponse :
   void InternalSwap(MyServerResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.MyServerResponse";
+    return "mruv.texture_studio.MyServerResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -859,7 +862,7 @@ class MyServerResponse :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.MyServerResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.MyServerResponse)
  private:
   class _Internal;
 
@@ -871,7 +874,7 @@ class MyServerResponse :
 // -------------------------------------------------------------------
 
 class TransferOwnershipRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.TransferOwnershipRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.TransferOwnershipRequest) */ {
  public:
   TransferOwnershipRequest();
   virtual ~TransferOwnershipRequest();
@@ -951,7 +954,7 @@ class TransferOwnershipRequest :
   void InternalSwap(TransferOwnershipRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.TransferOwnershipRequest";
+    return "mruv.texture_studio.TransferOwnershipRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -997,7 +1000,7 @@ class TransferOwnershipRequest :
   void _internal_set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.TransferOwnershipRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.TransferOwnershipRequest)
  private:
   class _Internal;
 
@@ -1010,7 +1013,7 @@ class TransferOwnershipRequest :
 // -------------------------------------------------------------------
 
 class TransferOwnershipResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.TransferOwnershipResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.TransferOwnershipResponse) */ {
  public:
   TransferOwnershipResponse();
   virtual ~TransferOwnershipResponse();
@@ -1090,7 +1093,7 @@ class TransferOwnershipResponse :
   void InternalSwap(TransferOwnershipResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.TransferOwnershipResponse";
+    return "mruv.texture_studio.TransferOwnershipResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1114,7 +1117,7 @@ class TransferOwnershipResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.TransferOwnershipResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.TransferOwnershipResponse)
  private:
   class _Internal;
 
@@ -1125,7 +1128,7 @@ class TransferOwnershipResponse :
 // -------------------------------------------------------------------
 
 class DeleteServerRequest :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.DeleteServerRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.DeleteServerRequest) */ {
  public:
   DeleteServerRequest();
   virtual ~DeleteServerRequest();
@@ -1205,7 +1208,7 @@ class DeleteServerRequest :
   void InternalSwap(DeleteServerRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.DeleteServerRequest";
+    return "mruv.texture_studio.DeleteServerRequest";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1241,7 +1244,7 @@ class DeleteServerRequest :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:texture_studio.DeleteServerRequest)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.DeleteServerRequest)
  private:
   class _Internal;
 
@@ -1253,7 +1256,7 @@ class DeleteServerRequest :
 // -------------------------------------------------------------------
 
 class DeleteServerResponse :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:texture_studio.DeleteServerResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.texture_studio.DeleteServerResponse) */ {
  public:
   DeleteServerResponse();
   virtual ~DeleteServerResponse();
@@ -1333,7 +1336,7 @@ class DeleteServerResponse :
   void InternalSwap(DeleteServerResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "texture_studio.DeleteServerResponse";
+    return "mruv.texture_studio.DeleteServerResponse";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -1357,7 +1360,7 @@ class DeleteServerResponse :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:texture_studio.DeleteServerResponse)
+  // @@protoc_insertion_point(class_scope:mruv.texture_studio.DeleteServerResponse)
  private:
   class _Internal;
 
@@ -1384,7 +1387,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateServerRequest::_internal_owner_id()
   return owner_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateServerRequest::owner_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.CreateServerRequest.owner_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.CreateServerRequest.owner_id)
   return _internal_owner_id();
 }
 inline void CreateServerRequest::_internal_set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1393,7 +1396,7 @@ inline void CreateServerRequest::_internal_set_owner_id(::PROTOBUF_NAMESPACE_ID:
 }
 inline void CreateServerRequest::set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_owner_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.CreateServerRequest.owner_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.CreateServerRequest.owner_id)
 }
 
 // -------------------------------------------------------------------
@@ -1408,7 +1411,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateServerResponse::_internal_id() cons
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateServerResponse::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.CreateServerResponse.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.CreateServerResponse.id)
   return _internal_id();
 }
 inline void CreateServerResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1417,7 +1420,7 @@ inline void CreateServerResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint
 }
 inline void CreateServerResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.CreateServerResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.CreateServerResponse.id)
 }
 
 // uint32 port = 2;
@@ -1428,7 +1431,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateServerResponse::_internal_port() co
   return port_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 CreateServerResponse::port() const {
-  // @@protoc_insertion_point(field_get:texture_studio.CreateServerResponse.port)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.CreateServerResponse.port)
   return _internal_port();
 }
 inline void CreateServerResponse::_internal_set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1437,7 +1440,7 @@ inline void CreateServerResponse::_internal_set_port(::PROTOBUF_NAMESPACE_ID::ui
 }
 inline void CreateServerResponse::set_port(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_port(value);
-  // @@protoc_insertion_point(field_set:texture_studio.CreateServerResponse.port)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.CreateServerResponse.port)
 }
 
 // -------------------------------------------------------------------
@@ -1462,19 +1465,19 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetServersResponse::_internal_id(int inde
   return id_.Get(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetServersResponse::id(int index) const {
-  // @@protoc_insertion_point(field_get:texture_studio.GetServersResponse.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.GetServersResponse.id)
   return _internal_id(index);
 }
 inline void GetServersResponse::set_id(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value) {
   id_.Set(index, value);
-  // @@protoc_insertion_point(field_set:texture_studio.GetServersResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.GetServersResponse.id)
 }
 inline void GetServersResponse::_internal_add_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   id_.Add(value);
 }
 inline void GetServersResponse::add_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_add_id(value);
-  // @@protoc_insertion_point(field_add:texture_studio.GetServersResponse.id)
+  // @@protoc_insertion_point(field_add:mruv.texture_studio.GetServersResponse.id)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
 GetServersResponse::_internal_id() const {
@@ -1482,7 +1485,7 @@ GetServersResponse::_internal_id() const {
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
 GetServersResponse::id() const {
-  // @@protoc_insertion_point(field_list:texture_studio.GetServersResponse.id)
+  // @@protoc_insertion_point(field_list:mruv.texture_studio.GetServersResponse.id)
   return _internal_id();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
@@ -1491,7 +1494,7 @@ GetServersResponse::_internal_mutable_id() {
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
 GetServersResponse::mutable_id() {
-  // @@protoc_insertion_point(field_mutable_list:texture_studio.GetServersResponse.id)
+  // @@protoc_insertion_point(field_mutable_list:mruv.texture_studio.GetServersResponse.id)
   return _internal_mutable_id();
 }
 
@@ -1511,7 +1514,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 MyServerResponse::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 MyServerResponse::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.MyServerResponse.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.MyServerResponse.id)
   return _internal_id();
 }
 inline void MyServerResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1520,7 +1523,7 @@ inline void MyServerResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 v
 }
 inline void MyServerResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.MyServerResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.MyServerResponse.id)
 }
 
 // -------------------------------------------------------------------
@@ -1535,7 +1538,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 TransferOwnershipRequest::_internal_serve
   return server_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 TransferOwnershipRequest::server_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.TransferOwnershipRequest.server_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.TransferOwnershipRequest.server_id)
   return _internal_server_id();
 }
 inline void TransferOwnershipRequest::_internal_set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1544,7 +1547,7 @@ inline void TransferOwnershipRequest::_internal_set_server_id(::PROTOBUF_NAMESPA
 }
 inline void TransferOwnershipRequest::set_server_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_server_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.TransferOwnershipRequest.server_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.TransferOwnershipRequest.server_id)
 }
 
 // uint32 owner_id = 2;
@@ -1555,7 +1558,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 TransferOwnershipRequest::_internal_owner
   return owner_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 TransferOwnershipRequest::owner_id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.TransferOwnershipRequest.owner_id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.TransferOwnershipRequest.owner_id)
   return _internal_owner_id();
 }
 inline void TransferOwnershipRequest::_internal_set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1564,7 +1567,7 @@ inline void TransferOwnershipRequest::_internal_set_owner_id(::PROTOBUF_NAMESPAC
 }
 inline void TransferOwnershipRequest::set_owner_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_owner_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.TransferOwnershipRequest.owner_id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.TransferOwnershipRequest.owner_id)
 }
 
 // -------------------------------------------------------------------
@@ -1583,7 +1586,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteServerRequest::_internal_id() const
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 DeleteServerRequest::id() const {
-  // @@protoc_insertion_point(field_get:texture_studio.DeleteServerRequest.id)
+  // @@protoc_insertion_point(field_get:mruv.texture_studio.DeleteServerRequest.id)
   return _internal_id();
 }
 inline void DeleteServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1592,7 +1595,7 @@ inline void DeleteServerRequest::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void DeleteServerRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:texture_studio.DeleteServerRequest.id)
+  // @@protoc_insertion_point(field_set:mruv.texture_studio.DeleteServerRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -1624,6 +1627,7 @@ inline void DeleteServerRequest::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace texture_studio
+}  // namespace mruv
 
 // @@protoc_insertion_point(global_scope)
 

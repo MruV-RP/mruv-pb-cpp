@@ -20,13 +20,14 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace mruv {
+namespace accounts {
 
 static const char* MruVAccountsService_method_names[] = {
-  "/mruv.MruVAccountsService/RegisterAccount",
-  "/mruv.MruVAccountsService/LogIn",
-  "/mruv.MruVAccountsService/IsAccountExist",
-  "/mruv.MruVAccountsService/GetAccount",
-  "/mruv.MruVAccountsService/GetAccountCharacters",
+  "/mruv.accounts.MruVAccountsService/RegisterAccount",
+  "/mruv.accounts.MruVAccountsService/LogIn",
+  "/mruv.accounts.MruVAccountsService/IsAccountExist",
+  "/mruv.accounts.MruVAccountsService/GetAccount",
+  "/mruv.accounts.MruVAccountsService/GetAccountCharacters",
 };
 
 std::unique_ptr< MruVAccountsService::Stub> MruVAccountsService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -43,195 +44,195 @@ MruVAccountsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
   , rpcmethod_GetAccountCharacters_(MruVAccountsService_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MruVAccountsService::Stub::RegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::mruv::RegisterAccountResponse* response) {
+::grpc::Status MruVAccountsService::Stub::RegisterAccount(::grpc::ClientContext* context, const ::mruv::accounts::RegisterAccountRequest& request, ::mruv::accounts::RegisterAccountResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RegisterAccount_, context, request, response);
 }
 
-void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest* request, ::mruv::RegisterAccountResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::mruv::accounts::RegisterAccountRequest* request, ::mruv::accounts::RegisterAccountResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterAccount_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterAccountResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::RegisterAccountResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterAccount_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest* request, ::mruv::RegisterAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::mruv::accounts::RegisterAccountRequest* request, ::mruv::accounts::RegisterAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterAccount_, context, request, response, reactor);
 }
 
-void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::RegisterAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::RegisterAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::RegisterAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterAccount_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::RegisterAccountResponse>* MruVAccountsService::Stub::AsyncRegisterAccountRaw(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RegisterAccountResponse>::Create(channel_.get(), cq, rpcmethod_RegisterAccount_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::RegisterAccountResponse>* MruVAccountsService::Stub::AsyncRegisterAccountRaw(::grpc::ClientContext* context, const ::mruv::accounts::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::RegisterAccountResponse>::Create(channel_.get(), cq, rpcmethod_RegisterAccount_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::RegisterAccountResponse>* MruVAccountsService::Stub::PrepareAsyncRegisterAccountRaw(::grpc::ClientContext* context, const ::mruv::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::RegisterAccountResponse>::Create(channel_.get(), cq, rpcmethod_RegisterAccount_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::RegisterAccountResponse>* MruVAccountsService::Stub::PrepareAsyncRegisterAccountRaw(::grpc::ClientContext* context, const ::mruv::accounts::RegisterAccountRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::RegisterAccountResponse>::Create(channel_.get(), cq, rpcmethod_RegisterAccount_, context, request, false);
 }
 
-::grpc::Status MruVAccountsService::Stub::LogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::mruv::LogInResponse* response) {
+::grpc::Status MruVAccountsService::Stub::LogIn(::grpc::ClientContext* context, const ::mruv::accounts::LogInRequest& request, ::mruv::accounts::LogInResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_LogIn_, context, request, response);
 }
 
-void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest* request, ::mruv::LogInResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::mruv::accounts::LogInRequest* request, ::mruv::accounts::LogInResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_LogIn_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::LogInResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::LogInResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_LogIn_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::mruv::LogInRequest* request, ::mruv::LogInResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::mruv::accounts::LogInRequest* request, ::mruv::accounts::LogInResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_LogIn_, context, request, response, reactor);
 }
 
-void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::LogInResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::LogIn(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::LogInResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_LogIn_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::LogInResponse>* MruVAccountsService::Stub::AsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::LogInResponse>::Create(channel_.get(), cq, rpcmethod_LogIn_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::LogInResponse>* MruVAccountsService::Stub::AsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::accounts::LogInRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::LogInResponse>::Create(channel_.get(), cq, rpcmethod_LogIn_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::LogInResponse>* MruVAccountsService::Stub::PrepareAsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::LogInRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::LogInResponse>::Create(channel_.get(), cq, rpcmethod_LogIn_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::LogInResponse>* MruVAccountsService::Stub::PrepareAsyncLogInRaw(::grpc::ClientContext* context, const ::mruv::accounts::LogInRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::LogInResponse>::Create(channel_.get(), cq, rpcmethod_LogIn_, context, request, false);
 }
 
-::grpc::Status MruVAccountsService::Stub::IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::mruv::IsAccountExistResponse* response) {
+::grpc::Status MruVAccountsService::Stub::IsAccountExist(::grpc::ClientContext* context, const ::mruv::accounts::IsAccountExistRequest& request, ::mruv::accounts::IsAccountExistResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_IsAccountExist_, context, request, response);
 }
 
-void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::mruv::accounts::IsAccountExistRequest* request, ::mruv::accounts::IsAccountExistResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsAccountExist_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::IsAccountExistResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_IsAccountExist_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::mruv::accounts::IsAccountExistRequest* request, ::mruv::accounts::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsAccountExist_, context, request, response, reactor);
 }
 
-void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::IsAccountExist(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::IsAccountExistResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_IsAccountExist_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>* MruVAccountsService::Stub::AsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::IsAccountExistResponse>::Create(channel_.get(), cq, rpcmethod_IsAccountExist_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::IsAccountExistResponse>* MruVAccountsService::Stub::AsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::accounts::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::IsAccountExistResponse>::Create(channel_.get(), cq, rpcmethod_IsAccountExist_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::IsAccountExistResponse>* MruVAccountsService::Stub::PrepareAsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::IsAccountExistResponse>::Create(channel_.get(), cq, rpcmethod_IsAccountExist_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::IsAccountExistResponse>* MruVAccountsService::Stub::PrepareAsyncIsAccountExistRaw(::grpc::ClientContext* context, const ::mruv::accounts::IsAccountExistRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::IsAccountExistResponse>::Create(channel_.get(), cq, rpcmethod_IsAccountExist_, context, request, false);
 }
 
-::grpc::Status MruVAccountsService::Stub::GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::mruv::GetAccountResponse* response) {
+::grpc::Status MruVAccountsService::Stub::GetAccount(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountRequest& request, ::mruv::accounts::GetAccountResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetAccount_, context, request, response);
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountRequest* request, ::mruv::accounts::GetAccountResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::GetAccountResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountRequest* request, ::mruv::accounts::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request, response, reactor);
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::GetAccount(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::GetAccountResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAccount_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>* MruVAccountsService::Stub::AsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetAccountResponse>::Create(channel_.get(), cq, rpcmethod_GetAccount_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::GetAccountResponse>* MruVAccountsService::Stub::AsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::GetAccountResponse>::Create(channel_.get(), cq, rpcmethod_GetAccount_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetAccountResponse>* MruVAccountsService::Stub::PrepareAsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetAccountResponse>::Create(channel_.get(), cq, rpcmethod_GetAccount_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::GetAccountResponse>* MruVAccountsService::Stub::PrepareAsyncGetAccountRaw(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::GetAccountResponse>::Create(channel_.get(), cq, rpcmethod_GetAccount_, context, request, false);
 }
 
-::grpc::Status MruVAccountsService::Stub::GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::mruv::GetAccountCharactersResponse* response) {
+::grpc::Status MruVAccountsService::Stub::GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountCharactersRequest& request, ::mruv::accounts::GetAccountCharactersResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetAccountCharacters_, context, request, response);
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountCharactersRequest* request, ::mruv::accounts::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAccountCharacters_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::GetAccountCharactersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAccountCharacters_, context, request, response, std::move(f));
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountCharactersRequest* request, ::mruv::accounts::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAccountCharacters_, context, request, response, reactor);
 }
 
-void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVAccountsService::Stub::experimental_async::GetAccountCharacters(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::accounts::GetAccountCharactersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAccountCharacters_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>* MruVAccountsService::Stub::AsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetAccountCharactersResponse>::Create(channel_.get(), cq, rpcmethod_GetAccountCharacters_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::GetAccountCharactersResponse>* MruVAccountsService::Stub::AsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::GetAccountCharactersResponse>::Create(channel_.get(), cq, rpcmethod_GetAccountCharacters_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetAccountCharactersResponse>* MruVAccountsService::Stub::PrepareAsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::GetAccountCharactersResponse>::Create(channel_.get(), cq, rpcmethod_GetAccountCharacters_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::accounts::GetAccountCharactersResponse>* MruVAccountsService::Stub::PrepareAsyncGetAccountCharactersRaw(::grpc::ClientContext* context, const ::mruv::accounts::GetAccountCharactersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::accounts::GetAccountCharactersResponse>::Create(channel_.get(), cq, rpcmethod_GetAccountCharacters_, context, request, false);
 }
 
 MruVAccountsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::RegisterAccountRequest, ::mruv::RegisterAccountResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::accounts::RegisterAccountRequest, ::mruv::accounts::RegisterAccountResponse>(
           [](MruVAccountsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::RegisterAccountRequest* req,
-             ::mruv::RegisterAccountResponse* resp) {
+             const ::mruv::accounts::RegisterAccountRequest* req,
+             ::mruv::accounts::RegisterAccountResponse* resp) {
                return service->RegisterAccount(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::LogInRequest, ::mruv::LogInResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::accounts::LogInRequest, ::mruv::accounts::LogInResponse>(
           [](MruVAccountsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::LogInRequest* req,
-             ::mruv::LogInResponse* resp) {
+             const ::mruv::accounts::LogInRequest* req,
+             ::mruv::accounts::LogInResponse* resp) {
                return service->LogIn(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::IsAccountExistRequest, ::mruv::IsAccountExistResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::accounts::IsAccountExistRequest, ::mruv::accounts::IsAccountExistResponse>(
           [](MruVAccountsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::IsAccountExistRequest* req,
-             ::mruv::IsAccountExistResponse* resp) {
+             const ::mruv::accounts::IsAccountExistRequest* req,
+             ::mruv::accounts::IsAccountExistResponse* resp) {
                return service->IsAccountExist(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::GetAccountRequest, ::mruv::GetAccountResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::accounts::GetAccountRequest, ::mruv::accounts::GetAccountResponse>(
           [](MruVAccountsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::GetAccountRequest* req,
-             ::mruv::GetAccountResponse* resp) {
+             const ::mruv::accounts::GetAccountRequest* req,
+             ::mruv::accounts::GetAccountResponse* resp) {
                return service->GetAccount(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVAccountsService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::GetAccountCharactersRequest, ::mruv::GetAccountCharactersResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVAccountsService::Service, ::mruv::accounts::GetAccountCharactersRequest, ::mruv::accounts::GetAccountCharactersResponse>(
           [](MruVAccountsService::Service* service,
              ::grpc_impl::ServerContext* ctx,
-             const ::mruv::GetAccountCharactersRequest* req,
-             ::mruv::GetAccountCharactersResponse* resp) {
+             const ::mruv::accounts::GetAccountCharactersRequest* req,
+             ::mruv::accounts::GetAccountCharactersResponse* resp) {
                return service->GetAccountCharacters(ctx, req, resp);
              }, this)));
 }
@@ -239,35 +240,35 @@ MruVAccountsService::Service::Service() {
 MruVAccountsService::Service::~Service() {
 }
 
-::grpc::Status MruVAccountsService::Service::RegisterAccount(::grpc::ServerContext* context, const ::mruv::RegisterAccountRequest* request, ::mruv::RegisterAccountResponse* response) {
+::grpc::Status MruVAccountsService::Service::RegisterAccount(::grpc::ServerContext* context, const ::mruv::accounts::RegisterAccountRequest* request, ::mruv::accounts::RegisterAccountResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVAccountsService::Service::LogIn(::grpc::ServerContext* context, const ::mruv::LogInRequest* request, ::mruv::LogInResponse* response) {
+::grpc::Status MruVAccountsService::Service::LogIn(::grpc::ServerContext* context, const ::mruv::accounts::LogInRequest* request, ::mruv::accounts::LogInResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVAccountsService::Service::IsAccountExist(::grpc::ServerContext* context, const ::mruv::IsAccountExistRequest* request, ::mruv::IsAccountExistResponse* response) {
+::grpc::Status MruVAccountsService::Service::IsAccountExist(::grpc::ServerContext* context, const ::mruv::accounts::IsAccountExistRequest* request, ::mruv::accounts::IsAccountExistResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVAccountsService::Service::GetAccount(::grpc::ServerContext* context, const ::mruv::GetAccountRequest* request, ::mruv::GetAccountResponse* response) {
+::grpc::Status MruVAccountsService::Service::GetAccount(::grpc::ServerContext* context, const ::mruv::accounts::GetAccountRequest* request, ::mruv::accounts::GetAccountResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVAccountsService::Service::GetAccountCharacters(::grpc::ServerContext* context, const ::mruv::GetAccountCharactersRequest* request, ::mruv::GetAccountCharactersResponse* response) {
+::grpc::Status MruVAccountsService::Service::GetAccountCharacters(::grpc::ServerContext* context, const ::mruv::accounts::GetAccountCharactersRequest* request, ::mruv::accounts::GetAccountCharactersResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -276,4 +277,5 @@ MruVAccountsService::Service::~Service() {
 
 
 }  // namespace mruv
+}  // namespace accounts
 

@@ -14,10 +14,20 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AdminJailMessage_punishments_2fpunishments_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BanMessage_punishments_2fpunishments_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BlockMessage_punishments_2fpunishments_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnAdminJailMessage_punishments_2fpunishments_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBanMessage_punishments_2fpunishments_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBlockMessage_punishments_2fpunishments_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnWarnMessage_punishments_2fpunishments_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_punishments_2fpunishments_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WarnMessage_punishments_2fpunishments_2eproto;
 namespace mruv {
-namespace economy {
+namespace punishments {
+class PunishmentMessageDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PunishmentMessage> _instance;
+} _PunishmentMessage_default_instance_;
 class BanMessageDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BanMessage> _instance;
@@ -50,6 +60,14 @@ class UnAdminJailMessageDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UnAdminJailMessage> _instance;
 } _UnAdminJailMessage_default_instance_;
+class PunishRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PunishRequest> _instance;
+} _PunishRequest_default_instance_;
+class PunishResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PunishResponse> _instance;
+} _PunishResponse_default_instance_;
 class BanRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BanRequest> _instance;
@@ -222,14 +240,6 @@ class WatchUnAdminJailsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchUnAdminJailsRequest> _instance;
 } _WatchUnAdminJailsRequest_default_instance_;
-class WatchPlayerAcquittalsRequestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPlayerAcquittalsRequest> _instance;
-} _WatchPlayerAcquittalsRequest_default_instance_;
-class WatchPlayerAcquittalsResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPlayerAcquittalsResponse> _instance;
-} _WatchPlayerAcquittalsResponse_default_instance_;
 class WatchPlayerPunishmentsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPlayerPunishmentsRequest> _instance;
@@ -237,7 +247,23 @@ class WatchPlayerPunishmentsRequestDefaultTypeInternal {
 class WatchPlayerPunishmentsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPlayerPunishmentsResponse> _instance;
+  const ::mruv::punishments::BanMessage* ban_;
+  const ::mruv::punishments::BlockMessage* block_;
+  const ::mruv::punishments::WarnMessage* warn_;
+  const ::mruv::punishments::AdminJailMessage* aj_;
 } _WatchPlayerPunishmentsResponse_default_instance_;
+class WatchPlayerAcquittalsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPlayerAcquittalsRequest> _instance;
+} _WatchPlayerAcquittalsRequest_default_instance_;
+class WatchPlayerAcquittalsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPlayerAcquittalsResponse> _instance;
+  const ::mruv::punishments::UnBanMessage* unban_;
+  const ::mruv::punishments::UnBlockMessage* unblock_;
+  const ::mruv::punishments::UnWarnMessage* unwarn_;
+  const ::mruv::punishments::UnAdminJailMessage* unaj_;
+} _WatchPlayerAcquittalsResponse_default_instance_;
 class WatchPunishmentsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPunishmentsRequest> _instance;
@@ -245,18 +271,34 @@ class WatchPunishmentsRequestDefaultTypeInternal {
 class WatchPunishmentsResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchPunishmentsResponse> _instance;
+  const ::mruv::punishments::BanMessage* ban_;
+  const ::mruv::punishments::BlockMessage* block_;
+  const ::mruv::punishments::WarnMessage* warn_;
+  const ::mruv::punishments::AdminJailMessage* aj_;
 } _WatchPunishmentsResponse_default_instance_;
-}  // namespace economy
+class WatchAcquittalsRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchAcquittalsRequest> _instance;
+} _WatchAcquittalsRequest_default_instance_;
+class WatchAcquittalsResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<WatchAcquittalsResponse> _instance;
+  const ::mruv::punishments::UnBanMessage* unban_;
+  const ::mruv::punishments::UnBlockMessage* unblock_;
+  const ::mruv::punishments::UnWarnMessage* unwarn_;
+  const ::mruv::punishments::UnAdminJailMessage* unaj_;
+} _WatchAcquittalsResponse_default_instance_;
+}  // namespace punishments
 }  // namespace mruv
 static void InitDefaultsscc_info_AdminJailMessage_punishments_2fpunishments_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_AdminJailMessage_default_instance_;
-    new (ptr) ::mruv::economy::AdminJailMessage();
+    void* ptr = &::mruv::punishments::_AdminJailMessage_default_instance_;
+    new (ptr) ::mruv::punishments::AdminJailMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::AdminJailMessage::InitAsDefaultInstance();
+  ::mruv::punishments::AdminJailMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AdminJailMessage_punishments_2fpunishments_2eproto =
@@ -266,11 +308,11 @@ static void InitDefaultsscc_info_AdminJailRequest_punishments_2fpunishments_2epr
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_AdminJailRequest_default_instance_;
-    new (ptr) ::mruv::economy::AdminJailRequest();
+    void* ptr = &::mruv::punishments::_AdminJailRequest_default_instance_;
+    new (ptr) ::mruv::punishments::AdminJailRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::AdminJailRequest::InitAsDefaultInstance();
+  ::mruv::punishments::AdminJailRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AdminJailRequest_punishments_2fpunishments_2eproto =
@@ -280,11 +322,11 @@ static void InitDefaultsscc_info_AdminJailResponse_punishments_2fpunishments_2ep
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_AdminJailResponse_default_instance_;
-    new (ptr) ::mruv::economy::AdminJailResponse();
+    void* ptr = &::mruv::punishments::_AdminJailResponse_default_instance_;
+    new (ptr) ::mruv::punishments::AdminJailResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::AdminJailResponse::InitAsDefaultInstance();
+  ::mruv::punishments::AdminJailResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AdminJailResponse_punishments_2fpunishments_2eproto =
@@ -294,11 +336,11 @@ static void InitDefaultsscc_info_BanMessage_punishments_2fpunishments_2eproto() 
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_BanMessage_default_instance_;
-    new (ptr) ::mruv::economy::BanMessage();
+    void* ptr = &::mruv::punishments::_BanMessage_default_instance_;
+    new (ptr) ::mruv::punishments::BanMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::BanMessage::InitAsDefaultInstance();
+  ::mruv::punishments::BanMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BanMessage_punishments_2fpunishments_2eproto =
@@ -308,11 +350,11 @@ static void InitDefaultsscc_info_BanRequest_punishments_2fpunishments_2eproto() 
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_BanRequest_default_instance_;
-    new (ptr) ::mruv::economy::BanRequest();
+    void* ptr = &::mruv::punishments::_BanRequest_default_instance_;
+    new (ptr) ::mruv::punishments::BanRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::BanRequest::InitAsDefaultInstance();
+  ::mruv::punishments::BanRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BanRequest_punishments_2fpunishments_2eproto =
@@ -322,11 +364,11 @@ static void InitDefaultsscc_info_BanResponse_punishments_2fpunishments_2eproto()
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_BanResponse_default_instance_;
-    new (ptr) ::mruv::economy::BanResponse();
+    void* ptr = &::mruv::punishments::_BanResponse_default_instance_;
+    new (ptr) ::mruv::punishments::BanResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::BanResponse::InitAsDefaultInstance();
+  ::mruv::punishments::BanResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BanResponse_punishments_2fpunishments_2eproto =
@@ -336,11 +378,11 @@ static void InitDefaultsscc_info_BlockMessage_punishments_2fpunishments_2eproto(
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_BlockMessage_default_instance_;
-    new (ptr) ::mruv::economy::BlockMessage();
+    void* ptr = &::mruv::punishments::_BlockMessage_default_instance_;
+    new (ptr) ::mruv::punishments::BlockMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::BlockMessage::InitAsDefaultInstance();
+  ::mruv::punishments::BlockMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BlockMessage_punishments_2fpunishments_2eproto =
@@ -350,11 +392,11 @@ static void InitDefaultsscc_info_BlockRequest_punishments_2fpunishments_2eproto(
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_BlockRequest_default_instance_;
-    new (ptr) ::mruv::economy::BlockRequest();
+    void* ptr = &::mruv::punishments::_BlockRequest_default_instance_;
+    new (ptr) ::mruv::punishments::BlockRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::BlockRequest::InitAsDefaultInstance();
+  ::mruv::punishments::BlockRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BlockRequest_punishments_2fpunishments_2eproto =
@@ -364,11 +406,11 @@ static void InitDefaultsscc_info_BlockResponse_punishments_2fpunishments_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_BlockResponse_default_instance_;
-    new (ptr) ::mruv::economy::BlockResponse();
+    void* ptr = &::mruv::punishments::_BlockResponse_default_instance_;
+    new (ptr) ::mruv::punishments::BlockResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::BlockResponse::InitAsDefaultInstance();
+  ::mruv::punishments::BlockResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BlockResponse_punishments_2fpunishments_2eproto =
@@ -378,11 +420,11 @@ static void InitDefaultsscc_info_GetBanRequest_punishments_2fpunishments_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetBanRequest_default_instance_;
-    new (ptr) ::mruv::economy::GetBanRequest();
+    void* ptr = &::mruv::punishments::_GetBanRequest_default_instance_;
+    new (ptr) ::mruv::punishments::GetBanRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetBanRequest::InitAsDefaultInstance();
+  ::mruv::punishments::GetBanRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetBanRequest_punishments_2fpunishments_2eproto =
@@ -392,11 +434,11 @@ static void InitDefaultsscc_info_GetBlockRequest_punishments_2fpunishments_2epro
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetBlockRequest_default_instance_;
-    new (ptr) ::mruv::economy::GetBlockRequest();
+    void* ptr = &::mruv::punishments::_GetBlockRequest_default_instance_;
+    new (ptr) ::mruv::punishments::GetBlockRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetBlockRequest::InitAsDefaultInstance();
+  ::mruv::punishments::GetBlockRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetBlockRequest_punishments_2fpunishments_2eproto =
@@ -406,11 +448,11 @@ static void InitDefaultsscc_info_GetPlayerAdminJailRequest_punishments_2fpunishm
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetPlayerAdminJailRequest_default_instance_;
-    new (ptr) ::mruv::economy::GetPlayerAdminJailRequest();
+    void* ptr = &::mruv::punishments::_GetPlayerAdminJailRequest_default_instance_;
+    new (ptr) ::mruv::punishments::GetPlayerAdminJailRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetPlayerAdminJailRequest::InitAsDefaultInstance();
+  ::mruv::punishments::GetPlayerAdminJailRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPlayerAdminJailRequest_punishments_2fpunishments_2eproto =
@@ -420,11 +462,11 @@ static void InitDefaultsscc_info_GetPlayerAdminJailResponse_punishments_2fpunish
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetPlayerAdminJailResponse_default_instance_;
-    new (ptr) ::mruv::economy::GetPlayerAdminJailResponse();
+    void* ptr = &::mruv::punishments::_GetPlayerAdminJailResponse_default_instance_;
+    new (ptr) ::mruv::punishments::GetPlayerAdminJailResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetPlayerAdminJailResponse::InitAsDefaultInstance();
+  ::mruv::punishments::GetPlayerAdminJailResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPlayerAdminJailResponse_punishments_2fpunishments_2eproto =
@@ -434,11 +476,11 @@ static void InitDefaultsscc_info_GetPlayerBansRequest_punishments_2fpunishments_
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetPlayerBansRequest_default_instance_;
-    new (ptr) ::mruv::economy::GetPlayerBansRequest();
+    void* ptr = &::mruv::punishments::_GetPlayerBansRequest_default_instance_;
+    new (ptr) ::mruv::punishments::GetPlayerBansRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetPlayerBansRequest::InitAsDefaultInstance();
+  ::mruv::punishments::GetPlayerBansRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPlayerBansRequest_punishments_2fpunishments_2eproto =
@@ -448,11 +490,11 @@ static void InitDefaultsscc_info_GetPlayerBansResponse_punishments_2fpunishments
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetPlayerBansResponse_default_instance_;
-    new (ptr) ::mruv::economy::GetPlayerBansResponse();
+    void* ptr = &::mruv::punishments::_GetPlayerBansResponse_default_instance_;
+    new (ptr) ::mruv::punishments::GetPlayerBansResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetPlayerBansResponse::InitAsDefaultInstance();
+  ::mruv::punishments::GetPlayerBansResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetPlayerBansResponse_punishments_2fpunishments_2eproto =
@@ -463,11 +505,11 @@ static void InitDefaultsscc_info_GetPlayerWarnsRequest_punishments_2fpunishments
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetPlayerWarnsRequest_default_instance_;
-    new (ptr) ::mruv::economy::GetPlayerWarnsRequest();
+    void* ptr = &::mruv::punishments::_GetPlayerWarnsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::GetPlayerWarnsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetPlayerWarnsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::GetPlayerWarnsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetPlayerWarnsRequest_punishments_2fpunishments_2eproto =
@@ -477,11 +519,11 @@ static void InitDefaultsscc_info_GetPlayerWarnsResponse_punishments_2fpunishment
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetPlayerWarnsResponse_default_instance_;
-    new (ptr) ::mruv::economy::GetPlayerWarnsResponse();
+    void* ptr = &::mruv::punishments::_GetPlayerWarnsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::GetPlayerWarnsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetPlayerWarnsResponse::InitAsDefaultInstance();
+  ::mruv::punishments::GetPlayerWarnsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetPlayerWarnsResponse_punishments_2fpunishments_2eproto =
@@ -492,11 +534,11 @@ static void InitDefaultsscc_info_GetWarnRequest_punishments_2fpunishments_2eprot
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_GetWarnRequest_default_instance_;
-    new (ptr) ::mruv::economy::GetWarnRequest();
+    void* ptr = &::mruv::punishments::_GetWarnRequest_default_instance_;
+    new (ptr) ::mruv::punishments::GetWarnRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::GetWarnRequest::InitAsDefaultInstance();
+  ::mruv::punishments::GetWarnRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetWarnRequest_punishments_2fpunishments_2eproto =
@@ -506,11 +548,11 @@ static void InitDefaultsscc_info_IsCharacterBlockedRequest_punishments_2fpunishm
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_IsCharacterBlockedRequest_default_instance_;
-    new (ptr) ::mruv::economy::IsCharacterBlockedRequest();
+    void* ptr = &::mruv::punishments::_IsCharacterBlockedRequest_default_instance_;
+    new (ptr) ::mruv::punishments::IsCharacterBlockedRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::IsCharacterBlockedRequest::InitAsDefaultInstance();
+  ::mruv::punishments::IsCharacterBlockedRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsCharacterBlockedRequest_punishments_2fpunishments_2eproto =
@@ -520,11 +562,11 @@ static void InitDefaultsscc_info_IsCharacterBlockedResponse_punishments_2fpunish
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_IsCharacterBlockedResponse_default_instance_;
-    new (ptr) ::mruv::economy::IsCharacterBlockedResponse();
+    void* ptr = &::mruv::punishments::_IsCharacterBlockedResponse_default_instance_;
+    new (ptr) ::mruv::punishments::IsCharacterBlockedResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::IsCharacterBlockedResponse::InitAsDefaultInstance();
+  ::mruv::punishments::IsCharacterBlockedResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsCharacterBlockedResponse_punishments_2fpunishments_2eproto =
@@ -534,11 +576,11 @@ static void InitDefaultsscc_info_IsCharacterJailedRequest_punishments_2fpunishme
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_IsCharacterJailedRequest_default_instance_;
-    new (ptr) ::mruv::economy::IsCharacterJailedRequest();
+    void* ptr = &::mruv::punishments::_IsCharacterJailedRequest_default_instance_;
+    new (ptr) ::mruv::punishments::IsCharacterJailedRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::IsCharacterJailedRequest::InitAsDefaultInstance();
+  ::mruv::punishments::IsCharacterJailedRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsCharacterJailedRequest_punishments_2fpunishments_2eproto =
@@ -548,11 +590,11 @@ static void InitDefaultsscc_info_IsCharacterJailedResponse_punishments_2fpunishm
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_IsCharacterJailedResponse_default_instance_;
-    new (ptr) ::mruv::economy::IsCharacterJailedResponse();
+    void* ptr = &::mruv::punishments::_IsCharacterJailedResponse_default_instance_;
+    new (ptr) ::mruv::punishments::IsCharacterJailedResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::IsCharacterJailedResponse::InitAsDefaultInstance();
+  ::mruv::punishments::IsCharacterJailedResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsCharacterJailedResponse_punishments_2fpunishments_2eproto =
@@ -562,11 +604,11 @@ static void InitDefaultsscc_info_IsPlayerBannedRequest_punishments_2fpunishments
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_IsPlayerBannedRequest_default_instance_;
-    new (ptr) ::mruv::economy::IsPlayerBannedRequest();
+    void* ptr = &::mruv::punishments::_IsPlayerBannedRequest_default_instance_;
+    new (ptr) ::mruv::punishments::IsPlayerBannedRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::IsPlayerBannedRequest::InitAsDefaultInstance();
+  ::mruv::punishments::IsPlayerBannedRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsPlayerBannedRequest_punishments_2fpunishments_2eproto =
@@ -576,11 +618,11 @@ static void InitDefaultsscc_info_IsPlayerBannedResponse_punishments_2fpunishment
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_IsPlayerBannedResponse_default_instance_;
-    new (ptr) ::mruv::economy::IsPlayerBannedResponse();
+    void* ptr = &::mruv::punishments::_IsPlayerBannedResponse_default_instance_;
+    new (ptr) ::mruv::punishments::IsPlayerBannedResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::IsPlayerBannedResponse::InitAsDefaultInstance();
+  ::mruv::punishments::IsPlayerBannedResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_IsPlayerBannedResponse_punishments_2fpunishments_2eproto =
@@ -590,11 +632,11 @@ static void InitDefaultsscc_info_MuteGlobalChatsRequest_punishments_2fpunishment
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_MuteGlobalChatsRequest_default_instance_;
-    new (ptr) ::mruv::economy::MuteGlobalChatsRequest();
+    void* ptr = &::mruv::punishments::_MuteGlobalChatsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::MuteGlobalChatsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::MuteGlobalChatsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::MuteGlobalChatsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MuteGlobalChatsRequest_punishments_2fpunishments_2eproto =
@@ -604,25 +646,67 @@ static void InitDefaultsscc_info_MuteGlobalChatsResponse_punishments_2fpunishmen
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_MuteGlobalChatsResponse_default_instance_;
-    new (ptr) ::mruv::economy::MuteGlobalChatsResponse();
+    void* ptr = &::mruv::punishments::_MuteGlobalChatsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::MuteGlobalChatsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::MuteGlobalChatsResponse::InitAsDefaultInstance();
+  ::mruv::punishments::MuteGlobalChatsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MuteGlobalChatsResponse_punishments_2fpunishments_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_MuteGlobalChatsResponse_punishments_2fpunishments_2eproto}, {}};
 
+static void InitDefaultsscc_info_PunishRequest_punishments_2fpunishments_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::punishments::_PunishRequest_default_instance_;
+    new (ptr) ::mruv::punishments::PunishRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::punishments::PunishRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PunishRequest_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PunishRequest_punishments_2fpunishments_2eproto}, {}};
+
+static void InitDefaultsscc_info_PunishResponse_punishments_2fpunishments_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::punishments::_PunishResponse_default_instance_;
+    new (ptr) ::mruv::punishments::PunishResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::punishments::PunishResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PunishResponse_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PunishResponse_punishments_2fpunishments_2eproto}, {}};
+
+static void InitDefaultsscc_info_PunishmentMessage_punishments_2fpunishments_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::punishments::_PunishmentMessage_default_instance_;
+    new (ptr) ::mruv::punishments::PunishmentMessage();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::punishments::PunishmentMessage::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PunishmentMessage_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_PunishmentMessage_punishments_2fpunishments_2eproto}, {}};
+
 static void InitDefaultsscc_info_UnAdminJailMessage_punishments_2fpunishments_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnAdminJailMessage_default_instance_;
-    new (ptr) ::mruv::economy::UnAdminJailMessage();
+    void* ptr = &::mruv::punishments::_UnAdminJailMessage_default_instance_;
+    new (ptr) ::mruv::punishments::UnAdminJailMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnAdminJailMessage::InitAsDefaultInstance();
+  ::mruv::punishments::UnAdminJailMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnAdminJailMessage_punishments_2fpunishments_2eproto =
@@ -632,11 +716,11 @@ static void InitDefaultsscc_info_UnAdminJailRequest_punishments_2fpunishments_2e
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnAdminJailRequest_default_instance_;
-    new (ptr) ::mruv::economy::UnAdminJailRequest();
+    void* ptr = &::mruv::punishments::_UnAdminJailRequest_default_instance_;
+    new (ptr) ::mruv::punishments::UnAdminJailRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnAdminJailRequest::InitAsDefaultInstance();
+  ::mruv::punishments::UnAdminJailRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnAdminJailRequest_punishments_2fpunishments_2eproto =
@@ -646,11 +730,11 @@ static void InitDefaultsscc_info_UnAdminJailResponse_punishments_2fpunishments_2
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnAdminJailResponse_default_instance_;
-    new (ptr) ::mruv::economy::UnAdminJailResponse();
+    void* ptr = &::mruv::punishments::_UnAdminJailResponse_default_instance_;
+    new (ptr) ::mruv::punishments::UnAdminJailResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnAdminJailResponse::InitAsDefaultInstance();
+  ::mruv::punishments::UnAdminJailResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnAdminJailResponse_punishments_2fpunishments_2eproto =
@@ -660,11 +744,11 @@ static void InitDefaultsscc_info_UnBanMessage_punishments_2fpunishments_2eproto(
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnBanMessage_default_instance_;
-    new (ptr) ::mruv::economy::UnBanMessage();
+    void* ptr = &::mruv::punishments::_UnBanMessage_default_instance_;
+    new (ptr) ::mruv::punishments::UnBanMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnBanMessage::InitAsDefaultInstance();
+  ::mruv::punishments::UnBanMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBanMessage_punishments_2fpunishments_2eproto =
@@ -674,11 +758,11 @@ static void InitDefaultsscc_info_UnBanRequest_punishments_2fpunishments_2eproto(
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnBanRequest_default_instance_;
-    new (ptr) ::mruv::economy::UnBanRequest();
+    void* ptr = &::mruv::punishments::_UnBanRequest_default_instance_;
+    new (ptr) ::mruv::punishments::UnBanRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnBanRequest::InitAsDefaultInstance();
+  ::mruv::punishments::UnBanRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBanRequest_punishments_2fpunishments_2eproto =
@@ -688,11 +772,11 @@ static void InitDefaultsscc_info_UnBanResponse_punishments_2fpunishments_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnBanResponse_default_instance_;
-    new (ptr) ::mruv::economy::UnBanResponse();
+    void* ptr = &::mruv::punishments::_UnBanResponse_default_instance_;
+    new (ptr) ::mruv::punishments::UnBanResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnBanResponse::InitAsDefaultInstance();
+  ::mruv::punishments::UnBanResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBanResponse_punishments_2fpunishments_2eproto =
@@ -702,11 +786,11 @@ static void InitDefaultsscc_info_UnBlockMessage_punishments_2fpunishments_2eprot
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnBlockMessage_default_instance_;
-    new (ptr) ::mruv::economy::UnBlockMessage();
+    void* ptr = &::mruv::punishments::_UnBlockMessage_default_instance_;
+    new (ptr) ::mruv::punishments::UnBlockMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnBlockMessage::InitAsDefaultInstance();
+  ::mruv::punishments::UnBlockMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBlockMessage_punishments_2fpunishments_2eproto =
@@ -716,11 +800,11 @@ static void InitDefaultsscc_info_UnBlockRequest_punishments_2fpunishments_2eprot
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnBlockRequest_default_instance_;
-    new (ptr) ::mruv::economy::UnBlockRequest();
+    void* ptr = &::mruv::punishments::_UnBlockRequest_default_instance_;
+    new (ptr) ::mruv::punishments::UnBlockRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnBlockRequest::InitAsDefaultInstance();
+  ::mruv::punishments::UnBlockRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBlockRequest_punishments_2fpunishments_2eproto =
@@ -730,11 +814,11 @@ static void InitDefaultsscc_info_UnBlockResponse_punishments_2fpunishments_2epro
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnBlockResponse_default_instance_;
-    new (ptr) ::mruv::economy::UnBlockResponse();
+    void* ptr = &::mruv::punishments::_UnBlockResponse_default_instance_;
+    new (ptr) ::mruv::punishments::UnBlockResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnBlockResponse::InitAsDefaultInstance();
+  ::mruv::punishments::UnBlockResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnBlockResponse_punishments_2fpunishments_2eproto =
@@ -744,11 +828,11 @@ static void InitDefaultsscc_info_UnMuteGlobalChatsRequest_punishments_2fpunishme
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnMuteGlobalChatsRequest_default_instance_;
-    new (ptr) ::mruv::economy::UnMuteGlobalChatsRequest();
+    void* ptr = &::mruv::punishments::_UnMuteGlobalChatsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::UnMuteGlobalChatsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnMuteGlobalChatsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::UnMuteGlobalChatsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnMuteGlobalChatsRequest_punishments_2fpunishments_2eproto =
@@ -758,11 +842,11 @@ static void InitDefaultsscc_info_UnMuteGlobalChatsResponse_punishments_2fpunishm
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnMuteGlobalChatsResponse_default_instance_;
-    new (ptr) ::mruv::economy::UnMuteGlobalChatsResponse();
+    void* ptr = &::mruv::punishments::_UnMuteGlobalChatsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::UnMuteGlobalChatsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnMuteGlobalChatsResponse::InitAsDefaultInstance();
+  ::mruv::punishments::UnMuteGlobalChatsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnMuteGlobalChatsResponse_punishments_2fpunishments_2eproto =
@@ -772,11 +856,11 @@ static void InitDefaultsscc_info_UnWarnMessage_punishments_2fpunishments_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnWarnMessage_default_instance_;
-    new (ptr) ::mruv::economy::UnWarnMessage();
+    void* ptr = &::mruv::punishments::_UnWarnMessage_default_instance_;
+    new (ptr) ::mruv::punishments::UnWarnMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnWarnMessage::InitAsDefaultInstance();
+  ::mruv::punishments::UnWarnMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnWarnMessage_punishments_2fpunishments_2eproto =
@@ -786,11 +870,11 @@ static void InitDefaultsscc_info_UnWarnRequest_punishments_2fpunishments_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnWarnRequest_default_instance_;
-    new (ptr) ::mruv::economy::UnWarnRequest();
+    void* ptr = &::mruv::punishments::_UnWarnRequest_default_instance_;
+    new (ptr) ::mruv::punishments::UnWarnRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnWarnRequest::InitAsDefaultInstance();
+  ::mruv::punishments::UnWarnRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnWarnRequest_punishments_2fpunishments_2eproto =
@@ -800,11 +884,11 @@ static void InitDefaultsscc_info_UnWarnResponse_punishments_2fpunishments_2eprot
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_UnWarnResponse_default_instance_;
-    new (ptr) ::mruv::economy::UnWarnResponse();
+    void* ptr = &::mruv::punishments::_UnWarnResponse_default_instance_;
+    new (ptr) ::mruv::punishments::UnWarnResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::UnWarnResponse::InitAsDefaultInstance();
+  ::mruv::punishments::UnWarnResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UnWarnResponse_punishments_2fpunishments_2eproto =
@@ -814,11 +898,11 @@ static void InitDefaultsscc_info_WarnMessage_punishments_2fpunishments_2eproto()
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WarnMessage_default_instance_;
-    new (ptr) ::mruv::economy::WarnMessage();
+    void* ptr = &::mruv::punishments::_WarnMessage_default_instance_;
+    new (ptr) ::mruv::punishments::WarnMessage();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WarnMessage::InitAsDefaultInstance();
+  ::mruv::punishments::WarnMessage::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WarnMessage_punishments_2fpunishments_2eproto =
@@ -828,11 +912,11 @@ static void InitDefaultsscc_info_WarnRequest_punishments_2fpunishments_2eproto()
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WarnRequest_default_instance_;
-    new (ptr) ::mruv::economy::WarnRequest();
+    void* ptr = &::mruv::punishments::_WarnRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WarnRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WarnRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WarnRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WarnRequest_punishments_2fpunishments_2eproto =
@@ -842,25 +926,57 @@ static void InitDefaultsscc_info_WarnResponse_punishments_2fpunishments_2eproto(
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WarnResponse_default_instance_;
-    new (ptr) ::mruv::economy::WarnResponse();
+    void* ptr = &::mruv::punishments::_WarnResponse_default_instance_;
+    new (ptr) ::mruv::punishments::WarnResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WarnResponse::InitAsDefaultInstance();
+  ::mruv::punishments::WarnResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WarnResponse_punishments_2fpunishments_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_WarnResponse_punishments_2fpunishments_2eproto}, {}};
 
+static void InitDefaultsscc_info_WatchAcquittalsRequest_punishments_2fpunishments_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::punishments::_WatchAcquittalsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchAcquittalsRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::punishments::WatchAcquittalsRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchAcquittalsRequest_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_WatchAcquittalsRequest_punishments_2fpunishments_2eproto}, {}};
+
+static void InitDefaultsscc_info_WatchAcquittalsResponse_punishments_2fpunishments_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::mruv::punishments::_WatchAcquittalsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::WatchAcquittalsResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::mruv::punishments::WatchAcquittalsResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_WatchAcquittalsResponse_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_WatchAcquittalsResponse_punishments_2fpunishments_2eproto}, {
+      &scc_info_UnBanMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_UnBlockMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_UnWarnMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_UnAdminJailMessage_punishments_2fpunishments_2eproto.base,}};
+
 static void InitDefaultsscc_info_WatchAdminJailsRequest_punishments_2fpunishments_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchAdminJailsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchAdminJailsRequest();
+    void* ptr = &::mruv::punishments::_WatchAdminJailsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchAdminJailsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchAdminJailsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchAdminJailsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchAdminJailsRequest_punishments_2fpunishments_2eproto =
@@ -870,11 +986,11 @@ static void InitDefaultsscc_info_WatchBansRequest_punishments_2fpunishments_2epr
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchBansRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchBansRequest();
+    void* ptr = &::mruv::punishments::_WatchBansRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchBansRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchBansRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchBansRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchBansRequest_punishments_2fpunishments_2eproto =
@@ -884,11 +1000,11 @@ static void InitDefaultsscc_info_WatchBlocksRequest_punishments_2fpunishments_2e
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchBlocksRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchBlocksRequest();
+    void* ptr = &::mruv::punishments::_WatchBlocksRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchBlocksRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchBlocksRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchBlocksRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchBlocksRequest_punishments_2fpunishments_2eproto =
@@ -898,11 +1014,11 @@ static void InitDefaultsscc_info_WatchPlayerAcquittalsRequest_punishments_2fpuni
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchPlayerAcquittalsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchPlayerAcquittalsRequest();
+    void* ptr = &::mruv::punishments::_WatchPlayerAcquittalsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchPlayerAcquittalsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchPlayerAcquittalsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchPlayerAcquittalsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchPlayerAcquittalsRequest_punishments_2fpunishments_2eproto =
@@ -912,25 +1028,29 @@ static void InitDefaultsscc_info_WatchPlayerAcquittalsResponse_punishments_2fpun
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchPlayerAcquittalsResponse_default_instance_;
-    new (ptr) ::mruv::economy::WatchPlayerAcquittalsResponse();
+    void* ptr = &::mruv::punishments::_WatchPlayerAcquittalsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::WatchPlayerAcquittalsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchPlayerAcquittalsResponse::InitAsDefaultInstance();
+  ::mruv::punishments::WatchPlayerAcquittalsResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto}, {
+      &scc_info_UnBanMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_UnBlockMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_UnWarnMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_UnAdminJailMessage_punishments_2fpunishments_2eproto.base,}};
 
 static void InitDefaultsscc_info_WatchPlayerPunishmentsRequest_punishments_2fpunishments_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchPlayerPunishmentsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchPlayerPunishmentsRequest();
+    void* ptr = &::mruv::punishments::_WatchPlayerPunishmentsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchPlayerPunishmentsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchPlayerPunishmentsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchPlayerPunishmentsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchPlayerPunishmentsRequest_punishments_2fpunishments_2eproto =
@@ -940,25 +1060,29 @@ static void InitDefaultsscc_info_WatchPlayerPunishmentsResponse_punishments_2fpu
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchPlayerPunishmentsResponse_default_instance_;
-    new (ptr) ::mruv::economy::WatchPlayerPunishmentsResponse();
+    void* ptr = &::mruv::punishments::_WatchPlayerPunishmentsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::WatchPlayerPunishmentsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchPlayerPunishmentsResponse::InitAsDefaultInstance();
+  ::mruv::punishments::WatchPlayerPunishmentsResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchPlayerPunishmentsResponse_punishments_2fpunishments_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_WatchPlayerPunishmentsResponse_punishments_2fpunishments_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_WatchPlayerPunishmentsResponse_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_WatchPlayerPunishmentsResponse_punishments_2fpunishments_2eproto}, {
+      &scc_info_BanMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_BlockMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_WarnMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_AdminJailMessage_punishments_2fpunishments_2eproto.base,}};
 
 static void InitDefaultsscc_info_WatchPunishmentsRequest_punishments_2fpunishments_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchPunishmentsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchPunishmentsRequest();
+    void* ptr = &::mruv::punishments::_WatchPunishmentsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchPunishmentsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchPunishmentsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchPunishmentsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchPunishmentsRequest_punishments_2fpunishments_2eproto =
@@ -968,25 +1092,29 @@ static void InitDefaultsscc_info_WatchPunishmentsResponse_punishments_2fpunishme
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchPunishmentsResponse_default_instance_;
-    new (ptr) ::mruv::economy::WatchPunishmentsResponse();
+    void* ptr = &::mruv::punishments::_WatchPunishmentsResponse_default_instance_;
+    new (ptr) ::mruv::punishments::WatchPunishmentsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchPunishmentsResponse::InitAsDefaultInstance();
+  ::mruv::punishments::WatchPunishmentsResponse::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchPunishmentsResponse_punishments_2fpunishments_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_WatchPunishmentsResponse_punishments_2fpunishments_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_WatchPunishmentsResponse_punishments_2fpunishments_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_WatchPunishmentsResponse_punishments_2fpunishments_2eproto}, {
+      &scc_info_BanMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_BlockMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_WarnMessage_punishments_2fpunishments_2eproto.base,
+      &scc_info_AdminJailMessage_punishments_2fpunishments_2eproto.base,}};
 
 static void InitDefaultsscc_info_WatchUnAdminJailsRequest_punishments_2fpunishments_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchUnAdminJailsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchUnAdminJailsRequest();
+    void* ptr = &::mruv::punishments::_WatchUnAdminJailsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchUnAdminJailsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchUnAdminJailsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchUnAdminJailsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchUnAdminJailsRequest_punishments_2fpunishments_2eproto =
@@ -996,11 +1124,11 @@ static void InitDefaultsscc_info_WatchUnBansRequest_punishments_2fpunishments_2e
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchUnBansRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchUnBansRequest();
+    void* ptr = &::mruv::punishments::_WatchUnBansRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchUnBansRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchUnBansRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchUnBansRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchUnBansRequest_punishments_2fpunishments_2eproto =
@@ -1010,11 +1138,11 @@ static void InitDefaultsscc_info_WatchUnBlocksRequest_punishments_2fpunishments_
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchUnBlocksRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchUnBlocksRequest();
+    void* ptr = &::mruv::punishments::_WatchUnBlocksRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchUnBlocksRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchUnBlocksRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchUnBlocksRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchUnBlocksRequest_punishments_2fpunishments_2eproto =
@@ -1024,11 +1152,11 @@ static void InitDefaultsscc_info_WatchUnWarnsRequest_punishments_2fpunishments_2
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchUnWarnsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchUnWarnsRequest();
+    void* ptr = &::mruv::punishments::_WatchUnWarnsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchUnWarnsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchUnWarnsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchUnWarnsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchUnWarnsRequest_punishments_2fpunishments_2eproto =
@@ -1038,700 +1166,805 @@ static void InitDefaultsscc_info_WatchWarnsRequest_punishments_2fpunishments_2ep
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::economy::_WatchWarnsRequest_default_instance_;
-    new (ptr) ::mruv::economy::WatchWarnsRequest();
+    void* ptr = &::mruv::punishments::_WatchWarnsRequest_default_instance_;
+    new (ptr) ::mruv::punishments::WatchWarnsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::economy::WatchWarnsRequest::InitAsDefaultInstance();
+  ::mruv::punishments::WatchWarnsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_WatchWarnsRequest_punishments_2fpunishments_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_WatchWarnsRequest_punishments_2fpunishments_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_punishments_2fpunishments_2eproto[57];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_punishments_2fpunishments_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_punishments_2fpunishments_2eproto[62];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_punishments_2fpunishments_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_punishments_2fpunishments_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_punishments_2fpunishments_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, ip_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, expiration_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, admin_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, ban_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, active_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, unban_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanMessage, unban_admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, expiration_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishmentMessage, active_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, expiration_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, admin_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, warn_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, active_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, unwarn_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnMessage, unwarn_admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, ip_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, expiration_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, ban_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, active_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, unban_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanMessage, unban_admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, admin_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, block_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, active_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, unblock_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockMessage, unblock_admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, expiration_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, warn_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, active_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, unwarn_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnMessage, unwarn_admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, admin_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, aj_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailMessage, jail_time_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, block_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, active_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, unblock_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockMessage, unblock_admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanMessage, ban_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, aj_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailMessage, jail_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockMessage, block_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanMessage, ban_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnMessage, warn_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockMessage, block_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnAdminJailMessage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnAdminJailMessage, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnAdminJailMessage, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnMessage, warn_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, ip_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, time_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanRequest, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailMessage, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailMessage, character_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BanResponse, ban_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishRequest, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishRequest, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishRequest, admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockRequest, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockRequest, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockRequest, admin_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::BlockResponse, block_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnRequest, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnRequest, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnRequest, time_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnRequest, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnRequest, admin_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WarnResponse, warn_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailRequest, character_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailRequest, time_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailRequest, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailRequest, admin_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::AdminJailResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::PunishResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::MuteGlobalChatsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::MuteGlobalChatsRequest, account_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, ip_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, time_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanRequest, admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::MuteGlobalChatsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BanResponse, ban_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanRequest, ban_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockRequest, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockRequest, admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBanResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::BlockResponse, block_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockRequest, block_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnRequest, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnRequest, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnRequest, time_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnRequest, admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnBlockResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WarnResponse, warn_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnRequest, warn_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailRequest, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailRequest, time_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailRequest, admin_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnWarnResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnAdminJailRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnAdminJailRequest, character_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnAdminJailResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnMuteGlobalChatsRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnMuteGlobalChatsRequest, account_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::UnMuteGlobalChatsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::AdminJailResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerBansRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::MuteGlobalChatsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerBansRequest, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerBansRequest, ip_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::MuteGlobalChatsRequest, account_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerBansResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerBansResponse, bans_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerWarnsRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerWarnsRequest, player_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerWarnsResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerWarnsResponse, warns_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailRequest, character_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailResponse, jail_time_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailResponse, reason_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailResponse, admin_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetPlayerAdminJailResponse, date_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetBanRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetBanRequest, id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetWarnRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetWarnRequest, id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetBlockRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::GetBlockRequest, id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsPlayerBannedRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsPlayerBannedRequest, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsPlayerBannedRequest, ip_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsPlayerBannedResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsPlayerBannedResponse, banned_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsPlayerBannedResponse, ban_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterBlockedRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterBlockedRequest, character_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterBlockedResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterBlockedResponse, blocked_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterBlockedResponse, block_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterJailedRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterJailedRequest, character_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterJailedResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterJailedResponse, jailed_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::IsCharacterJailedResponse, jail_time_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchBansRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::MuteGlobalChatsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchBlocksRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanRequest, ban_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanRequest, admin_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBanResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchWarnsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockRequest, block_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockRequest, admin_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnBlockResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchAdminJailsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnRequest, warn_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnRequest, admin_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnWarnResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchUnBansRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailRequest, character_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailRequest, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailRequest, admin_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnAdminJailResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchUnBlocksRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnMuteGlobalChatsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnMuteGlobalChatsRequest, account_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::UnMuteGlobalChatsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchUnWarnsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerBansRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerBansRequest, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerBansRequest, ip_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerBansResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerBansResponse, bans_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerWarnsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerWarnsRequest, player_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerWarnsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerWarnsResponse, warns_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailRequest, character_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailResponse, jail_time_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailResponse, reason_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailResponse, admin_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetPlayerAdminJailResponse, date_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetBanRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetBanRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetWarnRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetWarnRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetBlockRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::GetBlockRequest, id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsPlayerBannedRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsPlayerBannedRequest, player_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsPlayerBannedRequest, ip_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsPlayerBannedResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsPlayerBannedResponse, banned_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsPlayerBannedResponse, ban_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterBlockedRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterBlockedRequest, character_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterBlockedResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterBlockedResponse, blocked_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterBlockedResponse, block_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterJailedRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterJailedRequest, character_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterJailedResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterJailedResponse, jailed_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::IsCharacterJailedResponse, jail_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchBansRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchUnAdminJailsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchBlocksRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPlayerAcquittalsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchWarnsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPlayerAcquittalsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchAdminJailsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPlayerPunishmentsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchUnBansRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPlayerPunishmentsResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPlayerPunishmentsResponse, type_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPlayerPunishmentsResponse, punishment_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPunishmentsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchUnBlocksRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPunishmentsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchUnWarnsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPunishmentsResponse, type_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPunishmentsResponse, punishment_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPunishmentsResponse, player_),
-  PROTOBUF_FIELD_OFFSET(::mruv::economy::WatchPunishmentsResponse, character_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchUnAdminJailsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerPunishmentsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerPunishmentsRequest, account_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerPunishmentsRequest, character_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerPunishmentsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerPunishmentsResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  offsetof(::mruv::punishments::WatchPlayerPunishmentsResponseDefaultTypeInternal, ban_),
+  offsetof(::mruv::punishments::WatchPlayerPunishmentsResponseDefaultTypeInternal, block_),
+  offsetof(::mruv::punishments::WatchPlayerPunishmentsResponseDefaultTypeInternal, warn_),
+  offsetof(::mruv::punishments::WatchPlayerPunishmentsResponseDefaultTypeInternal, aj_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerPunishmentsResponse, punishment_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerAcquittalsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerAcquittalsRequest, account_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerAcquittalsRequest, character_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerAcquittalsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerAcquittalsResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  offsetof(::mruv::punishments::WatchPlayerAcquittalsResponseDefaultTypeInternal, unban_),
+  offsetof(::mruv::punishments::WatchPlayerAcquittalsResponseDefaultTypeInternal, unblock_),
+  offsetof(::mruv::punishments::WatchPlayerAcquittalsResponseDefaultTypeInternal, unwarn_),
+  offsetof(::mruv::punishments::WatchPlayerAcquittalsResponseDefaultTypeInternal, unaj_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPlayerAcquittalsResponse, acquittal_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPunishmentsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPunishmentsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPunishmentsResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  offsetof(::mruv::punishments::WatchPunishmentsResponseDefaultTypeInternal, ban_),
+  offsetof(::mruv::punishments::WatchPunishmentsResponseDefaultTypeInternal, block_),
+  offsetof(::mruv::punishments::WatchPunishmentsResponseDefaultTypeInternal, warn_),
+  offsetof(::mruv::punishments::WatchPunishmentsResponseDefaultTypeInternal, aj_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchPunishmentsResponse, punishment_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchAcquittalsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchAcquittalsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchAcquittalsResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  offsetof(::mruv::punishments::WatchAcquittalsResponseDefaultTypeInternal, unban_),
+  offsetof(::mruv::punishments::WatchAcquittalsResponseDefaultTypeInternal, unblock_),
+  offsetof(::mruv::punishments::WatchAcquittalsResponseDefaultTypeInternal, unwarn_),
+  offsetof(::mruv::punishments::WatchAcquittalsResponseDefaultTypeInternal, unaj_),
+  PROTOBUF_FIELD_OFFSET(::mruv::punishments::WatchAcquittalsResponse, acquittal_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::economy::BanMessage)},
-  { 15, -1, sizeof(::mruv::economy::WarnMessage)},
-  { 29, -1, sizeof(::mruv::economy::BlockMessage)},
-  { 42, -1, sizeof(::mruv::economy::AdminJailMessage)},
-  { 53, -1, sizeof(::mruv::economy::UnBanMessage)},
-  { 60, -1, sizeof(::mruv::economy::UnBlockMessage)},
-  { 67, -1, sizeof(::mruv::economy::UnWarnMessage)},
-  { 74, -1, sizeof(::mruv::economy::UnAdminJailMessage)},
-  { 81, -1, sizeof(::mruv::economy::BanRequest)},
-  { 92, -1, sizeof(::mruv::economy::BanResponse)},
-  { 98, -1, sizeof(::mruv::economy::BlockRequest)},
-  { 106, -1, sizeof(::mruv::economy::BlockResponse)},
-  { 112, -1, sizeof(::mruv::economy::WarnRequest)},
-  { 122, -1, sizeof(::mruv::economy::WarnResponse)},
-  { 128, -1, sizeof(::mruv::economy::AdminJailRequest)},
-  { 137, -1, sizeof(::mruv::economy::AdminJailResponse)},
-  { 142, -1, sizeof(::mruv::economy::MuteGlobalChatsRequest)},
-  { 148, -1, sizeof(::mruv::economy::MuteGlobalChatsResponse)},
-  { 153, -1, sizeof(::mruv::economy::UnBanRequest)},
-  { 160, -1, sizeof(::mruv::economy::UnBanResponse)},
-  { 165, -1, sizeof(::mruv::economy::UnBlockRequest)},
-  { 172, -1, sizeof(::mruv::economy::UnBlockResponse)},
-  { 177, -1, sizeof(::mruv::economy::UnWarnRequest)},
-  { 184, -1, sizeof(::mruv::economy::UnWarnResponse)},
-  { 189, -1, sizeof(::mruv::economy::UnAdminJailRequest)},
-  { 195, -1, sizeof(::mruv::economy::UnAdminJailResponse)},
-  { 200, -1, sizeof(::mruv::economy::UnMuteGlobalChatsRequest)},
-  { 206, -1, sizeof(::mruv::economy::UnMuteGlobalChatsResponse)},
-  { 211, -1, sizeof(::mruv::economy::GetPlayerBansRequest)},
-  { 218, -1, sizeof(::mruv::economy::GetPlayerBansResponse)},
-  { 224, -1, sizeof(::mruv::economy::GetPlayerWarnsRequest)},
-  { 230, -1, sizeof(::mruv::economy::GetPlayerWarnsResponse)},
-  { 236, -1, sizeof(::mruv::economy::GetPlayerAdminJailRequest)},
-  { 242, -1, sizeof(::mruv::economy::GetPlayerAdminJailResponse)},
-  { 251, -1, sizeof(::mruv::economy::GetBanRequest)},
-  { 257, -1, sizeof(::mruv::economy::GetWarnRequest)},
-  { 263, -1, sizeof(::mruv::economy::GetBlockRequest)},
-  { 269, -1, sizeof(::mruv::economy::IsPlayerBannedRequest)},
-  { 276, -1, sizeof(::mruv::economy::IsPlayerBannedResponse)},
-  { 283, -1, sizeof(::mruv::economy::IsCharacterBlockedRequest)},
-  { 289, -1, sizeof(::mruv::economy::IsCharacterBlockedResponse)},
-  { 296, -1, sizeof(::mruv::economy::IsCharacterJailedRequest)},
-  { 302, -1, sizeof(::mruv::economy::IsCharacterJailedResponse)},
-  { 309, -1, sizeof(::mruv::economy::WatchBansRequest)},
-  { 314, -1, sizeof(::mruv::economy::WatchBlocksRequest)},
-  { 319, -1, sizeof(::mruv::economy::WatchWarnsRequest)},
-  { 324, -1, sizeof(::mruv::economy::WatchAdminJailsRequest)},
-  { 329, -1, sizeof(::mruv::economy::WatchUnBansRequest)},
-  { 334, -1, sizeof(::mruv::economy::WatchUnBlocksRequest)},
-  { 339, -1, sizeof(::mruv::economy::WatchUnWarnsRequest)},
-  { 344, -1, sizeof(::mruv::economy::WatchUnAdminJailsRequest)},
-  { 349, -1, sizeof(::mruv::economy::WatchPlayerAcquittalsRequest)},
-  { 354, -1, sizeof(::mruv::economy::WatchPlayerAcquittalsResponse)},
-  { 359, -1, sizeof(::mruv::economy::WatchPlayerPunishmentsRequest)},
-  { 364, -1, sizeof(::mruv::economy::WatchPlayerPunishmentsResponse)},
-  { 371, -1, sizeof(::mruv::economy::WatchPunishmentsRequest)},
-  { 376, -1, sizeof(::mruv::economy::WatchPunishmentsResponse)},
+  { 0, -1, sizeof(::mruv::punishments::PunishmentMessage)},
+  { 12, -1, sizeof(::mruv::punishments::BanMessage)},
+  { 27, -1, sizeof(::mruv::punishments::WarnMessage)},
+  { 41, -1, sizeof(::mruv::punishments::BlockMessage)},
+  { 54, -1, sizeof(::mruv::punishments::AdminJailMessage)},
+  { 65, -1, sizeof(::mruv::punishments::UnBanMessage)},
+  { 72, -1, sizeof(::mruv::punishments::UnBlockMessage)},
+  { 79, -1, sizeof(::mruv::punishments::UnWarnMessage)},
+  { 86, -1, sizeof(::mruv::punishments::UnAdminJailMessage)},
+  { 93, -1, sizeof(::mruv::punishments::PunishRequest)},
+  { 102, -1, sizeof(::mruv::punishments::PunishResponse)},
+  { 107, -1, sizeof(::mruv::punishments::BanRequest)},
+  { 118, -1, sizeof(::mruv::punishments::BanResponse)},
+  { 124, -1, sizeof(::mruv::punishments::BlockRequest)},
+  { 132, -1, sizeof(::mruv::punishments::BlockResponse)},
+  { 138, -1, sizeof(::mruv::punishments::WarnRequest)},
+  { 148, -1, sizeof(::mruv::punishments::WarnResponse)},
+  { 154, -1, sizeof(::mruv::punishments::AdminJailRequest)},
+  { 163, -1, sizeof(::mruv::punishments::AdminJailResponse)},
+  { 168, -1, sizeof(::mruv::punishments::MuteGlobalChatsRequest)},
+  { 174, -1, sizeof(::mruv::punishments::MuteGlobalChatsResponse)},
+  { 179, -1, sizeof(::mruv::punishments::UnBanRequest)},
+  { 187, -1, sizeof(::mruv::punishments::UnBanResponse)},
+  { 192, -1, sizeof(::mruv::punishments::UnBlockRequest)},
+  { 200, -1, sizeof(::mruv::punishments::UnBlockResponse)},
+  { 205, -1, sizeof(::mruv::punishments::UnWarnRequest)},
+  { 213, -1, sizeof(::mruv::punishments::UnWarnResponse)},
+  { 218, -1, sizeof(::mruv::punishments::UnAdminJailRequest)},
+  { 226, -1, sizeof(::mruv::punishments::UnAdminJailResponse)},
+  { 231, -1, sizeof(::mruv::punishments::UnMuteGlobalChatsRequest)},
+  { 237, -1, sizeof(::mruv::punishments::UnMuteGlobalChatsResponse)},
+  { 242, -1, sizeof(::mruv::punishments::GetPlayerBansRequest)},
+  { 249, -1, sizeof(::mruv::punishments::GetPlayerBansResponse)},
+  { 255, -1, sizeof(::mruv::punishments::GetPlayerWarnsRequest)},
+  { 261, -1, sizeof(::mruv::punishments::GetPlayerWarnsResponse)},
+  { 267, -1, sizeof(::mruv::punishments::GetPlayerAdminJailRequest)},
+  { 273, -1, sizeof(::mruv::punishments::GetPlayerAdminJailResponse)},
+  { 282, -1, sizeof(::mruv::punishments::GetBanRequest)},
+  { 288, -1, sizeof(::mruv::punishments::GetWarnRequest)},
+  { 294, -1, sizeof(::mruv::punishments::GetBlockRequest)},
+  { 300, -1, sizeof(::mruv::punishments::IsPlayerBannedRequest)},
+  { 307, -1, sizeof(::mruv::punishments::IsPlayerBannedResponse)},
+  { 314, -1, sizeof(::mruv::punishments::IsCharacterBlockedRequest)},
+  { 320, -1, sizeof(::mruv::punishments::IsCharacterBlockedResponse)},
+  { 327, -1, sizeof(::mruv::punishments::IsCharacterJailedRequest)},
+  { 333, -1, sizeof(::mruv::punishments::IsCharacterJailedResponse)},
+  { 340, -1, sizeof(::mruv::punishments::WatchBansRequest)},
+  { 345, -1, sizeof(::mruv::punishments::WatchBlocksRequest)},
+  { 350, -1, sizeof(::mruv::punishments::WatchWarnsRequest)},
+  { 355, -1, sizeof(::mruv::punishments::WatchAdminJailsRequest)},
+  { 360, -1, sizeof(::mruv::punishments::WatchUnBansRequest)},
+  { 365, -1, sizeof(::mruv::punishments::WatchUnBlocksRequest)},
+  { 370, -1, sizeof(::mruv::punishments::WatchUnWarnsRequest)},
+  { 375, -1, sizeof(::mruv::punishments::WatchUnAdminJailsRequest)},
+  { 380, -1, sizeof(::mruv::punishments::WatchPlayerPunishmentsRequest)},
+  { 387, -1, sizeof(::mruv::punishments::WatchPlayerPunishmentsResponse)},
+  { 397, -1, sizeof(::mruv::punishments::WatchPlayerAcquittalsRequest)},
+  { 404, -1, sizeof(::mruv::punishments::WatchPlayerAcquittalsResponse)},
+  { 414, -1, sizeof(::mruv::punishments::WatchPunishmentsRequest)},
+  { 419, -1, sizeof(::mruv::punishments::WatchPunishmentsResponse)},
+  { 429, -1, sizeof(::mruv::punishments::WatchAcquittalsRequest)},
+  { 434, -1, sizeof(::mruv::punishments::WatchAcquittalsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_BanMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WarnMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_BlockMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_AdminJailMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnBanMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnBlockMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnWarnMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnAdminJailMessage_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_BanRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_BanResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_BlockRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_BlockResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WarnRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WarnResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_AdminJailRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_AdminJailResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_MuteGlobalChatsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_MuteGlobalChatsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnBanRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnBanResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnBlockRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnBlockResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnWarnRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnWarnResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnAdminJailRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnAdminJailResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnMuteGlobalChatsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_UnMuteGlobalChatsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetPlayerBansRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetPlayerBansResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetPlayerWarnsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetPlayerWarnsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetPlayerAdminJailRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetPlayerAdminJailResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetBanRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetWarnRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_GetBlockRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_IsPlayerBannedRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_IsPlayerBannedResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_IsCharacterBlockedRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_IsCharacterBlockedResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_IsCharacterJailedRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_IsCharacterJailedResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchBansRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchBlocksRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchWarnsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchAdminJailsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchUnBansRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchUnBlocksRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchUnWarnsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchUnAdminJailsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchPlayerAcquittalsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchPlayerAcquittalsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchPlayerPunishmentsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchPlayerPunishmentsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchPunishmentsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::economy::_WatchPunishmentsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_PunishmentMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_BanMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WarnMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_BlockMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_AdminJailMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnBanMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnBlockMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnWarnMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnAdminJailMessage_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_PunishRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_PunishResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_BanRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_BanResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_BlockRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_BlockResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WarnRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WarnResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_AdminJailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_AdminJailResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_MuteGlobalChatsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_MuteGlobalChatsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnBanRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnBanResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnBlockRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnBlockResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnWarnRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnWarnResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnAdminJailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnAdminJailResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnMuteGlobalChatsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_UnMuteGlobalChatsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetPlayerBansRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetPlayerBansResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetPlayerWarnsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetPlayerWarnsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetPlayerAdminJailRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetPlayerAdminJailResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetBanRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetWarnRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_GetBlockRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_IsPlayerBannedRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_IsPlayerBannedResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_IsCharacterBlockedRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_IsCharacterBlockedResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_IsCharacterJailedRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_IsCharacterJailedResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchBansRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchBlocksRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchWarnsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchAdminJailsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchUnBansRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchUnBlocksRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchUnWarnsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchUnAdminJailsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchPlayerPunishmentsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchPlayerPunishmentsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchPlayerAcquittalsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchPlayerAcquittalsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchPunishmentsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchPunishmentsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchAcquittalsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::punishments::_WatchAcquittalsResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_punishments_2fpunishments_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\035punishments/punishments.proto\022\014mruv.ec"
-  "onomy\032\034google/api/annotations.proto\"\276\001\n\n"
-  "BanMessage\022\016\n\006player\030\001 \001(\r\022\021\n\tcharacter\030"
-  "\002 \001(\r\022\n\n\002ip\030\003 \001(\t\022\027\n\017expiration_date\030\004 \001"
-  "(\003\022\016\n\006reason\030\005 \001(\t\022\r\n\005admin\030\006 \001(\r\022\020\n\010ban"
-  "_date\030\007 \001(\003\022\016\n\006active\030\010 \001(\010\022\022\n\nunban_dat"
-  "e\030\t \001(\003\022\023\n\013unban_admin\030\n \001(\r\"\266\001\n\013WarnMes"
-  "sage\022\016\n\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022"
-  "\027\n\017expiration_date\030\003 \001(\003\022\016\n\006reason\030\004 \001(\t"
-  "\022\r\n\005admin\030\005 \001(\r\022\021\n\twarn_date\030\006 \001(\003\022\016\n\006ac"
-  "tive\030\007 \001(\010\022\023\n\013unwarn_date\030\010 \001(\003\022\024\n\014unwar"
-  "n_admin\030\t \001(\r\"\241\001\n\014BlockMessage\022\016\n\006player"
+  "\n\035punishments/punishments.proto\022\020mruv.pu"
+  "nishments\032\034google/api/annotations.proto\""
+  "\214\001\n\021PunishmentMessage\022\016\n\006player\030\001 \001(\r\022\021\n"
+  "\tcharacter\030\002 \001(\r\022\027\n\017expiration_date\030\003 \001("
+  "\003\022\016\n\006reason\030\004 \001(\t\022\r\n\005admin\030\005 \001(\r\022\014\n\004date"
+  "\030\006 \001(\003\022\016\n\006active\030\007 \001(\010\"\276\001\n\nBanMessage\022\016\n"
+  "\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022\n\n\002ip\030\003"
+  " \001(\t\022\027\n\017expiration_date\030\004 \001(\003\022\016\n\006reason\030"
+  "\005 \001(\t\022\r\n\005admin\030\006 \001(\r\022\020\n\010ban_date\030\007 \001(\003\022\016"
+  "\n\006active\030\010 \001(\010\022\022\n\nunban_date\030\t \001(\003\022\023\n\013un"
+  "ban_admin\030\n \001(\r\"\266\001\n\013WarnMessage\022\016\n\006playe"
+  "r\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022\027\n\017expiration"
+  "_date\030\003 \001(\003\022\016\n\006reason\030\004 \001(\t\022\r\n\005admin\030\005 \001"
+  "(\r\022\021\n\twarn_date\030\006 \001(\003\022\016\n\006active\030\007 \001(\010\022\023\n"
+  "\013unwarn_date\030\010 \001(\003\022\024\n\014unwarn_admin\030\t \001(\r"
+  "\"\241\001\n\014BlockMessage\022\016\n\006player\030\001 \001(\r\022\021\n\tcha"
+  "racter\030\002 \001(\r\022\016\n\006reason\030\003 \001(\t\022\r\n\005admin\030\004 "
+  "\001(\r\022\022\n\nblock_date\030\005 \001(\003\022\016\n\006active\030\006 \001(\010\022"
+  "\024\n\014unblock_date\030\007 \001(\003\022\025\n\runblock_admin\030\010"
+  " \001(\r\"x\n\020AdminJailMessage\022\016\n\006player\030\001 \001(\r"
+  "\022\021\n\tcharacter\030\002 \001(\r\022\016\n\006reason\030\003 \001(\t\022\r\n\005a"
+  "dmin\030\004 \001(\r\022\017\n\007aj_date\030\005 \001(\003\022\021\n\tjail_time"
+  "\030\006 \001(\r\".\n\014UnBanMessage\022\016\n\006player\030\001 \001(\r\022\016"
+  "\n\006ban_id\030\002 \001(\r\"2\n\016UnBlockMessage\022\016\n\006play"
+  "er\030\001 \001(\r\022\020\n\010block_id\030\002 \001(\r\"0\n\rUnWarnMess"
+  "age\022\016\n\006player\030\001 \001(\r\022\017\n\007warn_id\030\002 \001(\r\"7\n\022"
+  "UnAdminJailMessage\022\016\n\006player\030\001 \001(\r\022\021\n\tch"
+  "aracter\030\002 \001(\r\"Q\n\rPunishRequest\022\016\n\006player"
   "\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022\016\n\006reason\030\003 \001("
-  "\t\022\r\n\005admin\030\004 \001(\r\022\022\n\nblock_date\030\005 \001(\003\022\016\n\006"
-  "active\030\006 \001(\010\022\024\n\014unblock_date\030\007 \001(\003\022\025\n\run"
-  "block_admin\030\010 \001(\r\"x\n\020AdminJailMessage\022\016\n"
-  "\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022\016\n\006reas"
-  "on\030\003 \001(\t\022\r\n\005admin\030\004 \001(\r\022\017\n\007aj_date\030\005 \001(\003"
-  "\022\021\n\tjail_time\030\006 \001(\r\".\n\014UnBanMessage\022\016\n\006p"
-  "layer\030\001 \001(\r\022\016\n\006ban_id\030\002 \001(\r\"2\n\016UnBlockMe"
-  "ssage\022\016\n\006player\030\001 \001(\r\022\020\n\010block_id\030\002 \001(\r\""
-  "0\n\rUnWarnMessage\022\016\n\006player\030\001 \001(\r\022\017\n\007warn"
-  "_id\030\002 \001(\r\"7\n\022UnAdminJailMessage\022\016\n\006playe"
-  "r\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\"h\n\nBanRequest"
-  "\022\016\n\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022\n\n\002i"
-  "p\030\003 \001(\t\022\014\n\004time\030\004 \001(\r\022\016\n\006reason\030\005 \001(\t\022\r\n"
-  "\005admin\030\006 \001(\r\"\035\n\013BanResponse\022\016\n\006ban_id\030\001 "
-  "\001(\r\"@\n\014BlockRequest\022\021\n\tcharacter\030\001 \001(\r\022\016"
-  "\n\006reason\030\002 \001(\t\022\r\n\005admin\030\003 \001(\r\"!\n\rBlockRe"
-  "sponse\022\020\n\010block_id\030\001 \001(\r\"]\n\013WarnRequest\022"
-  "\016\n\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 \001(\r\022\014\n\004ti"
-  "me\030\003 \001(\r\022\016\n\006reason\030\004 \001(\t\022\r\n\005admin\030\005 \001(\r\""
-  "\037\n\014WarnResponse\022\017\n\007warn_id\030\001 \001(\r\"R\n\020Admi"
-  "nJailRequest\022\021\n\tcharacter\030\001 \001(\r\022\014\n\004time\030"
-  "\002 \001(\r\022\016\n\006reason\030\003 \001(\t\022\r\n\005admin\030\004 \001(\r\"\023\n\021"
-  "AdminJailResponse\")\n\026MuteGlobalChatsRequ"
-  "est\022\017\n\007account\030\001 \001(\r\"\031\n\027MuteGlobalChatsR"
-  "esponse\".\n\014UnBanRequest\022\016\n\006ban_id\030\001 \001(\r\022"
-  "\016\n\006reason\030\002 \001(\t\"\017\n\rUnBanResponse\"2\n\016UnBl"
-  "ockRequest\022\020\n\010block_id\030\001 \001(\r\022\016\n\006reason\030\002"
-  " \001(\t\"\021\n\017UnBlockResponse\"0\n\rUnWarnRequest"
-  "\022\017\n\007warn_id\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\"\020\n\016UnW"
-  "arnResponse\"\'\n\022UnAdminJailRequest\022\021\n\tcha"
-  "racter\030\001 \001(\r\"\025\n\023UnAdminJailResponse\"+\n\030U"
-  "nMuteGlobalChatsRequest\022\017\n\007account\030\001 \001(\r"
-  "\"\033\n\031UnMuteGlobalChatsResponse\"2\n\024GetPlay"
-  "erBansRequest\022\016\n\006player\030\001 \001(\r\022\n\n\002ip\030\002 \001("
-  "\t\"\?\n\025GetPlayerBansResponse\022&\n\004bans\030\001 \003(\013"
-  "2\030.mruv.economy.BanMessage\"\'\n\025GetPlayerW"
-  "arnsRequest\022\016\n\006player\030\001 \001(\r\"B\n\026GetPlayer"
-  "WarnsResponse\022(\n\005warns\030\001 \003(\0132\031.mruv.econ"
-  "omy.WarnMessage\".\n\031GetPlayerAdminJailReq"
-  "uest\022\021\n\tcharacter\030\001 \001(\r\"\\\n\032GetPlayerAdmi"
-  "nJailResponse\022\021\n\tjail_time\030\001 \001(\r\022\016\n\006reas"
-  "on\030\002 \001(\t\022\r\n\005admin\030\003 \001(\r\022\014\n\004date\030\004 \001(\003\"\033\n"
-  "\rGetBanRequest\022\n\n\002id\030\001 \001(\r\"\034\n\016GetWarnReq"
-  "uest\022\n\n\002id\030\001 \001(\r\"\035\n\017GetBlockRequest\022\n\n\002i"
-  "d\030\001 \001(\r\"3\n\025IsPlayerBannedRequest\022\016\n\006play"
-  "er\030\001 \001(\r\022\n\n\002ip\030\002 \001(\t\"8\n\026IsPlayerBannedRe"
-  "sponse\022\016\n\006banned\030\001 \001(\010\022\016\n\006ban_id\030\002 \001(\r\"."
-  "\n\031IsCharacterBlockedRequest\022\021\n\tcharacter"
-  "\030\001 \001(\r\"\?\n\032IsCharacterBlockedResponse\022\017\n\007"
-  "blocked\030\001 \001(\010\022\020\n\010block_id\030\002 \001(\r\"-\n\030IsCha"
-  "racterJailedRequest\022\021\n\tcharacter\030\001 \001(\r\">"
-  "\n\031IsCharacterJailedResponse\022\016\n\006jailed\030\001 "
-  "\001(\010\022\021\n\tjail_time\030\002 \001(\r\"\022\n\020WatchBansReque"
-  "st\"\024\n\022WatchBlocksRequest\"\023\n\021WatchWarnsRe"
-  "quest\"\030\n\026WatchAdminJailsRequest\"\024\n\022Watch"
-  "UnBansRequest\"\026\n\024WatchUnBlocksRequest\"\025\n"
-  "\023WatchUnWarnsRequest\"\032\n\030WatchUnAdminJail"
-  "sRequest\"\036\n\034WatchPlayerAcquittalsRequest"
-  "\"\037\n\035WatchPlayerAcquittalsResponse\"\037\n\035Wat"
-  "chPlayerPunishmentsRequest\"c\n\036WatchPlaye"
-  "rPunishmentsResponse\022*\n\004type\030\001 \001(\0162\034.mru"
-  "v.economy.PunishmentType\022\025\n\rpunishment_i"
-  "d\030\002 \001(\r\"\031\n\027WatchPunishmentsRequest\"\200\001\n\030W"
-  "atchPunishmentsResponse\022*\n\004type\030\001 \001(\0162\034."
-  "mruv.economy.PunishmentType\022\025\n\rpunishmen"
-  "t_id\030\002 \001(\r\022\016\n\006player\030\003 \001(\r\022\021\n\tcharacter\030"
-  "\004 \001(\r*V\n\016PunishmentType\022\026\n\022UNKNOWN_PUNIS"
-  "HMENT\020\000\022\007\n\003BAN\020\001\022\t\n\005BLOCK\020\002\022\010\n\004WARN\020\003\022\016\n"
-  "\nADMIN_JAIL\020\004*]\n\016AcquittalsType\022\024\n\020UNKNO"
-  "WN_ACQUITAL\020\000\022\t\n\005UNBAN\020\001\022\013\n\007UNBLOCK\020\002\022\n\n"
-  "\006UNWARN\020\003\022\021\n\rUN_ADMIN_JAIL\020\0042\311\031\n\026MruVPun"
-  "ishmentsService\022`\n\003Ban\022\030.mruv.economy.Ba"
-  "nRequest\032\031.mruv.economy.BanResponse\"$\202\323\344"
-  "\223\002\036\"\034/v1/punishments/ban/{player}\022k\n\005Blo"
-  "ck\022\032.mruv.economy.BlockRequest\032\033.mruv.ec"
-  "onomy.BlockResponse\")\202\323\344\223\002#\"!/v1/punishm"
-  "ents/block/{character}\022d\n\004Warn\022\031.mruv.ec"
-  "onomy.WarnRequest\032\032.mruv.economy.WarnRes"
-  "ponse\"%\202\323\344\223\002\037\"\035/v1/punishments/warn/{pla"
-  "yer}\022t\n\tAdminJail\022\036.mruv.economy.AdminJa"
-  "ilRequest\032\037.mruv.economy.AdminJailRespon"
-  "se\"&\202\323\344\223\002 \"\036/v1/punishments/aj/{characte"
-  "r}\022\206\001\n\017MuteGlobalChats\022$.mruv.economy.Mu"
-  "teGlobalChatsRequest\032%.mruv.economy.Mute"
-  "GlobalChatsResponse\"&\202\323\344\223\002 \"\036/v1/punishm"
-  "ents/mute/{account}\022f\n\005UnBan\022\032.mruv.econ"
-  "omy.UnBanRequest\032\033.mruv.economy.UnBanRes"
-  "ponse\"$\202\323\344\223\002\036*\034/v1/punishments/ban/{ban_"
-  "id}\022q\n\007UnBlock\022\034.mruv.economy.UnBlockReq"
-  "uest\032\035.mruv.economy.UnBlockResponse\")\202\323\344"
-  "\223\002#*!/v1/punishments/blocks/{block_id}\022k"
-  "\n\006UnWarn\022\033.mruv.economy.UnWarnRequest\032\034."
-  "mruv.economy.UnWarnResponse\"&\202\323\344\223\002 *\036/v1"
-  "/punishments/warn/{warn_id}\022z\n\013UnAdminJa"
-  "il\022 .mruv.economy.UnAdminJailRequest\032!.m"
-  "ruv.economy.UnAdminJailResponse\"&\202\323\344\223\002 *"
-  "\036/v1/punishments/aj/{character}\022\214\001\n\021UnMu"
-  "teGlobalChats\022&.mruv.economy.UnMuteGloba"
-  "lChatsRequest\032\'.mruv.economy.UnMuteGloba"
-  "lChatsResponse\"&\202\323\344\223\002 *\036/v1/punishments/"
-  "mute/{account}\022\177\n\rGetPlayerBans\022\".mruv.e"
-  "conomy.GetPlayerBansRequest\032#.mruv.econo"
-  "my.GetPlayerBansResponse\"%\202\323\344\223\002\037\022\035/v1/pu"
-  "nishments/bans/{player}\022\203\001\n\016GetPlayerWar"
-  "ns\022#.mruv.economy.GetPlayerWarnsRequest\032"
-  "$.mruv.economy.GetPlayerWarnsResponse\"&\202"
-  "\323\344\223\002 \022\036/v1/punishments/warns/{player}\022\217\001"
-  "\n\022GetPlayerAdminJail\022\'.mruv.economy.GetP"
-  "layerAdminJailRequest\032(.mruv.economy.Get"
-  "PlayerAdminJailResponse\"&\202\323\344\223\002 \022\036/v1/pun"
-  "ishments/aj/{character}\022b\n\006GetBan\022\033.mruv"
-  ".economy.GetBanRequest\032\030.mruv.economy.Ba"
-  "nMessage\"!\202\323\344\223\002\033\022\031/v1/punishments/bans/{"
-  "id}\022f\n\007GetWarn\022\034.mruv.economy.GetWarnReq"
-  "uest\032\031.mruv.economy.WarnMessage\"\"\202\323\344\223\002\034\022"
-  "\032/v1/punishments/warns/{id}\022j\n\010GetBlock\022"
-  "\035.mruv.economy.GetBlockRequest\032\032.mruv.ec"
-  "onomy.BlockMessage\"#\202\323\344\223\002\035\022\033/v1/punishme"
-  "nts/blocks/{id}\022\207\001\n\016IsPlayerBanned\022#.mru"
-  "v.economy.IsPlayerBannedRequest\032$.mruv.e"
-  "conomy.IsPlayerBannedResponse\"*\202\323\344\223\002$\022\"/"
-  "v1/punishments/bans/{player}/{ip}\022i\n\022IsC"
-  "haracterBlocked\022\'.mruv.economy.IsCharact"
-  "erBlockedRequest\032(.mruv.economy.IsCharac"
-  "terBlockedResponse\"\000\022f\n\021IsCharacterJaile"
-  "d\022&.mruv.economy.IsCharacterJailedReques"
-  "t\032\'.mruv.economy.IsCharacterJailedRespon"
-  "se\"\000\022I\n\tWatchBans\022\036.mruv.economy.WatchBa"
-  "nsRequest\032\030.mruv.economy.BanMessage\"\0000\001\022"
-  "O\n\013WatchBlocks\022 .mruv.economy.WatchBlock"
-  "sRequest\032\032.mruv.economy.BlockMessage\"\0000\001"
-  "\022L\n\nWatchWarns\022\037.mruv.economy.WatchWarns"
-  "Request\032\031.mruv.economy.WarnMessage\"\0000\001\022["
-  "\n\017WatchAdminJails\022$.mruv.economy.WatchAd"
-  "minJailsRequest\032\036.mruv.economy.AdminJail"
-  "Message\"\0000\001\022O\n\013WatchUnBans\022 .mruv.econom"
-  "y.WatchUnBansRequest\032\032.mruv.economy.UnBa"
-  "nMessage\"\0000\001\022U\n\rWatchUnBlocks\022\".mruv.eco"
-  "nomy.WatchUnBlocksRequest\032\034.mruv.economy"
-  ".UnBlockMessage\"\0000\001\022R\n\014WatchUnWarns\022!.mr"
-  "uv.economy.WatchUnWarnsRequest\032\033.mruv.ec"
-  "onomy.UnWarnMessage\"\0000\001\022a\n\021WatchUnAdminJ"
-  "ails\022&.mruv.economy.WatchUnAdminJailsReq"
-  "uest\032 .mruv.economy.UnAdminJailMessage\"\000"
-  "0\001\022w\n\026WatchPlayerPunishments\022+.mruv.econ"
-  "omy.WatchPlayerPunishmentsRequest\032,.mruv"
-  ".economy.WatchPlayerPunishmentsResponse\""
-  "\0000\001\022t\n\025WatchPlayerAcquittals\022*.mruv.econ"
-  "omy.WatchPlayerAcquittalsRequest\032+.mruv."
-  "economy.WatchPlayerAcquittalsResponse\"\0000"
-  "\001\022e\n\020WatchPunishments\022%.mruv.economy.Wat"
-  "chPunishmentsRequest\032&.mruv.economy.Watc"
-  "hPunishmentsResponse\"\0000\001B+Z)github.com/M"
-  "ruV-RP/mruv-pb-go/punishmentsb\006proto3"
+  "\t\022\r\n\005admin\030\004 \001(\r\"\020\n\016PunishResponse\"h\n\nBa"
+  "nRequest\022\016\n\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 "
+  "\001(\r\022\n\n\002ip\030\003 \001(\t\022\014\n\004time\030\004 \001(\r\022\016\n\006reason\030"
+  "\005 \001(\t\022\r\n\005admin\030\006 \001(\r\"\035\n\013BanResponse\022\016\n\006b"
+  "an_id\030\001 \001(\r\"@\n\014BlockRequest\022\021\n\tcharacter"
+  "\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\022\r\n\005admin\030\003 \001(\r\"!\n"
+  "\rBlockResponse\022\020\n\010block_id\030\001 \001(\r\"]\n\013Warn"
+  "Request\022\016\n\006player\030\001 \001(\r\022\021\n\tcharacter\030\002 \001"
+  "(\r\022\014\n\004time\030\003 \001(\r\022\016\n\006reason\030\004 \001(\t\022\r\n\005admi"
+  "n\030\005 \001(\r\"\037\n\014WarnResponse\022\017\n\007warn_id\030\001 \001(\r"
+  "\"R\n\020AdminJailRequest\022\021\n\tcharacter\030\001 \001(\r\022"
+  "\014\n\004time\030\002 \001(\r\022\016\n\006reason\030\003 \001(\t\022\r\n\005admin\030\004"
+  " \001(\r\"\023\n\021AdminJailResponse\")\n\026MuteGlobalC"
+  "hatsRequest\022\017\n\007account\030\001 \001(\r\"\031\n\027MuteGlob"
+  "alChatsResponse\"@\n\014UnBanRequest\022\016\n\006ban_i"
+  "d\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\022\020\n\010admin_id\030\003 \001("
+  "\r\"\017\n\rUnBanResponse\"D\n\016UnBlockRequest\022\020\n\010"
+  "block_id\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\022\020\n\010admin_"
+  "id\030\003 \001(\r\"\021\n\017UnBlockResponse\"B\n\rUnWarnReq"
+  "uest\022\017\n\007warn_id\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\022\020\n"
+  "\010admin_id\030\003 \001(\r\"\020\n\016UnWarnResponse\"I\n\022UnA"
+  "dminJailRequest\022\021\n\tcharacter\030\001 \001(\r\022\016\n\006re"
+  "ason\030\002 \001(\t\022\020\n\010admin_id\030\003 \001(\r\"\025\n\023UnAdminJ"
+  "ailResponse\"+\n\030UnMuteGlobalChatsRequest\022"
+  "\017\n\007account\030\001 \001(\r\"\033\n\031UnMuteGlobalChatsRes"
+  "ponse\"2\n\024GetPlayerBansRequest\022\016\n\006player\030"
+  "\001 \001(\r\022\n\n\002ip\030\002 \001(\t\"C\n\025GetPlayerBansRespon"
+  "se\022*\n\004bans\030\001 \003(\0132\034.mruv.punishments.BanM"
+  "essage\"\'\n\025GetPlayerWarnsRequest\022\016\n\006playe"
+  "r\030\001 \001(\r\"F\n\026GetPlayerWarnsResponse\022,\n\005war"
+  "ns\030\001 \003(\0132\035.mruv.punishments.WarnMessage\""
+  ".\n\031GetPlayerAdminJailRequest\022\021\n\tcharacte"
+  "r\030\001 \001(\r\"\\\n\032GetPlayerAdminJailResponse\022\021\n"
+  "\tjail_time\030\001 \001(\r\022\016\n\006reason\030\002 \001(\t\022\r\n\005admi"
+  "n\030\003 \001(\r\022\014\n\004date\030\004 \001(\003\"\033\n\rGetBanRequest\022\n"
+  "\n\002id\030\001 \001(\r\"\034\n\016GetWarnRequest\022\n\n\002id\030\001 \001(\r"
+  "\"\035\n\017GetBlockRequest\022\n\n\002id\030\001 \001(\r\"3\n\025IsPla"
+  "yerBannedRequest\022\016\n\006player\030\001 \001(\r\022\n\n\002ip\030\002"
+  " \001(\t\"8\n\026IsPlayerBannedResponse\022\016\n\006banned"
+  "\030\001 \001(\010\022\016\n\006ban_id\030\002 \001(\r\".\n\031IsCharacterBlo"
+  "ckedRequest\022\021\n\tcharacter\030\001 \001(\r\"\?\n\032IsChar"
+  "acterBlockedResponse\022\017\n\007blocked\030\001 \001(\010\022\020\n"
+  "\010block_id\030\002 \001(\r\"-\n\030IsCharacterJailedRequ"
+  "est\022\021\n\tcharacter\030\001 \001(\r\">\n\031IsCharacterJai"
+  "ledResponse\022\016\n\006jailed\030\001 \001(\010\022\021\n\tjail_time"
+  "\030\002 \001(\r\"\022\n\020WatchBansRequest\"\024\n\022WatchBlock"
+  "sRequest\"\023\n\021WatchWarnsRequest\"\030\n\026WatchAd"
+  "minJailsRequest\"\024\n\022WatchUnBansRequest\"\026\n"
+  "\024WatchUnBlocksRequest\"\025\n\023WatchUnWarnsReq"
+  "uest\"\032\n\030WatchUnAdminJailsRequest\"I\n\035Watc"
+  "hPlayerPunishmentsRequest\022\022\n\naccount_id\030"
+  "\001 \001(\r\022\024\n\014character_id\030\002 \001(\r\"\355\001\n\036WatchPla"
+  "yerPunishmentsResponse\022+\n\003ban\030\001 \001(\0132\034.mr"
+  "uv.punishments.BanMessageH\000\022/\n\005block\030\002 \001"
+  "(\0132\036.mruv.punishments.BlockMessageH\000\022-\n\004"
+  "warn\030\003 \001(\0132\035.mruv.punishments.WarnMessag"
+  "eH\000\0220\n\002aj\030\004 \001(\0132\".mruv.punishments.Admin"
+  "JailMessageH\000B\014\n\npunishment\"H\n\034WatchPlay"
+  "erAcquittalsRequest\022\022\n\naccount_id\030\001 \001(\r\022"
+  "\024\n\014character_id\030\002 \001(\r\"\373\001\n\035WatchPlayerAcq"
+  "uittalsResponse\022/\n\005unban\030\001 \001(\0132\036.mruv.pu"
+  "nishments.UnBanMessageH\000\0223\n\007unblock\030\002 \001("
+  "\0132 .mruv.punishments.UnBlockMessageH\000\0221\n"
+  "\006unwarn\030\003 \001(\0132\037.mruv.punishments.UnWarnM"
+  "essageH\000\0224\n\004unaj\030\004 \001(\0132$.mruv.punishment"
+  "s.UnAdminJailMessageH\000B\013\n\tacquittal\"\031\n\027W"
+  "atchPunishmentsRequest\"\347\001\n\030WatchPunishme"
+  "ntsResponse\022+\n\003ban\030\001 \001(\0132\034.mruv.punishme"
+  "nts.BanMessageH\000\022/\n\005block\030\002 \001(\0132\036.mruv.p"
+  "unishments.BlockMessageH\000\022-\n\004warn\030\003 \001(\0132"
+  "\035.mruv.punishments.WarnMessageH\000\0220\n\002aj\030\004"
+  " \001(\0132\".mruv.punishments.AdminJailMessage"
+  "H\000B\014\n\npunishment\"\030\n\026WatchAcquittalsReque"
+  "st\"\365\001\n\027WatchAcquittalsResponse\022/\n\005unban\030"
+  "\001 \001(\0132\036.mruv.punishments.UnBanMessageH\000\022"
+  "3\n\007unblock\030\002 \001(\0132 .mruv.punishments.UnBl"
+  "ockMessageH\000\0221\n\006unwarn\030\003 \001(\0132\037.mruv.puni"
+  "shments.UnWarnMessageH\000\0224\n\004unaj\030\004 \001(\0132$."
+  "mruv.punishments.UnAdminJailMessageH\000B\013\n"
+  "\tacquittal2\224\035\n\026MruVPunishmentsService\022m\n"
+  "\006Punish\022\037.mruv.punishments.PunishRequest"
+  "\032 .mruv.punishments.PunishResponse\" \202\323\344\223"
+  "\002\032\"\030/v1/punishments/{player}\022h\n\003Ban\022\034.mr"
+  "uv.punishments.BanRequest\032\035.mruv.punishm"
+  "ents.BanResponse\"$\202\323\344\223\002\036\"\034/v1/punishment"
+  "s/ban/{player}\022s\n\005Block\022\036.mruv.punishmen"
+  "ts.BlockRequest\032\037.mruv.punishments.Block"
+  "Response\")\202\323\344\223\002#\"!/v1/punishments/block/"
+  "{character}\022l\n\004Warn\022\035.mruv.punishments.W"
+  "arnRequest\032\036.mruv.punishments.WarnRespon"
+  "se\"%\202\323\344\223\002\037\"\035/v1/punishments/warn/{player"
+  "}\022|\n\tAdminJail\022\".mruv.punishments.AdminJ"
+  "ailRequest\032#.mruv.punishments.AdminJailR"
+  "esponse\"&\202\323\344\223\002 \"\036/v1/punishments/aj/{cha"
+  "racter}\022\216\001\n\017MuteGlobalChats\022(.mruv.punis"
+  "hments.MuteGlobalChatsRequest\032).mruv.pun"
+  "ishments.MuteGlobalChatsResponse\"&\202\323\344\223\002 "
+  "\"\036/v1/punishments/mute/{account}\022n\n\005UnBa"
+  "n\022\036.mruv.punishments.UnBanRequest\032\037.mruv"
+  ".punishments.UnBanResponse\"$\202\323\344\223\002\036*\034/v1/"
+  "punishments/ban/{ban_id}\022y\n\007UnBlock\022 .mr"
+  "uv.punishments.UnBlockRequest\032!.mruv.pun"
+  "ishments.UnBlockResponse\")\202\323\344\223\002#*!/v1/pu"
+  "nishments/blocks/{block_id}\022s\n\006UnWarn\022\037."
+  "mruv.punishments.UnWarnRequest\032 .mruv.pu"
+  "nishments.UnWarnResponse\"&\202\323\344\223\002 *\036/v1/pu"
+  "nishments/warn/{warn_id}\022\202\001\n\013UnAdminJail"
+  "\022$.mruv.punishments.UnAdminJailRequest\032%"
+  ".mruv.punishments.UnAdminJailResponse\"&\202"
+  "\323\344\223\002 *\036/v1/punishments/aj/{character}\022\224\001"
+  "\n\021UnMuteGlobalChats\022*.mruv.punishments.U"
+  "nMuteGlobalChatsRequest\032+.mruv.punishmen"
+  "ts.UnMuteGlobalChatsResponse\"&\202\323\344\223\002 *\036/v"
+  "1/punishments/mute/{account}\022\207\001\n\rGetPlay"
+  "erBans\022&.mruv.punishments.GetPlayerBansR"
+  "equest\032\'.mruv.punishments.GetPlayerBansR"
+  "esponse\"%\202\323\344\223\002\037\022\035/v1/punishments/bans/{p"
+  "layer}\022\213\001\n\016GetPlayerWarns\022\'.mruv.punishm"
+  "ents.GetPlayerWarnsRequest\032(.mruv.punish"
+  "ments.GetPlayerWarnsResponse\"&\202\323\344\223\002 \022\036/v"
+  "1/punishments/warns/{player}\022\227\001\n\022GetPlay"
+  "erAdminJail\022+.mruv.punishments.GetPlayer"
+  "AdminJailRequest\032,.mruv.punishments.GetP"
+  "layerAdminJailResponse\"&\202\323\344\223\002 \022\036/v1/puni"
+  "shments/aj/{character}\022j\n\006GetBan\022\037.mruv."
+  "punishments.GetBanRequest\032\034.mruv.punishm"
+  "ents.BanMessage\"!\202\323\344\223\002\033\022\031/v1/punishments"
+  "/bans/{id}\022n\n\007GetWarn\022 .mruv.punishments"
+  ".GetWarnRequest\032\035.mruv.punishments.WarnM"
+  "essage\"\"\202\323\344\223\002\034\022\032/v1/punishments/warns/{i"
+  "d}\022r\n\010GetBlock\022!.mruv.punishments.GetBlo"
+  "ckRequest\032\036.mruv.punishments.BlockMessag"
+  "e\"#\202\323\344\223\002\035\022\033/v1/punishments/blocks/{id}\022\217"
+  "\001\n\016IsPlayerBanned\022\'.mruv.punishments.IsP"
+  "layerBannedRequest\032(.mruv.punishments.Is"
+  "PlayerBannedResponse\"*\202\323\344\223\002$\022\"/v1/punish"
+  "ments/bans/{player}/{ip}\022q\n\022IsCharacterB"
+  "locked\022+.mruv.punishments.IsCharacterBlo"
+  "ckedRequest\032,.mruv.punishments.IsCharact"
+  "erBlockedResponse\"\000\022n\n\021IsCharacterJailed"
+  "\022*.mruv.punishments.IsCharacterJailedReq"
+  "uest\032+.mruv.punishments.IsCharacterJaile"
+  "dResponse\"\000\022Q\n\tWatchBans\022\".mruv.punishme"
+  "nts.WatchBansRequest\032\034.mruv.punishments."
+  "BanMessage\"\0000\001\022W\n\013WatchBlocks\022$.mruv.pun"
+  "ishments.WatchBlocksRequest\032\036.mruv.punis"
+  "hments.BlockMessage\"\0000\001\022T\n\nWatchWarns\022#."
+  "mruv.punishments.WatchWarnsRequest\032\035.mru"
+  "v.punishments.WarnMessage\"\0000\001\022c\n\017WatchAd"
+  "minJails\022(.mruv.punishments.WatchAdminJa"
+  "ilsRequest\032\".mruv.punishments.AdminJailM"
+  "essage\"\0000\001\022W\n\013WatchUnBans\022$.mruv.punishm"
+  "ents.WatchUnBansRequest\032\036.mruv.punishmen"
+  "ts.UnBanMessage\"\0000\001\022]\n\rWatchUnBlocks\022&.m"
+  "ruv.punishments.WatchUnBlocksRequest\032 .m"
+  "ruv.punishments.UnBlockMessage\"\0000\001\022Z\n\014Wa"
+  "tchUnWarns\022%.mruv.punishments.WatchUnWar"
+  "nsRequest\032\037.mruv.punishments.UnWarnMessa"
+  "ge\"\0000\001\022i\n\021WatchUnAdminJails\022*.mruv.punis"
+  "hments.WatchUnAdminJailsRequest\032$.mruv.p"
+  "unishments.UnAdminJailMessage\"\0000\001\022\177\n\026Wat"
+  "chPlayerPunishments\022/.mruv.punishments.W"
+  "atchPlayerPunishmentsRequest\0320.mruv.puni"
+  "shments.WatchPlayerPunishmentsResponse\"\000"
+  "0\001\022|\n\025WatchPlayerAcquittals\022..mruv.punis"
+  "hments.WatchPlayerAcquittalsRequest\032/.mr"
+  "uv.punishments.WatchPlayerAcquittalsResp"
+  "onse\"\0000\001\022m\n\020WatchPunishments\022).mruv.puni"
+  "shments.WatchPunishmentsRequest\032*.mruv.p"
+  "unishments.WatchPunishmentsResponse\"\0000\001\022"
+  "h\n\017WatchAcquittals\022(.mruv.punishments.Wa"
+  "tchAcquittalsRequest\032).mruv.punishments."
+  "WatchAcquittalsResponse\"\000B+Z)github.com/"
+  "MruV-RP/mruv-pb-go/punishmentsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_punishments_2fpunishments_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_punishments_2fpunishments_2eproto_sccs[57] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_punishments_2fpunishments_2eproto_sccs[62] = {
   &scc_info_AdminJailMessage_punishments_2fpunishments_2eproto.base,
   &scc_info_AdminJailRequest_punishments_2fpunishments_2eproto.base,
   &scc_info_AdminJailResponse_punishments_2fpunishments_2eproto.base,
@@ -1758,6 +1991,9 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pun
   &scc_info_IsPlayerBannedResponse_punishments_2fpunishments_2eproto.base,
   &scc_info_MuteGlobalChatsRequest_punishments_2fpunishments_2eproto.base,
   &scc_info_MuteGlobalChatsResponse_punishments_2fpunishments_2eproto.base,
+  &scc_info_PunishRequest_punishments_2fpunishments_2eproto.base,
+  &scc_info_PunishResponse_punishments_2fpunishments_2eproto.base,
+  &scc_info_PunishmentMessage_punishments_2fpunishments_2eproto.base,
   &scc_info_UnAdminJailMessage_punishments_2fpunishments_2eproto.base,
   &scc_info_UnAdminJailRequest_punishments_2fpunishments_2eproto.base,
   &scc_info_UnAdminJailResponse_punishments_2fpunishments_2eproto.base,
@@ -1775,6 +2011,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pun
   &scc_info_WarnMessage_punishments_2fpunishments_2eproto.base,
   &scc_info_WarnRequest_punishments_2fpunishments_2eproto.base,
   &scc_info_WarnResponse_punishments_2fpunishments_2eproto.base,
+  &scc_info_WatchAcquittalsRequest_punishments_2fpunishments_2eproto.base,
+  &scc_info_WatchAcquittalsResponse_punishments_2fpunishments_2eproto.base,
   &scc_info_WatchAdminJailsRequest_punishments_2fpunishments_2eproto.base,
   &scc_info_WatchBansRequest_punishments_2fpunishments_2eproto.base,
   &scc_info_WatchBlocksRequest_punishments_2fpunishments_2eproto.base,
@@ -1793,48 +2031,364 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pun
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_punishments_2fpunishments_2eproto_once;
 static bool descriptor_table_punishments_2fpunishments_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_punishments_2fpunishments_2eproto = {
-  &descriptor_table_punishments_2fpunishments_2eproto_initialized, descriptor_table_protodef_punishments_2fpunishments_2eproto, "punishments/punishments.proto", 6677,
-  &descriptor_table_punishments_2fpunishments_2eproto_once, descriptor_table_punishments_2fpunishments_2eproto_sccs, descriptor_table_punishments_2fpunishments_2eproto_deps, 57, 1,
+  &descriptor_table_punishments_2fpunishments_2eproto_initialized, descriptor_table_protodef_punishments_2fpunishments_2eproto, "punishments/punishments.proto", 8118,
+  &descriptor_table_punishments_2fpunishments_2eproto_once, descriptor_table_punishments_2fpunishments_2eproto_sccs, descriptor_table_punishments_2fpunishments_2eproto_deps, 62, 1,
   schemas, file_default_instances, TableStruct_punishments_2fpunishments_2eproto::offsets,
-  file_level_metadata_punishments_2fpunishments_2eproto, 57, file_level_enum_descriptors_punishments_2fpunishments_2eproto, file_level_service_descriptors_punishments_2fpunishments_2eproto,
+  file_level_metadata_punishments_2fpunishments_2eproto, 62, file_level_enum_descriptors_punishments_2fpunishments_2eproto, file_level_service_descriptors_punishments_2fpunishments_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_punishments_2fpunishments_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_punishments_2fpunishments_2eproto), true);
 namespace mruv {
-namespace economy {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PunishmentType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_punishments_2fpunishments_2eproto);
-  return file_level_enum_descriptors_punishments_2fpunishments_2eproto[0];
+namespace punishments {
+
+// ===================================================================
+
+void PunishmentMessage::InitAsDefaultInstance() {
 }
-bool PunishmentType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-      return true;
-    default:
-      return false;
+class PunishmentMessage::_Internal {
+ public:
+};
+
+PunishmentMessage::PunishmentMessage()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.PunishmentMessage)
+}
+PunishmentMessage::PunishmentMessage(const PunishmentMessage& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reason().empty()) {
+    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+  }
+  ::memcpy(&player_, &from.player_,
+    static_cast<size_t>(reinterpret_cast<char*>(&active_) -
+    reinterpret_cast<char*>(&player_)) + sizeof(active_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.PunishmentMessage)
+}
+
+void PunishmentMessage::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PunishmentMessage_punishments_2fpunishments_2eproto.base);
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&player_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&active_) -
+      reinterpret_cast<char*>(&player_)) + sizeof(active_));
+}
+
+PunishmentMessage::~PunishmentMessage() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.PunishmentMessage)
+  SharedDtor();
+}
+
+void PunishmentMessage::SharedDtor() {
+  reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void PunishmentMessage::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PunishmentMessage& PunishmentMessage::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PunishmentMessage_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PunishmentMessage::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.PunishmentMessage)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&player_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&active_) -
+      reinterpret_cast<char*>(&player_)) + sizeof(active_));
+  _internal_metadata_.Clear();
+}
+
+const char* PunishmentMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 player = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          player_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 character = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          character_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 expiration_date = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          expiration_date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string reason = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_reason();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.PunishmentMessage.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 admin = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          admin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int64 date = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          date_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool active = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PunishmentMessage::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.PunishmentMessage)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 player = 1;
+  if (this->player() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_player(), target);
+  }
+
+  // uint32 character = 2;
+  if (this->character() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_character(), target);
+  }
+
+  // int64 expiration_date = 3;
+  if (this->expiration_date() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_expiration_date(), target);
+  }
+
+  // string reason = 4;
+  if (this->reason().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.punishments.PunishmentMessage.reason");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_reason(), target);
+  }
+
+  // uint32 admin = 5;
+  if (this->admin() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_admin(), target);
+  }
+
+  // int64 date = 6;
+  if (this->date() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(6, this->_internal_date(), target);
+  }
+
+  // bool active = 7;
+  if (this->active() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_active(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.PunishmentMessage)
+  return target;
+}
+
+size_t PunishmentMessage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.PunishmentMessage)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason = 4;
+  if (this->reason().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason());
+  }
+
+  // uint32 player = 1;
+  if (this->player() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_player());
+  }
+
+  // uint32 character = 2;
+  if (this->character() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_character());
+  }
+
+  // int64 expiration_date = 3;
+  if (this->expiration_date() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_expiration_date());
+  }
+
+  // int64 date = 6;
+  if (this->date() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+        this->_internal_date());
+  }
+
+  // uint32 admin = 5;
+  if (this->admin() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_admin());
+  }
+
+  // bool active = 7;
+  if (this->active() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PunishmentMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.PunishmentMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PunishmentMessage* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PunishmentMessage>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.PunishmentMessage)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.PunishmentMessage)
+    MergeFrom(*source);
   }
 }
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AcquittalsType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_punishments_2fpunishments_2eproto);
-  return file_level_enum_descriptors_punishments_2fpunishments_2eproto[1];
-}
-bool AcquittalsType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-      return true;
-    default:
-      return false;
+void PunishmentMessage::MergeFrom(const PunishmentMessage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.PunishmentMessage)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason().size() > 0) {
+
+    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
   }
+  if (from.player() != 0) {
+    _internal_set_player(from._internal_player());
+  }
+  if (from.character() != 0) {
+    _internal_set_character(from._internal_character());
+  }
+  if (from.expiration_date() != 0) {
+    _internal_set_expiration_date(from._internal_expiration_date());
+  }
+  if (from.date() != 0) {
+    _internal_set_date(from._internal_date());
+  }
+  if (from.admin() != 0) {
+    _internal_set_admin(from._internal_admin());
+  }
+  if (from.active() != 0) {
+    _internal_set_active(from._internal_active());
+  }
+}
+
+void PunishmentMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.PunishmentMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PunishmentMessage::CopyFrom(const PunishmentMessage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.PunishmentMessage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PunishmentMessage::IsInitialized() const {
+  return true;
+}
+
+void PunishmentMessage::InternalSwap(PunishmentMessage* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(player_, other->player_);
+  swap(character_, other->character_);
+  swap(expiration_date_, other->expiration_date_);
+  swap(date_, other->date_);
+  swap(admin_, other->admin_);
+  swap(active_, other->active_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PunishmentMessage::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -1849,7 +2403,7 @@ class BanMessage::_Internal {
 BanMessage::BanMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.BanMessage)
 }
 BanMessage::BanMessage(const BanMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -1866,7 +2420,7 @@ BanMessage::BanMessage(const BanMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&unban_admin_) -
     reinterpret_cast<char*>(&player_)) + sizeof(unban_admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.BanMessage)
 }
 
 void BanMessage::SharedCtor() {
@@ -1879,7 +2433,7 @@ void BanMessage::SharedCtor() {
 }
 
 BanMessage::~BanMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.BanMessage)
   SharedDtor();
 }
 
@@ -1898,7 +2452,7 @@ const BanMessage& BanMessage::default_instance() {
 
 
 void BanMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.BanMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.BanMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1937,7 +2491,7 @@ const char* BanMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_ip();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.BanMessage.ip"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.BanMessage.ip"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1953,7 +2507,7 @@ const char* BanMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.BanMessage.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.BanMessage.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2014,7 +2568,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BanMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.BanMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2035,7 +2589,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ip().data(), static_cast<int>(this->_internal_ip().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.BanMessage.ip");
+      "mruv.punishments.BanMessage.ip");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_ip(), target);
   }
@@ -2051,7 +2605,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.BanMessage.reason");
+      "mruv.punishments.BanMessage.reason");
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_reason(), target);
   }
@@ -2090,12 +2644,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.BanMessage)
   return target;
 }
 
 size_t BanMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.BanMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.BanMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2180,22 +2734,22 @@ size_t BanMessage::ByteSizeLong() const {
 }
 
 void BanMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.BanMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.BanMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const BanMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BanMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.BanMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.BanMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.BanMessage)
     MergeFrom(*source);
   }
 }
 
 void BanMessage::MergeFrom(const BanMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.BanMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.BanMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2236,14 +2790,14 @@ void BanMessage::MergeFrom(const BanMessage& from) {
 }
 
 void BanMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.BanMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.BanMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BanMessage::CopyFrom(const BanMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.BanMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.BanMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2286,7 +2840,7 @@ class WarnMessage::_Internal {
 WarnMessage::WarnMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WarnMessage)
 }
 WarnMessage::WarnMessage(const WarnMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2299,7 +2853,7 @@ WarnMessage::WarnMessage(const WarnMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&unwarn_admin_) -
     reinterpret_cast<char*>(&player_)) + sizeof(unwarn_admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WarnMessage)
 }
 
 void WarnMessage::SharedCtor() {
@@ -2311,7 +2865,7 @@ void WarnMessage::SharedCtor() {
 }
 
 WarnMessage::~WarnMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WarnMessage)
   SharedDtor();
 }
 
@@ -2329,7 +2883,7 @@ const WarnMessage& WarnMessage::default_instance() {
 
 
 void WarnMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WarnMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WarnMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2374,7 +2928,7 @@ const char* WarnMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.WarnMessage.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.WarnMessage.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2435,7 +2989,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WarnMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WarnMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2462,7 +3016,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.WarnMessage.reason");
+      "mruv.punishments.WarnMessage.reason");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_reason(), target);
   }
@@ -2501,12 +3055,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WarnMessage)
   return target;
 }
 
 size_t WarnMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WarnMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WarnMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2584,22 +3138,22 @@ size_t WarnMessage::ByteSizeLong() const {
 }
 
 void WarnMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WarnMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WarnMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const WarnMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WarnMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WarnMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WarnMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WarnMessage)
     MergeFrom(*source);
   }
 }
 
 void WarnMessage::MergeFrom(const WarnMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WarnMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WarnMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2636,14 +3190,14 @@ void WarnMessage::MergeFrom(const WarnMessage& from) {
 }
 
 void WarnMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WarnMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WarnMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WarnMessage::CopyFrom(const WarnMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WarnMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WarnMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2684,7 +3238,7 @@ class BlockMessage::_Internal {
 BlockMessage::BlockMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.BlockMessage)
 }
 BlockMessage::BlockMessage(const BlockMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -2697,7 +3251,7 @@ BlockMessage::BlockMessage(const BlockMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&unblock_admin_) -
     reinterpret_cast<char*>(&player_)) + sizeof(unblock_admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.BlockMessage)
 }
 
 void BlockMessage::SharedCtor() {
@@ -2709,7 +3263,7 @@ void BlockMessage::SharedCtor() {
 }
 
 BlockMessage::~BlockMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.BlockMessage)
   SharedDtor();
 }
 
@@ -2727,7 +3281,7 @@ const BlockMessage& BlockMessage::default_instance() {
 
 
 void BlockMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.BlockMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.BlockMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2765,7 +3319,7 @@ const char* BlockMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.BlockMessage.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.BlockMessage.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2826,7 +3380,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BlockMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.BlockMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2847,7 +3401,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.BlockMessage.reason");
+      "mruv.punishments.BlockMessage.reason");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_reason(), target);
   }
@@ -2886,12 +3440,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.BlockMessage)
   return target;
 }
 
 size_t BlockMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.BlockMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.BlockMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2962,22 +3516,22 @@ size_t BlockMessage::ByteSizeLong() const {
 }
 
 void BlockMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.BlockMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.BlockMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const BlockMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BlockMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.BlockMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.BlockMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.BlockMessage)
     MergeFrom(*source);
   }
 }
 
 void BlockMessage::MergeFrom(const BlockMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.BlockMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.BlockMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3011,14 +3565,14 @@ void BlockMessage::MergeFrom(const BlockMessage& from) {
 }
 
 void BlockMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.BlockMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.BlockMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BlockMessage::CopyFrom(const BlockMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.BlockMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.BlockMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3058,7 +3612,7 @@ class AdminJailMessage::_Internal {
 AdminJailMessage::AdminJailMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.AdminJailMessage)
 }
 AdminJailMessage::AdminJailMessage(const AdminJailMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3071,7 +3625,7 @@ AdminJailMessage::AdminJailMessage(const AdminJailMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&jail_time_) -
     reinterpret_cast<char*>(&player_)) + sizeof(jail_time_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.AdminJailMessage)
 }
 
 void AdminJailMessage::SharedCtor() {
@@ -3083,7 +3637,7 @@ void AdminJailMessage::SharedCtor() {
 }
 
 AdminJailMessage::~AdminJailMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.AdminJailMessage)
   SharedDtor();
 }
 
@@ -3101,7 +3655,7 @@ const AdminJailMessage& AdminJailMessage::default_instance() {
 
 
 void AdminJailMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.AdminJailMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.AdminJailMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3139,7 +3693,7 @@ const char* AdminJailMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.AdminJailMessage.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.AdminJailMessage.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3186,7 +3740,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* AdminJailMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.AdminJailMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3207,7 +3761,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.AdminJailMessage.reason");
+      "mruv.punishments.AdminJailMessage.reason");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_reason(), target);
   }
@@ -3234,12 +3788,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.AdminJailMessage)
   return target;
 }
 
 size_t AdminJailMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.AdminJailMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.AdminJailMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3298,22 +3852,22 @@ size_t AdminJailMessage::ByteSizeLong() const {
 }
 
 void AdminJailMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.AdminJailMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.AdminJailMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const AdminJailMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AdminJailMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.AdminJailMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.AdminJailMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.AdminJailMessage)
     MergeFrom(*source);
   }
 }
 
 void AdminJailMessage::MergeFrom(const AdminJailMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.AdminJailMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.AdminJailMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3341,14 +3895,14 @@ void AdminJailMessage::MergeFrom(const AdminJailMessage& from) {
 }
 
 void AdminJailMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.AdminJailMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.AdminJailMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AdminJailMessage::CopyFrom(const AdminJailMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.AdminJailMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.AdminJailMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3386,7 +3940,7 @@ class UnBanMessage::_Internal {
 UnBanMessage::UnBanMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnBanMessage)
 }
 UnBanMessage::UnBanMessage(const UnBanMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3395,7 +3949,7 @@ UnBanMessage::UnBanMessage(const UnBanMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&ban_id_) -
     reinterpret_cast<char*>(&player_)) + sizeof(ban_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnBanMessage)
 }
 
 void UnBanMessage::SharedCtor() {
@@ -3405,7 +3959,7 @@ void UnBanMessage::SharedCtor() {
 }
 
 UnBanMessage::~UnBanMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnBanMessage)
   SharedDtor();
 }
 
@@ -3422,7 +3976,7 @@ const UnBanMessage& UnBanMessage::default_instance() {
 
 
 void UnBanMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnBanMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnBanMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3476,7 +4030,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnBanMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnBanMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3496,12 +4050,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnBanMessage)
   return target;
 }
 
 size_t UnBanMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnBanMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnBanMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3532,22 +4086,22 @@ size_t UnBanMessage::ByteSizeLong() const {
 }
 
 void UnBanMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnBanMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnBanMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const UnBanMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnBanMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnBanMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnBanMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnBanMessage)
     MergeFrom(*source);
   }
 }
 
 void UnBanMessage::MergeFrom(const UnBanMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnBanMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnBanMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3562,14 +4116,14 @@ void UnBanMessage::MergeFrom(const UnBanMessage& from) {
 }
 
 void UnBanMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnBanMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnBanMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnBanMessage::CopyFrom(const UnBanMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnBanMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnBanMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3602,7 +4156,7 @@ class UnBlockMessage::_Internal {
 UnBlockMessage::UnBlockMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnBlockMessage)
 }
 UnBlockMessage::UnBlockMessage(const UnBlockMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3611,7 +4165,7 @@ UnBlockMessage::UnBlockMessage(const UnBlockMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&block_id_) -
     reinterpret_cast<char*>(&player_)) + sizeof(block_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnBlockMessage)
 }
 
 void UnBlockMessage::SharedCtor() {
@@ -3621,7 +4175,7 @@ void UnBlockMessage::SharedCtor() {
 }
 
 UnBlockMessage::~UnBlockMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnBlockMessage)
   SharedDtor();
 }
 
@@ -3638,7 +4192,7 @@ const UnBlockMessage& UnBlockMessage::default_instance() {
 
 
 void UnBlockMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnBlockMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnBlockMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3692,7 +4246,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnBlockMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnBlockMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3712,12 +4266,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnBlockMessage)
   return target;
 }
 
 size_t UnBlockMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnBlockMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnBlockMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3748,22 +4302,22 @@ size_t UnBlockMessage::ByteSizeLong() const {
 }
 
 void UnBlockMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnBlockMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnBlockMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const UnBlockMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnBlockMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnBlockMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnBlockMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnBlockMessage)
     MergeFrom(*source);
   }
 }
 
 void UnBlockMessage::MergeFrom(const UnBlockMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnBlockMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnBlockMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3778,14 +4332,14 @@ void UnBlockMessage::MergeFrom(const UnBlockMessage& from) {
 }
 
 void UnBlockMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnBlockMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnBlockMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnBlockMessage::CopyFrom(const UnBlockMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnBlockMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnBlockMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3818,7 +4372,7 @@ class UnWarnMessage::_Internal {
 UnWarnMessage::UnWarnMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnWarnMessage)
 }
 UnWarnMessage::UnWarnMessage(const UnWarnMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3827,7 +4381,7 @@ UnWarnMessage::UnWarnMessage(const UnWarnMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&warn_id_) -
     reinterpret_cast<char*>(&player_)) + sizeof(warn_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnWarnMessage)
 }
 
 void UnWarnMessage::SharedCtor() {
@@ -3837,7 +4391,7 @@ void UnWarnMessage::SharedCtor() {
 }
 
 UnWarnMessage::~UnWarnMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnWarnMessage)
   SharedDtor();
 }
 
@@ -3854,7 +4408,7 @@ const UnWarnMessage& UnWarnMessage::default_instance() {
 
 
 void UnWarnMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnWarnMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnWarnMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3908,7 +4462,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnWarnMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnWarnMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3928,12 +4482,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnWarnMessage)
   return target;
 }
 
 size_t UnWarnMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnWarnMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnWarnMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3964,22 +4518,22 @@ size_t UnWarnMessage::ByteSizeLong() const {
 }
 
 void UnWarnMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnWarnMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnWarnMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const UnWarnMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnWarnMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnWarnMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnWarnMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnWarnMessage)
     MergeFrom(*source);
   }
 }
 
 void UnWarnMessage::MergeFrom(const UnWarnMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnWarnMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnWarnMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3994,14 +4548,14 @@ void UnWarnMessage::MergeFrom(const UnWarnMessage& from) {
 }
 
 void UnWarnMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnWarnMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnWarnMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnWarnMessage::CopyFrom(const UnWarnMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnWarnMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnWarnMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4034,7 +4588,7 @@ class UnAdminJailMessage::_Internal {
 UnAdminJailMessage::UnAdminJailMessage()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnAdminJailMessage)
 }
 UnAdminJailMessage::UnAdminJailMessage(const UnAdminJailMessage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -4043,7 +4597,7 @@ UnAdminJailMessage::UnAdminJailMessage(const UnAdminJailMessage& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&character_) -
     reinterpret_cast<char*>(&player_)) + sizeof(character_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnAdminJailMessage)
 }
 
 void UnAdminJailMessage::SharedCtor() {
@@ -4053,7 +4607,7 @@ void UnAdminJailMessage::SharedCtor() {
 }
 
 UnAdminJailMessage::~UnAdminJailMessage() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnAdminJailMessage)
   SharedDtor();
 }
 
@@ -4070,7 +4624,7 @@ const UnAdminJailMessage& UnAdminJailMessage::default_instance() {
 
 
 void UnAdminJailMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnAdminJailMessage)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnAdminJailMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4124,7 +4678,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnAdminJailMessage::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnAdminJailMessage)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4144,12 +4698,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnAdminJailMessage)
   return target;
 }
 
 size_t UnAdminJailMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnAdminJailMessage)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnAdminJailMessage)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4180,22 +4734,22 @@ size_t UnAdminJailMessage::ByteSizeLong() const {
 }
 
 void UnAdminJailMessage::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnAdminJailMessage)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnAdminJailMessage)
   GOOGLE_DCHECK_NE(&from, this);
   const UnAdminJailMessage* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnAdminJailMessage>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnAdminJailMessage)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnAdminJailMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnAdminJailMessage)
     MergeFrom(*source);
   }
 }
 
 void UnAdminJailMessage::MergeFrom(const UnAdminJailMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnAdminJailMessage)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnAdminJailMessage)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4210,14 +4764,14 @@ void UnAdminJailMessage::MergeFrom(const UnAdminJailMessage& from) {
 }
 
 void UnAdminJailMessage::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnAdminJailMessage)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnAdminJailMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnAdminJailMessage::CopyFrom(const UnAdminJailMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnAdminJailMessage)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnAdminJailMessage)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4241,6 +4795,440 @@ void UnAdminJailMessage::InternalSwap(UnAdminJailMessage* other) {
 
 // ===================================================================
 
+void PunishRequest::InitAsDefaultInstance() {
+}
+class PunishRequest::_Internal {
+ public:
+};
+
+PunishRequest::PunishRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.PunishRequest)
+}
+PunishRequest::PunishRequest(const PunishRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reason().empty()) {
+    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+  }
+  ::memcpy(&player_, &from.player_,
+    static_cast<size_t>(reinterpret_cast<char*>(&admin_) -
+    reinterpret_cast<char*>(&player_)) + sizeof(admin_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.PunishRequest)
+}
+
+void PunishRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PunishRequest_punishments_2fpunishments_2eproto.base);
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&player_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_) -
+      reinterpret_cast<char*>(&player_)) + sizeof(admin_));
+}
+
+PunishRequest::~PunishRequest() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.PunishRequest)
+  SharedDtor();
+}
+
+void PunishRequest::SharedDtor() {
+  reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void PunishRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PunishRequest& PunishRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PunishRequest_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PunishRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.PunishRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&player_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_) -
+      reinterpret_cast<char*>(&player_)) + sizeof(admin_));
+  _internal_metadata_.Clear();
+}
+
+const char* PunishRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 player = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          player_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 character = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          character_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string reason = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_reason();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.PunishRequest.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 admin = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          admin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PunishRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.PunishRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 player = 1;
+  if (this->player() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_player(), target);
+  }
+
+  // uint32 character = 2;
+  if (this->character() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_character(), target);
+  }
+
+  // string reason = 3;
+  if (this->reason().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.punishments.PunishRequest.reason");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_reason(), target);
+  }
+
+  // uint32 admin = 4;
+  if (this->admin() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_admin(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.PunishRequest)
+  return target;
+}
+
+size_t PunishRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.PunishRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string reason = 3;
+  if (this->reason().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason());
+  }
+
+  // uint32 player = 1;
+  if (this->player() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_player());
+  }
+
+  // uint32 character = 2;
+  if (this->character() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_character());
+  }
+
+  // uint32 admin = 4;
+  if (this->admin() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_admin());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PunishRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.PunishRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PunishRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PunishRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.PunishRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.PunishRequest)
+    MergeFrom(*source);
+  }
+}
+
+void PunishRequest::MergeFrom(const PunishRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.PunishRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.reason().size() > 0) {
+
+    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+  }
+  if (from.player() != 0) {
+    _internal_set_player(from._internal_player());
+  }
+  if (from.character() != 0) {
+    _internal_set_character(from._internal_character());
+  }
+  if (from.admin() != 0) {
+    _internal_set_admin(from._internal_admin());
+  }
+}
+
+void PunishRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.PunishRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PunishRequest::CopyFrom(const PunishRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.PunishRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PunishRequest::IsInitialized() const {
+  return true;
+}
+
+void PunishRequest::InternalSwap(PunishRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(player_, other->player_);
+  swap(character_, other->character_);
+  swap(admin_, other->admin_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PunishRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void PunishResponse::InitAsDefaultInstance() {
+}
+class PunishResponse::_Internal {
+ public:
+};
+
+PunishResponse::PunishResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.PunishResponse)
+}
+PunishResponse::PunishResponse(const PunishResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.PunishResponse)
+}
+
+void PunishResponse::SharedCtor() {
+}
+
+PunishResponse::~PunishResponse() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.PunishResponse)
+  SharedDtor();
+}
+
+void PunishResponse::SharedDtor() {
+}
+
+void PunishResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const PunishResponse& PunishResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_PunishResponse_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void PunishResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.PunishResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* PunishResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* PunishResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.PunishResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.PunishResponse)
+  return target;
+}
+
+size_t PunishResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.PunishResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PunishResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.PunishResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PunishResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PunishResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.PunishResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.PunishResponse)
+    MergeFrom(*source);
+  }
+}
+
+void PunishResponse::MergeFrom(const PunishResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.PunishResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void PunishResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.PunishResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PunishResponse::CopyFrom(const PunishResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.PunishResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PunishResponse::IsInitialized() const {
+  return true;
+}
+
+void PunishResponse::InternalSwap(PunishResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PunishResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void BanRequest::InitAsDefaultInstance() {
 }
 class BanRequest::_Internal {
@@ -4250,7 +5238,7 @@ class BanRequest::_Internal {
 BanRequest::BanRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.BanRequest)
 }
 BanRequest::BanRequest(const BanRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -4267,7 +5255,7 @@ BanRequest::BanRequest(const BanRequest& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&admin_) -
     reinterpret_cast<char*>(&player_)) + sizeof(admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.BanRequest)
 }
 
 void BanRequest::SharedCtor() {
@@ -4280,7 +5268,7 @@ void BanRequest::SharedCtor() {
 }
 
 BanRequest::~BanRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.BanRequest)
   SharedDtor();
 }
 
@@ -4299,7 +5287,7 @@ const BanRequest& BanRequest::default_instance() {
 
 
 void BanRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.BanRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.BanRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4338,7 +5326,7 @@ const char* BanRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_ip();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.BanRequest.ip"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.BanRequest.ip"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4354,7 +5342,7 @@ const char* BanRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.BanRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.BanRequest.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4387,7 +5375,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BanRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.BanRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4408,7 +5396,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ip().data(), static_cast<int>(this->_internal_ip().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.BanRequest.ip");
+      "mruv.punishments.BanRequest.ip");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_ip(), target);
   }
@@ -4424,7 +5412,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.BanRequest.reason");
+      "mruv.punishments.BanRequest.reason");
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_reason(), target);
   }
@@ -4439,12 +5427,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.BanRequest)
   return target;
 }
 
 size_t BanRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.BanRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.BanRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4503,22 +5491,22 @@ size_t BanRequest::ByteSizeLong() const {
 }
 
 void BanRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.BanRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.BanRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const BanRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BanRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.BanRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.BanRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.BanRequest)
     MergeFrom(*source);
   }
 }
 
 void BanRequest::MergeFrom(const BanRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.BanRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.BanRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4547,14 +5535,14 @@ void BanRequest::MergeFrom(const BanRequest& from) {
 }
 
 void BanRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.BanRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.BanRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BanRequest::CopyFrom(const BanRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.BanRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.BanRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4593,14 +5581,14 @@ class BanResponse::_Internal {
 BanResponse::BanResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.BanResponse)
 }
 BanResponse::BanResponse(const BanResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ban_id_ = from.ban_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.BanResponse)
 }
 
 void BanResponse::SharedCtor() {
@@ -4608,7 +5596,7 @@ void BanResponse::SharedCtor() {
 }
 
 BanResponse::~BanResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.BanResponse)
   SharedDtor();
 }
 
@@ -4625,7 +5613,7 @@ const BanResponse& BanResponse::default_instance() {
 
 
 void BanResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.BanResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.BanResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4670,7 +5658,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BanResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.BanResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4684,12 +5672,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.BanResponse)
   return target;
 }
 
 size_t BanResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.BanResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.BanResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4713,22 +5701,22 @@ size_t BanResponse::ByteSizeLong() const {
 }
 
 void BanResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.BanResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.BanResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const BanResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BanResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.BanResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.BanResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.BanResponse)
     MergeFrom(*source);
   }
 }
 
 void BanResponse::MergeFrom(const BanResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.BanResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.BanResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4740,14 +5728,14 @@ void BanResponse::MergeFrom(const BanResponse& from) {
 }
 
 void BanResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.BanResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.BanResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BanResponse::CopyFrom(const BanResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.BanResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.BanResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4779,7 +5767,7 @@ class BlockRequest::_Internal {
 BlockRequest::BlockRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.BlockRequest)
 }
 BlockRequest::BlockRequest(const BlockRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -4792,7 +5780,7 @@ BlockRequest::BlockRequest(const BlockRequest& from)
   ::memcpy(&character_, &from.character_,
     static_cast<size_t>(reinterpret_cast<char*>(&admin_) -
     reinterpret_cast<char*>(&character_)) + sizeof(admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.BlockRequest)
 }
 
 void BlockRequest::SharedCtor() {
@@ -4804,7 +5792,7 @@ void BlockRequest::SharedCtor() {
 }
 
 BlockRequest::~BlockRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.BlockRequest)
   SharedDtor();
 }
 
@@ -4822,7 +5810,7 @@ const BlockRequest& BlockRequest::default_instance() {
 
 
 void BlockRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.BlockRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.BlockRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4853,7 +5841,7 @@ const char* BlockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.BlockRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.BlockRequest.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4886,7 +5874,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BlockRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.BlockRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4901,7 +5889,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.BlockRequest.reason");
+      "mruv.punishments.BlockRequest.reason");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_reason(), target);
   }
@@ -4916,12 +5904,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.BlockRequest)
   return target;
 }
 
 size_t BlockRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.BlockRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.BlockRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4959,22 +5947,22 @@ size_t BlockRequest::ByteSizeLong() const {
 }
 
 void BlockRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.BlockRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.BlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const BlockRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BlockRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.BlockRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.BlockRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.BlockRequest)
     MergeFrom(*source);
   }
 }
 
 void BlockRequest::MergeFrom(const BlockRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.BlockRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.BlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4993,14 +5981,14 @@ void BlockRequest::MergeFrom(const BlockRequest& from) {
 }
 
 void BlockRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.BlockRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.BlockRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BlockRequest::CopyFrom(const BlockRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.BlockRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.BlockRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5035,14 +6023,14 @@ class BlockResponse::_Internal {
 BlockResponse::BlockResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.BlockResponse)
 }
 BlockResponse::BlockResponse(const BlockResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   block_id_ = from.block_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.BlockResponse)
 }
 
 void BlockResponse::SharedCtor() {
@@ -5050,7 +6038,7 @@ void BlockResponse::SharedCtor() {
 }
 
 BlockResponse::~BlockResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.BlockResponse)
   SharedDtor();
 }
 
@@ -5067,7 +6055,7 @@ const BlockResponse& BlockResponse::default_instance() {
 
 
 void BlockResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.BlockResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.BlockResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5112,7 +6100,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BlockResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.BlockResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5126,12 +6114,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.BlockResponse)
   return target;
 }
 
 size_t BlockResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.BlockResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.BlockResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5155,22 +6143,22 @@ size_t BlockResponse::ByteSizeLong() const {
 }
 
 void BlockResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.BlockResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.BlockResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const BlockResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BlockResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.BlockResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.BlockResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.BlockResponse)
     MergeFrom(*source);
   }
 }
 
 void BlockResponse::MergeFrom(const BlockResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.BlockResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.BlockResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5182,14 +6170,14 @@ void BlockResponse::MergeFrom(const BlockResponse& from) {
 }
 
 void BlockResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.BlockResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.BlockResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BlockResponse::CopyFrom(const BlockResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.BlockResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.BlockResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5221,7 +6209,7 @@ class WarnRequest::_Internal {
 WarnRequest::WarnRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WarnRequest)
 }
 WarnRequest::WarnRequest(const WarnRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -5234,7 +6222,7 @@ WarnRequest::WarnRequest(const WarnRequest& from)
   ::memcpy(&player_, &from.player_,
     static_cast<size_t>(reinterpret_cast<char*>(&admin_) -
     reinterpret_cast<char*>(&player_)) + sizeof(admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WarnRequest)
 }
 
 void WarnRequest::SharedCtor() {
@@ -5246,7 +6234,7 @@ void WarnRequest::SharedCtor() {
 }
 
 WarnRequest::~WarnRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WarnRequest)
   SharedDtor();
 }
 
@@ -5264,7 +6252,7 @@ const WarnRequest& WarnRequest::default_instance() {
 
 
 void WarnRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WarnRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WarnRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5309,7 +6297,7 @@ const char* WarnRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.WarnRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.WarnRequest.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5342,7 +6330,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WarnRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WarnRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5369,7 +6357,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.WarnRequest.reason");
+      "mruv.punishments.WarnRequest.reason");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_reason(), target);
   }
@@ -5384,12 +6372,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WarnRequest)
   return target;
 }
 
 size_t WarnRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WarnRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WarnRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5441,22 +6429,22 @@ size_t WarnRequest::ByteSizeLong() const {
 }
 
 void WarnRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WarnRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WarnRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WarnRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WarnRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WarnRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WarnRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WarnRequest)
     MergeFrom(*source);
   }
 }
 
 void WarnRequest::MergeFrom(const WarnRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WarnRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WarnRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5481,14 +6469,14 @@ void WarnRequest::MergeFrom(const WarnRequest& from) {
 }
 
 void WarnRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WarnRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WarnRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WarnRequest::CopyFrom(const WarnRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WarnRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WarnRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5525,14 +6513,14 @@ class WarnResponse::_Internal {
 WarnResponse::WarnResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WarnResponse)
 }
 WarnResponse::WarnResponse(const WarnResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   warn_id_ = from.warn_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WarnResponse)
 }
 
 void WarnResponse::SharedCtor() {
@@ -5540,7 +6528,7 @@ void WarnResponse::SharedCtor() {
 }
 
 WarnResponse::~WarnResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WarnResponse)
   SharedDtor();
 }
 
@@ -5557,7 +6545,7 @@ const WarnResponse& WarnResponse::default_instance() {
 
 
 void WarnResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WarnResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WarnResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5602,7 +6590,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WarnResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WarnResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5616,12 +6604,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WarnResponse)
   return target;
 }
 
 size_t WarnResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WarnResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WarnResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5645,22 +6633,22 @@ size_t WarnResponse::ByteSizeLong() const {
 }
 
 void WarnResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WarnResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WarnResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const WarnResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WarnResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WarnResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WarnResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WarnResponse)
     MergeFrom(*source);
   }
 }
 
 void WarnResponse::MergeFrom(const WarnResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WarnResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WarnResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5672,14 +6660,14 @@ void WarnResponse::MergeFrom(const WarnResponse& from) {
 }
 
 void WarnResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WarnResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WarnResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WarnResponse::CopyFrom(const WarnResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WarnResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WarnResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5711,7 +6699,7 @@ class AdminJailRequest::_Internal {
 AdminJailRequest::AdminJailRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.AdminJailRequest)
 }
 AdminJailRequest::AdminJailRequest(const AdminJailRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -5724,7 +6712,7 @@ AdminJailRequest::AdminJailRequest(const AdminJailRequest& from)
   ::memcpy(&character_, &from.character_,
     static_cast<size_t>(reinterpret_cast<char*>(&admin_) -
     reinterpret_cast<char*>(&character_)) + sizeof(admin_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.AdminJailRequest)
 }
 
 void AdminJailRequest::SharedCtor() {
@@ -5736,7 +6724,7 @@ void AdminJailRequest::SharedCtor() {
 }
 
 AdminJailRequest::~AdminJailRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.AdminJailRequest)
   SharedDtor();
 }
 
@@ -5754,7 +6742,7 @@ const AdminJailRequest& AdminJailRequest::default_instance() {
 
 
 void AdminJailRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.AdminJailRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.AdminJailRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5792,7 +6780,7 @@ const char* AdminJailRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.AdminJailRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.AdminJailRequest.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5825,7 +6813,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* AdminJailRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.AdminJailRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5846,7 +6834,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.AdminJailRequest.reason");
+      "mruv.punishments.AdminJailRequest.reason");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_reason(), target);
   }
@@ -5861,12 +6849,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.AdminJailRequest)
   return target;
 }
 
 size_t AdminJailRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.AdminJailRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.AdminJailRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5911,22 +6899,22 @@ size_t AdminJailRequest::ByteSizeLong() const {
 }
 
 void AdminJailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.AdminJailRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.AdminJailRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const AdminJailRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AdminJailRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.AdminJailRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.AdminJailRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.AdminJailRequest)
     MergeFrom(*source);
   }
 }
 
 void AdminJailRequest::MergeFrom(const AdminJailRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.AdminJailRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.AdminJailRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -5948,14 +6936,14 @@ void AdminJailRequest::MergeFrom(const AdminJailRequest& from) {
 }
 
 void AdminJailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.AdminJailRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.AdminJailRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AdminJailRequest::CopyFrom(const AdminJailRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.AdminJailRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.AdminJailRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -5991,20 +6979,20 @@ class AdminJailResponse::_Internal {
 AdminJailResponse::AdminJailResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.AdminJailResponse)
 }
 AdminJailResponse::AdminJailResponse(const AdminJailResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.AdminJailResponse)
 }
 
 void AdminJailResponse::SharedCtor() {
 }
 
 AdminJailResponse::~AdminJailResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.AdminJailResponse)
   SharedDtor();
 }
 
@@ -6021,7 +7009,7 @@ const AdminJailResponse& AdminJailResponse::default_instance() {
 
 
 void AdminJailResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.AdminJailResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.AdminJailResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6053,7 +7041,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* AdminJailResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.AdminJailResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6061,12 +7049,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.AdminJailResponse)
   return target;
 }
 
 size_t AdminJailResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.AdminJailResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.AdminJailResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6083,22 +7071,22 @@ size_t AdminJailResponse::ByteSizeLong() const {
 }
 
 void AdminJailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.AdminJailResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.AdminJailResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const AdminJailResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AdminJailResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.AdminJailResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.AdminJailResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.AdminJailResponse)
     MergeFrom(*source);
   }
 }
 
 void AdminJailResponse::MergeFrom(const AdminJailResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.AdminJailResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.AdminJailResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6107,14 +7095,14 @@ void AdminJailResponse::MergeFrom(const AdminJailResponse& from) {
 }
 
 void AdminJailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.AdminJailResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.AdminJailResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void AdminJailResponse::CopyFrom(const AdminJailResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.AdminJailResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.AdminJailResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6145,14 +7133,14 @@ class MuteGlobalChatsRequest::_Internal {
 MuteGlobalChatsRequest::MuteGlobalChatsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.MuteGlobalChatsRequest)
 }
 MuteGlobalChatsRequest::MuteGlobalChatsRequest(const MuteGlobalChatsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   account_ = from.account_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.MuteGlobalChatsRequest)
 }
 
 void MuteGlobalChatsRequest::SharedCtor() {
@@ -6160,7 +7148,7 @@ void MuteGlobalChatsRequest::SharedCtor() {
 }
 
 MuteGlobalChatsRequest::~MuteGlobalChatsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.MuteGlobalChatsRequest)
   SharedDtor();
 }
 
@@ -6177,7 +7165,7 @@ const MuteGlobalChatsRequest& MuteGlobalChatsRequest::default_instance() {
 
 
 void MuteGlobalChatsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.MuteGlobalChatsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.MuteGlobalChatsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6222,7 +7210,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* MuteGlobalChatsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.MuteGlobalChatsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6236,12 +7224,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.MuteGlobalChatsRequest)
   return target;
 }
 
 size_t MuteGlobalChatsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.MuteGlobalChatsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.MuteGlobalChatsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6265,22 +7253,22 @@ size_t MuteGlobalChatsRequest::ByteSizeLong() const {
 }
 
 void MuteGlobalChatsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.MuteGlobalChatsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.MuteGlobalChatsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const MuteGlobalChatsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MuteGlobalChatsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.MuteGlobalChatsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.MuteGlobalChatsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.MuteGlobalChatsRequest)
     MergeFrom(*source);
   }
 }
 
 void MuteGlobalChatsRequest::MergeFrom(const MuteGlobalChatsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.MuteGlobalChatsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.MuteGlobalChatsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6292,14 +7280,14 @@ void MuteGlobalChatsRequest::MergeFrom(const MuteGlobalChatsRequest& from) {
 }
 
 void MuteGlobalChatsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.MuteGlobalChatsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.MuteGlobalChatsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void MuteGlobalChatsRequest::CopyFrom(const MuteGlobalChatsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.MuteGlobalChatsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.MuteGlobalChatsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6331,20 +7319,20 @@ class MuteGlobalChatsResponse::_Internal {
 MuteGlobalChatsResponse::MuteGlobalChatsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.MuteGlobalChatsResponse)
 }
 MuteGlobalChatsResponse::MuteGlobalChatsResponse(const MuteGlobalChatsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.MuteGlobalChatsResponse)
 }
 
 void MuteGlobalChatsResponse::SharedCtor() {
 }
 
 MuteGlobalChatsResponse::~MuteGlobalChatsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.MuteGlobalChatsResponse)
   SharedDtor();
 }
 
@@ -6361,7 +7349,7 @@ const MuteGlobalChatsResponse& MuteGlobalChatsResponse::default_instance() {
 
 
 void MuteGlobalChatsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.MuteGlobalChatsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.MuteGlobalChatsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6393,7 +7381,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* MuteGlobalChatsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.MuteGlobalChatsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6401,12 +7389,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.MuteGlobalChatsResponse)
   return target;
 }
 
 size_t MuteGlobalChatsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.MuteGlobalChatsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.MuteGlobalChatsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6423,22 +7411,22 @@ size_t MuteGlobalChatsResponse::ByteSizeLong() const {
 }
 
 void MuteGlobalChatsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.MuteGlobalChatsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.MuteGlobalChatsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const MuteGlobalChatsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MuteGlobalChatsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.MuteGlobalChatsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.MuteGlobalChatsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.MuteGlobalChatsResponse)
     MergeFrom(*source);
   }
 }
 
 void MuteGlobalChatsResponse::MergeFrom(const MuteGlobalChatsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.MuteGlobalChatsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.MuteGlobalChatsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6447,14 +7435,14 @@ void MuteGlobalChatsResponse::MergeFrom(const MuteGlobalChatsResponse& from) {
 }
 
 void MuteGlobalChatsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.MuteGlobalChatsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.MuteGlobalChatsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void MuteGlobalChatsResponse::CopyFrom(const MuteGlobalChatsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.MuteGlobalChatsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.MuteGlobalChatsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6485,7 +7473,7 @@ class UnBanRequest::_Internal {
 UnBanRequest::UnBanRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnBanRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnBanRequest)
 }
 UnBanRequest::UnBanRequest(const UnBanRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -6495,18 +7483,22 @@ UnBanRequest::UnBanRequest(const UnBanRequest& from)
   if (!from._internal_reason().empty()) {
     reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
   }
-  ban_id_ = from.ban_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnBanRequest)
+  ::memcpy(&ban_id_, &from.ban_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&admin_id_) -
+    reinterpret_cast<char*>(&ban_id_)) + sizeof(admin_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnBanRequest)
 }
 
 void UnBanRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UnBanRequest_punishments_2fpunishments_2eproto.base);
   reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ban_id_ = 0u;
+  ::memset(&ban_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&ban_id_)) + sizeof(admin_id_));
 }
 
 UnBanRequest::~UnBanRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnBanRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnBanRequest)
   SharedDtor();
 }
 
@@ -6524,13 +7516,15 @@ const UnBanRequest& UnBanRequest::default_instance() {
 
 
 void UnBanRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnBanRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnBanRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ban_id_ = 0u;
+  ::memset(&ban_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&ban_id_)) + sizeof(admin_id_));
   _internal_metadata_.Clear();
 }
 
@@ -6553,7 +7547,14 @@ const char* UnBanRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.UnBanRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.UnBanRequest.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 admin_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          admin_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6579,7 +7580,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnBanRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnBanRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnBanRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6594,21 +7595,27 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.UnBanRequest.reason");
+      "mruv.punishments.UnBanRequest.reason");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_reason(), target);
+  }
+
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_admin_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnBanRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnBanRequest)
   return target;
 }
 
 size_t UnBanRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnBanRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnBanRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6629,6 +7636,13 @@ size_t UnBanRequest::ByteSizeLong() const {
         this->_internal_ban_id());
   }
 
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_admin_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -6639,22 +7653,22 @@ size_t UnBanRequest::ByteSizeLong() const {
 }
 
 void UnBanRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnBanRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnBanRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UnBanRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnBanRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnBanRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnBanRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnBanRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnBanRequest)
     MergeFrom(*source);
   }
 }
 
 void UnBanRequest::MergeFrom(const UnBanRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnBanRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnBanRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6667,17 +7681,20 @@ void UnBanRequest::MergeFrom(const UnBanRequest& from) {
   if (from.ban_id() != 0) {
     _internal_set_ban_id(from._internal_ban_id());
   }
+  if (from.admin_id() != 0) {
+    _internal_set_admin_id(from._internal_admin_id());
+  }
 }
 
 void UnBanRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnBanRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnBanRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnBanRequest::CopyFrom(const UnBanRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnBanRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnBanRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6693,6 +7710,7 @@ void UnBanRequest::InternalSwap(UnBanRequest* other) {
   reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(ban_id_, other->ban_id_);
+  swap(admin_id_, other->admin_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnBanRequest::GetMetadata() const {
@@ -6711,20 +7729,20 @@ class UnBanResponse::_Internal {
 UnBanResponse::UnBanResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnBanResponse)
 }
 UnBanResponse::UnBanResponse(const UnBanResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnBanResponse)
 }
 
 void UnBanResponse::SharedCtor() {
 }
 
 UnBanResponse::~UnBanResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnBanResponse)
   SharedDtor();
 }
 
@@ -6741,7 +7759,7 @@ const UnBanResponse& UnBanResponse::default_instance() {
 
 
 void UnBanResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnBanResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnBanResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -6773,7 +7791,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnBanResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnBanResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6781,12 +7799,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnBanResponse)
   return target;
 }
 
 size_t UnBanResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnBanResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnBanResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6803,22 +7821,22 @@ size_t UnBanResponse::ByteSizeLong() const {
 }
 
 void UnBanResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnBanResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnBanResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UnBanResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnBanResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnBanResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnBanResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnBanResponse)
     MergeFrom(*source);
   }
 }
 
 void UnBanResponse::MergeFrom(const UnBanResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnBanResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnBanResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -6827,14 +7845,14 @@ void UnBanResponse::MergeFrom(const UnBanResponse& from) {
 }
 
 void UnBanResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnBanResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnBanResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnBanResponse::CopyFrom(const UnBanResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnBanResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnBanResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -6865,7 +7883,7 @@ class UnBlockRequest::_Internal {
 UnBlockRequest::UnBlockRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnBlockRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnBlockRequest)
 }
 UnBlockRequest::UnBlockRequest(const UnBlockRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -6875,18 +7893,22 @@ UnBlockRequest::UnBlockRequest(const UnBlockRequest& from)
   if (!from._internal_reason().empty()) {
     reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
   }
-  block_id_ = from.block_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnBlockRequest)
+  ::memcpy(&block_id_, &from.block_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&admin_id_) -
+    reinterpret_cast<char*>(&block_id_)) + sizeof(admin_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnBlockRequest)
 }
 
 void UnBlockRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UnBlockRequest_punishments_2fpunishments_2eproto.base);
   reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  block_id_ = 0u;
+  ::memset(&block_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&block_id_)) + sizeof(admin_id_));
 }
 
 UnBlockRequest::~UnBlockRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnBlockRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnBlockRequest)
   SharedDtor();
 }
 
@@ -6904,13 +7926,15 @@ const UnBlockRequest& UnBlockRequest::default_instance() {
 
 
 void UnBlockRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnBlockRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnBlockRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  block_id_ = 0u;
+  ::memset(&block_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&block_id_)) + sizeof(admin_id_));
   _internal_metadata_.Clear();
 }
 
@@ -6933,7 +7957,14 @@ const char* UnBlockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.UnBlockRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.UnBlockRequest.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 admin_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          admin_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6959,7 +7990,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnBlockRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnBlockRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnBlockRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6974,21 +8005,27 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.UnBlockRequest.reason");
+      "mruv.punishments.UnBlockRequest.reason");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_reason(), target);
+  }
+
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_admin_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnBlockRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnBlockRequest)
   return target;
 }
 
 size_t UnBlockRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnBlockRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnBlockRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7009,6 +8046,13 @@ size_t UnBlockRequest::ByteSizeLong() const {
         this->_internal_block_id());
   }
 
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_admin_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -7019,22 +8063,22 @@ size_t UnBlockRequest::ByteSizeLong() const {
 }
 
 void UnBlockRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnBlockRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnBlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UnBlockRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnBlockRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnBlockRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnBlockRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnBlockRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnBlockRequest)
     MergeFrom(*source);
   }
 }
 
 void UnBlockRequest::MergeFrom(const UnBlockRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnBlockRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnBlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7047,17 +8091,20 @@ void UnBlockRequest::MergeFrom(const UnBlockRequest& from) {
   if (from.block_id() != 0) {
     _internal_set_block_id(from._internal_block_id());
   }
+  if (from.admin_id() != 0) {
+    _internal_set_admin_id(from._internal_admin_id());
+  }
 }
 
 void UnBlockRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnBlockRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnBlockRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnBlockRequest::CopyFrom(const UnBlockRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnBlockRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnBlockRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -7073,6 +8120,7 @@ void UnBlockRequest::InternalSwap(UnBlockRequest* other) {
   reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(block_id_, other->block_id_);
+  swap(admin_id_, other->admin_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnBlockRequest::GetMetadata() const {
@@ -7091,20 +8139,20 @@ class UnBlockResponse::_Internal {
 UnBlockResponse::UnBlockResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnBlockResponse)
 }
 UnBlockResponse::UnBlockResponse(const UnBlockResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnBlockResponse)
 }
 
 void UnBlockResponse::SharedCtor() {
 }
 
 UnBlockResponse::~UnBlockResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnBlockResponse)
   SharedDtor();
 }
 
@@ -7121,7 +8169,7 @@ const UnBlockResponse& UnBlockResponse::default_instance() {
 
 
 void UnBlockResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnBlockResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnBlockResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -7153,7 +8201,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnBlockResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnBlockResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -7161,12 +8209,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnBlockResponse)
   return target;
 }
 
 size_t UnBlockResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnBlockResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnBlockResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7183,22 +8231,22 @@ size_t UnBlockResponse::ByteSizeLong() const {
 }
 
 void UnBlockResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnBlockResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnBlockResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UnBlockResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnBlockResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnBlockResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnBlockResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnBlockResponse)
     MergeFrom(*source);
   }
 }
 
 void UnBlockResponse::MergeFrom(const UnBlockResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnBlockResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnBlockResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7207,14 +8255,14 @@ void UnBlockResponse::MergeFrom(const UnBlockResponse& from) {
 }
 
 void UnBlockResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnBlockResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnBlockResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnBlockResponse::CopyFrom(const UnBlockResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnBlockResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnBlockResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -7245,7 +8293,7 @@ class UnWarnRequest::_Internal {
 UnWarnRequest::UnWarnRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnWarnRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnWarnRequest)
 }
 UnWarnRequest::UnWarnRequest(const UnWarnRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -7255,18 +8303,22 @@ UnWarnRequest::UnWarnRequest(const UnWarnRequest& from)
   if (!from._internal_reason().empty()) {
     reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
   }
-  warn_id_ = from.warn_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnWarnRequest)
+  ::memcpy(&warn_id_, &from.warn_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&admin_id_) -
+    reinterpret_cast<char*>(&warn_id_)) + sizeof(admin_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnWarnRequest)
 }
 
 void UnWarnRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UnWarnRequest_punishments_2fpunishments_2eproto.base);
   reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  warn_id_ = 0u;
+  ::memset(&warn_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&warn_id_)) + sizeof(admin_id_));
 }
 
 UnWarnRequest::~UnWarnRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnWarnRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnWarnRequest)
   SharedDtor();
 }
 
@@ -7284,13 +8336,15 @@ const UnWarnRequest& UnWarnRequest::default_instance() {
 
 
 void UnWarnRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnWarnRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnWarnRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  warn_id_ = 0u;
+  ::memset(&warn_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&warn_id_)) + sizeof(admin_id_));
   _internal_metadata_.Clear();
 }
 
@@ -7313,7 +8367,14 @@ const char* UnWarnRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.UnWarnRequest.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.UnWarnRequest.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 admin_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          admin_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7339,7 +8400,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnWarnRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnWarnRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnWarnRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -7354,21 +8415,27 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.UnWarnRequest.reason");
+      "mruv.punishments.UnWarnRequest.reason");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_reason(), target);
+  }
+
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_admin_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnWarnRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnWarnRequest)
   return target;
 }
 
 size_t UnWarnRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnWarnRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnWarnRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7389,6 +8456,13 @@ size_t UnWarnRequest::ByteSizeLong() const {
         this->_internal_warn_id());
   }
 
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_admin_id());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -7399,22 +8473,22 @@ size_t UnWarnRequest::ByteSizeLong() const {
 }
 
 void UnWarnRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnWarnRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnWarnRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UnWarnRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnWarnRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnWarnRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnWarnRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnWarnRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnWarnRequest)
     MergeFrom(*source);
   }
 }
 
 void UnWarnRequest::MergeFrom(const UnWarnRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnWarnRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnWarnRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7427,17 +8501,20 @@ void UnWarnRequest::MergeFrom(const UnWarnRequest& from) {
   if (from.warn_id() != 0) {
     _internal_set_warn_id(from._internal_warn_id());
   }
+  if (from.admin_id() != 0) {
+    _internal_set_admin_id(from._internal_admin_id());
+  }
 }
 
 void UnWarnRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnWarnRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnWarnRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnWarnRequest::CopyFrom(const UnWarnRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnWarnRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnWarnRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -7453,6 +8530,7 @@ void UnWarnRequest::InternalSwap(UnWarnRequest* other) {
   reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(warn_id_, other->warn_id_);
+  swap(admin_id_, other->admin_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnWarnRequest::GetMetadata() const {
@@ -7471,20 +8549,20 @@ class UnWarnResponse::_Internal {
 UnWarnResponse::UnWarnResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnWarnResponse)
 }
 UnWarnResponse::UnWarnResponse(const UnWarnResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnWarnResponse)
 }
 
 void UnWarnResponse::SharedCtor() {
 }
 
 UnWarnResponse::~UnWarnResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnWarnResponse)
   SharedDtor();
 }
 
@@ -7501,7 +8579,7 @@ const UnWarnResponse& UnWarnResponse::default_instance() {
 
 
 void UnWarnResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnWarnResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnWarnResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -7533,7 +8611,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnWarnResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnWarnResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -7541,12 +8619,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnWarnResponse)
   return target;
 }
 
 size_t UnWarnResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnWarnResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnWarnResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7563,22 +8641,22 @@ size_t UnWarnResponse::ByteSizeLong() const {
 }
 
 void UnWarnResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnWarnResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnWarnResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UnWarnResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnWarnResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnWarnResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnWarnResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnWarnResponse)
     MergeFrom(*source);
   }
 }
 
 void UnWarnResponse::MergeFrom(const UnWarnResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnWarnResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnWarnResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7587,14 +8665,14 @@ void UnWarnResponse::MergeFrom(const UnWarnResponse& from) {
 }
 
 void UnWarnResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnWarnResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnWarnResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnWarnResponse::CopyFrom(const UnWarnResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnWarnResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnWarnResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -7625,26 +8703,37 @@ class UnAdminJailRequest::_Internal {
 UnAdminJailRequest::UnAdminJailRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnAdminJailRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnAdminJailRequest)
 }
 UnAdminJailRequest::UnAdminJailRequest(const UnAdminJailRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  character_ = from.character_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnAdminJailRequest)
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_reason().empty()) {
+    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+  }
+  ::memcpy(&character_, &from.character_,
+    static_cast<size_t>(reinterpret_cast<char*>(&admin_id_) -
+    reinterpret_cast<char*>(&character_)) + sizeof(admin_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnAdminJailRequest)
 }
 
 void UnAdminJailRequest::SharedCtor() {
-  character_ = 0u;
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_UnAdminJailRequest_punishments_2fpunishments_2eproto.base);
+  reason_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&character_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&character_)) + sizeof(admin_id_));
 }
 
 UnAdminJailRequest::~UnAdminJailRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnAdminJailRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnAdminJailRequest)
   SharedDtor();
 }
 
 void UnAdminJailRequest::SharedDtor() {
+  reason_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void UnAdminJailRequest::SetCachedSize(int size) const {
@@ -7657,12 +8746,15 @@ const UnAdminJailRequest& UnAdminJailRequest::default_instance() {
 
 
 void UnAdminJailRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnAdminJailRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnAdminJailRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  character_ = 0u;
+  reason_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&character_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&admin_id_) -
+      reinterpret_cast<char*>(&character_)) + sizeof(admin_id_));
   _internal_metadata_.Clear();
 }
 
@@ -7677,6 +8769,22 @@ const char* UnAdminJailRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           character_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string reason = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_reason();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.UnAdminJailRequest.reason"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 admin_id = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          admin_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7702,7 +8810,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnAdminJailRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnAdminJailRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnAdminJailRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -7712,27 +8820,57 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_character(), target);
   }
 
+  // string reason = 2;
+  if (this->reason().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "mruv.punishments.UnAdminJailRequest.reason");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_reason(), target);
+  }
+
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_admin_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnAdminJailRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnAdminJailRequest)
   return target;
 }
 
 size_t UnAdminJailRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnAdminJailRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnAdminJailRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // string reason = 2;
+  if (this->reason().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_reason());
+  }
+
   // uint32 character = 1;
   if (this->character() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_character());
+  }
+
+  // uint32 admin_id = 3;
+  if (this->admin_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_admin_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7745,41 +8883,48 @@ size_t UnAdminJailRequest::ByteSizeLong() const {
 }
 
 void UnAdminJailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnAdminJailRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnAdminJailRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UnAdminJailRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnAdminJailRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnAdminJailRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnAdminJailRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnAdminJailRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnAdminJailRequest)
     MergeFrom(*source);
   }
 }
 
 void UnAdminJailRequest::MergeFrom(const UnAdminJailRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnAdminJailRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnAdminJailRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.reason().size() > 0) {
+
+    reason_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reason_);
+  }
   if (from.character() != 0) {
     _internal_set_character(from._internal_character());
+  }
+  if (from.admin_id() != 0) {
+    _internal_set_admin_id(from._internal_admin_id());
   }
 }
 
 void UnAdminJailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnAdminJailRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnAdminJailRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnAdminJailRequest::CopyFrom(const UnAdminJailRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnAdminJailRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnAdminJailRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -7792,7 +8937,10 @@ bool UnAdminJailRequest::IsInitialized() const {
 void UnAdminJailRequest::InternalSwap(UnAdminJailRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  reason_.Swap(&other->reason_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(character_, other->character_);
+  swap(admin_id_, other->admin_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnAdminJailRequest::GetMetadata() const {
@@ -7811,20 +8959,20 @@ class UnAdminJailResponse::_Internal {
 UnAdminJailResponse::UnAdminJailResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnAdminJailResponse)
 }
 UnAdminJailResponse::UnAdminJailResponse(const UnAdminJailResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnAdminJailResponse)
 }
 
 void UnAdminJailResponse::SharedCtor() {
 }
 
 UnAdminJailResponse::~UnAdminJailResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnAdminJailResponse)
   SharedDtor();
 }
 
@@ -7841,7 +8989,7 @@ const UnAdminJailResponse& UnAdminJailResponse::default_instance() {
 
 
 void UnAdminJailResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnAdminJailResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnAdminJailResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -7873,7 +9021,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnAdminJailResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnAdminJailResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -7881,12 +9029,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnAdminJailResponse)
   return target;
 }
 
 size_t UnAdminJailResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnAdminJailResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnAdminJailResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7903,22 +9051,22 @@ size_t UnAdminJailResponse::ByteSizeLong() const {
 }
 
 void UnAdminJailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnAdminJailResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnAdminJailResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UnAdminJailResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnAdminJailResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnAdminJailResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnAdminJailResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnAdminJailResponse)
     MergeFrom(*source);
   }
 }
 
 void UnAdminJailResponse::MergeFrom(const UnAdminJailResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnAdminJailResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnAdminJailResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -7927,14 +9075,14 @@ void UnAdminJailResponse::MergeFrom(const UnAdminJailResponse& from) {
 }
 
 void UnAdminJailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnAdminJailResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnAdminJailResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnAdminJailResponse::CopyFrom(const UnAdminJailResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnAdminJailResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnAdminJailResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -7965,14 +9113,14 @@ class UnMuteGlobalChatsRequest::_Internal {
 UnMuteGlobalChatsRequest::UnMuteGlobalChatsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnMuteGlobalChatsRequest)
 }
 UnMuteGlobalChatsRequest::UnMuteGlobalChatsRequest(const UnMuteGlobalChatsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   account_ = from.account_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnMuteGlobalChatsRequest)
 }
 
 void UnMuteGlobalChatsRequest::SharedCtor() {
@@ -7980,7 +9128,7 @@ void UnMuteGlobalChatsRequest::SharedCtor() {
 }
 
 UnMuteGlobalChatsRequest::~UnMuteGlobalChatsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnMuteGlobalChatsRequest)
   SharedDtor();
 }
 
@@ -7997,7 +9145,7 @@ const UnMuteGlobalChatsRequest& UnMuteGlobalChatsRequest::default_instance() {
 
 
 void UnMuteGlobalChatsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnMuteGlobalChatsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnMuteGlobalChatsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8042,7 +9190,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnMuteGlobalChatsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnMuteGlobalChatsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -8056,12 +9204,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnMuteGlobalChatsRequest)
   return target;
 }
 
 size_t UnMuteGlobalChatsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnMuteGlobalChatsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnMuteGlobalChatsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8085,22 +9233,22 @@ size_t UnMuteGlobalChatsRequest::ByteSizeLong() const {
 }
 
 void UnMuteGlobalChatsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnMuteGlobalChatsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnMuteGlobalChatsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UnMuteGlobalChatsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnMuteGlobalChatsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnMuteGlobalChatsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnMuteGlobalChatsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnMuteGlobalChatsRequest)
     MergeFrom(*source);
   }
 }
 
 void UnMuteGlobalChatsRequest::MergeFrom(const UnMuteGlobalChatsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnMuteGlobalChatsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnMuteGlobalChatsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8112,14 +9260,14 @@ void UnMuteGlobalChatsRequest::MergeFrom(const UnMuteGlobalChatsRequest& from) {
 }
 
 void UnMuteGlobalChatsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnMuteGlobalChatsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnMuteGlobalChatsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnMuteGlobalChatsRequest::CopyFrom(const UnMuteGlobalChatsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnMuteGlobalChatsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnMuteGlobalChatsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -8151,20 +9299,20 @@ class UnMuteGlobalChatsResponse::_Internal {
 UnMuteGlobalChatsResponse::UnMuteGlobalChatsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.UnMuteGlobalChatsResponse)
 }
 UnMuteGlobalChatsResponse::UnMuteGlobalChatsResponse(const UnMuteGlobalChatsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.UnMuteGlobalChatsResponse)
 }
 
 void UnMuteGlobalChatsResponse::SharedCtor() {
 }
 
 UnMuteGlobalChatsResponse::~UnMuteGlobalChatsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.UnMuteGlobalChatsResponse)
   SharedDtor();
 }
 
@@ -8181,7 +9329,7 @@ const UnMuteGlobalChatsResponse& UnMuteGlobalChatsResponse::default_instance() {
 
 
 void UnMuteGlobalChatsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.UnMuteGlobalChatsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.UnMuteGlobalChatsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8213,7 +9361,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UnMuteGlobalChatsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.UnMuteGlobalChatsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -8221,12 +9369,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.UnMuteGlobalChatsResponse)
   return target;
 }
 
 size_t UnMuteGlobalChatsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.UnMuteGlobalChatsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.UnMuteGlobalChatsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8243,22 +9391,22 @@ size_t UnMuteGlobalChatsResponse::ByteSizeLong() const {
 }
 
 void UnMuteGlobalChatsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.UnMuteGlobalChatsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.UnMuteGlobalChatsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UnMuteGlobalChatsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UnMuteGlobalChatsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.UnMuteGlobalChatsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.UnMuteGlobalChatsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.UnMuteGlobalChatsResponse)
     MergeFrom(*source);
   }
 }
 
 void UnMuteGlobalChatsResponse::MergeFrom(const UnMuteGlobalChatsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.UnMuteGlobalChatsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.UnMuteGlobalChatsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8267,14 +9415,14 @@ void UnMuteGlobalChatsResponse::MergeFrom(const UnMuteGlobalChatsResponse& from)
 }
 
 void UnMuteGlobalChatsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.UnMuteGlobalChatsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.UnMuteGlobalChatsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UnMuteGlobalChatsResponse::CopyFrom(const UnMuteGlobalChatsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.UnMuteGlobalChatsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.UnMuteGlobalChatsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -8305,7 +9453,7 @@ class GetPlayerBansRequest::_Internal {
 GetPlayerBansRequest::GetPlayerBansRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetPlayerBansRequest)
 }
 GetPlayerBansRequest::GetPlayerBansRequest(const GetPlayerBansRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -8316,7 +9464,7 @@ GetPlayerBansRequest::GetPlayerBansRequest(const GetPlayerBansRequest& from)
     ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
   }
   player_ = from.player_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetPlayerBansRequest)
 }
 
 void GetPlayerBansRequest::SharedCtor() {
@@ -8326,7 +9474,7 @@ void GetPlayerBansRequest::SharedCtor() {
 }
 
 GetPlayerBansRequest::~GetPlayerBansRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetPlayerBansRequest)
   SharedDtor();
 }
 
@@ -8344,7 +9492,7 @@ const GetPlayerBansRequest& GetPlayerBansRequest::default_instance() {
 
 
 void GetPlayerBansRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetPlayerBansRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetPlayerBansRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8373,7 +9521,7 @@ const char* GetPlayerBansRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_ip();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.GetPlayerBansRequest.ip"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.GetPlayerBansRequest.ip"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8399,7 +9547,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetPlayerBansRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetPlayerBansRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -8414,7 +9562,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ip().data(), static_cast<int>(this->_internal_ip().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.GetPlayerBansRequest.ip");
+      "mruv.punishments.GetPlayerBansRequest.ip");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_ip(), target);
   }
@@ -8423,12 +9571,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetPlayerBansRequest)
   return target;
 }
 
 size_t GetPlayerBansRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetPlayerBansRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetPlayerBansRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8459,22 +9607,22 @@ size_t GetPlayerBansRequest::ByteSizeLong() const {
 }
 
 void GetPlayerBansRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetPlayerBansRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetPlayerBansRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetPlayerBansRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPlayerBansRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetPlayerBansRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetPlayerBansRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetPlayerBansRequest)
     MergeFrom(*source);
   }
 }
 
 void GetPlayerBansRequest::MergeFrom(const GetPlayerBansRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetPlayerBansRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetPlayerBansRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8490,14 +9638,14 @@ void GetPlayerBansRequest::MergeFrom(const GetPlayerBansRequest& from) {
 }
 
 void GetPlayerBansRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetPlayerBansRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetPlayerBansRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetPlayerBansRequest::CopyFrom(const GetPlayerBansRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetPlayerBansRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetPlayerBansRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -8531,14 +9679,14 @@ class GetPlayerBansResponse::_Internal {
 GetPlayerBansResponse::GetPlayerBansResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetPlayerBansResponse)
 }
 GetPlayerBansResponse::GetPlayerBansResponse(const GetPlayerBansResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       bans_(from.bans_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetPlayerBansResponse)
 }
 
 void GetPlayerBansResponse::SharedCtor() {
@@ -8546,7 +9694,7 @@ void GetPlayerBansResponse::SharedCtor() {
 }
 
 GetPlayerBansResponse::~GetPlayerBansResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetPlayerBansResponse)
   SharedDtor();
 }
 
@@ -8563,7 +9711,7 @@ const GetPlayerBansResponse& GetPlayerBansResponse::default_instance() {
 
 
 void GetPlayerBansResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetPlayerBansResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetPlayerBansResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8579,7 +9727,7 @@ const char* GetPlayerBansResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.economy.BanMessage bans = 1;
+      // repeated .mruv.punishments.BanMessage bans = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -8613,11 +9761,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetPlayerBansResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetPlayerBansResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.economy.BanMessage bans = 1;
+  // repeated .mruv.punishments.BanMessage bans = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_bans_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -8629,19 +9777,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetPlayerBansResponse)
   return target;
 }
 
 size_t GetPlayerBansResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetPlayerBansResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetPlayerBansResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.economy.BanMessage bans = 1;
+  // repeated .mruv.punishments.BanMessage bans = 1;
   total_size += 1UL * this->_internal_bans_size();
   for (const auto& msg : this->bans_) {
     total_size +=
@@ -8658,22 +9806,22 @@ size_t GetPlayerBansResponse::ByteSizeLong() const {
 }
 
 void GetPlayerBansResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetPlayerBansResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetPlayerBansResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetPlayerBansResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPlayerBansResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetPlayerBansResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetPlayerBansResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetPlayerBansResponse)
     MergeFrom(*source);
   }
 }
 
 void GetPlayerBansResponse::MergeFrom(const GetPlayerBansResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetPlayerBansResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetPlayerBansResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8683,14 +9831,14 @@ void GetPlayerBansResponse::MergeFrom(const GetPlayerBansResponse& from) {
 }
 
 void GetPlayerBansResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetPlayerBansResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetPlayerBansResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetPlayerBansResponse::CopyFrom(const GetPlayerBansResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetPlayerBansResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetPlayerBansResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -8722,14 +9870,14 @@ class GetPlayerWarnsRequest::_Internal {
 GetPlayerWarnsRequest::GetPlayerWarnsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetPlayerWarnsRequest)
 }
 GetPlayerWarnsRequest::GetPlayerWarnsRequest(const GetPlayerWarnsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   player_ = from.player_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetPlayerWarnsRequest)
 }
 
 void GetPlayerWarnsRequest::SharedCtor() {
@@ -8737,7 +9885,7 @@ void GetPlayerWarnsRequest::SharedCtor() {
 }
 
 GetPlayerWarnsRequest::~GetPlayerWarnsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetPlayerWarnsRequest)
   SharedDtor();
 }
 
@@ -8754,7 +9902,7 @@ const GetPlayerWarnsRequest& GetPlayerWarnsRequest::default_instance() {
 
 
 void GetPlayerWarnsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetPlayerWarnsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetPlayerWarnsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8799,7 +9947,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetPlayerWarnsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetPlayerWarnsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -8813,12 +9961,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetPlayerWarnsRequest)
   return target;
 }
 
 size_t GetPlayerWarnsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetPlayerWarnsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetPlayerWarnsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8842,22 +9990,22 @@ size_t GetPlayerWarnsRequest::ByteSizeLong() const {
 }
 
 void GetPlayerWarnsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetPlayerWarnsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetPlayerWarnsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetPlayerWarnsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPlayerWarnsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetPlayerWarnsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetPlayerWarnsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetPlayerWarnsRequest)
     MergeFrom(*source);
   }
 }
 
 void GetPlayerWarnsRequest::MergeFrom(const GetPlayerWarnsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetPlayerWarnsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetPlayerWarnsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -8869,14 +10017,14 @@ void GetPlayerWarnsRequest::MergeFrom(const GetPlayerWarnsRequest& from) {
 }
 
 void GetPlayerWarnsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetPlayerWarnsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetPlayerWarnsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetPlayerWarnsRequest::CopyFrom(const GetPlayerWarnsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetPlayerWarnsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetPlayerWarnsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -8908,14 +10056,14 @@ class GetPlayerWarnsResponse::_Internal {
 GetPlayerWarnsResponse::GetPlayerWarnsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetPlayerWarnsResponse)
 }
 GetPlayerWarnsResponse::GetPlayerWarnsResponse(const GetPlayerWarnsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr),
       warns_(from.warns_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetPlayerWarnsResponse)
 }
 
 void GetPlayerWarnsResponse::SharedCtor() {
@@ -8923,7 +10071,7 @@ void GetPlayerWarnsResponse::SharedCtor() {
 }
 
 GetPlayerWarnsResponse::~GetPlayerWarnsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetPlayerWarnsResponse)
   SharedDtor();
 }
 
@@ -8940,7 +10088,7 @@ const GetPlayerWarnsResponse& GetPlayerWarnsResponse::default_instance() {
 
 
 void GetPlayerWarnsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetPlayerWarnsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetPlayerWarnsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8956,7 +10104,7 @@ const char* GetPlayerWarnsResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.economy.WarnMessage warns = 1;
+      // repeated .mruv.punishments.WarnMessage warns = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -8990,11 +10138,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetPlayerWarnsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetPlayerWarnsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.economy.WarnMessage warns = 1;
+  // repeated .mruv.punishments.WarnMessage warns = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_warns_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -9006,19 +10154,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetPlayerWarnsResponse)
   return target;
 }
 
 size_t GetPlayerWarnsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetPlayerWarnsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetPlayerWarnsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.economy.WarnMessage warns = 1;
+  // repeated .mruv.punishments.WarnMessage warns = 1;
   total_size += 1UL * this->_internal_warns_size();
   for (const auto& msg : this->warns_) {
     total_size +=
@@ -9035,22 +10183,22 @@ size_t GetPlayerWarnsResponse::ByteSizeLong() const {
 }
 
 void GetPlayerWarnsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetPlayerWarnsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetPlayerWarnsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetPlayerWarnsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPlayerWarnsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetPlayerWarnsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetPlayerWarnsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetPlayerWarnsResponse)
     MergeFrom(*source);
   }
 }
 
 void GetPlayerWarnsResponse::MergeFrom(const GetPlayerWarnsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetPlayerWarnsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetPlayerWarnsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9060,14 +10208,14 @@ void GetPlayerWarnsResponse::MergeFrom(const GetPlayerWarnsResponse& from) {
 }
 
 void GetPlayerWarnsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetPlayerWarnsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetPlayerWarnsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetPlayerWarnsResponse::CopyFrom(const GetPlayerWarnsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetPlayerWarnsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetPlayerWarnsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -9099,14 +10247,14 @@ class GetPlayerAdminJailRequest::_Internal {
 GetPlayerAdminJailRequest::GetPlayerAdminJailRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetPlayerAdminJailRequest)
 }
 GetPlayerAdminJailRequest::GetPlayerAdminJailRequest(const GetPlayerAdminJailRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   character_ = from.character_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetPlayerAdminJailRequest)
 }
 
 void GetPlayerAdminJailRequest::SharedCtor() {
@@ -9114,7 +10262,7 @@ void GetPlayerAdminJailRequest::SharedCtor() {
 }
 
 GetPlayerAdminJailRequest::~GetPlayerAdminJailRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetPlayerAdminJailRequest)
   SharedDtor();
 }
 
@@ -9131,7 +10279,7 @@ const GetPlayerAdminJailRequest& GetPlayerAdminJailRequest::default_instance() {
 
 
 void GetPlayerAdminJailRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetPlayerAdminJailRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetPlayerAdminJailRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -9176,7 +10324,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetPlayerAdminJailRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetPlayerAdminJailRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9190,12 +10338,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetPlayerAdminJailRequest)
   return target;
 }
 
 size_t GetPlayerAdminJailRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetPlayerAdminJailRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetPlayerAdminJailRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9219,22 +10367,22 @@ size_t GetPlayerAdminJailRequest::ByteSizeLong() const {
 }
 
 void GetPlayerAdminJailRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetPlayerAdminJailRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetPlayerAdminJailRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetPlayerAdminJailRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPlayerAdminJailRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetPlayerAdminJailRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetPlayerAdminJailRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetPlayerAdminJailRequest)
     MergeFrom(*source);
   }
 }
 
 void GetPlayerAdminJailRequest::MergeFrom(const GetPlayerAdminJailRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetPlayerAdminJailRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetPlayerAdminJailRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9246,14 +10394,14 @@ void GetPlayerAdminJailRequest::MergeFrom(const GetPlayerAdminJailRequest& from)
 }
 
 void GetPlayerAdminJailRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetPlayerAdminJailRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetPlayerAdminJailRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetPlayerAdminJailRequest::CopyFrom(const GetPlayerAdminJailRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetPlayerAdminJailRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetPlayerAdminJailRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -9285,7 +10433,7 @@ class GetPlayerAdminJailResponse::_Internal {
 GetPlayerAdminJailResponse::GetPlayerAdminJailResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetPlayerAdminJailResponse)
 }
 GetPlayerAdminJailResponse::GetPlayerAdminJailResponse(const GetPlayerAdminJailResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -9298,7 +10446,7 @@ GetPlayerAdminJailResponse::GetPlayerAdminJailResponse(const GetPlayerAdminJailR
   ::memcpy(&jail_time_, &from.jail_time_,
     static_cast<size_t>(reinterpret_cast<char*>(&date_) -
     reinterpret_cast<char*>(&jail_time_)) + sizeof(date_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetPlayerAdminJailResponse)
 }
 
 void GetPlayerAdminJailResponse::SharedCtor() {
@@ -9310,7 +10458,7 @@ void GetPlayerAdminJailResponse::SharedCtor() {
 }
 
 GetPlayerAdminJailResponse::~GetPlayerAdminJailResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetPlayerAdminJailResponse)
   SharedDtor();
 }
 
@@ -9328,7 +10476,7 @@ const GetPlayerAdminJailResponse& GetPlayerAdminJailResponse::default_instance()
 
 
 void GetPlayerAdminJailResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetPlayerAdminJailResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetPlayerAdminJailResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -9359,7 +10507,7 @@ const char* GetPlayerAdminJailResponse::_InternalParse(const char* ptr, ::PROTOB
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_reason();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.GetPlayerAdminJailResponse.reason"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.GetPlayerAdminJailResponse.reason"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9399,7 +10547,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetPlayerAdminJailResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetPlayerAdminJailResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9414,7 +10562,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_reason().data(), static_cast<int>(this->_internal_reason().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.GetPlayerAdminJailResponse.reason");
+      "mruv.punishments.GetPlayerAdminJailResponse.reason");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_reason(), target);
   }
@@ -9435,12 +10583,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetPlayerAdminJailResponse)
   return target;
 }
 
 size_t GetPlayerAdminJailResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetPlayerAdminJailResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetPlayerAdminJailResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9485,22 +10633,22 @@ size_t GetPlayerAdminJailResponse::ByteSizeLong() const {
 }
 
 void GetPlayerAdminJailResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetPlayerAdminJailResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetPlayerAdminJailResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetPlayerAdminJailResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetPlayerAdminJailResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetPlayerAdminJailResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetPlayerAdminJailResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetPlayerAdminJailResponse)
     MergeFrom(*source);
   }
 }
 
 void GetPlayerAdminJailResponse::MergeFrom(const GetPlayerAdminJailResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetPlayerAdminJailResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetPlayerAdminJailResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9522,14 +10670,14 @@ void GetPlayerAdminJailResponse::MergeFrom(const GetPlayerAdminJailResponse& fro
 }
 
 void GetPlayerAdminJailResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetPlayerAdminJailResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetPlayerAdminJailResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetPlayerAdminJailResponse::CopyFrom(const GetPlayerAdminJailResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetPlayerAdminJailResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetPlayerAdminJailResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -9565,14 +10713,14 @@ class GetBanRequest::_Internal {
 GetBanRequest::GetBanRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetBanRequest)
 }
 GetBanRequest::GetBanRequest(const GetBanRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetBanRequest)
 }
 
 void GetBanRequest::SharedCtor() {
@@ -9580,7 +10728,7 @@ void GetBanRequest::SharedCtor() {
 }
 
 GetBanRequest::~GetBanRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetBanRequest)
   SharedDtor();
 }
 
@@ -9597,7 +10745,7 @@ const GetBanRequest& GetBanRequest::default_instance() {
 
 
 void GetBanRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetBanRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetBanRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -9642,7 +10790,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetBanRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetBanRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9656,12 +10804,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetBanRequest)
   return target;
 }
 
 size_t GetBanRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetBanRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetBanRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9685,22 +10833,22 @@ size_t GetBanRequest::ByteSizeLong() const {
 }
 
 void GetBanRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetBanRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetBanRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetBanRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetBanRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetBanRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetBanRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetBanRequest)
     MergeFrom(*source);
   }
 }
 
 void GetBanRequest::MergeFrom(const GetBanRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetBanRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetBanRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9712,14 +10860,14 @@ void GetBanRequest::MergeFrom(const GetBanRequest& from) {
 }
 
 void GetBanRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetBanRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetBanRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetBanRequest::CopyFrom(const GetBanRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetBanRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetBanRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -9751,14 +10899,14 @@ class GetWarnRequest::_Internal {
 GetWarnRequest::GetWarnRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetWarnRequest)
 }
 GetWarnRequest::GetWarnRequest(const GetWarnRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetWarnRequest)
 }
 
 void GetWarnRequest::SharedCtor() {
@@ -9766,7 +10914,7 @@ void GetWarnRequest::SharedCtor() {
 }
 
 GetWarnRequest::~GetWarnRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetWarnRequest)
   SharedDtor();
 }
 
@@ -9783,7 +10931,7 @@ const GetWarnRequest& GetWarnRequest::default_instance() {
 
 
 void GetWarnRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetWarnRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetWarnRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -9828,7 +10976,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetWarnRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetWarnRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9842,12 +10990,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetWarnRequest)
   return target;
 }
 
 size_t GetWarnRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetWarnRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetWarnRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9871,22 +11019,22 @@ size_t GetWarnRequest::ByteSizeLong() const {
 }
 
 void GetWarnRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetWarnRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetWarnRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetWarnRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetWarnRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetWarnRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetWarnRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetWarnRequest)
     MergeFrom(*source);
   }
 }
 
 void GetWarnRequest::MergeFrom(const GetWarnRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetWarnRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetWarnRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -9898,14 +11046,14 @@ void GetWarnRequest::MergeFrom(const GetWarnRequest& from) {
 }
 
 void GetWarnRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetWarnRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetWarnRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetWarnRequest::CopyFrom(const GetWarnRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetWarnRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetWarnRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -9937,14 +11085,14 @@ class GetBlockRequest::_Internal {
 GetBlockRequest::GetBlockRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.GetBlockRequest)
 }
 GetBlockRequest::GetBlockRequest(const GetBlockRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.GetBlockRequest)
 }
 
 void GetBlockRequest::SharedCtor() {
@@ -9952,7 +11100,7 @@ void GetBlockRequest::SharedCtor() {
 }
 
 GetBlockRequest::~GetBlockRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.GetBlockRequest)
   SharedDtor();
 }
 
@@ -9969,7 +11117,7 @@ const GetBlockRequest& GetBlockRequest::default_instance() {
 
 
 void GetBlockRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.GetBlockRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.GetBlockRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10014,7 +11162,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetBlockRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.GetBlockRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10028,12 +11176,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.GetBlockRequest)
   return target;
 }
 
 size_t GetBlockRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.GetBlockRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.GetBlockRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10057,22 +11205,22 @@ size_t GetBlockRequest::ByteSizeLong() const {
 }
 
 void GetBlockRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.GetBlockRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.GetBlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetBlockRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetBlockRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.GetBlockRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.GetBlockRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.GetBlockRequest)
     MergeFrom(*source);
   }
 }
 
 void GetBlockRequest::MergeFrom(const GetBlockRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.GetBlockRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.GetBlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10084,14 +11232,14 @@ void GetBlockRequest::MergeFrom(const GetBlockRequest& from) {
 }
 
 void GetBlockRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.GetBlockRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.GetBlockRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetBlockRequest::CopyFrom(const GetBlockRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.GetBlockRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.GetBlockRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -10123,7 +11271,7 @@ class IsPlayerBannedRequest::_Internal {
 IsPlayerBannedRequest::IsPlayerBannedRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.IsPlayerBannedRequest)
 }
 IsPlayerBannedRequest::IsPlayerBannedRequest(const IsPlayerBannedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -10134,7 +11282,7 @@ IsPlayerBannedRequest::IsPlayerBannedRequest(const IsPlayerBannedRequest& from)
     ip_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ip_);
   }
   player_ = from.player_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.IsPlayerBannedRequest)
 }
 
 void IsPlayerBannedRequest::SharedCtor() {
@@ -10144,7 +11292,7 @@ void IsPlayerBannedRequest::SharedCtor() {
 }
 
 IsPlayerBannedRequest::~IsPlayerBannedRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.IsPlayerBannedRequest)
   SharedDtor();
 }
 
@@ -10162,7 +11310,7 @@ const IsPlayerBannedRequest& IsPlayerBannedRequest::default_instance() {
 
 
 void IsPlayerBannedRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.IsPlayerBannedRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.IsPlayerBannedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10191,7 +11339,7 @@ const char* IsPlayerBannedRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_ip();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.economy.IsPlayerBannedRequest.ip"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.punishments.IsPlayerBannedRequest.ip"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10217,7 +11365,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IsPlayerBannedRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.IsPlayerBannedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10232,7 +11380,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_ip().data(), static_cast<int>(this->_internal_ip().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.economy.IsPlayerBannedRequest.ip");
+      "mruv.punishments.IsPlayerBannedRequest.ip");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_ip(), target);
   }
@@ -10241,12 +11389,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.IsPlayerBannedRequest)
   return target;
 }
 
 size_t IsPlayerBannedRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.IsPlayerBannedRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.IsPlayerBannedRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10277,22 +11425,22 @@ size_t IsPlayerBannedRequest::ByteSizeLong() const {
 }
 
 void IsPlayerBannedRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.IsPlayerBannedRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.IsPlayerBannedRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const IsPlayerBannedRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsPlayerBannedRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.IsPlayerBannedRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.IsPlayerBannedRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.IsPlayerBannedRequest)
     MergeFrom(*source);
   }
 }
 
 void IsPlayerBannedRequest::MergeFrom(const IsPlayerBannedRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.IsPlayerBannedRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.IsPlayerBannedRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10308,14 +11456,14 @@ void IsPlayerBannedRequest::MergeFrom(const IsPlayerBannedRequest& from) {
 }
 
 void IsPlayerBannedRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.IsPlayerBannedRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.IsPlayerBannedRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IsPlayerBannedRequest::CopyFrom(const IsPlayerBannedRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.IsPlayerBannedRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.IsPlayerBannedRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -10349,7 +11497,7 @@ class IsPlayerBannedResponse::_Internal {
 IsPlayerBannedResponse::IsPlayerBannedResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.IsPlayerBannedResponse)
 }
 IsPlayerBannedResponse::IsPlayerBannedResponse(const IsPlayerBannedResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -10358,7 +11506,7 @@ IsPlayerBannedResponse::IsPlayerBannedResponse(const IsPlayerBannedResponse& fro
   ::memcpy(&banned_, &from.banned_,
     static_cast<size_t>(reinterpret_cast<char*>(&ban_id_) -
     reinterpret_cast<char*>(&banned_)) + sizeof(ban_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.IsPlayerBannedResponse)
 }
 
 void IsPlayerBannedResponse::SharedCtor() {
@@ -10368,7 +11516,7 @@ void IsPlayerBannedResponse::SharedCtor() {
 }
 
 IsPlayerBannedResponse::~IsPlayerBannedResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.IsPlayerBannedResponse)
   SharedDtor();
 }
 
@@ -10385,7 +11533,7 @@ const IsPlayerBannedResponse& IsPlayerBannedResponse::default_instance() {
 
 
 void IsPlayerBannedResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.IsPlayerBannedResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.IsPlayerBannedResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10439,7 +11587,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IsPlayerBannedResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.IsPlayerBannedResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10459,12 +11607,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.IsPlayerBannedResponse)
   return target;
 }
 
 size_t IsPlayerBannedResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.IsPlayerBannedResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.IsPlayerBannedResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10493,22 +11641,22 @@ size_t IsPlayerBannedResponse::ByteSizeLong() const {
 }
 
 void IsPlayerBannedResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.IsPlayerBannedResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.IsPlayerBannedResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const IsPlayerBannedResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsPlayerBannedResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.IsPlayerBannedResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.IsPlayerBannedResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.IsPlayerBannedResponse)
     MergeFrom(*source);
   }
 }
 
 void IsPlayerBannedResponse::MergeFrom(const IsPlayerBannedResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.IsPlayerBannedResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.IsPlayerBannedResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10523,14 +11671,14 @@ void IsPlayerBannedResponse::MergeFrom(const IsPlayerBannedResponse& from) {
 }
 
 void IsPlayerBannedResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.IsPlayerBannedResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.IsPlayerBannedResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IsPlayerBannedResponse::CopyFrom(const IsPlayerBannedResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.IsPlayerBannedResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.IsPlayerBannedResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -10563,14 +11711,14 @@ class IsCharacterBlockedRequest::_Internal {
 IsCharacterBlockedRequest::IsCharacterBlockedRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.IsCharacterBlockedRequest)
 }
 IsCharacterBlockedRequest::IsCharacterBlockedRequest(const IsCharacterBlockedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   character_ = from.character_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.IsCharacterBlockedRequest)
 }
 
 void IsCharacterBlockedRequest::SharedCtor() {
@@ -10578,7 +11726,7 @@ void IsCharacterBlockedRequest::SharedCtor() {
 }
 
 IsCharacterBlockedRequest::~IsCharacterBlockedRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.IsCharacterBlockedRequest)
   SharedDtor();
 }
 
@@ -10595,7 +11743,7 @@ const IsCharacterBlockedRequest& IsCharacterBlockedRequest::default_instance() {
 
 
 void IsCharacterBlockedRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.IsCharacterBlockedRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.IsCharacterBlockedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10640,7 +11788,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IsCharacterBlockedRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.IsCharacterBlockedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10654,12 +11802,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.IsCharacterBlockedRequest)
   return target;
 }
 
 size_t IsCharacterBlockedRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.IsCharacterBlockedRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.IsCharacterBlockedRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10683,22 +11831,22 @@ size_t IsCharacterBlockedRequest::ByteSizeLong() const {
 }
 
 void IsCharacterBlockedRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.IsCharacterBlockedRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.IsCharacterBlockedRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const IsCharacterBlockedRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsCharacterBlockedRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.IsCharacterBlockedRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.IsCharacterBlockedRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.IsCharacterBlockedRequest)
     MergeFrom(*source);
   }
 }
 
 void IsCharacterBlockedRequest::MergeFrom(const IsCharacterBlockedRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.IsCharacterBlockedRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.IsCharacterBlockedRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10710,14 +11858,14 @@ void IsCharacterBlockedRequest::MergeFrom(const IsCharacterBlockedRequest& from)
 }
 
 void IsCharacterBlockedRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.IsCharacterBlockedRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.IsCharacterBlockedRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IsCharacterBlockedRequest::CopyFrom(const IsCharacterBlockedRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.IsCharacterBlockedRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.IsCharacterBlockedRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -10749,7 +11897,7 @@ class IsCharacterBlockedResponse::_Internal {
 IsCharacterBlockedResponse::IsCharacterBlockedResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.IsCharacterBlockedResponse)
 }
 IsCharacterBlockedResponse::IsCharacterBlockedResponse(const IsCharacterBlockedResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -10758,7 +11906,7 @@ IsCharacterBlockedResponse::IsCharacterBlockedResponse(const IsCharacterBlockedR
   ::memcpy(&blocked_, &from.blocked_,
     static_cast<size_t>(reinterpret_cast<char*>(&block_id_) -
     reinterpret_cast<char*>(&blocked_)) + sizeof(block_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.IsCharacterBlockedResponse)
 }
 
 void IsCharacterBlockedResponse::SharedCtor() {
@@ -10768,7 +11916,7 @@ void IsCharacterBlockedResponse::SharedCtor() {
 }
 
 IsCharacterBlockedResponse::~IsCharacterBlockedResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.IsCharacterBlockedResponse)
   SharedDtor();
 }
 
@@ -10785,7 +11933,7 @@ const IsCharacterBlockedResponse& IsCharacterBlockedResponse::default_instance()
 
 
 void IsCharacterBlockedResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.IsCharacterBlockedResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.IsCharacterBlockedResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -10839,7 +11987,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IsCharacterBlockedResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.IsCharacterBlockedResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10859,12 +12007,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.IsCharacterBlockedResponse)
   return target;
 }
 
 size_t IsCharacterBlockedResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.IsCharacterBlockedResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.IsCharacterBlockedResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10893,22 +12041,22 @@ size_t IsCharacterBlockedResponse::ByteSizeLong() const {
 }
 
 void IsCharacterBlockedResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.IsCharacterBlockedResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.IsCharacterBlockedResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const IsCharacterBlockedResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsCharacterBlockedResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.IsCharacterBlockedResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.IsCharacterBlockedResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.IsCharacterBlockedResponse)
     MergeFrom(*source);
   }
 }
 
 void IsCharacterBlockedResponse::MergeFrom(const IsCharacterBlockedResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.IsCharacterBlockedResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.IsCharacterBlockedResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -10923,14 +12071,14 @@ void IsCharacterBlockedResponse::MergeFrom(const IsCharacterBlockedResponse& fro
 }
 
 void IsCharacterBlockedResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.IsCharacterBlockedResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.IsCharacterBlockedResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IsCharacterBlockedResponse::CopyFrom(const IsCharacterBlockedResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.IsCharacterBlockedResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.IsCharacterBlockedResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -10963,14 +12111,14 @@ class IsCharacterJailedRequest::_Internal {
 IsCharacterJailedRequest::IsCharacterJailedRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.IsCharacterJailedRequest)
 }
 IsCharacterJailedRequest::IsCharacterJailedRequest(const IsCharacterJailedRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   character_ = from.character_;
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.IsCharacterJailedRequest)
 }
 
 void IsCharacterJailedRequest::SharedCtor() {
@@ -10978,7 +12126,7 @@ void IsCharacterJailedRequest::SharedCtor() {
 }
 
 IsCharacterJailedRequest::~IsCharacterJailedRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.IsCharacterJailedRequest)
   SharedDtor();
 }
 
@@ -10995,7 +12143,7 @@ const IsCharacterJailedRequest& IsCharacterJailedRequest::default_instance() {
 
 
 void IsCharacterJailedRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.IsCharacterJailedRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.IsCharacterJailedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -11040,7 +12188,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IsCharacterJailedRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.IsCharacterJailedRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11054,12 +12202,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.IsCharacterJailedRequest)
   return target;
 }
 
 size_t IsCharacterJailedRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.IsCharacterJailedRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.IsCharacterJailedRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11083,22 +12231,22 @@ size_t IsCharacterJailedRequest::ByteSizeLong() const {
 }
 
 void IsCharacterJailedRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.IsCharacterJailedRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.IsCharacterJailedRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const IsCharacterJailedRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsCharacterJailedRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.IsCharacterJailedRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.IsCharacterJailedRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.IsCharacterJailedRequest)
     MergeFrom(*source);
   }
 }
 
 void IsCharacterJailedRequest::MergeFrom(const IsCharacterJailedRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.IsCharacterJailedRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.IsCharacterJailedRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11110,14 +12258,14 @@ void IsCharacterJailedRequest::MergeFrom(const IsCharacterJailedRequest& from) {
 }
 
 void IsCharacterJailedRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.IsCharacterJailedRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.IsCharacterJailedRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IsCharacterJailedRequest::CopyFrom(const IsCharacterJailedRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.IsCharacterJailedRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.IsCharacterJailedRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -11149,7 +12297,7 @@ class IsCharacterJailedResponse::_Internal {
 IsCharacterJailedResponse::IsCharacterJailedResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.IsCharacterJailedResponse)
 }
 IsCharacterJailedResponse::IsCharacterJailedResponse(const IsCharacterJailedResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -11158,7 +12306,7 @@ IsCharacterJailedResponse::IsCharacterJailedResponse(const IsCharacterJailedResp
   ::memcpy(&jailed_, &from.jailed_,
     static_cast<size_t>(reinterpret_cast<char*>(&jail_time_) -
     reinterpret_cast<char*>(&jailed_)) + sizeof(jail_time_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.IsCharacterJailedResponse)
 }
 
 void IsCharacterJailedResponse::SharedCtor() {
@@ -11168,7 +12316,7 @@ void IsCharacterJailedResponse::SharedCtor() {
 }
 
 IsCharacterJailedResponse::~IsCharacterJailedResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.IsCharacterJailedResponse)
   SharedDtor();
 }
 
@@ -11185,7 +12333,7 @@ const IsCharacterJailedResponse& IsCharacterJailedResponse::default_instance() {
 
 
 void IsCharacterJailedResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.IsCharacterJailedResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.IsCharacterJailedResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -11239,7 +12387,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IsCharacterJailedResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.IsCharacterJailedResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11259,12 +12407,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.IsCharacterJailedResponse)
   return target;
 }
 
 size_t IsCharacterJailedResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.IsCharacterJailedResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.IsCharacterJailedResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11293,22 +12441,22 @@ size_t IsCharacterJailedResponse::ByteSizeLong() const {
 }
 
 void IsCharacterJailedResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.IsCharacterJailedResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.IsCharacterJailedResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const IsCharacterJailedResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IsCharacterJailedResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.IsCharacterJailedResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.IsCharacterJailedResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.IsCharacterJailedResponse)
     MergeFrom(*source);
   }
 }
 
 void IsCharacterJailedResponse::MergeFrom(const IsCharacterJailedResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.IsCharacterJailedResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.IsCharacterJailedResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11323,14 +12471,14 @@ void IsCharacterJailedResponse::MergeFrom(const IsCharacterJailedResponse& from)
 }
 
 void IsCharacterJailedResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.IsCharacterJailedResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.IsCharacterJailedResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IsCharacterJailedResponse::CopyFrom(const IsCharacterJailedResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.IsCharacterJailedResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.IsCharacterJailedResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -11363,20 +12511,20 @@ class WatchBansRequest::_Internal {
 WatchBansRequest::WatchBansRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchBansRequest)
 }
 WatchBansRequest::WatchBansRequest(const WatchBansRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchBansRequest)
 }
 
 void WatchBansRequest::SharedCtor() {
 }
 
 WatchBansRequest::~WatchBansRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchBansRequest)
   SharedDtor();
 }
 
@@ -11393,7 +12541,7 @@ const WatchBansRequest& WatchBansRequest::default_instance() {
 
 
 void WatchBansRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchBansRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchBansRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -11425,7 +12573,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchBansRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchBansRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11433,12 +12581,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchBansRequest)
   return target;
 }
 
 size_t WatchBansRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchBansRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchBansRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11455,22 +12603,22 @@ size_t WatchBansRequest::ByteSizeLong() const {
 }
 
 void WatchBansRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchBansRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchBansRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchBansRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchBansRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchBansRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchBansRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchBansRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchBansRequest::MergeFrom(const WatchBansRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchBansRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchBansRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11479,14 +12627,14 @@ void WatchBansRequest::MergeFrom(const WatchBansRequest& from) {
 }
 
 void WatchBansRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchBansRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchBansRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchBansRequest::CopyFrom(const WatchBansRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchBansRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchBansRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -11517,20 +12665,20 @@ class WatchBlocksRequest::_Internal {
 WatchBlocksRequest::WatchBlocksRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchBlocksRequest)
 }
 WatchBlocksRequest::WatchBlocksRequest(const WatchBlocksRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchBlocksRequest)
 }
 
 void WatchBlocksRequest::SharedCtor() {
 }
 
 WatchBlocksRequest::~WatchBlocksRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchBlocksRequest)
   SharedDtor();
 }
 
@@ -11547,7 +12695,7 @@ const WatchBlocksRequest& WatchBlocksRequest::default_instance() {
 
 
 void WatchBlocksRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchBlocksRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchBlocksRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -11579,7 +12727,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchBlocksRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchBlocksRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11587,12 +12735,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchBlocksRequest)
   return target;
 }
 
 size_t WatchBlocksRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchBlocksRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchBlocksRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11609,22 +12757,22 @@ size_t WatchBlocksRequest::ByteSizeLong() const {
 }
 
 void WatchBlocksRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchBlocksRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchBlocksRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchBlocksRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchBlocksRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchBlocksRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchBlocksRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchBlocksRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchBlocksRequest::MergeFrom(const WatchBlocksRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchBlocksRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchBlocksRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11633,14 +12781,14 @@ void WatchBlocksRequest::MergeFrom(const WatchBlocksRequest& from) {
 }
 
 void WatchBlocksRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchBlocksRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchBlocksRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchBlocksRequest::CopyFrom(const WatchBlocksRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchBlocksRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchBlocksRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -11671,20 +12819,20 @@ class WatchWarnsRequest::_Internal {
 WatchWarnsRequest::WatchWarnsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchWarnsRequest)
 }
 WatchWarnsRequest::WatchWarnsRequest(const WatchWarnsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchWarnsRequest)
 }
 
 void WatchWarnsRequest::SharedCtor() {
 }
 
 WatchWarnsRequest::~WatchWarnsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchWarnsRequest)
   SharedDtor();
 }
 
@@ -11701,7 +12849,7 @@ const WatchWarnsRequest& WatchWarnsRequest::default_instance() {
 
 
 void WatchWarnsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchWarnsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchWarnsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -11733,7 +12881,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchWarnsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchWarnsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11741,12 +12889,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchWarnsRequest)
   return target;
 }
 
 size_t WatchWarnsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchWarnsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchWarnsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11763,22 +12911,22 @@ size_t WatchWarnsRequest::ByteSizeLong() const {
 }
 
 void WatchWarnsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchWarnsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchWarnsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchWarnsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchWarnsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchWarnsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchWarnsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchWarnsRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchWarnsRequest::MergeFrom(const WatchWarnsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchWarnsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchWarnsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11787,14 +12935,14 @@ void WatchWarnsRequest::MergeFrom(const WatchWarnsRequest& from) {
 }
 
 void WatchWarnsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchWarnsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchWarnsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchWarnsRequest::CopyFrom(const WatchWarnsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchWarnsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchWarnsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -11825,20 +12973,20 @@ class WatchAdminJailsRequest::_Internal {
 WatchAdminJailsRequest::WatchAdminJailsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchAdminJailsRequest)
 }
 WatchAdminJailsRequest::WatchAdminJailsRequest(const WatchAdminJailsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchAdminJailsRequest)
 }
 
 void WatchAdminJailsRequest::SharedCtor() {
 }
 
 WatchAdminJailsRequest::~WatchAdminJailsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchAdminJailsRequest)
   SharedDtor();
 }
 
@@ -11855,7 +13003,7 @@ const WatchAdminJailsRequest& WatchAdminJailsRequest::default_instance() {
 
 
 void WatchAdminJailsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchAdminJailsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchAdminJailsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -11887,7 +13035,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchAdminJailsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchAdminJailsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11895,12 +13043,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchAdminJailsRequest)
   return target;
 }
 
 size_t WatchAdminJailsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchAdminJailsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchAdminJailsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11917,22 +13065,22 @@ size_t WatchAdminJailsRequest::ByteSizeLong() const {
 }
 
 void WatchAdminJailsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchAdminJailsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchAdminJailsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchAdminJailsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchAdminJailsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchAdminJailsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchAdminJailsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchAdminJailsRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchAdminJailsRequest::MergeFrom(const WatchAdminJailsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchAdminJailsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchAdminJailsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -11941,14 +13089,14 @@ void WatchAdminJailsRequest::MergeFrom(const WatchAdminJailsRequest& from) {
 }
 
 void WatchAdminJailsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchAdminJailsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchAdminJailsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchAdminJailsRequest::CopyFrom(const WatchAdminJailsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchAdminJailsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchAdminJailsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -11979,20 +13127,20 @@ class WatchUnBansRequest::_Internal {
 WatchUnBansRequest::WatchUnBansRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchUnBansRequest)
 }
 WatchUnBansRequest::WatchUnBansRequest(const WatchUnBansRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchUnBansRequest)
 }
 
 void WatchUnBansRequest::SharedCtor() {
 }
 
 WatchUnBansRequest::~WatchUnBansRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchUnBansRequest)
   SharedDtor();
 }
 
@@ -12009,7 +13157,7 @@ const WatchUnBansRequest& WatchUnBansRequest::default_instance() {
 
 
 void WatchUnBansRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchUnBansRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchUnBansRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -12041,7 +13189,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchUnBansRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchUnBansRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -12049,12 +13197,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchUnBansRequest)
   return target;
 }
 
 size_t WatchUnBansRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchUnBansRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchUnBansRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12071,22 +13219,22 @@ size_t WatchUnBansRequest::ByteSizeLong() const {
 }
 
 void WatchUnBansRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchUnBansRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchUnBansRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchUnBansRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchUnBansRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchUnBansRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchUnBansRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchUnBansRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchUnBansRequest::MergeFrom(const WatchUnBansRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchUnBansRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchUnBansRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12095,14 +13243,14 @@ void WatchUnBansRequest::MergeFrom(const WatchUnBansRequest& from) {
 }
 
 void WatchUnBansRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchUnBansRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchUnBansRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchUnBansRequest::CopyFrom(const WatchUnBansRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchUnBansRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchUnBansRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -12133,20 +13281,20 @@ class WatchUnBlocksRequest::_Internal {
 WatchUnBlocksRequest::WatchUnBlocksRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchUnBlocksRequest)
 }
 WatchUnBlocksRequest::WatchUnBlocksRequest(const WatchUnBlocksRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchUnBlocksRequest)
 }
 
 void WatchUnBlocksRequest::SharedCtor() {
 }
 
 WatchUnBlocksRequest::~WatchUnBlocksRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchUnBlocksRequest)
   SharedDtor();
 }
 
@@ -12163,7 +13311,7 @@ const WatchUnBlocksRequest& WatchUnBlocksRequest::default_instance() {
 
 
 void WatchUnBlocksRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchUnBlocksRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchUnBlocksRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -12195,7 +13343,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchUnBlocksRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchUnBlocksRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -12203,12 +13351,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchUnBlocksRequest)
   return target;
 }
 
 size_t WatchUnBlocksRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchUnBlocksRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchUnBlocksRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12225,22 +13373,22 @@ size_t WatchUnBlocksRequest::ByteSizeLong() const {
 }
 
 void WatchUnBlocksRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchUnBlocksRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchUnBlocksRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchUnBlocksRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchUnBlocksRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchUnBlocksRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchUnBlocksRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchUnBlocksRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchUnBlocksRequest::MergeFrom(const WatchUnBlocksRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchUnBlocksRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchUnBlocksRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12249,14 +13397,14 @@ void WatchUnBlocksRequest::MergeFrom(const WatchUnBlocksRequest& from) {
 }
 
 void WatchUnBlocksRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchUnBlocksRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchUnBlocksRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchUnBlocksRequest::CopyFrom(const WatchUnBlocksRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchUnBlocksRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchUnBlocksRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -12287,20 +13435,20 @@ class WatchUnWarnsRequest::_Internal {
 WatchUnWarnsRequest::WatchUnWarnsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchUnWarnsRequest)
 }
 WatchUnWarnsRequest::WatchUnWarnsRequest(const WatchUnWarnsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchUnWarnsRequest)
 }
 
 void WatchUnWarnsRequest::SharedCtor() {
 }
 
 WatchUnWarnsRequest::~WatchUnWarnsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchUnWarnsRequest)
   SharedDtor();
 }
 
@@ -12317,7 +13465,7 @@ const WatchUnWarnsRequest& WatchUnWarnsRequest::default_instance() {
 
 
 void WatchUnWarnsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchUnWarnsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchUnWarnsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -12349,7 +13497,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchUnWarnsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchUnWarnsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -12357,12 +13505,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchUnWarnsRequest)
   return target;
 }
 
 size_t WatchUnWarnsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchUnWarnsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchUnWarnsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12379,22 +13527,22 @@ size_t WatchUnWarnsRequest::ByteSizeLong() const {
 }
 
 void WatchUnWarnsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchUnWarnsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchUnWarnsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchUnWarnsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchUnWarnsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchUnWarnsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchUnWarnsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchUnWarnsRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchUnWarnsRequest::MergeFrom(const WatchUnWarnsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchUnWarnsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchUnWarnsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12403,14 +13551,14 @@ void WatchUnWarnsRequest::MergeFrom(const WatchUnWarnsRequest& from) {
 }
 
 void WatchUnWarnsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchUnWarnsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchUnWarnsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchUnWarnsRequest::CopyFrom(const WatchUnWarnsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchUnWarnsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchUnWarnsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -12441,20 +13589,20 @@ class WatchUnAdminJailsRequest::_Internal {
 WatchUnAdminJailsRequest::WatchUnAdminJailsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchUnAdminJailsRequest)
 }
 WatchUnAdminJailsRequest::WatchUnAdminJailsRequest(const WatchUnAdminJailsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchUnAdminJailsRequest)
 }
 
 void WatchUnAdminJailsRequest::SharedCtor() {
 }
 
 WatchUnAdminJailsRequest::~WatchUnAdminJailsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchUnAdminJailsRequest)
   SharedDtor();
 }
 
@@ -12471,7 +13619,7 @@ const WatchUnAdminJailsRequest& WatchUnAdminJailsRequest::default_instance() {
 
 
 void WatchUnAdminJailsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchUnAdminJailsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchUnAdminJailsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -12503,7 +13651,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchUnAdminJailsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchUnAdminJailsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -12511,12 +13659,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchUnAdminJailsRequest)
   return target;
 }
 
 size_t WatchUnAdminJailsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchUnAdminJailsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchUnAdminJailsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12533,22 +13681,22 @@ size_t WatchUnAdminJailsRequest::ByteSizeLong() const {
 }
 
 void WatchUnAdminJailsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchUnAdminJailsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchUnAdminJailsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchUnAdminJailsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchUnAdminJailsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchUnAdminJailsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchUnAdminJailsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchUnAdminJailsRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchUnAdminJailsRequest::MergeFrom(const WatchUnAdminJailsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchUnAdminJailsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchUnAdminJailsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -12557,14 +13705,14 @@ void WatchUnAdminJailsRequest::MergeFrom(const WatchUnAdminJailsRequest& from) {
 }
 
 void WatchUnAdminJailsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchUnAdminJailsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchUnAdminJailsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchUnAdminJailsRequest::CopyFrom(const WatchUnAdminJailsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchUnAdminJailsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchUnAdminJailsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -12586,314 +13734,6 @@ void WatchUnAdminJailsRequest::InternalSwap(WatchUnAdminJailsRequest* other) {
 
 // ===================================================================
 
-void WatchPlayerAcquittalsRequest::InitAsDefaultInstance() {
-}
-class WatchPlayerAcquittalsRequest::_Internal {
- public:
-};
-
-WatchPlayerAcquittalsRequest::WatchPlayerAcquittalsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchPlayerAcquittalsRequest)
-}
-WatchPlayerAcquittalsRequest::WatchPlayerAcquittalsRequest(const WatchPlayerAcquittalsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchPlayerAcquittalsRequest)
-}
-
-void WatchPlayerAcquittalsRequest::SharedCtor() {
-}
-
-WatchPlayerAcquittalsRequest::~WatchPlayerAcquittalsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchPlayerAcquittalsRequest)
-  SharedDtor();
-}
-
-void WatchPlayerAcquittalsRequest::SharedDtor() {
-}
-
-void WatchPlayerAcquittalsRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const WatchPlayerAcquittalsRequest& WatchPlayerAcquittalsRequest::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WatchPlayerAcquittalsRequest_punishments_2fpunishments_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void WatchPlayerAcquittalsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear();
-}
-
-const char* WatchPlayerAcquittalsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* WatchPlayerAcquittalsRequest::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchPlayerAcquittalsRequest)
-  return target;
-}
-
-size_t WatchPlayerAcquittalsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void WatchPlayerAcquittalsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const WatchPlayerAcquittalsRequest* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPlayerAcquittalsRequest>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchPlayerAcquittalsRequest)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchPlayerAcquittalsRequest)
-    MergeFrom(*source);
-  }
-}
-
-void WatchPlayerAcquittalsRequest::MergeFrom(const WatchPlayerAcquittalsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-}
-
-void WatchPlayerAcquittalsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void WatchPlayerAcquittalsRequest::CopyFrom(const WatchPlayerAcquittalsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchPlayerAcquittalsRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool WatchPlayerAcquittalsRequest::IsInitialized() const {
-  return true;
-}
-
-void WatchPlayerAcquittalsRequest::InternalSwap(WatchPlayerAcquittalsRequest* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata WatchPlayerAcquittalsRequest::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void WatchPlayerAcquittalsResponse::InitAsDefaultInstance() {
-}
-class WatchPlayerAcquittalsResponse::_Internal {
- public:
-};
-
-WatchPlayerAcquittalsResponse::WatchPlayerAcquittalsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchPlayerAcquittalsResponse)
-}
-WatchPlayerAcquittalsResponse::WatchPlayerAcquittalsResponse(const WatchPlayerAcquittalsResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchPlayerAcquittalsResponse)
-}
-
-void WatchPlayerAcquittalsResponse::SharedCtor() {
-}
-
-WatchPlayerAcquittalsResponse::~WatchPlayerAcquittalsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchPlayerAcquittalsResponse)
-  SharedDtor();
-}
-
-void WatchPlayerAcquittalsResponse::SharedDtor() {
-}
-
-void WatchPlayerAcquittalsResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const WatchPlayerAcquittalsResponse& WatchPlayerAcquittalsResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void WatchPlayerAcquittalsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear();
-}
-
-const char* WatchPlayerAcquittalsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* WatchPlayerAcquittalsResponse::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchPlayerAcquittalsResponse)
-  return target;
-}
-
-size_t WatchPlayerAcquittalsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void WatchPlayerAcquittalsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const WatchPlayerAcquittalsResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPlayerAcquittalsResponse>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchPlayerAcquittalsResponse)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchPlayerAcquittalsResponse)
-    MergeFrom(*source);
-  }
-}
-
-void WatchPlayerAcquittalsResponse::MergeFrom(const WatchPlayerAcquittalsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-}
-
-void WatchPlayerAcquittalsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void WatchPlayerAcquittalsResponse::CopyFrom(const WatchPlayerAcquittalsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchPlayerAcquittalsResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool WatchPlayerAcquittalsResponse::IsInitialized() const {
-  return true;
-}
-
-void WatchPlayerAcquittalsResponse::InternalSwap(WatchPlayerAcquittalsResponse* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata WatchPlayerAcquittalsResponse::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
 void WatchPlayerPunishmentsRequest::InitAsDefaultInstance() {
 }
 class WatchPlayerPunishmentsRequest::_Internal {
@@ -12903,20 +13743,26 @@ class WatchPlayerPunishmentsRequest::_Internal {
 WatchPlayerPunishmentsRequest::WatchPlayerPunishmentsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchPlayerPunishmentsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchPlayerPunishmentsRequest)
 }
 WatchPlayerPunishmentsRequest::WatchPlayerPunishmentsRequest(const WatchPlayerPunishmentsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchPlayerPunishmentsRequest)
+  ::memcpy(&account_id_, &from.account_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&character_id_) -
+    reinterpret_cast<char*>(&account_id_)) + sizeof(character_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchPlayerPunishmentsRequest)
 }
 
 void WatchPlayerPunishmentsRequest::SharedCtor() {
+  ::memset(&account_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&character_id_) -
+      reinterpret_cast<char*>(&account_id_)) + sizeof(character_id_));
 }
 
 WatchPlayerPunishmentsRequest::~WatchPlayerPunishmentsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchPlayerPunishmentsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchPlayerPunishmentsRequest)
   SharedDtor();
 }
 
@@ -12933,11 +13779,14 @@ const WatchPlayerPunishmentsRequest& WatchPlayerPunishmentsRequest::default_inst
 
 
 void WatchPlayerPunishmentsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchPlayerPunishmentsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  ::memset(&account_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&character_id_) -
+      reinterpret_cast<char*>(&account_id_)) + sizeof(character_id_));
   _internal_metadata_.Clear();
 }
 
@@ -12947,6 +13796,23 @@ const char* WatchPlayerPunishmentsRequest::_InternalParse(const char* ptr, ::PRO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 account_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          account_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 character_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          character_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -12954,6 +13820,8 @@ const char* WatchPlayerPunishmentsRequest::_InternalParse(const char* ptr, ::PRO
         ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -12965,25 +13833,51 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchPlayerPunishmentsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchPlayerPunishmentsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // uint32 account_id = 1;
+  if (this->account_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_account_id(), target);
+  }
+
+  // uint32 character_id = 2;
+  if (this->character_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_character_id(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchPlayerPunishmentsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchPlayerPunishmentsRequest)
   return target;
 }
 
 size_t WatchPlayerPunishmentsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchPlayerPunishmentsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // uint32 account_id = 1;
+  if (this->account_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_account_id());
+  }
+
+  // uint32 character_id = 2;
+  if (this->character_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_character_id());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -12995,38 +13889,44 @@ size_t WatchPlayerPunishmentsRequest::ByteSizeLong() const {
 }
 
 void WatchPlayerPunishmentsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchPlayerPunishmentsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchPlayerPunishmentsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPlayerPunishmentsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchPlayerPunishmentsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchPlayerPunishmentsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchPlayerPunishmentsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchPlayerPunishmentsRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchPlayerPunishmentsRequest::MergeFrom(const WatchPlayerPunishmentsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchPlayerPunishmentsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.account_id() != 0) {
+    _internal_set_account_id(from._internal_account_id());
+  }
+  if (from.character_id() != 0) {
+    _internal_set_character_id(from._internal_character_id());
+  }
 }
 
 void WatchPlayerPunishmentsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchPlayerPunishmentsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchPlayerPunishmentsRequest::CopyFrom(const WatchPlayerPunishmentsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchPlayerPunishmentsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchPlayerPunishmentsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -13039,6 +13939,8 @@ bool WatchPlayerPunishmentsRequest::IsInitialized() const {
 void WatchPlayerPunishmentsRequest::InternalSwap(WatchPlayerPunishmentsRequest* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(account_id_, other->account_id_);
+  swap(character_id_, other->character_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchPlayerPunishmentsRequest::GetMetadata() const {
@@ -13049,38 +13951,143 @@ void WatchPlayerPunishmentsRequest::InternalSwap(WatchPlayerPunishmentsRequest* 
 // ===================================================================
 
 void WatchPlayerPunishmentsResponse::InitAsDefaultInstance() {
+  ::mruv::punishments::_WatchPlayerPunishmentsResponse_default_instance_.ban_ = const_cast< ::mruv::punishments::BanMessage*>(
+      ::mruv::punishments::BanMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPlayerPunishmentsResponse_default_instance_.block_ = const_cast< ::mruv::punishments::BlockMessage*>(
+      ::mruv::punishments::BlockMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPlayerPunishmentsResponse_default_instance_.warn_ = const_cast< ::mruv::punishments::WarnMessage*>(
+      ::mruv::punishments::WarnMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPlayerPunishmentsResponse_default_instance_.aj_ = const_cast< ::mruv::punishments::AdminJailMessage*>(
+      ::mruv::punishments::AdminJailMessage::internal_default_instance());
 }
 class WatchPlayerPunishmentsResponse::_Internal {
  public:
+  static const ::mruv::punishments::BanMessage& ban(const WatchPlayerPunishmentsResponse* msg);
+  static const ::mruv::punishments::BlockMessage& block(const WatchPlayerPunishmentsResponse* msg);
+  static const ::mruv::punishments::WarnMessage& warn(const WatchPlayerPunishmentsResponse* msg);
+  static const ::mruv::punishments::AdminJailMessage& aj(const WatchPlayerPunishmentsResponse* msg);
 };
 
+const ::mruv::punishments::BanMessage&
+WatchPlayerPunishmentsResponse::_Internal::ban(const WatchPlayerPunishmentsResponse* msg) {
+  return *msg->punishment_.ban_;
+}
+const ::mruv::punishments::BlockMessage&
+WatchPlayerPunishmentsResponse::_Internal::block(const WatchPlayerPunishmentsResponse* msg) {
+  return *msg->punishment_.block_;
+}
+const ::mruv::punishments::WarnMessage&
+WatchPlayerPunishmentsResponse::_Internal::warn(const WatchPlayerPunishmentsResponse* msg) {
+  return *msg->punishment_.warn_;
+}
+const ::mruv::punishments::AdminJailMessage&
+WatchPlayerPunishmentsResponse::_Internal::aj(const WatchPlayerPunishmentsResponse* msg) {
+  return *msg->punishment_.aj_;
+}
+void WatchPlayerPunishmentsResponse::set_allocated_ban(::mruv::punishments::BanMessage* ban) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (ban) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      ban = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ban, submessage_arena);
+    }
+    set_has_ban();
+    punishment_.ban_ = ban;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerPunishmentsResponse.ban)
+}
+void WatchPlayerPunishmentsResponse::set_allocated_block(::mruv::punishments::BlockMessage* block) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (block) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      block = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, block, submessage_arena);
+    }
+    set_has_block();
+    punishment_.block_ = block;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerPunishmentsResponse.block)
+}
+void WatchPlayerPunishmentsResponse::set_allocated_warn(::mruv::punishments::WarnMessage* warn) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (warn) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      warn = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, warn, submessage_arena);
+    }
+    set_has_warn();
+    punishment_.warn_ = warn;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerPunishmentsResponse.warn)
+}
+void WatchPlayerPunishmentsResponse::set_allocated_aj(::mruv::punishments::AdminJailMessage* aj) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (aj) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      aj = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, aj, submessage_arena);
+    }
+    set_has_aj();
+    punishment_.aj_ = aj;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerPunishmentsResponse.aj)
+}
 WatchPlayerPunishmentsResponse::WatchPlayerPunishmentsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchPlayerPunishmentsResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchPlayerPunishmentsResponse)
 }
 WatchPlayerPunishmentsResponse::WatchPlayerPunishmentsResponse(const WatchPlayerPunishmentsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&type_, &from.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&punishment_id_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(punishment_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchPlayerPunishmentsResponse)
+  clear_has_punishment();
+  switch (from.punishment_case()) {
+    case kBan: {
+      _internal_mutable_ban()->::mruv::punishments::BanMessage::MergeFrom(from._internal_ban());
+      break;
+    }
+    case kBlock: {
+      _internal_mutable_block()->::mruv::punishments::BlockMessage::MergeFrom(from._internal_block());
+      break;
+    }
+    case kWarn: {
+      _internal_mutable_warn()->::mruv::punishments::WarnMessage::MergeFrom(from._internal_warn());
+      break;
+    }
+    case kAj: {
+      _internal_mutable_aj()->::mruv::punishments::AdminJailMessage::MergeFrom(from._internal_aj());
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchPlayerPunishmentsResponse)
 }
 
 void WatchPlayerPunishmentsResponse::SharedCtor() {
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&punishment_id_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(punishment_id_));
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_WatchPlayerPunishmentsResponse_punishments_2fpunishments_2eproto.base);
+  clear_has_punishment();
 }
 
 WatchPlayerPunishmentsResponse::~WatchPlayerPunishmentsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchPlayerPunishmentsResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchPlayerPunishmentsResponse)
   SharedDtor();
 }
 
 void WatchPlayerPunishmentsResponse::SharedDtor() {
+  if (has_punishment()) {
+    clear_punishment();
+  }
 }
 
 void WatchPlayerPunishmentsResponse::SetCachedSize(int size) const {
@@ -13092,15 +14099,40 @@ const WatchPlayerPunishmentsResponse& WatchPlayerPunishmentsResponse::default_in
 }
 
 
+void WatchPlayerPunishmentsResponse::clear_punishment() {
+// @@protoc_insertion_point(one_of_clear_start:mruv.punishments.WatchPlayerPunishmentsResponse)
+  switch (punishment_case()) {
+    case kBan: {
+      delete punishment_.ban_;
+      break;
+    }
+    case kBlock: {
+      delete punishment_.block_;
+      break;
+    }
+    case kWarn: {
+      delete punishment_.warn_;
+      break;
+    }
+    case kAj: {
+      delete punishment_.aj_;
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = PUNISHMENT_NOT_SET;
+}
+
+
 void WatchPlayerPunishmentsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchPlayerPunishmentsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&punishment_id_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(punishment_id_));
+  clear_punishment();
   _internal_metadata_.Clear();
 }
 
@@ -13111,18 +14143,31 @@ const char* WatchPlayerPunishmentsResponse::_InternalParse(const char* ptr, ::PR
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .mruv.economy.PunishmentType type = 1;
+      // .mruv.punishments.BanMessage ban = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_ban(), ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::mruv::economy::PunishmentType>(val));
         } else goto handle_unusual;
         continue;
-      // uint32 punishment_id = 2;
+      // .mruv.punishments.BlockMessage block = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          punishment_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_block(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.WarnMessage warn = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_warn(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.AdminJailMessage aj = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_aj(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -13148,52 +14193,91 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchPlayerPunishmentsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchPlayerPunishmentsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mruv.economy.PunishmentType type = 1;
-  if (this->type() != 0) {
+  // .mruv.punishments.BanMessage ban = 1;
+  if (_internal_has_ban()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_type(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::ban(this), target, stream);
   }
 
-  // uint32 punishment_id = 2;
-  if (this->punishment_id() != 0) {
+  // .mruv.punishments.BlockMessage block = 2;
+  if (_internal_has_block()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_punishment_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::block(this), target, stream);
+  }
+
+  // .mruv.punishments.WarnMessage warn = 3;
+  if (_internal_has_warn()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::warn(this), target, stream);
+  }
+
+  // .mruv.punishments.AdminJailMessage aj = 4;
+  if (_internal_has_aj()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::aj(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchPlayerPunishmentsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchPlayerPunishmentsResponse)
   return target;
 }
 
 size_t WatchPlayerPunishmentsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchPlayerPunishmentsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mruv.economy.PunishmentType type = 1;
-  if (this->type() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+  switch (punishment_case()) {
+    // .mruv.punishments.BanMessage ban = 1;
+    case kBan: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.ban_);
+      break;
+    }
+    // .mruv.punishments.BlockMessage block = 2;
+    case kBlock: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.block_);
+      break;
+    }
+    // .mruv.punishments.WarnMessage warn = 3;
+    case kWarn: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.warn_);
+      break;
+    }
+    // .mruv.punishments.AdminJailMessage aj = 4;
+    case kAj: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.aj_);
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
   }
-
-  // uint32 punishment_id = 2;
-  if (this->punishment_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_punishment_id());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -13204,44 +14288,59 @@ size_t WatchPlayerPunishmentsResponse::ByteSizeLong() const {
 }
 
 void WatchPlayerPunishmentsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchPlayerPunishmentsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchPlayerPunishmentsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPlayerPunishmentsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchPlayerPunishmentsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchPlayerPunishmentsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchPlayerPunishmentsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchPlayerPunishmentsResponse)
     MergeFrom(*source);
   }
 }
 
 void WatchPlayerPunishmentsResponse::MergeFrom(const WatchPlayerPunishmentsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchPlayerPunishmentsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.type() != 0) {
-    _internal_set_type(from._internal_type());
-  }
-  if (from.punishment_id() != 0) {
-    _internal_set_punishment_id(from._internal_punishment_id());
+  switch (from.punishment_case()) {
+    case kBan: {
+      _internal_mutable_ban()->::mruv::punishments::BanMessage::MergeFrom(from._internal_ban());
+      break;
+    }
+    case kBlock: {
+      _internal_mutable_block()->::mruv::punishments::BlockMessage::MergeFrom(from._internal_block());
+      break;
+    }
+    case kWarn: {
+      _internal_mutable_warn()->::mruv::punishments::WarnMessage::MergeFrom(from._internal_warn());
+      break;
+    }
+    case kAj: {
+      _internal_mutable_aj()->::mruv::punishments::AdminJailMessage::MergeFrom(from._internal_aj());
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
   }
 }
 
 void WatchPlayerPunishmentsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchPlayerPunishmentsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchPlayerPunishmentsResponse::CopyFrom(const WatchPlayerPunishmentsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchPlayerPunishmentsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchPlayerPunishmentsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -13254,11 +14353,641 @@ bool WatchPlayerPunishmentsResponse::IsInitialized() const {
 void WatchPlayerPunishmentsResponse::InternalSwap(WatchPlayerPunishmentsResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(type_, other->type_);
-  swap(punishment_id_, other->punishment_id_);
+  swap(punishment_, other->punishment_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchPlayerPunishmentsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void WatchPlayerAcquittalsRequest::InitAsDefaultInstance() {
+}
+class WatchPlayerAcquittalsRequest::_Internal {
+ public:
+};
+
+WatchPlayerAcquittalsRequest::WatchPlayerAcquittalsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchPlayerAcquittalsRequest)
+}
+WatchPlayerAcquittalsRequest::WatchPlayerAcquittalsRequest(const WatchPlayerAcquittalsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&account_id_, &from.account_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&character_id_) -
+    reinterpret_cast<char*>(&account_id_)) + sizeof(character_id_));
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchPlayerAcquittalsRequest)
+}
+
+void WatchPlayerAcquittalsRequest::SharedCtor() {
+  ::memset(&account_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&character_id_) -
+      reinterpret_cast<char*>(&account_id_)) + sizeof(character_id_));
+}
+
+WatchPlayerAcquittalsRequest::~WatchPlayerAcquittalsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchPlayerAcquittalsRequest)
+  SharedDtor();
+}
+
+void WatchPlayerAcquittalsRequest::SharedDtor() {
+}
+
+void WatchPlayerAcquittalsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const WatchPlayerAcquittalsRequest& WatchPlayerAcquittalsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WatchPlayerAcquittalsRequest_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void WatchPlayerAcquittalsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&account_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&character_id_) -
+      reinterpret_cast<char*>(&account_id_)) + sizeof(character_id_));
+  _internal_metadata_.Clear();
+}
+
+const char* WatchPlayerAcquittalsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 account_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          account_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 character_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          character_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* WatchPlayerAcquittalsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 account_id = 1;
+  if (this->account_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_account_id(), target);
+  }
+
+  // uint32 character_id = 2;
+  if (this->character_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_character_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchPlayerAcquittalsRequest)
+  return target;
+}
+
+size_t WatchPlayerAcquittalsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 account_id = 1;
+  if (this->account_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_account_id());
+  }
+
+  // uint32 character_id = 2;
+  if (this->character_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_character_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void WatchPlayerAcquittalsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const WatchPlayerAcquittalsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPlayerAcquittalsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchPlayerAcquittalsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchPlayerAcquittalsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void WatchPlayerAcquittalsRequest::MergeFrom(const WatchPlayerAcquittalsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.account_id() != 0) {
+    _internal_set_account_id(from._internal_account_id());
+  }
+  if (from.character_id() != 0) {
+    _internal_set_character_id(from._internal_character_id());
+  }
+}
+
+void WatchPlayerAcquittalsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void WatchPlayerAcquittalsRequest::CopyFrom(const WatchPlayerAcquittalsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchPlayerAcquittalsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool WatchPlayerAcquittalsRequest::IsInitialized() const {
+  return true;
+}
+
+void WatchPlayerAcquittalsRequest::InternalSwap(WatchPlayerAcquittalsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(account_id_, other->account_id_);
+  swap(character_id_, other->character_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata WatchPlayerAcquittalsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void WatchPlayerAcquittalsResponse::InitAsDefaultInstance() {
+  ::mruv::punishments::_WatchPlayerAcquittalsResponse_default_instance_.unban_ = const_cast< ::mruv::punishments::UnBanMessage*>(
+      ::mruv::punishments::UnBanMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPlayerAcquittalsResponse_default_instance_.unblock_ = const_cast< ::mruv::punishments::UnBlockMessage*>(
+      ::mruv::punishments::UnBlockMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPlayerAcquittalsResponse_default_instance_.unwarn_ = const_cast< ::mruv::punishments::UnWarnMessage*>(
+      ::mruv::punishments::UnWarnMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPlayerAcquittalsResponse_default_instance_.unaj_ = const_cast< ::mruv::punishments::UnAdminJailMessage*>(
+      ::mruv::punishments::UnAdminJailMessage::internal_default_instance());
+}
+class WatchPlayerAcquittalsResponse::_Internal {
+ public:
+  static const ::mruv::punishments::UnBanMessage& unban(const WatchPlayerAcquittalsResponse* msg);
+  static const ::mruv::punishments::UnBlockMessage& unblock(const WatchPlayerAcquittalsResponse* msg);
+  static const ::mruv::punishments::UnWarnMessage& unwarn(const WatchPlayerAcquittalsResponse* msg);
+  static const ::mruv::punishments::UnAdminJailMessage& unaj(const WatchPlayerAcquittalsResponse* msg);
+};
+
+const ::mruv::punishments::UnBanMessage&
+WatchPlayerAcquittalsResponse::_Internal::unban(const WatchPlayerAcquittalsResponse* msg) {
+  return *msg->acquittal_.unban_;
+}
+const ::mruv::punishments::UnBlockMessage&
+WatchPlayerAcquittalsResponse::_Internal::unblock(const WatchPlayerAcquittalsResponse* msg) {
+  return *msg->acquittal_.unblock_;
+}
+const ::mruv::punishments::UnWarnMessage&
+WatchPlayerAcquittalsResponse::_Internal::unwarn(const WatchPlayerAcquittalsResponse* msg) {
+  return *msg->acquittal_.unwarn_;
+}
+const ::mruv::punishments::UnAdminJailMessage&
+WatchPlayerAcquittalsResponse::_Internal::unaj(const WatchPlayerAcquittalsResponse* msg) {
+  return *msg->acquittal_.unaj_;
+}
+void WatchPlayerAcquittalsResponse::set_allocated_unban(::mruv::punishments::UnBanMessage* unban) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unban) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unban = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unban, submessage_arena);
+    }
+    set_has_unban();
+    acquittal_.unban_ = unban;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerAcquittalsResponse.unban)
+}
+void WatchPlayerAcquittalsResponse::set_allocated_unblock(::mruv::punishments::UnBlockMessage* unblock) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unblock) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unblock = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unblock, submessage_arena);
+    }
+    set_has_unblock();
+    acquittal_.unblock_ = unblock;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerAcquittalsResponse.unblock)
+}
+void WatchPlayerAcquittalsResponse::set_allocated_unwarn(::mruv::punishments::UnWarnMessage* unwarn) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unwarn) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unwarn = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unwarn, submessage_arena);
+    }
+    set_has_unwarn();
+    acquittal_.unwarn_ = unwarn;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerAcquittalsResponse.unwarn)
+}
+void WatchPlayerAcquittalsResponse::set_allocated_unaj(::mruv::punishments::UnAdminJailMessage* unaj) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unaj) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unaj = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unaj, submessage_arena);
+    }
+    set_has_unaj();
+    acquittal_.unaj_ = unaj;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPlayerAcquittalsResponse.unaj)
+}
+WatchPlayerAcquittalsResponse::WatchPlayerAcquittalsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchPlayerAcquittalsResponse)
+}
+WatchPlayerAcquittalsResponse::WatchPlayerAcquittalsResponse(const WatchPlayerAcquittalsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  clear_has_acquittal();
+  switch (from.acquittal_case()) {
+    case kUnban: {
+      _internal_mutable_unban()->::mruv::punishments::UnBanMessage::MergeFrom(from._internal_unban());
+      break;
+    }
+    case kUnblock: {
+      _internal_mutable_unblock()->::mruv::punishments::UnBlockMessage::MergeFrom(from._internal_unblock());
+      break;
+    }
+    case kUnwarn: {
+      _internal_mutable_unwarn()->::mruv::punishments::UnWarnMessage::MergeFrom(from._internal_unwarn());
+      break;
+    }
+    case kUnaj: {
+      _internal_mutable_unaj()->::mruv::punishments::UnAdminJailMessage::MergeFrom(from._internal_unaj());
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchPlayerAcquittalsResponse)
+}
+
+void WatchPlayerAcquittalsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto.base);
+  clear_has_acquittal();
+}
+
+WatchPlayerAcquittalsResponse::~WatchPlayerAcquittalsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchPlayerAcquittalsResponse)
+  SharedDtor();
+}
+
+void WatchPlayerAcquittalsResponse::SharedDtor() {
+  if (has_acquittal()) {
+    clear_acquittal();
+  }
+}
+
+void WatchPlayerAcquittalsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const WatchPlayerAcquittalsResponse& WatchPlayerAcquittalsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WatchPlayerAcquittalsResponse_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void WatchPlayerAcquittalsResponse::clear_acquittal() {
+// @@protoc_insertion_point(one_of_clear_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  switch (acquittal_case()) {
+    case kUnban: {
+      delete acquittal_.unban_;
+      break;
+    }
+    case kUnblock: {
+      delete acquittal_.unblock_;
+      break;
+    }
+    case kUnwarn: {
+      delete acquittal_.unwarn_;
+      break;
+    }
+    case kUnaj: {
+      delete acquittal_.unaj_;
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = ACQUITTAL_NOT_SET;
+}
+
+
+void WatchPlayerAcquittalsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_acquittal();
+  _internal_metadata_.Clear();
+}
+
+const char* WatchPlayerAcquittalsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .mruv.punishments.UnBanMessage unban = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unban(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.UnBlockMessage unblock = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unblock(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.UnWarnMessage unwarn = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unwarn(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.UnAdminJailMessage unaj = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unaj(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* WatchPlayerAcquittalsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mruv.punishments.UnBanMessage unban = 1;
+  if (_internal_has_unban()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::unban(this), target, stream);
+  }
+
+  // .mruv.punishments.UnBlockMessage unblock = 2;
+  if (_internal_has_unblock()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::unblock(this), target, stream);
+  }
+
+  // .mruv.punishments.UnWarnMessage unwarn = 3;
+  if (_internal_has_unwarn()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::unwarn(this), target, stream);
+  }
+
+  // .mruv.punishments.UnAdminJailMessage unaj = 4;
+  if (_internal_has_unaj()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::unaj(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchPlayerAcquittalsResponse)
+  return target;
+}
+
+size_t WatchPlayerAcquittalsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (acquittal_case()) {
+    // .mruv.punishments.UnBanMessage unban = 1;
+    case kUnban: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unban_);
+      break;
+    }
+    // .mruv.punishments.UnBlockMessage unblock = 2;
+    case kUnblock: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unblock_);
+      break;
+    }
+    // .mruv.punishments.UnWarnMessage unwarn = 3;
+    case kUnwarn: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unwarn_);
+      break;
+    }
+    // .mruv.punishments.UnAdminJailMessage unaj = 4;
+    case kUnaj: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unaj_);
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void WatchPlayerAcquittalsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const WatchPlayerAcquittalsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPlayerAcquittalsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchPlayerAcquittalsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchPlayerAcquittalsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void WatchPlayerAcquittalsResponse::MergeFrom(const WatchPlayerAcquittalsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.acquittal_case()) {
+    case kUnban: {
+      _internal_mutable_unban()->::mruv::punishments::UnBanMessage::MergeFrom(from._internal_unban());
+      break;
+    }
+    case kUnblock: {
+      _internal_mutable_unblock()->::mruv::punishments::UnBlockMessage::MergeFrom(from._internal_unblock());
+      break;
+    }
+    case kUnwarn: {
+      _internal_mutable_unwarn()->::mruv::punishments::UnWarnMessage::MergeFrom(from._internal_unwarn());
+      break;
+    }
+    case kUnaj: {
+      _internal_mutable_unaj()->::mruv::punishments::UnAdminJailMessage::MergeFrom(from._internal_unaj());
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void WatchPlayerAcquittalsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void WatchPlayerAcquittalsResponse::CopyFrom(const WatchPlayerAcquittalsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchPlayerAcquittalsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool WatchPlayerAcquittalsResponse::IsInitialized() const {
+  return true;
+}
+
+void WatchPlayerAcquittalsResponse::InternalSwap(WatchPlayerAcquittalsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(acquittal_, other->acquittal_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata WatchPlayerAcquittalsResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -13274,20 +15003,20 @@ class WatchPunishmentsRequest::_Internal {
 WatchPunishmentsRequest::WatchPunishmentsRequest()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchPunishmentsRequest)
 }
 WatchPunishmentsRequest::WatchPunishmentsRequest(const WatchPunishmentsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchPunishmentsRequest)
 }
 
 void WatchPunishmentsRequest::SharedCtor() {
 }
 
 WatchPunishmentsRequest::~WatchPunishmentsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchPunishmentsRequest)
   SharedDtor();
 }
 
@@ -13304,7 +15033,7 @@ const WatchPunishmentsRequest& WatchPunishmentsRequest::default_instance() {
 
 
 void WatchPunishmentsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchPunishmentsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchPunishmentsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -13336,7 +15065,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchPunishmentsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchPunishmentsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -13344,12 +15073,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchPunishmentsRequest)
   return target;
 }
 
 size_t WatchPunishmentsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchPunishmentsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchPunishmentsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -13366,22 +15095,22 @@ size_t WatchPunishmentsRequest::ByteSizeLong() const {
 }
 
 void WatchPunishmentsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchPunishmentsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchPunishmentsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchPunishmentsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPunishmentsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchPunishmentsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchPunishmentsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchPunishmentsRequest)
     MergeFrom(*source);
   }
 }
 
 void WatchPunishmentsRequest::MergeFrom(const WatchPunishmentsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchPunishmentsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchPunishmentsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -13390,14 +15119,14 @@ void WatchPunishmentsRequest::MergeFrom(const WatchPunishmentsRequest& from) {
 }
 
 void WatchPunishmentsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchPunishmentsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchPunishmentsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchPunishmentsRequest::CopyFrom(const WatchPunishmentsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchPunishmentsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchPunishmentsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -13420,38 +15149,143 @@ void WatchPunishmentsRequest::InternalSwap(WatchPunishmentsRequest* other) {
 // ===================================================================
 
 void WatchPunishmentsResponse::InitAsDefaultInstance() {
+  ::mruv::punishments::_WatchPunishmentsResponse_default_instance_.ban_ = const_cast< ::mruv::punishments::BanMessage*>(
+      ::mruv::punishments::BanMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPunishmentsResponse_default_instance_.block_ = const_cast< ::mruv::punishments::BlockMessage*>(
+      ::mruv::punishments::BlockMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPunishmentsResponse_default_instance_.warn_ = const_cast< ::mruv::punishments::WarnMessage*>(
+      ::mruv::punishments::WarnMessage::internal_default_instance());
+  ::mruv::punishments::_WatchPunishmentsResponse_default_instance_.aj_ = const_cast< ::mruv::punishments::AdminJailMessage*>(
+      ::mruv::punishments::AdminJailMessage::internal_default_instance());
 }
 class WatchPunishmentsResponse::_Internal {
  public:
+  static const ::mruv::punishments::BanMessage& ban(const WatchPunishmentsResponse* msg);
+  static const ::mruv::punishments::BlockMessage& block(const WatchPunishmentsResponse* msg);
+  static const ::mruv::punishments::WarnMessage& warn(const WatchPunishmentsResponse* msg);
+  static const ::mruv::punishments::AdminJailMessage& aj(const WatchPunishmentsResponse* msg);
 };
 
+const ::mruv::punishments::BanMessage&
+WatchPunishmentsResponse::_Internal::ban(const WatchPunishmentsResponse* msg) {
+  return *msg->punishment_.ban_;
+}
+const ::mruv::punishments::BlockMessage&
+WatchPunishmentsResponse::_Internal::block(const WatchPunishmentsResponse* msg) {
+  return *msg->punishment_.block_;
+}
+const ::mruv::punishments::WarnMessage&
+WatchPunishmentsResponse::_Internal::warn(const WatchPunishmentsResponse* msg) {
+  return *msg->punishment_.warn_;
+}
+const ::mruv::punishments::AdminJailMessage&
+WatchPunishmentsResponse::_Internal::aj(const WatchPunishmentsResponse* msg) {
+  return *msg->punishment_.aj_;
+}
+void WatchPunishmentsResponse::set_allocated_ban(::mruv::punishments::BanMessage* ban) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (ban) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      ban = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, ban, submessage_arena);
+    }
+    set_has_ban();
+    punishment_.ban_ = ban;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPunishmentsResponse.ban)
+}
+void WatchPunishmentsResponse::set_allocated_block(::mruv::punishments::BlockMessage* block) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (block) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      block = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, block, submessage_arena);
+    }
+    set_has_block();
+    punishment_.block_ = block;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPunishmentsResponse.block)
+}
+void WatchPunishmentsResponse::set_allocated_warn(::mruv::punishments::WarnMessage* warn) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (warn) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      warn = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, warn, submessage_arena);
+    }
+    set_has_warn();
+    punishment_.warn_ = warn;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPunishmentsResponse.warn)
+}
+void WatchPunishmentsResponse::set_allocated_aj(::mruv::punishments::AdminJailMessage* aj) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_punishment();
+  if (aj) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      aj = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, aj, submessage_arena);
+    }
+    set_has_aj();
+    punishment_.aj_ = aj;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchPunishmentsResponse.aj)
+}
 WatchPunishmentsResponse::WatchPunishmentsResponse()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.economy.WatchPunishmentsResponse)
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchPunishmentsResponse)
 }
 WatchPunishmentsResponse::WatchPunishmentsResponse(const WatchPunishmentsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&type_, &from.type_,
-    static_cast<size_t>(reinterpret_cast<char*>(&character_) -
-    reinterpret_cast<char*>(&type_)) + sizeof(character_));
-  // @@protoc_insertion_point(copy_constructor:mruv.economy.WatchPunishmentsResponse)
+  clear_has_punishment();
+  switch (from.punishment_case()) {
+    case kBan: {
+      _internal_mutable_ban()->::mruv::punishments::BanMessage::MergeFrom(from._internal_ban());
+      break;
+    }
+    case kBlock: {
+      _internal_mutable_block()->::mruv::punishments::BlockMessage::MergeFrom(from._internal_block());
+      break;
+    }
+    case kWarn: {
+      _internal_mutable_warn()->::mruv::punishments::WarnMessage::MergeFrom(from._internal_warn());
+      break;
+    }
+    case kAj: {
+      _internal_mutable_aj()->::mruv::punishments::AdminJailMessage::MergeFrom(from._internal_aj());
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchPunishmentsResponse)
 }
 
 void WatchPunishmentsResponse::SharedCtor() {
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&character_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(character_));
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_WatchPunishmentsResponse_punishments_2fpunishments_2eproto.base);
+  clear_has_punishment();
 }
 
 WatchPunishmentsResponse::~WatchPunishmentsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.economy.WatchPunishmentsResponse)
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchPunishmentsResponse)
   SharedDtor();
 }
 
 void WatchPunishmentsResponse::SharedDtor() {
+  if (has_punishment()) {
+    clear_punishment();
+  }
 }
 
 void WatchPunishmentsResponse::SetCachedSize(int size) const {
@@ -13463,15 +15297,40 @@ const WatchPunishmentsResponse& WatchPunishmentsResponse::default_instance() {
 }
 
 
+void WatchPunishmentsResponse::clear_punishment() {
+// @@protoc_insertion_point(one_of_clear_start:mruv.punishments.WatchPunishmentsResponse)
+  switch (punishment_case()) {
+    case kBan: {
+      delete punishment_.ban_;
+      break;
+    }
+    case kBlock: {
+      delete punishment_.block_;
+      break;
+    }
+    case kWarn: {
+      delete punishment_.warn_;
+      break;
+    }
+    case kAj: {
+      delete punishment_.aj_;
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = PUNISHMENT_NOT_SET;
+}
+
+
 void WatchPunishmentsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.economy.WatchPunishmentsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchPunishmentsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&type_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&character_) -
-      reinterpret_cast<char*>(&type_)) + sizeof(character_));
+  clear_punishment();
   _internal_metadata_.Clear();
 }
 
@@ -13482,32 +15341,31 @@ const char* WatchPunishmentsResponse::_InternalParse(const char* ptr, ::PROTOBUF
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .mruv.economy.PunishmentType type = 1;
+      // .mruv.punishments.BanMessage ban = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_ban(), ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::mruv::economy::PunishmentType>(val));
         } else goto handle_unusual;
         continue;
-      // uint32 punishment_id = 2;
+      // .mruv.punishments.BlockMessage block = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          punishment_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_block(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 player = 3;
+      // .mruv.punishments.WarnMessage warn = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          player_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_warn(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 character = 4;
+      // .mruv.punishments.AdminJailMessage aj = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          character_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_aj(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -13533,78 +15391,91 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* WatchPunishmentsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.economy.WatchPunishmentsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchPunishmentsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mruv.economy.PunishmentType type = 1;
-  if (this->type() != 0) {
+  // .mruv.punishments.BanMessage ban = 1;
+  if (_internal_has_ban()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_type(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::ban(this), target, stream);
   }
 
-  // uint32 punishment_id = 2;
-  if (this->punishment_id() != 0) {
+  // .mruv.punishments.BlockMessage block = 2;
+  if (_internal_has_block()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_punishment_id(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::block(this), target, stream);
   }
 
-  // uint32 player = 3;
-  if (this->player() != 0) {
+  // .mruv.punishments.WarnMessage warn = 3;
+  if (_internal_has_warn()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_player(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::warn(this), target, stream);
   }
 
-  // uint32 character = 4;
-  if (this->character() != 0) {
+  // .mruv.punishments.AdminJailMessage aj = 4;
+  if (_internal_has_aj()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_character(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::aj(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.economy.WatchPunishmentsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchPunishmentsResponse)
   return target;
 }
 
 size_t WatchPunishmentsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.economy.WatchPunishmentsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchPunishmentsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mruv.economy.PunishmentType type = 1;
-  if (this->type() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+  switch (punishment_case()) {
+    // .mruv.punishments.BanMessage ban = 1;
+    case kBan: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.ban_);
+      break;
+    }
+    // .mruv.punishments.BlockMessage block = 2;
+    case kBlock: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.block_);
+      break;
+    }
+    // .mruv.punishments.WarnMessage warn = 3;
+    case kWarn: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.warn_);
+      break;
+    }
+    // .mruv.punishments.AdminJailMessage aj = 4;
+    case kAj: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *punishment_.aj_);
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
   }
-
-  // uint32 punishment_id = 2;
-  if (this->punishment_id() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_punishment_id());
-  }
-
-  // uint32 player = 3;
-  if (this->player() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_player());
-  }
-
-  // uint32 character = 4;
-  if (this->character() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_character());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -13615,50 +15486,59 @@ size_t WatchPunishmentsResponse::ByteSizeLong() const {
 }
 
 void WatchPunishmentsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.economy.WatchPunishmentsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchPunishmentsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const WatchPunishmentsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchPunishmentsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.economy.WatchPunishmentsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchPunishmentsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.economy.WatchPunishmentsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchPunishmentsResponse)
     MergeFrom(*source);
   }
 }
 
 void WatchPunishmentsResponse::MergeFrom(const WatchPunishmentsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.economy.WatchPunishmentsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchPunishmentsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.type() != 0) {
-    _internal_set_type(from._internal_type());
-  }
-  if (from.punishment_id() != 0) {
-    _internal_set_punishment_id(from._internal_punishment_id());
-  }
-  if (from.player() != 0) {
-    _internal_set_player(from._internal_player());
-  }
-  if (from.character() != 0) {
-    _internal_set_character(from._internal_character());
+  switch (from.punishment_case()) {
+    case kBan: {
+      _internal_mutable_ban()->::mruv::punishments::BanMessage::MergeFrom(from._internal_ban());
+      break;
+    }
+    case kBlock: {
+      _internal_mutable_block()->::mruv::punishments::BlockMessage::MergeFrom(from._internal_block());
+      break;
+    }
+    case kWarn: {
+      _internal_mutable_warn()->::mruv::punishments::WarnMessage::MergeFrom(from._internal_warn());
+      break;
+    }
+    case kAj: {
+      _internal_mutable_aj()->::mruv::punishments::AdminJailMessage::MergeFrom(from._internal_aj());
+      break;
+    }
+    case PUNISHMENT_NOT_SET: {
+      break;
+    }
   }
 }
 
 void WatchPunishmentsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.economy.WatchPunishmentsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchPunishmentsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void WatchPunishmentsResponse::CopyFrom(const WatchPunishmentsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.economy.WatchPunishmentsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchPunishmentsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -13671,10 +15551,8 @@ bool WatchPunishmentsResponse::IsInitialized() const {
 void WatchPunishmentsResponse::InternalSwap(WatchPunishmentsResponse* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(type_, other->type_);
-  swap(punishment_id_, other->punishment_id_);
-  swap(player_, other->player_);
-  swap(character_, other->character_);
+  swap(punishment_, other->punishment_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchPunishmentsResponse::GetMetadata() const {
@@ -13682,180 +15560,763 @@ void WatchPunishmentsResponse::InternalSwap(WatchPunishmentsResponse* other) {
 }
 
 
+// ===================================================================
+
+void WatchAcquittalsRequest::InitAsDefaultInstance() {
+}
+class WatchAcquittalsRequest::_Internal {
+ public:
+};
+
+WatchAcquittalsRequest::WatchAcquittalsRequest()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchAcquittalsRequest)
+}
+WatchAcquittalsRequest::WatchAcquittalsRequest(const WatchAcquittalsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchAcquittalsRequest)
+}
+
+void WatchAcquittalsRequest::SharedCtor() {
+}
+
+WatchAcquittalsRequest::~WatchAcquittalsRequest() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchAcquittalsRequest)
+  SharedDtor();
+}
+
+void WatchAcquittalsRequest::SharedDtor() {
+}
+
+void WatchAcquittalsRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const WatchAcquittalsRequest& WatchAcquittalsRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WatchAcquittalsRequest_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void WatchAcquittalsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchAcquittalsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+const char* WatchAcquittalsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* WatchAcquittalsRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchAcquittalsRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchAcquittalsRequest)
+  return target;
+}
+
+size_t WatchAcquittalsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchAcquittalsRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void WatchAcquittalsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchAcquittalsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const WatchAcquittalsRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchAcquittalsRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchAcquittalsRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchAcquittalsRequest)
+    MergeFrom(*source);
+  }
+}
+
+void WatchAcquittalsRequest::MergeFrom(const WatchAcquittalsRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchAcquittalsRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void WatchAcquittalsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchAcquittalsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void WatchAcquittalsRequest::CopyFrom(const WatchAcquittalsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchAcquittalsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool WatchAcquittalsRequest::IsInitialized() const {
+  return true;
+}
+
+void WatchAcquittalsRequest::InternalSwap(WatchAcquittalsRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata WatchAcquittalsRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void WatchAcquittalsResponse::InitAsDefaultInstance() {
+  ::mruv::punishments::_WatchAcquittalsResponse_default_instance_.unban_ = const_cast< ::mruv::punishments::UnBanMessage*>(
+      ::mruv::punishments::UnBanMessage::internal_default_instance());
+  ::mruv::punishments::_WatchAcquittalsResponse_default_instance_.unblock_ = const_cast< ::mruv::punishments::UnBlockMessage*>(
+      ::mruv::punishments::UnBlockMessage::internal_default_instance());
+  ::mruv::punishments::_WatchAcquittalsResponse_default_instance_.unwarn_ = const_cast< ::mruv::punishments::UnWarnMessage*>(
+      ::mruv::punishments::UnWarnMessage::internal_default_instance());
+  ::mruv::punishments::_WatchAcquittalsResponse_default_instance_.unaj_ = const_cast< ::mruv::punishments::UnAdminJailMessage*>(
+      ::mruv::punishments::UnAdminJailMessage::internal_default_instance());
+}
+class WatchAcquittalsResponse::_Internal {
+ public:
+  static const ::mruv::punishments::UnBanMessage& unban(const WatchAcquittalsResponse* msg);
+  static const ::mruv::punishments::UnBlockMessage& unblock(const WatchAcquittalsResponse* msg);
+  static const ::mruv::punishments::UnWarnMessage& unwarn(const WatchAcquittalsResponse* msg);
+  static const ::mruv::punishments::UnAdminJailMessage& unaj(const WatchAcquittalsResponse* msg);
+};
+
+const ::mruv::punishments::UnBanMessage&
+WatchAcquittalsResponse::_Internal::unban(const WatchAcquittalsResponse* msg) {
+  return *msg->acquittal_.unban_;
+}
+const ::mruv::punishments::UnBlockMessage&
+WatchAcquittalsResponse::_Internal::unblock(const WatchAcquittalsResponse* msg) {
+  return *msg->acquittal_.unblock_;
+}
+const ::mruv::punishments::UnWarnMessage&
+WatchAcquittalsResponse::_Internal::unwarn(const WatchAcquittalsResponse* msg) {
+  return *msg->acquittal_.unwarn_;
+}
+const ::mruv::punishments::UnAdminJailMessage&
+WatchAcquittalsResponse::_Internal::unaj(const WatchAcquittalsResponse* msg) {
+  return *msg->acquittal_.unaj_;
+}
+void WatchAcquittalsResponse::set_allocated_unban(::mruv::punishments::UnBanMessage* unban) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unban) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unban = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unban, submessage_arena);
+    }
+    set_has_unban();
+    acquittal_.unban_ = unban;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchAcquittalsResponse.unban)
+}
+void WatchAcquittalsResponse::set_allocated_unblock(::mruv::punishments::UnBlockMessage* unblock) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unblock) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unblock = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unblock, submessage_arena);
+    }
+    set_has_unblock();
+    acquittal_.unblock_ = unblock;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchAcquittalsResponse.unblock)
+}
+void WatchAcquittalsResponse::set_allocated_unwarn(::mruv::punishments::UnWarnMessage* unwarn) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unwarn) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unwarn = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unwarn, submessage_arena);
+    }
+    set_has_unwarn();
+    acquittal_.unwarn_ = unwarn;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchAcquittalsResponse.unwarn)
+}
+void WatchAcquittalsResponse::set_allocated_unaj(::mruv::punishments::UnAdminJailMessage* unaj) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_acquittal();
+  if (unaj) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      unaj = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, unaj, submessage_arena);
+    }
+    set_has_unaj();
+    acquittal_.unaj_ = unaj;
+  }
+  // @@protoc_insertion_point(field_set_allocated:mruv.punishments.WatchAcquittalsResponse.unaj)
+}
+WatchAcquittalsResponse::WatchAcquittalsResponse()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:mruv.punishments.WatchAcquittalsResponse)
+}
+WatchAcquittalsResponse::WatchAcquittalsResponse(const WatchAcquittalsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  clear_has_acquittal();
+  switch (from.acquittal_case()) {
+    case kUnban: {
+      _internal_mutable_unban()->::mruv::punishments::UnBanMessage::MergeFrom(from._internal_unban());
+      break;
+    }
+    case kUnblock: {
+      _internal_mutable_unblock()->::mruv::punishments::UnBlockMessage::MergeFrom(from._internal_unblock());
+      break;
+    }
+    case kUnwarn: {
+      _internal_mutable_unwarn()->::mruv::punishments::UnWarnMessage::MergeFrom(from._internal_unwarn());
+      break;
+    }
+    case kUnaj: {
+      _internal_mutable_unaj()->::mruv::punishments::UnAdminJailMessage::MergeFrom(from._internal_unaj());
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:mruv.punishments.WatchAcquittalsResponse)
+}
+
+void WatchAcquittalsResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_WatchAcquittalsResponse_punishments_2fpunishments_2eproto.base);
+  clear_has_acquittal();
+}
+
+WatchAcquittalsResponse::~WatchAcquittalsResponse() {
+  // @@protoc_insertion_point(destructor:mruv.punishments.WatchAcquittalsResponse)
+  SharedDtor();
+}
+
+void WatchAcquittalsResponse::SharedDtor() {
+  if (has_acquittal()) {
+    clear_acquittal();
+  }
+}
+
+void WatchAcquittalsResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const WatchAcquittalsResponse& WatchAcquittalsResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_WatchAcquittalsResponse_punishments_2fpunishments_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void WatchAcquittalsResponse::clear_acquittal() {
+// @@protoc_insertion_point(one_of_clear_start:mruv.punishments.WatchAcquittalsResponse)
+  switch (acquittal_case()) {
+    case kUnban: {
+      delete acquittal_.unban_;
+      break;
+    }
+    case kUnblock: {
+      delete acquittal_.unblock_;
+      break;
+    }
+    case kUnwarn: {
+      delete acquittal_.unwarn_;
+      break;
+    }
+    case kUnaj: {
+      delete acquittal_.unaj_;
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = ACQUITTAL_NOT_SET;
+}
+
+
+void WatchAcquittalsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:mruv.punishments.WatchAcquittalsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_acquittal();
+  _internal_metadata_.Clear();
+}
+
+const char* WatchAcquittalsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .mruv.punishments.UnBanMessage unban = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unban(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.UnBlockMessage unblock = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unblock(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.UnWarnMessage unwarn = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unwarn(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .mruv.punishments.UnAdminJailMessage unaj = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_unaj(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* WatchAcquittalsResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.punishments.WatchAcquittalsResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .mruv.punishments.UnBanMessage unban = 1;
+  if (_internal_has_unban()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::unban(this), target, stream);
+  }
+
+  // .mruv.punishments.UnBlockMessage unblock = 2;
+  if (_internal_has_unblock()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::unblock(this), target, stream);
+  }
+
+  // .mruv.punishments.UnWarnMessage unwarn = 3;
+  if (_internal_has_unwarn()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::unwarn(this), target, stream);
+  }
+
+  // .mruv.punishments.UnAdminJailMessage unaj = 4;
+  if (_internal_has_unaj()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        4, _Internal::unaj(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.punishments.WatchAcquittalsResponse)
+  return target;
+}
+
+size_t WatchAcquittalsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:mruv.punishments.WatchAcquittalsResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (acquittal_case()) {
+    // .mruv.punishments.UnBanMessage unban = 1;
+    case kUnban: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unban_);
+      break;
+    }
+    // .mruv.punishments.UnBlockMessage unblock = 2;
+    case kUnblock: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unblock_);
+      break;
+    }
+    // .mruv.punishments.UnWarnMessage unwarn = 3;
+    case kUnwarn: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unwarn_);
+      break;
+    }
+    // .mruv.punishments.UnAdminJailMessage unaj = 4;
+    case kUnaj: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *acquittal_.unaj_);
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void WatchAcquittalsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.punishments.WatchAcquittalsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const WatchAcquittalsResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<WatchAcquittalsResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.punishments.WatchAcquittalsResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.punishments.WatchAcquittalsResponse)
+    MergeFrom(*source);
+  }
+}
+
+void WatchAcquittalsResponse::MergeFrom(const WatchAcquittalsResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.punishments.WatchAcquittalsResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.acquittal_case()) {
+    case kUnban: {
+      _internal_mutable_unban()->::mruv::punishments::UnBanMessage::MergeFrom(from._internal_unban());
+      break;
+    }
+    case kUnblock: {
+      _internal_mutable_unblock()->::mruv::punishments::UnBlockMessage::MergeFrom(from._internal_unblock());
+      break;
+    }
+    case kUnwarn: {
+      _internal_mutable_unwarn()->::mruv::punishments::UnWarnMessage::MergeFrom(from._internal_unwarn());
+      break;
+    }
+    case kUnaj: {
+      _internal_mutable_unaj()->::mruv::punishments::UnAdminJailMessage::MergeFrom(from._internal_unaj());
+      break;
+    }
+    case ACQUITTAL_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void WatchAcquittalsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.punishments.WatchAcquittalsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void WatchAcquittalsResponse::CopyFrom(const WatchAcquittalsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.punishments.WatchAcquittalsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool WatchAcquittalsResponse::IsInitialized() const {
+  return true;
+}
+
+void WatchAcquittalsResponse::InternalSwap(WatchAcquittalsResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(acquittal_, other->acquittal_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata WatchAcquittalsResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace economy
+}  // namespace punishments
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::economy::BanMessage* Arena::CreateMaybeMessage< ::mruv::economy::BanMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::BanMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::PunishmentMessage* Arena::CreateMaybeMessage< ::mruv::punishments::PunishmentMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::PunishmentMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WarnMessage* Arena::CreateMaybeMessage< ::mruv::economy::WarnMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WarnMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::BanMessage* Arena::CreateMaybeMessage< ::mruv::punishments::BanMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::BanMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::BlockMessage* Arena::CreateMaybeMessage< ::mruv::economy::BlockMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::BlockMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WarnMessage* Arena::CreateMaybeMessage< ::mruv::punishments::WarnMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WarnMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::AdminJailMessage* Arena::CreateMaybeMessage< ::mruv::economy::AdminJailMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::AdminJailMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::BlockMessage* Arena::CreateMaybeMessage< ::mruv::punishments::BlockMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::BlockMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnBanMessage* Arena::CreateMaybeMessage< ::mruv::economy::UnBanMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnBanMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::AdminJailMessage* Arena::CreateMaybeMessage< ::mruv::punishments::AdminJailMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::AdminJailMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnBlockMessage* Arena::CreateMaybeMessage< ::mruv::economy::UnBlockMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnBlockMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnBanMessage* Arena::CreateMaybeMessage< ::mruv::punishments::UnBanMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnBanMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnWarnMessage* Arena::CreateMaybeMessage< ::mruv::economy::UnWarnMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnWarnMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnBlockMessage* Arena::CreateMaybeMessage< ::mruv::punishments::UnBlockMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnBlockMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnAdminJailMessage* Arena::CreateMaybeMessage< ::mruv::economy::UnAdminJailMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnAdminJailMessage >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnWarnMessage* Arena::CreateMaybeMessage< ::mruv::punishments::UnWarnMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnWarnMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::BanRequest* Arena::CreateMaybeMessage< ::mruv::economy::BanRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::BanRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnAdminJailMessage* Arena::CreateMaybeMessage< ::mruv::punishments::UnAdminJailMessage >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnAdminJailMessage >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::BanResponse* Arena::CreateMaybeMessage< ::mruv::economy::BanResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::BanResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::PunishRequest* Arena::CreateMaybeMessage< ::mruv::punishments::PunishRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::PunishRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::BlockRequest* Arena::CreateMaybeMessage< ::mruv::economy::BlockRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::BlockRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::PunishResponse* Arena::CreateMaybeMessage< ::mruv::punishments::PunishResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::PunishResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::BlockResponse* Arena::CreateMaybeMessage< ::mruv::economy::BlockResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::BlockResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::BanRequest* Arena::CreateMaybeMessage< ::mruv::punishments::BanRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::BanRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WarnRequest* Arena::CreateMaybeMessage< ::mruv::economy::WarnRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WarnRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::BanResponse* Arena::CreateMaybeMessage< ::mruv::punishments::BanResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::BanResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WarnResponse* Arena::CreateMaybeMessage< ::mruv::economy::WarnResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WarnResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::BlockRequest* Arena::CreateMaybeMessage< ::mruv::punishments::BlockRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::BlockRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::AdminJailRequest* Arena::CreateMaybeMessage< ::mruv::economy::AdminJailRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::AdminJailRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::BlockResponse* Arena::CreateMaybeMessage< ::mruv::punishments::BlockResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::BlockResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::AdminJailResponse* Arena::CreateMaybeMessage< ::mruv::economy::AdminJailResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::AdminJailResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WarnRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WarnRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WarnRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::MuteGlobalChatsRequest* Arena::CreateMaybeMessage< ::mruv::economy::MuteGlobalChatsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::MuteGlobalChatsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WarnResponse* Arena::CreateMaybeMessage< ::mruv::punishments::WarnResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WarnResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::MuteGlobalChatsResponse* Arena::CreateMaybeMessage< ::mruv::economy::MuteGlobalChatsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::MuteGlobalChatsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::AdminJailRequest* Arena::CreateMaybeMessage< ::mruv::punishments::AdminJailRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::AdminJailRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnBanRequest* Arena::CreateMaybeMessage< ::mruv::economy::UnBanRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnBanRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::AdminJailResponse* Arena::CreateMaybeMessage< ::mruv::punishments::AdminJailResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::AdminJailResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnBanResponse* Arena::CreateMaybeMessage< ::mruv::economy::UnBanResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnBanResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::MuteGlobalChatsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::MuteGlobalChatsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::MuteGlobalChatsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnBlockRequest* Arena::CreateMaybeMessage< ::mruv::economy::UnBlockRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnBlockRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::MuteGlobalChatsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::MuteGlobalChatsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::MuteGlobalChatsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnBlockResponse* Arena::CreateMaybeMessage< ::mruv::economy::UnBlockResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnBlockResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnBanRequest* Arena::CreateMaybeMessage< ::mruv::punishments::UnBanRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnBanRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnWarnRequest* Arena::CreateMaybeMessage< ::mruv::economy::UnWarnRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnWarnRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnBanResponse* Arena::CreateMaybeMessage< ::mruv::punishments::UnBanResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnBanResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnWarnResponse* Arena::CreateMaybeMessage< ::mruv::economy::UnWarnResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnWarnResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnBlockRequest* Arena::CreateMaybeMessage< ::mruv::punishments::UnBlockRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnBlockRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnAdminJailRequest* Arena::CreateMaybeMessage< ::mruv::economy::UnAdminJailRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnAdminJailRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnBlockResponse* Arena::CreateMaybeMessage< ::mruv::punishments::UnBlockResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnBlockResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnAdminJailResponse* Arena::CreateMaybeMessage< ::mruv::economy::UnAdminJailResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnAdminJailResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnWarnRequest* Arena::CreateMaybeMessage< ::mruv::punishments::UnWarnRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnWarnRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnMuteGlobalChatsRequest* Arena::CreateMaybeMessage< ::mruv::economy::UnMuteGlobalChatsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnMuteGlobalChatsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnWarnResponse* Arena::CreateMaybeMessage< ::mruv::punishments::UnWarnResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnWarnResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::UnMuteGlobalChatsResponse* Arena::CreateMaybeMessage< ::mruv::economy::UnMuteGlobalChatsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::UnMuteGlobalChatsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnAdminJailRequest* Arena::CreateMaybeMessage< ::mruv::punishments::UnAdminJailRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnAdminJailRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetPlayerBansRequest* Arena::CreateMaybeMessage< ::mruv::economy::GetPlayerBansRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetPlayerBansRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnAdminJailResponse* Arena::CreateMaybeMessage< ::mruv::punishments::UnAdminJailResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnAdminJailResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetPlayerBansResponse* Arena::CreateMaybeMessage< ::mruv::economy::GetPlayerBansResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetPlayerBansResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnMuteGlobalChatsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::UnMuteGlobalChatsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnMuteGlobalChatsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetPlayerWarnsRequest* Arena::CreateMaybeMessage< ::mruv::economy::GetPlayerWarnsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetPlayerWarnsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::UnMuteGlobalChatsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::UnMuteGlobalChatsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::UnMuteGlobalChatsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetPlayerWarnsResponse* Arena::CreateMaybeMessage< ::mruv::economy::GetPlayerWarnsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetPlayerWarnsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetPlayerBansRequest* Arena::CreateMaybeMessage< ::mruv::punishments::GetPlayerBansRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetPlayerBansRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetPlayerAdminJailRequest* Arena::CreateMaybeMessage< ::mruv::economy::GetPlayerAdminJailRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetPlayerAdminJailRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetPlayerBansResponse* Arena::CreateMaybeMessage< ::mruv::punishments::GetPlayerBansResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetPlayerBansResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetPlayerAdminJailResponse* Arena::CreateMaybeMessage< ::mruv::economy::GetPlayerAdminJailResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetPlayerAdminJailResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetPlayerWarnsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::GetPlayerWarnsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetPlayerWarnsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetBanRequest* Arena::CreateMaybeMessage< ::mruv::economy::GetBanRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetBanRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetPlayerWarnsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::GetPlayerWarnsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetPlayerWarnsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetWarnRequest* Arena::CreateMaybeMessage< ::mruv::economy::GetWarnRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetWarnRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetPlayerAdminJailRequest* Arena::CreateMaybeMessage< ::mruv::punishments::GetPlayerAdminJailRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetPlayerAdminJailRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::GetBlockRequest* Arena::CreateMaybeMessage< ::mruv::economy::GetBlockRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::GetBlockRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetPlayerAdminJailResponse* Arena::CreateMaybeMessage< ::mruv::punishments::GetPlayerAdminJailResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetPlayerAdminJailResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::IsPlayerBannedRequest* Arena::CreateMaybeMessage< ::mruv::economy::IsPlayerBannedRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::IsPlayerBannedRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetBanRequest* Arena::CreateMaybeMessage< ::mruv::punishments::GetBanRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetBanRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::IsPlayerBannedResponse* Arena::CreateMaybeMessage< ::mruv::economy::IsPlayerBannedResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::IsPlayerBannedResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetWarnRequest* Arena::CreateMaybeMessage< ::mruv::punishments::GetWarnRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetWarnRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::IsCharacterBlockedRequest* Arena::CreateMaybeMessage< ::mruv::economy::IsCharacterBlockedRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::IsCharacterBlockedRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::GetBlockRequest* Arena::CreateMaybeMessage< ::mruv::punishments::GetBlockRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::GetBlockRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::IsCharacterBlockedResponse* Arena::CreateMaybeMessage< ::mruv::economy::IsCharacterBlockedResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::IsCharacterBlockedResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::IsPlayerBannedRequest* Arena::CreateMaybeMessage< ::mruv::punishments::IsPlayerBannedRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::IsPlayerBannedRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::IsCharacterJailedRequest* Arena::CreateMaybeMessage< ::mruv::economy::IsCharacterJailedRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::IsCharacterJailedRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::IsPlayerBannedResponse* Arena::CreateMaybeMessage< ::mruv::punishments::IsPlayerBannedResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::IsPlayerBannedResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::IsCharacterJailedResponse* Arena::CreateMaybeMessage< ::mruv::economy::IsCharacterJailedResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::IsCharacterJailedResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::IsCharacterBlockedRequest* Arena::CreateMaybeMessage< ::mruv::punishments::IsCharacterBlockedRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::IsCharacterBlockedRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchBansRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchBansRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchBansRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::IsCharacterBlockedResponse* Arena::CreateMaybeMessage< ::mruv::punishments::IsCharacterBlockedResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::IsCharacterBlockedResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchBlocksRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchBlocksRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchBlocksRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::IsCharacterJailedRequest* Arena::CreateMaybeMessage< ::mruv::punishments::IsCharacterJailedRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::IsCharacterJailedRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchWarnsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchWarnsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchWarnsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::IsCharacterJailedResponse* Arena::CreateMaybeMessage< ::mruv::punishments::IsCharacterJailedResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::IsCharacterJailedResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchAdminJailsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchAdminJailsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchAdminJailsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchBansRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchBansRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchBansRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchUnBansRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchUnBansRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchUnBansRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchBlocksRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchBlocksRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchBlocksRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchUnBlocksRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchUnBlocksRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchUnBlocksRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchWarnsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchWarnsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchWarnsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchUnWarnsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchUnWarnsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchUnWarnsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchAdminJailsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchAdminJailsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchAdminJailsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchUnAdminJailsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchUnAdminJailsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchUnAdminJailsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchUnBansRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchUnBansRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchUnBansRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchPlayerAcquittalsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchPlayerAcquittalsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchPlayerAcquittalsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchUnBlocksRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchUnBlocksRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchUnBlocksRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchPlayerAcquittalsResponse* Arena::CreateMaybeMessage< ::mruv::economy::WatchPlayerAcquittalsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchPlayerAcquittalsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchUnWarnsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchUnWarnsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchUnWarnsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchPlayerPunishmentsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchPlayerPunishmentsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchPlayerPunishmentsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchUnAdminJailsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchUnAdminJailsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchUnAdminJailsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchPlayerPunishmentsResponse* Arena::CreateMaybeMessage< ::mruv::economy::WatchPlayerPunishmentsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchPlayerPunishmentsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchPlayerPunishmentsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchPlayerPunishmentsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchPlayerPunishmentsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchPunishmentsRequest* Arena::CreateMaybeMessage< ::mruv::economy::WatchPunishmentsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchPunishmentsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchPlayerPunishmentsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::WatchPlayerPunishmentsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchPlayerPunishmentsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::economy::WatchPunishmentsResponse* Arena::CreateMaybeMessage< ::mruv::economy::WatchPunishmentsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::economy::WatchPunishmentsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchPlayerAcquittalsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchPlayerAcquittalsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchPlayerAcquittalsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchPlayerAcquittalsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::WatchPlayerAcquittalsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchPlayerAcquittalsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchPunishmentsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchPunishmentsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchPunishmentsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchPunishmentsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::WatchPunishmentsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchPunishmentsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchAcquittalsRequest* Arena::CreateMaybeMessage< ::mruv::punishments::WatchAcquittalsRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchAcquittalsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::mruv::punishments::WatchAcquittalsResponse* Arena::CreateMaybeMessage< ::mruv::punishments::WatchAcquittalsResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::mruv::punishments::WatchAcquittalsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
