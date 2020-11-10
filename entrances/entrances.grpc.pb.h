@@ -125,120 +125,66 @@ class MruVEntrancesService final {
       virtual ~experimental_async_interface() {}
       // Create an entrance to building or teleport to location.
       virtual void CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get an entrance to building or a teleport to location.
       virtual void GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update an entrance to building or a teleport to location.
       virtual void UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete an entrance to building or a teleport to location.
       virtual void DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Lock entrance.
       virtual void Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Unload entrance.
       virtual void Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Find gate that is closest to a specific position.
       virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Enter an entrance (player teleport from in spot position to out spot position).
       virtual void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Exit from entrance (player teleport from out spot position to in spot position).
       virtual void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       //
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -356,112 +302,58 @@ class MruVEntrancesService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, std::function<void(::grpc::Status)>) override;
-      void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, std::function<void(::grpc::Status)>) override;
-      void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)>) override;
-      void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) override;
-      void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) override;
@@ -751,7 +643,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -766,7 +658,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateEntrance() override {
@@ -798,7 +690,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -813,7 +705,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetEntrance() override {
@@ -845,7 +737,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -860,7 +752,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateEntrance() override {
@@ -892,7 +784,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -907,7 +799,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteEntrance() override {
@@ -939,7 +831,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -954,7 +846,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Lock() override {
@@ -986,7 +878,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1001,7 +893,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Unlock() override {
@@ -1033,7 +925,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1048,7 +940,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_FindNearestEntrance() override {
@@ -1080,7 +972,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1095,7 +987,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Enter() override {
@@ -1127,7 +1019,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1142,7 +1034,7 @@ class MruVEntrancesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Exit() override {
@@ -1174,7 +1066,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1587,7 +1479,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1625,7 +1517,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1663,7 +1555,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1701,7 +1593,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1739,7 +1631,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1777,7 +1669,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1815,7 +1707,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1853,7 +1745,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1891,7 +1783,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1929,7 +1821,7 @@ class MruVEntrancesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(9,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1964,8 +1856,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>* streamer) {
                        return this->StreamedCreateEntrance(context,
                          streamer);
@@ -1991,8 +1883,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>* streamer) {
                        return this->StreamedGetEntrance(context,
                          streamer);
@@ -2018,8 +1910,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>* streamer) {
                        return this->StreamedUpdateEntrance(context,
                          streamer);
@@ -2045,8 +1937,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>* streamer) {
                        return this->StreamedDeleteEntrance(context,
                          streamer);
@@ -2072,8 +1964,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>* streamer) {
                        return this->StreamedLock(context,
                          streamer);
@@ -2099,8 +1991,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>* streamer) {
                        return this->StreamedUnlock(context,
                          streamer);
@@ -2126,8 +2018,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>* streamer) {
                        return this->StreamedFindNearestEntrance(context,
                          streamer);
@@ -2153,8 +2045,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>* streamer) {
                        return this->StreamedEnter(context,
                          streamer);
@@ -2180,8 +2072,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>* streamer) {
                        return this->StreamedExit(context,
                          streamer);
@@ -2208,8 +2100,8 @@ class MruVEntrancesService final {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>* streamer) {
                        return this->StreamedFetchAll(context,
                          streamer);

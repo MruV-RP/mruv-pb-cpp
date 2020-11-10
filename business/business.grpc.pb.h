@@ -130,107 +130,59 @@ class MruVBusinessService final {
       virtual ~experimental_async_interface() {}
       // Create a business.
       virtual void CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a business.
       virtual void GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a business.
       virtual void UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a business.
       virtual void DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Assign a business owner.
       virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Assign an estate to a business.
       virtual void AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       //
       virtual void UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Buy a business.
       virtual void BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Subscribe to business events.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -357,100 +309,52 @@ class MruVBusinessService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) override;
-      void GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) override;
-      void UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) override;
-      void AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, std::function<void(::grpc::Status)>) override;
-      void AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, std::function<void(::grpc::Status)>) override;
-      void BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void WatchBusiness(::grpc::ClientContext* context, ::mruv::business::WatchBusinessRequest* request, ::grpc::ClientReadReactor< ::mruv::business::WatchBusinessResponse>* reactor) override;
@@ -746,7 +650,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -761,7 +665,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateBusiness() override {
@@ -793,7 +697,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -808,7 +712,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::GetBusinessRequest, ::mruv::business::Business>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::GetBusinessRequest, ::mruv::business::Business>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetBusiness() override {
@@ -840,7 +744,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -855,7 +759,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateBusiness() override {
@@ -887,7 +791,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -902,7 +806,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteBusiness() override {
@@ -934,7 +838,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -949,7 +853,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AssignOwner() override {
@@ -981,7 +885,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -996,7 +900,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AssignEstate() override {
@@ -1028,7 +932,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1043,7 +947,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnassignEstate() override {
@@ -1075,7 +979,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1090,7 +994,7 @@ class MruVBusinessService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_BuyBusiness() override {
@@ -1122,7 +1026,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1160,7 +1064,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1573,7 +1477,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1611,7 +1515,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1649,7 +1553,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1687,7 +1591,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1725,7 +1629,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1763,7 +1667,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1801,7 +1705,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1839,7 +1743,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1877,7 +1781,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1915,7 +1819,7 @@ class MruVBusinessService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(9,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1950,8 +1854,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>* streamer) {
                        return this->StreamedCreateBusiness(context,
                          streamer);
@@ -1977,8 +1881,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::GetBusinessRequest, ::mruv::business::Business>* streamer) {
                        return this->StreamedGetBusiness(context,
                          streamer);
@@ -2004,8 +1908,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>* streamer) {
                        return this->StreamedUpdateBusiness(context,
                          streamer);
@@ -2031,8 +1935,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>* streamer) {
                        return this->StreamedDeleteBusiness(context,
                          streamer);
@@ -2058,8 +1962,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>* streamer) {
                        return this->StreamedAssignOwner(context,
                          streamer);
@@ -2085,8 +1989,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>* streamer) {
                        return this->StreamedAssignEstate(context,
                          streamer);
@@ -2112,8 +2016,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>* streamer) {
                        return this->StreamedUnassignEstate(context,
                          streamer);
@@ -2139,8 +2043,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>* streamer) {
                        return this->StreamedBuyBusiness(context,
                          streamer);
@@ -2167,8 +2071,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>* streamer) {
                        return this->StreamedWatchBusiness(context,
                          streamer);
@@ -2194,8 +2098,8 @@ class MruVBusinessService final {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>* streamer) {
                        return this->StreamedWatchBusinesses(context,
                          streamer);

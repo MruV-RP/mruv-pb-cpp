@@ -655,16 +655,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dev
   &scc_info_SavePositionResponse_devtools_2fdevtools_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_devtools_2fdevtools_2eproto_once;
-static bool descriptor_table_devtools_2fdevtools_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_devtools_2fdevtools_2eproto = {
-  &descriptor_table_devtools_2fdevtools_2eproto_initialized, descriptor_table_protodef_devtools_2fdevtools_2eproto, "devtools/devtools.proto", 2706,
+  false, false, descriptor_table_protodef_devtools_2fdevtools_2eproto, "devtools/devtools.proto", 2706,
   &descriptor_table_devtools_2fdevtools_2eproto_once, descriptor_table_devtools_2fdevtools_2eproto_sccs, descriptor_table_devtools_2fdevtools_2eproto_deps, 19, 3,
   schemas, file_default_instances, TableStruct_devtools_2fdevtools_2eproto::offsets,
   file_level_metadata_devtools_2fdevtools_2eproto, 19, file_level_enum_descriptors_devtools_2fdevtools_2eproto, file_level_service_descriptors_devtools_2fdevtools_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_devtools_2fdevtools_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_devtools_2fdevtools_2eproto), true);
+static bool dynamic_init_dummy_devtools_2fdevtools_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_devtools_2fdevtools_2eproto)), true);
 namespace mruv {
 namespace devtools {
 
@@ -684,23 +683,24 @@ GetPositionsRequest::_Internal::author(const GetPositionsRequest* msg) {
   return *msg->author_;
 }
 void GetPositionsRequest::clear_author() {
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
 }
-GetPositionsRequest::GetPositionsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetPositionsRequest::GetPositionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetPositionsRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetPositionsRequest)
 }
 GetPositionsRequest::GetPositionsRequest(const GetPositionsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   category_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_category().empty()) {
-    category_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.category_);
+    category_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_category(),
+      GetArena());
   }
   if (from._internal_has_author()) {
     author_ = new ::mruv::devtools::Player(*from.author_);
@@ -722,13 +722,21 @@ void GetPositionsRequest::SharedCtor() {
 GetPositionsRequest::~GetPositionsRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetPositionsRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetPositionsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   category_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete author_;
 }
 
+void GetPositionsRequest::ArenaDtor(void* object) {
+  GetPositionsRequest* _this = reinterpret_cast< GetPositionsRequest* >(object);
+  (void)_this;
+}
+void GetPositionsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetPositionsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -744,17 +752,18 @@ void GetPositionsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  category_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  category_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
   limit_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetPositionsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -763,7 +772,7 @@ const char* GetPositionsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // uint32 limit = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -789,7 +798,9 @@ const char* GetPositionsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -835,7 +846,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetPositionsRequest)
   return target;
@@ -897,13 +908,12 @@ void GetPositionsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void GetPositionsRequest::MergeFrom(const GetPositionsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetPositionsRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.category().size() > 0) {
-
-    category_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.category_);
+    _internal_set_category(from._internal_category());
   }
   if (from.has_author()) {
     _internal_mutable_author()->::mruv::devtools::Player::MergeFrom(from._internal_author());
@@ -933,11 +943,14 @@ bool GetPositionsRequest::IsInitialized() const {
 
 void GetPositionsRequest::InternalSwap(GetPositionsRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  category_.Swap(&other->category_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(author_, other->author_);
-  swap(limit_, other->limit_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  category_.Swap(&other->category_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetPositionsRequest, limit_)
+      + sizeof(GetPositionsRequest::limit_)
+      - PROTOBUF_FIELD_OFFSET(GetPositionsRequest, author_)>(
+          reinterpret_cast<char*>(&author_),
+          reinterpret_cast<char*>(&other->author_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPositionsRequest::GetMetadata() const {
@@ -968,26 +981,26 @@ GetPositionsResponse_Row::_Internal::author(const GetPositionsResponse_Row* msg)
   return *msg->author_;
 }
 void GetPositionsResponse_Row::clear_position() {
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
 }
 void GetPositionsResponse_Row::clear_author() {
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
 }
-GetPositionsResponse_Row::GetPositionsResponse_Row()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetPositionsResponse_Row::GetPositionsResponse_Row(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetPositionsResponse.Row)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetPositionsResponse.Row)
 }
 GetPositionsResponse_Row::GetPositionsResponse_Row(const GetPositionsResponse_Row& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_position()) {
     position_ = new ::mruv::devtools::Position(*from.position_);
   } else {
@@ -1011,13 +1024,21 @@ void GetPositionsResponse_Row::SharedCtor() {
 GetPositionsResponse_Row::~GetPositionsResponse_Row() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetPositionsResponse.Row)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetPositionsResponse_Row::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete position_;
   if (this != internal_default_instance()) delete author_;
 }
 
+void GetPositionsResponse_Row::ArenaDtor(void* object) {
+  GetPositionsResponse_Row* _this = reinterpret_cast< GetPositionsResponse_Row* >(object);
+  (void)_this;
+}
+void GetPositionsResponse_Row::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetPositionsResponse_Row::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1033,19 +1054,20 @@ void GetPositionsResponse_Row::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetPositionsResponse_Row::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1071,7 +1093,9 @@ const char* GetPositionsResponse_Row::_InternalParse(const char* ptr, ::PROTOBUF
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1109,7 +1133,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetPositionsResponse.Row)
   return target;
@@ -1164,7 +1188,7 @@ void GetPositionsResponse_Row::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message&
 void GetPositionsResponse_Row::MergeFrom(const GetPositionsResponse_Row& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetPositionsResponse.Row)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1196,9 +1220,13 @@ bool GetPositionsResponse_Row::IsInitialized() const {
 
 void GetPositionsResponse_Row::InternalSwap(GetPositionsResponse_Row* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(position_, other->position_);
-  swap(author_, other->author_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetPositionsResponse_Row, author_)
+      + sizeof(GetPositionsResponse_Row::author_)
+      - PROTOBUF_FIELD_OFFSET(GetPositionsResponse_Row, position_)>(
+          reinterpret_cast<char*>(&position_),
+          reinterpret_cast<char*>(&other->position_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPositionsResponse_Row::GetMetadata() const {
@@ -1214,16 +1242,17 @@ class GetPositionsResponse::_Internal {
  public:
 };
 
-GetPositionsResponse::GetPositionsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetPositionsResponse::GetPositionsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  positions_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetPositionsResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetPositionsResponse)
 }
 GetPositionsResponse::GetPositionsResponse(const GetPositionsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       positions_(from.positions_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.GetPositionsResponse)
 }
 
@@ -1234,11 +1263,19 @@ void GetPositionsResponse::SharedCtor() {
 GetPositionsResponse::~GetPositionsResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetPositionsResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetPositionsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetPositionsResponse::ArenaDtor(void* object) {
+  GetPositionsResponse* _this = reinterpret_cast< GetPositionsResponse* >(object);
+  (void)_this;
+}
+void GetPositionsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetPositionsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1255,11 +1292,12 @@ void GetPositionsResponse::Clear() {
   (void) cached_has_bits;
 
   positions_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetPositionsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1283,7 +1321,9 @@ const char* GetPositionsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1313,7 +1353,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetPositionsResponse)
   return target;
@@ -1361,7 +1401,7 @@ void GetPositionsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void GetPositionsResponse::MergeFrom(const GetPositionsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetPositionsResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1388,7 +1428,7 @@ bool GetPositionsResponse::IsInitialized() const {
 
 void GetPositionsResponse::InternalSwap(GetPositionsResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   positions_.InternalSwap(&other->positions_);
 }
 
@@ -1413,20 +1453,20 @@ SavePositionRequest::_Internal::position(const SavePositionRequest* msg) {
   return *msg->position_;
 }
 void SavePositionRequest::clear_position() {
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
 }
-SavePositionRequest::SavePositionRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+SavePositionRequest::SavePositionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.SavePositionRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.SavePositionRequest)
 }
 SavePositionRequest::SavePositionRequest(const SavePositionRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_position()) {
     position_ = new ::mruv::devtools::Position(*from.position_);
   } else {
@@ -1443,12 +1483,20 @@ void SavePositionRequest::SharedCtor() {
 SavePositionRequest::~SavePositionRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.SavePositionRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SavePositionRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete position_;
 }
 
+void SavePositionRequest::ArenaDtor(void* object) {
+  SavePositionRequest* _this = reinterpret_cast< SavePositionRequest* >(object);
+  (void)_this;
+}
+void SavePositionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SavePositionRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1464,15 +1512,16 @@ void SavePositionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SavePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1491,7 +1540,9 @@ const char* SavePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1521,7 +1572,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.SavePositionRequest)
   return target;
@@ -1569,7 +1620,7 @@ void SavePositionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void SavePositionRequest::MergeFrom(const SavePositionRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.SavePositionRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1598,7 +1649,7 @@ bool SavePositionRequest::IsInitialized() const {
 
 void SavePositionRequest::InternalSwap(SavePositionRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(position_, other->position_);
 }
 
@@ -1615,15 +1666,15 @@ class SavePositionResponse::_Internal {
  public:
 };
 
-SavePositionResponse::SavePositionResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+SavePositionResponse::SavePositionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.SavePositionResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.SavePositionResponse)
 }
 SavePositionResponse::SavePositionResponse(const SavePositionResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   success_ = from.success_;
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.SavePositionResponse)
 }
@@ -1635,11 +1686,19 @@ void SavePositionResponse::SharedCtor() {
 SavePositionResponse::~SavePositionResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.SavePositionResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SavePositionResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void SavePositionResponse::ArenaDtor(void* object) {
+  SavePositionResponse* _this = reinterpret_cast< SavePositionResponse* >(object);
+  (void)_this;
+}
+void SavePositionResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SavePositionResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1656,11 +1715,12 @@ void SavePositionResponse::Clear() {
   (void) cached_has_bits;
 
   success_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SavePositionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1669,7 +1729,7 @@ const char* SavePositionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // bool success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1679,7 +1739,9 @@ const char* SavePositionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1707,7 +1769,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.SavePositionResponse)
   return target;
@@ -1753,7 +1815,7 @@ void SavePositionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void SavePositionResponse::MergeFrom(const SavePositionResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.SavePositionResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1782,7 +1844,7 @@ bool SavePositionResponse::IsInitialized() const {
 
 void SavePositionResponse::InternalSwap(SavePositionResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(success_, other->success_);
 }
 
@@ -1807,20 +1869,20 @@ DeletePositionRequest::_Internal::position(const DeletePositionRequest* msg) {
   return *msg->position_;
 }
 void DeletePositionRequest::clear_position() {
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
 }
-DeletePositionRequest::DeletePositionRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeletePositionRequest::DeletePositionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.DeletePositionRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.DeletePositionRequest)
 }
 DeletePositionRequest::DeletePositionRequest(const DeletePositionRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_position()) {
     position_ = new ::mruv::devtools::Position(*from.position_);
   } else {
@@ -1837,12 +1899,20 @@ void DeletePositionRequest::SharedCtor() {
 DeletePositionRequest::~DeletePositionRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.DeletePositionRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeletePositionRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete position_;
 }
 
+void DeletePositionRequest::ArenaDtor(void* object) {
+  DeletePositionRequest* _this = reinterpret_cast< DeletePositionRequest* >(object);
+  (void)_this;
+}
+void DeletePositionRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeletePositionRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1858,15 +1928,16 @@ void DeletePositionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && position_ != nullptr) {
+  if (GetArena() == nullptr && position_ != nullptr) {
     delete position_;
   }
   position_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeletePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1885,7 +1956,9 @@ const char* DeletePositionRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1915,7 +1988,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.DeletePositionRequest)
   return target;
@@ -1963,7 +2036,7 @@ void DeletePositionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void DeletePositionRequest::MergeFrom(const DeletePositionRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.DeletePositionRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1992,7 +2065,7 @@ bool DeletePositionRequest::IsInitialized() const {
 
 void DeletePositionRequest::InternalSwap(DeletePositionRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(position_, other->position_);
 }
 
@@ -2009,15 +2082,15 @@ class DeletePositionResponse::_Internal {
  public:
 };
 
-DeletePositionResponse::DeletePositionResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeletePositionResponse::DeletePositionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.DeletePositionResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.DeletePositionResponse)
 }
 DeletePositionResponse::DeletePositionResponse(const DeletePositionResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   success_ = from.success_;
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.DeletePositionResponse)
 }
@@ -2029,11 +2102,19 @@ void DeletePositionResponse::SharedCtor() {
 DeletePositionResponse::~DeletePositionResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.DeletePositionResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeletePositionResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeletePositionResponse::ArenaDtor(void* object) {
+  DeletePositionResponse* _this = reinterpret_cast< DeletePositionResponse* >(object);
+  (void)_this;
+}
+void DeletePositionResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeletePositionResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2050,11 +2131,12 @@ void DeletePositionResponse::Clear() {
   (void) cached_has_bits;
 
   success_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeletePositionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2063,7 +2145,7 @@ const char* DeletePositionResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
       // bool success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2073,7 +2155,9 @@ const char* DeletePositionResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2101,7 +2185,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.DeletePositionResponse)
   return target;
@@ -2147,7 +2231,7 @@ void DeletePositionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void DeletePositionResponse::MergeFrom(const DeletePositionResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.DeletePositionResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2176,7 +2260,7 @@ bool DeletePositionResponse::IsInitialized() const {
 
 void DeletePositionResponse::InternalSwap(DeletePositionResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(success_, other->success_);
 }
 
@@ -2193,26 +2277,29 @@ class GetOutfitsRequest::_Internal {
  public:
 };
 
-GetOutfitsRequest::GetOutfitsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetOutfitsRequest::GetOutfitsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetOutfitsRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetOutfitsRequest)
 }
 GetOutfitsRequest::GetOutfitsRequest(const GetOutfitsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   category_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_category().empty()) {
-    category_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.category_);
+    category_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_category(),
+      GetArena());
   }
   author_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_author().empty()) {
-    author_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.author_);
+    author_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_author(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.GetOutfitsRequest)
 }
@@ -2227,14 +2314,22 @@ void GetOutfitsRequest::SharedCtor() {
 GetOutfitsRequest::~GetOutfitsRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetOutfitsRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetOutfitsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   category_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   author_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetOutfitsRequest::ArenaDtor(void* object) {
+  GetOutfitsRequest* _this = reinterpret_cast< GetOutfitsRequest* >(object);
+  (void)_this;
+}
+void GetOutfitsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetOutfitsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2250,14 +2345,15 @@ void GetOutfitsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  category_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  author_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  category_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  author_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetOutfitsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2296,7 +2392,9 @@ const char* GetOutfitsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2348,7 +2446,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetOutfitsRequest)
   return target;
@@ -2410,21 +2508,18 @@ void GetOutfitsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) 
 void GetOutfitsRequest::MergeFrom(const GetOutfitsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetOutfitsRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.category().size() > 0) {
-
-    category_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.category_);
+    _internal_set_category(from._internal_category());
   }
   if (from.author().size() > 0) {
-
-    author_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.author_);
+    _internal_set_author(from._internal_author());
   }
 }
 
@@ -2448,13 +2543,10 @@ bool GetOutfitsRequest::IsInitialized() const {
 
 void GetOutfitsRequest::InternalSwap(GetOutfitsRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  category_.Swap(&other->category_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  author_.Swap(&other->author_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  category_.Swap(&other->category_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  author_.Swap(&other->author_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOutfitsRequest::GetMetadata() const {
@@ -2485,26 +2577,26 @@ GetOutfitsResponse_Row::_Internal::author(const GetOutfitsResponse_Row* msg) {
   return *msg->author_;
 }
 void GetOutfitsResponse_Row::clear_outfit() {
-  if (GetArenaNoVirtual() == nullptr && outfit_ != nullptr) {
+  if (GetArena() == nullptr && outfit_ != nullptr) {
     delete outfit_;
   }
   outfit_ = nullptr;
 }
 void GetOutfitsResponse_Row::clear_author() {
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
 }
-GetOutfitsResponse_Row::GetOutfitsResponse_Row()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetOutfitsResponse_Row::GetOutfitsResponse_Row(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetOutfitsResponse.Row)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetOutfitsResponse.Row)
 }
 GetOutfitsResponse_Row::GetOutfitsResponse_Row(const GetOutfitsResponse_Row& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_outfit()) {
     outfit_ = new ::mruv::devtools::Outfit(*from.outfit_);
   } else {
@@ -2528,13 +2620,21 @@ void GetOutfitsResponse_Row::SharedCtor() {
 GetOutfitsResponse_Row::~GetOutfitsResponse_Row() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetOutfitsResponse.Row)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetOutfitsResponse_Row::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete outfit_;
   if (this != internal_default_instance()) delete author_;
 }
 
+void GetOutfitsResponse_Row::ArenaDtor(void* object) {
+  GetOutfitsResponse_Row* _this = reinterpret_cast< GetOutfitsResponse_Row* >(object);
+  (void)_this;
+}
+void GetOutfitsResponse_Row::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetOutfitsResponse_Row::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2550,19 +2650,20 @@ void GetOutfitsResponse_Row::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && outfit_ != nullptr) {
+  if (GetArena() == nullptr && outfit_ != nullptr) {
     delete outfit_;
   }
   outfit_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetOutfitsResponse_Row::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2588,7 +2689,9 @@ const char* GetOutfitsResponse_Row::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2626,7 +2729,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetOutfitsResponse.Row)
   return target;
@@ -2681,7 +2784,7 @@ void GetOutfitsResponse_Row::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void GetOutfitsResponse_Row::MergeFrom(const GetOutfitsResponse_Row& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetOutfitsResponse.Row)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2713,9 +2816,13 @@ bool GetOutfitsResponse_Row::IsInitialized() const {
 
 void GetOutfitsResponse_Row::InternalSwap(GetOutfitsResponse_Row* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(outfit_, other->outfit_);
-  swap(author_, other->author_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetOutfitsResponse_Row, author_)
+      + sizeof(GetOutfitsResponse_Row::author_)
+      - PROTOBUF_FIELD_OFFSET(GetOutfitsResponse_Row, outfit_)>(
+          reinterpret_cast<char*>(&outfit_),
+          reinterpret_cast<char*>(&other->outfit_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetOutfitsResponse_Row::GetMetadata() const {
@@ -2731,16 +2838,17 @@ class GetOutfitsResponse::_Internal {
  public:
 };
 
-GetOutfitsResponse::GetOutfitsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetOutfitsResponse::GetOutfitsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  outfits_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetOutfitsResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetOutfitsResponse)
 }
 GetOutfitsResponse::GetOutfitsResponse(const GetOutfitsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       outfits_(from.outfits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.GetOutfitsResponse)
 }
 
@@ -2751,11 +2859,19 @@ void GetOutfitsResponse::SharedCtor() {
 GetOutfitsResponse::~GetOutfitsResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetOutfitsResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetOutfitsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetOutfitsResponse::ArenaDtor(void* object) {
+  GetOutfitsResponse* _this = reinterpret_cast< GetOutfitsResponse* >(object);
+  (void)_this;
+}
+void GetOutfitsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetOutfitsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2772,11 +2888,12 @@ void GetOutfitsResponse::Clear() {
   (void) cached_has_bits;
 
   outfits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetOutfitsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2800,7 +2917,9 @@ const char* GetOutfitsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2830,7 +2949,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetOutfitsResponse)
   return target;
@@ -2878,7 +2997,7 @@ void GetOutfitsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void GetOutfitsResponse::MergeFrom(const GetOutfitsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetOutfitsResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2905,7 +3024,7 @@ bool GetOutfitsResponse::IsInitialized() const {
 
 void GetOutfitsResponse::InternalSwap(GetOutfitsResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   outfits_.InternalSwap(&other->outfits_);
 }
 
@@ -2930,20 +3049,20 @@ SaveOutfitRequest::_Internal::outfit(const SaveOutfitRequest* msg) {
   return *msg->outfit_;
 }
 void SaveOutfitRequest::clear_outfit() {
-  if (GetArenaNoVirtual() == nullptr && outfit_ != nullptr) {
+  if (GetArena() == nullptr && outfit_ != nullptr) {
     delete outfit_;
   }
   outfit_ = nullptr;
 }
-SaveOutfitRequest::SaveOutfitRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+SaveOutfitRequest::SaveOutfitRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.SaveOutfitRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.SaveOutfitRequest)
 }
 SaveOutfitRequest::SaveOutfitRequest(const SaveOutfitRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_outfit()) {
     outfit_ = new ::mruv::devtools::Outfit(*from.outfit_);
   } else {
@@ -2960,12 +3079,20 @@ void SaveOutfitRequest::SharedCtor() {
 SaveOutfitRequest::~SaveOutfitRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.SaveOutfitRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SaveOutfitRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete outfit_;
 }
 
+void SaveOutfitRequest::ArenaDtor(void* object) {
+  SaveOutfitRequest* _this = reinterpret_cast< SaveOutfitRequest* >(object);
+  (void)_this;
+}
+void SaveOutfitRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SaveOutfitRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2981,15 +3108,16 @@ void SaveOutfitRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && outfit_ != nullptr) {
+  if (GetArena() == nullptr && outfit_ != nullptr) {
     delete outfit_;
   }
   outfit_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SaveOutfitRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3008,7 +3136,9 @@ const char* SaveOutfitRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3038,7 +3168,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.SaveOutfitRequest)
   return target;
@@ -3086,7 +3216,7 @@ void SaveOutfitRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) 
 void SaveOutfitRequest::MergeFrom(const SaveOutfitRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.SaveOutfitRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3115,7 +3245,7 @@ bool SaveOutfitRequest::IsInitialized() const {
 
 void SaveOutfitRequest::InternalSwap(SaveOutfitRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(outfit_, other->outfit_);
 }
 
@@ -3132,15 +3262,15 @@ class SaveOutfitResponse::_Internal {
  public:
 };
 
-SaveOutfitResponse::SaveOutfitResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+SaveOutfitResponse::SaveOutfitResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.SaveOutfitResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.SaveOutfitResponse)
 }
 SaveOutfitResponse::SaveOutfitResponse(const SaveOutfitResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   success_ = from.success_;
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.SaveOutfitResponse)
 }
@@ -3152,11 +3282,19 @@ void SaveOutfitResponse::SharedCtor() {
 SaveOutfitResponse::~SaveOutfitResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.SaveOutfitResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SaveOutfitResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void SaveOutfitResponse::ArenaDtor(void* object) {
+  SaveOutfitResponse* _this = reinterpret_cast< SaveOutfitResponse* >(object);
+  (void)_this;
+}
+void SaveOutfitResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SaveOutfitResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3173,11 +3311,12 @@ void SaveOutfitResponse::Clear() {
   (void) cached_has_bits;
 
   success_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SaveOutfitResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3186,7 +3325,7 @@ const char* SaveOutfitResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // bool success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3196,7 +3335,9 @@ const char* SaveOutfitResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3224,7 +3365,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.SaveOutfitResponse)
   return target;
@@ -3270,7 +3411,7 @@ void SaveOutfitResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void SaveOutfitResponse::MergeFrom(const SaveOutfitResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.SaveOutfitResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3299,7 +3440,7 @@ bool SaveOutfitResponse::IsInitialized() const {
 
 void SaveOutfitResponse::InternalSwap(SaveOutfitResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(success_, other->success_);
 }
 
@@ -3316,22 +3457,24 @@ class GetAnimationsRequest::_Internal {
  public:
 };
 
-GetAnimationsRequest::GetAnimationsRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetAnimationsRequest::GetAnimationsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetAnimationsRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetAnimationsRequest)
 }
 GetAnimationsRequest::GetAnimationsRequest(const GetAnimationsRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   dict_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_dict().empty()) {
-    dict_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dict_);
+    dict_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_dict(),
+      GetArena());
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   limit_ = from.limit_;
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.GetAnimationsRequest)
@@ -3347,13 +3490,21 @@ void GetAnimationsRequest::SharedCtor() {
 GetAnimationsRequest::~GetAnimationsRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetAnimationsRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetAnimationsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   dict_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetAnimationsRequest::ArenaDtor(void* object) {
+  GetAnimationsRequest* _this = reinterpret_cast< GetAnimationsRequest* >(object);
+  (void)_this;
+}
+void GetAnimationsRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetAnimationsRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3369,14 +3520,15 @@ void GetAnimationsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  dict_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  dict_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   limit_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetAnimationsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3385,7 +3537,7 @@ const char* GetAnimationsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // uint32 limit = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3413,7 +3565,9 @@ const char* GetAnimationsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3461,7 +3615,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetAnimationsRequest)
   return target;
@@ -3523,17 +3677,15 @@ void GetAnimationsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void GetAnimationsRequest::MergeFrom(const GetAnimationsRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetAnimationsRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.dict().size() > 0) {
-
-    dict_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dict_);
+    _internal_set_dict(from._internal_dict());
   }
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.limit() != 0) {
     _internal_set_limit(from._internal_limit());
@@ -3560,11 +3712,9 @@ bool GetAnimationsRequest::IsInitialized() const {
 
 void GetAnimationsRequest::InternalSwap(GetAnimationsRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  dict_.Swap(&other->dict_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  dict_.Swap(&other->dict_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(limit_, other->limit_);
 }
 
@@ -3596,26 +3746,26 @@ GetAnimationsResponse_Row::_Internal::author(const GetAnimationsResponse_Row* ms
   return *msg->author_;
 }
 void GetAnimationsResponse_Row::clear_animation() {
-  if (GetArenaNoVirtual() == nullptr && animation_ != nullptr) {
+  if (GetArena() == nullptr && animation_ != nullptr) {
     delete animation_;
   }
   animation_ = nullptr;
 }
 void GetAnimationsResponse_Row::clear_author() {
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
 }
-GetAnimationsResponse_Row::GetAnimationsResponse_Row()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetAnimationsResponse_Row::GetAnimationsResponse_Row(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetAnimationsResponse.Row)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetAnimationsResponse.Row)
 }
 GetAnimationsResponse_Row::GetAnimationsResponse_Row(const GetAnimationsResponse_Row& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_animation()) {
     animation_ = new ::mruv::devtools::Animation(*from.animation_);
   } else {
@@ -3639,13 +3789,21 @@ void GetAnimationsResponse_Row::SharedCtor() {
 GetAnimationsResponse_Row::~GetAnimationsResponse_Row() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetAnimationsResponse.Row)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetAnimationsResponse_Row::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete animation_;
   if (this != internal_default_instance()) delete author_;
 }
 
+void GetAnimationsResponse_Row::ArenaDtor(void* object) {
+  GetAnimationsResponse_Row* _this = reinterpret_cast< GetAnimationsResponse_Row* >(object);
+  (void)_this;
+}
+void GetAnimationsResponse_Row::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetAnimationsResponse_Row::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3661,19 +3819,20 @@ void GetAnimationsResponse_Row::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && animation_ != nullptr) {
+  if (GetArena() == nullptr && animation_ != nullptr) {
     delete animation_;
   }
   animation_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetAnimationsResponse_Row::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3699,7 +3858,9 @@ const char* GetAnimationsResponse_Row::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3737,7 +3898,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetAnimationsResponse.Row)
   return target;
@@ -3792,7 +3953,7 @@ void GetAnimationsResponse_Row::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void GetAnimationsResponse_Row::MergeFrom(const GetAnimationsResponse_Row& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetAnimationsResponse.Row)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3824,9 +3985,13 @@ bool GetAnimationsResponse_Row::IsInitialized() const {
 
 void GetAnimationsResponse_Row::InternalSwap(GetAnimationsResponse_Row* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(animation_, other->animation_);
-  swap(author_, other->author_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetAnimationsResponse_Row, author_)
+      + sizeof(GetAnimationsResponse_Row::author_)
+      - PROTOBUF_FIELD_OFFSET(GetAnimationsResponse_Row, animation_)>(
+          reinterpret_cast<char*>(&animation_),
+          reinterpret_cast<char*>(&other->animation_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAnimationsResponse_Row::GetMetadata() const {
@@ -3842,16 +4007,17 @@ class GetAnimationsResponse::_Internal {
  public:
 };
 
-GetAnimationsResponse::GetAnimationsResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetAnimationsResponse::GetAnimationsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  animations_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetAnimationsResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetAnimationsResponse)
 }
 GetAnimationsResponse::GetAnimationsResponse(const GetAnimationsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       animations_(from.animations_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.GetAnimationsResponse)
 }
 
@@ -3862,11 +4028,19 @@ void GetAnimationsResponse::SharedCtor() {
 GetAnimationsResponse::~GetAnimationsResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetAnimationsResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetAnimationsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetAnimationsResponse::ArenaDtor(void* object) {
+  GetAnimationsResponse* _this = reinterpret_cast< GetAnimationsResponse* >(object);
+  (void)_this;
+}
+void GetAnimationsResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetAnimationsResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3883,11 +4057,12 @@ void GetAnimationsResponse::Clear() {
   (void) cached_has_bits;
 
   animations_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetAnimationsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3911,7 +4086,9 @@ const char* GetAnimationsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3941,7 +4118,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetAnimationsResponse)
   return target;
@@ -3989,7 +4166,7 @@ void GetAnimationsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void GetAnimationsResponse::MergeFrom(const GetAnimationsResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetAnimationsResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4016,7 +4193,7 @@ bool GetAnimationsResponse::IsInitialized() const {
 
 void GetAnimationsResponse::InternalSwap(GetAnimationsResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   animations_.InternalSwap(&other->animations_);
 }
 
@@ -4033,22 +4210,24 @@ class GetAnimationRequest::_Internal {
  public:
 };
 
-GetAnimationRequest::GetAnimationRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetAnimationRequest::GetAnimationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetAnimationRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetAnimationRequest)
 }
 GetAnimationRequest::GetAnimationRequest(const GetAnimationRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   dict_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_dict().empty()) {
-    dict_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dict_);
+    dict_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_dict(),
+      GetArena());
   }
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.GetAnimationRequest)
 }
@@ -4062,13 +4241,21 @@ void GetAnimationRequest::SharedCtor() {
 GetAnimationRequest::~GetAnimationRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetAnimationRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetAnimationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   dict_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GetAnimationRequest::ArenaDtor(void* object) {
+  GetAnimationRequest* _this = reinterpret_cast< GetAnimationRequest* >(object);
+  (void)_this;
+}
+void GetAnimationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetAnimationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4084,13 +4271,14 @@ void GetAnimationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  dict_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  dict_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetAnimationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4120,7 +4308,9 @@ const char* GetAnimationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4162,7 +4352,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetAnimationRequest)
   return target;
@@ -4217,17 +4407,15 @@ void GetAnimationRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void GetAnimationRequest::MergeFrom(const GetAnimationRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetAnimationRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.dict().size() > 0) {
-
-    dict_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.dict_);
+    _internal_set_dict(from._internal_dict());
   }
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
 }
 
@@ -4251,11 +4439,9 @@ bool GetAnimationRequest::IsInitialized() const {
 
 void GetAnimationRequest::InternalSwap(GetAnimationRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  dict_.Swap(&other->dict_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  dict_.Swap(&other->dict_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAnimationRequest::GetMetadata() const {
@@ -4286,26 +4472,26 @@ GetAnimationResponse::_Internal::author(const GetAnimationResponse* msg) {
   return *msg->author_;
 }
 void GetAnimationResponse::clear_animation() {
-  if (GetArenaNoVirtual() == nullptr && animation_ != nullptr) {
+  if (GetArena() == nullptr && animation_ != nullptr) {
     delete animation_;
   }
   animation_ = nullptr;
 }
 void GetAnimationResponse::clear_author() {
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
 }
-GetAnimationResponse::GetAnimationResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetAnimationResponse::GetAnimationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.GetAnimationResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.GetAnimationResponse)
 }
 GetAnimationResponse::GetAnimationResponse(const GetAnimationResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_animation()) {
     animation_ = new ::mruv::devtools::Animation(*from.animation_);
   } else {
@@ -4329,13 +4515,21 @@ void GetAnimationResponse::SharedCtor() {
 GetAnimationResponse::~GetAnimationResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.GetAnimationResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetAnimationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete animation_;
   if (this != internal_default_instance()) delete author_;
 }
 
+void GetAnimationResponse::ArenaDtor(void* object) {
+  GetAnimationResponse* _this = reinterpret_cast< GetAnimationResponse* >(object);
+  (void)_this;
+}
+void GetAnimationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetAnimationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4351,19 +4545,20 @@ void GetAnimationResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && animation_ != nullptr) {
+  if (GetArena() == nullptr && animation_ != nullptr) {
     delete animation_;
   }
   animation_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && author_ != nullptr) {
+  if (GetArena() == nullptr && author_ != nullptr) {
     delete author_;
   }
   author_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetAnimationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4389,7 +4584,9 @@ const char* GetAnimationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4427,7 +4624,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.GetAnimationResponse)
   return target;
@@ -4482,7 +4679,7 @@ void GetAnimationResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void GetAnimationResponse::MergeFrom(const GetAnimationResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.GetAnimationResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4514,9 +4711,13 @@ bool GetAnimationResponse::IsInitialized() const {
 
 void GetAnimationResponse::InternalSwap(GetAnimationResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(animation_, other->animation_);
-  swap(author_, other->author_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetAnimationResponse, author_)
+      + sizeof(GetAnimationResponse::author_)
+      - PROTOBUF_FIELD_OFFSET(GetAnimationResponse, animation_)>(
+          reinterpret_cast<char*>(&animation_),
+          reinterpret_cast<char*>(&other->animation_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAnimationResponse::GetMetadata() const {
@@ -4540,20 +4741,20 @@ SaveAnimationRequest::_Internal::animation(const SaveAnimationRequest* msg) {
   return *msg->animation_;
 }
 void SaveAnimationRequest::clear_animation() {
-  if (GetArenaNoVirtual() == nullptr && animation_ != nullptr) {
+  if (GetArena() == nullptr && animation_ != nullptr) {
     delete animation_;
   }
   animation_ = nullptr;
 }
-SaveAnimationRequest::SaveAnimationRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+SaveAnimationRequest::SaveAnimationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.SaveAnimationRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.SaveAnimationRequest)
 }
 SaveAnimationRequest::SaveAnimationRequest(const SaveAnimationRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_animation()) {
     animation_ = new ::mruv::devtools::Animation(*from.animation_);
   } else {
@@ -4570,12 +4771,20 @@ void SaveAnimationRequest::SharedCtor() {
 SaveAnimationRequest::~SaveAnimationRequest() {
   // @@protoc_insertion_point(destructor:mruv.devtools.SaveAnimationRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SaveAnimationRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete animation_;
 }
 
+void SaveAnimationRequest::ArenaDtor(void* object) {
+  SaveAnimationRequest* _this = reinterpret_cast< SaveAnimationRequest* >(object);
+  (void)_this;
+}
+void SaveAnimationRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SaveAnimationRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4591,15 +4800,16 @@ void SaveAnimationRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && animation_ != nullptr) {
+  if (GetArena() == nullptr && animation_ != nullptr) {
     delete animation_;
   }
   animation_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SaveAnimationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4618,7 +4828,9 @@ const char* SaveAnimationRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4648,7 +4860,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.SaveAnimationRequest)
   return target;
@@ -4696,7 +4908,7 @@ void SaveAnimationRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void SaveAnimationRequest::MergeFrom(const SaveAnimationRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.SaveAnimationRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4725,7 +4937,7 @@ bool SaveAnimationRequest::IsInitialized() const {
 
 void SaveAnimationRequest::InternalSwap(SaveAnimationRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(animation_, other->animation_);
 }
 
@@ -4742,15 +4954,15 @@ class SaveAnimationResponse::_Internal {
  public:
 };
 
-SaveAnimationResponse::SaveAnimationResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+SaveAnimationResponse::SaveAnimationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.devtools.SaveAnimationResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.devtools.SaveAnimationResponse)
 }
 SaveAnimationResponse::SaveAnimationResponse(const SaveAnimationResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   success_ = from.success_;
   // @@protoc_insertion_point(copy_constructor:mruv.devtools.SaveAnimationResponse)
 }
@@ -4762,11 +4974,19 @@ void SaveAnimationResponse::SharedCtor() {
 SaveAnimationResponse::~SaveAnimationResponse() {
   // @@protoc_insertion_point(destructor:mruv.devtools.SaveAnimationResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void SaveAnimationResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void SaveAnimationResponse::ArenaDtor(void* object) {
+  SaveAnimationResponse* _this = reinterpret_cast< SaveAnimationResponse* >(object);
+  (void)_this;
+}
+void SaveAnimationResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void SaveAnimationResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4783,11 +5003,12 @@ void SaveAnimationResponse::Clear() {
   (void) cached_has_bits;
 
   success_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* SaveAnimationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4796,7 +5017,7 @@ const char* SaveAnimationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // bool success = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4806,7 +5027,9 @@ const char* SaveAnimationResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4834,7 +5057,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.devtools.SaveAnimationResponse)
   return target;
@@ -4880,7 +5103,7 @@ void SaveAnimationResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void SaveAnimationResponse::MergeFrom(const SaveAnimationResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.devtools.SaveAnimationResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4909,7 +5132,7 @@ bool SaveAnimationResponse::IsInitialized() const {
 
 void SaveAnimationResponse::InternalSwap(SaveAnimationResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(success_, other->success_);
 }
 
@@ -4923,61 +5146,61 @@ void SaveAnimationResponse::InternalSwap(SaveAnimationResponse* other) {
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetPositionsRequest* Arena::CreateMaybeMessage< ::mruv::devtools::GetPositionsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetPositionsRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetPositionsRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetPositionsResponse_Row* Arena::CreateMaybeMessage< ::mruv::devtools::GetPositionsResponse_Row >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetPositionsResponse_Row >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetPositionsResponse_Row >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetPositionsResponse* Arena::CreateMaybeMessage< ::mruv::devtools::GetPositionsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetPositionsResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetPositionsResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::SavePositionRequest* Arena::CreateMaybeMessage< ::mruv::devtools::SavePositionRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::SavePositionRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::SavePositionRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::SavePositionResponse* Arena::CreateMaybeMessage< ::mruv::devtools::SavePositionResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::SavePositionResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::SavePositionResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::DeletePositionRequest* Arena::CreateMaybeMessage< ::mruv::devtools::DeletePositionRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::DeletePositionRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::DeletePositionRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::DeletePositionResponse* Arena::CreateMaybeMessage< ::mruv::devtools::DeletePositionResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::DeletePositionResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::DeletePositionResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetOutfitsRequest* Arena::CreateMaybeMessage< ::mruv::devtools::GetOutfitsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetOutfitsRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetOutfitsRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetOutfitsResponse_Row* Arena::CreateMaybeMessage< ::mruv::devtools::GetOutfitsResponse_Row >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetOutfitsResponse_Row >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetOutfitsResponse_Row >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetOutfitsResponse* Arena::CreateMaybeMessage< ::mruv::devtools::GetOutfitsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetOutfitsResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetOutfitsResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::SaveOutfitRequest* Arena::CreateMaybeMessage< ::mruv::devtools::SaveOutfitRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::SaveOutfitRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::SaveOutfitRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::SaveOutfitResponse* Arena::CreateMaybeMessage< ::mruv::devtools::SaveOutfitResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::SaveOutfitResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::SaveOutfitResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetAnimationsRequest* Arena::CreateMaybeMessage< ::mruv::devtools::GetAnimationsRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetAnimationsRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetAnimationsRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetAnimationsResponse_Row* Arena::CreateMaybeMessage< ::mruv::devtools::GetAnimationsResponse_Row >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetAnimationsResponse_Row >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetAnimationsResponse_Row >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetAnimationsResponse* Arena::CreateMaybeMessage< ::mruv::devtools::GetAnimationsResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetAnimationsResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetAnimationsResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetAnimationRequest* Arena::CreateMaybeMessage< ::mruv::devtools::GetAnimationRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetAnimationRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetAnimationRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::GetAnimationResponse* Arena::CreateMaybeMessage< ::mruv::devtools::GetAnimationResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::GetAnimationResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::GetAnimationResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::SaveAnimationRequest* Arena::CreateMaybeMessage< ::mruv::devtools::SaveAnimationRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::SaveAnimationRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::SaveAnimationRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::devtools::SaveAnimationResponse* Arena::CreateMaybeMessage< ::mruv::devtools::SaveAnimationResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::devtools::SaveAnimationResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::devtools::SaveAnimationResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

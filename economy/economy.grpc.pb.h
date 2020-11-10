@@ -120,95 +120,53 @@ class MruVEconomyService final {
       virtual ~experimental_async_interface() {}
       // Register price in economy system.
       virtual void RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get product information.
       virtual void GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update product information.
       virtual void UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       //
       virtual void DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update product price.
       virtual void UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get current value for registered price.
       virtual void GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Send information to the system, that the product has been purchased.
       // This rpc call can affect a product price.
       virtual void BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Subscribe to events related to a product.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -326,88 +284,46 @@ class MruVEconomyService final {
       public StubInterface::experimental_async_interface {
      public:
       void RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, std::function<void(::grpc::Status)>) override;
-      void RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, std::function<void(::grpc::Status)>) override;
-      void BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void WatchProduct(::grpc::ClientContext* context, ::mruv::economy::WatchProductRequest* request, ::grpc::ClientReadReactor< ::mruv::economy::WatchProductResponse>* reactor) override;
@@ -679,7 +595,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -694,7 +610,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RegisterProduct() override {
@@ -726,7 +642,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -741,7 +657,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetProduct() override {
@@ -773,7 +689,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -788,7 +704,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateProduct() override {
@@ -820,7 +736,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -835,7 +751,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteProduct() override {
@@ -867,7 +783,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -882,7 +798,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdatePrice() override {
@@ -914,7 +830,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -929,7 +845,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPrice() override {
@@ -961,7 +877,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -976,7 +892,7 @@ class MruVEconomyService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_BuyProduct() override {
@@ -1008,7 +924,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1046,7 +962,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1422,7 +1338,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1460,7 +1376,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1498,7 +1414,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1536,7 +1452,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1574,7 +1490,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1612,7 +1528,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1650,7 +1566,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1688,7 +1604,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1726,7 +1642,7 @@ class MruVEconomyService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1761,8 +1677,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>* streamer) {
                        return this->StreamedRegisterProduct(context,
                          streamer);
@@ -1788,8 +1704,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>* streamer) {
                        return this->StreamedGetProduct(context,
                          streamer);
@@ -1815,8 +1731,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>* streamer) {
                        return this->StreamedUpdateProduct(context,
                          streamer);
@@ -1842,8 +1758,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>* streamer) {
                        return this->StreamedDeleteProduct(context,
                          streamer);
@@ -1869,8 +1785,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>* streamer) {
                        return this->StreamedUpdatePrice(context,
                          streamer);
@@ -1896,8 +1812,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>* streamer) {
                        return this->StreamedGetPrice(context,
                          streamer);
@@ -1923,8 +1839,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>* streamer) {
                        return this->StreamedBuyProduct(context,
                          streamer);
@@ -1951,8 +1867,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>* streamer) {
                        return this->StreamedWatchProduct(context,
                          streamer);
@@ -1978,8 +1894,8 @@ class MruVEconomyService final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>* streamer) {
                        return this->StreamedWatchPrice(context,
                          streamer);

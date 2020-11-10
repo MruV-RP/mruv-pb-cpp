@@ -673,16 +673,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bus
   &scc_info_WatchBusinessesResponse_business_2fbusiness_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_business_2fbusiness_2eproto_once;
-static bool descriptor_table_business_2fbusiness_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_business_2fbusiness_2eproto = {
-  &descriptor_table_business_2fbusiness_2eproto_initialized, descriptor_table_protodef_business_2fbusiness_2eproto, "business/business.proto", 2441,
+  false, false, descriptor_table_protodef_business_2fbusiness_2eproto, "business/business.proto", 2441,
   &descriptor_table_business_2fbusiness_2eproto_once, descriptor_table_business_2fbusiness_2eproto_sccs, descriptor_table_business_2fbusiness_2eproto_deps, 21, 1,
   schemas, file_default_instances, TableStruct_business_2fbusiness_2eproto::offsets,
   file_level_metadata_business_2fbusiness_2eproto, 21, file_level_enum_descriptors_business_2fbusiness_2eproto, file_level_service_descriptors_business_2fbusiness_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_business_2fbusiness_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_business_2fbusiness_2eproto), true);
+static bool dynamic_init_dummy_business_2fbusiness_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_business_2fbusiness_2eproto)), true);
 namespace mruv {
 namespace business {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OwnerType_descriptor() {
@@ -710,24 +709,28 @@ class Business::_Internal {
  public:
 };
 
-Business::Business()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Business::Business(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  estate_ids_(arena),
+  business_items_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.Business)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.Business)
 }
 Business::Business(const Business& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       estate_ids_(from.estate_ids_),
       business_items_(from.business_items_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_description(),
+      GetArena());
   }
   ::memcpy(&product_id_, &from.product_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&business_group_) -
@@ -747,13 +750,21 @@ void Business::SharedCtor() {
 Business::~Business() {
   // @@protoc_insertion_point(destructor:mruv.business.Business)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Business::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void Business::ArenaDtor(void* object) {
+  Business* _this = reinterpret_cast< Business* >(object);
+  (void)_this;
+}
+void Business::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Business::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -771,16 +782,17 @@ void Business::Clear() {
 
   estate_ids_.Clear();
   business_items_.Clear();
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  description_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&product_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&business_group_) -
       reinterpret_cast<char*>(&product_id_)) + sizeof(business_group_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Business::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -810,21 +822,21 @@ const char* Business::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt64Parser(_internal_mutable_estate_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24) {
-          _internal_add_estate_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          _internal_add_estate_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 product_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .mruv.business.OwnerType owner_type = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_owner_type(static_cast<::mruv::business::OwnerType>(val));
         } else goto handle_unusual;
@@ -832,7 +844,7 @@ const char* Business::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
       // uint32 owner_id = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          owner_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          owner_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -842,14 +854,14 @@ const char* Business::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_business_items(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56) {
-          _internal_add_business_items(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          _internal_add_business_items(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 business_group = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          business_group_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          business_group_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -859,7 +871,9 @@ const char* Business::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -944,7 +958,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.Business)
   return target;
@@ -1056,19 +1070,17 @@ void Business::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Business::MergeFrom(const Business& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.Business)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   estate_ids_.MergeFrom(from.estate_ids_);
   business_items_.MergeFrom(from.business_items_);
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    _internal_set_description(from._internal_description());
   }
   if (from.product_id() != 0) {
     _internal_set_product_id(from._internal_product_id());
@@ -1104,17 +1116,17 @@ bool Business::IsInitialized() const {
 
 void Business::InternalSwap(Business* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   estate_ids_.InternalSwap(&other->estate_ids_);
   business_items_.InternalSwap(&other->business_items_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(product_id_, other->product_id_);
-  swap(owner_type_, other->owner_type_);
-  swap(owner_id_, other->owner_id_);
-  swap(business_group_, other->business_group_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Business, business_group_)
+      + sizeof(Business::business_group_)
+      - PROTOBUF_FIELD_OFFSET(Business, product_id_)>(
+          reinterpret_cast<char*>(&product_id_),
+          reinterpret_cast<char*>(&other->product_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Business::GetMetadata() const {
@@ -1130,22 +1142,24 @@ class CreateBusinessRequest::_Internal {
  public:
 };
 
-CreateBusinessRequest::CreateBusinessRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CreateBusinessRequest::CreateBusinessRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.CreateBusinessRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.CreateBusinessRequest)
 }
 CreateBusinessRequest::CreateBusinessRequest(const CreateBusinessRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   description_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_description().empty()) {
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_description(),
+      GetArena());
   }
   product_id_ = from.product_id_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.CreateBusinessRequest)
@@ -1161,13 +1175,21 @@ void CreateBusinessRequest::SharedCtor() {
 CreateBusinessRequest::~CreateBusinessRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.CreateBusinessRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CreateBusinessRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   description_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void CreateBusinessRequest::ArenaDtor(void* object) {
+  CreateBusinessRequest* _this = reinterpret_cast< CreateBusinessRequest* >(object);
+  (void)_this;
+}
+void CreateBusinessRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateBusinessRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1183,14 +1205,15 @@ void CreateBusinessRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  description_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  description_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   product_id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CreateBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1217,7 +1240,7 @@ const char* CreateBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // uint32 product_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          product_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1227,7 +1250,9 @@ const char* CreateBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1275,7 +1300,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.CreateBusinessRequest)
   return target;
@@ -1337,17 +1362,15 @@ void CreateBusinessRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void CreateBusinessRequest::MergeFrom(const CreateBusinessRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.CreateBusinessRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.description().size() > 0) {
-
-    description_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.description_);
+    _internal_set_description(from._internal_description());
   }
   if (from.product_id() != 0) {
     _internal_set_product_id(from._internal_product_id());
@@ -1374,11 +1397,9 @@ bool CreateBusinessRequest::IsInitialized() const {
 
 void CreateBusinessRequest::InternalSwap(CreateBusinessRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  description_.Swap(&other->description_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(product_id_, other->product_id_);
 }
 
@@ -1395,15 +1416,15 @@ class CreateBusinessResponse::_Internal {
  public:
 };
 
-CreateBusinessResponse::CreateBusinessResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CreateBusinessResponse::CreateBusinessResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.CreateBusinessResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.CreateBusinessResponse)
 }
 CreateBusinessResponse::CreateBusinessResponse(const CreateBusinessResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.CreateBusinessResponse)
 }
@@ -1415,11 +1436,19 @@ void CreateBusinessResponse::SharedCtor() {
 CreateBusinessResponse::~CreateBusinessResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.CreateBusinessResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CreateBusinessResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CreateBusinessResponse::ArenaDtor(void* object) {
+  CreateBusinessResponse* _this = reinterpret_cast< CreateBusinessResponse* >(object);
+  (void)_this;
+}
+void CreateBusinessResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateBusinessResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1436,11 +1465,12 @@ void CreateBusinessResponse::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CreateBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1449,7 +1479,7 @@ const char* CreateBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1459,7 +1489,9 @@ const char* CreateBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1487,7 +1519,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.CreateBusinessResponse)
   return target;
@@ -1535,7 +1567,7 @@ void CreateBusinessResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void CreateBusinessResponse::MergeFrom(const CreateBusinessResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.CreateBusinessResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1564,7 +1596,7 @@ bool CreateBusinessResponse::IsInitialized() const {
 
 void CreateBusinessResponse::InternalSwap(CreateBusinessResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1581,15 +1613,15 @@ class GetBusinessRequest::_Internal {
  public:
 };
 
-GetBusinessRequest::GetBusinessRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetBusinessRequest::GetBusinessRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.GetBusinessRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.GetBusinessRequest)
 }
 GetBusinessRequest::GetBusinessRequest(const GetBusinessRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.GetBusinessRequest)
 }
@@ -1601,11 +1633,19 @@ void GetBusinessRequest::SharedCtor() {
 GetBusinessRequest::~GetBusinessRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.GetBusinessRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetBusinessRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetBusinessRequest::ArenaDtor(void* object) {
+  GetBusinessRequest* _this = reinterpret_cast< GetBusinessRequest* >(object);
+  (void)_this;
+}
+void GetBusinessRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetBusinessRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1622,11 +1662,12 @@ void GetBusinessRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1635,7 +1676,7 @@ const char* GetBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1645,7 +1686,9 @@ const char* GetBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1673,7 +1716,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.GetBusinessRequest)
   return target;
@@ -1721,7 +1764,7 @@ void GetBusinessRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void GetBusinessRequest::MergeFrom(const GetBusinessRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.GetBusinessRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1750,7 +1793,7 @@ bool GetBusinessRequest::IsInitialized() const {
 
 void GetBusinessRequest::InternalSwap(GetBusinessRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1767,15 +1810,15 @@ class GetBusinessResponse::_Internal {
  public:
 };
 
-GetBusinessResponse::GetBusinessResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetBusinessResponse::GetBusinessResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.GetBusinessResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.GetBusinessResponse)
 }
 GetBusinessResponse::GetBusinessResponse(const GetBusinessResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.GetBusinessResponse)
 }
 
@@ -1785,11 +1828,19 @@ void GetBusinessResponse::SharedCtor() {
 GetBusinessResponse::~GetBusinessResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.GetBusinessResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetBusinessResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetBusinessResponse::ArenaDtor(void* object) {
+  GetBusinessResponse* _this = reinterpret_cast< GetBusinessResponse* >(object);
+  (void)_this;
+}
+void GetBusinessResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetBusinessResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1805,11 +1856,12 @@ void GetBusinessResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1818,7 +1870,9 @@ const char* GetBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -1838,7 +1892,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.GetBusinessResponse)
   return target;
@@ -1879,7 +1933,7 @@ void GetBusinessResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void GetBusinessResponse::MergeFrom(const GetBusinessResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.GetBusinessResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1905,7 +1959,7 @@ bool GetBusinessResponse::IsInitialized() const {
 
 void GetBusinessResponse::InternalSwap(GetBusinessResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetBusinessResponse::GetMetadata() const {
@@ -1921,15 +1975,15 @@ class UpdateBusinessRequest::_Internal {
  public:
 };
 
-UpdateBusinessRequest::UpdateBusinessRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateBusinessRequest::UpdateBusinessRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.UpdateBusinessRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.UpdateBusinessRequest)
 }
 UpdateBusinessRequest::UpdateBusinessRequest(const UpdateBusinessRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.UpdateBusinessRequest)
 }
@@ -1941,11 +1995,19 @@ void UpdateBusinessRequest::SharedCtor() {
 UpdateBusinessRequest::~UpdateBusinessRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.UpdateBusinessRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateBusinessRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateBusinessRequest::ArenaDtor(void* object) {
+  UpdateBusinessRequest* _this = reinterpret_cast< UpdateBusinessRequest* >(object);
+  (void)_this;
+}
+void UpdateBusinessRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateBusinessRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1962,11 +2024,12 @@ void UpdateBusinessRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1975,7 +2038,7 @@ const char* UpdateBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1985,7 +2048,9 @@ const char* UpdateBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2013,7 +2078,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.UpdateBusinessRequest)
   return target;
@@ -2061,7 +2126,7 @@ void UpdateBusinessRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void UpdateBusinessRequest::MergeFrom(const UpdateBusinessRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.UpdateBusinessRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2090,7 +2155,7 @@ bool UpdateBusinessRequest::IsInitialized() const {
 
 void UpdateBusinessRequest::InternalSwap(UpdateBusinessRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -2107,15 +2172,15 @@ class UpdateBusinessResponse::_Internal {
  public:
 };
 
-UpdateBusinessResponse::UpdateBusinessResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateBusinessResponse::UpdateBusinessResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.UpdateBusinessResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.UpdateBusinessResponse)
 }
 UpdateBusinessResponse::UpdateBusinessResponse(const UpdateBusinessResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.UpdateBusinessResponse)
 }
 
@@ -2125,11 +2190,19 @@ void UpdateBusinessResponse::SharedCtor() {
 UpdateBusinessResponse::~UpdateBusinessResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.UpdateBusinessResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateBusinessResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateBusinessResponse::ArenaDtor(void* object) {
+  UpdateBusinessResponse* _this = reinterpret_cast< UpdateBusinessResponse* >(object);
+  (void)_this;
+}
+void UpdateBusinessResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateBusinessResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2145,11 +2218,12 @@ void UpdateBusinessResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2158,7 +2232,9 @@ const char* UpdateBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -2178,7 +2254,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.UpdateBusinessResponse)
   return target;
@@ -2219,7 +2295,7 @@ void UpdateBusinessResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void UpdateBusinessResponse::MergeFrom(const UpdateBusinessResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.UpdateBusinessResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2245,7 +2321,7 @@ bool UpdateBusinessResponse::IsInitialized() const {
 
 void UpdateBusinessResponse::InternalSwap(UpdateBusinessResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateBusinessResponse::GetMetadata() const {
@@ -2261,15 +2337,15 @@ class DeleteBusinessRequest::_Internal {
  public:
 };
 
-DeleteBusinessRequest::DeleteBusinessRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeleteBusinessRequest::DeleteBusinessRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.DeleteBusinessRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.DeleteBusinessRequest)
 }
 DeleteBusinessRequest::DeleteBusinessRequest(const DeleteBusinessRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.DeleteBusinessRequest)
 }
@@ -2281,11 +2357,19 @@ void DeleteBusinessRequest::SharedCtor() {
 DeleteBusinessRequest::~DeleteBusinessRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.DeleteBusinessRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeleteBusinessRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteBusinessRequest::ArenaDtor(void* object) {
+  DeleteBusinessRequest* _this = reinterpret_cast< DeleteBusinessRequest* >(object);
+  (void)_this;
+}
+void DeleteBusinessRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteBusinessRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2302,11 +2386,12 @@ void DeleteBusinessRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeleteBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2315,7 +2400,7 @@ const char* DeleteBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2325,7 +2410,9 @@ const char* DeleteBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2353,7 +2440,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.DeleteBusinessRequest)
   return target;
@@ -2401,7 +2488,7 @@ void DeleteBusinessRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void DeleteBusinessRequest::MergeFrom(const DeleteBusinessRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.DeleteBusinessRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2430,7 +2517,7 @@ bool DeleteBusinessRequest::IsInitialized() const {
 
 void DeleteBusinessRequest::InternalSwap(DeleteBusinessRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -2447,15 +2534,15 @@ class DeleteBusinessResponse::_Internal {
  public:
 };
 
-DeleteBusinessResponse::DeleteBusinessResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeleteBusinessResponse::DeleteBusinessResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.DeleteBusinessResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.DeleteBusinessResponse)
 }
 DeleteBusinessResponse::DeleteBusinessResponse(const DeleteBusinessResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.DeleteBusinessResponse)
 }
 
@@ -2465,11 +2552,19 @@ void DeleteBusinessResponse::SharedCtor() {
 DeleteBusinessResponse::~DeleteBusinessResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.DeleteBusinessResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeleteBusinessResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteBusinessResponse::ArenaDtor(void* object) {
+  DeleteBusinessResponse* _this = reinterpret_cast< DeleteBusinessResponse* >(object);
+  (void)_this;
+}
+void DeleteBusinessResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteBusinessResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2485,11 +2580,12 @@ void DeleteBusinessResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeleteBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2498,7 +2594,9 @@ const char* DeleteBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -2518,7 +2616,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.DeleteBusinessResponse)
   return target;
@@ -2559,7 +2657,7 @@ void DeleteBusinessResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void DeleteBusinessResponse::MergeFrom(const DeleteBusinessResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.DeleteBusinessResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2585,7 +2683,7 @@ bool DeleteBusinessResponse::IsInitialized() const {
 
 void DeleteBusinessResponse::InternalSwap(DeleteBusinessResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteBusinessResponse::GetMetadata() const {
@@ -2601,15 +2699,15 @@ class AssignOwnerRequest::_Internal {
  public:
 };
 
-AssignOwnerRequest::AssignOwnerRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+AssignOwnerRequest::AssignOwnerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.AssignOwnerRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.AssignOwnerRequest)
 }
 AssignOwnerRequest::AssignOwnerRequest(const AssignOwnerRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.AssignOwnerRequest)
 }
@@ -2621,11 +2719,19 @@ void AssignOwnerRequest::SharedCtor() {
 AssignOwnerRequest::~AssignOwnerRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.AssignOwnerRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void AssignOwnerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void AssignOwnerRequest::ArenaDtor(void* object) {
+  AssignOwnerRequest* _this = reinterpret_cast< AssignOwnerRequest* >(object);
+  (void)_this;
+}
+void AssignOwnerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AssignOwnerRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2642,11 +2748,12 @@ void AssignOwnerRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* AssignOwnerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2655,7 +2762,7 @@ const char* AssignOwnerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2665,7 +2772,9 @@ const char* AssignOwnerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2693,7 +2802,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.AssignOwnerRequest)
   return target;
@@ -2741,7 +2850,7 @@ void AssignOwnerRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void AssignOwnerRequest::MergeFrom(const AssignOwnerRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.AssignOwnerRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2770,7 +2879,7 @@ bool AssignOwnerRequest::IsInitialized() const {
 
 void AssignOwnerRequest::InternalSwap(AssignOwnerRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -2787,15 +2896,15 @@ class AssignOwnerResponse::_Internal {
  public:
 };
 
-AssignOwnerResponse::AssignOwnerResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+AssignOwnerResponse::AssignOwnerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.AssignOwnerResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.AssignOwnerResponse)
 }
 AssignOwnerResponse::AssignOwnerResponse(const AssignOwnerResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&owner_type_, &from.owner_type_,
     static_cast<size_t>(reinterpret_cast<char*>(&owner_id_) -
     reinterpret_cast<char*>(&owner_type_)) + sizeof(owner_id_));
@@ -2811,11 +2920,19 @@ void AssignOwnerResponse::SharedCtor() {
 AssignOwnerResponse::~AssignOwnerResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.AssignOwnerResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void AssignOwnerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void AssignOwnerResponse::ArenaDtor(void* object) {
+  AssignOwnerResponse* _this = reinterpret_cast< AssignOwnerResponse* >(object);
+  (void)_this;
+}
+void AssignOwnerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AssignOwnerResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2834,11 +2951,12 @@ void AssignOwnerResponse::Clear() {
   ::memset(&owner_type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&owner_id_) -
       reinterpret_cast<char*>(&owner_type_)) + sizeof(owner_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* AssignOwnerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2847,7 +2965,7 @@ const char* AssignOwnerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // .mruv.business.OwnerType owner_type = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_owner_type(static_cast<::mruv::business::OwnerType>(val));
         } else goto handle_unusual;
@@ -2855,7 +2973,7 @@ const char* AssignOwnerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // uint32 owner_id = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          owner_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          owner_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2865,7 +2983,9 @@ const char* AssignOwnerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2900,7 +3020,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.AssignOwnerResponse)
   return target;
@@ -2954,7 +3074,7 @@ void AssignOwnerResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void AssignOwnerResponse::MergeFrom(const AssignOwnerResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.AssignOwnerResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2986,9 +3106,13 @@ bool AssignOwnerResponse::IsInitialized() const {
 
 void AssignOwnerResponse::InternalSwap(AssignOwnerResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(owner_type_, other->owner_type_);
-  swap(owner_id_, other->owner_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AssignOwnerResponse, owner_id_)
+      + sizeof(AssignOwnerResponse::owner_id_)
+      - PROTOBUF_FIELD_OFFSET(AssignOwnerResponse, owner_type_)>(
+          reinterpret_cast<char*>(&owner_type_),
+          reinterpret_cast<char*>(&other->owner_type_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AssignOwnerResponse::GetMetadata() const {
@@ -3004,15 +3128,15 @@ class AssignEstateRequest::_Internal {
  public:
 };
 
-AssignEstateRequest::AssignEstateRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+AssignEstateRequest::AssignEstateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.AssignEstateRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.AssignEstateRequest)
 }
 AssignEstateRequest::AssignEstateRequest(const AssignEstateRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&business_id_, &from.business_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
     reinterpret_cast<char*>(&business_id_)) + sizeof(estate_id_));
@@ -3028,11 +3152,19 @@ void AssignEstateRequest::SharedCtor() {
 AssignEstateRequest::~AssignEstateRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.AssignEstateRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void AssignEstateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void AssignEstateRequest::ArenaDtor(void* object) {
+  AssignEstateRequest* _this = reinterpret_cast< AssignEstateRequest* >(object);
+  (void)_this;
+}
+void AssignEstateRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AssignEstateRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3051,11 +3183,12 @@ void AssignEstateRequest::Clear() {
   ::memset(&business_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&estate_id_) -
       reinterpret_cast<char*>(&business_id_)) + sizeof(estate_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* AssignEstateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3064,14 +3197,14 @@ const char* AssignEstateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // uint32 business_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          business_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          business_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 estate_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3081,7 +3214,9 @@ const char* AssignEstateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3115,7 +3250,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.AssignEstateRequest)
   return target;
@@ -3170,7 +3305,7 @@ void AssignEstateRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void AssignEstateRequest::MergeFrom(const AssignEstateRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.AssignEstateRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3202,9 +3337,13 @@ bool AssignEstateRequest::IsInitialized() const {
 
 void AssignEstateRequest::InternalSwap(AssignEstateRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(business_id_, other->business_id_);
-  swap(estate_id_, other->estate_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AssignEstateRequest, estate_id_)
+      + sizeof(AssignEstateRequest::estate_id_)
+      - PROTOBUF_FIELD_OFFSET(AssignEstateRequest, business_id_)>(
+          reinterpret_cast<char*>(&business_id_),
+          reinterpret_cast<char*>(&other->business_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AssignEstateRequest::GetMetadata() const {
@@ -3220,15 +3359,15 @@ class AssignEstateResponse::_Internal {
  public:
 };
 
-AssignEstateResponse::AssignEstateResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+AssignEstateResponse::AssignEstateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.AssignEstateResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.AssignEstateResponse)
 }
 AssignEstateResponse::AssignEstateResponse(const AssignEstateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   estate_count_ = from.estate_count_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.AssignEstateResponse)
 }
@@ -3240,11 +3379,19 @@ void AssignEstateResponse::SharedCtor() {
 AssignEstateResponse::~AssignEstateResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.AssignEstateResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void AssignEstateResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void AssignEstateResponse::ArenaDtor(void* object) {
+  AssignEstateResponse* _this = reinterpret_cast< AssignEstateResponse* >(object);
+  (void)_this;
+}
+void AssignEstateResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void AssignEstateResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3261,11 +3408,12 @@ void AssignEstateResponse::Clear() {
   (void) cached_has_bits;
 
   estate_count_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* AssignEstateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3274,7 +3422,7 @@ const char* AssignEstateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // uint32 estate_count = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          estate_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          estate_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3284,7 +3432,9 @@ const char* AssignEstateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3312,7 +3462,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.AssignEstateResponse)
   return target;
@@ -3360,7 +3510,7 @@ void AssignEstateResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void AssignEstateResponse::MergeFrom(const AssignEstateResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.AssignEstateResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3389,7 +3539,7 @@ bool AssignEstateResponse::IsInitialized() const {
 
 void AssignEstateResponse::InternalSwap(AssignEstateResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(estate_count_, other->estate_count_);
 }
 
@@ -3406,15 +3556,15 @@ class UnassignEstateRequest::_Internal {
  public:
 };
 
-UnassignEstateRequest::UnassignEstateRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UnassignEstateRequest::UnassignEstateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.UnassignEstateRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.UnassignEstateRequest)
 }
 UnassignEstateRequest::UnassignEstateRequest(const UnassignEstateRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&business_id_, &from.business_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&estate_id_) -
     reinterpret_cast<char*>(&business_id_)) + sizeof(estate_id_));
@@ -3430,11 +3580,19 @@ void UnassignEstateRequest::SharedCtor() {
 UnassignEstateRequest::~UnassignEstateRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.UnassignEstateRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UnassignEstateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UnassignEstateRequest::ArenaDtor(void* object) {
+  UnassignEstateRequest* _this = reinterpret_cast< UnassignEstateRequest* >(object);
+  (void)_this;
+}
+void UnassignEstateRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnassignEstateRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3453,11 +3611,12 @@ void UnassignEstateRequest::Clear() {
   ::memset(&business_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&estate_id_) -
       reinterpret_cast<char*>(&business_id_)) + sizeof(estate_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UnassignEstateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3466,14 +3625,14 @@ const char* UnassignEstateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // uint32 business_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          business_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          business_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 estate_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          estate_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3483,7 +3642,9 @@ const char* UnassignEstateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3517,7 +3678,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.UnassignEstateRequest)
   return target;
@@ -3572,7 +3733,7 @@ void UnassignEstateRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void UnassignEstateRequest::MergeFrom(const UnassignEstateRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.UnassignEstateRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3604,9 +3765,13 @@ bool UnassignEstateRequest::IsInitialized() const {
 
 void UnassignEstateRequest::InternalSwap(UnassignEstateRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(business_id_, other->business_id_);
-  swap(estate_id_, other->estate_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UnassignEstateRequest, estate_id_)
+      + sizeof(UnassignEstateRequest::estate_id_)
+      - PROTOBUF_FIELD_OFFSET(UnassignEstateRequest, business_id_)>(
+          reinterpret_cast<char*>(&business_id_),
+          reinterpret_cast<char*>(&other->business_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnassignEstateRequest::GetMetadata() const {
@@ -3622,15 +3787,15 @@ class UnassignEstateResponse::_Internal {
  public:
 };
 
-UnassignEstateResponse::UnassignEstateResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UnassignEstateResponse::UnassignEstateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.UnassignEstateResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.UnassignEstateResponse)
 }
 UnassignEstateResponse::UnassignEstateResponse(const UnassignEstateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   estate_count_ = from.estate_count_;
   // @@protoc_insertion_point(copy_constructor:mruv.business.UnassignEstateResponse)
 }
@@ -3642,11 +3807,19 @@ void UnassignEstateResponse::SharedCtor() {
 UnassignEstateResponse::~UnassignEstateResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.UnassignEstateResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UnassignEstateResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UnassignEstateResponse::ArenaDtor(void* object) {
+  UnassignEstateResponse* _this = reinterpret_cast< UnassignEstateResponse* >(object);
+  (void)_this;
+}
+void UnassignEstateResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnassignEstateResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3663,11 +3836,12 @@ void UnassignEstateResponse::Clear() {
   (void) cached_has_bits;
 
   estate_count_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UnassignEstateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3676,7 +3850,7 @@ const char* UnassignEstateResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
       // uint32 estate_count = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          estate_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          estate_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3686,7 +3860,9 @@ const char* UnassignEstateResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3714,7 +3890,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.UnassignEstateResponse)
   return target;
@@ -3762,7 +3938,7 @@ void UnassignEstateResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void UnassignEstateResponse::MergeFrom(const UnassignEstateResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.UnassignEstateResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3791,7 +3967,7 @@ bool UnassignEstateResponse::IsInitialized() const {
 
 void UnassignEstateResponse::InternalSwap(UnassignEstateResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(estate_count_, other->estate_count_);
 }
 
@@ -3808,15 +3984,15 @@ class BuyBusinessRequest::_Internal {
  public:
 };
 
-BuyBusinessRequest::BuyBusinessRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+BuyBusinessRequest::BuyBusinessRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.BuyBusinessRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.BuyBusinessRequest)
 }
 BuyBusinessRequest::BuyBusinessRequest(const BuyBusinessRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&buyer_id_) -
     reinterpret_cast<char*>(&id_)) + sizeof(buyer_id_));
@@ -3832,11 +4008,19 @@ void BuyBusinessRequest::SharedCtor() {
 BuyBusinessRequest::~BuyBusinessRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.BuyBusinessRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BuyBusinessRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BuyBusinessRequest::ArenaDtor(void* object) {
+  BuyBusinessRequest* _this = reinterpret_cast< BuyBusinessRequest* >(object);
+  (void)_this;
+}
+void BuyBusinessRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BuyBusinessRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3855,11 +4039,12 @@ void BuyBusinessRequest::Clear() {
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&buyer_id_) -
       reinterpret_cast<char*>(&id_)) + sizeof(buyer_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* BuyBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3868,14 +4053,14 @@ const char* BuyBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .mruv.business.OwnerType buyer_type = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_buyer_type(static_cast<::mruv::business::OwnerType>(val));
         } else goto handle_unusual;
@@ -3883,7 +4068,7 @@ const char* BuyBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 buyer_id = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          buyer_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          buyer_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3893,7 +4078,9 @@ const char* BuyBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3934,7 +4121,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.BuyBusinessRequest)
   return target;
@@ -3995,7 +4182,7 @@ void BuyBusinessRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void BuyBusinessRequest::MergeFrom(const BuyBusinessRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.BuyBusinessRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4030,10 +4217,13 @@ bool BuyBusinessRequest::IsInitialized() const {
 
 void BuyBusinessRequest::InternalSwap(BuyBusinessRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
-  swap(buyer_type_, other->buyer_type_);
-  swap(buyer_id_, other->buyer_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BuyBusinessRequest, buyer_id_)
+      + sizeof(BuyBusinessRequest::buyer_id_)
+      - PROTOBUF_FIELD_OFFSET(BuyBusinessRequest, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BuyBusinessRequest::GetMetadata() const {
@@ -4049,15 +4239,15 @@ class BuyBusinessResponse::_Internal {
  public:
 };
 
-BuyBusinessResponse::BuyBusinessResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+BuyBusinessResponse::BuyBusinessResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.BuyBusinessResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.BuyBusinessResponse)
 }
 BuyBusinessResponse::BuyBusinessResponse(const BuyBusinessResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.BuyBusinessResponse)
 }
 
@@ -4067,11 +4257,19 @@ void BuyBusinessResponse::SharedCtor() {
 BuyBusinessResponse::~BuyBusinessResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.BuyBusinessResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BuyBusinessResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BuyBusinessResponse::ArenaDtor(void* object) {
+  BuyBusinessResponse* _this = reinterpret_cast< BuyBusinessResponse* >(object);
+  (void)_this;
+}
+void BuyBusinessResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BuyBusinessResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4087,11 +4285,12 @@ void BuyBusinessResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* BuyBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4100,7 +4299,9 @@ const char* BuyBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4120,7 +4321,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.BuyBusinessResponse)
   return target;
@@ -4161,7 +4362,7 @@ void BuyBusinessResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void BuyBusinessResponse::MergeFrom(const BuyBusinessResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.BuyBusinessResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4187,7 +4388,7 @@ bool BuyBusinessResponse::IsInitialized() const {
 
 void BuyBusinessResponse::InternalSwap(BuyBusinessResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BuyBusinessResponse::GetMetadata() const {
@@ -4203,15 +4404,15 @@ class WatchBusinessRequest::_Internal {
  public:
 };
 
-WatchBusinessRequest::WatchBusinessRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+WatchBusinessRequest::WatchBusinessRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.WatchBusinessRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.WatchBusinessRequest)
 }
 WatchBusinessRequest::WatchBusinessRequest(const WatchBusinessRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.WatchBusinessRequest)
 }
 
@@ -4221,11 +4422,19 @@ void WatchBusinessRequest::SharedCtor() {
 WatchBusinessRequest::~WatchBusinessRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.WatchBusinessRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void WatchBusinessRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void WatchBusinessRequest::ArenaDtor(void* object) {
+  WatchBusinessRequest* _this = reinterpret_cast< WatchBusinessRequest* >(object);
+  (void)_this;
+}
+void WatchBusinessRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void WatchBusinessRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4241,11 +4450,12 @@ void WatchBusinessRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* WatchBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4254,7 +4464,9 @@ const char* WatchBusinessRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4274,7 +4486,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.WatchBusinessRequest)
   return target;
@@ -4315,7 +4527,7 @@ void WatchBusinessRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void WatchBusinessRequest::MergeFrom(const WatchBusinessRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.WatchBusinessRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4341,7 +4553,7 @@ bool WatchBusinessRequest::IsInitialized() const {
 
 void WatchBusinessRequest::InternalSwap(WatchBusinessRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchBusinessRequest::GetMetadata() const {
@@ -4357,15 +4569,15 @@ class WatchBusinessResponse::_Internal {
  public:
 };
 
-WatchBusinessResponse::WatchBusinessResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+WatchBusinessResponse::WatchBusinessResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.WatchBusinessResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.WatchBusinessResponse)
 }
 WatchBusinessResponse::WatchBusinessResponse(const WatchBusinessResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.WatchBusinessResponse)
 }
 
@@ -4375,11 +4587,19 @@ void WatchBusinessResponse::SharedCtor() {
 WatchBusinessResponse::~WatchBusinessResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.WatchBusinessResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void WatchBusinessResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void WatchBusinessResponse::ArenaDtor(void* object) {
+  WatchBusinessResponse* _this = reinterpret_cast< WatchBusinessResponse* >(object);
+  (void)_this;
+}
+void WatchBusinessResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void WatchBusinessResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4395,11 +4615,12 @@ void WatchBusinessResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* WatchBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4408,7 +4629,9 @@ const char* WatchBusinessResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4428,7 +4651,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.WatchBusinessResponse)
   return target;
@@ -4469,7 +4692,7 @@ void WatchBusinessResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void WatchBusinessResponse::MergeFrom(const WatchBusinessResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.WatchBusinessResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4495,7 +4718,7 @@ bool WatchBusinessResponse::IsInitialized() const {
 
 void WatchBusinessResponse::InternalSwap(WatchBusinessResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchBusinessResponse::GetMetadata() const {
@@ -4511,15 +4734,15 @@ class WatchBusinessesRequest::_Internal {
  public:
 };
 
-WatchBusinessesRequest::WatchBusinessesRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+WatchBusinessesRequest::WatchBusinessesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.WatchBusinessesRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.WatchBusinessesRequest)
 }
 WatchBusinessesRequest::WatchBusinessesRequest(const WatchBusinessesRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.WatchBusinessesRequest)
 }
 
@@ -4529,11 +4752,19 @@ void WatchBusinessesRequest::SharedCtor() {
 WatchBusinessesRequest::~WatchBusinessesRequest() {
   // @@protoc_insertion_point(destructor:mruv.business.WatchBusinessesRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void WatchBusinessesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void WatchBusinessesRequest::ArenaDtor(void* object) {
+  WatchBusinessesRequest* _this = reinterpret_cast< WatchBusinessesRequest* >(object);
+  (void)_this;
+}
+void WatchBusinessesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void WatchBusinessesRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4549,11 +4780,12 @@ void WatchBusinessesRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* WatchBusinessesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4562,7 +4794,9 @@ const char* WatchBusinessesRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4582,7 +4816,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.WatchBusinessesRequest)
   return target;
@@ -4623,7 +4857,7 @@ void WatchBusinessesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void WatchBusinessesRequest::MergeFrom(const WatchBusinessesRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.WatchBusinessesRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4649,7 +4883,7 @@ bool WatchBusinessesRequest::IsInitialized() const {
 
 void WatchBusinessesRequest::InternalSwap(WatchBusinessesRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchBusinessesRequest::GetMetadata() const {
@@ -4665,15 +4899,15 @@ class WatchBusinessesResponse::_Internal {
  public:
 };
 
-WatchBusinessesResponse::WatchBusinessesResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+WatchBusinessesResponse::WatchBusinessesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.business.WatchBusinessesResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.business.WatchBusinessesResponse)
 }
 WatchBusinessesResponse::WatchBusinessesResponse(const WatchBusinessesResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.business.WatchBusinessesResponse)
 }
 
@@ -4683,11 +4917,19 @@ void WatchBusinessesResponse::SharedCtor() {
 WatchBusinessesResponse::~WatchBusinessesResponse() {
   // @@protoc_insertion_point(destructor:mruv.business.WatchBusinessesResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void WatchBusinessesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void WatchBusinessesResponse::ArenaDtor(void* object) {
+  WatchBusinessesResponse* _this = reinterpret_cast< WatchBusinessesResponse* >(object);
+  (void)_this;
+}
+void WatchBusinessesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void WatchBusinessesResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4703,11 +4945,12 @@ void WatchBusinessesResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* WatchBusinessesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4716,7 +4959,9 @@ const char* WatchBusinessesResponse::_InternalParse(const char* ptr, ::PROTOBUF_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4736,7 +4981,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.business.WatchBusinessesResponse)
   return target;
@@ -4777,7 +5022,7 @@ void WatchBusinessesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& 
 void WatchBusinessesResponse::MergeFrom(const WatchBusinessesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.business.WatchBusinessesResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4803,7 +5048,7 @@ bool WatchBusinessesResponse::IsInitialized() const {
 
 void WatchBusinessesResponse::InternalSwap(WatchBusinessesResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata WatchBusinessesResponse::GetMetadata() const {
@@ -4816,67 +5061,67 @@ void WatchBusinessesResponse::InternalSwap(WatchBusinessesResponse* other) {
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::business::Business* Arena::CreateMaybeMessage< ::mruv::business::Business >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::Business >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::Business >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::CreateBusinessRequest* Arena::CreateMaybeMessage< ::mruv::business::CreateBusinessRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::CreateBusinessRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::CreateBusinessRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::CreateBusinessResponse* Arena::CreateMaybeMessage< ::mruv::business::CreateBusinessResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::CreateBusinessResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::CreateBusinessResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::GetBusinessRequest* Arena::CreateMaybeMessage< ::mruv::business::GetBusinessRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::GetBusinessRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::GetBusinessRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::GetBusinessResponse* Arena::CreateMaybeMessage< ::mruv::business::GetBusinessResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::GetBusinessResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::GetBusinessResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::UpdateBusinessRequest* Arena::CreateMaybeMessage< ::mruv::business::UpdateBusinessRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::UpdateBusinessRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::UpdateBusinessRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::UpdateBusinessResponse* Arena::CreateMaybeMessage< ::mruv::business::UpdateBusinessResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::UpdateBusinessResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::UpdateBusinessResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::DeleteBusinessRequest* Arena::CreateMaybeMessage< ::mruv::business::DeleteBusinessRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::DeleteBusinessRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::DeleteBusinessRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::DeleteBusinessResponse* Arena::CreateMaybeMessage< ::mruv::business::DeleteBusinessResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::DeleteBusinessResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::DeleteBusinessResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::AssignOwnerRequest* Arena::CreateMaybeMessage< ::mruv::business::AssignOwnerRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::AssignOwnerRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::AssignOwnerRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::AssignOwnerResponse* Arena::CreateMaybeMessage< ::mruv::business::AssignOwnerResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::AssignOwnerResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::AssignOwnerResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::AssignEstateRequest* Arena::CreateMaybeMessage< ::mruv::business::AssignEstateRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::AssignEstateRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::AssignEstateRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::AssignEstateResponse* Arena::CreateMaybeMessage< ::mruv::business::AssignEstateResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::AssignEstateResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::AssignEstateResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::UnassignEstateRequest* Arena::CreateMaybeMessage< ::mruv::business::UnassignEstateRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::UnassignEstateRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::UnassignEstateRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::UnassignEstateResponse* Arena::CreateMaybeMessage< ::mruv::business::UnassignEstateResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::UnassignEstateResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::UnassignEstateResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::BuyBusinessRequest* Arena::CreateMaybeMessage< ::mruv::business::BuyBusinessRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::BuyBusinessRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::BuyBusinessRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::BuyBusinessResponse* Arena::CreateMaybeMessage< ::mruv::business::BuyBusinessResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::BuyBusinessResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::BuyBusinessResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::WatchBusinessRequest* Arena::CreateMaybeMessage< ::mruv::business::WatchBusinessRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::WatchBusinessRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::WatchBusinessRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::WatchBusinessResponse* Arena::CreateMaybeMessage< ::mruv::business::WatchBusinessResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::WatchBusinessResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::WatchBusinessResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::WatchBusinessesRequest* Arena::CreateMaybeMessage< ::mruv::business::WatchBusinessesRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::WatchBusinessesRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::WatchBusinessesRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::business::WatchBusinessesResponse* Arena::CreateMaybeMessage< ::mruv::business::WatchBusinessesResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::business::WatchBusinessesResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::business::WatchBusinessesResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

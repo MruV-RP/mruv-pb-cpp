@@ -49,27 +49,22 @@ MruVElevatorsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
 }
 
 void MruVElevatorsService::Stub::experimental_async::CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateElevator_, context, request, response, std::move(f));
-}
-
-void MruVElevatorsService::Stub::experimental_async::CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateElevator_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateElevator_, context, request, response, std::move(f));
 }
 
 void MruVElevatorsService::Stub::experimental_async::CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateElevator_, context, request, response, reactor);
-}
-
-void MruVElevatorsService::Stub::experimental_async::CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateElevator_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::elevators::CreateElevatorResponse>* MruVElevatorsService::Stub::AsyncCreateElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::CreateElevatorResponse>::Create(channel_.get(), cq, rpcmethod_CreateElevator_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateElevator_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::elevators::CreateElevatorResponse>* MruVElevatorsService::Stub::PrepareAsyncCreateElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::CreateElevatorResponse>::Create(channel_.get(), cq, rpcmethod_CreateElevator_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::CreateElevatorResponse>::Create(channel_.get(), cq, rpcmethod_CreateElevator_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::elevators::CreateElevatorResponse>* MruVElevatorsService::Stub::AsyncCreateElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateElevatorRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVElevatorsService::Stub::GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest& request, ::mruv::elevators::GetElevatorResponse* response) {
@@ -77,27 +72,22 @@ void MruVElevatorsService::Stub::experimental_async::CreateElevator(::grpc::Clie
 }
 
 void MruVElevatorsService::Stub::experimental_async::GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetElevator_, context, request, response, std::move(f));
-}
-
-void MruVElevatorsService::Stub::experimental_async::GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetElevator_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetElevator_, context, request, response, std::move(f));
 }
 
 void MruVElevatorsService::Stub::experimental_async::GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetElevator_, context, request, response, reactor);
-}
-
-void MruVElevatorsService::Stub::experimental_async::GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetElevator_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::elevators::GetElevatorResponse>* MruVElevatorsService::Stub::AsyncGetElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::GetElevatorResponse>::Create(channel_.get(), cq, rpcmethod_GetElevator_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetElevator_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::elevators::GetElevatorResponse>* MruVElevatorsService::Stub::PrepareAsyncGetElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::GetElevatorResponse>::Create(channel_.get(), cq, rpcmethod_GetElevator_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::GetElevatorResponse>::Create(channel_.get(), cq, rpcmethod_GetElevator_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::elevators::GetElevatorResponse>* MruVElevatorsService::Stub::AsyncGetElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetElevatorRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVElevatorsService::Stub::UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest& request, ::mruv::elevators::UpdateElevatorResponse* response) {
@@ -105,27 +95,22 @@ void MruVElevatorsService::Stub::experimental_async::GetElevator(::grpc::ClientC
 }
 
 void MruVElevatorsService::Stub::experimental_async::UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateElevator_, context, request, response, std::move(f));
-}
-
-void MruVElevatorsService::Stub::experimental_async::UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateElevator_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateElevator_, context, request, response, std::move(f));
 }
 
 void MruVElevatorsService::Stub::experimental_async::UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateElevator_, context, request, response, reactor);
-}
-
-void MruVElevatorsService::Stub::experimental_async::UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateElevator_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::elevators::UpdateElevatorResponse>* MruVElevatorsService::Stub::AsyncUpdateElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::UpdateElevatorResponse>::Create(channel_.get(), cq, rpcmethod_UpdateElevator_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateElevator_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::elevators::UpdateElevatorResponse>* MruVElevatorsService::Stub::PrepareAsyncUpdateElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::UpdateElevatorResponse>::Create(channel_.get(), cq, rpcmethod_UpdateElevator_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::UpdateElevatorResponse>::Create(channel_.get(), cq, rpcmethod_UpdateElevator_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::elevators::UpdateElevatorResponse>* MruVElevatorsService::Stub::AsyncUpdateElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateElevatorRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVElevatorsService::Stub::DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest& request, ::mruv::elevators::DeleteElevatorResponse* response) {
@@ -133,27 +118,22 @@ void MruVElevatorsService::Stub::experimental_async::UpdateElevator(::grpc::Clie
 }
 
 void MruVElevatorsService::Stub::experimental_async::DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteElevator_, context, request, response, std::move(f));
-}
-
-void MruVElevatorsService::Stub::experimental_async::DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteElevator_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteElevator_, context, request, response, std::move(f));
 }
 
 void MruVElevatorsService::Stub::experimental_async::DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteElevator_, context, request, response, reactor);
-}
-
-void MruVElevatorsService::Stub::experimental_async::DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteElevator_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::elevators::DeleteElevatorResponse>* MruVElevatorsService::Stub::AsyncDeleteElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::DeleteElevatorResponse>::Create(channel_.get(), cq, rpcmethod_DeleteElevator_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteElevator_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::elevators::DeleteElevatorResponse>* MruVElevatorsService::Stub::PrepareAsyncDeleteElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::DeleteElevatorResponse>::Create(channel_.get(), cq, rpcmethod_DeleteElevator_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::DeleteElevatorResponse>::Create(channel_.get(), cq, rpcmethod_DeleteElevator_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::elevators::DeleteElevatorResponse>* MruVElevatorsService::Stub::AsyncDeleteElevatorRaw(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteElevatorRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVElevatorsService::Stub::GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest& request, ::mruv::elevators::GetElevatorFloorsResponse* response) {
@@ -161,27 +141,22 @@ void MruVElevatorsService::Stub::experimental_async::DeleteElevator(::grpc::Clie
 }
 
 void MruVElevatorsService::Stub::experimental_async::GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetElevatorFloors_, context, request, response, std::move(f));
-}
-
-void MruVElevatorsService::Stub::experimental_async::GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetElevatorFloors_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetElevatorFloors_, context, request, response, std::move(f));
 }
 
 void MruVElevatorsService::Stub::experimental_async::GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetElevatorFloors_, context, request, response, reactor);
-}
-
-void MruVElevatorsService::Stub::experimental_async::GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetElevatorFloors_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::elevators::GetElevatorFloorsResponse>* MruVElevatorsService::Stub::AsyncGetElevatorFloorsRaw(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::GetElevatorFloorsResponse>::Create(channel_.get(), cq, rpcmethod_GetElevatorFloors_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetElevatorFloors_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::elevators::GetElevatorFloorsResponse>* MruVElevatorsService::Stub::PrepareAsyncGetElevatorFloorsRaw(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::GetElevatorFloorsResponse>::Create(channel_.get(), cq, rpcmethod_GetElevatorFloors_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::elevators::GetElevatorFloorsResponse>::Create(channel_.get(), cq, rpcmethod_GetElevatorFloors_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::elevators::GetElevatorFloorsResponse>* MruVElevatorsService::Stub::AsyncGetElevatorFloorsRaw(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetElevatorFloorsRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVElevatorsService::Service::Service() {
@@ -190,7 +165,7 @@ MruVElevatorsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(
           [](MruVElevatorsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::elevators::CreateElevatorRequest* req,
              ::mruv::elevators::CreateElevatorResponse* resp) {
                return service->CreateElevator(ctx, req, resp);
@@ -200,7 +175,7 @@ MruVElevatorsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(
           [](MruVElevatorsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::elevators::GetElevatorRequest* req,
              ::mruv::elevators::GetElevatorResponse* resp) {
                return service->GetElevator(ctx, req, resp);
@@ -210,7 +185,7 @@ MruVElevatorsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(
           [](MruVElevatorsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::elevators::UpdateElevatorRequest* req,
              ::mruv::elevators::UpdateElevatorResponse* resp) {
                return service->UpdateElevator(ctx, req, resp);
@@ -220,7 +195,7 @@ MruVElevatorsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(
           [](MruVElevatorsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::elevators::DeleteElevatorRequest* req,
              ::mruv::elevators::DeleteElevatorResponse* resp) {
                return service->DeleteElevator(ctx, req, resp);
@@ -230,7 +205,7 @@ MruVElevatorsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVElevatorsService::Service, ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(
           [](MruVElevatorsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::elevators::GetElevatorFloorsRequest* req,
              ::mruv::elevators::GetElevatorFloorsResponse* resp) {
                return service->GetElevatorFloors(ctx, req, resp);

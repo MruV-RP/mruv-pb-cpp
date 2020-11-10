@@ -59,27 +59,22 @@ MruVBusinessService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
 }
 
 void MruVBusinessService::Stub::experimental_async::CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateBusiness_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateBusiness_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateBusiness_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::CreateBusiness(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateBusiness_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::CreateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::CreateBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateBusiness_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::CreateBusinessResponse>* MruVBusinessService::Stub::AsyncCreateBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::CreateBusinessResponse>::Create(channel_.get(), cq, rpcmethod_CreateBusiness_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateBusiness_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::CreateBusinessResponse>* MruVBusinessService::Stub::PrepareAsyncCreateBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::CreateBusinessResponse>::Create(channel_.get(), cq, rpcmethod_CreateBusiness_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::CreateBusinessResponse>::Create(channel_.get(), cq, rpcmethod_CreateBusiness_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::CreateBusinessResponse>* MruVBusinessService::Stub::AsyncCreateBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::CreateBusinessRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateBusinessRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest& request, ::mruv::business::Business* response) {
@@ -87,27 +82,22 @@ void MruVBusinessService::Stub::experimental_async::CreateBusiness(::grpc::Clien
 }
 
 void MruVBusinessService::Stub::experimental_async::GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBusiness_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBusiness_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetBusiness_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::GetBusiness(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBusiness_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::GetBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBusiness_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::Business>* MruVBusinessService::Stub::AsyncGetBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::Business>::Create(channel_.get(), cq, rpcmethod_GetBusiness_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetBusiness_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::Business>* MruVBusinessService::Stub::PrepareAsyncGetBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::Business>::Create(channel_.get(), cq, rpcmethod_GetBusiness_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::Business>::Create(channel_.get(), cq, rpcmethod_GetBusiness_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::Business>* MruVBusinessService::Stub::AsyncGetBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::GetBusinessRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetBusinessRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest& request, ::mruv::business::Business* response) {
@@ -115,27 +105,22 @@ void MruVBusinessService::Stub::experimental_async::GetBusiness(::grpc::ClientCo
 }
 
 void MruVBusinessService::Stub::experimental_async::UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateBusiness_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateBusiness_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateBusiness_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::UpdateBusiness(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateBusiness_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::UpdateBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::Business* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateBusiness_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::Business>* MruVBusinessService::Stub::AsyncUpdateBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::Business>::Create(channel_.get(), cq, rpcmethod_UpdateBusiness_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateBusiness_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::Business>* MruVBusinessService::Stub::PrepareAsyncUpdateBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::Business>::Create(channel_.get(), cq, rpcmethod_UpdateBusiness_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::Business>::Create(channel_.get(), cq, rpcmethod_UpdateBusiness_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::Business>* MruVBusinessService::Stub::AsyncUpdateBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::UpdateBusinessRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateBusinessRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest& request, ::mruv::business::DeleteBusinessResponse* response) {
@@ -143,27 +128,22 @@ void MruVBusinessService::Stub::experimental_async::UpdateBusiness(::grpc::Clien
 }
 
 void MruVBusinessService::Stub::experimental_async::DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteBusiness_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteBusiness_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteBusiness_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::DeleteBusiness(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteBusiness_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::DeleteBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::DeleteBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteBusiness_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::DeleteBusinessResponse>* MruVBusinessService::Stub::AsyncDeleteBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::DeleteBusinessResponse>::Create(channel_.get(), cq, rpcmethod_DeleteBusiness_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteBusiness_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::DeleteBusinessResponse>* MruVBusinessService::Stub::PrepareAsyncDeleteBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::DeleteBusinessResponse>::Create(channel_.get(), cq, rpcmethod_DeleteBusiness_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::DeleteBusinessResponse>::Create(channel_.get(), cq, rpcmethod_DeleteBusiness_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::DeleteBusinessResponse>* MruVBusinessService::Stub::AsyncDeleteBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::DeleteBusinessRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteBusinessRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest& request, ::mruv::business::AssignOwnerResponse* response) {
@@ -171,27 +151,22 @@ void MruVBusinessService::Stub::experimental_async::DeleteBusiness(::grpc::Clien
 }
 
 void MruVBusinessService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::AssignOwner(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::AssignOwnerResponse>* MruVBusinessService::Stub::AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::AssignOwnerResponse>::Create(channel_.get(), cq, rpcmethod_AssignOwner_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignOwner_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::AssignOwnerResponse>* MruVBusinessService::Stub::PrepareAsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::AssignOwnerResponse>::Create(channel_.get(), cq, rpcmethod_AssignOwner_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::AssignOwnerResponse>::Create(channel_.get(), cq, rpcmethod_AssignOwner_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::AssignOwnerResponse>* MruVBusinessService::Stub::AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::business::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAssignOwnerRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest& request, ::mruv::business::AssignEstateResponse* response) {
@@ -199,27 +174,22 @@ void MruVBusinessService::Stub::experimental_async::AssignOwner(::grpc::ClientCo
 }
 
 void MruVBusinessService::Stub::experimental_async::AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignEstate_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignEstate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignEstate_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::AssignEstate(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest* request, ::mruv::business::AssignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignEstate_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::AssignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::AssignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignEstate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::AssignEstateResponse>* MruVBusinessService::Stub::AsyncAssignEstateRaw(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::AssignEstateResponse>::Create(channel_.get(), cq, rpcmethod_AssignEstate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignEstate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::AssignEstateResponse>* MruVBusinessService::Stub::PrepareAsyncAssignEstateRaw(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::AssignEstateResponse>::Create(channel_.get(), cq, rpcmethod_AssignEstate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::AssignEstateResponse>::Create(channel_.get(), cq, rpcmethod_AssignEstate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::AssignEstateResponse>* MruVBusinessService::Stub::AsyncAssignEstateRaw(::grpc::ClientContext* context, const ::mruv::business::AssignEstateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAssignEstateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest& request, ::mruv::business::UnassignEstateResponse* response) {
@@ -227,27 +197,22 @@ void MruVBusinessService::Stub::experimental_async::AssignEstate(::grpc::ClientC
 }
 
 void MruVBusinessService::Stub::experimental_async::UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnassignEstate_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnassignEstate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnassignEstate_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::UnassignEstate(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnassignEstate_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::UnassignEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::UnassignEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnassignEstate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::UnassignEstateResponse>* MruVBusinessService::Stub::AsyncUnassignEstateRaw(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::UnassignEstateResponse>::Create(channel_.get(), cq, rpcmethod_UnassignEstate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnassignEstate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::UnassignEstateResponse>* MruVBusinessService::Stub::PrepareAsyncUnassignEstateRaw(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::UnassignEstateResponse>::Create(channel_.get(), cq, rpcmethod_UnassignEstate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::UnassignEstateResponse>::Create(channel_.get(), cq, rpcmethod_UnassignEstate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::UnassignEstateResponse>* MruVBusinessService::Stub::AsyncUnassignEstateRaw(::grpc::ClientContext* context, const ::mruv::business::UnassignEstateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUnassignEstateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVBusinessService::Stub::BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest& request, ::mruv::business::BuyBusinessResponse* response) {
@@ -255,59 +220,54 @@ void MruVBusinessService::Stub::experimental_async::UnassignEstate(::grpc::Clien
 }
 
 void MruVBusinessService::Stub::experimental_async::BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BuyBusiness_, context, request, response, std::move(f));
-}
-
-void MruVBusinessService::Stub::experimental_async::BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BuyBusiness_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BuyBusiness_, context, request, response, std::move(f));
 }
 
 void MruVBusinessService::Stub::experimental_async::BuyBusiness(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BuyBusiness_, context, request, response, reactor);
-}
-
-void MruVBusinessService::Stub::experimental_async::BuyBusiness(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::business::BuyBusinessResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BuyBusiness_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::business::BuyBusinessResponse>* MruVBusinessService::Stub::AsyncBuyBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::BuyBusinessResponse>::Create(channel_.get(), cq, rpcmethod_BuyBusiness_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BuyBusiness_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::business::BuyBusinessResponse>* MruVBusinessService::Stub::PrepareAsyncBuyBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::business::BuyBusinessResponse>::Create(channel_.get(), cq, rpcmethod_BuyBusiness_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::business::BuyBusinessResponse>::Create(channel_.get(), cq, rpcmethod_BuyBusiness_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::business::BuyBusinessResponse>* MruVBusinessService::Stub::AsyncBuyBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::BuyBusinessRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncBuyBusinessRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::business::WatchBusinessResponse>* MruVBusinessService::Stub::WatchBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::WatchBusinessRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(channel_.get(), rpcmethod_WatchBusiness_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(channel_.get(), rpcmethod_WatchBusiness_, context, request);
 }
 
 void MruVBusinessService::Stub::experimental_async::WatchBusiness(::grpc::ClientContext* context, ::mruv::business::WatchBusinessRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::business::WatchBusinessResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBusiness_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBusiness_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::business::WatchBusinessResponse>* MruVBusinessService::Stub::AsyncWatchBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::WatchBusinessRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusiness_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusiness_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::business::WatchBusinessResponse>* MruVBusinessService::Stub::PrepareAsyncWatchBusinessRaw(::grpc::ClientContext* context, const ::mruv::business::WatchBusinessRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusiness_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusiness_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::mruv::business::WatchBusinessesResponse>* MruVBusinessService::Stub::WatchBusinessesRaw(::grpc::ClientContext* context, const ::mruv::business::WatchBusinessesRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(channel_.get(), rpcmethod_WatchBusinesses_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(channel_.get(), rpcmethod_WatchBusinesses_, context, request);
 }
 
 void MruVBusinessService::Stub::experimental_async::WatchBusinesses(::grpc::ClientContext* context, ::mruv::business::WatchBusinessesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::business::WatchBusinessesResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBusinesses_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchBusinesses_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::business::WatchBusinessesResponse>* MruVBusinessService::Stub::AsyncWatchBusinessesRaw(::grpc::ClientContext* context, const ::mruv::business::WatchBusinessesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusinesses_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusinesses_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::business::WatchBusinessesResponse>* MruVBusinessService::Stub::PrepareAsyncWatchBusinessesRaw(::grpc::ClientContext* context, const ::mruv::business::WatchBusinessesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusinesses_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::business::WatchBusinessesResponse>::Create(channel_.get(), cq, rpcmethod_WatchBusinesses_, context, request, false, nullptr);
 }
 
 MruVBusinessService::Service::Service() {
@@ -316,7 +276,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::CreateBusinessRequest, ::mruv::business::CreateBusinessResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::CreateBusinessRequest* req,
              ::mruv::business::CreateBusinessResponse* resp) {
                return service->CreateBusiness(ctx, req, resp);
@@ -326,7 +286,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::GetBusinessRequest, ::mruv::business::Business>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::GetBusinessRequest* req,
              ::mruv::business::Business* resp) {
                return service->GetBusiness(ctx, req, resp);
@@ -336,7 +296,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::UpdateBusinessRequest, ::mruv::business::Business>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::UpdateBusinessRequest* req,
              ::mruv::business::Business* resp) {
                return service->UpdateBusiness(ctx, req, resp);
@@ -346,7 +306,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::DeleteBusinessRequest, ::mruv::business::DeleteBusinessResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::DeleteBusinessRequest* req,
              ::mruv::business::DeleteBusinessResponse* resp) {
                return service->DeleteBusiness(ctx, req, resp);
@@ -356,7 +316,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::AssignOwnerRequest, ::mruv::business::AssignOwnerResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::AssignOwnerRequest* req,
              ::mruv::business::AssignOwnerResponse* resp) {
                return service->AssignOwner(ctx, req, resp);
@@ -366,7 +326,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::AssignEstateRequest, ::mruv::business::AssignEstateResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::AssignEstateRequest* req,
              ::mruv::business::AssignEstateResponse* resp) {
                return service->AssignEstate(ctx, req, resp);
@@ -376,7 +336,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::UnassignEstateRequest, ::mruv::business::UnassignEstateResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::UnassignEstateRequest* req,
              ::mruv::business::UnassignEstateResponse* resp) {
                return service->UnassignEstate(ctx, req, resp);
@@ -386,7 +346,7 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVBusinessService::Service, ::mruv::business::BuyBusinessRequest, ::mruv::business::BuyBusinessResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::BuyBusinessRequest* req,
              ::mruv::business::BuyBusinessResponse* resp) {
                return service->BuyBusiness(ctx, req, resp);
@@ -396,9 +356,9 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVBusinessService::Service, ::mruv::business::WatchBusinessRequest, ::mruv::business::WatchBusinessResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::WatchBusinessRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::business::WatchBusinessResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::business::WatchBusinessResponse>* writer) {
                return service->WatchBusiness(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -406,9 +366,9 @@ MruVBusinessService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVBusinessService::Service, ::mruv::business::WatchBusinessesRequest, ::mruv::business::WatchBusinessesResponse>(
           [](MruVBusinessService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::business::WatchBusinessesRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::business::WatchBusinessesResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::business::WatchBusinessesResponse>* writer) {
                return service->WatchBusinesses(ctx, req, writer);
              }, this)));
 }

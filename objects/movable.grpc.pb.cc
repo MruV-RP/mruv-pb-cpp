@@ -55,27 +55,22 @@ MruVMovableObjectsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInte
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateMovableObject_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateMovableObject_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateMovableObject_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateMovableObject_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateMovableObject_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncCreateMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateMovableObject_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateMovableObject_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateMovableObjectResponse>* MruVMovableObjectsService::Stub::PrepareAsyncCreateMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateMovableObject_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::CreateMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_CreateMovableObject_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::CreateMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncCreateMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateMovableObjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVMovableObjectsService::Stub::GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest& request, ::mruv::objects::GetMovableObjectResponse* response) {
@@ -83,27 +78,22 @@ void MruVMovableObjectsService::Stub::experimental_async::CreateMovableObject(::
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMovableObject_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMovableObject_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetMovableObject_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMovableObject_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMovableObject_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::GetMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncGetMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetMovableObject_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetMovableObject_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::GetMovableObjectResponse>* MruVMovableObjectsService::Stub::PrepareAsyncGetMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetMovableObject_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::GetMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_GetMovableObject_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::GetMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncGetMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetMovableObjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVMovableObjectsService::Stub::UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest& request, ::mruv::objects::UpdateMovableObjectResponse* response) {
@@ -111,27 +101,22 @@ void MruVMovableObjectsService::Stub::experimental_async::GetMovableObject(::grp
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateMovableObject_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateMovableObject_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateMovableObject_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateMovableObject_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateMovableObject_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncUpdateMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMovableObject_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateMovableObject_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateMovableObjectResponse>* MruVMovableObjectsService::Stub::PrepareAsyncUpdateMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMovableObject_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::UpdateMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_UpdateMovableObject_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::UpdateMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncUpdateMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateMovableObjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVMovableObjectsService::Stub::DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest& request, ::mruv::objects::DeleteMovableObjectResponse* response) {
@@ -139,27 +124,22 @@ void MruVMovableObjectsService::Stub::experimental_async::UpdateMovableObject(::
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteMovableObject_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteMovableObject_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteMovableObject_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteMovableObject_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteMovableObject_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncDeleteMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteMovableObject_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteMovableObject_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteMovableObjectResponse>* MruVMovableObjectsService::Stub::PrepareAsyncDeleteMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteMovableObject_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::DeleteMovableObjectResponse>::Create(channel_.get(), cq, rpcmethod_DeleteMovableObject_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::DeleteMovableObjectResponse>* MruVMovableObjectsService::Stub::AsyncDeleteMovableObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteMovableObjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVMovableObjectsService::Stub::MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest& request, ::mruv::objects::MoveObjectResponse* response) {
@@ -167,27 +147,22 @@ void MruVMovableObjectsService::Stub::experimental_async::DeleteMovableObject(::
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObject_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObject_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObject_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObject_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObject_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectResponse>* MruVMovableObjectsService::Stub::AsyncMoveObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectResponse>::Create(channel_.get(), cq, rpcmethod_MoveObject_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObject_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectResponse>* MruVMovableObjectsService::Stub::PrepareAsyncMoveObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectResponse>::Create(channel_.get(), cq, rpcmethod_MoveObject_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectResponse>::Create(channel_.get(), cq, rpcmethod_MoveObject_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectResponse>* MruVMovableObjectsService::Stub::AsyncMoveObjectRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncMoveObjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVMovableObjectsService::Stub::MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest& request, ::mruv::objects::MoveObjectNextResponse* response) {
@@ -195,27 +170,22 @@ void MruVMovableObjectsService::Stub::experimental_async::MoveObject(::grpc::Cli
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObjectNext_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObjectNext_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObjectNext_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObjectNext_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObjectNext_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectNextResponse>* MruVMovableObjectsService::Stub::AsyncMoveObjectNextRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectNextResponse>::Create(channel_.get(), cq, rpcmethod_MoveObjectNext_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObjectNext_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectNextResponse>* MruVMovableObjectsService::Stub::PrepareAsyncMoveObjectNextRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectNextResponse>::Create(channel_.get(), cq, rpcmethod_MoveObjectNext_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectNextResponse>::Create(channel_.get(), cq, rpcmethod_MoveObjectNext_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectNextResponse>* MruVMovableObjectsService::Stub::AsyncMoveObjectNextRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncMoveObjectNextRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVMovableObjectsService::Stub::MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::mruv::objects::MoveObjectPreviousResponse* response) {
@@ -223,43 +193,38 @@ void MruVMovableObjectsService::Stub::experimental_async::MoveObjectNext(::grpc:
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObjectPrevious_, context, request, response, std::move(f));
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObjectPrevious_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_MoveObjectPrevious_, context, request, response, std::move(f));
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObjectPrevious_, context, request, response, reactor);
-}
-
-void MruVMovableObjectsService::Stub::experimental_async::MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObjectPrevious_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>* MruVMovableObjectsService::Stub::AsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectPreviousResponse>::Create(channel_.get(), cq, rpcmethod_MoveObjectPrevious_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_MoveObjectPrevious_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>* MruVMovableObjectsService::Stub::PrepareAsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectPreviousResponse>::Create(channel_.get(), cq, rpcmethod_MoveObjectPrevious_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::objects::MoveObjectPreviousResponse>::Create(channel_.get(), cq, rpcmethod_MoveObjectPrevious_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::objects::MoveObjectPreviousResponse>* MruVMovableObjectsService::Stub::AsyncMoveObjectPreviousRaw(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncMoveObjectPreviousRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::objects::FetchAllMovableObjectsResponse>* MruVMovableObjectsService::Stub::FetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(channel_.get(), rpcmethod_FetchAllMovableObjects_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(channel_.get(), rpcmethod_FetchAllMovableObjects_, context, request);
 }
 
 void MruVMovableObjectsService::Stub::experimental_async::FetchAllMovableObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAllMovableObjects_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAllMovableObjects_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>* MruVMovableObjectsService::Stub::AsyncFetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllMovableObjects_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllMovableObjects_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::objects::FetchAllMovableObjectsResponse>* MruVMovableObjectsService::Stub::PrepareAsyncFetchAllMovableObjectsRaw(::grpc::ClientContext* context, const ::mruv::objects::FetchAllMovableObjectsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllMovableObjects_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::objects::FetchAllMovableObjectsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAllMovableObjects_, context, request, false, nullptr);
 }
 
 MruVMovableObjectsService::Service::Service() {
@@ -268,7 +233,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::CreateMovableObjectRequest* req,
              ::mruv::objects::CreateMovableObjectResponse* resp) {
                return service->CreateMovableObject(ctx, req, resp);
@@ -278,7 +243,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::GetMovableObjectRequest* req,
              ::mruv::objects::GetMovableObjectResponse* resp) {
                return service->GetMovableObject(ctx, req, resp);
@@ -288,7 +253,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::UpdateMovableObjectRequest* req,
              ::mruv::objects::UpdateMovableObjectResponse* resp) {
                return service->UpdateMovableObject(ctx, req, resp);
@@ -298,7 +263,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::DeleteMovableObjectRequest* req,
              ::mruv::objects::DeleteMovableObjectResponse* resp) {
                return service->DeleteMovableObject(ctx, req, resp);
@@ -308,7 +273,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::MoveObjectRequest* req,
              ::mruv::objects::MoveObjectResponse* resp) {
                return service->MoveObject(ctx, req, resp);
@@ -318,7 +283,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::MoveObjectNextRequest* req,
              ::mruv::objects::MoveObjectNextResponse* resp) {
                return service->MoveObjectNext(ctx, req, resp);
@@ -328,7 +293,7 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVMovableObjectsService::Service, ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::MoveObjectPreviousRequest* req,
              ::mruv::objects::MoveObjectPreviousResponse* resp) {
                return service->MoveObjectPrevious(ctx, req, resp);
@@ -338,9 +303,9 @@ MruVMovableObjectsService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVMovableObjectsService::Service, ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>(
           [](MruVMovableObjectsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::objects::FetchAllMovableObjectsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::objects::FetchAllMovableObjectsResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::objects::FetchAllMovableObjectsResponse>* writer) {
                return service->FetchAllMovableObjects(ctx, req, writer);
              }, this)));
 }

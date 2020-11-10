@@ -109,94 +109,52 @@ class MruVMovableObjectsService final {
       virtual ~experimental_async_interface() {}
       // Create a movable object.
       virtual void CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a movable object.
       virtual void GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a movable object.
       virtual void UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a movable object.
       virtual void DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Move an object to other state.
       virtual void MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Move an object to next state.
       virtual void MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Move an object to previous state.
       virtual void MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       //
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -296,88 +254,46 @@ class MruVMovableObjectsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::CreateMovableObjectRequest* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetMovableObject(::grpc::ClientContext* context, const ::mruv::objects::GetMovableObjectRequest* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateMovableObject(::grpc::ClientContext* context, const ::mruv::objects::UpdateMovableObjectRequest* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteMovableObject(::grpc::ClientContext* context, const ::mruv::objects::DeleteMovableObjectRequest* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteMovableObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteMovableObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, std::function<void(::grpc::Status)>) override;
-      void MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void MoveObject(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectRequest* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void MoveObject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, std::function<void(::grpc::Status)>) override;
-      void MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void MoveObjectNext(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectNextRequest* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void MoveObjectNext(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectNextResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, std::function<void(::grpc::Status)>) override;
-      void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void MoveObjectPrevious(::grpc::ClientContext* context, const ::mruv::objects::MoveObjectPreviousRequest* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void MoveObjectPrevious(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::MoveObjectPreviousResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FetchAllMovableObjects(::grpc::ClientContext* context, ::mruv::objects::FetchAllMovableObjectsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllMovableObjectsResponse>* reactor) override;
@@ -617,7 +533,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -632,7 +548,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateMovableObject() override {
@@ -664,7 +580,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -679,7 +595,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetMovableObject() override {
@@ -711,7 +627,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -726,7 +642,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateMovableObject() override {
@@ -758,7 +674,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -773,7 +689,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteMovableObject() override {
@@ -805,7 +721,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -820,7 +736,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_MoveObject() override {
@@ -852,7 +768,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -867,7 +783,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_MoveObjectNext() override {
@@ -899,7 +815,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -914,7 +830,7 @@ class MruVMovableObjectsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_MoveObjectPrevious() override {
@@ -946,7 +862,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1285,7 +1201,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1323,7 +1239,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1361,7 +1277,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1399,7 +1315,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1437,7 +1353,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1475,7 +1391,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1513,7 +1429,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1551,7 +1467,7 @@ class MruVMovableObjectsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1586,8 +1502,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::CreateMovableObjectRequest, ::mruv::objects::CreateMovableObjectResponse>* streamer) {
                        return this->StreamedCreateMovableObject(context,
                          streamer);
@@ -1613,8 +1529,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::GetMovableObjectRequest, ::mruv::objects::GetMovableObjectResponse>* streamer) {
                        return this->StreamedGetMovableObject(context,
                          streamer);
@@ -1640,8 +1556,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::UpdateMovableObjectRequest, ::mruv::objects::UpdateMovableObjectResponse>* streamer) {
                        return this->StreamedUpdateMovableObject(context,
                          streamer);
@@ -1667,8 +1583,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::DeleteMovableObjectRequest, ::mruv::objects::DeleteMovableObjectResponse>* streamer) {
                        return this->StreamedDeleteMovableObject(context,
                          streamer);
@@ -1694,8 +1610,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::MoveObjectRequest, ::mruv::objects::MoveObjectResponse>* streamer) {
                        return this->StreamedMoveObject(context,
                          streamer);
@@ -1721,8 +1637,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::MoveObjectNextRequest, ::mruv::objects::MoveObjectNextResponse>* streamer) {
                        return this->StreamedMoveObjectNext(context,
                          streamer);
@@ -1748,8 +1664,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::MoveObjectPreviousRequest, ::mruv::objects::MoveObjectPreviousResponse>* streamer) {
                        return this->StreamedMoveObjectPrevious(context,
                          streamer);
@@ -1776,8 +1692,8 @@ class MruVMovableObjectsService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::objects::FetchAllMovableObjectsRequest, ::mruv::objects::FetchAllMovableObjectsResponse>* streamer) {
                        return this->StreamedFetchAllMovableObjects(context,
                          streamer);

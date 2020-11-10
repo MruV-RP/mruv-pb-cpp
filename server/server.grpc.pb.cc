@@ -49,27 +49,22 @@ MruVServerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
 }
 
 void MruVServerService::Stub::experimental_async::RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterServer_, context, request, response, std::move(f));
-}
-
-void MruVServerService::Stub::experimental_async::RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterServer_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterServer_, context, request, response, std::move(f));
 }
 
 void MruVServerService::Stub::experimental_async::RegisterServer(::grpc::ClientContext* context, const ::mruv::server::ServerInfo* request, ::mruv::server::ServerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterServer_, context, request, response, reactor);
-}
-
-void MruVServerService::Stub::experimental_async::RegisterServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterServer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>* MruVServerService::Stub::AsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::ServerID>::Create(channel_.get(), cq, rpcmethod_RegisterServer_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterServer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>* MruVServerService::Stub::PrepareAsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::ServerID>::Create(channel_.get(), cq, rpcmethod_RegisterServer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::server::ServerID>::Create(channel_.get(), cq, rpcmethod_RegisterServer_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::server::ServerID>* MruVServerService::Stub::AsyncRegisterServerRaw(::grpc::ClientContext* context, const ::mruv::server::ServerInfo& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRegisterServerRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVServerService::Stub::GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::mruv::server::GetRegisteredServersResponse* response) {
@@ -77,27 +72,22 @@ void MruVServerService::Stub::experimental_async::RegisterServer(::grpc::ClientC
 }
 
 void MruVServerService::Stub::experimental_async::GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRegisteredServers_, context, request, response, std::move(f));
-}
-
-void MruVServerService::Stub::experimental_async::GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRegisteredServers_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetRegisteredServers_, context, request, response, std::move(f));
 }
 
 void MruVServerService::Stub::experimental_async::GetRegisteredServers(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetRegisteredServers_, context, request, response, reactor);
-}
-
-void MruVServerService::Stub::experimental_async::GetRegisteredServers(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::GetRegisteredServersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetRegisteredServers_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>* MruVServerService::Stub::AsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::GetRegisteredServersResponse>::Create(channel_.get(), cq, rpcmethod_GetRegisteredServers_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetRegisteredServers_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>* MruVServerService::Stub::PrepareAsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::GetRegisteredServersResponse>::Create(channel_.get(), cq, rpcmethod_GetRegisteredServers_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::server::GetRegisteredServersResponse>::Create(channel_.get(), cq, rpcmethod_GetRegisteredServers_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::server::GetRegisteredServersResponse>* MruVServerService::Stub::AsyncGetRegisteredServersRaw(::grpc::ClientContext* context, const ::mruv::server::GetRegisteredServersRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetRegisteredServersRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVServerService::Stub::GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::mruv::server::ServerInfo* response) {
@@ -105,27 +95,22 @@ void MruVServerService::Stub::experimental_async::GetRegisteredServers(::grpc::C
 }
 
 void MruVServerService::Stub::experimental_async::GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServerInfo_, context, request, response, std::move(f));
-}
-
-void MruVServerService::Stub::experimental_async::GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServerInfo_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServerInfo_, context, request, response, std::move(f));
 }
 
 void MruVServerService::Stub::experimental_async::GetServerInfo(::grpc::ClientContext* context, const ::mruv::server::ServerID* request, ::mruv::server::ServerInfo* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServerInfo_, context, request, response, reactor);
-}
-
-void MruVServerService::Stub::experimental_async::GetServerInfo(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::ServerInfo* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServerInfo_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>* MruVServerService::Stub::AsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::ServerInfo>::Create(channel_.get(), cq, rpcmethod_GetServerInfo_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServerInfo_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>* MruVServerService::Stub::PrepareAsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::ServerInfo>::Create(channel_.get(), cq, rpcmethod_GetServerInfo_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::server::ServerInfo>::Create(channel_.get(), cq, rpcmethod_GetServerInfo_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::server::ServerInfo>* MruVServerService::Stub::AsyncGetServerInfoRaw(::grpc::ClientContext* context, const ::mruv::server::ServerID& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetServerInfoRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVServerService::Stub::UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::mruv::server::UpdateServerStatusResponse* response) {
@@ -133,43 +118,38 @@ void MruVServerService::Stub::experimental_async::GetServerInfo(::grpc::ClientCo
 }
 
 void MruVServerService::Stub::experimental_async::UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateServerStatus_, context, request, response, std::move(f));
-}
-
-void MruVServerService::Stub::experimental_async::UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateServerStatus_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateServerStatus_, context, request, response, std::move(f));
 }
 
 void MruVServerService::Stub::experimental_async::UpdateServerStatus(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateServerStatus_, context, request, response, reactor);
-}
-
-void MruVServerService::Stub::experimental_async::UpdateServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::server::UpdateServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateServerStatus_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>* MruVServerService::Stub::AsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::UpdateServerStatusResponse>::Create(channel_.get(), cq, rpcmethod_UpdateServerStatus_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateServerStatus_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>* MruVServerService::Stub::PrepareAsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::server::UpdateServerStatusResponse>::Create(channel_.get(), cq, rpcmethod_UpdateServerStatus_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::server::UpdateServerStatusResponse>::Create(channel_.get(), cq, rpcmethod_UpdateServerStatus_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::server::UpdateServerStatusResponse>* MruVServerService::Stub::AsyncUpdateServerStatusRaw(::grpc::ClientContext* context, const ::mruv::server::UpdateServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateServerStatusRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::server::ServerEvent>* MruVServerService::Stub::ServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::server::ServerEvent>::Create(channel_.get(), rpcmethod_ServerEventsStream_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::server::ServerEvent>::Create(channel_.get(), rpcmethod_ServerEventsStream_, context, request);
 }
 
 void MruVServerService::Stub::experimental_async::ServerEventsStream(::grpc::ClientContext* context, ::mruv::server::ServerEventsStreamRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::server::ServerEvent>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::server::ServerEvent>::Create(stub_->channel_.get(), stub_->rpcmethod_ServerEventsStream_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::server::ServerEvent>::Create(stub_->channel_.get(), stub_->rpcmethod_ServerEventsStream_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>* MruVServerService::Stub::AsyncServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::server::ServerEvent>::Create(channel_.get(), cq, rpcmethod_ServerEventsStream_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::server::ServerEvent>::Create(channel_.get(), cq, rpcmethod_ServerEventsStream_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::server::ServerEvent>* MruVServerService::Stub::PrepareAsyncServerEventsStreamRaw(::grpc::ClientContext* context, const ::mruv::server::ServerEventsStreamRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::server::ServerEvent>::Create(channel_.get(), cq, rpcmethod_ServerEventsStream_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::server::ServerEvent>::Create(channel_.get(), cq, rpcmethod_ServerEventsStream_, context, request, false, nullptr);
 }
 
 MruVServerService::Service::Service() {
@@ -178,7 +158,7 @@ MruVServerService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::ServerInfo, ::mruv::server::ServerID>(
           [](MruVServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::server::ServerInfo* req,
              ::mruv::server::ServerID* resp) {
                return service->RegisterServer(ctx, req, resp);
@@ -188,7 +168,7 @@ MruVServerService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::GetRegisteredServersRequest, ::mruv::server::GetRegisteredServersResponse>(
           [](MruVServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::server::GetRegisteredServersRequest* req,
              ::mruv::server::GetRegisteredServersResponse* resp) {
                return service->GetRegisteredServers(ctx, req, resp);
@@ -198,7 +178,7 @@ MruVServerService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::ServerID, ::mruv::server::ServerInfo>(
           [](MruVServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::server::ServerID* req,
              ::mruv::server::ServerInfo* resp) {
                return service->GetServerInfo(ctx, req, resp);
@@ -208,7 +188,7 @@ MruVServerService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVServerService::Service, ::mruv::server::UpdateServerStatusRequest, ::mruv::server::UpdateServerStatusResponse>(
           [](MruVServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::server::UpdateServerStatusRequest* req,
              ::mruv::server::UpdateServerStatusResponse* resp) {
                return service->UpdateServerStatus(ctx, req, resp);
@@ -218,9 +198,9 @@ MruVServerService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVServerService::Service, ::mruv::server::ServerEventsStreamRequest, ::mruv::server::ServerEvent>(
           [](MruVServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::server::ServerEventsStreamRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::server::ServerEvent>* writer) {
+             ::grpc::ServerWriter<::mruv::server::ServerEvent>* writer) {
                return service->ServerEventsStream(ctx, req, writer);
              }, this)));
 }

@@ -59,27 +59,22 @@ MruVEntrancesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
 }
 
 void MruVEntrancesService::Stub::experimental_async::CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::CreateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEntrance_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::CreateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::CreateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::CreateEntranceResponse>* MruVEntrancesService::Stub::AsyncCreateEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::CreateEntranceResponse>::Create(channel_.get(), cq, rpcmethod_CreateEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::CreateEntranceResponse>* MruVEntrancesService::Stub::PrepareAsyncCreateEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::CreateEntranceResponse>::Create(channel_.get(), cq, rpcmethod_CreateEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::CreateEntranceResponse>::Create(channel_.get(), cq, rpcmethod_CreateEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::CreateEntranceResponse>* MruVEntrancesService::Stub::AsyncCreateEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::CreateEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest& request, ::mruv::entrances::GetEntranceResponse* response) {
@@ -87,27 +82,22 @@ void MruVEntrancesService::Stub::experimental_async::CreateEntrance(::grpc::Clie
 }
 
 void MruVEntrancesService::Stub::experimental_async::GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::GetEntrance(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEntrance_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::GetEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::GetEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::GetEntranceResponse>* MruVEntrancesService::Stub::AsyncGetEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::GetEntranceResponse>::Create(channel_.get(), cq, rpcmethod_GetEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::GetEntranceResponse>* MruVEntrancesService::Stub::PrepareAsyncGetEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::GetEntranceResponse>::Create(channel_.get(), cq, rpcmethod_GetEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::GetEntranceResponse>::Create(channel_.get(), cq, rpcmethod_GetEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::GetEntranceResponse>* MruVEntrancesService::Stub::AsyncGetEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::GetEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest& request, ::mruv::entrances::UpdateEntranceResponse* response) {
@@ -115,27 +105,22 @@ void MruVEntrancesService::Stub::experimental_async::GetEntrance(::grpc::ClientC
 }
 
 void MruVEntrancesService::Stub::experimental_async::UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::UpdateEntrance(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateEntrance_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::UpdateEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UpdateEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::UpdateEntranceResponse>* MruVEntrancesService::Stub::AsyncUpdateEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::UpdateEntranceResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::UpdateEntranceResponse>* MruVEntrancesService::Stub::PrepareAsyncUpdateEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::UpdateEntranceResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::UpdateEntranceResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::UpdateEntranceResponse>* MruVEntrancesService::Stub::AsyncUpdateEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::UpdateEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest& request, ::mruv::entrances::DeleteEntranceResponse* response) {
@@ -143,27 +128,22 @@ void MruVEntrancesService::Stub::experimental_async::UpdateEntrance(::grpc::Clie
 }
 
 void MruVEntrancesService::Stub::experimental_async::DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::DeleteEntrance(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteEntrance_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::DeleteEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::DeleteEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::DeleteEntranceResponse>* MruVEntrancesService::Stub::AsyncDeleteEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::DeleteEntranceResponse>::Create(channel_.get(), cq, rpcmethod_DeleteEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::DeleteEntranceResponse>* MruVEntrancesService::Stub::PrepareAsyncDeleteEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::DeleteEntranceResponse>::Create(channel_.get(), cq, rpcmethod_DeleteEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::DeleteEntranceResponse>::Create(channel_.get(), cq, rpcmethod_DeleteEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::DeleteEntranceResponse>* MruVEntrancesService::Stub::AsyncDeleteEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::DeleteEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest& request, ::mruv::entrances::LockResponse* response) {
@@ -171,27 +151,22 @@ void MruVEntrancesService::Stub::experimental_async::DeleteEntrance(::grpc::Clie
 }
 
 void MruVEntrancesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest* request, ::mruv::entrances::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::LockResponse>* MruVEntrancesService::Stub::AsyncLockRaw(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::LockResponse>::Create(channel_.get(), cq, rpcmethod_Lock_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::LockResponse>* MruVEntrancesService::Stub::PrepareAsyncLockRaw(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::LockResponse>::Create(channel_.get(), cq, rpcmethod_Lock_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::LockResponse>::Create(channel_.get(), cq, rpcmethod_Lock_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::LockResponse>* MruVEntrancesService::Stub::AsyncLockRaw(::grpc::ClientContext* context, const ::mruv::entrances::LockRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLockRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest& request, ::mruv::entrances::UnlockResponse* response) {
@@ -199,27 +174,22 @@ void MruVEntrancesService::Stub::experimental_async::Lock(::grpc::ClientContext*
 }
 
 void MruVEntrancesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest* request, ::mruv::entrances::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::UnlockResponse>* MruVEntrancesService::Stub::AsyncUnlockRaw(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::UnlockResponse>::Create(channel_.get(), cq, rpcmethod_Unlock_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::UnlockResponse>* MruVEntrancesService::Stub::PrepareAsyncUnlockRaw(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::UnlockResponse>::Create(channel_.get(), cq, rpcmethod_Unlock_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::UnlockResponse>::Create(channel_.get(), cq, rpcmethod_Unlock_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::UnlockResponse>* MruVEntrancesService::Stub::AsyncUnlockRaw(::grpc::ClientContext* context, const ::mruv::entrances::UnlockRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUnlockRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::mruv::entrances::FindNearestEntranceResponse* response) {
@@ -227,27 +197,22 @@ void MruVEntrancesService::Stub::experimental_async::Unlock(::grpc::ClientContex
 }
 
 void MruVEntrancesService::Stub::experimental_async::FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FindNearestEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FindNearestEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FindNearestEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::FindNearestEntrance(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FindNearestEntrance_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::FindNearestEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::FindNearestEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FindNearestEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::FindNearestEntranceResponse>* MruVEntrancesService::Stub::AsyncFindNearestEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::FindNearestEntranceResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FindNearestEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::FindNearestEntranceResponse>* MruVEntrancesService::Stub::PrepareAsyncFindNearestEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::FindNearestEntranceResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::FindNearestEntranceResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::FindNearestEntranceResponse>* MruVEntrancesService::Stub::AsyncFindNearestEntranceRaw(::grpc::ClientContext* context, const ::mruv::entrances::FindNearestEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncFindNearestEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::mruv::entrances::EnterResponse* response) {
@@ -255,27 +220,22 @@ void MruVEntrancesService::Stub::experimental_async::FindNearestEntrance(::grpc:
 }
 
 void MruVEntrancesService::Stub::experimental_async::Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Enter_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Enter_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Enter_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::Enter(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Enter_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::Enter(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::EnterResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Enter_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>* MruVEntrancesService::Stub::AsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::EnterResponse>::Create(channel_.get(), cq, rpcmethod_Enter_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Enter_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>* MruVEntrancesService::Stub::PrepareAsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::EnterResponse>::Create(channel_.get(), cq, rpcmethod_Enter_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::EnterResponse>::Create(channel_.get(), cq, rpcmethod_Enter_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::EnterResponse>* MruVEntrancesService::Stub::AsyncEnterRaw(::grpc::ClientContext* context, const ::mruv::entrances::EnterRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncEnterRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEntrancesService::Stub::Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::mruv::entrances::ExitResponse* response) {
@@ -283,43 +243,38 @@ void MruVEntrancesService::Stub::experimental_async::Enter(::grpc::ClientContext
 }
 
 void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, std::move(f));
-}
-
-void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, std::move(f));
 }
 
 void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, reactor);
-}
-
-void MruVEntrancesService::Stub::experimental_async::Exit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::entrances::ExitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* MruVEntrancesService::Stub::AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::ExitResponse>::Create(channel_.get(), cq, rpcmethod_Exit_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Exit_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* MruVEntrancesService::Stub::PrepareAsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::ExitResponse>::Create(channel_.get(), cq, rpcmethod_Exit_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::entrances::ExitResponse>::Create(channel_.get(), cq, rpcmethod_Exit_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::entrances::ExitResponse>* MruVEntrancesService::Stub::AsyncExitRaw(::grpc::ClientContext* context, const ::mruv::entrances::ExitRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncExitRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::entrances::FetchAllEntrancesResponse>* MruVEntrancesService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
 }
 
 void MruVEntrancesService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::entrances::FetchAllEntrancesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::entrances::FetchAllEntrancesResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>* MruVEntrancesService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::entrances::FetchAllEntrancesResponse>* MruVEntrancesService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::entrances::FetchAllEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::entrances::FetchAllEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
 }
 
 MruVEntrancesService::Service::Service() {
@@ -328,7 +283,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::CreateEntranceRequest, ::mruv::entrances::CreateEntranceResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::CreateEntranceRequest* req,
              ::mruv::entrances::CreateEntranceResponse* resp) {
                return service->CreateEntrance(ctx, req, resp);
@@ -338,7 +293,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::GetEntranceRequest, ::mruv::entrances::GetEntranceResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::GetEntranceRequest* req,
              ::mruv::entrances::GetEntranceResponse* resp) {
                return service->GetEntrance(ctx, req, resp);
@@ -348,7 +303,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::UpdateEntranceRequest, ::mruv::entrances::UpdateEntranceResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::UpdateEntranceRequest* req,
              ::mruv::entrances::UpdateEntranceResponse* resp) {
                return service->UpdateEntrance(ctx, req, resp);
@@ -358,7 +313,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::DeleteEntranceRequest, ::mruv::entrances::DeleteEntranceResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::DeleteEntranceRequest* req,
              ::mruv::entrances::DeleteEntranceResponse* resp) {
                return service->DeleteEntrance(ctx, req, resp);
@@ -368,7 +323,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::LockRequest, ::mruv::entrances::LockResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::LockRequest* req,
              ::mruv::entrances::LockResponse* resp) {
                return service->Lock(ctx, req, resp);
@@ -378,7 +333,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::UnlockRequest, ::mruv::entrances::UnlockResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::UnlockRequest* req,
              ::mruv::entrances::UnlockResponse* resp) {
                return service->Unlock(ctx, req, resp);
@@ -388,7 +343,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::FindNearestEntranceRequest, ::mruv::entrances::FindNearestEntranceResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::FindNearestEntranceRequest* req,
              ::mruv::entrances::FindNearestEntranceResponse* resp) {
                return service->FindNearestEntrance(ctx, req, resp);
@@ -398,7 +353,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::EnterRequest, ::mruv::entrances::EnterResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::EnterRequest* req,
              ::mruv::entrances::EnterResponse* resp) {
                return service->Enter(ctx, req, resp);
@@ -408,7 +363,7 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEntrancesService::Service, ::mruv::entrances::ExitRequest, ::mruv::entrances::ExitResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::ExitRequest* req,
              ::mruv::entrances::ExitResponse* resp) {
                return service->Exit(ctx, req, resp);
@@ -418,9 +373,9 @@ MruVEntrancesService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVEntrancesService::Service, ::mruv::entrances::FetchAllEntrancesRequest, ::mruv::entrances::FetchAllEntrancesResponse>(
           [](MruVEntrancesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::entrances::FetchAllEntrancesRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::entrances::FetchAllEntrancesResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::entrances::FetchAllEntrancesResponse>* writer) {
                return service->FetchAll(ctx, req, writer);
              }, this)));
 }

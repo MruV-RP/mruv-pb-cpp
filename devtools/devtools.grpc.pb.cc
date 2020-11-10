@@ -59,27 +59,22 @@ MruVDevToolsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPositions_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPositions_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPositions_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPositions_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPositions_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetPositionsResponse>* MruVDevToolsService::Stub::AsyncGetPositionsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetPositionsResponse>::Create(channel_.get(), cq, rpcmethod_GetPositions_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPositions_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetPositionsResponse>* MruVDevToolsService::Stub::PrepareAsyncGetPositionsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetPositionsResponse>::Create(channel_.get(), cq, rpcmethod_GetPositions_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetPositionsResponse>::Create(channel_.get(), cq, rpcmethod_GetPositions_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetPositionsResponse>* MruVDevToolsService::Stub::AsyncGetPositionsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetPositionsRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest& request, ::mruv::devtools::SavePositionResponse* response) {
@@ -87,27 +82,22 @@ void MruVDevToolsService::Stub::experimental_async::GetPositions(::grpc::ClientC
 }
 
 void MruVDevToolsService::Stub::experimental_async::SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SavePosition_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SavePosition_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SavePosition_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SavePosition_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SavePosition_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::SavePositionResponse>* MruVDevToolsService::Stub::AsyncSavePositionRaw(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SavePositionResponse>::Create(channel_.get(), cq, rpcmethod_SavePosition_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SavePosition_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SavePositionResponse>* MruVDevToolsService::Stub::PrepareAsyncSavePositionRaw(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SavePositionResponse>::Create(channel_.get(), cq, rpcmethod_SavePosition_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SavePositionResponse>::Create(channel_.get(), cq, rpcmethod_SavePosition_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::SavePositionResponse>* MruVDevToolsService::Stub::AsyncSavePositionRaw(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSavePositionRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest& request, ::mruv::devtools::DeletePositionResponse* response) {
@@ -115,27 +105,22 @@ void MruVDevToolsService::Stub::experimental_async::SavePosition(::grpc::ClientC
 }
 
 void MruVDevToolsService::Stub::experimental_async::DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeletePosition_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeletePosition_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeletePosition_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeletePosition_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeletePosition_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::DeletePositionResponse>* MruVDevToolsService::Stub::AsyncDeletePositionRaw(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::DeletePositionResponse>::Create(channel_.get(), cq, rpcmethod_DeletePosition_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeletePosition_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::DeletePositionResponse>* MruVDevToolsService::Stub::PrepareAsyncDeletePositionRaw(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::DeletePositionResponse>::Create(channel_.get(), cq, rpcmethod_DeletePosition_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::DeletePositionResponse>::Create(channel_.get(), cq, rpcmethod_DeletePosition_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::DeletePositionResponse>* MruVDevToolsService::Stub::AsyncDeletePositionRaw(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeletePositionRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest& request, ::mruv::devtools::GetOutfitsResponse* response) {
@@ -143,27 +128,22 @@ void MruVDevToolsService::Stub::experimental_async::DeletePosition(::grpc::Clien
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOutfits_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOutfits_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOutfits_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOutfits_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOutfits_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetOutfitsResponse>* MruVDevToolsService::Stub::AsyncGetOutfitsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetOutfitsResponse>::Create(channel_.get(), cq, rpcmethod_GetOutfits_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOutfits_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetOutfitsResponse>* MruVDevToolsService::Stub::PrepareAsyncGetOutfitsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetOutfitsResponse>::Create(channel_.get(), cq, rpcmethod_GetOutfits_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetOutfitsResponse>::Create(channel_.get(), cq, rpcmethod_GetOutfits_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetOutfitsResponse>* MruVDevToolsService::Stub::AsyncGetOutfitsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetOutfitsRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest& request, ::mruv::devtools::SaveOutfitResponse* response) {
@@ -171,27 +151,22 @@ void MruVDevToolsService::Stub::experimental_async::GetOutfits(::grpc::ClientCon
 }
 
 void MruVDevToolsService::Stub::experimental_async::SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveOutfit_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveOutfit_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveOutfit_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SaveOutfit_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SaveOutfit_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveOutfitResponse>* MruVDevToolsService::Stub::AsyncSaveOutfitRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SaveOutfitResponse>::Create(channel_.get(), cq, rpcmethod_SaveOutfit_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SaveOutfit_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveOutfitResponse>* MruVDevToolsService::Stub::PrepareAsyncSaveOutfitRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SaveOutfitResponse>::Create(channel_.get(), cq, rpcmethod_SaveOutfit_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SaveOutfitResponse>::Create(channel_.get(), cq, rpcmethod_SaveOutfit_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveOutfitResponse>* MruVDevToolsService::Stub::AsyncSaveOutfitRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSaveOutfitRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest& request, ::mruv::devtools::GetAnimationsResponse* response) {
@@ -199,27 +174,22 @@ void MruVDevToolsService::Stub::experimental_async::SaveOutfit(::grpc::ClientCon
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAnimations_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAnimations_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAnimations_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAnimations_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAnimations_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationsResponse>* MruVDevToolsService::Stub::AsyncGetAnimationsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetAnimationsResponse>::Create(channel_.get(), cq, rpcmethod_GetAnimations_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAnimations_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationsResponse>* MruVDevToolsService::Stub::PrepareAsyncGetAnimationsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetAnimationsResponse>::Create(channel_.get(), cq, rpcmethod_GetAnimations_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetAnimationsResponse>::Create(channel_.get(), cq, rpcmethod_GetAnimations_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationsResponse>* MruVDevToolsService::Stub::AsyncGetAnimationsRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetAnimationsRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest& request, ::mruv::devtools::GetAnimationResponse* response) {
@@ -227,27 +197,22 @@ void MruVDevToolsService::Stub::experimental_async::GetAnimations(::grpc::Client
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAnimation_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAnimation_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetAnimation_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAnimation_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAnimation_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationResponse>* MruVDevToolsService::Stub::AsyncGetAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetAnimationResponse>::Create(channel_.get(), cq, rpcmethod_GetAnimation_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetAnimation_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationResponse>* MruVDevToolsService::Stub::PrepareAsyncGetAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetAnimationResponse>::Create(channel_.get(), cq, rpcmethod_GetAnimation_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::GetAnimationResponse>::Create(channel_.get(), cq, rpcmethod_GetAnimation_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationResponse>* MruVDevToolsService::Stub::AsyncGetAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetAnimationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::mruv::devtools::SaveAnimationResponse* response) {
@@ -255,27 +220,22 @@ void MruVDevToolsService::Stub::experimental_async::GetAnimation(::grpc::ClientC
 }
 
 void MruVDevToolsService::Stub::experimental_async::SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveAnimation_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveAnimation_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SaveAnimation_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SaveAnimation_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SaveAnimation_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>* MruVDevToolsService::Stub::AsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SaveAnimationResponse>::Create(channel_.get(), cq, rpcmethod_SaveAnimation_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SaveAnimation_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>* MruVDevToolsService::Stub::PrepareAsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SaveAnimationResponse>::Create(channel_.get(), cq, rpcmethod_SaveAnimation_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::devtools::SaveAnimationResponse>::Create(channel_.get(), cq, rpcmethod_SaveAnimation_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>* MruVDevToolsService::Stub::AsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSaveAnimationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) {
@@ -283,27 +243,22 @@ void MruVDevToolsService::Stub::experimental_async::SaveAnimation(::grpc::Client
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVDevToolsService::Stub::AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVDevToolsService::Stub::PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVDevToolsService::Stub::AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetServiceStatusRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVDevToolsService::Stub::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) {
@@ -311,27 +266,22 @@ void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::Cli
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, std::move(f));
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, std::move(f));
 }
 
 void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, reactor);
-}
-
-void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVDevToolsService::Stub::AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVDevToolsService::Stub::PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVDevToolsService::Stub::AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetServiceVersionRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVDevToolsService::Service::Service() {
@@ -340,7 +290,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::GetPositionsRequest* req,
              ::mruv::devtools::GetPositionsResponse* resp) {
                return service->GetPositions(ctx, req, resp);
@@ -350,7 +300,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::SavePositionRequest* req,
              ::mruv::devtools::SavePositionResponse* resp) {
                return service->SavePosition(ctx, req, resp);
@@ -360,7 +310,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::DeletePositionRequest* req,
              ::mruv::devtools::DeletePositionResponse* resp) {
                return service->DeletePosition(ctx, req, resp);
@@ -370,7 +320,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::GetOutfitsRequest* req,
              ::mruv::devtools::GetOutfitsResponse* resp) {
                return service->GetOutfits(ctx, req, resp);
@@ -380,7 +330,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::SaveOutfitRequest* req,
              ::mruv::devtools::SaveOutfitResponse* resp) {
                return service->SaveOutfit(ctx, req, resp);
@@ -390,7 +340,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::GetAnimationsRequest* req,
              ::mruv::devtools::GetAnimationsResponse* resp) {
                return service->GetAnimations(ctx, req, resp);
@@ -400,7 +350,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::GetAnimationRequest* req,
              ::mruv::devtools::GetAnimationResponse* resp) {
                return service->GetAnimation(ctx, req, resp);
@@ -410,7 +360,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::devtools::SaveAnimationRequest* req,
              ::mruv::devtools::SaveAnimationResponse* resp) {
                return service->SaveAnimation(ctx, req, resp);
@@ -420,7 +370,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::ServiceStatusRequest* req,
              ::mruv::ServiceStatusResponse* resp) {
                return service->GetServiceStatus(ctx, req, resp);
@@ -430,7 +380,7 @@ MruVDevToolsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
           [](MruVDevToolsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::VersionRequest* req,
              ::mruv::VersionResponse* resp) {
                return service->GetServiceVersion(ctx, req, resp);

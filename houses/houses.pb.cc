@@ -268,16 +268,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_hou
   &scc_info_UpdateHouseResponse_houses_2fhouses_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_houses_2fhouses_2eproto_once;
-static bool descriptor_table_houses_2fhouses_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_houses_2fhouses_2eproto = {
-  &descriptor_table_houses_2fhouses_2eproto_initialized, descriptor_table_protodef_houses_2fhouses_2eproto, "houses/houses.proto", 758,
+  false, false, descriptor_table_protodef_houses_2fhouses_2eproto, "houses/houses.proto", 758,
   &descriptor_table_houses_2fhouses_2eproto_once, descriptor_table_houses_2fhouses_2eproto_sccs, descriptor_table_houses_2fhouses_2eproto_deps, 8, 1,
   schemas, file_default_instances, TableStruct_houses_2fhouses_2eproto::offsets,
   file_level_metadata_houses_2fhouses_2eproto, 8, file_level_enum_descriptors_houses_2fhouses_2eproto, file_level_service_descriptors_houses_2fhouses_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_houses_2fhouses_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_houses_2fhouses_2eproto), true);
+static bool dynamic_init_dummy_houses_2fhouses_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_houses_2fhouses_2eproto)), true);
 namespace mruv {
 namespace houses {
 
@@ -289,15 +288,15 @@ class CreateHouseRequest::_Internal {
  public:
 };
 
-CreateHouseRequest::CreateHouseRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CreateHouseRequest::CreateHouseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.CreateHouseRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.CreateHouseRequest)
 }
 CreateHouseRequest::CreateHouseRequest(const CreateHouseRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.houses.CreateHouseRequest)
 }
 
@@ -307,11 +306,19 @@ void CreateHouseRequest::SharedCtor() {
 CreateHouseRequest::~CreateHouseRequest() {
   // @@protoc_insertion_point(destructor:mruv.houses.CreateHouseRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CreateHouseRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CreateHouseRequest::ArenaDtor(void* object) {
+  CreateHouseRequest* _this = reinterpret_cast< CreateHouseRequest* >(object);
+  (void)_this;
+}
+void CreateHouseRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateHouseRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -327,11 +334,12 @@ void CreateHouseRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CreateHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -340,7 +348,9 @@ const char* CreateHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -360,7 +370,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.CreateHouseRequest)
   return target;
@@ -401,7 +411,7 @@ void CreateHouseRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void CreateHouseRequest::MergeFrom(const CreateHouseRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.CreateHouseRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -427,7 +437,7 @@ bool CreateHouseRequest::IsInitialized() const {
 
 void CreateHouseRequest::InternalSwap(CreateHouseRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateHouseRequest::GetMetadata() const {
@@ -443,15 +453,15 @@ class CreateHouseResponse::_Internal {
  public:
 };
 
-CreateHouseResponse::CreateHouseResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CreateHouseResponse::CreateHouseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.CreateHouseResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.CreateHouseResponse)
 }
 CreateHouseResponse::CreateHouseResponse(const CreateHouseResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.houses.CreateHouseResponse)
 }
 
@@ -461,11 +471,19 @@ void CreateHouseResponse::SharedCtor() {
 CreateHouseResponse::~CreateHouseResponse() {
   // @@protoc_insertion_point(destructor:mruv.houses.CreateHouseResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CreateHouseResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CreateHouseResponse::ArenaDtor(void* object) {
+  CreateHouseResponse* _this = reinterpret_cast< CreateHouseResponse* >(object);
+  (void)_this;
+}
+void CreateHouseResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateHouseResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -481,11 +499,12 @@ void CreateHouseResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CreateHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -494,7 +513,9 @@ const char* CreateHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -514,7 +535,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.CreateHouseResponse)
   return target;
@@ -555,7 +576,7 @@ void CreateHouseResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void CreateHouseResponse::MergeFrom(const CreateHouseResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.CreateHouseResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -581,7 +602,7 @@ bool CreateHouseResponse::IsInitialized() const {
 
 void CreateHouseResponse::InternalSwap(CreateHouseResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateHouseResponse::GetMetadata() const {
@@ -597,15 +618,15 @@ class GetHouseRequest::_Internal {
  public:
 };
 
-GetHouseRequest::GetHouseRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetHouseRequest::GetHouseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.GetHouseRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.GetHouseRequest)
 }
 GetHouseRequest::GetHouseRequest(const GetHouseRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.houses.GetHouseRequest)
 }
@@ -617,11 +638,19 @@ void GetHouseRequest::SharedCtor() {
 GetHouseRequest::~GetHouseRequest() {
   // @@protoc_insertion_point(destructor:mruv.houses.GetHouseRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetHouseRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetHouseRequest::ArenaDtor(void* object) {
+  GetHouseRequest* _this = reinterpret_cast< GetHouseRequest* >(object);
+  (void)_this;
+}
+void GetHouseRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetHouseRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -638,11 +667,12 @@ void GetHouseRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -651,7 +681,7 @@ const char* GetHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -661,7 +691,9 @@ const char* GetHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -689,7 +721,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.GetHouseRequest)
   return target;
@@ -737,7 +769,7 @@ void GetHouseRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void GetHouseRequest::MergeFrom(const GetHouseRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.GetHouseRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -766,7 +798,7 @@ bool GetHouseRequest::IsInitialized() const {
 
 void GetHouseRequest::InternalSwap(GetHouseRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -783,15 +815,15 @@ class GetHouseResponse::_Internal {
  public:
 };
 
-GetHouseResponse::GetHouseResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetHouseResponse::GetHouseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.GetHouseResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.GetHouseResponse)
 }
 GetHouseResponse::GetHouseResponse(const GetHouseResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.houses.GetHouseResponse)
 }
 
@@ -801,11 +833,19 @@ void GetHouseResponse::SharedCtor() {
 GetHouseResponse::~GetHouseResponse() {
   // @@protoc_insertion_point(destructor:mruv.houses.GetHouseResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetHouseResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetHouseResponse::ArenaDtor(void* object) {
+  GetHouseResponse* _this = reinterpret_cast< GetHouseResponse* >(object);
+  (void)_this;
+}
+void GetHouseResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetHouseResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -821,11 +861,12 @@ void GetHouseResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -834,7 +875,9 @@ const char* GetHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -854,7 +897,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.GetHouseResponse)
   return target;
@@ -895,7 +938,7 @@ void GetHouseResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void GetHouseResponse::MergeFrom(const GetHouseResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.GetHouseResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -921,7 +964,7 @@ bool GetHouseResponse::IsInitialized() const {
 
 void GetHouseResponse::InternalSwap(GetHouseResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetHouseResponse::GetMetadata() const {
@@ -937,15 +980,15 @@ class UpdateHouseRequest::_Internal {
  public:
 };
 
-UpdateHouseRequest::UpdateHouseRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateHouseRequest::UpdateHouseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.UpdateHouseRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.UpdateHouseRequest)
 }
 UpdateHouseRequest::UpdateHouseRequest(const UpdateHouseRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.houses.UpdateHouseRequest)
 }
@@ -957,11 +1000,19 @@ void UpdateHouseRequest::SharedCtor() {
 UpdateHouseRequest::~UpdateHouseRequest() {
   // @@protoc_insertion_point(destructor:mruv.houses.UpdateHouseRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateHouseRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateHouseRequest::ArenaDtor(void* object) {
+  UpdateHouseRequest* _this = reinterpret_cast< UpdateHouseRequest* >(object);
+  (void)_this;
+}
+void UpdateHouseRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateHouseRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -978,11 +1029,12 @@ void UpdateHouseRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -991,7 +1043,7 @@ const char* UpdateHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1001,7 +1053,9 @@ const char* UpdateHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1029,7 +1083,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.UpdateHouseRequest)
   return target;
@@ -1077,7 +1131,7 @@ void UpdateHouseRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void UpdateHouseRequest::MergeFrom(const UpdateHouseRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.UpdateHouseRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1106,7 +1160,7 @@ bool UpdateHouseRequest::IsInitialized() const {
 
 void UpdateHouseRequest::InternalSwap(UpdateHouseRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1123,15 +1177,15 @@ class UpdateHouseResponse::_Internal {
  public:
 };
 
-UpdateHouseResponse::UpdateHouseResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateHouseResponse::UpdateHouseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.UpdateHouseResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.UpdateHouseResponse)
 }
 UpdateHouseResponse::UpdateHouseResponse(const UpdateHouseResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.houses.UpdateHouseResponse)
 }
 
@@ -1141,11 +1195,19 @@ void UpdateHouseResponse::SharedCtor() {
 UpdateHouseResponse::~UpdateHouseResponse() {
   // @@protoc_insertion_point(destructor:mruv.houses.UpdateHouseResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateHouseResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateHouseResponse::ArenaDtor(void* object) {
+  UpdateHouseResponse* _this = reinterpret_cast< UpdateHouseResponse* >(object);
+  (void)_this;
+}
+void UpdateHouseResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateHouseResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1161,11 +1223,12 @@ void UpdateHouseResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1174,7 +1237,9 @@ const char* UpdateHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -1194,7 +1259,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.UpdateHouseResponse)
   return target;
@@ -1235,7 +1300,7 @@ void UpdateHouseResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void UpdateHouseResponse::MergeFrom(const UpdateHouseResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.UpdateHouseResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1261,7 +1326,7 @@ bool UpdateHouseResponse::IsInitialized() const {
 
 void UpdateHouseResponse::InternalSwap(UpdateHouseResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateHouseResponse::GetMetadata() const {
@@ -1277,15 +1342,15 @@ class DeleteHouseRequest::_Internal {
  public:
 };
 
-DeleteHouseRequest::DeleteHouseRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeleteHouseRequest::DeleteHouseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.DeleteHouseRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.DeleteHouseRequest)
 }
 DeleteHouseRequest::DeleteHouseRequest(const DeleteHouseRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.houses.DeleteHouseRequest)
 }
@@ -1297,11 +1362,19 @@ void DeleteHouseRequest::SharedCtor() {
 DeleteHouseRequest::~DeleteHouseRequest() {
   // @@protoc_insertion_point(destructor:mruv.houses.DeleteHouseRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeleteHouseRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteHouseRequest::ArenaDtor(void* object) {
+  DeleteHouseRequest* _this = reinterpret_cast< DeleteHouseRequest* >(object);
+  (void)_this;
+}
+void DeleteHouseRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteHouseRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1318,11 +1391,12 @@ void DeleteHouseRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeleteHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1331,7 +1405,7 @@ const char* DeleteHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1341,7 +1415,9 @@ const char* DeleteHouseRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1369,7 +1445,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.DeleteHouseRequest)
   return target;
@@ -1417,7 +1493,7 @@ void DeleteHouseRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void DeleteHouseRequest::MergeFrom(const DeleteHouseRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.DeleteHouseRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1446,7 +1522,7 @@ bool DeleteHouseRequest::IsInitialized() const {
 
 void DeleteHouseRequest::InternalSwap(DeleteHouseRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1463,15 +1539,15 @@ class DeleteHouseResponse::_Internal {
  public:
 };
 
-DeleteHouseResponse::DeleteHouseResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeleteHouseResponse::DeleteHouseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.houses.DeleteHouseResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.houses.DeleteHouseResponse)
 }
 DeleteHouseResponse::DeleteHouseResponse(const DeleteHouseResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.houses.DeleteHouseResponse)
 }
 
@@ -1481,11 +1557,19 @@ void DeleteHouseResponse::SharedCtor() {
 DeleteHouseResponse::~DeleteHouseResponse() {
   // @@protoc_insertion_point(destructor:mruv.houses.DeleteHouseResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeleteHouseResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteHouseResponse::ArenaDtor(void* object) {
+  DeleteHouseResponse* _this = reinterpret_cast< DeleteHouseResponse* >(object);
+  (void)_this;
+}
+void DeleteHouseResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteHouseResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1501,11 +1585,12 @@ void DeleteHouseResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeleteHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1514,7 +1599,9 @@ const char* DeleteHouseResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -1534,7 +1621,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.houses.DeleteHouseResponse)
   return target;
@@ -1575,7 +1662,7 @@ void DeleteHouseResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void DeleteHouseResponse::MergeFrom(const DeleteHouseResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.houses.DeleteHouseResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1601,7 +1688,7 @@ bool DeleteHouseResponse::IsInitialized() const {
 
 void DeleteHouseResponse::InternalSwap(DeleteHouseResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteHouseResponse::GetMetadata() const {
@@ -1614,28 +1701,28 @@ void DeleteHouseResponse::InternalSwap(DeleteHouseResponse* other) {
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::houses::CreateHouseRequest* Arena::CreateMaybeMessage< ::mruv::houses::CreateHouseRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::CreateHouseRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::CreateHouseRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::CreateHouseResponse* Arena::CreateMaybeMessage< ::mruv::houses::CreateHouseResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::CreateHouseResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::CreateHouseResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::GetHouseRequest* Arena::CreateMaybeMessage< ::mruv::houses::GetHouseRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::GetHouseRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::GetHouseRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::GetHouseResponse* Arena::CreateMaybeMessage< ::mruv::houses::GetHouseResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::GetHouseResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::GetHouseResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::UpdateHouseRequest* Arena::CreateMaybeMessage< ::mruv::houses::UpdateHouseRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::UpdateHouseRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::UpdateHouseRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::UpdateHouseResponse* Arena::CreateMaybeMessage< ::mruv::houses::UpdateHouseResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::UpdateHouseResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::UpdateHouseResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::DeleteHouseRequest* Arena::CreateMaybeMessage< ::mruv::houses::DeleteHouseRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::DeleteHouseRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::DeleteHouseRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::houses::DeleteHouseResponse* Arena::CreateMaybeMessage< ::mruv::houses::DeleteHouseResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::houses::DeleteHouseResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::houses::DeleteHouseResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

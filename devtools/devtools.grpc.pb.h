@@ -123,133 +123,73 @@ class MruVDevToolsService final {
       virtual ~experimental_async_interface() {}
       // Get saved positions.
       virtual void GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Save position.
       virtual void SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete position.
       virtual void DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get saved outfit.
       virtual void GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Save outfit.
       virtual void SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get all saved animations.
       virtual void GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get saved animation by name.
       virtual void GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Save animation.
       virtual void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get service status.
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get service version.
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -358,124 +298,64 @@ class MruVDevToolsService final {
       public StubInterface::experimental_async_interface {
      public:
       void GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetPositions(::grpc::ClientContext* context, const ::mruv::devtools::GetPositionsRequest* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetPositions(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetPositionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, std::function<void(::grpc::Status)>) override;
-      void SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void SavePosition(::grpc::ClientContext* context, const ::mruv::devtools::SavePositionRequest* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SavePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SavePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeletePosition(::grpc::ClientContext* context, const ::mruv::devtools::DeletePositionRequest* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeletePosition(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::DeletePositionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetOutfits(::grpc::ClientContext* context, const ::mruv::devtools::GetOutfitsRequest* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetOutfits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetOutfitsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, std::function<void(::grpc::Status)>) override;
-      void SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void SaveOutfit(::grpc::ClientContext* context, const ::mruv::devtools::SaveOutfitRequest* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SaveOutfit(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveOutfitResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetAnimations(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationsRequest* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetAnimations(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetAnimation(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::GetAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, std::function<void(::grpc::Status)>) override;
-      void SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void SaveAnimation(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetServiceStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetServiceVersion(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -759,7 +639,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -774,7 +654,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPositions() override {
@@ -806,7 +686,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -821,7 +701,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SavePosition() override {
@@ -853,7 +733,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -868,7 +748,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeletePosition() override {
@@ -900,7 +780,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -915,7 +795,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetOutfits() override {
@@ -947,7 +827,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -962,7 +842,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SaveOutfit() override {
@@ -994,7 +874,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1009,7 +889,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetAnimations() override {
@@ -1041,7 +921,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1056,7 +936,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetAnimation() override {
@@ -1088,7 +968,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1103,7 +983,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_SaveAnimation() override {
@@ -1135,7 +1015,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1150,7 +1030,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceStatus() override {
@@ -1182,7 +1062,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1197,7 +1077,7 @@ class MruVDevToolsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceVersion() override {
@@ -1604,7 +1484,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1642,7 +1522,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1680,7 +1560,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1718,7 +1598,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1756,7 +1636,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1794,7 +1674,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1832,7 +1712,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1870,7 +1750,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1908,7 +1788,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1946,7 +1826,7 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1981,8 +1861,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::GetPositionsRequest, ::mruv::devtools::GetPositionsResponse>* streamer) {
                        return this->StreamedGetPositions(context,
                          streamer);
@@ -2008,8 +1888,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::SavePositionRequest, ::mruv::devtools::SavePositionResponse>* streamer) {
                        return this->StreamedSavePosition(context,
                          streamer);
@@ -2035,8 +1915,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::DeletePositionRequest, ::mruv::devtools::DeletePositionResponse>* streamer) {
                        return this->StreamedDeletePosition(context,
                          streamer);
@@ -2062,8 +1942,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::GetOutfitsRequest, ::mruv::devtools::GetOutfitsResponse>* streamer) {
                        return this->StreamedGetOutfits(context,
                          streamer);
@@ -2089,8 +1969,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::SaveOutfitRequest, ::mruv::devtools::SaveOutfitResponse>* streamer) {
                        return this->StreamedSaveOutfit(context,
                          streamer);
@@ -2116,8 +1996,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::GetAnimationsRequest, ::mruv::devtools::GetAnimationsResponse>* streamer) {
                        return this->StreamedGetAnimations(context,
                          streamer);
@@ -2143,8 +2023,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::GetAnimationRequest, ::mruv::devtools::GetAnimationResponse>* streamer) {
                        return this->StreamedGetAnimation(context,
                          streamer);
@@ -2170,8 +2050,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::devtools::SaveAnimationRequest, ::mruv::devtools::SaveAnimationResponse>* streamer) {
                        return this->StreamedSaveAnimation(context,
                          streamer);
@@ -2197,8 +2077,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
                        return this->StreamedGetServiceStatus(context,
                          streamer);
@@ -2224,8 +2104,8 @@ class MruVDevToolsService final {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::VersionRequest, ::mruv::VersionResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
                        return this->StreamedGetServiceVersion(context,
                          streamer);

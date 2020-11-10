@@ -125,120 +125,66 @@ class MruVGatesService final {
       virtual ~experimental_async_interface() {}
       // Create a gate or a moving objects objects group.
       virtual void CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a gate or a moving objects objects group.
       virtual void GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a gate or a moving objects objects group.
       virtual void UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a gate or a moving objects objects group.
       virtual void DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Lock a gate. Locked gate cannot be opened.
       virtual void Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Unload a gate, so it can be open.
       virtual void Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Opens a gate.
       virtual void Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Close a gate.
       virtual void Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Find gate that is closest to a specific position.
       virtual void FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       //
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -356,112 +302,58 @@ class MruVGatesService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, std::function<void(::grpc::Status)>) override;
-      void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, std::function<void(::grpc::Status)>) override;
-      void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, std::function<void(::grpc::Status)>) override;
-      void Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, std::function<void(::grpc::Status)>) override;
-      void Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) override;
@@ -751,7 +643,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -766,7 +658,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateGate() override {
@@ -798,7 +690,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -813,7 +705,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetGate() override {
@@ -845,7 +737,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -860,7 +752,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateGate() override {
@@ -892,7 +784,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -907,7 +799,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteGate() override {
@@ -939,7 +831,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -954,7 +846,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Lock() override {
@@ -986,7 +878,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1001,7 +893,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Unlock() override {
@@ -1033,7 +925,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1048,7 +940,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Open() override {
@@ -1080,7 +972,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1095,7 +987,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_Close() override {
@@ -1127,7 +1019,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1142,7 +1034,7 @@ class MruVGatesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_FindNearestGate() override {
@@ -1174,7 +1066,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1587,7 +1479,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1625,7 +1517,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1663,7 +1555,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1701,7 +1593,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1739,7 +1631,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1777,7 +1669,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1815,7 +1707,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1853,7 +1745,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1891,7 +1783,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1929,7 +1821,7 @@ class MruVGatesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(9,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1964,8 +1856,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>* streamer) {
                        return this->StreamedCreateGate(context,
                          streamer);
@@ -1991,8 +1883,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>* streamer) {
                        return this->StreamedGetGate(context,
                          streamer);
@@ -2018,8 +1910,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>* streamer) {
                        return this->StreamedUpdateGate(context,
                          streamer);
@@ -2045,8 +1937,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>* streamer) {
                        return this->StreamedDeleteGate(context,
                          streamer);
@@ -2072,8 +1964,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>* streamer) {
                        return this->StreamedLock(context,
                          streamer);
@@ -2099,8 +1991,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>* streamer) {
                        return this->StreamedUnlock(context,
                          streamer);
@@ -2126,8 +2018,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>* streamer) {
                        return this->StreamedOpen(context,
                          streamer);
@@ -2153,8 +2045,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>* streamer) {
                        return this->StreamedClose(context,
                          streamer);
@@ -2180,8 +2072,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>* streamer) {
                        return this->StreamedFindNearestGate(context,
                          streamer);
@@ -2208,8 +2100,8 @@ class MruVGatesService final {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>* streamer) {
                        return this->StreamedFetchAll(context,
                          streamer);

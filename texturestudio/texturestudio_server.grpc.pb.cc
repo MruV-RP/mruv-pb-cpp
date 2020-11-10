@@ -19,18 +19,17 @@
 #include <grpcpp/impl/codegen/server_context.h>
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
-namespace mruv {
 namespace texture_studio {
 
 static const char* TextureStudioServerService_method_names[] = {
-  "/mruv.texture_studio.TextureStudioServerService/StartServer",
-  "/mruv.texture_studio.TextureStudioServerService/StopServer",
-  "/mruv.texture_studio.TextureStudioServerService/RestartServer",
-  "/mruv.texture_studio.TextureStudioServerService/ServerStatus",
-  "/mruv.texture_studio.TextureStudioServerService/UploadProject",
-  "/mruv.texture_studio.TextureStudioServerService/GetProject",
-  "/mruv.texture_studio.TextureStudioServerService/GetProjects",
-  "/mruv.texture_studio.TextureStudioServerService/SubscribeToProjectsChanges",
+  "/texture_studio.TextureStudioServerService/StartServer",
+  "/texture_studio.TextureStudioServerService/StopServer",
+  "/texture_studio.TextureStudioServerService/RestartServer",
+  "/texture_studio.TextureStudioServerService/ServerStatus",
+  "/texture_studio.TextureStudioServerService/UploadProject",
+  "/texture_studio.TextureStudioServerService/GetProject",
+  "/texture_studio.TextureStudioServerService/GetProjects",
+  "/texture_studio.TextureStudioServerService/SubscribeToProjectsChanges",
 };
 
 std::unique_ptr< TextureStudioServerService::Stub> TextureStudioServerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -50,297 +49,262 @@ TextureStudioServerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInt
   , rpcmethod_SubscribeToProjectsChanges_(TextureStudioServerService_method_names[7], ::grpc::internal::RpcMethod::SERVER_STREAMING, channel)
   {}
 
-::grpc::Status TextureStudioServerService::Stub::StartServer(::grpc::ClientContext* context, const ::mruv::texture_studio::StartServerRequest& request, ::mruv::texture_studio::StartServerResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::StartServer(::grpc::ClientContext* context, const ::texture_studio::StartServerRequest& request, ::texture_studio::StartServerResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_StartServer_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::StartServer(::grpc::ClientContext* context, const ::mruv::texture_studio::StartServerRequest* request, ::mruv::texture_studio::StartServerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StartServer_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::StartServer(::grpc::ClientContext* context, const ::texture_studio::StartServerRequest* request, ::texture_studio::StartServerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StartServer_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::StartServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::StartServerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StartServer_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::StartServer(::grpc::ClientContext* context, const ::texture_studio::StartServerRequest* request, ::texture_studio::StartServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StartServer_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::StartServer(::grpc::ClientContext* context, const ::mruv::texture_studio::StartServerRequest* request, ::mruv::texture_studio::StartServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StartServer_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::StartServerResponse>* TextureStudioServerService::Stub::PrepareAsyncStartServerRaw(::grpc::ClientContext* context, const ::texture_studio::StartServerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::StartServerResponse>::Create(channel_.get(), cq, rpcmethod_StartServer_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::StartServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::StartServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StartServer_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::StartServerResponse>* TextureStudioServerService::Stub::AsyncStartServerRaw(::grpc::ClientContext* context, const ::texture_studio::StartServerRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncStartServerRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::StartServerResponse>* TextureStudioServerService::Stub::AsyncStartServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::StartServerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::StartServerResponse>::Create(channel_.get(), cq, rpcmethod_StartServer_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::StartServerResponse>* TextureStudioServerService::Stub::PrepareAsyncStartServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::StartServerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::StartServerResponse>::Create(channel_.get(), cq, rpcmethod_StartServer_, context, request, false);
-}
-
-::grpc::Status TextureStudioServerService::Stub::StopServer(::grpc::ClientContext* context, const ::mruv::texture_studio::StopServerRequest& request, ::mruv::texture_studio::StopServerResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::StopServer(::grpc::ClientContext* context, const ::texture_studio::StopServerRequest& request, ::texture_studio::StopServerResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_StopServer_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::StopServer(::grpc::ClientContext* context, const ::mruv::texture_studio::StopServerRequest* request, ::mruv::texture_studio::StopServerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StopServer_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::StopServer(::grpc::ClientContext* context, const ::texture_studio::StopServerRequest* request, ::texture_studio::StopServerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StopServer_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::StopServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::StopServerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_StopServer_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::StopServer(::grpc::ClientContext* context, const ::texture_studio::StopServerRequest* request, ::texture_studio::StopServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StopServer_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::StopServer(::grpc::ClientContext* context, const ::mruv::texture_studio::StopServerRequest* request, ::mruv::texture_studio::StopServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StopServer_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::StopServerResponse>* TextureStudioServerService::Stub::PrepareAsyncStopServerRaw(::grpc::ClientContext* context, const ::texture_studio::StopServerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::StopServerResponse>::Create(channel_.get(), cq, rpcmethod_StopServer_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::StopServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::StopServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_StopServer_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::StopServerResponse>* TextureStudioServerService::Stub::AsyncStopServerRaw(::grpc::ClientContext* context, const ::texture_studio::StopServerRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncStopServerRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::StopServerResponse>* TextureStudioServerService::Stub::AsyncStopServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::StopServerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::StopServerResponse>::Create(channel_.get(), cq, rpcmethod_StopServer_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::StopServerResponse>* TextureStudioServerService::Stub::PrepareAsyncStopServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::StopServerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::StopServerResponse>::Create(channel_.get(), cq, rpcmethod_StopServer_, context, request, false);
-}
-
-::grpc::Status TextureStudioServerService::Stub::RestartServer(::grpc::ClientContext* context, const ::mruv::texture_studio::RestartServerRequest& request, ::mruv::texture_studio::RestartServerResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::RestartServer(::grpc::ClientContext* context, const ::texture_studio::RestartServerRequest& request, ::texture_studio::RestartServerResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_RestartServer_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::RestartServer(::grpc::ClientContext* context, const ::mruv::texture_studio::RestartServerRequest* request, ::mruv::texture_studio::RestartServerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RestartServer_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::RestartServer(::grpc::ClientContext* context, const ::texture_studio::RestartServerRequest* request, ::texture_studio::RestartServerResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RestartServer_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::RestartServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::RestartServerResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RestartServer_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::RestartServer(::grpc::ClientContext* context, const ::texture_studio::RestartServerRequest* request, ::texture_studio::RestartServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RestartServer_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::RestartServer(::grpc::ClientContext* context, const ::mruv::texture_studio::RestartServerRequest* request, ::mruv::texture_studio::RestartServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RestartServer_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::RestartServerResponse>* TextureStudioServerService::Stub::PrepareAsyncRestartServerRaw(::grpc::ClientContext* context, const ::texture_studio::RestartServerRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::RestartServerResponse>::Create(channel_.get(), cq, rpcmethod_RestartServer_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::RestartServer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::RestartServerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RestartServer_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::RestartServerResponse>* TextureStudioServerService::Stub::AsyncRestartServerRaw(::grpc::ClientContext* context, const ::texture_studio::RestartServerRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRestartServerRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::RestartServerResponse>* TextureStudioServerService::Stub::AsyncRestartServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::RestartServerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::RestartServerResponse>::Create(channel_.get(), cq, rpcmethod_RestartServer_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::RestartServerResponse>* TextureStudioServerService::Stub::PrepareAsyncRestartServerRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::RestartServerRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::RestartServerResponse>::Create(channel_.get(), cq, rpcmethod_RestartServer_, context, request, false);
-}
-
-::grpc::Status TextureStudioServerService::Stub::ServerStatus(::grpc::ClientContext* context, const ::mruv::texture_studio::ServerStatusRequest& request, ::mruv::texture_studio::ServerStatusResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::ServerStatus(::grpc::ClientContext* context, const ::texture_studio::ServerStatusRequest& request, ::texture_studio::ServerStatusResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ServerStatus_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::ServerStatus(::grpc::ClientContext* context, const ::mruv::texture_studio::ServerStatusRequest* request, ::mruv::texture_studio::ServerStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ServerStatus_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::ServerStatus(::grpc::ClientContext* context, const ::texture_studio::ServerStatusRequest* request, ::texture_studio::ServerStatusResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ServerStatus_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::ServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::ServerStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ServerStatus_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::ServerStatus(::grpc::ClientContext* context, const ::texture_studio::ServerStatusRequest* request, ::texture_studio::ServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ServerStatus_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::ServerStatus(::grpc::ClientContext* context, const ::mruv::texture_studio::ServerStatusRequest* request, ::mruv::texture_studio::ServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ServerStatus_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::ServerStatusResponse>* TextureStudioServerService::Stub::PrepareAsyncServerStatusRaw(::grpc::ClientContext* context, const ::texture_studio::ServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::ServerStatusResponse>::Create(channel_.get(), cq, rpcmethod_ServerStatus_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::ServerStatus(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::ServerStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ServerStatus_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::ServerStatusResponse>* TextureStudioServerService::Stub::AsyncServerStatusRaw(::grpc::ClientContext* context, const ::texture_studio::ServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncServerStatusRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::ServerStatusResponse>* TextureStudioServerService::Stub::AsyncServerStatusRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::ServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::ServerStatusResponse>::Create(channel_.get(), cq, rpcmethod_ServerStatus_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::ServerStatusResponse>* TextureStudioServerService::Stub::PrepareAsyncServerStatusRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::ServerStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::ServerStatusResponse>::Create(channel_.get(), cq, rpcmethod_ServerStatus_, context, request, false);
-}
-
-::grpc::Status TextureStudioServerService::Stub::UploadProject(::grpc::ClientContext* context, const ::mruv::texture_studio::UploadProjectRequest& request, ::mruv::texture_studio::UploadProjectResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::UploadProject(::grpc::ClientContext* context, const ::texture_studio::UploadProjectRequest& request, ::texture_studio::UploadProjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UploadProject_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::UploadProject(::grpc::ClientContext* context, const ::mruv::texture_studio::UploadProjectRequest* request, ::mruv::texture_studio::UploadProjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UploadProject_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::UploadProject(::grpc::ClientContext* context, const ::texture_studio::UploadProjectRequest* request, ::texture_studio::UploadProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UploadProject_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::UploadProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::UploadProjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UploadProject_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::UploadProject(::grpc::ClientContext* context, const ::texture_studio::UploadProjectRequest* request, ::texture_studio::UploadProjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UploadProject_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::UploadProject(::grpc::ClientContext* context, const ::mruv::texture_studio::UploadProjectRequest* request, ::mruv::texture_studio::UploadProjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UploadProject_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::UploadProjectResponse>* TextureStudioServerService::Stub::PrepareAsyncUploadProjectRaw(::grpc::ClientContext* context, const ::texture_studio::UploadProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::UploadProjectResponse>::Create(channel_.get(), cq, rpcmethod_UploadProject_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::UploadProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::UploadProjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UploadProject_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::UploadProjectResponse>* TextureStudioServerService::Stub::AsyncUploadProjectRaw(::grpc::ClientContext* context, const ::texture_studio::UploadProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUploadProjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::UploadProjectResponse>* TextureStudioServerService::Stub::AsyncUploadProjectRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::UploadProjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::UploadProjectResponse>::Create(channel_.get(), cq, rpcmethod_UploadProject_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::UploadProjectResponse>* TextureStudioServerService::Stub::PrepareAsyncUploadProjectRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::UploadProjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::UploadProjectResponse>::Create(channel_.get(), cq, rpcmethod_UploadProject_, context, request, false);
-}
-
-::grpc::Status TextureStudioServerService::Stub::GetProject(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectRequest& request, ::mruv::texture_studio::GetProjectResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::GetProject(::grpc::ClientContext* context, const ::texture_studio::GetProjectRequest& request, ::texture_studio::GetProjectResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetProject_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectRequest* request, ::mruv::texture_studio::GetProjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::texture_studio::GetProjectRequest* request, ::texture_studio::GetProjectResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetProjectResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::texture_studio::GetProjectRequest* request, ::texture_studio::GetProjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectRequest* request, ::mruv::texture_studio::GetProjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::GetProjectResponse>* TextureStudioServerService::Stub::PrepareAsyncGetProjectRaw(::grpc::ClientContext* context, const ::texture_studio::GetProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::GetProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetProject_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProject(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetProjectResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProject_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::GetProjectResponse>* TextureStudioServerService::Stub::AsyncGetProjectRaw(::grpc::ClientContext* context, const ::texture_studio::GetProjectRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetProjectRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetProjectResponse>* TextureStudioServerService::Stub::AsyncGetProjectRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::GetProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetProject_, context, request, true);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetProjectResponse>* TextureStudioServerService::Stub::PrepareAsyncGetProjectRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::GetProjectResponse>::Create(channel_.get(), cq, rpcmethod_GetProject_, context, request, false);
-}
-
-::grpc::Status TextureStudioServerService::Stub::GetProjects(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectsRequest& request, ::mruv::texture_studio::GetProjectsResponse* response) {
+::grpc::Status TextureStudioServerService::Stub::GetProjects(::grpc::ClientContext* context, const ::texture_studio::GetProjectsRequest& request, ::texture_studio::GetProjectsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetProjects_, context, request, response);
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProjects(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectsRequest* request, ::mruv::texture_studio::GetProjectsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProjects_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::GetProjects(::grpc::ClientContext* context, const ::texture_studio::GetProjectsRequest* request, ::texture_studio::GetProjectsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProjects_, context, request, response, std::move(f));
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProjects(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetProjectsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProjects_, context, request, response, std::move(f));
+void TextureStudioServerService::Stub::experimental_async::GetProjects(::grpc::ClientContext* context, const ::texture_studio::GetProjectsRequest* request, ::texture_studio::GetProjectsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProjects_, context, request, response, reactor);
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProjects(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectsRequest* request, ::mruv::texture_studio::GetProjectsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProjects_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::GetProjectsResponse>* TextureStudioServerService::Stub::PrepareAsyncGetProjectsRaw(::grpc::ClientContext* context, const ::texture_studio::GetProjectsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::texture_studio::GetProjectsResponse>::Create(channel_.get(), cq, rpcmethod_GetProjects_, context, request, false);
 }
 
-void TextureStudioServerService::Stub::experimental_async::GetProjects(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::texture_studio::GetProjectsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProjects_, context, request, response, reactor);
+::grpc::ClientAsyncResponseReader< ::texture_studio::GetProjectsResponse>* TextureStudioServerService::Stub::AsyncGetProjectsRaw(::grpc::ClientContext* context, const ::texture_studio::GetProjectsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetProjectsRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetProjectsResponse>* TextureStudioServerService::Stub::AsyncGetProjectsRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::GetProjectsResponse>::Create(channel_.get(), cq, rpcmethod_GetProjects_, context, request, true);
+::grpc::ClientReader< ::texture_studio::SubscribeToProjectsChangesResponse>* TextureStudioServerService::Stub::SubscribeToProjectsChangesRaw(::grpc::ClientContext* context, const ::texture_studio::SubscribeToProjectsChangesRequest& request) {
+  return ::grpc::internal::ClientReaderFactory< ::texture_studio::SubscribeToProjectsChangesResponse>::Create(channel_.get(), rpcmethod_SubscribeToProjectsChanges_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::texture_studio::GetProjectsResponse>* TextureStudioServerService::Stub::PrepareAsyncGetProjectsRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::GetProjectsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::texture_studio::GetProjectsResponse>::Create(channel_.get(), cq, rpcmethod_GetProjects_, context, request, false);
+void TextureStudioServerService::Stub::experimental_async::SubscribeToProjectsChanges(::grpc::ClientContext* context, ::texture_studio::SubscribeToProjectsChangesRequest* request, ::grpc::experimental::ClientReadReactor< ::texture_studio::SubscribeToProjectsChangesResponse>* reactor) {
+  ::grpc::internal::ClientCallbackReaderFactory< ::texture_studio::SubscribeToProjectsChangesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_SubscribeToProjectsChanges_, context, request, reactor);
 }
 
-::grpc::ClientReader< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>* TextureStudioServerService::Stub::SubscribeToProjectsChangesRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::SubscribeToProjectsChangesRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>::Create(channel_.get(), rpcmethod_SubscribeToProjectsChanges_, context, request);
+::grpc::ClientAsyncReader< ::texture_studio::SubscribeToProjectsChangesResponse>* TextureStudioServerService::Stub::AsyncSubscribeToProjectsChangesRaw(::grpc::ClientContext* context, const ::texture_studio::SubscribeToProjectsChangesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::texture_studio::SubscribeToProjectsChangesResponse>::Create(channel_.get(), cq, rpcmethod_SubscribeToProjectsChanges_, context, request, true, tag);
 }
 
-void TextureStudioServerService::Stub::experimental_async::SubscribeToProjectsChanges(::grpc::ClientContext* context, ::mruv::texture_studio::SubscribeToProjectsChangesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_SubscribeToProjectsChanges_, context, request, reactor);
-}
-
-::grpc::ClientAsyncReader< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>* TextureStudioServerService::Stub::AsyncSubscribeToProjectsChangesRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::SubscribeToProjectsChangesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>::Create(channel_.get(), cq, rpcmethod_SubscribeToProjectsChanges_, context, request, true, tag);
-}
-
-::grpc::ClientAsyncReader< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>* TextureStudioServerService::Stub::PrepareAsyncSubscribeToProjectsChangesRaw(::grpc::ClientContext* context, const ::mruv::texture_studio::SubscribeToProjectsChangesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>::Create(channel_.get(), cq, rpcmethod_SubscribeToProjectsChanges_, context, request, false, nullptr);
+::grpc::ClientAsyncReader< ::texture_studio::SubscribeToProjectsChangesResponse>* TextureStudioServerService::Stub::PrepareAsyncSubscribeToProjectsChangesRaw(::grpc::ClientContext* context, const ::texture_studio::SubscribeToProjectsChangesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncReaderFactory< ::texture_studio::SubscribeToProjectsChangesResponse>::Create(channel_.get(), cq, rpcmethod_SubscribeToProjectsChanges_, context, request, false, nullptr);
 }
 
 TextureStudioServerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::StartServerRequest, ::mruv::texture_studio::StartServerResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::StartServerRequest, ::texture_studio::StartServerResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::StartServerRequest* req,
-             ::mruv::texture_studio::StartServerResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::StartServerRequest* req,
+             ::texture_studio::StartServerResponse* resp) {
                return service->StartServer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::StopServerRequest, ::mruv::texture_studio::StopServerResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::StopServerRequest, ::texture_studio::StopServerResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::StopServerRequest* req,
-             ::mruv::texture_studio::StopServerResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::StopServerRequest* req,
+             ::texture_studio::StopServerResponse* resp) {
                return service->StopServer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::RestartServerRequest, ::mruv::texture_studio::RestartServerResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::RestartServerRequest, ::texture_studio::RestartServerResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::RestartServerRequest* req,
-             ::mruv::texture_studio::RestartServerResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::RestartServerRequest* req,
+             ::texture_studio::RestartServerResponse* resp) {
                return service->RestartServer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::ServerStatusRequest, ::mruv::texture_studio::ServerStatusResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::ServerStatusRequest, ::texture_studio::ServerStatusResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::ServerStatusRequest* req,
-             ::mruv::texture_studio::ServerStatusResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::ServerStatusRequest* req,
+             ::texture_studio::ServerStatusResponse* resp) {
                return service->ServerStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::UploadProjectRequest, ::mruv::texture_studio::UploadProjectResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::UploadProjectRequest, ::texture_studio::UploadProjectResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::UploadProjectRequest* req,
-             ::mruv::texture_studio::UploadProjectResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::UploadProjectRequest* req,
+             ::texture_studio::UploadProjectResponse* resp) {
                return service->UploadProject(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::GetProjectRequest, ::mruv::texture_studio::GetProjectResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::GetProjectRequest, ::texture_studio::GetProjectResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::GetProjectRequest* req,
-             ::mruv::texture_studio::GetProjectResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::GetProjectRequest* req,
+             ::texture_studio::GetProjectResponse* resp) {
                return service->GetProject(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::mruv::texture_studio::GetProjectsRequest, ::mruv::texture_studio::GetProjectsResponse>(
+      new ::grpc::internal::RpcMethodHandler< TextureStudioServerService::Service, ::texture_studio::GetProjectsRequest, ::texture_studio::GetProjectsResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::GetProjectsRequest* req,
-             ::mruv::texture_studio::GetProjectsResponse* resp) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::GetProjectsRequest* req,
+             ::texture_studio::GetProjectsResponse* resp) {
                return service->GetProjects(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       TextureStudioServerService_method_names[7],
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
-      new ::grpc::internal::ServerStreamingHandler< TextureStudioServerService::Service, ::mruv::texture_studio::SubscribeToProjectsChangesRequest, ::mruv::texture_studio::SubscribeToProjectsChangesResponse>(
+      new ::grpc::internal::ServerStreamingHandler< TextureStudioServerService::Service, ::texture_studio::SubscribeToProjectsChangesRequest, ::texture_studio::SubscribeToProjectsChangesResponse>(
           [](TextureStudioServerService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
-             const ::mruv::texture_studio::SubscribeToProjectsChangesRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::texture_studio::SubscribeToProjectsChangesResponse>* writer) {
+             ::grpc::ServerContext* ctx,
+             const ::texture_studio::SubscribeToProjectsChangesRequest* req,
+             ::grpc::ServerWriter<::texture_studio::SubscribeToProjectsChangesResponse>* writer) {
                return service->SubscribeToProjectsChanges(ctx, req, writer);
              }, this)));
 }
@@ -348,56 +312,56 @@ TextureStudioServerService::Service::Service() {
 TextureStudioServerService::Service::~Service() {
 }
 
-::grpc::Status TextureStudioServerService::Service::StartServer(::grpc::ServerContext* context, const ::mruv::texture_studio::StartServerRequest* request, ::mruv::texture_studio::StartServerResponse* response) {
+::grpc::Status TextureStudioServerService::Service::StartServer(::grpc::ServerContext* context, const ::texture_studio::StartServerRequest* request, ::texture_studio::StartServerResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::StopServer(::grpc::ServerContext* context, const ::mruv::texture_studio::StopServerRequest* request, ::mruv::texture_studio::StopServerResponse* response) {
+::grpc::Status TextureStudioServerService::Service::StopServer(::grpc::ServerContext* context, const ::texture_studio::StopServerRequest* request, ::texture_studio::StopServerResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::RestartServer(::grpc::ServerContext* context, const ::mruv::texture_studio::RestartServerRequest* request, ::mruv::texture_studio::RestartServerResponse* response) {
+::grpc::Status TextureStudioServerService::Service::RestartServer(::grpc::ServerContext* context, const ::texture_studio::RestartServerRequest* request, ::texture_studio::RestartServerResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::ServerStatus(::grpc::ServerContext* context, const ::mruv::texture_studio::ServerStatusRequest* request, ::mruv::texture_studio::ServerStatusResponse* response) {
+::grpc::Status TextureStudioServerService::Service::ServerStatus(::grpc::ServerContext* context, const ::texture_studio::ServerStatusRequest* request, ::texture_studio::ServerStatusResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::UploadProject(::grpc::ServerContext* context, const ::mruv::texture_studio::UploadProjectRequest* request, ::mruv::texture_studio::UploadProjectResponse* response) {
+::grpc::Status TextureStudioServerService::Service::UploadProject(::grpc::ServerContext* context, const ::texture_studio::UploadProjectRequest* request, ::texture_studio::UploadProjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::GetProject(::grpc::ServerContext* context, const ::mruv::texture_studio::GetProjectRequest* request, ::mruv::texture_studio::GetProjectResponse* response) {
+::grpc::Status TextureStudioServerService::Service::GetProject(::grpc::ServerContext* context, const ::texture_studio::GetProjectRequest* request, ::texture_studio::GetProjectResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::GetProjects(::grpc::ServerContext* context, const ::mruv::texture_studio::GetProjectsRequest* request, ::mruv::texture_studio::GetProjectsResponse* response) {
+::grpc::Status TextureStudioServerService::Service::GetProjects(::grpc::ServerContext* context, const ::texture_studio::GetProjectsRequest* request, ::texture_studio::GetProjectsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status TextureStudioServerService::Service::SubscribeToProjectsChanges(::grpc::ServerContext* context, const ::mruv::texture_studio::SubscribeToProjectsChangesRequest* request, ::grpc::ServerWriter< ::mruv::texture_studio::SubscribeToProjectsChangesResponse>* writer) {
+::grpc::Status TextureStudioServerService::Service::SubscribeToProjectsChanges(::grpc::ServerContext* context, const ::texture_studio::SubscribeToProjectsChangesRequest* request, ::grpc::ServerWriter< ::texture_studio::SubscribeToProjectsChangesResponse>* writer) {
   (void) context;
   (void) request;
   (void) writer;
@@ -405,6 +369,5 @@ TextureStudioServerService::Service::~Service() {
 }
 
 
-}  // namespace mruv
 }  // namespace texture_studio
 

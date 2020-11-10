@@ -57,27 +57,22 @@ MruVEconomyService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>&
 }
 
 void MruVEconomyService::Stub::experimental_async::RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterProduct_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterProduct_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RegisterProduct_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::RegisterProduct(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterProduct_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::RegisterProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::RegisterProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterProduct_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::RegisterProductResponse>* MruVEconomyService::Stub::AsyncRegisterProductRaw(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::RegisterProductResponse>::Create(channel_.get(), cq, rpcmethod_RegisterProduct_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RegisterProduct_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::RegisterProductResponse>* MruVEconomyService::Stub::PrepareAsyncRegisterProductRaw(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::RegisterProductResponse>::Create(channel_.get(), cq, rpcmethod_RegisterProduct_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::RegisterProductResponse>::Create(channel_.get(), cq, rpcmethod_RegisterProduct_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::RegisterProductResponse>* MruVEconomyService::Stub::AsyncRegisterProductRaw(::grpc::ClientContext* context, const ::mruv::economy::RegisterProductRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRegisterProductRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEconomyService::Stub::GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest& request, ::mruv::economy::GetProductResponse* response) {
@@ -85,27 +80,22 @@ void MruVEconomyService::Stub::experimental_async::RegisterProduct(::grpc::Clien
 }
 
 void MruVEconomyService::Stub::experimental_async::GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProduct_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProduct_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetProduct_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::GetProduct(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest* request, ::mruv::economy::GetProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProduct_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::GetProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProduct_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetProductResponse>* MruVEconomyService::Stub::AsyncGetProductRaw(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetProductResponse>::Create(channel_.get(), cq, rpcmethod_GetProduct_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetProduct_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetProductResponse>* MruVEconomyService::Stub::PrepareAsyncGetProductRaw(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetProductResponse>::Create(channel_.get(), cq, rpcmethod_GetProduct_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetProductResponse>::Create(channel_.get(), cq, rpcmethod_GetProduct_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::GetProductResponse>* MruVEconomyService::Stub::AsyncGetProductRaw(::grpc::ClientContext* context, const ::mruv::economy::GetProductRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetProductRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEconomyService::Stub::UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest& request, ::mruv::economy::UpdateProductResponse* response) {
@@ -113,27 +103,22 @@ void MruVEconomyService::Stub::experimental_async::GetProduct(::grpc::ClientCont
 }
 
 void MruVEconomyService::Stub::experimental_async::UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProduct_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProduct_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateProduct_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::UpdateProduct(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProduct_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::UpdateProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdateProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProduct_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UpdateProductResponse>* MruVEconomyService::Stub::AsyncUpdateProductRaw(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UpdateProductResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProduct_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateProduct_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::UpdateProductResponse>* MruVEconomyService::Stub::PrepareAsyncUpdateProductRaw(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UpdateProductResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProduct_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UpdateProductResponse>::Create(channel_.get(), cq, rpcmethod_UpdateProduct_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::UpdateProductResponse>* MruVEconomyService::Stub::AsyncUpdateProductRaw(::grpc::ClientContext* context, const ::mruv::economy::UpdateProductRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateProductRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEconomyService::Stub::DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest& request, ::mruv::economy::DeleteProductResponse* response) {
@@ -141,27 +126,22 @@ void MruVEconomyService::Stub::experimental_async::UpdateProduct(::grpc::ClientC
 }
 
 void MruVEconomyService::Stub::experimental_async::DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteProduct_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteProduct_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteProduct_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::DeleteProduct(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteProduct_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::DeleteProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::DeleteProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteProduct_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::DeleteProductResponse>* MruVEconomyService::Stub::AsyncDeleteProductRaw(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::DeleteProductResponse>::Create(channel_.get(), cq, rpcmethod_DeleteProduct_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteProduct_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::DeleteProductResponse>* MruVEconomyService::Stub::PrepareAsyncDeleteProductRaw(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::DeleteProductResponse>::Create(channel_.get(), cq, rpcmethod_DeleteProduct_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::DeleteProductResponse>::Create(channel_.get(), cq, rpcmethod_DeleteProduct_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::DeleteProductResponse>* MruVEconomyService::Stub::AsyncDeleteProductRaw(::grpc::ClientContext* context, const ::mruv::economy::DeleteProductRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteProductRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEconomyService::Stub::UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest& request, ::mruv::economy::UpdatePriceResponse* response) {
@@ -169,27 +149,22 @@ void MruVEconomyService::Stub::experimental_async::DeleteProduct(::grpc::ClientC
 }
 
 void MruVEconomyService::Stub::experimental_async::UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdatePrice_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdatePrice_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdatePrice_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::UpdatePrice(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdatePrice_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::UpdatePrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::UpdatePriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdatePrice_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::UpdatePriceResponse>* MruVEconomyService::Stub::AsyncUpdatePriceRaw(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UpdatePriceResponse>::Create(channel_.get(), cq, rpcmethod_UpdatePrice_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdatePrice_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::UpdatePriceResponse>* MruVEconomyService::Stub::PrepareAsyncUpdatePriceRaw(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UpdatePriceResponse>::Create(channel_.get(), cq, rpcmethod_UpdatePrice_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::UpdatePriceResponse>::Create(channel_.get(), cq, rpcmethod_UpdatePrice_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::UpdatePriceResponse>* MruVEconomyService::Stub::AsyncUpdatePriceRaw(::grpc::ClientContext* context, const ::mruv::economy::UpdatePriceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdatePriceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEconomyService::Stub::GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest& request, ::mruv::economy::GetPriceResponse* response) {
@@ -197,27 +172,22 @@ void MruVEconomyService::Stub::experimental_async::UpdatePrice(::grpc::ClientCon
 }
 
 void MruVEconomyService::Stub::experimental_async::GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::GetPrice(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest* request, ::mruv::economy::GetPriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::GetPrice(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::GetPriceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPriceResponse>* MruVEconomyService::Stub::AsyncGetPriceRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPriceResponse>::Create(channel_.get(), cq, rpcmethod_GetPrice_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPriceResponse>* MruVEconomyService::Stub::PrepareAsyncGetPriceRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPriceResponse>::Create(channel_.get(), cq, rpcmethod_GetPrice_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::GetPriceResponse>::Create(channel_.get(), cq, rpcmethod_GetPrice_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::GetPriceResponse>* MruVEconomyService::Stub::AsyncGetPriceRaw(::grpc::ClientContext* context, const ::mruv::economy::GetPriceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetPriceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEconomyService::Stub::BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest& request, ::mruv::economy::BuyProductResponse* response) {
@@ -225,59 +195,54 @@ void MruVEconomyService::Stub::experimental_async::GetPrice(::grpc::ClientContex
 }
 
 void MruVEconomyService::Stub::experimental_async::BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BuyProduct_, context, request, response, std::move(f));
-}
-
-void MruVEconomyService::Stub::experimental_async::BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BuyProduct_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_BuyProduct_, context, request, response, std::move(f));
 }
 
 void MruVEconomyService::Stub::experimental_async::BuyProduct(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest* request, ::mruv::economy::BuyProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BuyProduct_, context, request, response, reactor);
-}
-
-void MruVEconomyService::Stub::experimental_async::BuyProduct(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::economy::BuyProductResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BuyProduct_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::economy::BuyProductResponse>* MruVEconomyService::Stub::AsyncBuyProductRaw(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BuyProductResponse>::Create(channel_.get(), cq, rpcmethod_BuyProduct_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_BuyProduct_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::economy::BuyProductResponse>* MruVEconomyService::Stub::PrepareAsyncBuyProductRaw(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BuyProductResponse>::Create(channel_.get(), cq, rpcmethod_BuyProduct_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::economy::BuyProductResponse>::Create(channel_.get(), cq, rpcmethod_BuyProduct_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::economy::BuyProductResponse>* MruVEconomyService::Stub::AsyncBuyProductRaw(::grpc::ClientContext* context, const ::mruv::economy::BuyProductRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncBuyProductRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::economy::WatchProductResponse>* MruVEconomyService::Stub::WatchProductRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchProductRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::WatchProductResponse>::Create(channel_.get(), rpcmethod_WatchProduct_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::economy::WatchProductResponse>::Create(channel_.get(), rpcmethod_WatchProduct_, context, request);
 }
 
 void MruVEconomyService::Stub::experimental_async::WatchProduct(::grpc::ClientContext* context, ::mruv::economy::WatchProductRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchProductResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchProductResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchProduct_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchProductResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchProduct_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::economy::WatchProductResponse>* MruVEconomyService::Stub::AsyncWatchProductRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchProductRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchProductResponse>::Create(channel_.get(), cq, rpcmethod_WatchProduct_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchProductResponse>::Create(channel_.get(), cq, rpcmethod_WatchProduct_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::economy::WatchProductResponse>* MruVEconomyService::Stub::PrepareAsyncWatchProductRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchProductRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchProductResponse>::Create(channel_.get(), cq, rpcmethod_WatchProduct_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchProductResponse>::Create(channel_.get(), cq, rpcmethod_WatchProduct_, context, request, false, nullptr);
 }
 
 ::grpc::ClientReader< ::mruv::economy::WatchPriceResponse>* MruVEconomyService::Stub::WatchPriceRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPriceRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(channel_.get(), rpcmethod_WatchPrice_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(channel_.get(), rpcmethod_WatchPrice_, context, request);
 }
 
 void MruVEconomyService::Stub::experimental_async::WatchPrice(::grpc::ClientContext* context, ::mruv::economy::WatchPriceRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::economy::WatchPriceResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPrice_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_WatchPrice_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::economy::WatchPriceResponse>* MruVEconomyService::Stub::AsyncWatchPriceRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPriceRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(channel_.get(), cq, rpcmethod_WatchPrice_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(channel_.get(), cq, rpcmethod_WatchPrice_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::economy::WatchPriceResponse>* MruVEconomyService::Stub::PrepareAsyncWatchPriceRaw(::grpc::ClientContext* context, const ::mruv::economy::WatchPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(channel_.get(), cq, rpcmethod_WatchPrice_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::economy::WatchPriceResponse>::Create(channel_.get(), cq, rpcmethod_WatchPrice_, context, request, false, nullptr);
 }
 
 MruVEconomyService::Service::Service() {
@@ -286,7 +251,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::RegisterProductRequest, ::mruv::economy::RegisterProductResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::RegisterProductRequest* req,
              ::mruv::economy::RegisterProductResponse* resp) {
                return service->RegisterProduct(ctx, req, resp);
@@ -296,7 +261,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::GetProductRequest, ::mruv::economy::GetProductResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::GetProductRequest* req,
              ::mruv::economy::GetProductResponse* resp) {
                return service->GetProduct(ctx, req, resp);
@@ -306,7 +271,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::UpdateProductRequest, ::mruv::economy::UpdateProductResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::UpdateProductRequest* req,
              ::mruv::economy::UpdateProductResponse* resp) {
                return service->UpdateProduct(ctx, req, resp);
@@ -316,7 +281,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::DeleteProductRequest, ::mruv::economy::DeleteProductResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::DeleteProductRequest* req,
              ::mruv::economy::DeleteProductResponse* resp) {
                return service->DeleteProduct(ctx, req, resp);
@@ -326,7 +291,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::UpdatePriceRequest, ::mruv::economy::UpdatePriceResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::UpdatePriceRequest* req,
              ::mruv::economy::UpdatePriceResponse* resp) {
                return service->UpdatePrice(ctx, req, resp);
@@ -336,7 +301,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::GetPriceRequest, ::mruv::economy::GetPriceResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::GetPriceRequest* req,
              ::mruv::economy::GetPriceResponse* resp) {
                return service->GetPrice(ctx, req, resp);
@@ -346,7 +311,7 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEconomyService::Service, ::mruv::economy::BuyProductRequest, ::mruv::economy::BuyProductResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::BuyProductRequest* req,
              ::mruv::economy::BuyProductResponse* resp) {
                return service->BuyProduct(ctx, req, resp);
@@ -356,9 +321,9 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVEconomyService::Service, ::mruv::economy::WatchProductRequest, ::mruv::economy::WatchProductResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::WatchProductRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::WatchProductResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::economy::WatchProductResponse>* writer) {
                return service->WatchProduct(ctx, req, writer);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
@@ -366,9 +331,9 @@ MruVEconomyService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVEconomyService::Service, ::mruv::economy::WatchPriceRequest, ::mruv::economy::WatchPriceResponse>(
           [](MruVEconomyService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::economy::WatchPriceRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::economy::WatchPriceResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::economy::WatchPriceResponse>* writer) {
                return service->WatchPrice(ctx, req, writer);
              }, this)));
 }

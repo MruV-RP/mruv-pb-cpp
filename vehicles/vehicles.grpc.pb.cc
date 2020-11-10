@@ -47,27 +47,22 @@ MruVVehiclesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>
 }
 
 void MruVVehiclesService::Stub::experimental_async::CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateVehicle_, context, request, response, std::move(f));
-}
-
-void MruVVehiclesService::Stub::experimental_async::CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateVehicle_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateVehicle_, context, request, response, std::move(f));
 }
 
 void MruVVehiclesService::Stub::experimental_async::CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateVehicle_, context, request, response, reactor);
-}
-
-void MruVVehiclesService::Stub::experimental_async::CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateVehicle_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::vehicles::CreateVehicleResponse>* MruVVehiclesService::Stub::AsyncCreateVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::CreateVehicleResponse>::Create(channel_.get(), cq, rpcmethod_CreateVehicle_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateVehicle_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::vehicles::CreateVehicleResponse>* MruVVehiclesService::Stub::PrepareAsyncCreateVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::CreateVehicleResponse>::Create(channel_.get(), cq, rpcmethod_CreateVehicle_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::CreateVehicleResponse>::Create(channel_.get(), cq, rpcmethod_CreateVehicle_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::vehicles::CreateVehicleResponse>* MruVVehiclesService::Stub::AsyncCreateVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateVehicleRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVVehiclesService::Stub::GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest& request, ::mruv::vehicles::GetVehicleResponse* response) {
@@ -75,27 +70,22 @@ void MruVVehiclesService::Stub::experimental_async::CreateVehicle(::grpc::Client
 }
 
 void MruVVehiclesService::Stub::experimental_async::GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetVehicle_, context, request, response, std::move(f));
-}
-
-void MruVVehiclesService::Stub::experimental_async::GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetVehicle_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetVehicle_, context, request, response, std::move(f));
 }
 
 void MruVVehiclesService::Stub::experimental_async::GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetVehicle_, context, request, response, reactor);
-}
-
-void MruVVehiclesService::Stub::experimental_async::GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetVehicle_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::vehicles::GetVehicleResponse>* MruVVehiclesService::Stub::AsyncGetVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::GetVehicleResponse>::Create(channel_.get(), cq, rpcmethod_GetVehicle_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetVehicle_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::vehicles::GetVehicleResponse>* MruVVehiclesService::Stub::PrepareAsyncGetVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::GetVehicleResponse>::Create(channel_.get(), cq, rpcmethod_GetVehicle_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::GetVehicleResponse>::Create(channel_.get(), cq, rpcmethod_GetVehicle_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::vehicles::GetVehicleResponse>* MruVVehiclesService::Stub::AsyncGetVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetVehicleRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVVehiclesService::Stub::UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest& request, ::mruv::vehicles::UpdateVehicleResponse* response) {
@@ -103,27 +93,22 @@ void MruVVehiclesService::Stub::experimental_async::GetVehicle(::grpc::ClientCon
 }
 
 void MruVVehiclesService::Stub::experimental_async::UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateVehicle_, context, request, response, std::move(f));
-}
-
-void MruVVehiclesService::Stub::experimental_async::UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateVehicle_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateVehicle_, context, request, response, std::move(f));
 }
 
 void MruVVehiclesService::Stub::experimental_async::UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateVehicle_, context, request, response, reactor);
-}
-
-void MruVVehiclesService::Stub::experimental_async::UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateVehicle_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::vehicles::UpdateVehicleResponse>* MruVVehiclesService::Stub::AsyncUpdateVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::UpdateVehicleResponse>::Create(channel_.get(), cq, rpcmethod_UpdateVehicle_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateVehicle_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::vehicles::UpdateVehicleResponse>* MruVVehiclesService::Stub::PrepareAsyncUpdateVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::UpdateVehicleResponse>::Create(channel_.get(), cq, rpcmethod_UpdateVehicle_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::UpdateVehicleResponse>::Create(channel_.get(), cq, rpcmethod_UpdateVehicle_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::vehicles::UpdateVehicleResponse>* MruVVehiclesService::Stub::AsyncUpdateVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateVehicleRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVVehiclesService::Stub::DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest& request, ::mruv::vehicles::DeleteVehicleResponse* response) {
@@ -131,27 +116,22 @@ void MruVVehiclesService::Stub::experimental_async::UpdateVehicle(::grpc::Client
 }
 
 void MruVVehiclesService::Stub::experimental_async::DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteVehicle_, context, request, response, std::move(f));
-}
-
-void MruVVehiclesService::Stub::experimental_async::DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteVehicle_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteVehicle_, context, request, response, std::move(f));
 }
 
 void MruVVehiclesService::Stub::experimental_async::DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteVehicle_, context, request, response, reactor);
-}
-
-void MruVVehiclesService::Stub::experimental_async::DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteVehicle_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::vehicles::DeleteVehicleResponse>* MruVVehiclesService::Stub::AsyncDeleteVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::DeleteVehicleResponse>::Create(channel_.get(), cq, rpcmethod_DeleteVehicle_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteVehicle_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::vehicles::DeleteVehicleResponse>* MruVVehiclesService::Stub::PrepareAsyncDeleteVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::DeleteVehicleResponse>::Create(channel_.get(), cq, rpcmethod_DeleteVehicle_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::vehicles::DeleteVehicleResponse>::Create(channel_.get(), cq, rpcmethod_DeleteVehicle_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::vehicles::DeleteVehicleResponse>* MruVVehiclesService::Stub::AsyncDeleteVehicleRaw(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteVehicleRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVVehiclesService::Service::Service() {
@@ -160,7 +140,7 @@ MruVVehiclesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(
           [](MruVVehiclesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::vehicles::CreateVehicleRequest* req,
              ::mruv::vehicles::CreateVehicleResponse* resp) {
                return service->CreateVehicle(ctx, req, resp);
@@ -170,7 +150,7 @@ MruVVehiclesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(
           [](MruVVehiclesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::vehicles::GetVehicleRequest* req,
              ::mruv::vehicles::GetVehicleResponse* resp) {
                return service->GetVehicle(ctx, req, resp);
@@ -180,7 +160,7 @@ MruVVehiclesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(
           [](MruVVehiclesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::vehicles::UpdateVehicleRequest* req,
              ::mruv::vehicles::UpdateVehicleResponse* resp) {
                return service->UpdateVehicle(ctx, req, resp);
@@ -190,7 +170,7 @@ MruVVehiclesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVVehiclesService::Service, ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(
           [](MruVVehiclesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::vehicles::DeleteVehicleRequest* req,
              ::mruv::vehicles::DeleteVehicleResponse* resp) {
                return service->DeleteVehicle(ctx, req, resp);

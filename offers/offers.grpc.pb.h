@@ -83,68 +83,38 @@ class MruVOffersService final {
       virtual ~experimental_async_interface() {}
       // Create an offer.
       virtual void CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get an offer.
       virtual void GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update an offer.
       virtual void UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete an offer.
       virtual void DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Accept an offer and proceed transaction.
       virtual void AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -208,64 +178,34 @@ class MruVOffersService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, std::function<void(::grpc::Status)>) override;
-      void AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -424,7 +364,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -439,7 +379,7 @@ class MruVOffersService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateOffer() override {
@@ -471,7 +411,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -486,7 +426,7 @@ class MruVOffersService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetOffer() override {
@@ -518,7 +458,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -533,7 +473,7 @@ class MruVOffersService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateOffer() override {
@@ -565,7 +505,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -580,7 +520,7 @@ class MruVOffersService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteOffer() override {
@@ -612,7 +552,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -627,7 +567,7 @@ class MruVOffersService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AcceptOffer() override {
@@ -849,7 +789,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -887,7 +827,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -925,7 +865,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -963,7 +903,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1001,7 +941,7 @@ class MruVOffersService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1036,8 +976,8 @@ class MruVOffersService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>* streamer) {
                        return this->StreamedCreateOffer(context,
                          streamer);
@@ -1063,8 +1003,8 @@ class MruVOffersService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>* streamer) {
                        return this->StreamedGetOffer(context,
                          streamer);
@@ -1090,8 +1030,8 @@ class MruVOffersService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>* streamer) {
                        return this->StreamedUpdateOffer(context,
                          streamer);
@@ -1117,8 +1057,8 @@ class MruVOffersService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>* streamer) {
                        return this->StreamedDeleteOffer(context,
                          streamer);
@@ -1144,8 +1084,8 @@ class MruVOffersService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>* streamer) {
                        return this->StreamedAcceptOffer(context,
                          streamer);

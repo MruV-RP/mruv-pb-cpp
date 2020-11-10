@@ -51,27 +51,22 @@ MruVOrganizationsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInter
 }
 
 void MruVOrganizationsService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, std::move(f));
-}
-
-void MruVOrganizationsService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, std::move(f));
 }
 
 void MruVOrganizationsService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, reactor);
-}
-
-void MruVOrganizationsService::Stub::experimental_async::CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::organizations::CreateOrganizationResponse>* MruVOrganizationsService::Stub::AsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateOrganization_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::organizations::CreateOrganizationResponse>* MruVOrganizationsService::Stub::PrepareAsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::CreateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_CreateOrganization_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::organizations::CreateOrganizationResponse>* MruVOrganizationsService::Stub::AsyncCreateOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateOrganizationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOrganizationsService::Stub::GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest& request, ::mruv::organizations::GetOrganizationResponse* response) {
@@ -79,27 +74,22 @@ void MruVOrganizationsService::Stub::experimental_async::CreateOrganization(::gr
 }
 
 void MruVOrganizationsService::Stub::experimental_async::GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, std::move(f));
-}
-
-void MruVOrganizationsService::Stub::experimental_async::GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, std::move(f));
 }
 
 void MruVOrganizationsService::Stub::experimental_async::GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, reactor);
-}
-
-void MruVOrganizationsService::Stub::experimental_async::GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::organizations::GetOrganizationResponse>* MruVOrganizationsService::Stub::AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::GetOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganization_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOrganization_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::organizations::GetOrganizationResponse>* MruVOrganizationsService::Stub::PrepareAsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::GetOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganization_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::GetOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_GetOrganization_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::organizations::GetOrganizationResponse>* MruVOrganizationsService::Stub::AsyncGetOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetOrganizationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOrganizationsService::Stub::UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest& request, ::mruv::organizations::UpdateOrganizationResponse* response) {
@@ -107,27 +97,22 @@ void MruVOrganizationsService::Stub::experimental_async::GetOrganization(::grpc:
 }
 
 void MruVOrganizationsService::Stub::experimental_async::UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, std::move(f));
-}
-
-void MruVOrganizationsService::Stub::experimental_async::UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, std::move(f));
 }
 
 void MruVOrganizationsService::Stub::experimental_async::UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, reactor);
-}
-
-void MruVOrganizationsService::Stub::experimental_async::UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::organizations::UpdateOrganizationResponse>* MruVOrganizationsService::Stub::AsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::UpdateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganization_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateOrganization_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::organizations::UpdateOrganizationResponse>* MruVOrganizationsService::Stub::PrepareAsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::UpdateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganization_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::UpdateOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOrganization_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::organizations::UpdateOrganizationResponse>* MruVOrganizationsService::Stub::AsyncUpdateOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateOrganizationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOrganizationsService::Stub::DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest& request, ::mruv::organizations::DeleteOrganizationResponse* response) {
@@ -135,27 +120,22 @@ void MruVOrganizationsService::Stub::experimental_async::UpdateOrganization(::gr
 }
 
 void MruVOrganizationsService::Stub::experimental_async::DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, std::move(f));
-}
-
-void MruVOrganizationsService::Stub::experimental_async::DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, std::move(f));
 }
 
 void MruVOrganizationsService::Stub::experimental_async::DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, reactor);
-}
-
-void MruVOrganizationsService::Stub::experimental_async::DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::organizations::DeleteOrganizationResponse>* MruVOrganizationsService::Stub::AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::DeleteOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOrganization_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteOrganization_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::organizations::DeleteOrganizationResponse>* MruVOrganizationsService::Stub::PrepareAsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::DeleteOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOrganization_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::DeleteOrganizationResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOrganization_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::organizations::DeleteOrganizationResponse>* MruVOrganizationsService::Stub::AsyncDeleteOrganizationRaw(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteOrganizationRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOrganizationsService::Stub::AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest& request, ::mruv::organizations::AssignLeaderResponse* response) {
@@ -163,27 +143,22 @@ void MruVOrganizationsService::Stub::experimental_async::DeleteOrganization(::gr
 }
 
 void MruVOrganizationsService::Stub::experimental_async::AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignLeader_, context, request, response, std::move(f));
-}
-
-void MruVOrganizationsService::Stub::experimental_async::AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignLeader_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AssignLeader_, context, request, response, std::move(f));
 }
 
 void MruVOrganizationsService::Stub::experimental_async::AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignLeader_, context, request, response, reactor);
-}
-
-void MruVOrganizationsService::Stub::experimental_async::AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignLeader_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::organizations::AssignLeaderResponse>* MruVOrganizationsService::Stub::AsyncAssignLeaderRaw(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::AssignLeaderResponse>::Create(channel_.get(), cq, rpcmethod_AssignLeader_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AssignLeader_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::organizations::AssignLeaderResponse>* MruVOrganizationsService::Stub::PrepareAsyncAssignLeaderRaw(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::AssignLeaderResponse>::Create(channel_.get(), cq, rpcmethod_AssignLeader_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::AssignLeaderResponse>::Create(channel_.get(), cq, rpcmethod_AssignLeader_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::organizations::AssignLeaderResponse>* MruVOrganizationsService::Stub::AsyncAssignLeaderRaw(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAssignLeaderRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOrganizationsService::Stub::UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest& request, ::mruv::organizations::UnassignLeaderResponse* response) {
@@ -191,27 +166,22 @@ void MruVOrganizationsService::Stub::experimental_async::AssignLeader(::grpc::Cl
 }
 
 void MruVOrganizationsService::Stub::experimental_async::UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnassignLeader_, context, request, response, std::move(f));
-}
-
-void MruVOrganizationsService::Stub::experimental_async::UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnassignLeader_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UnassignLeader_, context, request, response, std::move(f));
 }
 
 void MruVOrganizationsService::Stub::experimental_async::UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnassignLeader_, context, request, response, reactor);
-}
-
-void MruVOrganizationsService::Stub::experimental_async::UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnassignLeader_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::organizations::UnassignLeaderResponse>* MruVOrganizationsService::Stub::AsyncUnassignLeaderRaw(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::UnassignLeaderResponse>::Create(channel_.get(), cq, rpcmethod_UnassignLeader_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UnassignLeader_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::organizations::UnassignLeaderResponse>* MruVOrganizationsService::Stub::PrepareAsyncUnassignLeaderRaw(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::UnassignLeaderResponse>::Create(channel_.get(), cq, rpcmethod_UnassignLeader_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::organizations::UnassignLeaderResponse>::Create(channel_.get(), cq, rpcmethod_UnassignLeader_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::organizations::UnassignLeaderResponse>* MruVOrganizationsService::Stub::AsyncUnassignLeaderRaw(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUnassignLeaderRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVOrganizationsService::Service::Service() {
@@ -220,7 +190,7 @@ MruVOrganizationsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(
           [](MruVOrganizationsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::organizations::CreateOrganizationRequest* req,
              ::mruv::organizations::CreateOrganizationResponse* resp) {
                return service->CreateOrganization(ctx, req, resp);
@@ -230,7 +200,7 @@ MruVOrganizationsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(
           [](MruVOrganizationsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::organizations::GetOrganizationRequest* req,
              ::mruv::organizations::GetOrganizationResponse* resp) {
                return service->GetOrganization(ctx, req, resp);
@@ -240,7 +210,7 @@ MruVOrganizationsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(
           [](MruVOrganizationsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::organizations::UpdateOrganizationRequest* req,
              ::mruv::organizations::UpdateOrganizationResponse* resp) {
                return service->UpdateOrganization(ctx, req, resp);
@@ -250,7 +220,7 @@ MruVOrganizationsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(
           [](MruVOrganizationsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::organizations::DeleteOrganizationRequest* req,
              ::mruv::organizations::DeleteOrganizationResponse* resp) {
                return service->DeleteOrganization(ctx, req, resp);
@@ -260,7 +230,7 @@ MruVOrganizationsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(
           [](MruVOrganizationsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::organizations::AssignLeaderRequest* req,
              ::mruv::organizations::AssignLeaderResponse* resp) {
                return service->AssignLeader(ctx, req, resp);
@@ -270,7 +240,7 @@ MruVOrganizationsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOrganizationsService::Service, ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(
           [](MruVOrganizationsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::organizations::UnassignLeaderRequest* req,
              ::mruv::organizations::UnassignLeaderResponse* resp) {
                return service->UnassignLeader(ctx, req, resp);

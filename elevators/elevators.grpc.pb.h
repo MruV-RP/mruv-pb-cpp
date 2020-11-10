@@ -94,68 +94,38 @@ class MruVElevatorsService final {
       virtual ~experimental_async_interface() {}
       // Create an elevator.
       virtual void CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get an elevator.
       virtual void GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update an elevator.
       virtual void UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete an elevator.
       virtual void DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get available elevator floors.
       virtual void GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -219,64 +189,34 @@ class MruVElevatorsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateElevator(::grpc::ClientContext* context, const ::mruv::elevators::CreateElevatorRequest* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::CreateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetElevator(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorRequest* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateElevator(::grpc::ClientContext* context, const ::mruv::elevators::UpdateElevatorRequest* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::UpdateElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteElevator(::grpc::ClientContext* context, const ::mruv::elevators::DeleteElevatorRequest* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteElevator(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::DeleteElevatorResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetElevatorFloors(::grpc::ClientContext* context, const ::mruv::elevators::GetElevatorFloorsRequest* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetElevatorFloors(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::elevators::GetElevatorFloorsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -435,7 +375,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -450,7 +390,7 @@ class MruVElevatorsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateElevator() override {
@@ -482,7 +422,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -497,7 +437,7 @@ class MruVElevatorsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetElevator() override {
@@ -529,7 +469,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -544,7 +484,7 @@ class MruVElevatorsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateElevator() override {
@@ -576,7 +516,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -591,7 +531,7 @@ class MruVElevatorsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteElevator() override {
@@ -623,7 +563,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -638,7 +578,7 @@ class MruVElevatorsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetElevatorFloors() override {
@@ -860,7 +800,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -898,7 +838,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -936,7 +876,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -974,7 +914,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1012,7 +952,7 @@ class MruVElevatorsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1047,8 +987,8 @@ class MruVElevatorsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::elevators::CreateElevatorRequest, ::mruv::elevators::CreateElevatorResponse>* streamer) {
                        return this->StreamedCreateElevator(context,
                          streamer);
@@ -1074,8 +1014,8 @@ class MruVElevatorsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::elevators::GetElevatorRequest, ::mruv::elevators::GetElevatorResponse>* streamer) {
                        return this->StreamedGetElevator(context,
                          streamer);
@@ -1101,8 +1041,8 @@ class MruVElevatorsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::elevators::UpdateElevatorRequest, ::mruv::elevators::UpdateElevatorResponse>* streamer) {
                        return this->StreamedUpdateElevator(context,
                          streamer);
@@ -1128,8 +1068,8 @@ class MruVElevatorsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::elevators::DeleteElevatorRequest, ::mruv::elevators::DeleteElevatorResponse>* streamer) {
                        return this->StreamedDeleteElevator(context,
                          streamer);
@@ -1155,8 +1095,8 @@ class MruVElevatorsService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::elevators::GetElevatorFloorsRequest, ::mruv::elevators::GetElevatorFloorsResponse>* streamer) {
                        return this->StreamedGetElevatorFloors(context,
                          streamer);

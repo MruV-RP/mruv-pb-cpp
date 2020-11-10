@@ -75,55 +75,31 @@ class MruVVehiclesService final {
       virtual ~experimental_async_interface() {}
       // Create a vehicle.
       virtual void CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a vehicle.
       virtual void GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a vehicle.
       virtual void UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a vehicle.
       virtual void DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -178,52 +154,28 @@ class MruVVehiclesService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::CreateVehicleRequest* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::CreateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::GetVehicleRequest* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::GetVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::UpdateVehicleRequest* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::UpdateVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteVehicle(::grpc::ClientContext* context, const ::mruv::vehicles::DeleteVehicleRequest* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteVehicle(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::vehicles::DeleteVehicleResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -357,7 +309,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -372,7 +324,7 @@ class MruVVehiclesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateVehicle() override {
@@ -404,7 +356,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -419,7 +371,7 @@ class MruVVehiclesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetVehicle() override {
@@ -451,7 +403,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -466,7 +418,7 @@ class MruVVehiclesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateVehicle() override {
@@ -498,7 +450,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -513,7 +465,7 @@ class MruVVehiclesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteVehicle() override {
@@ -698,7 +650,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -736,7 +688,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -774,7 +726,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -812,7 +764,7 @@ class MruVVehiclesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -847,8 +799,8 @@ class MruVVehiclesService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::vehicles::CreateVehicleRequest, ::mruv::vehicles::CreateVehicleResponse>* streamer) {
                        return this->StreamedCreateVehicle(context,
                          streamer);
@@ -874,8 +826,8 @@ class MruVVehiclesService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::vehicles::GetVehicleRequest, ::mruv::vehicles::GetVehicleResponse>* streamer) {
                        return this->StreamedGetVehicle(context,
                          streamer);
@@ -901,8 +853,8 @@ class MruVVehiclesService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::vehicles::UpdateVehicleRequest, ::mruv::vehicles::UpdateVehicleResponse>* streamer) {
                        return this->StreamedUpdateVehicle(context,
                          streamer);
@@ -928,8 +880,8 @@ class MruVVehiclesService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::vehicles::DeleteVehicleRequest, ::mruv::vehicles::DeleteVehicleResponse>* streamer) {
                        return this->StreamedDeleteVehicle(context,
                          streamer);

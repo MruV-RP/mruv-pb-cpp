@@ -85,55 +85,31 @@ class MruVObjectModelsService final {
       virtual ~experimental_async_interface() {}
       // Create an object model.
       virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get an object model.
       virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update an object model.
       virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete an object model.
       virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all models.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -206,52 +182,28 @@ class MruVObjectModelsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::CreateObjectModelRequest* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::CreateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetObjectModel(::grpc::ClientContext* context, const ::mruv::objects::GetObjectModelRequest* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::GetObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateObjectModel(::grpc::ClientContext* context, const ::mruv::objects::UpdateObjectModelRequest* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::UpdateObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteObjectModel(::grpc::ClientContext* context, const ::mruv::objects::DeleteObjectModelRequest* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteObjectModel(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::objects::DeleteObjectModelResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FetchAllModels(::grpc::ClientContext* context, ::mruv::objects::FetchAllModelsRequest* request, ::grpc::ClientReadReactor< ::mruv::objects::FetchAllModelsResponse>* reactor) override;
@@ -416,7 +368,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -431,7 +383,7 @@ class MruVObjectModelsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateObjectModel() override {
@@ -463,7 +415,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -478,7 +430,7 @@ class MruVObjectModelsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetObjectModel() override {
@@ -510,7 +462,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -525,7 +477,7 @@ class MruVObjectModelsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateObjectModel() override {
@@ -557,7 +509,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -572,7 +524,7 @@ class MruVObjectModelsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteObjectModel() override {
@@ -604,7 +556,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::objects::FetchAllModelsRequest, ::mruv::objects::FetchAllModelsResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::objects::FetchAllModelsRequest, ::mruv::objects::FetchAllModelsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -832,7 +784,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -870,7 +822,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -908,7 +860,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -946,7 +898,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -984,7 +936,7 @@ class MruVObjectModelsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1019,8 +971,8 @@ class MruVObjectModelsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::CreateObjectModelRequest, ::mruv::objects::CreateObjectModelResponse>* streamer) {
                        return this->StreamedCreateObjectModel(context,
                          streamer);
@@ -1046,8 +998,8 @@ class MruVObjectModelsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::GetObjectModelRequest, ::mruv::objects::GetObjectModelResponse>* streamer) {
                        return this->StreamedGetObjectModel(context,
                          streamer);
@@ -1073,8 +1025,8 @@ class MruVObjectModelsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::UpdateObjectModelRequest, ::mruv::objects::UpdateObjectModelResponse>* streamer) {
                        return this->StreamedUpdateObjectModel(context,
                          streamer);
@@ -1100,8 +1052,8 @@ class MruVObjectModelsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::objects::DeleteObjectModelRequest, ::mruv::objects::DeleteObjectModelResponse>* streamer) {
                        return this->StreamedDeleteObjectModel(context,
                          streamer);
@@ -1128,8 +1080,8 @@ class MruVObjectModelsService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::objects::FetchAllModelsRequest, ::mruv::objects::FetchAllModelsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::objects::FetchAllModelsRequest, ::mruv::objects::FetchAllModelsResponse>* streamer) {
                        return this->StreamedFetchAllModels(context,
                          streamer);

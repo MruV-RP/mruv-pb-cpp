@@ -47,27 +47,22 @@ MruVJobsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
 }
 
 void MruVJobsService::Stub::experimental_async::CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateJob_, context, request, response, std::move(f));
-}
-
-void MruVJobsService::Stub::experimental_async::CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateJob_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateJob_, context, request, response, std::move(f));
 }
 
 void MruVJobsService::Stub::experimental_async::CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateJob_, context, request, response, reactor);
-}
-
-void MruVJobsService::Stub::experimental_async::CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateJob_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::jobs::CreateJobResponse>* MruVJobsService::Stub::AsyncCreateJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::CreateJobResponse>::Create(channel_.get(), cq, rpcmethod_CreateJob_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateJob_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::jobs::CreateJobResponse>* MruVJobsService::Stub::PrepareAsyncCreateJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::CreateJobResponse>::Create(channel_.get(), cq, rpcmethod_CreateJob_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::CreateJobResponse>::Create(channel_.get(), cq, rpcmethod_CreateJob_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::jobs::CreateJobResponse>* MruVJobsService::Stub::AsyncCreateJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVJobsService::Stub::GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest& request, ::mruv::jobs::GetJobResponse* response) {
@@ -75,27 +70,22 @@ void MruVJobsService::Stub::experimental_async::CreateJob(::grpc::ClientContext*
 }
 
 void MruVJobsService::Stub::experimental_async::GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetJob_, context, request, response, std::move(f));
-}
-
-void MruVJobsService::Stub::experimental_async::GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetJob_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetJob_, context, request, response, std::move(f));
 }
 
 void MruVJobsService::Stub::experimental_async::GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetJob_, context, request, response, reactor);
-}
-
-void MruVJobsService::Stub::experimental_async::GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetJob_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::jobs::GetJobResponse>* MruVJobsService::Stub::AsyncGetJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::GetJobResponse>::Create(channel_.get(), cq, rpcmethod_GetJob_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetJob_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::jobs::GetJobResponse>* MruVJobsService::Stub::PrepareAsyncGetJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::GetJobResponse>::Create(channel_.get(), cq, rpcmethod_GetJob_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::GetJobResponse>::Create(channel_.get(), cq, rpcmethod_GetJob_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::jobs::GetJobResponse>* MruVJobsService::Stub::AsyncGetJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVJobsService::Stub::UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest& request, ::mruv::jobs::UpdateJobResponse* response) {
@@ -103,27 +93,22 @@ void MruVJobsService::Stub::experimental_async::GetJob(::grpc::ClientContext* co
 }
 
 void MruVJobsService::Stub::experimental_async::UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateJob_, context, request, response, std::move(f));
-}
-
-void MruVJobsService::Stub::experimental_async::UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateJob_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateJob_, context, request, response, std::move(f));
 }
 
 void MruVJobsService::Stub::experimental_async::UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateJob_, context, request, response, reactor);
-}
-
-void MruVJobsService::Stub::experimental_async::UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateJob_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::jobs::UpdateJobResponse>* MruVJobsService::Stub::AsyncUpdateJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::UpdateJobResponse>::Create(channel_.get(), cq, rpcmethod_UpdateJob_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateJob_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::jobs::UpdateJobResponse>* MruVJobsService::Stub::PrepareAsyncUpdateJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::UpdateJobResponse>::Create(channel_.get(), cq, rpcmethod_UpdateJob_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::UpdateJobResponse>::Create(channel_.get(), cq, rpcmethod_UpdateJob_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::jobs::UpdateJobResponse>* MruVJobsService::Stub::AsyncUpdateJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVJobsService::Stub::DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest& request, ::mruv::jobs::DeleteJobResponse* response) {
@@ -131,27 +116,22 @@ void MruVJobsService::Stub::experimental_async::UpdateJob(::grpc::ClientContext*
 }
 
 void MruVJobsService::Stub::experimental_async::DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteJob_, context, request, response, std::move(f));
-}
-
-void MruVJobsService::Stub::experimental_async::DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteJob_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteJob_, context, request, response, std::move(f));
 }
 
 void MruVJobsService::Stub::experimental_async::DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteJob_, context, request, response, reactor);
-}
-
-void MruVJobsService::Stub::experimental_async::DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteJob_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::jobs::DeleteJobResponse>* MruVJobsService::Stub::AsyncDeleteJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::DeleteJobResponse>::Create(channel_.get(), cq, rpcmethod_DeleteJob_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteJob_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::jobs::DeleteJobResponse>* MruVJobsService::Stub::PrepareAsyncDeleteJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::DeleteJobResponse>::Create(channel_.get(), cq, rpcmethod_DeleteJob_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::jobs::DeleteJobResponse>::Create(channel_.get(), cq, rpcmethod_DeleteJob_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::jobs::DeleteJobResponse>* MruVJobsService::Stub::AsyncDeleteJobRaw(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteJobRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVJobsService::Service::Service() {
@@ -160,7 +140,7 @@ MruVJobsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(
           [](MruVJobsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::jobs::CreateJobRequest* req,
              ::mruv::jobs::CreateJobResponse* resp) {
                return service->CreateJob(ctx, req, resp);
@@ -170,7 +150,7 @@ MruVJobsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(
           [](MruVJobsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::jobs::GetJobRequest* req,
              ::mruv::jobs::GetJobResponse* resp) {
                return service->GetJob(ctx, req, resp);
@@ -180,7 +160,7 @@ MruVJobsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(
           [](MruVJobsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::jobs::UpdateJobRequest* req,
              ::mruv::jobs::UpdateJobResponse* resp) {
                return service->UpdateJob(ctx, req, resp);
@@ -190,7 +170,7 @@ MruVJobsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVJobsService::Service, ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(
           [](MruVJobsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::jobs::DeleteJobRequest* req,
              ::mruv::jobs::DeleteJobResponse* resp) {
                return service->DeleteJob(ctx, req, resp);

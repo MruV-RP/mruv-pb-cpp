@@ -47,27 +47,22 @@ MruVHousesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
 }
 
 void MruVHousesService::Stub::experimental_async::CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateHouse_, context, request, response, std::move(f));
-}
-
-void MruVHousesService::Stub::experimental_async::CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateHouse_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateHouse_, context, request, response, std::move(f));
 }
 
 void MruVHousesService::Stub::experimental_async::CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateHouse_, context, request, response, reactor);
-}
-
-void MruVHousesService::Stub::experimental_async::CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateHouse_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::houses::CreateHouseResponse>* MruVHousesService::Stub::AsyncCreateHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::CreateHouseResponse>::Create(channel_.get(), cq, rpcmethod_CreateHouse_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateHouse_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::houses::CreateHouseResponse>* MruVHousesService::Stub::PrepareAsyncCreateHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::CreateHouseResponse>::Create(channel_.get(), cq, rpcmethod_CreateHouse_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::CreateHouseResponse>::Create(channel_.get(), cq, rpcmethod_CreateHouse_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::houses::CreateHouseResponse>* MruVHousesService::Stub::AsyncCreateHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateHouseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVHousesService::Stub::GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest& request, ::mruv::houses::GetHouseResponse* response) {
@@ -75,27 +70,22 @@ void MruVHousesService::Stub::experimental_async::CreateHouse(::grpc::ClientCont
 }
 
 void MruVHousesService::Stub::experimental_async::GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetHouse_, context, request, response, std::move(f));
-}
-
-void MruVHousesService::Stub::experimental_async::GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetHouse_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetHouse_, context, request, response, std::move(f));
 }
 
 void MruVHousesService::Stub::experimental_async::GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetHouse_, context, request, response, reactor);
-}
-
-void MruVHousesService::Stub::experimental_async::GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetHouse_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::houses::GetHouseResponse>* MruVHousesService::Stub::AsyncGetHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::GetHouseResponse>::Create(channel_.get(), cq, rpcmethod_GetHouse_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetHouse_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::houses::GetHouseResponse>* MruVHousesService::Stub::PrepareAsyncGetHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::GetHouseResponse>::Create(channel_.get(), cq, rpcmethod_GetHouse_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::GetHouseResponse>::Create(channel_.get(), cq, rpcmethod_GetHouse_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::houses::GetHouseResponse>* MruVHousesService::Stub::AsyncGetHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetHouseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVHousesService::Stub::UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest& request, ::mruv::houses::UpdateHouseResponse* response) {
@@ -103,27 +93,22 @@ void MruVHousesService::Stub::experimental_async::GetHouse(::grpc::ClientContext
 }
 
 void MruVHousesService::Stub::experimental_async::UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateHouse_, context, request, response, std::move(f));
-}
-
-void MruVHousesService::Stub::experimental_async::UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateHouse_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateHouse_, context, request, response, std::move(f));
 }
 
 void MruVHousesService::Stub::experimental_async::UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateHouse_, context, request, response, reactor);
-}
-
-void MruVHousesService::Stub::experimental_async::UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateHouse_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::houses::UpdateHouseResponse>* MruVHousesService::Stub::AsyncUpdateHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::UpdateHouseResponse>::Create(channel_.get(), cq, rpcmethod_UpdateHouse_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateHouse_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::houses::UpdateHouseResponse>* MruVHousesService::Stub::PrepareAsyncUpdateHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::UpdateHouseResponse>::Create(channel_.get(), cq, rpcmethod_UpdateHouse_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::UpdateHouseResponse>::Create(channel_.get(), cq, rpcmethod_UpdateHouse_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::houses::UpdateHouseResponse>* MruVHousesService::Stub::AsyncUpdateHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateHouseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVHousesService::Stub::DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest& request, ::mruv::houses::DeleteHouseResponse* response) {
@@ -131,27 +116,22 @@ void MruVHousesService::Stub::experimental_async::UpdateHouse(::grpc::ClientCont
 }
 
 void MruVHousesService::Stub::experimental_async::DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteHouse_, context, request, response, std::move(f));
-}
-
-void MruVHousesService::Stub::experimental_async::DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteHouse_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteHouse_, context, request, response, std::move(f));
 }
 
 void MruVHousesService::Stub::experimental_async::DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteHouse_, context, request, response, reactor);
-}
-
-void MruVHousesService::Stub::experimental_async::DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteHouse_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::houses::DeleteHouseResponse>* MruVHousesService::Stub::AsyncDeleteHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::DeleteHouseResponse>::Create(channel_.get(), cq, rpcmethod_DeleteHouse_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteHouse_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::houses::DeleteHouseResponse>* MruVHousesService::Stub::PrepareAsyncDeleteHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::DeleteHouseResponse>::Create(channel_.get(), cq, rpcmethod_DeleteHouse_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::houses::DeleteHouseResponse>::Create(channel_.get(), cq, rpcmethod_DeleteHouse_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::houses::DeleteHouseResponse>* MruVHousesService::Stub::AsyncDeleteHouseRaw(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteHouseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVHousesService::Service::Service() {
@@ -160,7 +140,7 @@ MruVHousesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(
           [](MruVHousesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::houses::CreateHouseRequest* req,
              ::mruv::houses::CreateHouseResponse* resp) {
                return service->CreateHouse(ctx, req, resp);
@@ -170,7 +150,7 @@ MruVHousesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(
           [](MruVHousesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::houses::GetHouseRequest* req,
              ::mruv::houses::GetHouseResponse* resp) {
                return service->GetHouse(ctx, req, resp);
@@ -180,7 +160,7 @@ MruVHousesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(
           [](MruVHousesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::houses::UpdateHouseRequest* req,
              ::mruv::houses::UpdateHouseResponse* resp) {
                return service->UpdateHouse(ctx, req, resp);
@@ -190,7 +170,7 @@ MruVHousesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVHousesService::Service, ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(
           [](MruVHousesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::houses::DeleteHouseRequest* req,
              ::mruv::houses::DeleteHouseResponse* resp) {
                return service->DeleteHouse(ctx, req, resp);

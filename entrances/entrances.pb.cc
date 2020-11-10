@@ -711,16 +711,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ent
   &scc_info_UpdateEntranceResponse_entrances_2fentrances_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_entrances_2fentrances_2eproto_once;
-static bool descriptor_table_entrances_2fentrances_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_entrances_2fentrances_2eproto = {
-  &descriptor_table_entrances_2fentrances_2eproto_initialized, descriptor_table_protodef_entrances_2fentrances_2eproto, "entrances/entrances.proto", 2416,
+  false, false, descriptor_table_protodef_entrances_2fentrances_2eproto, "entrances/entrances.proto", 2416,
   &descriptor_table_entrances_2fentrances_2eproto_once, descriptor_table_entrances_2fentrances_2eproto_sccs, descriptor_table_entrances_2fentrances_2eproto_deps, 22, 2,
   schemas, file_default_instances, TableStruct_entrances_2fentrances_2eproto::offsets,
   file_level_metadata_entrances_2fentrances_2eproto, 22, file_level_enum_descriptors_entrances_2fentrances_2eproto, file_level_service_descriptors_entrances_2fentrances_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_entrances_2fentrances_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_entrances_2fentrances_2eproto), true);
+static bool dynamic_init_dummy_entrances_2fentrances_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_entrances_2fentrances_2eproto)), true);
 namespace mruv {
 namespace entrances {
 
@@ -747,29 +746,30 @@ Entrance::_Internal::in(const Entrance* msg) {
   return *msg->in_;
 }
 void Entrance::clear_out() {
-  if (GetArenaNoVirtual() == nullptr && out_ != nullptr) {
+  if (GetArena() == nullptr && out_ != nullptr) {
     delete out_;
   }
   out_ = nullptr;
 }
 void Entrance::clear_in() {
-  if (GetArenaNoVirtual() == nullptr && in_ != nullptr) {
+  if (GetArena() == nullptr && in_ != nullptr) {
     delete in_;
   }
   in_ = nullptr;
 }
-Entrance::Entrance()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Entrance::Entrance(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.Entrance)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.Entrance)
 }
 Entrance::Entrance(const Entrance& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   if (from._internal_has_out()) {
     out_ = new ::mruv::spots::Spot(*from.out_);
@@ -795,14 +795,22 @@ void Entrance::SharedCtor() {
 Entrance::~Entrance() {
   // @@protoc_insertion_point(destructor:mruv.entrances.Entrance)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Entrance::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete out_;
   if (this != internal_default_instance()) delete in_;
 }
 
+void Entrance::ArenaDtor(void* object) {
+  Entrance* _this = reinterpret_cast< Entrance* >(object);
+  (void)_this;
+}
+void Entrance::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Entrance::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -818,20 +826,21 @@ void Entrance::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && out_ != nullptr) {
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && out_ != nullptr) {
     delete out_;
   }
   out_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && in_ != nullptr) {
+  if (GetArena() == nullptr && in_ != nullptr) {
     delete in_;
   }
   in_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Entrance::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -866,7 +875,9 @@ const char* Entrance::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -914,7 +925,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.Entrance)
   return target;
@@ -976,13 +987,12 @@ void Entrance::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Entrance::MergeFrom(const Entrance& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.Entrance)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.has_out()) {
     _internal_mutable_out()->::mruv::spots::Spot::MergeFrom(from._internal_out());
@@ -1012,11 +1022,14 @@ bool Entrance::IsInitialized() const {
 
 void Entrance::InternalSwap(Entrance* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(out_, other->out_);
-  swap(in_, other->in_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Entrance, in_)
+      + sizeof(Entrance::in_)
+      - PROTOBUF_FIELD_OFFSET(Entrance, out_)>(
+          reinterpret_cast<char*>(&out_),
+          reinterpret_cast<char*>(&other->out_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Entrance::GetMetadata() const {
@@ -1047,29 +1060,30 @@ CreateEntranceRequest::_Internal::in(const CreateEntranceRequest* msg) {
   return *msg->in_;
 }
 void CreateEntranceRequest::clear_out() {
-  if (GetArenaNoVirtual() == nullptr && out_ != nullptr) {
+  if (GetArena() == nullptr && out_ != nullptr) {
     delete out_;
   }
   out_ = nullptr;
 }
 void CreateEntranceRequest::clear_in() {
-  if (GetArenaNoVirtual() == nullptr && in_ != nullptr) {
+  if (GetArena() == nullptr && in_ != nullptr) {
     delete in_;
   }
   in_ = nullptr;
 }
-CreateEntranceRequest::CreateEntranceRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CreateEntranceRequest::CreateEntranceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.CreateEntranceRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.CreateEntranceRequest)
 }
 CreateEntranceRequest::CreateEntranceRequest(const CreateEntranceRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   if (from._internal_has_out()) {
     out_ = new ::mruv::spots::Spot(*from.out_);
@@ -1095,14 +1109,22 @@ void CreateEntranceRequest::SharedCtor() {
 CreateEntranceRequest::~CreateEntranceRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.CreateEntranceRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CreateEntranceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete out_;
   if (this != internal_default_instance()) delete in_;
 }
 
+void CreateEntranceRequest::ArenaDtor(void* object) {
+  CreateEntranceRequest* _this = reinterpret_cast< CreateEntranceRequest* >(object);
+  (void)_this;
+}
+void CreateEntranceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateEntranceRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1118,20 +1140,21 @@ void CreateEntranceRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && out_ != nullptr) {
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && out_ != nullptr) {
     delete out_;
   }
   out_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && in_ != nullptr) {
+  if (GetArena() == nullptr && in_ != nullptr) {
     delete in_;
   }
   in_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CreateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1166,7 +1189,9 @@ const char* CreateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1214,7 +1239,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.CreateEntranceRequest)
   return target;
@@ -1276,13 +1301,12 @@ void CreateEntranceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void CreateEntranceRequest::MergeFrom(const CreateEntranceRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.CreateEntranceRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.has_out()) {
     _internal_mutable_out()->::mruv::spots::Spot::MergeFrom(from._internal_out());
@@ -1312,11 +1336,14 @@ bool CreateEntranceRequest::IsInitialized() const {
 
 void CreateEntranceRequest::InternalSwap(CreateEntranceRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(out_, other->out_);
-  swap(in_, other->in_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CreateEntranceRequest, in_)
+      + sizeof(CreateEntranceRequest::in_)
+      - PROTOBUF_FIELD_OFFSET(CreateEntranceRequest, out_)>(
+          reinterpret_cast<char*>(&out_),
+          reinterpret_cast<char*>(&other->out_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CreateEntranceRequest::GetMetadata() const {
@@ -1332,15 +1359,15 @@ class CreateEntranceResponse::_Internal {
  public:
 };
 
-CreateEntranceResponse::CreateEntranceResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CreateEntranceResponse::CreateEntranceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.CreateEntranceResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.CreateEntranceResponse)
 }
 CreateEntranceResponse::CreateEntranceResponse(const CreateEntranceResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.CreateEntranceResponse)
 }
@@ -1352,11 +1379,19 @@ void CreateEntranceResponse::SharedCtor() {
 CreateEntranceResponse::~CreateEntranceResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.CreateEntranceResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CreateEntranceResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CreateEntranceResponse::ArenaDtor(void* object) {
+  CreateEntranceResponse* _this = reinterpret_cast< CreateEntranceResponse* >(object);
+  (void)_this;
+}
+void CreateEntranceResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CreateEntranceResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1373,11 +1408,12 @@ void CreateEntranceResponse::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CreateEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1386,7 +1422,7 @@ const char* CreateEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1396,7 +1432,9 @@ const char* CreateEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1424,7 +1462,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.CreateEntranceResponse)
   return target;
@@ -1472,7 +1510,7 @@ void CreateEntranceResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void CreateEntranceResponse::MergeFrom(const CreateEntranceResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.CreateEntranceResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1501,7 +1539,7 @@ bool CreateEntranceResponse::IsInitialized() const {
 
 void CreateEntranceResponse::InternalSwap(CreateEntranceResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1518,15 +1556,15 @@ class GetEntranceRequest::_Internal {
  public:
 };
 
-GetEntranceRequest::GetEntranceRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetEntranceRequest::GetEntranceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.GetEntranceRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.GetEntranceRequest)
 }
 GetEntranceRequest::GetEntranceRequest(const GetEntranceRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.GetEntranceRequest)
 }
@@ -1538,11 +1576,19 @@ void GetEntranceRequest::SharedCtor() {
 GetEntranceRequest::~GetEntranceRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.GetEntranceRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetEntranceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetEntranceRequest::ArenaDtor(void* object) {
+  GetEntranceRequest* _this = reinterpret_cast< GetEntranceRequest* >(object);
+  (void)_this;
+}
+void GetEntranceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetEntranceRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1559,11 +1605,12 @@ void GetEntranceRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1572,7 +1619,7 @@ const char* GetEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1582,7 +1629,9 @@ const char* GetEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1610,7 +1659,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.GetEntranceRequest)
   return target;
@@ -1658,7 +1707,7 @@ void GetEntranceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void GetEntranceRequest::MergeFrom(const GetEntranceRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.GetEntranceRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1687,7 +1736,7 @@ bool GetEntranceRequest::IsInitialized() const {
 
 void GetEntranceRequest::InternalSwap(GetEntranceRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1719,29 +1768,30 @@ GetEntranceResponse::_Internal::out_spot(const GetEntranceResponse* msg) {
   return *msg->out_spot_;
 }
 void GetEntranceResponse::clear_in_spot() {
-  if (GetArenaNoVirtual() == nullptr && in_spot_ != nullptr) {
+  if (GetArena() == nullptr && in_spot_ != nullptr) {
     delete in_spot_;
   }
   in_spot_ = nullptr;
 }
 void GetEntranceResponse::clear_out_spot() {
-  if (GetArenaNoVirtual() == nullptr && out_spot_ != nullptr) {
+  if (GetArena() == nullptr && out_spot_ != nullptr) {
     delete out_spot_;
   }
   out_spot_ = nullptr;
 }
-GetEntranceResponse::GetEntranceResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetEntranceResponse::GetEntranceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.GetEntranceResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.GetEntranceResponse)
 }
 GetEntranceResponse::GetEntranceResponse(const GetEntranceResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_name().empty()) {
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
+      GetArena());
   }
   if (from._internal_has_in_spot()) {
     in_spot_ = new ::mruv::spots::Spot(*from.in_spot_);
@@ -1767,14 +1817,22 @@ void GetEntranceResponse::SharedCtor() {
 GetEntranceResponse::~GetEntranceResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.GetEntranceResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetEntranceResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete in_spot_;
   if (this != internal_default_instance()) delete out_spot_;
 }
 
+void GetEntranceResponse::ArenaDtor(void* object) {
+  GetEntranceResponse* _this = reinterpret_cast< GetEntranceResponse* >(object);
+  (void)_this;
+}
+void GetEntranceResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetEntranceResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1790,20 +1848,21 @@ void GetEntranceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && in_spot_ != nullptr) {
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && in_spot_ != nullptr) {
     delete in_spot_;
   }
   in_spot_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && out_spot_ != nullptr) {
+  if (GetArena() == nullptr && out_spot_ != nullptr) {
     delete out_spot_;
   }
   out_spot_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1838,7 +1897,9 @@ const char* GetEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1886,7 +1947,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.GetEntranceResponse)
   return target;
@@ -1948,13 +2009,12 @@ void GetEntranceResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void GetEntranceResponse::MergeFrom(const GetEntranceResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.GetEntranceResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.name().size() > 0) {
-
-    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+    _internal_set_name(from._internal_name());
   }
   if (from.has_in_spot()) {
     _internal_mutable_in_spot()->::mruv::spots::Spot::MergeFrom(from._internal_in_spot());
@@ -1984,11 +2044,14 @@ bool GetEntranceResponse::IsInitialized() const {
 
 void GetEntranceResponse::InternalSwap(GetEntranceResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(in_spot_, other->in_spot_);
-  swap(out_spot_, other->out_spot_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetEntranceResponse, out_spot_)
+      + sizeof(GetEntranceResponse::out_spot_)
+      - PROTOBUF_FIELD_OFFSET(GetEntranceResponse, in_spot_)>(
+          reinterpret_cast<char*>(&in_spot_),
+          reinterpret_cast<char*>(&other->in_spot_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEntranceResponse::GetMetadata() const {
@@ -2004,15 +2067,15 @@ class UpdateEntranceRequest::_Internal {
  public:
 };
 
-UpdateEntranceRequest::UpdateEntranceRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateEntranceRequest::UpdateEntranceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.UpdateEntranceRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.UpdateEntranceRequest)
 }
 UpdateEntranceRequest::UpdateEntranceRequest(const UpdateEntranceRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&out_spot_id_) -
     reinterpret_cast<char*>(&id_)) + sizeof(out_spot_id_));
@@ -2028,11 +2091,19 @@ void UpdateEntranceRequest::SharedCtor() {
 UpdateEntranceRequest::~UpdateEntranceRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.UpdateEntranceRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateEntranceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateEntranceRequest::ArenaDtor(void* object) {
+  UpdateEntranceRequest* _this = reinterpret_cast< UpdateEntranceRequest* >(object);
+  (void)_this;
+}
+void UpdateEntranceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateEntranceRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2051,11 +2122,12 @@ void UpdateEntranceRequest::Clear() {
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&out_spot_id_) -
       reinterpret_cast<char*>(&id_)) + sizeof(out_spot_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2064,21 +2136,21 @@ const char* UpdateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 in_spot_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          in_spot_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          in_spot_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 out_spot_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          out_spot_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          out_spot_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2088,7 +2160,9 @@ const char* UpdateEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2128,7 +2202,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.UpdateEntranceRequest)
   return target;
@@ -2190,7 +2264,7 @@ void UpdateEntranceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void UpdateEntranceRequest::MergeFrom(const UpdateEntranceRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.UpdateEntranceRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2225,10 +2299,13 @@ bool UpdateEntranceRequest::IsInitialized() const {
 
 void UpdateEntranceRequest::InternalSwap(UpdateEntranceRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
-  swap(in_spot_id_, other->in_spot_id_);
-  swap(out_spot_id_, other->out_spot_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UpdateEntranceRequest, out_spot_id_)
+      + sizeof(UpdateEntranceRequest::out_spot_id_)
+      - PROTOBUF_FIELD_OFFSET(UpdateEntranceRequest, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateEntranceRequest::GetMetadata() const {
@@ -2244,15 +2321,15 @@ class UpdateEntranceResponse::_Internal {
  public:
 };
 
-UpdateEntranceResponse::UpdateEntranceResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateEntranceResponse::UpdateEntranceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.UpdateEntranceResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.UpdateEntranceResponse)
 }
 UpdateEntranceResponse::UpdateEntranceResponse(const UpdateEntranceResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.UpdateEntranceResponse)
 }
 
@@ -2262,11 +2339,19 @@ void UpdateEntranceResponse::SharedCtor() {
 UpdateEntranceResponse::~UpdateEntranceResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.UpdateEntranceResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateEntranceResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateEntranceResponse::ArenaDtor(void* object) {
+  UpdateEntranceResponse* _this = reinterpret_cast< UpdateEntranceResponse* >(object);
+  (void)_this;
+}
+void UpdateEntranceResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateEntranceResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2282,11 +2367,12 @@ void UpdateEntranceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2295,7 +2381,9 @@ const char* UpdateEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -2315,7 +2403,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.UpdateEntranceResponse)
   return target;
@@ -2356,7 +2444,7 @@ void UpdateEntranceResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void UpdateEntranceResponse::MergeFrom(const UpdateEntranceResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.UpdateEntranceResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2382,7 +2470,7 @@ bool UpdateEntranceResponse::IsInitialized() const {
 
 void UpdateEntranceResponse::InternalSwap(UpdateEntranceResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateEntranceResponse::GetMetadata() const {
@@ -2398,15 +2486,15 @@ class DeleteEntranceRequest::_Internal {
  public:
 };
 
-DeleteEntranceRequest::DeleteEntranceRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeleteEntranceRequest::DeleteEntranceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.DeleteEntranceRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.DeleteEntranceRequest)
 }
 DeleteEntranceRequest::DeleteEntranceRequest(const DeleteEntranceRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.DeleteEntranceRequest)
 }
@@ -2418,11 +2506,19 @@ void DeleteEntranceRequest::SharedCtor() {
 DeleteEntranceRequest::~DeleteEntranceRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.DeleteEntranceRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeleteEntranceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteEntranceRequest::ArenaDtor(void* object) {
+  DeleteEntranceRequest* _this = reinterpret_cast< DeleteEntranceRequest* >(object);
+  (void)_this;
+}
+void DeleteEntranceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteEntranceRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2439,11 +2535,12 @@ void DeleteEntranceRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeleteEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2452,7 +2549,7 @@ const char* DeleteEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2462,7 +2559,9 @@ const char* DeleteEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2490,7 +2589,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.DeleteEntranceRequest)
   return target;
@@ -2538,7 +2637,7 @@ void DeleteEntranceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void DeleteEntranceRequest::MergeFrom(const DeleteEntranceRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.DeleteEntranceRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2567,7 +2666,7 @@ bool DeleteEntranceRequest::IsInitialized() const {
 
 void DeleteEntranceRequest::InternalSwap(DeleteEntranceRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -2584,15 +2683,15 @@ class DeleteEntranceResponse::_Internal {
  public:
 };
 
-DeleteEntranceResponse::DeleteEntranceResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DeleteEntranceResponse::DeleteEntranceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.DeleteEntranceResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.DeleteEntranceResponse)
 }
 DeleteEntranceResponse::DeleteEntranceResponse(const DeleteEntranceResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.DeleteEntranceResponse)
 }
 
@@ -2602,11 +2701,19 @@ void DeleteEntranceResponse::SharedCtor() {
 DeleteEntranceResponse::~DeleteEntranceResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.DeleteEntranceResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DeleteEntranceResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DeleteEntranceResponse::ArenaDtor(void* object) {
+  DeleteEntranceResponse* _this = reinterpret_cast< DeleteEntranceResponse* >(object);
+  (void)_this;
+}
+void DeleteEntranceResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DeleteEntranceResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2622,11 +2729,12 @@ void DeleteEntranceResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DeleteEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2635,7 +2743,9 @@ const char* DeleteEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -2655,7 +2765,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.DeleteEntranceResponse)
   return target;
@@ -2696,7 +2806,7 @@ void DeleteEntranceResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void DeleteEntranceResponse::MergeFrom(const DeleteEntranceResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.DeleteEntranceResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2722,7 +2832,7 @@ bool DeleteEntranceResponse::IsInitialized() const {
 
 void DeleteEntranceResponse::InternalSwap(DeleteEntranceResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteEntranceResponse::GetMetadata() const {
@@ -2738,15 +2848,15 @@ class LockRequest::_Internal {
  public:
 };
 
-LockRequest::LockRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+LockRequest::LockRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.LockRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.LockRequest)
 }
 LockRequest::LockRequest(const LockRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.LockRequest)
 }
@@ -2758,11 +2868,19 @@ void LockRequest::SharedCtor() {
 LockRequest::~LockRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.LockRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void LockRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void LockRequest::ArenaDtor(void* object) {
+  LockRequest* _this = reinterpret_cast< LockRequest* >(object);
+  (void)_this;
+}
+void LockRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LockRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2779,11 +2897,12 @@ void LockRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* LockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2792,7 +2911,7 @@ const char* LockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2802,7 +2921,9 @@ const char* LockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2830,7 +2951,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.LockRequest)
   return target;
@@ -2878,7 +2999,7 @@ void LockRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void LockRequest::MergeFrom(const LockRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.LockRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2907,7 +3028,7 @@ bool LockRequest::IsInitialized() const {
 
 void LockRequest::InternalSwap(LockRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -2924,15 +3045,15 @@ class LockResponse::_Internal {
  public:
 };
 
-LockResponse::LockResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+LockResponse::LockResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.LockResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.LockResponse)
 }
 LockResponse::LockResponse(const LockResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.LockResponse)
 }
 
@@ -2942,11 +3063,19 @@ void LockResponse::SharedCtor() {
 LockResponse::~LockResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.LockResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void LockResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void LockResponse::ArenaDtor(void* object) {
+  LockResponse* _this = reinterpret_cast< LockResponse* >(object);
+  (void)_this;
+}
+void LockResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LockResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2962,11 +3091,12 @@ void LockResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* LockResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2975,7 +3105,9 @@ const char* LockResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -2995,7 +3127,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.LockResponse)
   return target;
@@ -3036,7 +3168,7 @@ void LockResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void LockResponse::MergeFrom(const LockResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.LockResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3062,7 +3194,7 @@ bool LockResponse::IsInitialized() const {
 
 void LockResponse::InternalSwap(LockResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LockResponse::GetMetadata() const {
@@ -3078,15 +3210,15 @@ class UnlockRequest::_Internal {
  public:
 };
 
-UnlockRequest::UnlockRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UnlockRequest::UnlockRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.UnlockRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.UnlockRequest)
 }
 UnlockRequest::UnlockRequest(const UnlockRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.UnlockRequest)
 }
@@ -3098,11 +3230,19 @@ void UnlockRequest::SharedCtor() {
 UnlockRequest::~UnlockRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.UnlockRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UnlockRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UnlockRequest::ArenaDtor(void* object) {
+  UnlockRequest* _this = reinterpret_cast< UnlockRequest* >(object);
+  (void)_this;
+}
+void UnlockRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnlockRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3119,11 +3259,12 @@ void UnlockRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UnlockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3132,7 +3273,7 @@ const char* UnlockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3142,7 +3283,9 @@ const char* UnlockRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3170,7 +3313,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.UnlockRequest)
   return target;
@@ -3218,7 +3361,7 @@ void UnlockRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void UnlockRequest::MergeFrom(const UnlockRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.UnlockRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3247,7 +3390,7 @@ bool UnlockRequest::IsInitialized() const {
 
 void UnlockRequest::InternalSwap(UnlockRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -3264,15 +3407,15 @@ class UnlockResponse::_Internal {
  public:
 };
 
-UnlockResponse::UnlockResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UnlockResponse::UnlockResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.UnlockResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.UnlockResponse)
 }
 UnlockResponse::UnlockResponse(const UnlockResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.UnlockResponse)
 }
 
@@ -3282,11 +3425,19 @@ void UnlockResponse::SharedCtor() {
 UnlockResponse::~UnlockResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.UnlockResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UnlockResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UnlockResponse::ArenaDtor(void* object) {
+  UnlockResponse* _this = reinterpret_cast< UnlockResponse* >(object);
+  (void)_this;
+}
+void UnlockResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UnlockResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3302,11 +3453,12 @@ void UnlockResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UnlockResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3315,7 +3467,9 @@ const char* UnlockResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -3335,7 +3489,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.UnlockResponse)
   return target;
@@ -3376,7 +3530,7 @@ void UnlockResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void UnlockResponse::MergeFrom(const UnlockResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.UnlockResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3402,7 +3556,7 @@ bool UnlockResponse::IsInitialized() const {
 
 void UnlockResponse::InternalSwap(UnlockResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UnlockResponse::GetMetadata() const {
@@ -3418,15 +3572,15 @@ class FindNearestEntranceRequest::_Internal {
  public:
 };
 
-FindNearestEntranceRequest::FindNearestEntranceRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+FindNearestEntranceRequest::FindNearestEntranceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.FindNearestEntranceRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.FindNearestEntranceRequest)
 }
 FindNearestEntranceRequest::FindNearestEntranceRequest(const FindNearestEntranceRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&x_, &from.x_,
     static_cast<size_t>(reinterpret_cast<char*>(&max_distance_) -
     reinterpret_cast<char*>(&x_)) + sizeof(max_distance_));
@@ -3442,11 +3596,19 @@ void FindNearestEntranceRequest::SharedCtor() {
 FindNearestEntranceRequest::~FindNearestEntranceRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.FindNearestEntranceRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FindNearestEntranceRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FindNearestEntranceRequest::ArenaDtor(void* object) {
+  FindNearestEntranceRequest* _this = reinterpret_cast< FindNearestEntranceRequest* >(object);
+  (void)_this;
+}
+void FindNearestEntranceRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FindNearestEntranceRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3465,11 +3627,12 @@ void FindNearestEntranceRequest::Clear() {
   ::memset(&x_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&max_distance_) -
       reinterpret_cast<char*>(&x_)) + sizeof(max_distance_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* FindNearestEntranceRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3509,7 +3672,9 @@ const char* FindNearestEntranceRequest::_InternalParse(const char* ptr, ::PROTOB
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3555,7 +3720,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.FindNearestEntranceRequest)
   return target;
@@ -3616,7 +3781,7 @@ void FindNearestEntranceRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messag
 void FindNearestEntranceRequest::MergeFrom(const FindNearestEntranceRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.FindNearestEntranceRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3654,11 +3819,13 @@ bool FindNearestEntranceRequest::IsInitialized() const {
 
 void FindNearestEntranceRequest::InternalSwap(FindNearestEntranceRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(x_, other->x_);
-  swap(y_, other->y_);
-  swap(z_, other->z_);
-  swap(max_distance_, other->max_distance_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(FindNearestEntranceRequest, max_distance_)
+      + sizeof(FindNearestEntranceRequest::max_distance_)
+      - PROTOBUF_FIELD_OFFSET(FindNearestEntranceRequest, x_)>(
+          reinterpret_cast<char*>(&x_),
+          reinterpret_cast<char*>(&other->x_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FindNearestEntranceRequest::GetMetadata() const {
@@ -3674,15 +3841,15 @@ class FindNearestEntranceResponse::_Internal {
  public:
 };
 
-FindNearestEntranceResponse::FindNearestEntranceResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+FindNearestEntranceResponse::FindNearestEntranceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.FindNearestEntranceResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.FindNearestEntranceResponse)
 }
 FindNearestEntranceResponse::FindNearestEntranceResponse(const FindNearestEntranceResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&inside_) -
     reinterpret_cast<char*>(&id_)) + sizeof(inside_));
@@ -3698,11 +3865,19 @@ void FindNearestEntranceResponse::SharedCtor() {
 FindNearestEntranceResponse::~FindNearestEntranceResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.FindNearestEntranceResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FindNearestEntranceResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FindNearestEntranceResponse::ArenaDtor(void* object) {
+  FindNearestEntranceResponse* _this = reinterpret_cast< FindNearestEntranceResponse* >(object);
+  (void)_this;
+}
+void FindNearestEntranceResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FindNearestEntranceResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3721,11 +3896,12 @@ void FindNearestEntranceResponse::Clear() {
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&inside_) -
       reinterpret_cast<char*>(&id_)) + sizeof(inside_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* FindNearestEntranceResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3734,7 +3910,7 @@ const char* FindNearestEntranceResponse::_InternalParse(const char* ptr, ::PROTO
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3748,7 +3924,7 @@ const char* FindNearestEntranceResponse::_InternalParse(const char* ptr, ::PROTO
       // bool inside = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          inside_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          inside_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3758,7 +3934,9 @@ const char* FindNearestEntranceResponse::_InternalParse(const char* ptr, ::PROTO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3798,7 +3976,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.FindNearestEntranceResponse)
   return target;
@@ -3856,7 +4034,7 @@ void FindNearestEntranceResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messa
 void FindNearestEntranceResponse::MergeFrom(const FindNearestEntranceResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.FindNearestEntranceResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3891,10 +4069,13 @@ bool FindNearestEntranceResponse::IsInitialized() const {
 
 void FindNearestEntranceResponse::InternalSwap(FindNearestEntranceResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
-  swap(distance_, other->distance_);
-  swap(inside_, other->inside_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(FindNearestEntranceResponse, inside_)
+      + sizeof(FindNearestEntranceResponse::inside_)
+      - PROTOBUF_FIELD_OFFSET(FindNearestEntranceResponse, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FindNearestEntranceResponse::GetMetadata() const {
@@ -3910,15 +4091,15 @@ class EnterRequest::_Internal {
  public:
 };
 
-EnterRequest::EnterRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+EnterRequest::EnterRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.EnterRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.EnterRequest)
 }
 EnterRequest::EnterRequest(const EnterRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.EnterRequest)
 }
@@ -3930,11 +4111,19 @@ void EnterRequest::SharedCtor() {
 EnterRequest::~EnterRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.EnterRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void EnterRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void EnterRequest::ArenaDtor(void* object) {
+  EnterRequest* _this = reinterpret_cast< EnterRequest* >(object);
+  (void)_this;
+}
+void EnterRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EnterRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3951,11 +4140,12 @@ void EnterRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* EnterRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3964,7 +4154,7 @@ const char* EnterRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3974,7 +4164,9 @@ const char* EnterRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4002,7 +4194,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.EnterRequest)
   return target;
@@ -4050,7 +4242,7 @@ void EnterRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void EnterRequest::MergeFrom(const EnterRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.EnterRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4079,7 +4271,7 @@ bool EnterRequest::IsInitialized() const {
 
 void EnterRequest::InternalSwap(EnterRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -4096,15 +4288,15 @@ class EnterResponse::_Internal {
  public:
 };
 
-EnterResponse::EnterResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+EnterResponse::EnterResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.EnterResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.EnterResponse)
 }
 EnterResponse::EnterResponse(const EnterResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.EnterResponse)
 }
 
@@ -4114,11 +4306,19 @@ void EnterResponse::SharedCtor() {
 EnterResponse::~EnterResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.EnterResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void EnterResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void EnterResponse::ArenaDtor(void* object) {
+  EnterResponse* _this = reinterpret_cast< EnterResponse* >(object);
+  (void)_this;
+}
+void EnterResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EnterResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4134,11 +4334,12 @@ void EnterResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* EnterResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4147,7 +4348,9 @@ const char* EnterResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4167,7 +4370,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.EnterResponse)
   return target;
@@ -4208,7 +4411,7 @@ void EnterResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void EnterResponse::MergeFrom(const EnterResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.EnterResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4234,7 +4437,7 @@ bool EnterResponse::IsInitialized() const {
 
 void EnterResponse::InternalSwap(EnterResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EnterResponse::GetMetadata() const {
@@ -4250,15 +4453,15 @@ class ExitRequest::_Internal {
  public:
 };
 
-ExitRequest::ExitRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ExitRequest::ExitRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.ExitRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.ExitRequest)
 }
 ExitRequest::ExitRequest(const ExitRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.ExitRequest)
 }
@@ -4270,11 +4473,19 @@ void ExitRequest::SharedCtor() {
 ExitRequest::~ExitRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.ExitRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ExitRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ExitRequest::ArenaDtor(void* object) {
+  ExitRequest* _this = reinterpret_cast< ExitRequest* >(object);
+  (void)_this;
+}
+void ExitRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ExitRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4291,11 +4502,12 @@ void ExitRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ExitRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4304,7 +4516,7 @@ const char* ExitRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4314,7 +4526,9 @@ const char* ExitRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4342,7 +4556,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.ExitRequest)
   return target;
@@ -4390,7 +4604,7 @@ void ExitRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ExitRequest::MergeFrom(const ExitRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.ExitRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4419,7 +4633,7 @@ bool ExitRequest::IsInitialized() const {
 
 void ExitRequest::InternalSwap(ExitRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -4436,15 +4650,15 @@ class ExitResponse::_Internal {
  public:
 };
 
-ExitResponse::ExitResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ExitResponse::ExitResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.ExitResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.ExitResponse)
 }
 ExitResponse::ExitResponse(const ExitResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.ExitResponse)
 }
 
@@ -4454,11 +4668,19 @@ void ExitResponse::SharedCtor() {
 ExitResponse::~ExitResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.ExitResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ExitResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ExitResponse::ArenaDtor(void* object) {
+  ExitResponse* _this = reinterpret_cast< ExitResponse* >(object);
+  (void)_this;
+}
+void ExitResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ExitResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4474,11 +4696,12 @@ void ExitResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ExitResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4487,7 +4710,9 @@ const char* ExitResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -4507,7 +4732,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.ExitResponse)
   return target;
@@ -4548,7 +4773,7 @@ void ExitResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ExitResponse::MergeFrom(const ExitResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.ExitResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4574,7 +4799,7 @@ bool ExitResponse::IsInitialized() const {
 
 void ExitResponse::InternalSwap(ExitResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ExitResponse::GetMetadata() const {
@@ -4590,15 +4815,15 @@ class FetchAllEntrancesRequest::_Internal {
  public:
 };
 
-FetchAllEntrancesRequest::FetchAllEntrancesRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+FetchAllEntrancesRequest::FetchAllEntrancesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.FetchAllEntrancesRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.FetchAllEntrancesRequest)
 }
 FetchAllEntrancesRequest::FetchAllEntrancesRequest(const FetchAllEntrancesRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   chunk_size_ = from.chunk_size_;
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.FetchAllEntrancesRequest)
 }
@@ -4610,11 +4835,19 @@ void FetchAllEntrancesRequest::SharedCtor() {
 FetchAllEntrancesRequest::~FetchAllEntrancesRequest() {
   // @@protoc_insertion_point(destructor:mruv.entrances.FetchAllEntrancesRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FetchAllEntrancesRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FetchAllEntrancesRequest::ArenaDtor(void* object) {
+  FetchAllEntrancesRequest* _this = reinterpret_cast< FetchAllEntrancesRequest* >(object);
+  (void)_this;
+}
+void FetchAllEntrancesRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FetchAllEntrancesRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4631,11 +4864,12 @@ void FetchAllEntrancesRequest::Clear() {
   (void) cached_has_bits;
 
   chunk_size_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* FetchAllEntrancesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4644,7 +4878,7 @@ const char* FetchAllEntrancesRequest::_InternalParse(const char* ptr, ::PROTOBUF
       // uint32 chunk_size = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          chunk_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4654,7 +4888,9 @@ const char* FetchAllEntrancesRequest::_InternalParse(const char* ptr, ::PROTOBUF
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4682,7 +4918,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.FetchAllEntrancesRequest)
   return target;
@@ -4730,7 +4966,7 @@ void FetchAllEntrancesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message&
 void FetchAllEntrancesRequest::MergeFrom(const FetchAllEntrancesRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.FetchAllEntrancesRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4759,7 +4995,7 @@ bool FetchAllEntrancesRequest::IsInitialized() const {
 
 void FetchAllEntrancesRequest::InternalSwap(FetchAllEntrancesRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(chunk_size_, other->chunk_size_);
 }
 
@@ -4793,15 +5029,16 @@ class FetchAllEntrancesResponse::_Internal {
  public:
 };
 
-FetchAllEntrancesResponse::FetchAllEntrancesResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+FetchAllEntrancesResponse::FetchAllEntrancesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  entrances_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.entrances.FetchAllEntrancesResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.entrances.FetchAllEntrancesResponse)
 }
 FetchAllEntrancesResponse::FetchAllEntrancesResponse(const FetchAllEntrancesResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   entrances_.MergeFrom(from.entrances_);
   // @@protoc_insertion_point(copy_constructor:mruv.entrances.FetchAllEntrancesResponse)
 }
@@ -4813,11 +5050,19 @@ void FetchAllEntrancesResponse::SharedCtor() {
 FetchAllEntrancesResponse::~FetchAllEntrancesResponse() {
   // @@protoc_insertion_point(destructor:mruv.entrances.FetchAllEntrancesResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FetchAllEntrancesResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FetchAllEntrancesResponse::ArenaDtor(void* object) {
+  FetchAllEntrancesResponse* _this = reinterpret_cast< FetchAllEntrancesResponse* >(object);
+  (void)_this;
+}
+void FetchAllEntrancesResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FetchAllEntrancesResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4834,11 +5079,12 @@ void FetchAllEntrancesResponse::Clear() {
   (void) cached_has_bits;
 
   entrances_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* FetchAllEntrancesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4862,7 +5108,9 @@ const char* FetchAllEntrancesResponse::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4915,7 +5163,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.entrances.FetchAllEntrancesResponse)
   return target;
@@ -4965,7 +5213,7 @@ void FetchAllEntrancesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void FetchAllEntrancesResponse::MergeFrom(const FetchAllEntrancesResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.entrances.FetchAllEntrancesResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4992,7 +5240,7 @@ bool FetchAllEntrancesResponse::IsInitialized() const {
 
 void FetchAllEntrancesResponse::InternalSwap(FetchAllEntrancesResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   entrances_.Swap(&other->entrances_);
 }
 
@@ -5006,70 +5254,70 @@ void FetchAllEntrancesResponse::InternalSwap(FetchAllEntrancesResponse* other) {
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::entrances::Entrance* Arena::CreateMaybeMessage< ::mruv::entrances::Entrance >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::Entrance >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::Entrance >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::CreateEntranceRequest* Arena::CreateMaybeMessage< ::mruv::entrances::CreateEntranceRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::CreateEntranceRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::CreateEntranceRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::CreateEntranceResponse* Arena::CreateMaybeMessage< ::mruv::entrances::CreateEntranceResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::CreateEntranceResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::CreateEntranceResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::GetEntranceRequest* Arena::CreateMaybeMessage< ::mruv::entrances::GetEntranceRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::GetEntranceRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::GetEntranceRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::GetEntranceResponse* Arena::CreateMaybeMessage< ::mruv::entrances::GetEntranceResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::GetEntranceResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::GetEntranceResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::UpdateEntranceRequest* Arena::CreateMaybeMessage< ::mruv::entrances::UpdateEntranceRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::UpdateEntranceRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::UpdateEntranceRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::UpdateEntranceResponse* Arena::CreateMaybeMessage< ::mruv::entrances::UpdateEntranceResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::UpdateEntranceResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::UpdateEntranceResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::DeleteEntranceRequest* Arena::CreateMaybeMessage< ::mruv::entrances::DeleteEntranceRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::DeleteEntranceRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::DeleteEntranceRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::DeleteEntranceResponse* Arena::CreateMaybeMessage< ::mruv::entrances::DeleteEntranceResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::DeleteEntranceResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::DeleteEntranceResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::LockRequest* Arena::CreateMaybeMessage< ::mruv::entrances::LockRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::LockRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::LockRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::LockResponse* Arena::CreateMaybeMessage< ::mruv::entrances::LockResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::LockResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::LockResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::UnlockRequest* Arena::CreateMaybeMessage< ::mruv::entrances::UnlockRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::UnlockRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::UnlockRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::UnlockResponse* Arena::CreateMaybeMessage< ::mruv::entrances::UnlockResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::UnlockResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::UnlockResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::FindNearestEntranceRequest* Arena::CreateMaybeMessage< ::mruv::entrances::FindNearestEntranceRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::FindNearestEntranceRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::FindNearestEntranceRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::FindNearestEntranceResponse* Arena::CreateMaybeMessage< ::mruv::entrances::FindNearestEntranceResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::FindNearestEntranceResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::FindNearestEntranceResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::EnterRequest* Arena::CreateMaybeMessage< ::mruv::entrances::EnterRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::EnterRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::EnterRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::EnterResponse* Arena::CreateMaybeMessage< ::mruv::entrances::EnterResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::EnterResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::EnterResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::ExitRequest* Arena::CreateMaybeMessage< ::mruv::entrances::ExitRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::ExitRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::ExitRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::ExitResponse* Arena::CreateMaybeMessage< ::mruv::entrances::ExitResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::ExitResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::ExitResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::FetchAllEntrancesRequest* Arena::CreateMaybeMessage< ::mruv::entrances::FetchAllEntrancesRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::FetchAllEntrancesRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::FetchAllEntrancesRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse* Arena::CreateMaybeMessage< ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::FetchAllEntrancesResponse_EntrancesEntry_DoNotUse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::entrances::FetchAllEntrancesResponse* Arena::CreateMaybeMessage< ::mruv::entrances::FetchAllEntrancesResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::entrances::FetchAllEntrancesResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::entrances::FetchAllEntrancesResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

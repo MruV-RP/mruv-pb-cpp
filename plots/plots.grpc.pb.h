@@ -75,55 +75,31 @@ class MruVPlotsService final {
       virtual ~experimental_async_interface() {}
       // Create a plot.
       virtual void CreatePlot(::grpc::ClientContext* context, const ::mruv::plots::CreatePlotRequest* request, ::mruv::plots::CreatePlotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::CreatePlotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreatePlot(::grpc::ClientContext* context, const ::mruv::plots::CreatePlotRequest* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreatePlot(::grpc::ClientContext* context, const ::mruv::plots::CreatePlotRequest* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a plot.
       virtual void GetPlot(::grpc::ClientContext* context, const ::mruv::plots::GetPlotRequest* request, ::mruv::plots::GetPlotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetPlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::GetPlotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetPlot(::grpc::ClientContext* context, const ::mruv::plots::GetPlotRequest* request, ::mruv::plots::GetPlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetPlot(::grpc::ClientContext* context, const ::mruv::plots::GetPlotRequest* request, ::mruv::plots::GetPlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::GetPlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetPlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::GetPlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a plot.
       virtual void UpdatePlot(::grpc::ClientContext* context, const ::mruv::plots::UpdatePlotRequest* request, ::mruv::plots::UpdatePlotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::UpdatePlotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdatePlot(::grpc::ClientContext* context, const ::mruv::plots::UpdatePlotRequest* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdatePlot(::grpc::ClientContext* context, const ::mruv::plots::UpdatePlotRequest* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a plot.
       virtual void DeletePlot(::grpc::ClientContext* context, const ::mruv::plots::DeletePlotRequest* request, ::mruv::plots::DeletePlotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeletePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::DeletePlotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeletePlot(::grpc::ClientContext* context, const ::mruv::plots::DeletePlotRequest* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeletePlot(::grpc::ClientContext* context, const ::mruv::plots::DeletePlotRequest* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeletePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeletePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -178,52 +154,28 @@ class MruVPlotsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreatePlot(::grpc::ClientContext* context, const ::mruv::plots::CreatePlotRequest* request, ::mruv::plots::CreatePlotResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::CreatePlotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreatePlot(::grpc::ClientContext* context, const ::mruv::plots::CreatePlotRequest* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreatePlot(::grpc::ClientContext* context, const ::mruv::plots::CreatePlotRequest* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::CreatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetPlot(::grpc::ClientContext* context, const ::mruv::plots::GetPlotRequest* request, ::mruv::plots::GetPlotResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetPlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::GetPlotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetPlot(::grpc::ClientContext* context, const ::mruv::plots::GetPlotRequest* request, ::mruv::plots::GetPlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetPlot(::grpc::ClientContext* context, const ::mruv::plots::GetPlotRequest* request, ::mruv::plots::GetPlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::GetPlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetPlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::GetPlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdatePlot(::grpc::ClientContext* context, const ::mruv::plots::UpdatePlotRequest* request, ::mruv::plots::UpdatePlotResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::UpdatePlotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdatePlot(::grpc::ClientContext* context, const ::mruv::plots::UpdatePlotRequest* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdatePlot(::grpc::ClientContext* context, const ::mruv::plots::UpdatePlotRequest* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdatePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::UpdatePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeletePlot(::grpc::ClientContext* context, const ::mruv::plots::DeletePlotRequest* request, ::mruv::plots::DeletePlotResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeletePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::DeletePlotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeletePlot(::grpc::ClientContext* context, const ::mruv::plots::DeletePlotRequest* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeletePlot(::grpc::ClientContext* context, const ::mruv::plots::DeletePlotRequest* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeletePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeletePlot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::plots::DeletePlotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -357,7 +309,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -372,7 +324,7 @@ class MruVPlotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreatePlot() override {
@@ -404,7 +356,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -419,7 +371,7 @@ class MruVPlotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPlot() override {
@@ -451,7 +403,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -466,7 +418,7 @@ class MruVPlotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdatePlot() override {
@@ -498,7 +450,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -513,7 +465,7 @@ class MruVPlotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeletePlot() override {
@@ -698,7 +650,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -736,7 +688,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -774,7 +726,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -812,7 +764,7 @@ class MruVPlotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -847,8 +799,8 @@ class MruVPlotsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::plots::CreatePlotRequest, ::mruv::plots::CreatePlotResponse>* streamer) {
                        return this->StreamedCreatePlot(context,
                          streamer);
@@ -874,8 +826,8 @@ class MruVPlotsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::plots::GetPlotRequest, ::mruv::plots::GetPlotResponse>* streamer) {
                        return this->StreamedGetPlot(context,
                          streamer);
@@ -901,8 +853,8 @@ class MruVPlotsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::plots::UpdatePlotRequest, ::mruv::plots::UpdatePlotResponse>* streamer) {
                        return this->StreamedUpdatePlot(context,
                          streamer);
@@ -928,8 +880,8 @@ class MruVPlotsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::plots::DeletePlotRequest, ::mruv::plots::DeletePlotResponse>* streamer) {
                        return this->StreamedDeletePlot(context,
                          streamer);

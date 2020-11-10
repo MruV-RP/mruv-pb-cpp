@@ -92,82 +92,46 @@ class MruVOrganizationsService final {
       virtual ~experimental_async_interface() {}
       // Create a organization.
       virtual void CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get organization.
       virtual void GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update organization.
       virtual void UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete organization.
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Assign an organization leader. Leader is a main administrator of a organization, have all rights to manage organization.
       // If the organization leader already exists, the leader will be overwritten.
       virtual void AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       //
       virtual void UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -240,76 +204,40 @@ class MruVOrganizationsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::CreateOrganizationRequest* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::CreateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetOrganization(::grpc::ClientContext* context, const ::mruv::organizations::GetOrganizationRequest* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::GetOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateOrganization(::grpc::ClientContext* context, const ::mruv::organizations::UpdateOrganizationRequest* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UpdateOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteOrganization(::grpc::ClientContext* context, const ::mruv::organizations::DeleteOrganizationRequest* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteOrganization(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::DeleteOrganizationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, std::function<void(::grpc::Status)>) override;
-      void AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void AssignLeader(::grpc::ClientContext* context, const ::mruv::organizations::AssignLeaderRequest* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AssignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::AssignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, std::function<void(::grpc::Status)>) override;
-      void UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UnassignLeader(::grpc::ClientContext* context, const ::mruv::organizations::UnassignLeaderRequest* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UnassignLeader(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::organizations::UnassignLeaderResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -494,7 +422,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -509,7 +437,7 @@ class MruVOrganizationsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateOrganization() override {
@@ -541,7 +469,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -556,7 +484,7 @@ class MruVOrganizationsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetOrganization() override {
@@ -588,7 +516,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -603,7 +531,7 @@ class MruVOrganizationsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateOrganization() override {
@@ -635,7 +563,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -650,7 +578,7 @@ class MruVOrganizationsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteOrganization() override {
@@ -682,7 +610,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -697,7 +625,7 @@ class MruVOrganizationsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AssignLeader() override {
@@ -729,7 +657,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -744,7 +672,7 @@ class MruVOrganizationsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UnassignLeader() override {
@@ -1003,7 +931,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1041,7 +969,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1079,7 +1007,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1117,7 +1045,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1155,7 +1083,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1193,7 +1121,7 @@ class MruVOrganizationsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1228,8 +1156,8 @@ class MruVOrganizationsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::organizations::CreateOrganizationRequest, ::mruv::organizations::CreateOrganizationResponse>* streamer) {
                        return this->StreamedCreateOrganization(context,
                          streamer);
@@ -1255,8 +1183,8 @@ class MruVOrganizationsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::organizations::GetOrganizationRequest, ::mruv::organizations::GetOrganizationResponse>* streamer) {
                        return this->StreamedGetOrganization(context,
                          streamer);
@@ -1282,8 +1210,8 @@ class MruVOrganizationsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::organizations::UpdateOrganizationRequest, ::mruv::organizations::UpdateOrganizationResponse>* streamer) {
                        return this->StreamedUpdateOrganization(context,
                          streamer);
@@ -1309,8 +1237,8 @@ class MruVOrganizationsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::organizations::DeleteOrganizationRequest, ::mruv::organizations::DeleteOrganizationResponse>* streamer) {
                        return this->StreamedDeleteOrganization(context,
                          streamer);
@@ -1336,8 +1264,8 @@ class MruVOrganizationsService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::organizations::AssignLeaderRequest, ::mruv::organizations::AssignLeaderResponse>* streamer) {
                        return this->StreamedAssignLeader(context,
                          streamer);
@@ -1363,8 +1291,8 @@ class MruVOrganizationsService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::organizations::UnassignLeaderRequest, ::mruv::organizations::UnassignLeaderResponse>* streamer) {
                        return this->StreamedUnassignLeader(context,
                          streamer);

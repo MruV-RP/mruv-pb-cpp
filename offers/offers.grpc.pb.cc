@@ -49,27 +49,22 @@ MruVOffersService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
 }
 
 void MruVOffersService::Stub::experimental_async::CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOffer_, context, request, response, std::move(f));
-}
-
-void MruVOffersService::Stub::experimental_async::CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOffer_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateOffer_, context, request, response, std::move(f));
 }
 
 void MruVOffersService::Stub::experimental_async::CreateOffer(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateOffer_, context, request, response, reactor);
-}
-
-void MruVOffersService::Stub::experimental_async::CreateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::CreateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateOffer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::offers::CreateOfferResponse>* MruVOffersService::Stub::AsyncCreateOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::CreateOfferResponse>::Create(channel_.get(), cq, rpcmethod_CreateOffer_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateOffer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::offers::CreateOfferResponse>* MruVOffersService::Stub::PrepareAsyncCreateOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::CreateOfferResponse>::Create(channel_.get(), cq, rpcmethod_CreateOffer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::CreateOfferResponse>::Create(channel_.get(), cq, rpcmethod_CreateOffer_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::offers::CreateOfferResponse>* MruVOffersService::Stub::AsyncCreateOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::CreateOfferRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateOfferRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOffersService::Stub::GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest& request, ::mruv::offers::GetOfferResponse* response) {
@@ -77,27 +72,22 @@ void MruVOffersService::Stub::experimental_async::CreateOffer(::grpc::ClientCont
 }
 
 void MruVOffersService::Stub::experimental_async::GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOffer_, context, request, response, std::move(f));
-}
-
-void MruVOffersService::Stub::experimental_async::GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOffer_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetOffer_, context, request, response, std::move(f));
 }
 
 void MruVOffersService::Stub::experimental_async::GetOffer(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest* request, ::mruv::offers::GetOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOffer_, context, request, response, reactor);
-}
-
-void MruVOffersService::Stub::experimental_async::GetOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::GetOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOffer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::offers::GetOfferResponse>* MruVOffersService::Stub::AsyncGetOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::GetOfferResponse>::Create(channel_.get(), cq, rpcmethod_GetOffer_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetOffer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::offers::GetOfferResponse>* MruVOffersService::Stub::PrepareAsyncGetOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::GetOfferResponse>::Create(channel_.get(), cq, rpcmethod_GetOffer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::GetOfferResponse>::Create(channel_.get(), cq, rpcmethod_GetOffer_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::offers::GetOfferResponse>* MruVOffersService::Stub::AsyncGetOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::GetOfferRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetOfferRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOffersService::Stub::UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest& request, ::mruv::offers::UpdateOfferResponse* response) {
@@ -105,27 +95,22 @@ void MruVOffersService::Stub::experimental_async::GetOffer(::grpc::ClientContext
 }
 
 void MruVOffersService::Stub::experimental_async::UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOffer_, context, request, response, std::move(f));
-}
-
-void MruVOffersService::Stub::experimental_async::UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOffer_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateOffer_, context, request, response, std::move(f));
 }
 
 void MruVOffersService::Stub::experimental_async::UpdateOffer(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateOffer_, context, request, response, reactor);
-}
-
-void MruVOffersService::Stub::experimental_async::UpdateOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::UpdateOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateOffer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::offers::UpdateOfferResponse>* MruVOffersService::Stub::AsyncUpdateOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::UpdateOfferResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOffer_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateOffer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::offers::UpdateOfferResponse>* MruVOffersService::Stub::PrepareAsyncUpdateOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::UpdateOfferResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOffer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::UpdateOfferResponse>::Create(channel_.get(), cq, rpcmethod_UpdateOffer_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::offers::UpdateOfferResponse>* MruVOffersService::Stub::AsyncUpdateOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::UpdateOfferRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateOfferRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOffersService::Stub::DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest& request, ::mruv::offers::DeleteOfferResponse* response) {
@@ -133,27 +118,22 @@ void MruVOffersService::Stub::experimental_async::UpdateOffer(::grpc::ClientCont
 }
 
 void MruVOffersService::Stub::experimental_async::DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOffer_, context, request, response, std::move(f));
-}
-
-void MruVOffersService::Stub::experimental_async::DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOffer_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteOffer_, context, request, response, std::move(f));
 }
 
 void MruVOffersService::Stub::experimental_async::DeleteOffer(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteOffer_, context, request, response, reactor);
-}
-
-void MruVOffersService::Stub::experimental_async::DeleteOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::DeleteOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteOffer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::offers::DeleteOfferResponse>* MruVOffersService::Stub::AsyncDeleteOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::DeleteOfferResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOffer_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteOffer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::offers::DeleteOfferResponse>* MruVOffersService::Stub::PrepareAsyncDeleteOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::DeleteOfferResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOffer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::DeleteOfferResponse>::Create(channel_.get(), cq, rpcmethod_DeleteOffer_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::offers::DeleteOfferResponse>* MruVOffersService::Stub::AsyncDeleteOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::DeleteOfferRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteOfferRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVOffersService::Stub::AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest& request, ::mruv::offers::AcceptOfferResponse* response) {
@@ -161,27 +141,22 @@ void MruVOffersService::Stub::experimental_async::DeleteOffer(::grpc::ClientCont
 }
 
 void MruVOffersService::Stub::experimental_async::AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AcceptOffer_, context, request, response, std::move(f));
-}
-
-void MruVOffersService::Stub::experimental_async::AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AcceptOffer_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AcceptOffer_, context, request, response, std::move(f));
 }
 
 void MruVOffersService::Stub::experimental_async::AcceptOffer(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AcceptOffer_, context, request, response, reactor);
-}
-
-void MruVOffersService::Stub::experimental_async::AcceptOffer(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::offers::AcceptOfferResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AcceptOffer_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::offers::AcceptOfferResponse>* MruVOffersService::Stub::AsyncAcceptOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::AcceptOfferResponse>::Create(channel_.get(), cq, rpcmethod_AcceptOffer_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AcceptOffer_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::offers::AcceptOfferResponse>* MruVOffersService::Stub::PrepareAsyncAcceptOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::AcceptOfferResponse>::Create(channel_.get(), cq, rpcmethod_AcceptOffer_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::offers::AcceptOfferResponse>::Create(channel_.get(), cq, rpcmethod_AcceptOffer_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::offers::AcceptOfferResponse>* MruVOffersService::Stub::AsyncAcceptOfferRaw(::grpc::ClientContext* context, const ::mruv::offers::AcceptOfferRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAcceptOfferRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 MruVOffersService::Service::Service() {
@@ -190,7 +165,7 @@ MruVOffersService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::CreateOfferRequest, ::mruv::offers::CreateOfferResponse>(
           [](MruVOffersService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::offers::CreateOfferRequest* req,
              ::mruv::offers::CreateOfferResponse* resp) {
                return service->CreateOffer(ctx, req, resp);
@@ -200,7 +175,7 @@ MruVOffersService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::GetOfferRequest, ::mruv::offers::GetOfferResponse>(
           [](MruVOffersService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::offers::GetOfferRequest* req,
              ::mruv::offers::GetOfferResponse* resp) {
                return service->GetOffer(ctx, req, resp);
@@ -210,7 +185,7 @@ MruVOffersService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::UpdateOfferRequest, ::mruv::offers::UpdateOfferResponse>(
           [](MruVOffersService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::offers::UpdateOfferRequest* req,
              ::mruv::offers::UpdateOfferResponse* resp) {
                return service->UpdateOffer(ctx, req, resp);
@@ -220,7 +195,7 @@ MruVOffersService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::DeleteOfferRequest, ::mruv::offers::DeleteOfferResponse>(
           [](MruVOffersService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::offers::DeleteOfferRequest* req,
              ::mruv::offers::DeleteOfferResponse* resp) {
                return service->DeleteOffer(ctx, req, resp);
@@ -230,7 +205,7 @@ MruVOffersService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVOffersService::Service, ::mruv::offers::AcceptOfferRequest, ::mruv::offers::AcceptOfferResponse>(
           [](MruVOffersService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::offers::AcceptOfferRequest* req,
              ::mruv::offers::AcceptOfferResponse* resp) {
                return service->AcceptOffer(ctx, req, resp);

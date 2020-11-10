@@ -98,16 +98,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
   &scc_info_Rotation_common_2fspatial_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fspatial_2eproto_once;
-static bool descriptor_table_common_2fspatial_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fspatial_2eproto = {
-  &descriptor_table_common_2fspatial_2eproto_initialized, descriptor_table_protodef_common_2fspatial_2eproto, "common/spatial.proto", 169,
+  false, false, descriptor_table_protodef_common_2fspatial_2eproto, "common/spatial.proto", 169,
   &descriptor_table_common_2fspatial_2eproto_once, descriptor_table_common_2fspatial_2eproto_sccs, descriptor_table_common_2fspatial_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_common_2fspatial_2eproto::offsets,
   file_level_metadata_common_2fspatial_2eproto, 2, file_level_enum_descriptors_common_2fspatial_2eproto, file_level_service_descriptors_common_2fspatial_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_common_2fspatial_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_common_2fspatial_2eproto), true);
+static bool dynamic_init_dummy_common_2fspatial_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_common_2fspatial_2eproto)), true);
 namespace mruv {
 
 // ===================================================================
@@ -118,15 +117,15 @@ class Position::_Internal {
  public:
 };
 
-Position::Position()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Position::Position(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.Position)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.Position)
 }
 Position::Position(const Position& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&x_, &from.x_,
     static_cast<size_t>(reinterpret_cast<char*>(&z_) -
     reinterpret_cast<char*>(&x_)) + sizeof(z_));
@@ -142,11 +141,19 @@ void Position::SharedCtor() {
 Position::~Position() {
   // @@protoc_insertion_point(destructor:mruv.Position)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Position::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Position::ArenaDtor(void* object) {
+  Position* _this = reinterpret_cast< Position* >(object);
+  (void)_this;
+}
+void Position::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Position::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -165,11 +172,12 @@ void Position::Clear() {
   ::memset(&x_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&z_) -
       reinterpret_cast<char*>(&x_)) + sizeof(z_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Position::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -202,7 +210,9 @@ const char* Position::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -242,7 +252,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.Position)
   return target;
@@ -298,7 +308,7 @@ void Position::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Position::MergeFrom(const Position& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.Position)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -333,10 +343,13 @@ bool Position::IsInitialized() const {
 
 void Position::InternalSwap(Position* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(x_, other->x_);
-  swap(y_, other->y_);
-  swap(z_, other->z_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Position, z_)
+      + sizeof(Position::z_)
+      - PROTOBUF_FIELD_OFFSET(Position, x_)>(
+          reinterpret_cast<char*>(&x_),
+          reinterpret_cast<char*>(&other->x_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Position::GetMetadata() const {
@@ -352,15 +365,15 @@ class Rotation::_Internal {
  public:
 };
 
-Rotation::Rotation()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Rotation::Rotation(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.Rotation)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.Rotation)
 }
 Rotation::Rotation(const Rotation& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&rx_, &from.rx_,
     static_cast<size_t>(reinterpret_cast<char*>(&rz_) -
     reinterpret_cast<char*>(&rx_)) + sizeof(rz_));
@@ -376,11 +389,19 @@ void Rotation::SharedCtor() {
 Rotation::~Rotation() {
   // @@protoc_insertion_point(destructor:mruv.Rotation)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Rotation::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Rotation::ArenaDtor(void* object) {
+  Rotation* _this = reinterpret_cast< Rotation* >(object);
+  (void)_this;
+}
+void Rotation::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Rotation::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -399,11 +420,12 @@ void Rotation::Clear() {
   ::memset(&rx_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&rz_) -
       reinterpret_cast<char*>(&rx_)) + sizeof(rz_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Rotation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -436,7 +458,9 @@ const char* Rotation::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -476,7 +500,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.Rotation)
   return target;
@@ -532,7 +556,7 @@ void Rotation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Rotation::MergeFrom(const Rotation& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.Rotation)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -567,10 +591,13 @@ bool Rotation::IsInitialized() const {
 
 void Rotation::InternalSwap(Rotation* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(rx_, other->rx_);
-  swap(ry_, other->ry_);
-  swap(rz_, other->rz_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Rotation, rz_)
+      + sizeof(Rotation::rz_)
+      - PROTOBUF_FIELD_OFFSET(Rotation, rx_)>(
+          reinterpret_cast<char*>(&rx_),
+          reinterpret_cast<char*>(&other->rx_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Rotation::GetMetadata() const {
@@ -582,10 +609,10 @@ void Rotation::InternalSwap(Rotation* other) {
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::Position* Arena::CreateMaybeMessage< ::mruv::Position >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::Position >(arena);
+  return Arena::CreateMessageInternal< ::mruv::Position >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::Rotation* Arena::CreateMaybeMessage< ::mruv::Rotation >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::Rotation >(arena);
+  return Arena::CreateMessageInternal< ::mruv::Rotation >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

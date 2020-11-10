@@ -141,146 +141,80 @@ class MruVEstateService final {
       virtual ~experimental_async_interface() {}
       // Create real estate.
       virtual void CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get real estate.
       virtual void GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update real estate.
       virtual void UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete real estate.
       virtual void DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get all created real estates.
       virtual void GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Add a gate to an estate.
       virtual void AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a gate from estate.
       virtual void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get all estate gates.
       virtual void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Add an entrance to estate.
       virtual void AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Remove an entrance from estate.
       virtual void RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get all estate entrances.
       virtual void GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get full estates data
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -416,136 +350,70 @@ class MruVEstateService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, std::function<void(::grpc::Status)>) override;
-      void GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) override;
-      void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, std::function<void(::grpc::Status)>) override;
-      void RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FetchAll(::grpc::ClientContext* context, ::mruv::estates::FetchAllEstatesRequest* request, ::grpc::ClientReadReactor< ::mruv::estates::FetchAllEstatesResponse>* reactor) override;
@@ -885,7 +753,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -900,7 +768,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateEstate() override {
@@ -932,7 +800,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -947,7 +815,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetEstate() override {
@@ -979,7 +847,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -994,7 +862,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateEstate() override {
@@ -1026,7 +894,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1041,7 +909,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteEstate() override {
@@ -1073,7 +941,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1088,7 +956,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetEstates() override {
@@ -1120,7 +988,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1135,7 +1003,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AddGate() override {
@@ -1167,7 +1035,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1182,7 +1050,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemoveGate() override {
@@ -1214,7 +1082,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1229,7 +1097,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetEstateGates() override {
@@ -1261,7 +1129,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1276,7 +1144,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AddEntrance() override {
@@ -1308,7 +1176,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1323,7 +1191,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemoveEntrance() override {
@@ -1355,7 +1223,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(10,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1370,7 +1238,7 @@ class MruVEstateService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetEstateEntrances() override {
@@ -1402,7 +1270,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(11,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::estates::FetchAllEstatesRequest, ::mruv::estates::FetchAllEstatesResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::estates::FetchAllEstatesRequest, ::mruv::estates::FetchAllEstatesResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1889,7 +1757,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1927,7 +1795,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1965,7 +1833,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2003,7 +1871,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2041,7 +1909,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2079,7 +1947,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(5,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2117,7 +1985,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(6,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2155,7 +2023,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(7,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2193,7 +2061,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(8,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2231,7 +2099,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(9,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2269,7 +2137,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(10,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2307,7 +2175,7 @@ class MruVEstateService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(11,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -2342,8 +2210,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>* streamer) {
                        return this->StreamedCreateEstate(context,
                          streamer);
@@ -2369,8 +2237,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>* streamer) {
                        return this->StreamedGetEstate(context,
                          streamer);
@@ -2396,8 +2264,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>* streamer) {
                        return this->StreamedUpdateEstate(context,
                          streamer);
@@ -2423,8 +2291,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>* streamer) {
                        return this->StreamedDeleteEstate(context,
                          streamer);
@@ -2450,8 +2318,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>* streamer) {
                        return this->StreamedGetEstates(context,
                          streamer);
@@ -2477,8 +2345,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>* streamer) {
                        return this->StreamedAddGate(context,
                          streamer);
@@ -2504,8 +2372,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>* streamer) {
                        return this->StreamedRemoveGate(context,
                          streamer);
@@ -2531,8 +2399,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>* streamer) {
                        return this->StreamedGetEstateGates(context,
                          streamer);
@@ -2558,8 +2426,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>* streamer) {
                        return this->StreamedAddEntrance(context,
                          streamer);
@@ -2585,8 +2453,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>* streamer) {
                        return this->StreamedRemoveEntrance(context,
                          streamer);
@@ -2612,8 +2480,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>* streamer) {
                        return this->StreamedGetEstateEntrances(context,
                          streamer);
@@ -2640,8 +2508,8 @@ class MruVEstateService final {
       ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::estates::FetchAllEstatesRequest, ::mruv::estates::FetchAllEstatesResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::estates::FetchAllEstatesRequest, ::mruv::estates::FetchAllEstatesResponse>* streamer) {
                        return this->StreamedFetchAll(context,
                          streamer);

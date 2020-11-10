@@ -232,16 +232,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ser
   &scc_info_UpdateServerStatusResponse_server_2fserver_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_server_2fserver_2eproto_once;
-static bool descriptor_table_server_2fserver_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_server_2fserver_2eproto = {
-  &descriptor_table_server_2fserver_2eproto_initialized, descriptor_table_protodef_server_2fserver_2eproto, "server/server.proto", 1149,
+  false, false, descriptor_table_protodef_server_2fserver_2eproto, "server/server.proto", 1149,
   &descriptor_table_server_2fserver_2eproto_once, descriptor_table_server_2fserver_2eproto_sccs, descriptor_table_server_2fserver_2eproto_deps, 6, 2,
   schemas, file_default_instances, TableStruct_server_2fserver_2eproto::offsets,
   file_level_metadata_server_2fserver_2eproto, 6, file_level_enum_descriptors_server_2fserver_2eproto, file_level_service_descriptors_server_2fserver_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_server_2fserver_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_server_2fserver_2eproto), true);
+static bool dynamic_init_dummy_server_2fserver_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_server_2fserver_2eproto)), true);
 namespace mruv {
 namespace server {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ServerEvent_ServerEventType_descriptor() {
@@ -280,15 +279,15 @@ class GetRegisteredServersRequest::_Internal {
  public:
 };
 
-GetRegisteredServersRequest::GetRegisteredServersRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetRegisteredServersRequest::GetRegisteredServersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.server.GetRegisteredServersRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.server.GetRegisteredServersRequest)
 }
 GetRegisteredServersRequest::GetRegisteredServersRequest(const GetRegisteredServersRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.server.GetRegisteredServersRequest)
 }
 
@@ -298,11 +297,19 @@ void GetRegisteredServersRequest::SharedCtor() {
 GetRegisteredServersRequest::~GetRegisteredServersRequest() {
   // @@protoc_insertion_point(destructor:mruv.server.GetRegisteredServersRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetRegisteredServersRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetRegisteredServersRequest::ArenaDtor(void* object) {
+  GetRegisteredServersRequest* _this = reinterpret_cast< GetRegisteredServersRequest* >(object);
+  (void)_this;
+}
+void GetRegisteredServersRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetRegisteredServersRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -318,11 +325,12 @@ void GetRegisteredServersRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetRegisteredServersRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -331,7 +339,9 @@ const char* GetRegisteredServersRequest::_InternalParse(const char* ptr, ::PROTO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -351,7 +361,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.server.GetRegisteredServersRequest)
   return target;
@@ -392,7 +402,7 @@ void GetRegisteredServersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messa
 void GetRegisteredServersRequest::MergeFrom(const GetRegisteredServersRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.GetRegisteredServersRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -418,7 +428,7 @@ bool GetRegisteredServersRequest::IsInitialized() const {
 
 void GetRegisteredServersRequest::InternalSwap(GetRegisteredServersRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetRegisteredServersRequest::GetMetadata() const {
@@ -437,16 +447,17 @@ class GetRegisteredServersResponse::_Internal {
 void GetRegisteredServersResponse::clear_servers() {
   servers_.Clear();
 }
-GetRegisteredServersResponse::GetRegisteredServersResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GetRegisteredServersResponse::GetRegisteredServersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  servers_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.server.GetRegisteredServersResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.server.GetRegisteredServersResponse)
 }
 GetRegisteredServersResponse::GetRegisteredServersResponse(const GetRegisteredServersResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       servers_(from.servers_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.server.GetRegisteredServersResponse)
 }
 
@@ -457,11 +468,19 @@ void GetRegisteredServersResponse::SharedCtor() {
 GetRegisteredServersResponse::~GetRegisteredServersResponse() {
   // @@protoc_insertion_point(destructor:mruv.server.GetRegisteredServersResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GetRegisteredServersResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GetRegisteredServersResponse::ArenaDtor(void* object) {
+  GetRegisteredServersResponse* _this = reinterpret_cast< GetRegisteredServersResponse* >(object);
+  (void)_this;
+}
+void GetRegisteredServersResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GetRegisteredServersResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -478,11 +497,12 @@ void GetRegisteredServersResponse::Clear() {
   (void) cached_has_bits;
 
   servers_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GetRegisteredServersResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -506,7 +526,9 @@ const char* GetRegisteredServersResponse::_InternalParse(const char* ptr, ::PROT
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -536,7 +558,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.server.GetRegisteredServersResponse)
   return target;
@@ -584,7 +606,7 @@ void GetRegisteredServersResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Mess
 void GetRegisteredServersResponse::MergeFrom(const GetRegisteredServersResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.GetRegisteredServersResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -611,7 +633,7 @@ bool GetRegisteredServersResponse::IsInitialized() const {
 
 void GetRegisteredServersResponse::InternalSwap(GetRegisteredServersResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   servers_.InternalSwap(&other->servers_);
 }
 
@@ -628,15 +650,15 @@ class UpdateServerStatusRequest::_Internal {
  public:
 };
 
-UpdateServerStatusRequest::UpdateServerStatusRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateServerStatusRequest::UpdateServerStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.server.UpdateServerStatusRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.server.UpdateServerStatusRequest)
 }
 UpdateServerStatusRequest::UpdateServerStatusRequest(const UpdateServerStatusRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&players_) -
     reinterpret_cast<char*>(&id_)) + sizeof(players_));
@@ -652,11 +674,19 @@ void UpdateServerStatusRequest::SharedCtor() {
 UpdateServerStatusRequest::~UpdateServerStatusRequest() {
   // @@protoc_insertion_point(destructor:mruv.server.UpdateServerStatusRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateServerStatusRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateServerStatusRequest::ArenaDtor(void* object) {
+  UpdateServerStatusRequest* _this = reinterpret_cast< UpdateServerStatusRequest* >(object);
+  (void)_this;
+}
+void UpdateServerStatusRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateServerStatusRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -675,11 +705,12 @@ void UpdateServerStatusRequest::Clear() {
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&players_) -
       reinterpret_cast<char*>(&id_)) + sizeof(players_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateServerStatusRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -688,14 +719,14 @@ const char* UpdateServerStatusRequest::_InternalParse(const char* ptr, ::PROTOBU
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // .mruv.server.ServerStatus status = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::mruv::server::ServerStatus>(val));
         } else goto handle_unusual;
@@ -703,7 +734,7 @@ const char* UpdateServerStatusRequest::_InternalParse(const char* ptr, ::PROTOBU
       // uint32 players = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          players_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          players_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -713,7 +744,9 @@ const char* UpdateServerStatusRequest::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -754,7 +787,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.server.UpdateServerStatusRequest)
   return target;
@@ -815,7 +848,7 @@ void UpdateServerStatusRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void UpdateServerStatusRequest::MergeFrom(const UpdateServerStatusRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.UpdateServerStatusRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -850,10 +883,13 @@ bool UpdateServerStatusRequest::IsInitialized() const {
 
 void UpdateServerStatusRequest::InternalSwap(UpdateServerStatusRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
-  swap(status_, other->status_);
-  swap(players_, other->players_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UpdateServerStatusRequest, players_)
+      + sizeof(UpdateServerStatusRequest::players_)
+      - PROTOBUF_FIELD_OFFSET(UpdateServerStatusRequest, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateServerStatusRequest::GetMetadata() const {
@@ -869,15 +905,15 @@ class UpdateServerStatusResponse::_Internal {
  public:
 };
 
-UpdateServerStatusResponse::UpdateServerStatusResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UpdateServerStatusResponse::UpdateServerStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.server.UpdateServerStatusResponse)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.server.UpdateServerStatusResponse)
 }
 UpdateServerStatusResponse::UpdateServerStatusResponse(const UpdateServerStatusResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:mruv.server.UpdateServerStatusResponse)
 }
 
@@ -887,11 +923,19 @@ void UpdateServerStatusResponse::SharedCtor() {
 UpdateServerStatusResponse::~UpdateServerStatusResponse() {
   // @@protoc_insertion_point(destructor:mruv.server.UpdateServerStatusResponse)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UpdateServerStatusResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UpdateServerStatusResponse::ArenaDtor(void* object) {
+  UpdateServerStatusResponse* _this = reinterpret_cast< UpdateServerStatusResponse* >(object);
+  (void)_this;
+}
+void UpdateServerStatusResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UpdateServerStatusResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -907,11 +951,12 @@ void UpdateServerStatusResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UpdateServerStatusResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -920,7 +965,9 @@ const char* UpdateServerStatusResponse::_InternalParse(const char* ptr, ::PROTOB
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
   }  // while
@@ -940,7 +987,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.server.UpdateServerStatusResponse)
   return target;
@@ -981,7 +1028,7 @@ void UpdateServerStatusResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messag
 void UpdateServerStatusResponse::MergeFrom(const UpdateServerStatusResponse& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.UpdateServerStatusResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1007,7 +1054,7 @@ bool UpdateServerStatusResponse::IsInitialized() const {
 
 void UpdateServerStatusResponse::InternalSwap(UpdateServerStatusResponse* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateServerStatusResponse::GetMetadata() const {
@@ -1023,15 +1070,15 @@ class ServerEventsStreamRequest::_Internal {
  public:
 };
 
-ServerEventsStreamRequest::ServerEventsStreamRequest()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ServerEventsStreamRequest::ServerEventsStreamRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.server.ServerEventsStreamRequest)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.server.ServerEventsStreamRequest)
 }
 ServerEventsStreamRequest::ServerEventsStreamRequest(const ServerEventsStreamRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   id_ = from.id_;
   // @@protoc_insertion_point(copy_constructor:mruv.server.ServerEventsStreamRequest)
 }
@@ -1043,11 +1090,19 @@ void ServerEventsStreamRequest::SharedCtor() {
 ServerEventsStreamRequest::~ServerEventsStreamRequest() {
   // @@protoc_insertion_point(destructor:mruv.server.ServerEventsStreamRequest)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServerEventsStreamRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ServerEventsStreamRequest::ArenaDtor(void* object) {
+  ServerEventsStreamRequest* _this = reinterpret_cast< ServerEventsStreamRequest* >(object);
+  (void)_this;
+}
+void ServerEventsStreamRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ServerEventsStreamRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1064,11 +1119,12 @@ void ServerEventsStreamRequest::Clear() {
   (void) cached_has_bits;
 
   id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ServerEventsStreamRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1077,7 +1133,7 @@ const char* ServerEventsStreamRequest::_InternalParse(const char* ptr, ::PROTOBU
       // uint32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1087,7 +1143,9 @@ const char* ServerEventsStreamRequest::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1115,7 +1173,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.server.ServerEventsStreamRequest)
   return target;
@@ -1163,7 +1221,7 @@ void ServerEventsStreamRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void ServerEventsStreamRequest::MergeFrom(const ServerEventsStreamRequest& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.ServerEventsStreamRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1192,7 +1250,7 @@ bool ServerEventsStreamRequest::IsInitialized() const {
 
 void ServerEventsStreamRequest::InternalSwap(ServerEventsStreamRequest* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(id_, other->id_);
 }
 
@@ -1209,15 +1267,15 @@ class ServerEvent::_Internal {
  public:
 };
 
-ServerEvent::ServerEvent()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ServerEvent::ServerEvent(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:mruv.server.ServerEvent)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:mruv.server.ServerEvent)
 }
 ServerEvent::ServerEvent(const ServerEvent& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:mruv.server.ServerEvent)
 }
@@ -1229,11 +1287,19 @@ void ServerEvent::SharedCtor() {
 ServerEvent::~ServerEvent() {
   // @@protoc_insertion_point(destructor:mruv.server.ServerEvent)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServerEvent::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void ServerEvent::ArenaDtor(void* object) {
+  ServerEvent* _this = reinterpret_cast< ServerEvent* >(object);
+  (void)_this;
+}
+void ServerEvent::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ServerEvent::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1250,11 +1316,12 @@ void ServerEvent::Clear() {
   (void) cached_has_bits;
 
   type_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ServerEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1263,7 +1330,7 @@ const char* ServerEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       // .mruv.server.ServerEvent.ServerEventType type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_type(static_cast<::mruv::server::ServerEvent_ServerEventType>(val));
         } else goto handle_unusual;
@@ -1274,7 +1341,9 @@ const char* ServerEvent::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1303,7 +1372,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:mruv.server.ServerEvent)
   return target;
@@ -1350,7 +1419,7 @@ void ServerEvent::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServerEvent::MergeFrom(const ServerEvent& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:mruv.server.ServerEvent)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1379,7 +1448,7 @@ bool ServerEvent::IsInitialized() const {
 
 void ServerEvent::InternalSwap(ServerEvent* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(type_, other->type_);
 }
 
@@ -1393,22 +1462,22 @@ void ServerEvent::InternalSwap(ServerEvent* other) {
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::mruv::server::GetRegisteredServersRequest* Arena::CreateMaybeMessage< ::mruv::server::GetRegisteredServersRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::server::GetRegisteredServersRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::server::GetRegisteredServersRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::server::GetRegisteredServersResponse* Arena::CreateMaybeMessage< ::mruv::server::GetRegisteredServersResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::server::GetRegisteredServersResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::server::GetRegisteredServersResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::server::UpdateServerStatusRequest* Arena::CreateMaybeMessage< ::mruv::server::UpdateServerStatusRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::server::UpdateServerStatusRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::server::UpdateServerStatusRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::server::UpdateServerStatusResponse* Arena::CreateMaybeMessage< ::mruv::server::UpdateServerStatusResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::server::UpdateServerStatusResponse >(arena);
+  return Arena::CreateMessageInternal< ::mruv::server::UpdateServerStatusResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::server::ServerEventsStreamRequest* Arena::CreateMaybeMessage< ::mruv::server::ServerEventsStreamRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::server::ServerEventsStreamRequest >(arena);
+  return Arena::CreateMessageInternal< ::mruv::server::ServerEventsStreamRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::mruv::server::ServerEvent* Arena::CreateMaybeMessage< ::mruv::server::ServerEvent >(Arena* arena) {
-  return Arena::CreateInternal< ::mruv::server::ServerEvent >(arena);
+  return Arena::CreateMessageInternal< ::mruv::server::ServerEvent >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

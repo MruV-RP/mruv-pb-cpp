@@ -49,27 +49,22 @@ MruVSpotsService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
 }
 
 void MruVSpotsService::Stub::experimental_async::CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateSpot_, context, request, response, std::move(f));
-}
-
-void MruVSpotsService::Stub::experimental_async::CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateSpot_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateSpot_, context, request, response, std::move(f));
 }
 
 void MruVSpotsService::Stub::experimental_async::CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateSpot_, context, request, response, reactor);
-}
-
-void MruVSpotsService::Stub::experimental_async::CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateSpot_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::spots::CreateSpotResponse>* MruVSpotsService::Stub::AsyncCreateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::CreateSpotResponse>::Create(channel_.get(), cq, rpcmethod_CreateSpot_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateSpot_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::spots::CreateSpotResponse>* MruVSpotsService::Stub::PrepareAsyncCreateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::CreateSpotResponse>::Create(channel_.get(), cq, rpcmethod_CreateSpot_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::CreateSpotResponse>::Create(channel_.get(), cq, rpcmethod_CreateSpot_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::spots::CreateSpotResponse>* MruVSpotsService::Stub::AsyncCreateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateSpotRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVSpotsService::Stub::GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest& request, ::mruv::spots::GetSpotResponse* response) {
@@ -77,27 +72,22 @@ void MruVSpotsService::Stub::experimental_async::CreateSpot(::grpc::ClientContex
 }
 
 void MruVSpotsService::Stub::experimental_async::GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSpot_, context, request, response, std::move(f));
-}
-
-void MruVSpotsService::Stub::experimental_async::GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSpot_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetSpot_, context, request, response, std::move(f));
 }
 
 void MruVSpotsService::Stub::experimental_async::GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSpot_, context, request, response, reactor);
-}
-
-void MruVSpotsService::Stub::experimental_async::GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSpot_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::spots::GetSpotResponse>* MruVSpotsService::Stub::AsyncGetSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::GetSpotResponse>::Create(channel_.get(), cq, rpcmethod_GetSpot_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetSpot_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::spots::GetSpotResponse>* MruVSpotsService::Stub::PrepareAsyncGetSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::GetSpotResponse>::Create(channel_.get(), cq, rpcmethod_GetSpot_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::GetSpotResponse>::Create(channel_.get(), cq, rpcmethod_GetSpot_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::spots::GetSpotResponse>* MruVSpotsService::Stub::AsyncGetSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetSpotRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVSpotsService::Stub::UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest& request, ::mruv::spots::UpdateSpotResponse* response) {
@@ -105,27 +95,22 @@ void MruVSpotsService::Stub::experimental_async::GetSpot(::grpc::ClientContext* 
 }
 
 void MruVSpotsService::Stub::experimental_async::UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateSpot_, context, request, response, std::move(f));
-}
-
-void MruVSpotsService::Stub::experimental_async::UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateSpot_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateSpot_, context, request, response, std::move(f));
 }
 
 void MruVSpotsService::Stub::experimental_async::UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateSpot_, context, request, response, reactor);
-}
-
-void MruVSpotsService::Stub::experimental_async::UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateSpot_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::spots::UpdateSpotResponse>* MruVSpotsService::Stub::AsyncUpdateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::UpdateSpotResponse>::Create(channel_.get(), cq, rpcmethod_UpdateSpot_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateSpot_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::spots::UpdateSpotResponse>* MruVSpotsService::Stub::PrepareAsyncUpdateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::UpdateSpotResponse>::Create(channel_.get(), cq, rpcmethod_UpdateSpot_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::UpdateSpotResponse>::Create(channel_.get(), cq, rpcmethod_UpdateSpot_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::spots::UpdateSpotResponse>* MruVSpotsService::Stub::AsyncUpdateSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateSpotRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVSpotsService::Stub::DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::mruv::spots::DeleteSpotResponse* response) {
@@ -133,43 +118,38 @@ void MruVSpotsService::Stub::experimental_async::UpdateSpot(::grpc::ClientContex
 }
 
 void MruVSpotsService::Stub::experimental_async::DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteSpot_, context, request, response, std::move(f));
-}
-
-void MruVSpotsService::Stub::experimental_async::DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteSpot_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteSpot_, context, request, response, std::move(f));
 }
 
 void MruVSpotsService::Stub::experimental_async::DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteSpot_, context, request, response, reactor);
-}
-
-void MruVSpotsService::Stub::experimental_async::DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteSpot_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>* MruVSpotsService::Stub::AsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::DeleteSpotResponse>::Create(channel_.get(), cq, rpcmethod_DeleteSpot_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteSpot_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>* MruVSpotsService::Stub::PrepareAsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::DeleteSpotResponse>::Create(channel_.get(), cq, rpcmethod_DeleteSpot_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::spots::DeleteSpotResponse>::Create(channel_.get(), cq, rpcmethod_DeleteSpot_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::spots::DeleteSpotResponse>* MruVSpotsService::Stub::AsyncDeleteSpotRaw(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteSpotRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::spots::FetchAllSpotsResponse>* MruVSpotsService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
 }
 
 void MruVSpotsService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>* MruVSpotsService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::spots::FetchAllSpotsResponse>* MruVSpotsService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::spots::FetchAllSpotsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::spots::FetchAllSpotsResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
 }
 
 MruVSpotsService::Service::Service() {
@@ -178,7 +158,7 @@ MruVSpotsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(
           [](MruVSpotsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::spots::CreateSpotRequest* req,
              ::mruv::spots::CreateSpotResponse* resp) {
                return service->CreateSpot(ctx, req, resp);
@@ -188,7 +168,7 @@ MruVSpotsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(
           [](MruVSpotsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::spots::GetSpotRequest* req,
              ::mruv::spots::GetSpotResponse* resp) {
                return service->GetSpot(ctx, req, resp);
@@ -198,7 +178,7 @@ MruVSpotsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(
           [](MruVSpotsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::spots::UpdateSpotRequest* req,
              ::mruv::spots::UpdateSpotResponse* resp) {
                return service->UpdateSpot(ctx, req, resp);
@@ -208,7 +188,7 @@ MruVSpotsService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVSpotsService::Service, ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(
           [](MruVSpotsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::spots::DeleteSpotRequest* req,
              ::mruv::spots::DeleteSpotResponse* resp) {
                return service->DeleteSpot(ctx, req, resp);
@@ -218,9 +198,9 @@ MruVSpotsService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVSpotsService::Service, ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
           [](MruVSpotsService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::spots::FetchAllSpotsRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::spots::FetchAllSpotsResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::spots::FetchAllSpotsResponse>* writer) {
                return service->FetchAll(ctx, req, writer);
              }, this)));
 }

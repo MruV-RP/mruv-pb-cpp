@@ -63,27 +63,22 @@ MruVEstateService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
 }
 
 void MruVEstateService::Stub::experimental_async::CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEstate_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEstate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateEstate_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::CreateEstate(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEstate_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::CreateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::CreateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEstate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::CreateEstateResponse>* MruVEstateService::Stub::AsyncCreateEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::CreateEstateResponse>::Create(channel_.get(), cq, rpcmethod_CreateEstate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateEstate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::CreateEstateResponse>* MruVEstateService::Stub::PrepareAsyncCreateEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::CreateEstateResponse>::Create(channel_.get(), cq, rpcmethod_CreateEstate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::CreateEstateResponse>::Create(channel_.get(), cq, rpcmethod_CreateEstate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::CreateEstateResponse>* MruVEstateService::Stub::AsyncCreateEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::CreateEstateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateEstateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest& request, ::mruv::estates::Estate* response) {
@@ -91,27 +86,22 @@ void MruVEstateService::Stub::experimental_async::CreateEstate(::grpc::ClientCon
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstate_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstate_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstate(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest* request, ::mruv::estates::Estate* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstate_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::Estate* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::Estate>* MruVEstateService::Stub::AsyncGetEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::Estate>::Create(channel_.get(), cq, rpcmethod_GetEstate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::Estate>* MruVEstateService::Stub::PrepareAsyncGetEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::Estate>::Create(channel_.get(), cq, rpcmethod_GetEstate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::Estate>::Create(channel_.get(), cq, rpcmethod_GetEstate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::Estate>* MruVEstateService::Stub::AsyncGetEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetEstateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest& request, ::mruv::estates::UpdateEstateResponse* response) {
@@ -119,27 +109,22 @@ void MruVEstateService::Stub::experimental_async::GetEstate(::grpc::ClientContex
 }
 
 void MruVEstateService::Stub::experimental_async::UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateEstate_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateEstate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateEstate_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::UpdateEstate(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateEstate_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::UpdateEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::UpdateEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateEstate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::UpdateEstateResponse>* MruVEstateService::Stub::AsyncUpdateEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::UpdateEstateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEstate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateEstate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::UpdateEstateResponse>* MruVEstateService::Stub::PrepareAsyncUpdateEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::UpdateEstateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEstate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::UpdateEstateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateEstate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::UpdateEstateResponse>* MruVEstateService::Stub::AsyncUpdateEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::UpdateEstateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateEstateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest& request, ::mruv::estates::DeleteEstateResponse* response) {
@@ -147,27 +132,22 @@ void MruVEstateService::Stub::experimental_async::UpdateEstate(::grpc::ClientCon
 }
 
 void MruVEstateService::Stub::experimental_async::DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteEstate_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteEstate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteEstate_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::DeleteEstate(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteEstate_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::DeleteEstate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::DeleteEstateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteEstate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteEstateResponse>* MruVEstateService::Stub::AsyncDeleteEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::DeleteEstateResponse>::Create(channel_.get(), cq, rpcmethod_DeleteEstate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteEstate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteEstateResponse>* MruVEstateService::Stub::PrepareAsyncDeleteEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::DeleteEstateResponse>::Create(channel_.get(), cq, rpcmethod_DeleteEstate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::DeleteEstateResponse>::Create(channel_.get(), cq, rpcmethod_DeleteEstate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::DeleteEstateResponse>* MruVEstateService::Stub::AsyncDeleteEstateRaw(::grpc::ClientContext* context, const ::mruv::estates::DeleteEstateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteEstateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest& request, ::mruv::estates::GetEstatesResponse* response) {
@@ -175,27 +155,22 @@ void MruVEstateService::Stub::experimental_async::DeleteEstate(::grpc::ClientCon
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstates_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstates_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstates_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstates(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstates_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstates_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstatesResponse>* MruVEstateService::Stub::AsyncGetEstatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstatesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstates_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstates_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstatesResponse>* MruVEstateService::Stub::PrepareAsyncGetEstatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstatesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstates_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstatesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstates_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstatesResponse>* MruVEstateService::Stub::AsyncGetEstatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstatesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetEstatesRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::mruv::estates::AddGateResponse* response) {
@@ -203,27 +178,22 @@ void MruVEstateService::Stub::experimental_async::GetEstates(::grpc::ClientConte
 }
 
 void MruVEstateService::Stub::experimental_async::AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddGate_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddGate_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::AddGate(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddGate_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::AddGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>* MruVEstateService::Stub::AsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::AddGateResponse>::Create(channel_.get(), cq, rpcmethod_AddGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>* MruVEstateService::Stub::PrepareAsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::AddGateResponse>::Create(channel_.get(), cq, rpcmethod_AddGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::AddGateResponse>::Create(channel_.get(), cq, rpcmethod_AddGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::AddGateResponse>* MruVEstateService::Stub::AsyncAddGateRaw(::grpc::ClientContext* context, const ::mruv::estates::AddGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::mruv::estates::RemoveGateResponse* response) {
@@ -231,27 +201,22 @@ void MruVEstateService::Stub::experimental_async::AddGate(::grpc::ClientContext*
 }
 
 void MruVEstateService::Stub::experimental_async::RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveGate_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveGate_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::RemoveGate(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveGate_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::RemoveGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>* MruVEstateService::Stub::AsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::RemoveGateResponse>::Create(channel_.get(), cq, rpcmethod_RemoveGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>* MruVEstateService::Stub::PrepareAsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::RemoveGateResponse>::Create(channel_.get(), cq, rpcmethod_RemoveGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::RemoveGateResponse>::Create(channel_.get(), cq, rpcmethod_RemoveGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveGateResponse>* MruVEstateService::Stub::AsyncRemoveGateRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRemoveGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::mruv::estates::GetEstateGatesResponse* response) {
@@ -259,27 +224,22 @@ void MruVEstateService::Stub::experimental_async::RemoveGate(::grpc::ClientConte
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstateGates_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstateGates_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstateGates_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstateGates(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstateGates_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstateGates(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateGatesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstateGates_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateGatesResponse>* MruVEstateService::Stub::AsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateGatesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateGates_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstateGates_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateGatesResponse>* MruVEstateService::Stub::PrepareAsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateGatesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateGates_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateGatesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateGates_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateGatesResponse>* MruVEstateService::Stub::AsyncGetEstateGatesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateGatesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetEstateGatesRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest& request, ::mruv::estates::AddEntranceResponse* response) {
@@ -287,27 +247,22 @@ void MruVEstateService::Stub::experimental_async::GetEstateGates(::grpc::ClientC
 }
 
 void MruVEstateService::Stub::experimental_async::AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_AddEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::AddEntrance(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddEntrance_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::AddEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::AddEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::AddEntranceResponse>* MruVEstateService::Stub::AsyncAddEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::AddEntranceResponse>::Create(channel_.get(), cq, rpcmethod_AddEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_AddEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::AddEntranceResponse>* MruVEstateService::Stub::PrepareAsyncAddEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::AddEntranceResponse>::Create(channel_.get(), cq, rpcmethod_AddEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::AddEntranceResponse>::Create(channel_.get(), cq, rpcmethod_AddEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::AddEntranceResponse>* MruVEstateService::Stub::AsyncAddEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::AddEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest& request, ::mruv::estates::RemoveEntranceResponse* response) {
@@ -315,27 +270,22 @@ void MruVEstateService::Stub::experimental_async::AddEntrance(::grpc::ClientCont
 }
 
 void MruVEstateService::Stub::experimental_async::RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveEntrance_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveEntrance_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_RemoveEntrance_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::RemoveEntrance(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveEntrance_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::RemoveEntrance(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::RemoveEntranceResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveEntrance_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveEntranceResponse>* MruVEstateService::Stub::AsyncRemoveEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::RemoveEntranceResponse>::Create(channel_.get(), cq, rpcmethod_RemoveEntrance_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_RemoveEntrance_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveEntranceResponse>* MruVEstateService::Stub::PrepareAsyncRemoveEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::RemoveEntranceResponse>::Create(channel_.get(), cq, rpcmethod_RemoveEntrance_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::RemoveEntranceResponse>::Create(channel_.get(), cq, rpcmethod_RemoveEntrance_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::RemoveEntranceResponse>* MruVEstateService::Stub::AsyncRemoveEntranceRaw(::grpc::ClientContext* context, const ::mruv::estates::RemoveEntranceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncRemoveEntranceRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVEstateService::Stub::GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest& request, ::mruv::estates::GetEstateEntrancesResponse* response) {
@@ -343,43 +293,38 @@ void MruVEstateService::Stub::experimental_async::RemoveEntrance(::grpc::ClientC
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstateEntrances_, context, request, response, std::move(f));
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstateEntrances_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetEstateEntrances_, context, request, response, std::move(f));
 }
 
 void MruVEstateService::Stub::experimental_async::GetEstateEntrances(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstateEntrances_, context, request, response, reactor);
-}
-
-void MruVEstateService::Stub::experimental_async::GetEstateEntrances(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::estates::GetEstateEntrancesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstateEntrances_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateEntrancesResponse>* MruVEstateService::Stub::AsyncGetEstateEntrancesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateEntrances_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetEstateEntrances_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateEntrancesResponse>* MruVEstateService::Stub::PrepareAsyncGetEstateEntrancesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateEntrances_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::estates::GetEstateEntrancesResponse>::Create(channel_.get(), cq, rpcmethod_GetEstateEntrances_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::estates::GetEstateEntrancesResponse>* MruVEstateService::Stub::AsyncGetEstateEntrancesRaw(::grpc::ClientContext* context, const ::mruv::estates::GetEstateEntrancesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetEstateEntrancesRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::estates::FetchAllEstatesResponse>* MruVEstateService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::estates::FetchAllEstatesRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
 }
 
 void MruVEstateService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::estates::FetchAllEstatesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::estates::FetchAllEstatesResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::estates::FetchAllEstatesResponse>* MruVEstateService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::estates::FetchAllEstatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::estates::FetchAllEstatesResponse>* MruVEstateService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::estates::FetchAllEstatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::estates::FetchAllEstatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
 }
 
 MruVEstateService::Service::Service() {
@@ -388,7 +333,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::CreateEstateRequest, ::mruv::estates::CreateEstateResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::CreateEstateRequest* req,
              ::mruv::estates::CreateEstateResponse* resp) {
                return service->CreateEstate(ctx, req, resp);
@@ -398,7 +343,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstateRequest, ::mruv::estates::Estate>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::GetEstateRequest* req,
              ::mruv::estates::Estate* resp) {
                return service->GetEstate(ctx, req, resp);
@@ -408,7 +353,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::UpdateEstateRequest, ::mruv::estates::UpdateEstateResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::UpdateEstateRequest* req,
              ::mruv::estates::UpdateEstateResponse* resp) {
                return service->UpdateEstate(ctx, req, resp);
@@ -418,7 +363,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::DeleteEstateRequest, ::mruv::estates::DeleteEstateResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::DeleteEstateRequest* req,
              ::mruv::estates::DeleteEstateResponse* resp) {
                return service->DeleteEstate(ctx, req, resp);
@@ -428,7 +373,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstatesRequest, ::mruv::estates::GetEstatesResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::GetEstatesRequest* req,
              ::mruv::estates::GetEstatesResponse* resp) {
                return service->GetEstates(ctx, req, resp);
@@ -438,7 +383,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::AddGateRequest, ::mruv::estates::AddGateResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::AddGateRequest* req,
              ::mruv::estates::AddGateResponse* resp) {
                return service->AddGate(ctx, req, resp);
@@ -448,7 +393,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::RemoveGateRequest, ::mruv::estates::RemoveGateResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::RemoveGateRequest* req,
              ::mruv::estates::RemoveGateResponse* resp) {
                return service->RemoveGate(ctx, req, resp);
@@ -458,7 +403,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstateGatesRequest, ::mruv::estates::GetEstateGatesResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::GetEstateGatesRequest* req,
              ::mruv::estates::GetEstateGatesResponse* resp) {
                return service->GetEstateGates(ctx, req, resp);
@@ -468,7 +413,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::AddEntranceRequest, ::mruv::estates::AddEntranceResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::AddEntranceRequest* req,
              ::mruv::estates::AddEntranceResponse* resp) {
                return service->AddEntrance(ctx, req, resp);
@@ -478,7 +423,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::RemoveEntranceRequest, ::mruv::estates::RemoveEntranceResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::RemoveEntranceRequest* req,
              ::mruv::estates::RemoveEntranceResponse* resp) {
                return service->RemoveEntrance(ctx, req, resp);
@@ -488,7 +433,7 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVEstateService::Service, ::mruv::estates::GetEstateEntrancesRequest, ::mruv::estates::GetEstateEntrancesResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::GetEstateEntrancesRequest* req,
              ::mruv::estates::GetEstateEntrancesResponse* resp) {
                return service->GetEstateEntrances(ctx, req, resp);
@@ -498,9 +443,9 @@ MruVEstateService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVEstateService::Service, ::mruv::estates::FetchAllEstatesRequest, ::mruv::estates::FetchAllEstatesResponse>(
           [](MruVEstateService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::estates::FetchAllEstatesRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::estates::FetchAllEstatesResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::estates::FetchAllEstatesResponse>* writer) {
                return service->FetchAll(ctx, req, writer);
              }, this)));
 }

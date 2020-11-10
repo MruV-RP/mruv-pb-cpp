@@ -85,55 +85,31 @@ class MruVSpotsService final {
       virtual ~experimental_async_interface() {}
       // Create a spot.
       virtual void CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a spot.
       virtual void GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a spot.
       virtual void UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a spot.
       virtual void DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Fetch all spots.
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -206,52 +182,28 @@ class MruVSpotsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateSpot(::grpc::ClientContext* context, const ::mruv::spots::CreateSpotRequest* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::CreateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetSpot(::grpc::ClientContext* context, const ::mruv::spots::GetSpotRequest* request, ::mruv::spots::GetSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::GetSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateSpot(::grpc::ClientContext* context, const ::mruv::spots::UpdateSpotRequest* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::UpdateSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteSpot(::grpc::ClientContext* context, const ::mruv::spots::DeleteSpotRequest* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteSpot(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::spots::DeleteSpotResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void FetchAll(::grpc::ClientContext* context, ::mruv::spots::FetchAllSpotsRequest* request, ::grpc::ClientReadReactor< ::mruv::spots::FetchAllSpotsResponse>* reactor) override;
@@ -416,7 +368,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -431,7 +383,7 @@ class MruVSpotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateSpot() override {
@@ -463,7 +415,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -478,7 +430,7 @@ class MruVSpotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetSpot() override {
@@ -510,7 +462,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -525,7 +477,7 @@ class MruVSpotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateSpot() override {
@@ -557,7 +509,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -572,7 +524,7 @@ class MruVSpotsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteSpot() override {
@@ -604,7 +556,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -832,7 +784,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -870,7 +822,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -908,7 +860,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -946,7 +898,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -984,7 +936,7 @@ class MruVSpotsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(4,
-          new ::grpc_impl::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackServerStreamingHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -1019,8 +971,8 @@ class MruVSpotsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::spots::CreateSpotRequest, ::mruv::spots::CreateSpotResponse>* streamer) {
                        return this->StreamedCreateSpot(context,
                          streamer);
@@ -1046,8 +998,8 @@ class MruVSpotsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::spots::GetSpotRequest, ::mruv::spots::GetSpotResponse>* streamer) {
                        return this->StreamedGetSpot(context,
                          streamer);
@@ -1073,8 +1025,8 @@ class MruVSpotsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::spots::UpdateSpotRequest, ::mruv::spots::UpdateSpotResponse>* streamer) {
                        return this->StreamedUpdateSpot(context,
                          streamer);
@@ -1100,8 +1052,8 @@ class MruVSpotsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::spots::DeleteSpotRequest, ::mruv::spots::DeleteSpotResponse>* streamer) {
                        return this->StreamedDeleteSpot(context,
                          streamer);
@@ -1128,8 +1080,8 @@ class MruVSpotsService final {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::SplitServerStreamingHandler<
           ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerSplitStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerSplitStreamer<
                      ::mruv::spots::FetchAllSpotsRequest, ::mruv::spots::FetchAllSpotsResponse>* streamer) {
                        return this->StreamedFetchAll(context,
                          streamer);

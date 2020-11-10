@@ -75,55 +75,31 @@ class MruVJobsService final {
       virtual ~experimental_async_interface() {}
       // Create a job.
       virtual void CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a job.
       virtual void GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a job.
       virtual void UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a job.
       virtual void DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -178,52 +154,28 @@ class MruVJobsService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateJob(::grpc::ClientContext* context, const ::mruv::jobs::CreateJobRequest* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::CreateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetJob(::grpc::ClientContext* context, const ::mruv::jobs::GetJobRequest* request, ::mruv::jobs::GetJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::GetJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateJob(::grpc::ClientContext* context, const ::mruv::jobs::UpdateJobRequest* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::UpdateJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteJob(::grpc::ClientContext* context, const ::mruv::jobs::DeleteJobRequest* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteJob(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::jobs::DeleteJobResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -357,7 +309,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -372,7 +324,7 @@ class MruVJobsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateJob() override {
@@ -404,7 +356,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -419,7 +371,7 @@ class MruVJobsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetJob() override {
@@ -451,7 +403,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -466,7 +418,7 @@ class MruVJobsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateJob() override {
@@ -498,7 +450,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -513,7 +465,7 @@ class MruVJobsService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteJob() override {
@@ -698,7 +650,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -736,7 +688,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -774,7 +726,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -812,7 +764,7 @@ class MruVJobsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -847,8 +799,8 @@ class MruVJobsService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::jobs::CreateJobRequest, ::mruv::jobs::CreateJobResponse>* streamer) {
                        return this->StreamedCreateJob(context,
                          streamer);
@@ -874,8 +826,8 @@ class MruVJobsService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::jobs::GetJobRequest, ::mruv::jobs::GetJobResponse>* streamer) {
                        return this->StreamedGetJob(context,
                          streamer);
@@ -901,8 +853,8 @@ class MruVJobsService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::jobs::UpdateJobRequest, ::mruv::jobs::UpdateJobResponse>* streamer) {
                        return this->StreamedUpdateJob(context,
                          streamer);
@@ -928,8 +880,8 @@ class MruVJobsService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::jobs::DeleteJobRequest, ::mruv::jobs::DeleteJobResponse>* streamer) {
                        return this->StreamedDeleteJob(context,
                          streamer);

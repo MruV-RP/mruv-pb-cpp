@@ -59,27 +59,22 @@ MruVGatesService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& c
 }
 
 void MruVGatesService::Stub::experimental_async::CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateGate_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateGate_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::CreateGate(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest* request, ::mruv::gates::CreateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateGate_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::CreateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CreateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateGateResponse>* MruVGatesService::Stub::AsyncCreateGateRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateGateResponse>::Create(channel_.get(), cq, rpcmethod_CreateGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateGateResponse>* MruVGatesService::Stub::PrepareAsyncCreateGateRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateGateResponse>::Create(channel_.get(), cq, rpcmethod_CreateGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CreateGateResponse>::Create(channel_.get(), cq, rpcmethod_CreateGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::CreateGateResponse>* MruVGatesService::Stub::AsyncCreateGateRaw(::grpc::ClientContext* context, const ::mruv::gates::CreateGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest& request, ::mruv::gates::GetGateResponse* response) {
@@ -87,27 +82,22 @@ void MruVGatesService::Stub::experimental_async::CreateGate(::grpc::ClientContex
 }
 
 void MruVGatesService::Stub::experimental_async::GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGate_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetGate_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::GetGate(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest* request, ::mruv::gates::GetGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetGate_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::GetGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::GetGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::GetGateResponse>* MruVGatesService::Stub::AsyncGetGateRaw(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetGateResponse>::Create(channel_.get(), cq, rpcmethod_GetGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::GetGateResponse>* MruVGatesService::Stub::PrepareAsyncGetGateRaw(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetGateResponse>::Create(channel_.get(), cq, rpcmethod_GetGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::GetGateResponse>::Create(channel_.get(), cq, rpcmethod_GetGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::GetGateResponse>* MruVGatesService::Stub::AsyncGetGateRaw(::grpc::ClientContext* context, const ::mruv::gates::GetGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest& request, ::mruv::gates::UpdateGateResponse* response) {
@@ -115,27 +105,22 @@ void MruVGatesService::Stub::experimental_async::GetGate(::grpc::ClientContext* 
 }
 
 void MruVGatesService::Stub::experimental_async::UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateGate_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UpdateGate_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::UpdateGate(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateGate_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::UpdateGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UpdateGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateGateResponse>* MruVGatesService::Stub::AsyncUpdateGateRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateGateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UpdateGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateGateResponse>* MruVGatesService::Stub::PrepareAsyncUpdateGateRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateGateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UpdateGateResponse>::Create(channel_.get(), cq, rpcmethod_UpdateGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::UpdateGateResponse>* MruVGatesService::Stub::AsyncUpdateGateRaw(::grpc::ClientContext* context, const ::mruv::gates::UpdateGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest& request, ::mruv::gates::DeleteGateResponse* response) {
@@ -143,27 +128,22 @@ void MruVGatesService::Stub::experimental_async::UpdateGate(::grpc::ClientContex
 }
 
 void MruVGatesService::Stub::experimental_async::DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteGate_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteGate_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::DeleteGate(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteGate_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::DeleteGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::DeleteGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteGateResponse>* MruVGatesService::Stub::AsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteGateResponse>::Create(channel_.get(), cq, rpcmethod_DeleteGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteGateResponse>* MruVGatesService::Stub::PrepareAsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteGateResponse>::Create(channel_.get(), cq, rpcmethod_DeleteGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::DeleteGateResponse>::Create(channel_.get(), cq, rpcmethod_DeleteGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::DeleteGateResponse>* MruVGatesService::Stub::AsyncDeleteGateRaw(::grpc::ClientContext* context, const ::mruv::gates::DeleteGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest& request, ::mruv::gates::LockResponse* response) {
@@ -171,27 +151,22 @@ void MruVGatesService::Stub::experimental_async::DeleteGate(::grpc::ClientContex
 }
 
 void MruVGatesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::mruv::gates::LockRequest* request, ::mruv::gates::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::Lock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::LockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::LockResponse>* MruVGatesService::Stub::AsyncLockRaw(::grpc::ClientContext* context, const ::mruv::gates::LockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::LockResponse>::Create(channel_.get(), cq, rpcmethod_Lock_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Lock_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::LockResponse>* MruVGatesService::Stub::PrepareAsyncLockRaw(::grpc::ClientContext* context, const ::mruv::gates::LockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::LockResponse>::Create(channel_.get(), cq, rpcmethod_Lock_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::LockResponse>::Create(channel_.get(), cq, rpcmethod_Lock_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::LockResponse>* MruVGatesService::Stub::AsyncLockRaw(::grpc::ClientContext* context, const ::mruv::gates::LockRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLockRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest& request, ::mruv::gates::UnlockResponse* response) {
@@ -199,27 +174,22 @@ void MruVGatesService::Stub::experimental_async::Lock(::grpc::ClientContext* con
 }
 
 void MruVGatesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest* request, ::mruv::gates::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::Unlock(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::UnlockResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::UnlockResponse>* MruVGatesService::Stub::AsyncUnlockRaw(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UnlockResponse>::Create(channel_.get(), cq, rpcmethod_Unlock_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Unlock_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::UnlockResponse>* MruVGatesService::Stub::PrepareAsyncUnlockRaw(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UnlockResponse>::Create(channel_.get(), cq, rpcmethod_Unlock_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::UnlockResponse>::Create(channel_.get(), cq, rpcmethod_Unlock_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::UnlockResponse>* MruVGatesService::Stub::AsyncUnlockRaw(::grpc::ClientContext* context, const ::mruv::gates::UnlockRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUnlockRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest& request, ::mruv::gates::OpenResponse* response) {
@@ -227,27 +197,22 @@ void MruVGatesService::Stub::experimental_async::Unlock(::grpc::ClientContext* c
 }
 
 void MruVGatesService::Stub::experimental_async::Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Open_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Open_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Open_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::Open(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest* request, ::mruv::gates::OpenResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Open_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::Open(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::OpenResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Open_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::OpenResponse>* MruVGatesService::Stub::AsyncOpenRaw(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::OpenResponse>::Create(channel_.get(), cq, rpcmethod_Open_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Open_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::OpenResponse>* MruVGatesService::Stub::PrepareAsyncOpenRaw(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::OpenResponse>::Create(channel_.get(), cq, rpcmethod_Open_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::OpenResponse>::Create(channel_.get(), cq, rpcmethod_Open_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::OpenResponse>* MruVGatesService::Stub::AsyncOpenRaw(::grpc::ClientContext* context, const ::mruv::gates::OpenRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncOpenRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest& request, ::mruv::gates::CloseResponse* response) {
@@ -255,27 +220,22 @@ void MruVGatesService::Stub::experimental_async::Open(::grpc::ClientContext* con
 }
 
 void MruVGatesService::Stub::experimental_async::Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Close_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Close_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Close_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::Close(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest* request, ::mruv::gates::CloseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Close_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::Close(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::CloseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Close_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::CloseResponse>* MruVGatesService::Stub::AsyncCloseRaw(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CloseResponse>::Create(channel_.get(), cq, rpcmethod_Close_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Close_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::CloseResponse>* MruVGatesService::Stub::PrepareAsyncCloseRaw(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CloseResponse>::Create(channel_.get(), cq, rpcmethod_Close_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::CloseResponse>::Create(channel_.get(), cq, rpcmethod_Close_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::CloseResponse>* MruVGatesService::Stub::AsyncCloseRaw(::grpc::ClientContext* context, const ::mruv::gates::CloseRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCloseRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::Status MruVGatesService::Stub::FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::mruv::gates::FindNearestGateResponse* response) {
@@ -283,43 +243,38 @@ void MruVGatesService::Stub::experimental_async::Close(::grpc::ClientContext* co
 }
 
 void MruVGatesService::Stub::experimental_async::FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FindNearestGate_, context, request, response, std::move(f));
-}
-
-void MruVGatesService::Stub::experimental_async::FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FindNearestGate_, context, request, response, std::move(f));
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_FindNearestGate_, context, request, response, std::move(f));
 }
 
 void MruVGatesService::Stub::experimental_async::FindNearestGate(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FindNearestGate_, context, request, response, reactor);
-}
-
-void MruVGatesService::Stub::experimental_async::FindNearestGate(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::gates::FindNearestGateResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FindNearestGate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>* MruVGatesService::Stub::AsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::FindNearestGateResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestGate_, context, request, true);
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_FindNearestGate_, context, request, response, reactor);
 }
 
 ::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>* MruVGatesService::Stub::PrepareAsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::FindNearestGateResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestGate_, context, request, false);
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::gates::FindNearestGateResponse>::Create(channel_.get(), cq, rpcmethod_FindNearestGate_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::mruv::gates::FindNearestGateResponse>* MruVGatesService::Stub::AsyncFindNearestGateRaw(::grpc::ClientContext* context, const ::mruv::gates::FindNearestGateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncFindNearestGateRaw(context, request, cq);
+  result->StartCall();
+  return result;
 }
 
 ::grpc::ClientReader< ::mruv::gates::FetchAllGatesResponse>* MruVGatesService::Stub::FetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request) {
-  return ::grpc_impl::internal::ClientReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
+  return ::grpc::internal::ClientReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), rpcmethod_FetchAll_, context, request);
 }
 
 void MruVGatesService::Stub::experimental_async::FetchAll(::grpc::ClientContext* context, ::mruv::gates::FetchAllGatesRequest* request, ::grpc::experimental::ClientReadReactor< ::mruv::gates::FetchAllGatesResponse>* reactor) {
-  ::grpc_impl::internal::ClientCallbackReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
+  ::grpc::internal::ClientCallbackReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(stub_->channel_.get(), stub_->rpcmethod_FetchAll_, context, request, reactor);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>* MruVGatesService::Stub::AsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq, void* tag) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, true, tag);
 }
 
 ::grpc::ClientAsyncReader< ::mruv::gates::FetchAllGatesResponse>* MruVGatesService::Stub::PrepareAsyncFetchAllRaw(::grpc::ClientContext* context, const ::mruv::gates::FetchAllGatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
+  return ::grpc::internal::ClientAsyncReaderFactory< ::mruv::gates::FetchAllGatesResponse>::Create(channel_.get(), cq, rpcmethod_FetchAll_, context, request, false, nullptr);
 }
 
 MruVGatesService::Service::Service() {
@@ -328,7 +283,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::CreateGateRequest, ::mruv::gates::CreateGateResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::CreateGateRequest* req,
              ::mruv::gates::CreateGateResponse* resp) {
                return service->CreateGate(ctx, req, resp);
@@ -338,7 +293,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::GetGateRequest, ::mruv::gates::GetGateResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::GetGateRequest* req,
              ::mruv::gates::GetGateResponse* resp) {
                return service->GetGate(ctx, req, resp);
@@ -348,7 +303,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::UpdateGateRequest, ::mruv::gates::UpdateGateResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::UpdateGateRequest* req,
              ::mruv::gates::UpdateGateResponse* resp) {
                return service->UpdateGate(ctx, req, resp);
@@ -358,7 +313,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::DeleteGateRequest, ::mruv::gates::DeleteGateResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::DeleteGateRequest* req,
              ::mruv::gates::DeleteGateResponse* resp) {
                return service->DeleteGate(ctx, req, resp);
@@ -368,7 +323,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::LockRequest, ::mruv::gates::LockResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::LockRequest* req,
              ::mruv::gates::LockResponse* resp) {
                return service->Lock(ctx, req, resp);
@@ -378,7 +333,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::UnlockRequest, ::mruv::gates::UnlockResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::UnlockRequest* req,
              ::mruv::gates::UnlockResponse* resp) {
                return service->Unlock(ctx, req, resp);
@@ -388,7 +343,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::OpenRequest, ::mruv::gates::OpenResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::OpenRequest* req,
              ::mruv::gates::OpenResponse* resp) {
                return service->Open(ctx, req, resp);
@@ -398,7 +353,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::CloseRequest, ::mruv::gates::CloseResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::CloseRequest* req,
              ::mruv::gates::CloseResponse* resp) {
                return service->Close(ctx, req, resp);
@@ -408,7 +363,7 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< MruVGatesService::Service, ::mruv::gates::FindNearestGateRequest, ::mruv::gates::FindNearestGateResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::FindNearestGateRequest* req,
              ::mruv::gates::FindNearestGateResponse* resp) {
                return service->FindNearestGate(ctx, req, resp);
@@ -418,9 +373,9 @@ MruVGatesService::Service::Service() {
       ::grpc::internal::RpcMethod::SERVER_STREAMING,
       new ::grpc::internal::ServerStreamingHandler< MruVGatesService::Service, ::mruv::gates::FetchAllGatesRequest, ::mruv::gates::FetchAllGatesResponse>(
           [](MruVGatesService::Service* service,
-             ::grpc_impl::ServerContext* ctx,
+             ::grpc::ServerContext* ctx,
              const ::mruv::gates::FetchAllGatesRequest* req,
-             ::grpc_impl::ServerWriter<::mruv::gates::FetchAllGatesResponse>* writer) {
+             ::grpc::ServerWriter<::mruv::gates::FetchAllGatesResponse>* writer) {
                return service->FetchAll(ctx, req, writer);
              }, this)));
 }

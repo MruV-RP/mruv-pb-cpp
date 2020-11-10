@@ -75,55 +75,31 @@ class MruVHousesService final {
       virtual ~experimental_async_interface() {}
       // Create a house.
       virtual void CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Get a house.
       virtual void GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Update a house.
       virtual void UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
       // Delete a house.
       virtual void DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       virtual void DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
       virtual void DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      #else
-      virtual void DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -178,52 +154,28 @@ class MruVHousesService final {
       public StubInterface::experimental_async_interface {
      public:
       void CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, std::function<void(::grpc::Status)>) override;
-      void CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void CreateHouse(::grpc::ClientContext* context, const ::mruv::houses::CreateHouseRequest* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void CreateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::CreateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void GetHouse(::grpc::ClientContext* context, const ::mruv::houses::GetHouseRequest* request, ::mruv::houses::GetHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void GetHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::GetHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void UpdateHouse(::grpc::ClientContext* context, const ::mruv::houses::UpdateHouseRequest* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void UpdateHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::UpdateHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
       void DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, std::function<void(::grpc::Status)>) override;
-      void DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       void DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
       void DeleteHouse(::grpc::ClientContext* context, const ::mruv::houses::DeleteHouseRequest* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      #endif
-      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      #else
-      void DeleteHouse(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::mruv::houses::DeleteHouseResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -357,7 +309,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -372,7 +324,7 @@ class MruVHousesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateHouse() override {
@@ -404,7 +356,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -419,7 +371,7 @@ class MruVHousesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetHouse() override {
@@ -451,7 +403,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -466,7 +418,7 @@ class MruVHousesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateHouse() override {
@@ -498,7 +450,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -513,7 +465,7 @@ class MruVHousesService final {
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteHouse() override {
@@ -698,7 +650,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(0,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -736,7 +688,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(1,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -774,7 +726,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(2,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -812,7 +764,7 @@ class MruVHousesService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodRawCallback(3,
-          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
@@ -847,8 +799,8 @@ class MruVHousesService final {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::houses::CreateHouseRequest, ::mruv::houses::CreateHouseResponse>* streamer) {
                        return this->StreamedCreateHouse(context,
                          streamer);
@@ -874,8 +826,8 @@ class MruVHousesService final {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::houses::GetHouseRequest, ::mruv::houses::GetHouseResponse>* streamer) {
                        return this->StreamedGetHouse(context,
                          streamer);
@@ -901,8 +853,8 @@ class MruVHousesService final {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::houses::UpdateHouseRequest, ::mruv::houses::UpdateHouseResponse>* streamer) {
                        return this->StreamedUpdateHouse(context,
                          streamer);
@@ -928,8 +880,8 @@ class MruVHousesService final {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>(
-            [this](::grpc_impl::ServerContext* context,
-                   ::grpc_impl::ServerUnaryStreamer<
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
                      ::mruv::houses::DeleteHouseRequest, ::mruv::houses::DeleteHouseResponse>* streamer) {
                        return this->StreamedDeleteHouse(context,
                          streamer);
