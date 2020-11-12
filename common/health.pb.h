@@ -55,6 +55,7 @@ struct TableStruct_common_2fhealth_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fhealth_2eproto;
 namespace mruv {
+namespace common {
 class ServiceStatusRequest;
 class ServiceStatusRequestDefaultTypeInternal;
 extern ServiceStatusRequestDefaultTypeInternal _ServiceStatusRequest_default_instance_;
@@ -67,19 +68,21 @@ extern VersionRequestDefaultTypeInternal _VersionRequest_default_instance_;
 class VersionResponse;
 class VersionResponseDefaultTypeInternal;
 extern VersionResponseDefaultTypeInternal _VersionResponse_default_instance_;
+}  // namespace common
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::ServiceStatusRequest* Arena::CreateMaybeMessage<::mruv::ServiceStatusRequest>(Arena*);
-template<> ::mruv::ServiceStatusResponse* Arena::CreateMaybeMessage<::mruv::ServiceStatusResponse>(Arena*);
-template<> ::mruv::VersionRequest* Arena::CreateMaybeMessage<::mruv::VersionRequest>(Arena*);
-template<> ::mruv::VersionResponse* Arena::CreateMaybeMessage<::mruv::VersionResponse>(Arena*);
+template<> ::mruv::common::ServiceStatusRequest* Arena::CreateMaybeMessage<::mruv::common::ServiceStatusRequest>(Arena*);
+template<> ::mruv::common::ServiceStatusResponse* Arena::CreateMaybeMessage<::mruv::common::ServiceStatusResponse>(Arena*);
+template<> ::mruv::common::VersionRequest* Arena::CreateMaybeMessage<::mruv::common::VersionRequest>(Arena*);
+template<> ::mruv::common::VersionResponse* Arena::CreateMaybeMessage<::mruv::common::VersionResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace common {
 
 // ===================================================================
 
 class ServiceStatusRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ServiceStatusRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.common.ServiceStatusRequest) */ {
  public:
   inline ServiceStatusRequest() : ServiceStatusRequest(nullptr) {}
   virtual ~ServiceStatusRequest();
@@ -168,7 +171,7 @@ class ServiceStatusRequest PROTOBUF_FINAL :
   void InternalSwap(ServiceStatusRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ServiceStatusRequest";
+    return "mruv.common.ServiceStatusRequest";
   }
   protected:
   explicit ServiceStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -190,7 +193,7 @@ class ServiceStatusRequest PROTOBUF_FINAL :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(class_scope:mruv.common.ServiceStatusRequest)
  private:
   class _Internal;
 
@@ -203,7 +206,7 @@ class ServiceStatusRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ServiceStatusResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ServiceStatusResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.common.ServiceStatusResponse) */ {
  public:
   inline ServiceStatusResponse() : ServiceStatusResponse(nullptr) {}
   virtual ~ServiceStatusResponse();
@@ -292,7 +295,7 @@ class ServiceStatusResponse PROTOBUF_FINAL :
   void InternalSwap(ServiceStatusResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ServiceStatusResponse";
+    return "mruv.common.ServiceStatusResponse";
   }
   protected:
   explicit ServiceStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -333,7 +336,7 @@ class ServiceStatusResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_status();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(class_scope:mruv.common.ServiceStatusResponse)
  private:
   class _Internal;
 
@@ -347,7 +350,7 @@ class ServiceStatusResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class VersionRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.VersionRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.common.VersionRequest) */ {
  public:
   inline VersionRequest() : VersionRequest(nullptr) {}
   virtual ~VersionRequest();
@@ -436,7 +439,7 @@ class VersionRequest PROTOBUF_FINAL :
   void InternalSwap(VersionRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.VersionRequest";
+    return "mruv.common.VersionRequest";
   }
   protected:
   explicit VersionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -458,7 +461,7 @@ class VersionRequest PROTOBUF_FINAL :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:mruv.VersionRequest)
+  // @@protoc_insertion_point(class_scope:mruv.common.VersionRequest)
  private:
   class _Internal;
 
@@ -471,7 +474,7 @@ class VersionRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class VersionResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.VersionResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.common.VersionResponse) */ {
  public:
   inline VersionResponse() : VersionResponse(nullptr) {}
   virtual ~VersionResponse();
@@ -560,7 +563,7 @@ class VersionResponse PROTOBUF_FINAL :
   void InternalSwap(VersionResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.VersionResponse";
+    return "mruv.common.VersionResponse";
   }
   protected:
   explicit VersionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -652,7 +655,7 @@ class VersionResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_os_arch();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.VersionResponse)
+  // @@protoc_insertion_point(class_scope:mruv.common.VersionResponse)
  private:
   class _Internal;
 
@@ -686,15 +689,15 @@ inline void ServiceStatusResponse::clear_status() {
   status_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ServiceStatusResponse::status() const {
-  // @@protoc_insertion_point(field_get:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_get:mruv.common.ServiceStatusResponse.status)
   return _internal_status();
 }
 inline void ServiceStatusResponse::set_status(const std::string& value) {
   _internal_set_status(value);
-  // @@protoc_insertion_point(field_set:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_set:mruv.common.ServiceStatusResponse.status)
 }
 inline std::string* ServiceStatusResponse::mutable_status() {
-  // @@protoc_insertion_point(field_mutable:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_mutable:mruv.common.ServiceStatusResponse.status)
   return _internal_mutable_status();
 }
 inline const std::string& ServiceStatusResponse::_internal_status() const {
@@ -708,28 +711,28 @@ inline void ServiceStatusResponse::set_status(std::string&& value) {
   
   status_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.common.ServiceStatusResponse.status)
 }
 inline void ServiceStatusResponse::set_status(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_set_char:mruv.common.ServiceStatusResponse.status)
 }
 inline void ServiceStatusResponse::set_status(const char* value,
     size_t size) {
   
   status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_set_pointer:mruv.common.ServiceStatusResponse.status)
 }
 inline std::string* ServiceStatusResponse::_internal_mutable_status() {
   
   return status_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ServiceStatusResponse::release_status() {
-  // @@protoc_insertion_point(field_release:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_release:mruv.common.ServiceStatusResponse.status)
   return status_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ServiceStatusResponse::set_allocated_status(std::string* status) {
@@ -740,7 +743,7 @@ inline void ServiceStatusResponse::set_allocated_status(std::string* status) {
   }
   status_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), status,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.ServiceStatusResponse.status)
+  // @@protoc_insertion_point(field_set_allocated:mruv.common.ServiceStatusResponse.status)
 }
 
 // -------------------------------------------------------------------
@@ -756,15 +759,15 @@ inline void VersionResponse::clear_version() {
   version_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& VersionResponse::version() const {
-  // @@protoc_insertion_point(field_get:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_get:mruv.common.VersionResponse.version)
   return _internal_version();
 }
 inline void VersionResponse::set_version(const std::string& value) {
   _internal_set_version(value);
-  // @@protoc_insertion_point(field_set:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_set:mruv.common.VersionResponse.version)
 }
 inline std::string* VersionResponse::mutable_version() {
-  // @@protoc_insertion_point(field_mutable:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_mutable:mruv.common.VersionResponse.version)
   return _internal_mutable_version();
 }
 inline const std::string& VersionResponse::_internal_version() const {
@@ -778,28 +781,28 @@ inline void VersionResponse::set_version(std::string&& value) {
   
   version_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.common.VersionResponse.version)
 }
 inline void VersionResponse::set_version(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_set_char:mruv.common.VersionResponse.version)
 }
 inline void VersionResponse::set_version(const char* value,
     size_t size) {
   
   version_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_set_pointer:mruv.common.VersionResponse.version)
 }
 inline std::string* VersionResponse::_internal_mutable_version() {
   
   return version_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* VersionResponse::release_version() {
-  // @@protoc_insertion_point(field_release:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_release:mruv.common.VersionResponse.version)
   return version_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void VersionResponse::set_allocated_version(std::string* version) {
@@ -810,7 +813,7 @@ inline void VersionResponse::set_allocated_version(std::string* version) {
   }
   version_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), version,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.VersionResponse.version)
+  // @@protoc_insertion_point(field_set_allocated:mruv.common.VersionResponse.version)
 }
 
 // string build_date = 2;
@@ -818,15 +821,15 @@ inline void VersionResponse::clear_build_date() {
   build_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& VersionResponse::build_date() const {
-  // @@protoc_insertion_point(field_get:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_get:mruv.common.VersionResponse.build_date)
   return _internal_build_date();
 }
 inline void VersionResponse::set_build_date(const std::string& value) {
   _internal_set_build_date(value);
-  // @@protoc_insertion_point(field_set:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_set:mruv.common.VersionResponse.build_date)
 }
 inline std::string* VersionResponse::mutable_build_date() {
-  // @@protoc_insertion_point(field_mutable:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_mutable:mruv.common.VersionResponse.build_date)
   return _internal_mutable_build_date();
 }
 inline const std::string& VersionResponse::_internal_build_date() const {
@@ -840,28 +843,28 @@ inline void VersionResponse::set_build_date(std::string&& value) {
   
   build_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.common.VersionResponse.build_date)
 }
 inline void VersionResponse::set_build_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   build_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_set_char:mruv.common.VersionResponse.build_date)
 }
 inline void VersionResponse::set_build_date(const char* value,
     size_t size) {
   
   build_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_set_pointer:mruv.common.VersionResponse.build_date)
 }
 inline std::string* VersionResponse::_internal_mutable_build_date() {
   
   return build_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* VersionResponse::release_build_date() {
-  // @@protoc_insertion_point(field_release:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_release:mruv.common.VersionResponse.build_date)
   return build_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void VersionResponse::set_allocated_build_date(std::string* build_date) {
@@ -872,7 +875,7 @@ inline void VersionResponse::set_allocated_build_date(std::string* build_date) {
   }
   build_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), build_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.VersionResponse.build_date)
+  // @@protoc_insertion_point(field_set_allocated:mruv.common.VersionResponse.build_date)
 }
 
 // string commit = 3;
@@ -880,15 +883,15 @@ inline void VersionResponse::clear_commit() {
   commit_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& VersionResponse::commit() const {
-  // @@protoc_insertion_point(field_get:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_get:mruv.common.VersionResponse.commit)
   return _internal_commit();
 }
 inline void VersionResponse::set_commit(const std::string& value) {
   _internal_set_commit(value);
-  // @@protoc_insertion_point(field_set:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_set:mruv.common.VersionResponse.commit)
 }
 inline std::string* VersionResponse::mutable_commit() {
-  // @@protoc_insertion_point(field_mutable:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_mutable:mruv.common.VersionResponse.commit)
   return _internal_mutable_commit();
 }
 inline const std::string& VersionResponse::_internal_commit() const {
@@ -902,28 +905,28 @@ inline void VersionResponse::set_commit(std::string&& value) {
   
   commit_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.common.VersionResponse.commit)
 }
 inline void VersionResponse::set_commit(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   commit_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_set_char:mruv.common.VersionResponse.commit)
 }
 inline void VersionResponse::set_commit(const char* value,
     size_t size) {
   
   commit_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_set_pointer:mruv.common.VersionResponse.commit)
 }
 inline std::string* VersionResponse::_internal_mutable_commit() {
   
   return commit_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* VersionResponse::release_commit() {
-  // @@protoc_insertion_point(field_release:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_release:mruv.common.VersionResponse.commit)
   return commit_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void VersionResponse::set_allocated_commit(std::string* commit) {
@@ -934,7 +937,7 @@ inline void VersionResponse::set_allocated_commit(std::string* commit) {
   }
   commit_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), commit,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.VersionResponse.commit)
+  // @@protoc_insertion_point(field_set_allocated:mruv.common.VersionResponse.commit)
 }
 
 // string os_arch = 4;
@@ -942,15 +945,15 @@ inline void VersionResponse::clear_os_arch() {
   os_arch_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& VersionResponse::os_arch() const {
-  // @@protoc_insertion_point(field_get:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_get:mruv.common.VersionResponse.os_arch)
   return _internal_os_arch();
 }
 inline void VersionResponse::set_os_arch(const std::string& value) {
   _internal_set_os_arch(value);
-  // @@protoc_insertion_point(field_set:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_set:mruv.common.VersionResponse.os_arch)
 }
 inline std::string* VersionResponse::mutable_os_arch() {
-  // @@protoc_insertion_point(field_mutable:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_mutable:mruv.common.VersionResponse.os_arch)
   return _internal_mutable_os_arch();
 }
 inline const std::string& VersionResponse::_internal_os_arch() const {
@@ -964,28 +967,28 @@ inline void VersionResponse::set_os_arch(std::string&& value) {
   
   os_arch_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.common.VersionResponse.os_arch)
 }
 inline void VersionResponse::set_os_arch(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   os_arch_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_set_char:mruv.common.VersionResponse.os_arch)
 }
 inline void VersionResponse::set_os_arch(const char* value,
     size_t size) {
   
   os_arch_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_set_pointer:mruv.common.VersionResponse.os_arch)
 }
 inline std::string* VersionResponse::_internal_mutable_os_arch() {
   
   return os_arch_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* VersionResponse::release_os_arch() {
-  // @@protoc_insertion_point(field_release:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_release:mruv.common.VersionResponse.os_arch)
   return os_arch_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void VersionResponse::set_allocated_os_arch(std::string* os_arch) {
@@ -996,7 +999,7 @@ inline void VersionResponse::set_allocated_os_arch(std::string* os_arch) {
   }
   os_arch_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), os_arch,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.VersionResponse.os_arch)
+  // @@protoc_insertion_point(field_set_allocated:mruv.common.VersionResponse.os_arch)
 }
 
 #ifdef __GNUC__
@@ -1011,6 +1014,7 @@ inline void VersionResponse::set_allocated_os_arch(std::string* os_arch) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace common
 }  // namespace mruv
 
 // @@protoc_insertion_point(global_scope)

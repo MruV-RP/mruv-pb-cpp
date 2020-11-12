@@ -15,6 +15,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 namespace mruv {
+namespace common {
 class PositionDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Position> _instance;
@@ -23,16 +24,17 @@ class RotationDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Rotation> _instance;
 } _Rotation_default_instance_;
+}  // namespace common
 }  // namespace mruv
 static void InitDefaultsscc_info_Position_common_2fspatial_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_Position_default_instance_;
-    new (ptr) ::mruv::Position();
+    void* ptr = &::mruv::common::_Position_default_instance_;
+    new (ptr) ::mruv::common::Position();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::Position::InitAsDefaultInstance();
+  ::mruv::common::Position::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Position_common_2fspatial_2eproto =
@@ -42,11 +44,11 @@ static void InitDefaultsscc_info_Rotation_common_2fspatial_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_Rotation_default_instance_;
-    new (ptr) ::mruv::Rotation();
+    void* ptr = &::mruv::common::_Rotation_default_instance_;
+    new (ptr) ::mruv::common::Rotation();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::Rotation::InitAsDefaultInstance();
+  ::mruv::common::Rotation::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Rotation_common_2fspatial_2eproto =
@@ -58,38 +60,38 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_common_2fspatial_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::Position, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Position, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::Position, x_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Position, y_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Position, z_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Position, x_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Position, y_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Position, z_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::Rotation, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Rotation, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::Rotation, rx_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Rotation, ry_),
-  PROTOBUF_FIELD_OFFSET(::mruv::Rotation, rz_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Rotation, rx_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Rotation, ry_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::Rotation, rz_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::Position)},
-  { 8, -1, sizeof(::mruv::Rotation)},
+  { 0, -1, sizeof(::mruv::common::Position)},
+  { 8, -1, sizeof(::mruv::common::Rotation)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_Position_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_Rotation_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::common::_Position_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::common::_Rotation_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fspatial_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\024common/spatial.proto\022\004mruv\"+\n\010Position"
-  "\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\".\n\010Rot"
-  "ation\022\n\n\002rx\030\001 \001(\001\022\n\n\002ry\030\002 \001(\001\022\n\n\002rz\030\003 \001("
-  "\001B&Z$github.com/MruV-RP/mruv-pb-go/commo"
-  "nb\006proto3"
+  "\n\024common/spatial.proto\022\013mruv.common\"+\n\010P"
+  "osition\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001"
+  "\".\n\010Rotation\022\n\n\002rx\030\001 \001(\001\022\n\n\002ry\030\002 \001(\001\022\n\n\002"
+  "rz\030\003 \001(\001B&Z$github.com/MruV-RP/mruv-pb-g"
+  "o/commonb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fspatial_2eproto_deps[1] = {
 };
@@ -99,7 +101,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fspatial_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fspatial_2eproto = {
-  false, false, descriptor_table_protodef_common_2fspatial_2eproto, "common/spatial.proto", 169,
+  false, false, descriptor_table_protodef_common_2fspatial_2eproto, "common/spatial.proto", 176,
   &descriptor_table_common_2fspatial_2eproto_once, descriptor_table_common_2fspatial_2eproto_sccs, descriptor_table_common_2fspatial_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_common_2fspatial_2eproto::offsets,
   file_level_metadata_common_2fspatial_2eproto, 2, file_level_enum_descriptors_common_2fspatial_2eproto, file_level_service_descriptors_common_2fspatial_2eproto,
@@ -108,6 +110,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_common_2fspatial_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_common_2fspatial_2eproto)), true);
 namespace mruv {
+namespace common {
 
 // ===================================================================
 
@@ -121,7 +124,7 @@ Position::Position(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.Position)
+  // @@protoc_insertion_point(arena_constructor:mruv.common.Position)
 }
 Position::Position(const Position& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -129,7 +132,7 @@ Position::Position(const Position& from)
   ::memcpy(&x_, &from.x_,
     static_cast<size_t>(reinterpret_cast<char*>(&z_) -
     reinterpret_cast<char*>(&x_)) + sizeof(z_));
-  // @@protoc_insertion_point(copy_constructor:mruv.Position)
+  // @@protoc_insertion_point(copy_constructor:mruv.common.Position)
 }
 
 void Position::SharedCtor() {
@@ -139,7 +142,7 @@ void Position::SharedCtor() {
 }
 
 Position::~Position() {
-  // @@protoc_insertion_point(destructor:mruv.Position)
+  // @@protoc_insertion_point(destructor:mruv.common.Position)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -164,7 +167,7 @@ const Position& Position::default_instance() {
 
 
 void Position::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.Position)
+// @@protoc_insertion_point(message_clear_start:mruv.common.Position)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -228,7 +231,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Position::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.Position)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.common.Position)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -254,12 +257,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.Position)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.common.Position)
   return target;
 }
 
 size_t Position::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.Position)
+// @@protoc_insertion_point(message_byte_size_start:mruv.common.Position)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -291,22 +294,22 @@ size_t Position::ByteSizeLong() const {
 }
 
 void Position::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.Position)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.common.Position)
   GOOGLE_DCHECK_NE(&from, this);
   const Position* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Position>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.Position)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.common.Position)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.Position)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.common.Position)
     MergeFrom(*source);
   }
 }
 
 void Position::MergeFrom(const Position& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.Position)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.common.Position)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -324,14 +327,14 @@ void Position::MergeFrom(const Position& from) {
 }
 
 void Position::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.Position)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.common.Position)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Position::CopyFrom(const Position& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.Position)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.common.Position)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -369,7 +372,7 @@ Rotation::Rotation(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.Rotation)
+  // @@protoc_insertion_point(arena_constructor:mruv.common.Rotation)
 }
 Rotation::Rotation(const Rotation& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -377,7 +380,7 @@ Rotation::Rotation(const Rotation& from)
   ::memcpy(&rx_, &from.rx_,
     static_cast<size_t>(reinterpret_cast<char*>(&rz_) -
     reinterpret_cast<char*>(&rx_)) + sizeof(rz_));
-  // @@protoc_insertion_point(copy_constructor:mruv.Rotation)
+  // @@protoc_insertion_point(copy_constructor:mruv.common.Rotation)
 }
 
 void Rotation::SharedCtor() {
@@ -387,7 +390,7 @@ void Rotation::SharedCtor() {
 }
 
 Rotation::~Rotation() {
-  // @@protoc_insertion_point(destructor:mruv.Rotation)
+  // @@protoc_insertion_point(destructor:mruv.common.Rotation)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -412,7 +415,7 @@ const Rotation& Rotation::default_instance() {
 
 
 void Rotation::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.Rotation)
+// @@protoc_insertion_point(message_clear_start:mruv.common.Rotation)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -476,7 +479,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Rotation::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.Rotation)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.common.Rotation)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -502,12 +505,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.Rotation)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.common.Rotation)
   return target;
 }
 
 size_t Rotation::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.Rotation)
+// @@protoc_insertion_point(message_byte_size_start:mruv.common.Rotation)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -539,22 +542,22 @@ size_t Rotation::ByteSizeLong() const {
 }
 
 void Rotation::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.Rotation)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.common.Rotation)
   GOOGLE_DCHECK_NE(&from, this);
   const Rotation* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Rotation>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.Rotation)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.common.Rotation)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.Rotation)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.common.Rotation)
     MergeFrom(*source);
   }
 }
 
 void Rotation::MergeFrom(const Rotation& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.Rotation)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.common.Rotation)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -572,14 +575,14 @@ void Rotation::MergeFrom(const Rotation& from) {
 }
 
 void Rotation::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.Rotation)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.common.Rotation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Rotation::CopyFrom(const Rotation& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.Rotation)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.common.Rotation)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -606,13 +609,14 @@ void Rotation::InternalSwap(Rotation* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace common
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::Position* Arena::CreateMaybeMessage< ::mruv::Position >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::Position >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::common::Position* Arena::CreateMaybeMessage< ::mruv::common::Position >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::common::Position >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::Rotation* Arena::CreateMaybeMessage< ::mruv::Rotation >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::Rotation >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::common::Rotation* Arena::CreateMaybeMessage< ::mruv::common::Rotation >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::common::Rotation >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

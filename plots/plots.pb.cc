@@ -278,30 +278,30 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_plots_2fplots_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\021plots/plots.proto\022\nmruv.plots\032\034google/"
   "api/annotations.proto\032\024common/spatial.pr"
-  "oto\"I\n\004Plot\022\014\n\004name\030\001 \001(\t\022\023\n\013description"
-  "\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Position\"V"
-  "\n\021CreatePlotRequest\022\014\n\004name\030\001 \001(\t\022\023\n\013des"
-  "cription\030\002 \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Po"
-  "sition\" \n\022CreatePlotResponse\022\n\n\002id\030\001 \001(\r"
-  "\"\034\n\016GetPlotRequest\022\n\n\002id\030\001 \001(\r\"b\n\017GetPlo"
-  "tResponse\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002"
-  " \001(\t\022\036\n\006points\030\003 \003(\0132\016.mruv.Position\022\014\n\004"
-  "area\030\004 \001(\001\"B\n\021UpdatePlotRequest\022\n\n\002id\030\001 "
-  "\001(\r\022\014\n\004name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\"\024"
-  "\n\022UpdatePlotResponse\"\037\n\021DeletePlotReques"
-  "t\022\n\n\002id\030\001 \001(\r\"\024\n\022DeletePlotResponse2\230\003\n\020"
-  "MruVPlotsService\022^\n\nCreatePlot\022\035.mruv.pl"
-  "ots.CreatePlotRequest\032\036.mruv.plots.Creat"
-  "ePlotResponse\"\021\202\323\344\223\002\013\"\t/v1/plots\022Z\n\007GetP"
-  "lot\022\032.mruv.plots.GetPlotRequest\032\033.mruv.p"
-  "lots.GetPlotResponse\"\026\202\323\344\223\002\020\022\016/v1/plots/"
-  "{id}\022c\n\nUpdatePlot\022\035.mruv.plots.UpdatePl"
-  "otRequest\032\036.mruv.plots.UpdatePlotRespons"
-  "e\"\026\202\323\344\223\002\0202\016/v1/plots/{id}\022c\n\nDeletePlot\022"
-  "\035.mruv.plots.DeletePlotRequest\032\036.mruv.pl"
-  "ots.DeletePlotResponse\"\026\202\323\344\223\002\020*\016/v1/plot"
-  "s/{id}B%Z#github.com/MruV-RP/mruv-pb-go/"
-  "plotsb\006proto3"
+  "oto\"P\n\004Plot\022\014\n\004name\030\001 \001(\t\022\023\n\013description"
+  "\030\002 \001(\t\022%\n\006points\030\003 \003(\0132\025.mruv.common.Pos"
+  "ition\"]\n\021CreatePlotRequest\022\014\n\004name\030\001 \001(\t"
+  "\022\023\n\013description\030\002 \001(\t\022%\n\006points\030\003 \003(\0132\025."
+  "mruv.common.Position\" \n\022CreatePlotRespon"
+  "se\022\n\n\002id\030\001 \001(\r\"\034\n\016GetPlotRequest\022\n\n\002id\030\001"
+  " \001(\r\"i\n\017GetPlotResponse\022\014\n\004name\030\001 \001(\t\022\023\n"
+  "\013description\030\002 \001(\t\022%\n\006points\030\003 \003(\0132\025.mru"
+  "v.common.Position\022\014\n\004area\030\004 \001(\001\"B\n\021Updat"
+  "ePlotRequest\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\023"
+  "\n\013description\030\003 \001(\t\"\024\n\022UpdatePlotRespons"
+  "e\"\037\n\021DeletePlotRequest\022\n\n\002id\030\001 \001(\r\"\024\n\022De"
+  "letePlotResponse2\230\003\n\020MruVPlotsService\022^\n"
+  "\nCreatePlot\022\035.mruv.plots.CreatePlotReque"
+  "st\032\036.mruv.plots.CreatePlotResponse\"\021\202\323\344\223"
+  "\002\013\"\t/v1/plots\022Z\n\007GetPlot\022\032.mruv.plots.Ge"
+  "tPlotRequest\032\033.mruv.plots.GetPlotRespons"
+  "e\"\026\202\323\344\223\002\020\022\016/v1/plots/{id}\022c\n\nUpdatePlot\022"
+  "\035.mruv.plots.UpdatePlotRequest\032\036.mruv.pl"
+  "ots.UpdatePlotResponse\"\026\202\323\344\223\002\0202\016/v1/plot"
+  "s/{id}\022c\n\nDeletePlot\022\035.mruv.plots.Delete"
+  "PlotRequest\032\036.mruv.plots.DeletePlotRespo"
+  "nse\"\026\202\323\344\223\002\020*\016/v1/plots/{id}B%Z#github.co"
+  "m/MruV-RP/mruv-pb-go/plotsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_plots_2fplots_2eproto_deps[2] = {
   &::descriptor_table_common_2fspatial_2eproto,
@@ -320,7 +320,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_plo
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_plots_2fplots_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_plots_2fplots_2eproto = {
-  false, false, descriptor_table_protodef_plots_2fplots_2eproto, "plots/plots.proto", 1013,
+  false, false, descriptor_table_protodef_plots_2fplots_2eproto, "plots/plots.proto", 1034,
   &descriptor_table_plots_2fplots_2eproto_once, descriptor_table_plots_2fplots_2eproto_sccs, descriptor_table_plots_2fplots_2eproto_deps, 9, 2,
   schemas, file_default_instances, TableStruct_plots_2fplots_2eproto::offsets,
   file_level_metadata_plots_2fplots_2eproto, 9, file_level_enum_descriptors_plots_2fplots_2eproto, file_level_service_descriptors_plots_2fplots_2eproto,
@@ -437,7 +437,7 @@ const char* Plot::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .mruv.Position points = 3;
+      // repeated .mruv.common.Position points = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
@@ -497,7 +497,7 @@ failure:
         2, this->_internal_description(), target);
   }
 
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_points_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -521,7 +521,7 @@ size_t Plot::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   total_size += 1UL * this->_internal_points_size();
   for (const auto& msg : this->points_) {
     total_size +=
@@ -719,7 +719,7 @@ const char* CreatePlotRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .mruv.Position points = 3;
+      // repeated .mruv.common.Position points = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
@@ -779,7 +779,7 @@ failure:
         2, this->_internal_description(), target);
   }
 
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_points_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -803,7 +803,7 @@ size_t CreatePlotRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   total_size += 1UL * this->_internal_points_size();
   for (const auto& msg : this->points_) {
     total_size +=
@@ -1398,7 +1398,7 @@ const char* GetPlotResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .mruv.Position points = 3;
+      // repeated .mruv.common.Position points = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
@@ -1465,7 +1465,7 @@ failure:
         2, this->_internal_description(), target);
   }
 
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_points_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1495,7 +1495,7 @@ size_t GetPlotResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   total_size += 1UL * this->_internal_points_size();
   for (const auto& msg : this->points_) {
     total_size +=

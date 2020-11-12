@@ -595,7 +595,7 @@ const char descriptor_table_protodef_devtools_2fdevtools_2eproto[] PROTOBUF_SECT
   "\001(\0132\025.mruv.devtools.Player\"C\n\024SaveAnimat"
   "ionRequest\022+\n\tanimation\030\001 \001(\0132\030.mruv.dev"
   "tools.Animation\"(\n\025SaveAnimationResponse"
-  "\022\017\n\007success\030\001 \001(\0102\254\t\n\023MruVDevToolsServic"
+  "\022\017\n\007success\030\001 \001(\0102\310\t\n\023MruVDevToolsServic"
   "e\022w\n\014GetPositions\022\".mruv.devtools.GetPos"
   "itionsRequest\032#.mruv.devtools.GetPositio"
   "nsResponse\"\036\202\323\344\223\002\030\022\026/v1/devtools/positio"
@@ -620,13 +620,14 @@ const char descriptor_table_protodef_devtools_2fdevtools_2eproto[] PROTOBUF_SECT
   "ns/{name}\022{\n\rSaveAnimation\022#.mruv.devtoo"
   "ls.SaveAnimationRequest\032$.mruv.devtools."
   "SaveAnimationResponse\"\037\202\323\344\223\002\031\"\027/v1/devto"
-  "ols/animations\022h\n\020GetServiceStatus\022\032.mru"
-  "v.ServiceStatusRequest\032\033.mruv.ServiceSta"
-  "tusResponse\"\033\202\323\344\223\002\025\022\023/v1/devtools/status"
-  "\022^\n\021GetServiceVersion\022\024.mruv.VersionRequ"
-  "est\032\025.mruv.VersionResponse\"\034\202\323\344\223\002\026\022\024/v1/"
-  "devtools/versionB(Z&github.com/MruV-RP/m"
-  "ruv-pb-go/devtoolsb\006proto3"
+  "ols/animations\022v\n\020GetServiceStatus\022!.mru"
+  "v.common.ServiceStatusRequest\032\".mruv.com"
+  "mon.ServiceStatusResponse\"\033\202\323\344\223\002\025\022\023/v1/d"
+  "evtools/status\022l\n\021GetServiceVersion\022\033.mr"
+  "uv.common.VersionRequest\032\034.mruv.common.V"
+  "ersionResponse\"\034\202\323\344\223\002\026\022\024/v1/devtools/ver"
+  "sionB(Z&github.com/MruV-RP/mruv-pb-go/de"
+  "vtoolsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_devtools_2fdevtools_2eproto_deps[3] = {
   &::descriptor_table_common_2fhealth_2eproto,
@@ -656,7 +657,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dev
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_devtools_2fdevtools_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_devtools_2fdevtools_2eproto = {
-  false, false, descriptor_table_protodef_devtools_2fdevtools_2eproto, "devtools/devtools.proto", 2706,
+  false, false, descriptor_table_protodef_devtools_2fdevtools_2eproto, "devtools/devtools.proto", 2734,
   &descriptor_table_devtools_2fdevtools_2eproto_once, descriptor_table_devtools_2fdevtools_2eproto_sccs, descriptor_table_devtools_2fdevtools_2eproto_deps, 19, 3,
   schemas, file_default_instances, TableStruct_devtools_2fdevtools_2eproto::offsets,
   file_level_metadata_devtools_2fdevtools_2eproto, 19, file_level_enum_descriptors_devtools_2fdevtools_2eproto, file_level_service_descriptors_devtools_2fdevtools_2eproto,

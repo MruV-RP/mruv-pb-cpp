@@ -20,32 +20,33 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace mruv {
+namespace items {
 
 static const char* MruVItemService_method_names[] = {
-  "/mruv.MruVItemService/CreateItem",
-  "/mruv.MruVItemService/GetItem",
-  "/mruv.MruVItemService/DeleteItem",
-  "/mruv.MruVItemService/GetItems",
-  "/mruv.MruVItemService/CreateItemType",
-  "/mruv.MruVItemService/GetItemType",
-  "/mruv.MruVItemService/DeleteItemType",
-  "/mruv.MruVItemService/GetItemTypes",
-  "/mruv.MruVItemService/CreateContainer",
-  "/mruv.MruVItemService/GetContainer",
-  "/mruv.MruVItemService/DeleteContainer",
-  "/mruv.MruVItemService/GetContainers",
-  "/mruv.MruVItemService/CreateContainerType",
-  "/mruv.MruVItemService/GetContainerType",
-  "/mruv.MruVItemService/DeleteContainerType",
-  "/mruv.MruVItemService/GetContainerTypes",
-  "/mruv.MruVItemService/GetContainerItems",
-  "/mruv.MruVItemService/PullItem",
-  "/mruv.MruVItemService/PutItem",
-  "/mruv.MruVItemService/SortItems",
-  "/mruv.MruVItemService/GetNearestItems",
-  "/mruv.MruVItemService/UseItem",
-  "/mruv.MruVItemService/GetServiceStatus",
-  "/mruv.MruVItemService/GetServiceVersion",
+  "/mruv.items.MruVItemService/CreateItem",
+  "/mruv.items.MruVItemService/GetItem",
+  "/mruv.items.MruVItemService/DeleteItem",
+  "/mruv.items.MruVItemService/GetItems",
+  "/mruv.items.MruVItemService/CreateItemType",
+  "/mruv.items.MruVItemService/GetItemType",
+  "/mruv.items.MruVItemService/DeleteItemType",
+  "/mruv.items.MruVItemService/GetItemTypes",
+  "/mruv.items.MruVItemService/CreateContainer",
+  "/mruv.items.MruVItemService/GetContainer",
+  "/mruv.items.MruVItemService/DeleteContainer",
+  "/mruv.items.MruVItemService/GetContainers",
+  "/mruv.items.MruVItemService/CreateContainerType",
+  "/mruv.items.MruVItemService/GetContainerType",
+  "/mruv.items.MruVItemService/DeleteContainerType",
+  "/mruv.items.MruVItemService/GetContainerTypes",
+  "/mruv.items.MruVItemService/GetContainerItems",
+  "/mruv.items.MruVItemService/PullItem",
+  "/mruv.items.MruVItemService/PutItem",
+  "/mruv.items.MruVItemService/SortItems",
+  "/mruv.items.MruVItemService/GetNearestItems",
+  "/mruv.items.MruVItemService/UseItem",
+  "/mruv.items.MruVItemService/GetServiceStatus",
+  "/mruv.items.MruVItemService/GetServiceVersion",
 };
 
 std::unique_ptr< MruVItemService::Stub> MruVItemService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -81,552 +82,552 @@ MruVItemService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& ch
   , rpcmethod_GetServiceVersion_(MruVItemService_method_names[23], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status MruVItemService::Stub::CreateItem(::grpc::ClientContext* context, const ::mruv::Item& request, ::mruv::ItemID* response) {
+::grpc::Status MruVItemService::Stub::CreateItem(::grpc::ClientContext* context, const ::mruv::items::Item& request, ::mruv::items::ItemID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateItem_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::CreateItem(::grpc::ClientContext* context, const ::mruv::items::Item* request, ::mruv::items::ItemID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateItem_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::CreateItem(::grpc::ClientContext* context, const ::mruv::Item* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::CreateItem(::grpc::ClientContext* context, const ::mruv::items::Item* request, ::mruv::items::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemID>* MruVItemService::Stub::PrepareAsyncCreateItemRaw(::grpc::ClientContext* context, const ::mruv::Item& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ItemID>::Create(channel_.get(), cq, rpcmethod_CreateItem_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemID>* MruVItemService::Stub::PrepareAsyncCreateItemRaw(::grpc::ClientContext* context, const ::mruv::items::Item& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ItemID>::Create(channel_.get(), cq, rpcmethod_CreateItem_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemID>* MruVItemService::Stub::AsyncCreateItemRaw(::grpc::ClientContext* context, const ::mruv::Item& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemID>* MruVItemService::Stub::AsyncCreateItemRaw(::grpc::ClientContext* context, const ::mruv::items::Item& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCreateItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetItem(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::mruv::Item* response) {
+::grpc::Status MruVItemService::Stub::GetItem(::grpc::ClientContext* context, const ::mruv::items::ItemID& request, ::mruv::items::Item* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetItem_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetItem(::grpc::ClientContext* context, const ::mruv::items::ItemID* request, ::mruv::items::Item* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetItem_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetItem(::grpc::ClientContext* context, const ::mruv::items::ItemID* request, ::mruv::items::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Item>* MruVItemService::Stub::PrepareAsyncGetItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::Item>::Create(channel_.get(), cq, rpcmethod_GetItem_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::Item>* MruVItemService::Stub::PrepareAsyncGetItemRaw(::grpc::ClientContext* context, const ::mruv::items::ItemID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::Item>::Create(channel_.get(), cq, rpcmethod_GetItem_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Item>* MruVItemService::Stub::AsyncGetItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::Item>* MruVItemService::Stub::AsyncGetItemRaw(::grpc::ClientContext* context, const ::mruv::items::ItemID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::mruv::ItemID* response) {
+::grpc::Status MruVItemService::Stub::DeleteItem(::grpc::ClientContext* context, const ::mruv::items::ItemID& request, ::mruv::items::ItemID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteItem_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::DeleteItem(::grpc::ClientContext* context, const ::mruv::items::ItemID* request, ::mruv::items::ItemID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteItem_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::DeleteItem(::grpc::ClientContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::DeleteItem(::grpc::ClientContext* context, const ::mruv::items::ItemID* request, ::mruv::items::ItemID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemID>* MruVItemService::Stub::PrepareAsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ItemID>::Create(channel_.get(), cq, rpcmethod_DeleteItem_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemID>* MruVItemService::Stub::PrepareAsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::items::ItemID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ItemID>::Create(channel_.get(), cq, rpcmethod_DeleteItem_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemID>* MruVItemService::Stub::AsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::ItemID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemID>* MruVItemService::Stub::AsyncDeleteItemRaw(::grpc::ClientContext* context, const ::mruv::items::ItemID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncDeleteItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::mruv::GetItemsResponse* response) {
+::grpc::Status MruVItemService::Stub::GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::mruv::items::GetItemsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetItems_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetItems_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetItems(::grpc::ClientContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetItems(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetItems_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>* MruVItemService::Stub::PrepareAsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::GetItemsResponse>::Create(channel_.get(), cq, rpcmethod_GetItems_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>* MruVItemService::Stub::PrepareAsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::GetItemsResponse>::Create(channel_.get(), cq, rpcmethod_GetItems_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetItemsResponse>* MruVItemService::Stub::AsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemsResponse>* MruVItemService::Stub::AsyncGetItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetItemsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::mruv::ItemTypeID* response) {
+::grpc::Status MruVItemService::Stub::CreateItemType(::grpc::ClientContext* context, const ::mruv::items::ItemType& request, ::mruv::items::ItemTypeID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateItemType_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::CreateItemType(::grpc::ClientContext* context, const ::mruv::items::ItemType* request, ::mruv::items::ItemTypeID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateItemType_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::CreateItemType(::grpc::ClientContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::CreateItemType(::grpc::ClientContext* context, const ::mruv::items::ItemType* request, ::mruv::items::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateItemType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* MruVItemService::Stub::PrepareAsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ItemTypeID>::Create(channel_.get(), cq, rpcmethod_CreateItemType_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemTypeID>* MruVItemService::Stub::PrepareAsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ItemType& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ItemTypeID>::Create(channel_.get(), cq, rpcmethod_CreateItemType_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* MruVItemService::Stub::AsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemType& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemTypeID>* MruVItemService::Stub::AsyncCreateItemTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ItemType& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCreateItemTypeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::mruv::ItemType* response) {
+::grpc::Status MruVItemService::Stub::GetItemType(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID& request, ::mruv::items::ItemType* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetItemType_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetItemType(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID* request, ::mruv::items::ItemType* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetItemType_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetItemType(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID* request, ::mruv::items::ItemType* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetItemType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemType>* MruVItemService::Stub::PrepareAsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ItemType>::Create(channel_.get(), cq, rpcmethod_GetItemType_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemType>* MruVItemService::Stub::PrepareAsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ItemType>::Create(channel_.get(), cq, rpcmethod_GetItemType_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemType>* MruVItemService::Stub::AsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemType>* MruVItemService::Stub::AsyncGetItemTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetItemTypeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::mruv::ItemTypeID* response) {
+::grpc::Status MruVItemService::Stub::DeleteItemType(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID& request, ::mruv::items::ItemTypeID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteItemType_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::DeleteItemType(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID* request, ::mruv::items::ItemTypeID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteItemType_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::DeleteItemType(::grpc::ClientContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::DeleteItemType(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID* request, ::mruv::items::ItemTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteItemType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* MruVItemService::Stub::PrepareAsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ItemTypeID>::Create(channel_.get(), cq, rpcmethod_DeleteItemType_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemTypeID>* MruVItemService::Stub::PrepareAsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ItemTypeID>::Create(channel_.get(), cq, rpcmethod_DeleteItemType_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ItemTypeID>* MruVItemService::Stub::AsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ItemTypeID>* MruVItemService::Stub::AsyncDeleteItemTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ItemTypeID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncDeleteItemTypeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::mruv::GetItemTypesResponse* response) {
+::grpc::Status MruVItemService::Stub::GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::mruv::items::GetItemTypesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetItemTypes_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetItemTypes_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetItemTypes(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetItemTypes(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetItemTypes_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>* MruVItemService::Stub::PrepareAsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::GetItemTypesResponse>::Create(channel_.get(), cq, rpcmethod_GetItemTypes_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>* MruVItemService::Stub::PrepareAsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::GetItemTypesResponse>::Create(channel_.get(), cq, rpcmethod_GetItemTypes_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetItemTypesResponse>* MruVItemService::Stub::AsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetItemTypesResponse>* MruVItemService::Stub::AsyncGetItemTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetItemTypesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetItemTypesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::CreateContainer(::grpc::ClientContext* context, const ::mruv::Container& request, ::mruv::ContainerID* response) {
+::grpc::Status MruVItemService::Stub::CreateContainer(::grpc::ClientContext* context, const ::mruv::items::Container& request, ::mruv::items::ContainerID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateContainer_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::CreateContainer(::grpc::ClientContext* context, const ::mruv::items::Container* request, ::mruv::items::ContainerID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateContainer_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::CreateContainer(::grpc::ClientContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::CreateContainer(::grpc::ClientContext* context, const ::mruv::items::Container* request, ::mruv::items::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateContainer_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* MruVItemService::Stub::PrepareAsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ContainerID>::Create(channel_.get(), cq, rpcmethod_CreateContainer_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerID>* MruVItemService::Stub::PrepareAsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::items::Container& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ContainerID>::Create(channel_.get(), cq, rpcmethod_CreateContainer_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* MruVItemService::Stub::AsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::Container& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerID>* MruVItemService::Stub::AsyncCreateContainerRaw(::grpc::ClientContext* context, const ::mruv::items::Container& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCreateContainerRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::mruv::Container* response) {
+::grpc::Status MruVItemService::Stub::GetContainer(::grpc::ClientContext* context, const ::mruv::items::ContainerID& request, ::mruv::items::Container* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetContainer_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetContainer(::grpc::ClientContext* context, const ::mruv::items::ContainerID* request, ::mruv::items::Container* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetContainer_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetContainer(::grpc::ClientContext* context, const ::mruv::items::ContainerID* request, ::mruv::items::Container* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetContainer_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Container>* MruVItemService::Stub::PrepareAsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::Container>::Create(channel_.get(), cq, rpcmethod_GetContainer_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::Container>* MruVItemService::Stub::PrepareAsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::Container>::Create(channel_.get(), cq, rpcmethod_GetContainer_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Container>* MruVItemService::Stub::AsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::Container>* MruVItemService::Stub::AsyncGetContainerRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetContainerRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::mruv::ContainerID* response) {
+::grpc::Status MruVItemService::Stub::DeleteContainer(::grpc::ClientContext* context, const ::mruv::items::ContainerID& request, ::mruv::items::ContainerID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteContainer_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::DeleteContainer(::grpc::ClientContext* context, const ::mruv::items::ContainerID* request, ::mruv::items::ContainerID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteContainer_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::DeleteContainer(::grpc::ClientContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::DeleteContainer(::grpc::ClientContext* context, const ::mruv::items::ContainerID* request, ::mruv::items::ContainerID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteContainer_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* MruVItemService::Stub::PrepareAsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ContainerID>::Create(channel_.get(), cq, rpcmethod_DeleteContainer_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerID>* MruVItemService::Stub::PrepareAsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ContainerID>::Create(channel_.get(), cq, rpcmethod_DeleteContainer_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerID>* MruVItemService::Stub::AsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::ContainerID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerID>* MruVItemService::Stub::AsyncDeleteContainerRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncDeleteContainerRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::mruv::GetContainersResponse* response) {
+::grpc::Status MruVItemService::Stub::GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::mruv::items::GetContainersResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetContainers_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetContainers_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetContainers(::grpc::ClientContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetContainers(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetContainers_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>* MruVItemService::Stub::PrepareAsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::GetContainersResponse>::Create(channel_.get(), cq, rpcmethod_GetContainers_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>* MruVItemService::Stub::PrepareAsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::GetContainersResponse>::Create(channel_.get(), cq, rpcmethod_GetContainers_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetContainersResponse>* MruVItemService::Stub::AsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainersResponse>* MruVItemService::Stub::AsyncGetContainersRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetContainersRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::mruv::ContainerTypeID* response) {
+::grpc::Status MruVItemService::Stub::CreateContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerType& request, ::mruv::items::ContainerTypeID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_CreateContainerType_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::CreateContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerType* request, ::mruv::items::ContainerTypeID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_CreateContainerType_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::CreateContainerType(::grpc::ClientContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::CreateContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerType* request, ::mruv::items::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_CreateContainerType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* MruVItemService::Stub::PrepareAsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ContainerTypeID>::Create(channel_.get(), cq, rpcmethod_CreateContainerType_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerTypeID>* MruVItemService::Stub::PrepareAsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerType& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ContainerTypeID>::Create(channel_.get(), cq, rpcmethod_CreateContainerType_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* MruVItemService::Stub::AsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerType& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerTypeID>* MruVItemService::Stub::AsyncCreateContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerType& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCreateContainerTypeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::mruv::ContainerType* response) {
+::grpc::Status MruVItemService::Stub::GetContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID& request, ::mruv::items::ContainerType* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetContainerType_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID* request, ::mruv::items::ContainerType* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetContainerType_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID* request, ::mruv::items::ContainerType* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetContainerType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerType>* MruVItemService::Stub::PrepareAsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ContainerType>::Create(channel_.get(), cq, rpcmethod_GetContainerType_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerType>* MruVItemService::Stub::PrepareAsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ContainerType>::Create(channel_.get(), cq, rpcmethod_GetContainerType_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerType>* MruVItemService::Stub::AsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerType>* MruVItemService::Stub::AsyncGetContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetContainerTypeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::mruv::ContainerTypeID* response) {
+::grpc::Status MruVItemService::Stub::DeleteContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID& request, ::mruv::items::ContainerTypeID* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DeleteContainerType_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::DeleteContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID* request, ::mruv::items::ContainerTypeID* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_DeleteContainerType_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::DeleteContainerType(::grpc::ClientContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::DeleteContainerType(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID* request, ::mruv::items::ContainerTypeID* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_DeleteContainerType_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* MruVItemService::Stub::PrepareAsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ContainerTypeID>::Create(channel_.get(), cq, rpcmethod_DeleteContainerType_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerTypeID>* MruVItemService::Stub::PrepareAsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::ContainerTypeID>::Create(channel_.get(), cq, rpcmethod_DeleteContainerType_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ContainerTypeID>* MruVItemService::Stub::AsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::ContainerTypeID>* MruVItemService::Stub::AsyncDeleteContainerTypeRaw(::grpc::ClientContext* context, const ::mruv::items::ContainerTypeID& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncDeleteContainerTypeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::mruv::GetContainerTypesResponse* response) {
+::grpc::Status MruVItemService::Stub::GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::mruv::items::GetContainerTypesResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetContainerTypes_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetContainerTypes_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetContainerTypes(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetContainerTypes(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetContainerTypes_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>* MruVItemService::Stub::PrepareAsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::GetContainerTypesResponse>::Create(channel_.get(), cq, rpcmethod_GetContainerTypes_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>* MruVItemService::Stub::PrepareAsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::GetContainerTypesResponse>::Create(channel_.get(), cq, rpcmethod_GetContainerTypes_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetContainerTypesResponse>* MruVItemService::Stub::AsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerTypesResponse>* MruVItemService::Stub::AsyncGetContainerTypesRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerTypesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetContainerTypesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::mruv::GetContainerItemsResponse* response) {
+::grpc::Status MruVItemService::Stub::GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::mruv::items::GetContainerItemsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetContainerItems_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetContainerItems_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetContainerItems(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetContainerItems(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetContainerItems_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>* MruVItemService::Stub::PrepareAsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::GetContainerItemsResponse>::Create(channel_.get(), cq, rpcmethod_GetContainerItems_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>* MruVItemService::Stub::PrepareAsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::GetContainerItemsResponse>::Create(channel_.get(), cq, rpcmethod_GetContainerItems_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetContainerItemsResponse>* MruVItemService::Stub::AsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetContainerItemsResponse>* MruVItemService::Stub::AsyncGetContainerItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetContainerItemsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetContainerItemsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::mruv::Item* response) {
+::grpc::Status MruVItemService::Stub::PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::mruv::items::Item* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PullItem_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::items::Item* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PullItem_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::PullItem(::grpc::ClientContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::PullItem(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::items::Item* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PullItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Item>* MruVItemService::Stub::PrepareAsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::Item>::Create(channel_.get(), cq, rpcmethod_PullItem_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::Item>* MruVItemService::Stub::PrepareAsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::Item>::Create(channel_.get(), cq, rpcmethod_PullItem_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::Item>* MruVItemService::Stub::AsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::Item>* MruVItemService::Stub::AsyncPullItemRaw(::grpc::ClientContext* context, const ::mruv::items::PullItemRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPullItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::mruv::PutItemResponse* response) {
+::grpc::Status MruVItemService::Stub::PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::mruv::items::PutItemResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_PutItem_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_PutItem_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::PutItem(::grpc::ClientContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::PutItem(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_PutItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>* MruVItemService::Stub::PrepareAsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::PutItemResponse>::Create(channel_.get(), cq, rpcmethod_PutItem_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>* MruVItemService::Stub::PrepareAsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::PutItemResponse>::Create(channel_.get(), cq, rpcmethod_PutItem_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::PutItemResponse>* MruVItemService::Stub::AsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::PutItemResponse>* MruVItemService::Stub::AsyncPutItemRaw(::grpc::ClientContext* context, const ::mruv::items::PutItemRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncPutItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::mruv::SortItemsResponse* response) {
+::grpc::Status MruVItemService::Stub::SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::mruv::items::SortItemsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SortItems_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_SortItems_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::SortItems(::grpc::ClientContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::SortItems(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_SortItems_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>* MruVItemService::Stub::PrepareAsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::SortItemsResponse>::Create(channel_.get(), cq, rpcmethod_SortItems_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>* MruVItemService::Stub::PrepareAsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::SortItemsResponse>::Create(channel_.get(), cq, rpcmethod_SortItems_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::SortItemsResponse>* MruVItemService::Stub::AsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::SortItemsResponse>* MruVItemService::Stub::AsyncSortItemsRaw(::grpc::ClientContext* context, const ::mruv::items::SortItemsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSortItemsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::mruv::GetNearestItemsResponse* response) {
+::grpc::Status MruVItemService::Stub::GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::mruv::items::GetNearestItemsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetNearestItems_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetNearestItems_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetNearestItems(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetNearestItems(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetNearestItems_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>* MruVItemService::Stub::PrepareAsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::GetNearestItemsResponse>::Create(channel_.get(), cq, rpcmethod_GetNearestItems_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>* MruVItemService::Stub::PrepareAsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::GetNearestItemsResponse>::Create(channel_.get(), cq, rpcmethod_GetNearestItems_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::GetNearestItemsResponse>* MruVItemService::Stub::AsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::GetNearestItemsResponse>* MruVItemService::Stub::AsyncGetNearestItemsRaw(::grpc::ClientContext* context, const ::mruv::items::GetNearestItemsRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetNearestItemsRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::mruv::UseItemResponse* response) {
+::grpc::Status MruVItemService::Stub::UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::mruv::items::UseItemResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_UseItem_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_UseItem_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::UseItem(::grpc::ClientContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::UseItem(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_UseItem_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>* MruVItemService::Stub::PrepareAsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::UseItemResponse>::Create(channel_.get(), cq, rpcmethod_UseItem_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>* MruVItemService::Stub::PrepareAsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::items::UseItemResponse>::Create(channel_.get(), cq, rpcmethod_UseItem_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::UseItemResponse>* MruVItemService::Stub::AsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::items::UseItemResponse>* MruVItemService::Stub::AsyncUseItemRaw(::grpc::ClientContext* context, const ::mruv::items::UseItemRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncUseItemRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) {
+::grpc::Status MruVItemService::Stub::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::mruv::common::ServiceStatusResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetServiceStatus_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVItemService::Stub::PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* MruVItemService::Stub::PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::common::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVItemService::Stub::AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* MruVItemService::Stub::AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetServiceStatusRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVItemService::Stub::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) {
+::grpc::Status MruVItemService::Stub::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::mruv::common::VersionResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetServiceVersion_, context, request, response);
 }
 
-void MruVItemService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVItemService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, std::move(f));
 }
 
-void MruVItemService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVItemService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVItemService::Stub::PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* MruVItemService::Stub::PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::common::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVItemService::Stub::AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* MruVItemService::Stub::AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetServiceVersionRaw(context, request, cq);
   result->StartCall();
@@ -637,241 +638,241 @@ MruVItemService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::Item, ::mruv::ItemID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::Item, ::mruv::items::ItemID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::Item* req,
-             ::mruv::ItemID* resp) {
+             const ::mruv::items::Item* req,
+             ::mruv::items::ItemID* resp) {
                return service->CreateItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemID, ::mruv::Item>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ItemID, ::mruv::items::Item>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ItemID* req,
-             ::mruv::Item* resp) {
+             const ::mruv::items::ItemID* req,
+             ::mruv::items::Item* resp) {
                return service->GetItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemID, ::mruv::ItemID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ItemID, ::mruv::items::ItemID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ItemID* req,
-             ::mruv::ItemID* resp) {
+             const ::mruv::items::ItemID* req,
+             ::mruv::items::ItemID* resp) {
                return service->DeleteItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetItemsRequest, ::mruv::GetItemsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::GetItemsRequest, ::mruv::items::GetItemsResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::GetItemsRequest* req,
-             ::mruv::GetItemsResponse* resp) {
+             const ::mruv::items::GetItemsRequest* req,
+             ::mruv::items::GetItemsResponse* resp) {
                return service->GetItems(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemType, ::mruv::ItemTypeID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ItemType, ::mruv::items::ItemTypeID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ItemType* req,
-             ::mruv::ItemTypeID* resp) {
+             const ::mruv::items::ItemType* req,
+             ::mruv::items::ItemTypeID* resp) {
                return service->CreateItemType(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemTypeID, ::mruv::ItemType>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ItemTypeID, ::mruv::items::ItemType>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ItemTypeID* req,
-             ::mruv::ItemType* resp) {
+             const ::mruv::items::ItemTypeID* req,
+             ::mruv::items::ItemType* resp) {
                return service->GetItemType(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ItemTypeID, ::mruv::ItemTypeID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ItemTypeID, ::mruv::items::ItemTypeID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ItemTypeID* req,
-             ::mruv::ItemTypeID* resp) {
+             const ::mruv::items::ItemTypeID* req,
+             ::mruv::items::ItemTypeID* resp) {
                return service->DeleteItemType(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetItemTypesRequest, ::mruv::GetItemTypesResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::GetItemTypesRequest, ::mruv::items::GetItemTypesResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::GetItemTypesRequest* req,
-             ::mruv::GetItemTypesResponse* resp) {
+             const ::mruv::items::GetItemTypesRequest* req,
+             ::mruv::items::GetItemTypesResponse* resp) {
                return service->GetItemTypes(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::Container, ::mruv::ContainerID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::Container, ::mruv::items::ContainerID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::Container* req,
-             ::mruv::ContainerID* resp) {
+             const ::mruv::items::Container* req,
+             ::mruv::items::ContainerID* resp) {
                return service->CreateContainer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerID, ::mruv::Container>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ContainerID, ::mruv::items::Container>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ContainerID* req,
-             ::mruv::Container* resp) {
+             const ::mruv::items::ContainerID* req,
+             ::mruv::items::Container* resp) {
                return service->GetContainer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerID, ::mruv::ContainerID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ContainerID, ::mruv::items::ContainerID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ContainerID* req,
-             ::mruv::ContainerID* resp) {
+             const ::mruv::items::ContainerID* req,
+             ::mruv::items::ContainerID* resp) {
                return service->DeleteContainer(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetContainersRequest, ::mruv::GetContainersResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::GetContainersRequest, ::mruv::items::GetContainersResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::GetContainersRequest* req,
-             ::mruv::GetContainersResponse* resp) {
+             const ::mruv::items::GetContainersRequest* req,
+             ::mruv::items::GetContainersResponse* resp) {
                return service->GetContainers(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerType, ::mruv::ContainerTypeID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ContainerType, ::mruv::items::ContainerTypeID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ContainerType* req,
-             ::mruv::ContainerTypeID* resp) {
+             const ::mruv::items::ContainerType* req,
+             ::mruv::items::ContainerTypeID* resp) {
                return service->CreateContainerType(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerTypeID, ::mruv::ContainerType>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ContainerTypeID, ::mruv::items::ContainerType>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ContainerTypeID* req,
-             ::mruv::ContainerType* resp) {
+             const ::mruv::items::ContainerTypeID* req,
+             ::mruv::items::ContainerType* resp) {
                return service->GetContainerType(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ContainerTypeID, ::mruv::ContainerTypeID>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::ContainerTypeID, ::mruv::items::ContainerTypeID>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ContainerTypeID* req,
-             ::mruv::ContainerTypeID* resp) {
+             const ::mruv::items::ContainerTypeID* req,
+             ::mruv::items::ContainerTypeID* resp) {
                return service->DeleteContainerType(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetContainerTypesRequest, ::mruv::GetContainerTypesResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::GetContainerTypesRequest, ::mruv::items::GetContainerTypesResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::GetContainerTypesRequest* req,
-             ::mruv::GetContainerTypesResponse* resp) {
+             const ::mruv::items::GetContainerTypesRequest* req,
+             ::mruv::items::GetContainerTypesResponse* resp) {
                return service->GetContainerTypes(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetContainerItemsRequest, ::mruv::GetContainerItemsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::GetContainerItemsRequest, ::mruv::items::GetContainerItemsResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::GetContainerItemsRequest* req,
-             ::mruv::GetContainerItemsResponse* resp) {
+             const ::mruv::items::GetContainerItemsRequest* req,
+             ::mruv::items::GetContainerItemsResponse* resp) {
                return service->GetContainerItems(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::PullItemRequest, ::mruv::Item>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::PullItemRequest, ::mruv::items::Item>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::PullItemRequest* req,
-             ::mruv::Item* resp) {
+             const ::mruv::items::PullItemRequest* req,
+             ::mruv::items::Item* resp) {
                return service->PullItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::PutItemRequest, ::mruv::PutItemResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::PutItemRequest, ::mruv::items::PutItemResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::PutItemRequest* req,
-             ::mruv::PutItemResponse* resp) {
+             const ::mruv::items::PutItemRequest* req,
+             ::mruv::items::PutItemResponse* resp) {
                return service->PutItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::SortItemsRequest, ::mruv::SortItemsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::SortItemsRequest, ::mruv::items::SortItemsResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::SortItemsRequest* req,
-             ::mruv::SortItemsResponse* resp) {
+             const ::mruv::items::SortItemsRequest* req,
+             ::mruv::items::SortItemsResponse* resp) {
                return service->SortItems(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::GetNearestItemsRequest, ::mruv::GetNearestItemsResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::GetNearestItemsRequest, ::mruv::items::GetNearestItemsResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::GetNearestItemsRequest* req,
-             ::mruv::GetNearestItemsResponse* resp) {
+             const ::mruv::items::GetNearestItemsRequest* req,
+             ::mruv::items::GetNearestItemsResponse* resp) {
                return service->GetNearestItems(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::UseItemRequest, ::mruv::UseItemResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::items::UseItemRequest, ::mruv::items::UseItemResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::UseItemRequest* req,
-             ::mruv::UseItemResponse* resp) {
+             const ::mruv::items::UseItemRequest* req,
+             ::mruv::items::UseItemResponse* resp) {
                return service->UseItem(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ServiceStatusRequest* req,
-             ::mruv::ServiceStatusResponse* resp) {
+             const ::mruv::common::ServiceStatusRequest* req,
+             ::mruv::common::ServiceStatusResponse* resp) {
                return service->GetServiceStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVItemService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVItemService::Service, ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>(
           [](MruVItemService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::VersionRequest* req,
-             ::mruv::VersionResponse* resp) {
+             const ::mruv::common::VersionRequest* req,
+             ::mruv::common::VersionResponse* resp) {
                return service->GetServiceVersion(ctx, req, resp);
              }, this)));
 }
@@ -879,168 +880,168 @@ MruVItemService::Service::Service() {
 MruVItemService::Service::~Service() {
 }
 
-::grpc::Status MruVItemService::Service::CreateItem(::grpc::ServerContext* context, const ::mruv::Item* request, ::mruv::ItemID* response) {
+::grpc::Status MruVItemService::Service::CreateItem(::grpc::ServerContext* context, const ::mruv::items::Item* request, ::mruv::items::ItemID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetItem(::grpc::ServerContext* context, const ::mruv::ItemID* request, ::mruv::Item* response) {
+::grpc::Status MruVItemService::Service::GetItem(::grpc::ServerContext* context, const ::mruv::items::ItemID* request, ::mruv::items::Item* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::DeleteItem(::grpc::ServerContext* context, const ::mruv::ItemID* request, ::mruv::ItemID* response) {
+::grpc::Status MruVItemService::Service::DeleteItem(::grpc::ServerContext* context, const ::mruv::items::ItemID* request, ::mruv::items::ItemID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetItems(::grpc::ServerContext* context, const ::mruv::GetItemsRequest* request, ::mruv::GetItemsResponse* response) {
+::grpc::Status MruVItemService::Service::GetItems(::grpc::ServerContext* context, const ::mruv::items::GetItemsRequest* request, ::mruv::items::GetItemsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::CreateItemType(::grpc::ServerContext* context, const ::mruv::ItemType* request, ::mruv::ItemTypeID* response) {
+::grpc::Status MruVItemService::Service::CreateItemType(::grpc::ServerContext* context, const ::mruv::items::ItemType* request, ::mruv::items::ItemTypeID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetItemType(::grpc::ServerContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemType* response) {
+::grpc::Status MruVItemService::Service::GetItemType(::grpc::ServerContext* context, const ::mruv::items::ItemTypeID* request, ::mruv::items::ItemType* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::DeleteItemType(::grpc::ServerContext* context, const ::mruv::ItemTypeID* request, ::mruv::ItemTypeID* response) {
+::grpc::Status MruVItemService::Service::DeleteItemType(::grpc::ServerContext* context, const ::mruv::items::ItemTypeID* request, ::mruv::items::ItemTypeID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetItemTypes(::grpc::ServerContext* context, const ::mruv::GetItemTypesRequest* request, ::mruv::GetItemTypesResponse* response) {
+::grpc::Status MruVItemService::Service::GetItemTypes(::grpc::ServerContext* context, const ::mruv::items::GetItemTypesRequest* request, ::mruv::items::GetItemTypesResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::CreateContainer(::grpc::ServerContext* context, const ::mruv::Container* request, ::mruv::ContainerID* response) {
+::grpc::Status MruVItemService::Service::CreateContainer(::grpc::ServerContext* context, const ::mruv::items::Container* request, ::mruv::items::ContainerID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetContainer(::grpc::ServerContext* context, const ::mruv::ContainerID* request, ::mruv::Container* response) {
+::grpc::Status MruVItemService::Service::GetContainer(::grpc::ServerContext* context, const ::mruv::items::ContainerID* request, ::mruv::items::Container* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::DeleteContainer(::grpc::ServerContext* context, const ::mruv::ContainerID* request, ::mruv::ContainerID* response) {
+::grpc::Status MruVItemService::Service::DeleteContainer(::grpc::ServerContext* context, const ::mruv::items::ContainerID* request, ::mruv::items::ContainerID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetContainers(::grpc::ServerContext* context, const ::mruv::GetContainersRequest* request, ::mruv::GetContainersResponse* response) {
+::grpc::Status MruVItemService::Service::GetContainers(::grpc::ServerContext* context, const ::mruv::items::GetContainersRequest* request, ::mruv::items::GetContainersResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::CreateContainerType(::grpc::ServerContext* context, const ::mruv::ContainerType* request, ::mruv::ContainerTypeID* response) {
+::grpc::Status MruVItemService::Service::CreateContainerType(::grpc::ServerContext* context, const ::mruv::items::ContainerType* request, ::mruv::items::ContainerTypeID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetContainerType(::grpc::ServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerType* response) {
+::grpc::Status MruVItemService::Service::GetContainerType(::grpc::ServerContext* context, const ::mruv::items::ContainerTypeID* request, ::mruv::items::ContainerType* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::DeleteContainerType(::grpc::ServerContext* context, const ::mruv::ContainerTypeID* request, ::mruv::ContainerTypeID* response) {
+::grpc::Status MruVItemService::Service::DeleteContainerType(::grpc::ServerContext* context, const ::mruv::items::ContainerTypeID* request, ::mruv::items::ContainerTypeID* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetContainerTypes(::grpc::ServerContext* context, const ::mruv::GetContainerTypesRequest* request, ::mruv::GetContainerTypesResponse* response) {
+::grpc::Status MruVItemService::Service::GetContainerTypes(::grpc::ServerContext* context, const ::mruv::items::GetContainerTypesRequest* request, ::mruv::items::GetContainerTypesResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetContainerItems(::grpc::ServerContext* context, const ::mruv::GetContainerItemsRequest* request, ::mruv::GetContainerItemsResponse* response) {
+::grpc::Status MruVItemService::Service::GetContainerItems(::grpc::ServerContext* context, const ::mruv::items::GetContainerItemsRequest* request, ::mruv::items::GetContainerItemsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::PullItem(::grpc::ServerContext* context, const ::mruv::PullItemRequest* request, ::mruv::Item* response) {
+::grpc::Status MruVItemService::Service::PullItem(::grpc::ServerContext* context, const ::mruv::items::PullItemRequest* request, ::mruv::items::Item* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::PutItem(::grpc::ServerContext* context, const ::mruv::PutItemRequest* request, ::mruv::PutItemResponse* response) {
+::grpc::Status MruVItemService::Service::PutItem(::grpc::ServerContext* context, const ::mruv::items::PutItemRequest* request, ::mruv::items::PutItemResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::SortItems(::grpc::ServerContext* context, const ::mruv::SortItemsRequest* request, ::mruv::SortItemsResponse* response) {
+::grpc::Status MruVItemService::Service::SortItems(::grpc::ServerContext* context, const ::mruv::items::SortItemsRequest* request, ::mruv::items::SortItemsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetNearestItems(::grpc::ServerContext* context, const ::mruv::GetNearestItemsRequest* request, ::mruv::GetNearestItemsResponse* response) {
+::grpc::Status MruVItemService::Service::GetNearestItems(::grpc::ServerContext* context, const ::mruv::items::GetNearestItemsRequest* request, ::mruv::items::GetNearestItemsResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::UseItem(::grpc::ServerContext* context, const ::mruv::UseItemRequest* request, ::mruv::UseItemResponse* response) {
+::grpc::Status MruVItemService::Service::UseItem(::grpc::ServerContext* context, const ::mruv::items::UseItemRequest* request, ::mruv::items::UseItemResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetServiceStatus(::grpc::ServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) {
+::grpc::Status MruVItemService::Service::GetServiceStatus(::grpc::ServerContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVItemService::Service::GetServiceVersion(::grpc::ServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) {
+::grpc::Status MruVItemService::Service::GetServiceVersion(::grpc::ServerContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -1049,4 +1050,5 @@ MruVItemService::Service::~Service() {
 
 
 }  // namespace mruv
+}  // namespace items
 

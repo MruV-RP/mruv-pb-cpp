@@ -56,6 +56,7 @@ struct TableStruct_accounts_2faccounts_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2faccounts_2eproto;
 namespace mruv {
+namespace accounts {
 class GetAccountCharactersRequest;
 class GetAccountCharactersRequestDefaultTypeInternal;
 extern GetAccountCharactersRequestDefaultTypeInternal _GetAccountCharactersRequest_default_instance_;
@@ -86,25 +87,27 @@ extern RegisterAccountRequestDefaultTypeInternal _RegisterAccountRequest_default
 class RegisterAccountResponse;
 class RegisterAccountResponseDefaultTypeInternal;
 extern RegisterAccountResponseDefaultTypeInternal _RegisterAccountResponse_default_instance_;
+}  // namespace accounts
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::GetAccountCharactersRequest* Arena::CreateMaybeMessage<::mruv::GetAccountCharactersRequest>(Arena*);
-template<> ::mruv::GetAccountCharactersResponse* Arena::CreateMaybeMessage<::mruv::GetAccountCharactersResponse>(Arena*);
-template<> ::mruv::GetAccountRequest* Arena::CreateMaybeMessage<::mruv::GetAccountRequest>(Arena*);
-template<> ::mruv::GetAccountResponse* Arena::CreateMaybeMessage<::mruv::GetAccountResponse>(Arena*);
-template<> ::mruv::IsAccountExistRequest* Arena::CreateMaybeMessage<::mruv::IsAccountExistRequest>(Arena*);
-template<> ::mruv::IsAccountExistResponse* Arena::CreateMaybeMessage<::mruv::IsAccountExistResponse>(Arena*);
-template<> ::mruv::LogInRequest* Arena::CreateMaybeMessage<::mruv::LogInRequest>(Arena*);
-template<> ::mruv::LogInResponse* Arena::CreateMaybeMessage<::mruv::LogInResponse>(Arena*);
-template<> ::mruv::RegisterAccountRequest* Arena::CreateMaybeMessage<::mruv::RegisterAccountRequest>(Arena*);
-template<> ::mruv::RegisterAccountResponse* Arena::CreateMaybeMessage<::mruv::RegisterAccountResponse>(Arena*);
+template<> ::mruv::accounts::GetAccountCharactersRequest* Arena::CreateMaybeMessage<::mruv::accounts::GetAccountCharactersRequest>(Arena*);
+template<> ::mruv::accounts::GetAccountCharactersResponse* Arena::CreateMaybeMessage<::mruv::accounts::GetAccountCharactersResponse>(Arena*);
+template<> ::mruv::accounts::GetAccountRequest* Arena::CreateMaybeMessage<::mruv::accounts::GetAccountRequest>(Arena*);
+template<> ::mruv::accounts::GetAccountResponse* Arena::CreateMaybeMessage<::mruv::accounts::GetAccountResponse>(Arena*);
+template<> ::mruv::accounts::IsAccountExistRequest* Arena::CreateMaybeMessage<::mruv::accounts::IsAccountExistRequest>(Arena*);
+template<> ::mruv::accounts::IsAccountExistResponse* Arena::CreateMaybeMessage<::mruv::accounts::IsAccountExistResponse>(Arena*);
+template<> ::mruv::accounts::LogInRequest* Arena::CreateMaybeMessage<::mruv::accounts::LogInRequest>(Arena*);
+template<> ::mruv::accounts::LogInResponse* Arena::CreateMaybeMessage<::mruv::accounts::LogInResponse>(Arena*);
+template<> ::mruv::accounts::RegisterAccountRequest* Arena::CreateMaybeMessage<::mruv::accounts::RegisterAccountRequest>(Arena*);
+template<> ::mruv::accounts::RegisterAccountResponse* Arena::CreateMaybeMessage<::mruv::accounts::RegisterAccountResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace accounts {
 
 // ===================================================================
 
 class RegisterAccountRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.RegisterAccountRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.RegisterAccountRequest) */ {
  public:
   inline RegisterAccountRequest() : RegisterAccountRequest(nullptr) {}
   virtual ~RegisterAccountRequest();
@@ -193,7 +196,7 @@ class RegisterAccountRequest PROTOBUF_FINAL :
   void InternalSwap(RegisterAccountRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.RegisterAccountRequest";
+    return "mruv.accounts.RegisterAccountRequest";
   }
   protected:
   explicit RegisterAccountRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -268,7 +271,7 @@ class RegisterAccountRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_email();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.RegisterAccountRequest)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.RegisterAccountRequest)
  private:
   class _Internal;
 
@@ -284,7 +287,7 @@ class RegisterAccountRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class RegisterAccountResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.RegisterAccountResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.RegisterAccountResponse) */ {
  public:
   inline RegisterAccountResponse() : RegisterAccountResponse(nullptr) {}
   virtual ~RegisterAccountResponse();
@@ -373,7 +376,7 @@ class RegisterAccountResponse PROTOBUF_FINAL :
   void InternalSwap(RegisterAccountResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.RegisterAccountResponse";
+    return "mruv.accounts.RegisterAccountResponse";
   }
   protected:
   explicit RegisterAccountResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -417,7 +420,7 @@ class RegisterAccountResponse PROTOBUF_FINAL :
   void _internal_set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.RegisterAccountResponse)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.RegisterAccountResponse)
  private:
   class _Internal;
 
@@ -432,7 +435,7 @@ class RegisterAccountResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class LogInRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.LogInRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.LogInRequest) */ {
  public:
   inline LogInRequest() : LogInRequest(nullptr) {}
   virtual ~LogInRequest();
@@ -521,7 +524,7 @@ class LogInRequest PROTOBUF_FINAL :
   void InternalSwap(LogInRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.LogInRequest";
+    return "mruv.accounts.LogInRequest";
   }
   protected:
   explicit LogInRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -579,7 +582,7 @@ class LogInRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_password();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.LogInRequest)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.LogInRequest)
  private:
   class _Internal;
 
@@ -594,7 +597,7 @@ class LogInRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class LogInResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.LogInResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.LogInResponse) */ {
  public:
   inline LogInResponse() : LogInResponse(nullptr) {}
   virtual ~LogInResponse();
@@ -683,7 +686,7 @@ class LogInResponse PROTOBUF_FINAL :
   void InternalSwap(LogInResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.LogInResponse";
+    return "mruv.accounts.LogInResponse";
   }
   protected:
   explicit LogInResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -727,7 +730,7 @@ class LogInResponse PROTOBUF_FINAL :
   void _internal_set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.LogInResponse)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.LogInResponse)
  private:
   class _Internal;
 
@@ -742,7 +745,7 @@ class LogInResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetAccountRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.GetAccountRequest) */ {
  public:
   inline GetAccountRequest() : GetAccountRequest(nullptr) {}
   virtual ~GetAccountRequest();
@@ -831,7 +834,7 @@ class GetAccountRequest PROTOBUF_FINAL :
   void InternalSwap(GetAccountRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetAccountRequest";
+    return "mruv.accounts.GetAccountRequest";
   }
   protected:
   explicit GetAccountRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -872,7 +875,7 @@ class GetAccountRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_login();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetAccountRequest)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.GetAccountRequest)
  private:
   class _Internal;
 
@@ -886,7 +889,7 @@ class GetAccountRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetAccountResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.GetAccountResponse) */ {
  public:
   inline GetAccountResponse() : GetAccountResponse(nullptr) {}
   virtual ~GetAccountResponse();
@@ -975,7 +978,7 @@ class GetAccountResponse PROTOBUF_FINAL :
   void InternalSwap(GetAccountResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetAccountResponse";
+    return "mruv.accounts.GetAccountResponse";
   }
   protected:
   explicit GetAccountResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1033,7 +1036,7 @@ class GetAccountResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_email();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetAccountResponse)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.GetAccountResponse)
  private:
   class _Internal;
 
@@ -1048,7 +1051,7 @@ class GetAccountResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetAccountCharactersRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountCharactersRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.GetAccountCharactersRequest) */ {
  public:
   inline GetAccountCharactersRequest() : GetAccountCharactersRequest(nullptr) {}
   virtual ~GetAccountCharactersRequest();
@@ -1137,7 +1140,7 @@ class GetAccountCharactersRequest PROTOBUF_FINAL :
   void InternalSwap(GetAccountCharactersRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetAccountCharactersRequest";
+    return "mruv.accounts.GetAccountCharactersRequest";
   }
   protected:
   explicit GetAccountCharactersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1178,7 +1181,7 @@ class GetAccountCharactersRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_login();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetAccountCharactersRequest)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.GetAccountCharactersRequest)
  private:
   class _Internal;
 
@@ -1192,7 +1195,7 @@ class GetAccountCharactersRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetAccountCharactersResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetAccountCharactersResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.GetAccountCharactersResponse) */ {
  public:
   inline GetAccountCharactersResponse() : GetAccountCharactersResponse(nullptr) {}
   virtual ~GetAccountCharactersResponse();
@@ -1281,7 +1284,7 @@ class GetAccountCharactersResponse PROTOBUF_FINAL :
   void InternalSwap(GetAccountCharactersResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetAccountCharactersResponse";
+    return "mruv.accounts.GetAccountCharactersResponse";
   }
   protected:
   explicit GetAccountCharactersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1328,7 +1331,7 @@ class GetAccountCharactersResponse PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
       mutable_character_ids();
 
-  // @@protoc_insertion_point(class_scope:mruv.GetAccountCharactersResponse)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.GetAccountCharactersResponse)
  private:
   class _Internal;
 
@@ -1343,7 +1346,7 @@ class GetAccountCharactersResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class IsAccountExistRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.IsAccountExistRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.IsAccountExistRequest) */ {
  public:
   inline IsAccountExistRequest() : IsAccountExistRequest(nullptr) {}
   virtual ~IsAccountExistRequest();
@@ -1432,7 +1435,7 @@ class IsAccountExistRequest PROTOBUF_FINAL :
   void InternalSwap(IsAccountExistRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.IsAccountExistRequest";
+    return "mruv.accounts.IsAccountExistRequest";
   }
   protected:
   explicit IsAccountExistRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1473,7 +1476,7 @@ class IsAccountExistRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_login();
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.IsAccountExistRequest)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.IsAccountExistRequest)
  private:
   class _Internal;
 
@@ -1487,7 +1490,7 @@ class IsAccountExistRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class IsAccountExistResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.IsAccountExistResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.accounts.IsAccountExistResponse) */ {
  public:
   inline IsAccountExistResponse() : IsAccountExistResponse(nullptr) {}
   virtual ~IsAccountExistResponse();
@@ -1576,7 +1579,7 @@ class IsAccountExistResponse PROTOBUF_FINAL :
   void InternalSwap(IsAccountExistResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.IsAccountExistResponse";
+    return "mruv.accounts.IsAccountExistResponse";
   }
   protected:
   explicit IsAccountExistResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1620,7 +1623,7 @@ class IsAccountExistResponse PROTOBUF_FINAL :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.IsAccountExistResponse)
+  // @@protoc_insertion_point(class_scope:mruv.accounts.IsAccountExistResponse)
  private:
   class _Internal;
 
@@ -1648,15 +1651,15 @@ inline void RegisterAccountRequest::clear_login() {
   login_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& RegisterAccountRequest::login() const {
-  // @@protoc_insertion_point(field_get:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_get:mruv.accounts.RegisterAccountRequest.login)
   return _internal_login();
 }
 inline void RegisterAccountRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_set:mruv.accounts.RegisterAccountRequest.login)
 }
 inline std::string* RegisterAccountRequest::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.RegisterAccountRequest.login)
   return _internal_mutable_login();
 }
 inline const std::string& RegisterAccountRequest::_internal_login() const {
@@ -1670,28 +1673,28 @@ inline void RegisterAccountRequest::set_login(std::string&& value) {
   
   login_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.RegisterAccountRequest.login)
 }
 inline void RegisterAccountRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.RegisterAccountRequest.login)
 }
 inline void RegisterAccountRequest::set_login(const char* value,
     size_t size) {
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.RegisterAccountRequest.login)
 }
 inline std::string* RegisterAccountRequest::_internal_mutable_login() {
   
   return login_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* RegisterAccountRequest::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_release:mruv.accounts.RegisterAccountRequest.login)
   return login_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void RegisterAccountRequest::set_allocated_login(std::string* login) {
@@ -1702,7 +1705,7 @@ inline void RegisterAccountRequest::set_allocated_login(std::string* login) {
   }
   login_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.RegisterAccountRequest.login)
 }
 
 // string password = 2;
@@ -1710,15 +1713,15 @@ inline void RegisterAccountRequest::clear_password() {
   password_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& RegisterAccountRequest::password() const {
-  // @@protoc_insertion_point(field_get:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_get:mruv.accounts.RegisterAccountRequest.password)
   return _internal_password();
 }
 inline void RegisterAccountRequest::set_password(const std::string& value) {
   _internal_set_password(value);
-  // @@protoc_insertion_point(field_set:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_set:mruv.accounts.RegisterAccountRequest.password)
 }
 inline std::string* RegisterAccountRequest::mutable_password() {
-  // @@protoc_insertion_point(field_mutable:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.RegisterAccountRequest.password)
   return _internal_mutable_password();
 }
 inline const std::string& RegisterAccountRequest::_internal_password() const {
@@ -1732,28 +1735,28 @@ inline void RegisterAccountRequest::set_password(std::string&& value) {
   
   password_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.RegisterAccountRequest.password)
 }
 inline void RegisterAccountRequest::set_password(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.RegisterAccountRequest.password)
 }
 inline void RegisterAccountRequest::set_password(const char* value,
     size_t size) {
   
   password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.RegisterAccountRequest.password)
 }
 inline std::string* RegisterAccountRequest::_internal_mutable_password() {
   
   return password_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* RegisterAccountRequest::release_password() {
-  // @@protoc_insertion_point(field_release:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_release:mruv.accounts.RegisterAccountRequest.password)
   return password_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void RegisterAccountRequest::set_allocated_password(std::string* password) {
@@ -1764,7 +1767,7 @@ inline void RegisterAccountRequest::set_allocated_password(std::string* password
   }
   password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), password,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.password)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.RegisterAccountRequest.password)
 }
 
 // string email = 3;
@@ -1772,15 +1775,15 @@ inline void RegisterAccountRequest::clear_email() {
   email_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& RegisterAccountRequest::email() const {
-  // @@protoc_insertion_point(field_get:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_get:mruv.accounts.RegisterAccountRequest.email)
   return _internal_email();
 }
 inline void RegisterAccountRequest::set_email(const std::string& value) {
   _internal_set_email(value);
-  // @@protoc_insertion_point(field_set:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_set:mruv.accounts.RegisterAccountRequest.email)
 }
 inline std::string* RegisterAccountRequest::mutable_email() {
-  // @@protoc_insertion_point(field_mutable:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.RegisterAccountRequest.email)
   return _internal_mutable_email();
 }
 inline const std::string& RegisterAccountRequest::_internal_email() const {
@@ -1794,28 +1797,28 @@ inline void RegisterAccountRequest::set_email(std::string&& value) {
   
   email_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.RegisterAccountRequest.email)
 }
 inline void RegisterAccountRequest::set_email(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.RegisterAccountRequest.email)
 }
 inline void RegisterAccountRequest::set_email(const char* value,
     size_t size) {
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.RegisterAccountRequest.email)
 }
 inline std::string* RegisterAccountRequest::_internal_mutable_email() {
   
   return email_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* RegisterAccountRequest::release_email() {
-  // @@protoc_insertion_point(field_release:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_release:mruv.accounts.RegisterAccountRequest.email)
   return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void RegisterAccountRequest::set_allocated_email(std::string* email) {
@@ -1826,7 +1829,7 @@ inline void RegisterAccountRequest::set_allocated_email(std::string* email) {
   }
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.RegisterAccountRequest.email)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.RegisterAccountRequest.email)
 }
 
 // -------------------------------------------------------------------
@@ -1841,7 +1844,7 @@ inline bool RegisterAccountResponse::_internal_success() const {
   return success_;
 }
 inline bool RegisterAccountResponse::success() const {
-  // @@protoc_insertion_point(field_get:mruv.RegisterAccountResponse.success)
+  // @@protoc_insertion_point(field_get:mruv.accounts.RegisterAccountResponse.success)
   return _internal_success();
 }
 inline void RegisterAccountResponse::_internal_set_success(bool value) {
@@ -1850,7 +1853,7 @@ inline void RegisterAccountResponse::_internal_set_success(bool value) {
 }
 inline void RegisterAccountResponse::set_success(bool value) {
   _internal_set_success(value);
-  // @@protoc_insertion_point(field_set:mruv.RegisterAccountResponse.success)
+  // @@protoc_insertion_point(field_set:mruv.accounts.RegisterAccountResponse.success)
 }
 
 // uint32 account_id = 2;
@@ -1861,7 +1864,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 RegisterAccountResponse::_internal_accoun
   return account_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 RegisterAccountResponse::account_id() const {
-  // @@protoc_insertion_point(field_get:mruv.RegisterAccountResponse.account_id)
+  // @@protoc_insertion_point(field_get:mruv.accounts.RegisterAccountResponse.account_id)
   return _internal_account_id();
 }
 inline void RegisterAccountResponse::_internal_set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1870,7 +1873,7 @@ inline void RegisterAccountResponse::_internal_set_account_id(::PROTOBUF_NAMESPA
 }
 inline void RegisterAccountResponse::set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_account_id(value);
-  // @@protoc_insertion_point(field_set:mruv.RegisterAccountResponse.account_id)
+  // @@protoc_insertion_point(field_set:mruv.accounts.RegisterAccountResponse.account_id)
 }
 
 // -------------------------------------------------------------------
@@ -1882,15 +1885,15 @@ inline void LogInRequest::clear_login() {
   login_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& LogInRequest::login() const {
-  // @@protoc_insertion_point(field_get:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_get:mruv.accounts.LogInRequest.login)
   return _internal_login();
 }
 inline void LogInRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_set:mruv.accounts.LogInRequest.login)
 }
 inline std::string* LogInRequest::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.LogInRequest.login)
   return _internal_mutable_login();
 }
 inline const std::string& LogInRequest::_internal_login() const {
@@ -1904,28 +1907,28 @@ inline void LogInRequest::set_login(std::string&& value) {
   
   login_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.LogInRequest.login)
 }
 inline void LogInRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.LogInRequest.login)
 }
 inline void LogInRequest::set_login(const char* value,
     size_t size) {
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.LogInRequest.login)
 }
 inline std::string* LogInRequest::_internal_mutable_login() {
   
   return login_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* LogInRequest::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_release:mruv.accounts.LogInRequest.login)
   return login_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void LogInRequest::set_allocated_login(std::string* login) {
@@ -1936,7 +1939,7 @@ inline void LogInRequest::set_allocated_login(std::string* login) {
   }
   login_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.LogInRequest.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.LogInRequest.login)
 }
 
 // string password = 2;
@@ -1944,15 +1947,15 @@ inline void LogInRequest::clear_password() {
   password_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& LogInRequest::password() const {
-  // @@protoc_insertion_point(field_get:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_get:mruv.accounts.LogInRequest.password)
   return _internal_password();
 }
 inline void LogInRequest::set_password(const std::string& value) {
   _internal_set_password(value);
-  // @@protoc_insertion_point(field_set:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_set:mruv.accounts.LogInRequest.password)
 }
 inline std::string* LogInRequest::mutable_password() {
-  // @@protoc_insertion_point(field_mutable:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.LogInRequest.password)
   return _internal_mutable_password();
 }
 inline const std::string& LogInRequest::_internal_password() const {
@@ -1966,28 +1969,28 @@ inline void LogInRequest::set_password(std::string&& value) {
   
   password_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.LogInRequest.password)
 }
 inline void LogInRequest::set_password(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.LogInRequest.password)
 }
 inline void LogInRequest::set_password(const char* value,
     size_t size) {
   
   password_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.LogInRequest.password)
 }
 inline std::string* LogInRequest::_internal_mutable_password() {
   
   return password_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* LogInRequest::release_password() {
-  // @@protoc_insertion_point(field_release:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_release:mruv.accounts.LogInRequest.password)
   return password_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void LogInRequest::set_allocated_password(std::string* password) {
@@ -1998,7 +2001,7 @@ inline void LogInRequest::set_allocated_password(std::string* password) {
   }
   password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), password,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.LogInRequest.password)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.LogInRequest.password)
 }
 
 // -------------------------------------------------------------------
@@ -2013,7 +2016,7 @@ inline bool LogInResponse::_internal_success() const {
   return success_;
 }
 inline bool LogInResponse::success() const {
-  // @@protoc_insertion_point(field_get:mruv.LogInResponse.success)
+  // @@protoc_insertion_point(field_get:mruv.accounts.LogInResponse.success)
   return _internal_success();
 }
 inline void LogInResponse::_internal_set_success(bool value) {
@@ -2022,7 +2025,7 @@ inline void LogInResponse::_internal_set_success(bool value) {
 }
 inline void LogInResponse::set_success(bool value) {
   _internal_set_success(value);
-  // @@protoc_insertion_point(field_set:mruv.LogInResponse.success)
+  // @@protoc_insertion_point(field_set:mruv.accounts.LogInResponse.success)
 }
 
 // uint32 account_id = 2;
@@ -2033,7 +2036,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 LogInResponse::_internal_account_id() con
   return account_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 LogInResponse::account_id() const {
-  // @@protoc_insertion_point(field_get:mruv.LogInResponse.account_id)
+  // @@protoc_insertion_point(field_get:mruv.accounts.LogInResponse.account_id)
   return _internal_account_id();
 }
 inline void LogInResponse::_internal_set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2042,7 +2045,7 @@ inline void LogInResponse::_internal_set_account_id(::PROTOBUF_NAMESPACE_ID::uin
 }
 inline void LogInResponse::set_account_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_account_id(value);
-  // @@protoc_insertion_point(field_set:mruv.LogInResponse.account_id)
+  // @@protoc_insertion_point(field_set:mruv.accounts.LogInResponse.account_id)
 }
 
 // -------------------------------------------------------------------
@@ -2054,15 +2057,15 @@ inline void GetAccountRequest::clear_login() {
   login_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& GetAccountRequest::login() const {
-  // @@protoc_insertion_point(field_get:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_get:mruv.accounts.GetAccountRequest.login)
   return _internal_login();
 }
 inline void GetAccountRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_set:mruv.accounts.GetAccountRequest.login)
 }
 inline std::string* GetAccountRequest::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.GetAccountRequest.login)
   return _internal_mutable_login();
 }
 inline const std::string& GetAccountRequest::_internal_login() const {
@@ -2076,28 +2079,28 @@ inline void GetAccountRequest::set_login(std::string&& value) {
   
   login_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.GetAccountRequest.login)
 }
 inline void GetAccountRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.GetAccountRequest.login)
 }
 inline void GetAccountRequest::set_login(const char* value,
     size_t size) {
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.GetAccountRequest.login)
 }
 inline std::string* GetAccountRequest::_internal_mutable_login() {
   
   return login_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* GetAccountRequest::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_release:mruv.accounts.GetAccountRequest.login)
   return login_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void GetAccountRequest::set_allocated_login(std::string* login) {
@@ -2108,7 +2111,7 @@ inline void GetAccountRequest::set_allocated_login(std::string* login) {
   }
   login_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountRequest.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.GetAccountRequest.login)
 }
 
 // -------------------------------------------------------------------
@@ -2120,15 +2123,15 @@ inline void GetAccountResponse::clear_login() {
   login_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& GetAccountResponse::login() const {
-  // @@protoc_insertion_point(field_get:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_get:mruv.accounts.GetAccountResponse.login)
   return _internal_login();
 }
 inline void GetAccountResponse::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_set:mruv.accounts.GetAccountResponse.login)
 }
 inline std::string* GetAccountResponse::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.GetAccountResponse.login)
   return _internal_mutable_login();
 }
 inline const std::string& GetAccountResponse::_internal_login() const {
@@ -2142,28 +2145,28 @@ inline void GetAccountResponse::set_login(std::string&& value) {
   
   login_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.GetAccountResponse.login)
 }
 inline void GetAccountResponse::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.GetAccountResponse.login)
 }
 inline void GetAccountResponse::set_login(const char* value,
     size_t size) {
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.GetAccountResponse.login)
 }
 inline std::string* GetAccountResponse::_internal_mutable_login() {
   
   return login_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* GetAccountResponse::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_release:mruv.accounts.GetAccountResponse.login)
   return login_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void GetAccountResponse::set_allocated_login(std::string* login) {
@@ -2174,7 +2177,7 @@ inline void GetAccountResponse::set_allocated_login(std::string* login) {
   }
   login_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountResponse.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.GetAccountResponse.login)
 }
 
 // string email = 2;
@@ -2182,15 +2185,15 @@ inline void GetAccountResponse::clear_email() {
   email_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& GetAccountResponse::email() const {
-  // @@protoc_insertion_point(field_get:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_get:mruv.accounts.GetAccountResponse.email)
   return _internal_email();
 }
 inline void GetAccountResponse::set_email(const std::string& value) {
   _internal_set_email(value);
-  // @@protoc_insertion_point(field_set:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_set:mruv.accounts.GetAccountResponse.email)
 }
 inline std::string* GetAccountResponse::mutable_email() {
-  // @@protoc_insertion_point(field_mutable:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.GetAccountResponse.email)
   return _internal_mutable_email();
 }
 inline const std::string& GetAccountResponse::_internal_email() const {
@@ -2204,28 +2207,28 @@ inline void GetAccountResponse::set_email(std::string&& value) {
   
   email_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.GetAccountResponse.email)
 }
 inline void GetAccountResponse::set_email(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.GetAccountResponse.email)
 }
 inline void GetAccountResponse::set_email(const char* value,
     size_t size) {
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.GetAccountResponse.email)
 }
 inline std::string* GetAccountResponse::_internal_mutable_email() {
   
   return email_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* GetAccountResponse::release_email() {
-  // @@protoc_insertion_point(field_release:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_release:mruv.accounts.GetAccountResponse.email)
   return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void GetAccountResponse::set_allocated_email(std::string* email) {
@@ -2236,7 +2239,7 @@ inline void GetAccountResponse::set_allocated_email(std::string* email) {
   }
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountResponse.email)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.GetAccountResponse.email)
 }
 
 // -------------------------------------------------------------------
@@ -2248,15 +2251,15 @@ inline void GetAccountCharactersRequest::clear_login() {
   login_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& GetAccountCharactersRequest::login() const {
-  // @@protoc_insertion_point(field_get:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_get:mruv.accounts.GetAccountCharactersRequest.login)
   return _internal_login();
 }
 inline void GetAccountCharactersRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_set:mruv.accounts.GetAccountCharactersRequest.login)
 }
 inline std::string* GetAccountCharactersRequest::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.GetAccountCharactersRequest.login)
   return _internal_mutable_login();
 }
 inline const std::string& GetAccountCharactersRequest::_internal_login() const {
@@ -2270,28 +2273,28 @@ inline void GetAccountCharactersRequest::set_login(std::string&& value) {
   
   login_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.GetAccountCharactersRequest.login)
 }
 inline void GetAccountCharactersRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.GetAccountCharactersRequest.login)
 }
 inline void GetAccountCharactersRequest::set_login(const char* value,
     size_t size) {
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.GetAccountCharactersRequest.login)
 }
 inline std::string* GetAccountCharactersRequest::_internal_mutable_login() {
   
   return login_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* GetAccountCharactersRequest::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_release:mruv.accounts.GetAccountCharactersRequest.login)
   return login_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void GetAccountCharactersRequest::set_allocated_login(std::string* login) {
@@ -2302,7 +2305,7 @@ inline void GetAccountCharactersRequest::set_allocated_login(std::string* login)
   }
   login_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.GetAccountCharactersRequest.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.GetAccountCharactersRequest.login)
 }
 
 // -------------------------------------------------------------------
@@ -2323,19 +2326,19 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetAccountCharactersResponse::_internal_c
   return character_ids_.Get(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetAccountCharactersResponse::character_ids(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetAccountCharactersResponse.character_ids)
+  // @@protoc_insertion_point(field_get:mruv.accounts.GetAccountCharactersResponse.character_ids)
   return _internal_character_ids(index);
 }
 inline void GetAccountCharactersResponse::set_character_ids(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value) {
   character_ids_.Set(index, value);
-  // @@protoc_insertion_point(field_set:mruv.GetAccountCharactersResponse.character_ids)
+  // @@protoc_insertion_point(field_set:mruv.accounts.GetAccountCharactersResponse.character_ids)
 }
 inline void GetAccountCharactersResponse::_internal_add_character_ids(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   character_ids_.Add(value);
 }
 inline void GetAccountCharactersResponse::add_character_ids(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_add_character_ids(value);
-  // @@protoc_insertion_point(field_add:mruv.GetAccountCharactersResponse.character_ids)
+  // @@protoc_insertion_point(field_add:mruv.accounts.GetAccountCharactersResponse.character_ids)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
 GetAccountCharactersResponse::_internal_character_ids() const {
@@ -2343,7 +2346,7 @@ GetAccountCharactersResponse::_internal_character_ids() const {
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
 GetAccountCharactersResponse::character_ids() const {
-  // @@protoc_insertion_point(field_list:mruv.GetAccountCharactersResponse.character_ids)
+  // @@protoc_insertion_point(field_list:mruv.accounts.GetAccountCharactersResponse.character_ids)
   return _internal_character_ids();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
@@ -2352,7 +2355,7 @@ GetAccountCharactersResponse::_internal_mutable_character_ids() {
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
 GetAccountCharactersResponse::mutable_character_ids() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetAccountCharactersResponse.character_ids)
+  // @@protoc_insertion_point(field_mutable_list:mruv.accounts.GetAccountCharactersResponse.character_ids)
   return _internal_mutable_character_ids();
 }
 
@@ -2365,15 +2368,15 @@ inline void IsAccountExistRequest::clear_login() {
   login_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& IsAccountExistRequest::login() const {
-  // @@protoc_insertion_point(field_get:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_get:mruv.accounts.IsAccountExistRequest.login)
   return _internal_login();
 }
 inline void IsAccountExistRequest::set_login(const std::string& value) {
   _internal_set_login(value);
-  // @@protoc_insertion_point(field_set:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_set:mruv.accounts.IsAccountExistRequest.login)
 }
 inline std::string* IsAccountExistRequest::mutable_login() {
-  // @@protoc_insertion_point(field_mutable:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_mutable:mruv.accounts.IsAccountExistRequest.login)
   return _internal_mutable_login();
 }
 inline const std::string& IsAccountExistRequest::_internal_login() const {
@@ -2387,28 +2390,28 @@ inline void IsAccountExistRequest::set_login(std::string&& value) {
   
   login_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.accounts.IsAccountExistRequest.login)
 }
 inline void IsAccountExistRequest::set_login(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_set_char:mruv.accounts.IsAccountExistRequest.login)
 }
 inline void IsAccountExistRequest::set_login(const char* value,
     size_t size) {
   
   login_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_set_pointer:mruv.accounts.IsAccountExistRequest.login)
 }
 inline std::string* IsAccountExistRequest::_internal_mutable_login() {
   
   return login_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* IsAccountExistRequest::release_login() {
-  // @@protoc_insertion_point(field_release:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_release:mruv.accounts.IsAccountExistRequest.login)
   return login_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void IsAccountExistRequest::set_allocated_login(std::string* login) {
@@ -2419,7 +2422,7 @@ inline void IsAccountExistRequest::set_allocated_login(std::string* login) {
   }
   login_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), login,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.IsAccountExistRequest.login)
+  // @@protoc_insertion_point(field_set_allocated:mruv.accounts.IsAccountExistRequest.login)
 }
 
 // -------------------------------------------------------------------
@@ -2434,7 +2437,7 @@ inline bool IsAccountExistResponse::_internal_exists() const {
   return exists_;
 }
 inline bool IsAccountExistResponse::exists() const {
-  // @@protoc_insertion_point(field_get:mruv.IsAccountExistResponse.exists)
+  // @@protoc_insertion_point(field_get:mruv.accounts.IsAccountExistResponse.exists)
   return _internal_exists();
 }
 inline void IsAccountExistResponse::_internal_set_exists(bool value) {
@@ -2443,7 +2446,7 @@ inline void IsAccountExistResponse::_internal_set_exists(bool value) {
 }
 inline void IsAccountExistResponse::set_exists(bool value) {
   _internal_set_exists(value);
-  // @@protoc_insertion_point(field_set:mruv.IsAccountExistResponse.exists)
+  // @@protoc_insertion_point(field_set:mruv.accounts.IsAccountExistResponse.exists)
 }
 
 // uint32 id = 2;
@@ -2454,7 +2457,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 IsAccountExistResponse::_internal_id() co
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 IsAccountExistResponse::id() const {
-  // @@protoc_insertion_point(field_get:mruv.IsAccountExistResponse.id)
+  // @@protoc_insertion_point(field_get:mruv.accounts.IsAccountExistResponse.id)
   return _internal_id();
 }
 inline void IsAccountExistResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2463,7 +2466,7 @@ inline void IsAccountExistResponse::_internal_set_id(::PROTOBUF_NAMESPACE_ID::ui
 }
 inline void IsAccountExistResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.IsAccountExistResponse.id)
+  // @@protoc_insertion_point(field_set:mruv.accounts.IsAccountExistResponse.id)
 }
 
 #ifdef __GNUC__
@@ -2490,6 +2493,7 @@ inline void IsAccountExistResponse::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace accounts
 }  // namespace mruv
 
 // @@protoc_insertion_point(global_scope)

@@ -15,6 +15,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 namespace mruv {
+namespace common {
 class ServiceStatusRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ServiceStatusRequest> _instance;
@@ -31,16 +32,17 @@ class VersionResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VersionResponse> _instance;
 } _VersionResponse_default_instance_;
+}  // namespace common
 }  // namespace mruv
 static void InitDefaultsscc_info_ServiceStatusRequest_common_2fhealth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_ServiceStatusRequest_default_instance_;
-    new (ptr) ::mruv::ServiceStatusRequest();
+    void* ptr = &::mruv::common::_ServiceStatusRequest_default_instance_;
+    new (ptr) ::mruv::common::ServiceStatusRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::ServiceStatusRequest::InitAsDefaultInstance();
+  ::mruv::common::ServiceStatusRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServiceStatusRequest_common_2fhealth_2eproto =
@@ -50,11 +52,11 @@ static void InitDefaultsscc_info_ServiceStatusResponse_common_2fhealth_2eproto()
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_ServiceStatusResponse_default_instance_;
-    new (ptr) ::mruv::ServiceStatusResponse();
+    void* ptr = &::mruv::common::_ServiceStatusResponse_default_instance_;
+    new (ptr) ::mruv::common::ServiceStatusResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::ServiceStatusResponse::InitAsDefaultInstance();
+  ::mruv::common::ServiceStatusResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ServiceStatusResponse_common_2fhealth_2eproto =
@@ -64,11 +66,11 @@ static void InitDefaultsscc_info_VersionRequest_common_2fhealth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_VersionRequest_default_instance_;
-    new (ptr) ::mruv::VersionRequest();
+    void* ptr = &::mruv::common::_VersionRequest_default_instance_;
+    new (ptr) ::mruv::common::VersionRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::VersionRequest::InitAsDefaultInstance();
+  ::mruv::common::VersionRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VersionRequest_common_2fhealth_2eproto =
@@ -78,11 +80,11 @@ static void InitDefaultsscc_info_VersionResponse_common_2fhealth_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_VersionResponse_default_instance_;
-    new (ptr) ::mruv::VersionResponse();
+    void* ptr = &::mruv::common::_VersionResponse_default_instance_;
+    new (ptr) ::mruv::common::VersionResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::VersionResponse::InitAsDefaultInstance();
+  ::mruv::common::VersionResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VersionResponse_common_2fhealth_2eproto =
@@ -94,53 +96,53 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_common_2fhealth_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::ServiceStatusRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::ServiceStatusRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::ServiceStatusResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::ServiceStatusResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::ServiceStatusResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::ServiceStatusResponse, status_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::VersionRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::VersionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::VersionResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::VersionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::VersionResponse, version_),
-  PROTOBUF_FIELD_OFFSET(::mruv::VersionResponse, build_date_),
-  PROTOBUF_FIELD_OFFSET(::mruv::VersionResponse, commit_),
-  PROTOBUF_FIELD_OFFSET(::mruv::VersionResponse, os_arch_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::VersionResponse, version_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::VersionResponse, build_date_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::VersionResponse, commit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::common::VersionResponse, os_arch_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::ServiceStatusRequest)},
-  { 5, -1, sizeof(::mruv::ServiceStatusResponse)},
-  { 11, -1, sizeof(::mruv::VersionRequest)},
-  { 16, -1, sizeof(::mruv::VersionResponse)},
+  { 0, -1, sizeof(::mruv::common::ServiceStatusRequest)},
+  { 5, -1, sizeof(::mruv::common::ServiceStatusResponse)},
+  { 11, -1, sizeof(::mruv::common::VersionRequest)},
+  { 16, -1, sizeof(::mruv::common::VersionResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_ServiceStatusRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_ServiceStatusResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_VersionRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_VersionResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::common::_ServiceStatusRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::common::_ServiceStatusResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::common::_VersionRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::common::_VersionResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fhealth_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\023common/health.proto\022\004mruv\"\026\n\024ServiceSt"
-  "atusRequest\"\'\n\025ServiceStatusResponse\022\016\n\006"
-  "status\030\001 \001(\t\"\020\n\016VersionRequest\"W\n\017Versio"
-  "nResponse\022\017\n\007version\030\001 \001(\t\022\022\n\nbuild_date"
-  "\030\002 \001(\t\022\016\n\006commit\030\003 \001(\t\022\017\n\007os_arch\030\004 \001(\tB"
-  "&Z$github.com/MruV-RP/mruv-pb-go/commonb"
-  "\006proto3"
+  "\n\023common/health.proto\022\013mruv.common\"\026\n\024Se"
+  "rviceStatusRequest\"\'\n\025ServiceStatusRespo"
+  "nse\022\016\n\006status\030\001 \001(\t\"\020\n\016VersionRequest\"W\n"
+  "\017VersionResponse\022\017\n\007version\030\001 \001(\t\022\022\n\nbui"
+  "ld_date\030\002 \001(\t\022\016\n\006commit\030\003 \001(\t\022\017\n\007os_arch"
+  "\030\004 \001(\tB&Z$github.com/MruV-RP/mruv-pb-go/"
+  "commonb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fhealth_2eproto_deps[1] = {
 };
@@ -152,7 +154,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_com
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fhealth_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fhealth_2eproto = {
-  false, false, descriptor_table_protodef_common_2fhealth_2eproto, "common/health.proto", 247,
+  false, false, descriptor_table_protodef_common_2fhealth_2eproto, "common/health.proto", 254,
   &descriptor_table_common_2fhealth_2eproto_once, descriptor_table_common_2fhealth_2eproto_sccs, descriptor_table_common_2fhealth_2eproto_deps, 4, 0,
   schemas, file_default_instances, TableStruct_common_2fhealth_2eproto::offsets,
   file_level_metadata_common_2fhealth_2eproto, 4, file_level_enum_descriptors_common_2fhealth_2eproto, file_level_service_descriptors_common_2fhealth_2eproto,
@@ -161,6 +163,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_common_2fhealth_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_common_2fhealth_2eproto)), true);
 namespace mruv {
+namespace common {
 
 // ===================================================================
 
@@ -174,19 +177,19 @@ ServiceStatusRequest::ServiceStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.common.ServiceStatusRequest)
 }
 ServiceStatusRequest::ServiceStatusRequest(const ServiceStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.common.ServiceStatusRequest)
 }
 
 void ServiceStatusRequest::SharedCtor() {
 }
 
 ServiceStatusRequest::~ServiceStatusRequest() {
-  // @@protoc_insertion_point(destructor:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(destructor:mruv.common.ServiceStatusRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -211,7 +214,7 @@ const ServiceStatusRequest& ServiceStatusRequest::default_instance() {
 
 
 void ServiceStatusRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.ServiceStatusRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.common.ServiceStatusRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -246,7 +249,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ServiceStatusRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.common.ServiceStatusRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -254,12 +257,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.common.ServiceStatusRequest)
   return target;
 }
 
 size_t ServiceStatusRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.ServiceStatusRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.common.ServiceStatusRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -276,22 +279,22 @@ size_t ServiceStatusRequest::ByteSizeLong() const {
 }
 
 void ServiceStatusRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.ServiceStatusRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.common.ServiceStatusRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const ServiceStatusRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServiceStatusRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.common.ServiceStatusRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.ServiceStatusRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.common.ServiceStatusRequest)
     MergeFrom(*source);
   }
 }
 
 void ServiceStatusRequest::MergeFrom(const ServiceStatusRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.ServiceStatusRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.common.ServiceStatusRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -300,14 +303,14 @@ void ServiceStatusRequest::MergeFrom(const ServiceStatusRequest& from) {
 }
 
 void ServiceStatusRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.ServiceStatusRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.common.ServiceStatusRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ServiceStatusRequest::CopyFrom(const ServiceStatusRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.ServiceStatusRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.common.ServiceStatusRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -339,7 +342,7 @@ ServiceStatusResponse::ServiceStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* are
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.common.ServiceStatusResponse)
 }
 ServiceStatusResponse::ServiceStatusResponse(const ServiceStatusResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -349,7 +352,7 @@ ServiceStatusResponse::ServiceStatusResponse(const ServiceStatusResponse& from)
     status_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_status(),
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.common.ServiceStatusResponse)
 }
 
 void ServiceStatusResponse::SharedCtor() {
@@ -358,7 +361,7 @@ void ServiceStatusResponse::SharedCtor() {
 }
 
 ServiceStatusResponse::~ServiceStatusResponse() {
-  // @@protoc_insertion_point(destructor:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(destructor:mruv.common.ServiceStatusResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -384,7 +387,7 @@ const ServiceStatusResponse& ServiceStatusResponse::default_instance() {
 
 
 void ServiceStatusResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.ServiceStatusResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.common.ServiceStatusResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -406,7 +409,7 @@ const char* ServiceStatusResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_status();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.ServiceStatusResponse.status"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.common.ServiceStatusResponse.status"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -434,7 +437,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ServiceStatusResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.common.ServiceStatusResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -443,7 +446,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_status().data(), static_cast<int>(this->_internal_status().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.ServiceStatusResponse.status");
+      "mruv.common.ServiceStatusResponse.status");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_status(), target);
   }
@@ -452,12 +455,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.common.ServiceStatusResponse)
   return target;
 }
 
 size_t ServiceStatusResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.ServiceStatusResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.common.ServiceStatusResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -481,22 +484,22 @@ size_t ServiceStatusResponse::ByteSizeLong() const {
 }
 
 void ServiceStatusResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.ServiceStatusResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.common.ServiceStatusResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const ServiceStatusResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ServiceStatusResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.common.ServiceStatusResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.ServiceStatusResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.common.ServiceStatusResponse)
     MergeFrom(*source);
   }
 }
 
 void ServiceStatusResponse::MergeFrom(const ServiceStatusResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.ServiceStatusResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.common.ServiceStatusResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -508,14 +511,14 @@ void ServiceStatusResponse::MergeFrom(const ServiceStatusResponse& from) {
 }
 
 void ServiceStatusResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.ServiceStatusResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.common.ServiceStatusResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ServiceStatusResponse::CopyFrom(const ServiceStatusResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.ServiceStatusResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.common.ServiceStatusResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -548,19 +551,19 @@ VersionRequest::VersionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.VersionRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.common.VersionRequest)
 }
 VersionRequest::VersionRequest(const VersionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.VersionRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.common.VersionRequest)
 }
 
 void VersionRequest::SharedCtor() {
 }
 
 VersionRequest::~VersionRequest() {
-  // @@protoc_insertion_point(destructor:mruv.VersionRequest)
+  // @@protoc_insertion_point(destructor:mruv.common.VersionRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -585,7 +588,7 @@ const VersionRequest& VersionRequest::default_instance() {
 
 
 void VersionRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.VersionRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.common.VersionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -620,7 +623,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* VersionRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.VersionRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.common.VersionRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -628,12 +631,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.VersionRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.common.VersionRequest)
   return target;
 }
 
 size_t VersionRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.VersionRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.common.VersionRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -650,22 +653,22 @@ size_t VersionRequest::ByteSizeLong() const {
 }
 
 void VersionRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.VersionRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.common.VersionRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const VersionRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VersionRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.VersionRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.common.VersionRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.VersionRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.common.VersionRequest)
     MergeFrom(*source);
   }
 }
 
 void VersionRequest::MergeFrom(const VersionRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.VersionRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.common.VersionRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -674,14 +677,14 @@ void VersionRequest::MergeFrom(const VersionRequest& from) {
 }
 
 void VersionRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.VersionRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.common.VersionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void VersionRequest::CopyFrom(const VersionRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.VersionRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.common.VersionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -713,7 +716,7 @@ VersionResponse::VersionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.VersionResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.common.VersionResponse)
 }
 VersionResponse::VersionResponse(const VersionResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -738,7 +741,7 @@ VersionResponse::VersionResponse(const VersionResponse& from)
     os_arch_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_os_arch(),
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:mruv.VersionResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.common.VersionResponse)
 }
 
 void VersionResponse::SharedCtor() {
@@ -750,7 +753,7 @@ void VersionResponse::SharedCtor() {
 }
 
 VersionResponse::~VersionResponse() {
-  // @@protoc_insertion_point(destructor:mruv.VersionResponse)
+  // @@protoc_insertion_point(destructor:mruv.common.VersionResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -779,7 +782,7 @@ const VersionResponse& VersionResponse::default_instance() {
 
 
 void VersionResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.VersionResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.common.VersionResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -804,7 +807,7 @@ const char* VersionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_version();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.VersionResponse.version"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.common.VersionResponse.version"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -813,7 +816,7 @@ const char* VersionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_build_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.VersionResponse.build_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.common.VersionResponse.build_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -822,7 +825,7 @@ const char* VersionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_commit();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.VersionResponse.commit"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.common.VersionResponse.commit"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -831,7 +834,7 @@ const char* VersionResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_os_arch();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.VersionResponse.os_arch"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "mruv.common.VersionResponse.os_arch"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -859,7 +862,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* VersionResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.VersionResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.common.VersionResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -868,7 +871,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_version().data(), static_cast<int>(this->_internal_version().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.VersionResponse.version");
+      "mruv.common.VersionResponse.version");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_version(), target);
   }
@@ -878,7 +881,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_build_date().data(), static_cast<int>(this->_internal_build_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.VersionResponse.build_date");
+      "mruv.common.VersionResponse.build_date");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_build_date(), target);
   }
@@ -888,7 +891,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_commit().data(), static_cast<int>(this->_internal_commit().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.VersionResponse.commit");
+      "mruv.common.VersionResponse.commit");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_commit(), target);
   }
@@ -898,7 +901,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_os_arch().data(), static_cast<int>(this->_internal_os_arch().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "mruv.VersionResponse.os_arch");
+      "mruv.common.VersionResponse.os_arch");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_os_arch(), target);
   }
@@ -907,12 +910,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.VersionResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.common.VersionResponse)
   return target;
 }
 
 size_t VersionResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.VersionResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.common.VersionResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -957,22 +960,22 @@ size_t VersionResponse::ByteSizeLong() const {
 }
 
 void VersionResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.VersionResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.common.VersionResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const VersionResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VersionResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.VersionResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.common.VersionResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.VersionResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.common.VersionResponse)
     MergeFrom(*source);
   }
 }
 
 void VersionResponse::MergeFrom(const VersionResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.VersionResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.common.VersionResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -993,14 +996,14 @@ void VersionResponse::MergeFrom(const VersionResponse& from) {
 }
 
 void VersionResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.VersionResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.common.VersionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void VersionResponse::CopyFrom(const VersionResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.VersionResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.common.VersionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1025,19 +1028,20 @@ void VersionResponse::InternalSwap(VersionResponse* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace common
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::ServiceStatusRequest* Arena::CreateMaybeMessage< ::mruv::ServiceStatusRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::ServiceStatusRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::common::ServiceStatusRequest* Arena::CreateMaybeMessage< ::mruv::common::ServiceStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::common::ServiceStatusRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::ServiceStatusResponse* Arena::CreateMaybeMessage< ::mruv::ServiceStatusResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::ServiceStatusResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::common::ServiceStatusResponse* Arena::CreateMaybeMessage< ::mruv::common::ServiceStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::common::ServiceStatusResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::VersionRequest* Arena::CreateMaybeMessage< ::mruv::VersionRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::VersionRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::common::VersionRequest* Arena::CreateMaybeMessage< ::mruv::common::VersionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::common::VersionRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::VersionResponse* Arena::CreateMaybeMessage< ::mruv::VersionResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::VersionResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::common::VersionResponse* Arena::CreateMaybeMessage< ::mruv::common::VersionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::common::VersionResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

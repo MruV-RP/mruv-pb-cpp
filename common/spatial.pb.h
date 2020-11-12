@@ -55,23 +55,26 @@ struct TableStruct_common_2fspatial_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fspatial_2eproto;
 namespace mruv {
+namespace common {
 class Position;
 class PositionDefaultTypeInternal;
 extern PositionDefaultTypeInternal _Position_default_instance_;
 class Rotation;
 class RotationDefaultTypeInternal;
 extern RotationDefaultTypeInternal _Rotation_default_instance_;
+}  // namespace common
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::Position* Arena::CreateMaybeMessage<::mruv::Position>(Arena*);
-template<> ::mruv::Rotation* Arena::CreateMaybeMessage<::mruv::Rotation>(Arena*);
+template<> ::mruv::common::Position* Arena::CreateMaybeMessage<::mruv::common::Position>(Arena*);
+template<> ::mruv::common::Rotation* Arena::CreateMaybeMessage<::mruv::common::Rotation>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace common {
 
 // ===================================================================
 
 class Position PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.Position) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.common.Position) */ {
  public:
   inline Position() : Position(nullptr) {}
   virtual ~Position();
@@ -160,7 +163,7 @@ class Position PROTOBUF_FINAL :
   void InternalSwap(Position* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.Position";
+    return "mruv.common.Position";
   }
   protected:
   explicit Position(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -214,7 +217,7 @@ class Position PROTOBUF_FINAL :
   void _internal_set_z(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.Position)
+  // @@protoc_insertion_point(class_scope:mruv.common.Position)
  private:
   class _Internal;
 
@@ -230,7 +233,7 @@ class Position PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class Rotation PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.Rotation) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.common.Rotation) */ {
  public:
   inline Rotation() : Rotation(nullptr) {}
   virtual ~Rotation();
@@ -319,7 +322,7 @@ class Rotation PROTOBUF_FINAL :
   void InternalSwap(Rotation* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.Rotation";
+    return "mruv.common.Rotation";
   }
   protected:
   explicit Rotation(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -373,7 +376,7 @@ class Rotation PROTOBUF_FINAL :
   void _internal_set_rz(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.Rotation)
+  // @@protoc_insertion_point(class_scope:mruv.common.Rotation)
  private:
   class _Internal;
 
@@ -405,7 +408,7 @@ inline double Position::_internal_x() const {
   return x_;
 }
 inline double Position::x() const {
-  // @@protoc_insertion_point(field_get:mruv.Position.x)
+  // @@protoc_insertion_point(field_get:mruv.common.Position.x)
   return _internal_x();
 }
 inline void Position::_internal_set_x(double value) {
@@ -414,7 +417,7 @@ inline void Position::_internal_set_x(double value) {
 }
 inline void Position::set_x(double value) {
   _internal_set_x(value);
-  // @@protoc_insertion_point(field_set:mruv.Position.x)
+  // @@protoc_insertion_point(field_set:mruv.common.Position.x)
 }
 
 // double y = 2;
@@ -425,7 +428,7 @@ inline double Position::_internal_y() const {
   return y_;
 }
 inline double Position::y() const {
-  // @@protoc_insertion_point(field_get:mruv.Position.y)
+  // @@protoc_insertion_point(field_get:mruv.common.Position.y)
   return _internal_y();
 }
 inline void Position::_internal_set_y(double value) {
@@ -434,7 +437,7 @@ inline void Position::_internal_set_y(double value) {
 }
 inline void Position::set_y(double value) {
   _internal_set_y(value);
-  // @@protoc_insertion_point(field_set:mruv.Position.y)
+  // @@protoc_insertion_point(field_set:mruv.common.Position.y)
 }
 
 // double z = 3;
@@ -445,7 +448,7 @@ inline double Position::_internal_z() const {
   return z_;
 }
 inline double Position::z() const {
-  // @@protoc_insertion_point(field_get:mruv.Position.z)
+  // @@protoc_insertion_point(field_get:mruv.common.Position.z)
   return _internal_z();
 }
 inline void Position::_internal_set_z(double value) {
@@ -454,7 +457,7 @@ inline void Position::_internal_set_z(double value) {
 }
 inline void Position::set_z(double value) {
   _internal_set_z(value);
-  // @@protoc_insertion_point(field_set:mruv.Position.z)
+  // @@protoc_insertion_point(field_set:mruv.common.Position.z)
 }
 
 // -------------------------------------------------------------------
@@ -469,7 +472,7 @@ inline double Rotation::_internal_rx() const {
   return rx_;
 }
 inline double Rotation::rx() const {
-  // @@protoc_insertion_point(field_get:mruv.Rotation.rx)
+  // @@protoc_insertion_point(field_get:mruv.common.Rotation.rx)
   return _internal_rx();
 }
 inline void Rotation::_internal_set_rx(double value) {
@@ -478,7 +481,7 @@ inline void Rotation::_internal_set_rx(double value) {
 }
 inline void Rotation::set_rx(double value) {
   _internal_set_rx(value);
-  // @@protoc_insertion_point(field_set:mruv.Rotation.rx)
+  // @@protoc_insertion_point(field_set:mruv.common.Rotation.rx)
 }
 
 // double ry = 2;
@@ -489,7 +492,7 @@ inline double Rotation::_internal_ry() const {
   return ry_;
 }
 inline double Rotation::ry() const {
-  // @@protoc_insertion_point(field_get:mruv.Rotation.ry)
+  // @@protoc_insertion_point(field_get:mruv.common.Rotation.ry)
   return _internal_ry();
 }
 inline void Rotation::_internal_set_ry(double value) {
@@ -498,7 +501,7 @@ inline void Rotation::_internal_set_ry(double value) {
 }
 inline void Rotation::set_ry(double value) {
   _internal_set_ry(value);
-  // @@protoc_insertion_point(field_set:mruv.Rotation.ry)
+  // @@protoc_insertion_point(field_set:mruv.common.Rotation.ry)
 }
 
 // double rz = 3;
@@ -509,7 +512,7 @@ inline double Rotation::_internal_rz() const {
   return rz_;
 }
 inline double Rotation::rz() const {
-  // @@protoc_insertion_point(field_get:mruv.Rotation.rz)
+  // @@protoc_insertion_point(field_get:mruv.common.Rotation.rz)
   return _internal_rz();
 }
 inline void Rotation::_internal_set_rz(double value) {
@@ -518,7 +521,7 @@ inline void Rotation::_internal_set_rz(double value) {
 }
 inline void Rotation::set_rz(double value) {
   _internal_set_rz(value);
-  // @@protoc_insertion_point(field_set:mruv.Rotation.rz)
+  // @@protoc_insertion_point(field_set:mruv.common.Rotation.rz)
 }
 
 #ifdef __GNUC__
@@ -529,6 +532,7 @@ inline void Rotation::set_rz(double value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace common
 }  // namespace mruv
 
 // @@protoc_insertion_point(global_scope)

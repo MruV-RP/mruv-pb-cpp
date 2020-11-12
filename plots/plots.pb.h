@@ -220,22 +220,22 @@ class Plot PROTOBUF_FINAL :
     kNameFieldNumber = 1,
     kDescriptionFieldNumber = 2,
   };
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   int points_size() const;
   private:
   int _internal_points_size() const;
   public:
   void clear_points();
-  ::mruv::Position* mutable_points(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+  ::mruv::common::Position* mutable_points(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >*
       mutable_points();
   private:
-  const ::mruv::Position& _internal_points(int index) const;
-  ::mruv::Position* _internal_add_points();
+  const ::mruv::common::Position& _internal_points(int index) const;
+  ::mruv::common::Position* _internal_add_points();
   public:
-  const ::mruv::Position& points(int index) const;
-  ::mruv::Position* add_points();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+  const ::mruv::common::Position& points(int index) const;
+  ::mruv::common::Position* add_points();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >&
       points() const;
 
   // string name = 1;
@@ -277,7 +277,7 @@ class Plot PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position > points_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position > points_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -402,22 +402,22 @@ class CreatePlotRequest PROTOBUF_FINAL :
     kNameFieldNumber = 1,
     kDescriptionFieldNumber = 2,
   };
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   int points_size() const;
   private:
   int _internal_points_size() const;
   public:
   void clear_points();
-  ::mruv::Position* mutable_points(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+  ::mruv::common::Position* mutable_points(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >*
       mutable_points();
   private:
-  const ::mruv::Position& _internal_points(int index) const;
-  ::mruv::Position* _internal_add_points();
+  const ::mruv::common::Position& _internal_points(int index) const;
+  ::mruv::common::Position* _internal_add_points();
   public:
-  const ::mruv::Position& points(int index) const;
-  ::mruv::Position* add_points();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+  const ::mruv::common::Position& points(int index) const;
+  ::mruv::common::Position* add_points();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >&
       points() const;
 
   // string name = 1;
@@ -459,7 +459,7 @@ class CreatePlotRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position > points_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position > points_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -859,22 +859,22 @@ class GetPlotResponse PROTOBUF_FINAL :
     kDescriptionFieldNumber = 2,
     kAreaFieldNumber = 4,
   };
-  // repeated .mruv.Position points = 3;
+  // repeated .mruv.common.Position points = 3;
   int points_size() const;
   private:
   int _internal_points_size() const;
   public:
   void clear_points();
-  ::mruv::Position* mutable_points(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+  ::mruv::common::Position* mutable_points(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >*
       mutable_points();
   private:
-  const ::mruv::Position& _internal_points(int index) const;
-  ::mruv::Position* _internal_add_points();
+  const ::mruv::common::Position& _internal_points(int index) const;
+  ::mruv::common::Position* _internal_add_points();
   public:
-  const ::mruv::Position& points(int index) const;
-  ::mruv::Position* add_points();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+  const ::mruv::common::Position& points(int index) const;
+  ::mruv::common::Position* add_points();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >&
       points() const;
 
   // string name = 1;
@@ -925,7 +925,7 @@ class GetPlotResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position > points_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position > points_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr description_;
   double area_;
@@ -1625,37 +1625,37 @@ inline void Plot::set_allocated_description(std::string* description) {
   // @@protoc_insertion_point(field_set_allocated:mruv.plots.Plot.description)
 }
 
-// repeated .mruv.Position points = 3;
+// repeated .mruv.common.Position points = 3;
 inline int Plot::_internal_points_size() const {
   return points_.size();
 }
 inline int Plot::points_size() const {
   return _internal_points_size();
 }
-inline ::mruv::Position* Plot::mutable_points(int index) {
+inline ::mruv::common::Position* Plot::mutable_points(int index) {
   // @@protoc_insertion_point(field_mutable:mruv.plots.Plot.points)
   return points_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >*
 Plot::mutable_points() {
   // @@protoc_insertion_point(field_mutable_list:mruv.plots.Plot.points)
   return &points_;
 }
-inline const ::mruv::Position& Plot::_internal_points(int index) const {
+inline const ::mruv::common::Position& Plot::_internal_points(int index) const {
   return points_.Get(index);
 }
-inline const ::mruv::Position& Plot::points(int index) const {
+inline const ::mruv::common::Position& Plot::points(int index) const {
   // @@protoc_insertion_point(field_get:mruv.plots.Plot.points)
   return _internal_points(index);
 }
-inline ::mruv::Position* Plot::_internal_add_points() {
+inline ::mruv::common::Position* Plot::_internal_add_points() {
   return points_.Add();
 }
-inline ::mruv::Position* Plot::add_points() {
+inline ::mruv::common::Position* Plot::add_points() {
   // @@protoc_insertion_point(field_add:mruv.plots.Plot.points)
   return _internal_add_points();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >&
 Plot::points() const {
   // @@protoc_insertion_point(field_list:mruv.plots.Plot.points)
   return points_;
@@ -1789,37 +1789,37 @@ inline void CreatePlotRequest::set_allocated_description(std::string* descriptio
   // @@protoc_insertion_point(field_set_allocated:mruv.plots.CreatePlotRequest.description)
 }
 
-// repeated .mruv.Position points = 3;
+// repeated .mruv.common.Position points = 3;
 inline int CreatePlotRequest::_internal_points_size() const {
   return points_.size();
 }
 inline int CreatePlotRequest::points_size() const {
   return _internal_points_size();
 }
-inline ::mruv::Position* CreatePlotRequest::mutable_points(int index) {
+inline ::mruv::common::Position* CreatePlotRequest::mutable_points(int index) {
   // @@protoc_insertion_point(field_mutable:mruv.plots.CreatePlotRequest.points)
   return points_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >*
 CreatePlotRequest::mutable_points() {
   // @@protoc_insertion_point(field_mutable_list:mruv.plots.CreatePlotRequest.points)
   return &points_;
 }
-inline const ::mruv::Position& CreatePlotRequest::_internal_points(int index) const {
+inline const ::mruv::common::Position& CreatePlotRequest::_internal_points(int index) const {
   return points_.Get(index);
 }
-inline const ::mruv::Position& CreatePlotRequest::points(int index) const {
+inline const ::mruv::common::Position& CreatePlotRequest::points(int index) const {
   // @@protoc_insertion_point(field_get:mruv.plots.CreatePlotRequest.points)
   return _internal_points(index);
 }
-inline ::mruv::Position* CreatePlotRequest::_internal_add_points() {
+inline ::mruv::common::Position* CreatePlotRequest::_internal_add_points() {
   return points_.Add();
 }
-inline ::mruv::Position* CreatePlotRequest::add_points() {
+inline ::mruv::common::Position* CreatePlotRequest::add_points() {
   // @@protoc_insertion_point(field_add:mruv.plots.CreatePlotRequest.points)
   return _internal_add_points();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >&
 CreatePlotRequest::points() const {
   // @@protoc_insertion_point(field_list:mruv.plots.CreatePlotRequest.points)
   return points_;
@@ -2001,37 +2001,37 @@ inline void GetPlotResponse::set_allocated_description(std::string* description)
   // @@protoc_insertion_point(field_set_allocated:mruv.plots.GetPlotResponse.description)
 }
 
-// repeated .mruv.Position points = 3;
+// repeated .mruv.common.Position points = 3;
 inline int GetPlotResponse::_internal_points_size() const {
   return points_.size();
 }
 inline int GetPlotResponse::points_size() const {
   return _internal_points_size();
 }
-inline ::mruv::Position* GetPlotResponse::mutable_points(int index) {
+inline ::mruv::common::Position* GetPlotResponse::mutable_points(int index) {
   // @@protoc_insertion_point(field_mutable:mruv.plots.GetPlotResponse.points)
   return points_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >*
 GetPlotResponse::mutable_points() {
   // @@protoc_insertion_point(field_mutable_list:mruv.plots.GetPlotResponse.points)
   return &points_;
 }
-inline const ::mruv::Position& GetPlotResponse::_internal_points(int index) const {
+inline const ::mruv::common::Position& GetPlotResponse::_internal_points(int index) const {
   return points_.Get(index);
 }
-inline const ::mruv::Position& GetPlotResponse::points(int index) const {
+inline const ::mruv::common::Position& GetPlotResponse::points(int index) const {
   // @@protoc_insertion_point(field_get:mruv.plots.GetPlotResponse.points)
   return _internal_points(index);
 }
-inline ::mruv::Position* GetPlotResponse::_internal_add_points() {
+inline ::mruv::common::Position* GetPlotResponse::_internal_add_points() {
   return points_.Add();
 }
-inline ::mruv::Position* GetPlotResponse::add_points() {
+inline ::mruv::common::Position* GetPlotResponse::add_points() {
   // @@protoc_insertion_point(field_add:mruv.plots.GetPlotResponse.points)
   return _internal_add_points();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Position >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::common::Position >&
 GetPlotResponse::points() const {
   // @@protoc_insertion_point(field_list:mruv.plots.GetPlotResponse.points)
   return points_;

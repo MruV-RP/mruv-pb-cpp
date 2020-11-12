@@ -20,6 +20,8 @@
 #include <grpcpp/impl/codegen/service_type.h>
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace mruv {
+namespace common {
 
 }  // namespace mruv
+}  // namespace common
 

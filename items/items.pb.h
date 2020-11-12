@@ -59,6 +59,7 @@ struct TableStruct_items_2fitems_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_items_2fitems_2eproto;
 namespace mruv {
+namespace items {
 class GetContainerItemsRequest;
 class GetContainerItemsRequestDefaultTypeInternal;
 extern GetContainerItemsRequestDefaultTypeInternal _GetContainerItemsRequest_default_instance_;
@@ -116,34 +117,36 @@ extern UseItemRequestDefaultTypeInternal _UseItemRequest_default_instance_;
 class UseItemResponse;
 class UseItemResponseDefaultTypeInternal;
 extern UseItemResponseDefaultTypeInternal _UseItemResponse_default_instance_;
+}  // namespace items
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::GetContainerItemsRequest* Arena::CreateMaybeMessage<::mruv::GetContainerItemsRequest>(Arena*);
-template<> ::mruv::GetContainerItemsResponse* Arena::CreateMaybeMessage<::mruv::GetContainerItemsResponse>(Arena*);
-template<> ::mruv::GetContainerTypesRequest* Arena::CreateMaybeMessage<::mruv::GetContainerTypesRequest>(Arena*);
-template<> ::mruv::GetContainerTypesResponse* Arena::CreateMaybeMessage<::mruv::GetContainerTypesResponse>(Arena*);
-template<> ::mruv::GetContainersRequest* Arena::CreateMaybeMessage<::mruv::GetContainersRequest>(Arena*);
-template<> ::mruv::GetContainersResponse* Arena::CreateMaybeMessage<::mruv::GetContainersResponse>(Arena*);
-template<> ::mruv::GetItemTypesRequest* Arena::CreateMaybeMessage<::mruv::GetItemTypesRequest>(Arena*);
-template<> ::mruv::GetItemTypesResponse* Arena::CreateMaybeMessage<::mruv::GetItemTypesResponse>(Arena*);
-template<> ::mruv::GetItemsRequest* Arena::CreateMaybeMessage<::mruv::GetItemsRequest>(Arena*);
-template<> ::mruv::GetItemsResponse* Arena::CreateMaybeMessage<::mruv::GetItemsResponse>(Arena*);
-template<> ::mruv::GetNearestItemsRequest* Arena::CreateMaybeMessage<::mruv::GetNearestItemsRequest>(Arena*);
-template<> ::mruv::GetNearestItemsResponse* Arena::CreateMaybeMessage<::mruv::GetNearestItemsResponse>(Arena*);
-template<> ::mruv::PullItemRequest* Arena::CreateMaybeMessage<::mruv::PullItemRequest>(Arena*);
-template<> ::mruv::PutItemRequest* Arena::CreateMaybeMessage<::mruv::PutItemRequest>(Arena*);
-template<> ::mruv::PutItemResponse* Arena::CreateMaybeMessage<::mruv::PutItemResponse>(Arena*);
-template<> ::mruv::SortItemsRequest* Arena::CreateMaybeMessage<::mruv::SortItemsRequest>(Arena*);
-template<> ::mruv::SortItemsResponse* Arena::CreateMaybeMessage<::mruv::SortItemsResponse>(Arena*);
-template<> ::mruv::UseItemRequest* Arena::CreateMaybeMessage<::mruv::UseItemRequest>(Arena*);
-template<> ::mruv::UseItemResponse* Arena::CreateMaybeMessage<::mruv::UseItemResponse>(Arena*);
+template<> ::mruv::items::GetContainerItemsRequest* Arena::CreateMaybeMessage<::mruv::items::GetContainerItemsRequest>(Arena*);
+template<> ::mruv::items::GetContainerItemsResponse* Arena::CreateMaybeMessage<::mruv::items::GetContainerItemsResponse>(Arena*);
+template<> ::mruv::items::GetContainerTypesRequest* Arena::CreateMaybeMessage<::mruv::items::GetContainerTypesRequest>(Arena*);
+template<> ::mruv::items::GetContainerTypesResponse* Arena::CreateMaybeMessage<::mruv::items::GetContainerTypesResponse>(Arena*);
+template<> ::mruv::items::GetContainersRequest* Arena::CreateMaybeMessage<::mruv::items::GetContainersRequest>(Arena*);
+template<> ::mruv::items::GetContainersResponse* Arena::CreateMaybeMessage<::mruv::items::GetContainersResponse>(Arena*);
+template<> ::mruv::items::GetItemTypesRequest* Arena::CreateMaybeMessage<::mruv::items::GetItemTypesRequest>(Arena*);
+template<> ::mruv::items::GetItemTypesResponse* Arena::CreateMaybeMessage<::mruv::items::GetItemTypesResponse>(Arena*);
+template<> ::mruv::items::GetItemsRequest* Arena::CreateMaybeMessage<::mruv::items::GetItemsRequest>(Arena*);
+template<> ::mruv::items::GetItemsResponse* Arena::CreateMaybeMessage<::mruv::items::GetItemsResponse>(Arena*);
+template<> ::mruv::items::GetNearestItemsRequest* Arena::CreateMaybeMessage<::mruv::items::GetNearestItemsRequest>(Arena*);
+template<> ::mruv::items::GetNearestItemsResponse* Arena::CreateMaybeMessage<::mruv::items::GetNearestItemsResponse>(Arena*);
+template<> ::mruv::items::PullItemRequest* Arena::CreateMaybeMessage<::mruv::items::PullItemRequest>(Arena*);
+template<> ::mruv::items::PutItemRequest* Arena::CreateMaybeMessage<::mruv::items::PutItemRequest>(Arena*);
+template<> ::mruv::items::PutItemResponse* Arena::CreateMaybeMessage<::mruv::items::PutItemResponse>(Arena*);
+template<> ::mruv::items::SortItemsRequest* Arena::CreateMaybeMessage<::mruv::items::SortItemsRequest>(Arena*);
+template<> ::mruv::items::SortItemsResponse* Arena::CreateMaybeMessage<::mruv::items::SortItemsResponse>(Arena*);
+template<> ::mruv::items::UseItemRequest* Arena::CreateMaybeMessage<::mruv::items::UseItemRequest>(Arena*);
+template<> ::mruv::items::UseItemResponse* Arena::CreateMaybeMessage<::mruv::items::UseItemResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace items {
 
 // ===================================================================
 
 class GetItemsRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetItemsRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetItemsRequest) */ {
  public:
   inline GetItemsRequest() : GetItemsRequest(nullptr) {}
   virtual ~GetItemsRequest();
@@ -232,7 +235,7 @@ class GetItemsRequest PROTOBUF_FINAL :
   void InternalSwap(GetItemsRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetItemsRequest";
+    return "mruv.items.GetItemsRequest";
   }
   protected:
   explicit GetItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -266,7 +269,7 @@ class GetItemsRequest PROTOBUF_FINAL :
   void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetItemsRequest)
  private:
   class _Internal;
 
@@ -280,7 +283,7 @@ class GetItemsRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetItemsResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetItemsResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetItemsResponse) */ {
  public:
   inline GetItemsResponse() : GetItemsResponse(nullptr) {}
   virtual ~GetItemsResponse();
@@ -369,7 +372,7 @@ class GetItemsResponse PROTOBUF_FINAL :
   void InternalSwap(GetItemsResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetItemsResponse";
+    return "mruv.items.GetItemsResponse";
   }
   protected:
   explicit GetItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -394,39 +397,39 @@ class GetItemsResponse PROTOBUF_FINAL :
   enum : int {
     kItemsFieldNumber = 1,
   };
-  // repeated .mruv.Item items = 1;
+  // repeated .mruv.items.Item items = 1;
   int items_size() const;
   private:
   int _internal_items_size() const;
   public:
   void clear_items();
-  ::mruv::Item* mutable_items(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Item >*
+  ::mruv::items::Item* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Item >*
       mutable_items();
   private:
-  const ::mruv::Item& _internal_items(int index) const;
-  ::mruv::Item* _internal_add_items();
+  const ::mruv::items::Item& _internal_items(int index) const;
+  ::mruv::items::Item* _internal_add_items();
   public:
-  const ::mruv::Item& items(int index) const;
-  ::mruv::Item* add_items();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Item >&
+  const ::mruv::items::Item& items(int index) const;
+  ::mruv::items::Item* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Item >&
       items() const;
 
-  // @@protoc_insertion_point(class_scope:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetItemsResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Item > items_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Item > items_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetItemTypesRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetItemTypesRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetItemTypesRequest) */ {
  public:
   inline GetItemTypesRequest() : GetItemTypesRequest(nullptr) {}
   virtual ~GetItemTypesRequest();
@@ -515,7 +518,7 @@ class GetItemTypesRequest PROTOBUF_FINAL :
   void InternalSwap(GetItemTypesRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetItemTypesRequest";
+    return "mruv.items.GetItemTypesRequest";
   }
   protected:
   explicit GetItemTypesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -549,7 +552,7 @@ class GetItemTypesRequest PROTOBUF_FINAL :
   void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetItemTypesRequest)
  private:
   class _Internal;
 
@@ -563,7 +566,7 @@ class GetItemTypesRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetItemTypesResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetItemTypesResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetItemTypesResponse) */ {
  public:
   inline GetItemTypesResponse() : GetItemTypesResponse(nullptr) {}
   virtual ~GetItemTypesResponse();
@@ -652,7 +655,7 @@ class GetItemTypesResponse PROTOBUF_FINAL :
   void InternalSwap(GetItemTypesResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetItemTypesResponse";
+    return "mruv.items.GetItemTypesResponse";
   }
   protected:
   explicit GetItemTypesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -677,39 +680,39 @@ class GetItemTypesResponse PROTOBUF_FINAL :
   enum : int {
     kItemTypesFieldNumber = 1,
   };
-  // repeated .mruv.ItemType item_types = 1;
+  // repeated .mruv.items.ItemType item_types = 1;
   int item_types_size() const;
   private:
   int _internal_item_types_size() const;
   public:
   void clear_item_types();
-  ::mruv::ItemType* mutable_item_types(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ItemType >*
+  ::mruv::items::ItemType* mutable_item_types(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ItemType >*
       mutable_item_types();
   private:
-  const ::mruv::ItemType& _internal_item_types(int index) const;
-  ::mruv::ItemType* _internal_add_item_types();
+  const ::mruv::items::ItemType& _internal_item_types(int index) const;
+  ::mruv::items::ItemType* _internal_add_item_types();
   public:
-  const ::mruv::ItemType& item_types(int index) const;
-  ::mruv::ItemType* add_item_types();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ItemType >&
+  const ::mruv::items::ItemType& item_types(int index) const;
+  ::mruv::items::ItemType* add_item_types();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ItemType >&
       item_types() const;
 
-  // @@protoc_insertion_point(class_scope:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetItemTypesResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ItemType > item_types_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ItemType > item_types_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetContainersRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetContainersRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetContainersRequest) */ {
  public:
   inline GetContainersRequest() : GetContainersRequest(nullptr) {}
   virtual ~GetContainersRequest();
@@ -798,7 +801,7 @@ class GetContainersRequest PROTOBUF_FINAL :
   void InternalSwap(GetContainersRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetContainersRequest";
+    return "mruv.items.GetContainersRequest";
   }
   protected:
   explicit GetContainersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -832,7 +835,7 @@ class GetContainersRequest PROTOBUF_FINAL :
   void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetContainersRequest)
  private:
   class _Internal;
 
@@ -846,7 +849,7 @@ class GetContainersRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetContainersResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetContainersResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetContainersResponse) */ {
  public:
   inline GetContainersResponse() : GetContainersResponse(nullptr) {}
   virtual ~GetContainersResponse();
@@ -935,7 +938,7 @@ class GetContainersResponse PROTOBUF_FINAL :
   void InternalSwap(GetContainersResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetContainersResponse";
+    return "mruv.items.GetContainersResponse";
   }
   protected:
   explicit GetContainersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -960,39 +963,39 @@ class GetContainersResponse PROTOBUF_FINAL :
   enum : int {
     kContainersFieldNumber = 1,
   };
-  // repeated .mruv.Container containers = 1;
+  // repeated .mruv.items.Container containers = 1;
   int containers_size() const;
   private:
   int _internal_containers_size() const;
   public:
   void clear_containers();
-  ::mruv::Container* mutable_containers(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Container >*
+  ::mruv::items::Container* mutable_containers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Container >*
       mutable_containers();
   private:
-  const ::mruv::Container& _internal_containers(int index) const;
-  ::mruv::Container* _internal_add_containers();
+  const ::mruv::items::Container& _internal_containers(int index) const;
+  ::mruv::items::Container* _internal_add_containers();
   public:
-  const ::mruv::Container& containers(int index) const;
-  ::mruv::Container* add_containers();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Container >&
+  const ::mruv::items::Container& containers(int index) const;
+  ::mruv::items::Container* add_containers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Container >&
       containers() const;
 
-  // @@protoc_insertion_point(class_scope:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetContainersResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Container > containers_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Container > containers_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetContainerTypesRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetContainerTypesRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetContainerTypesRequest) */ {
  public:
   inline GetContainerTypesRequest() : GetContainerTypesRequest(nullptr) {}
   virtual ~GetContainerTypesRequest();
@@ -1081,7 +1084,7 @@ class GetContainerTypesRequest PROTOBUF_FINAL :
   void InternalSwap(GetContainerTypesRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetContainerTypesRequest";
+    return "mruv.items.GetContainerTypesRequest";
   }
   protected:
   explicit GetContainerTypesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1115,7 +1118,7 @@ class GetContainerTypesRequest PROTOBUF_FINAL :
   void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetContainerTypesRequest)
  private:
   class _Internal;
 
@@ -1129,7 +1132,7 @@ class GetContainerTypesRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetContainerTypesResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetContainerTypesResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetContainerTypesResponse) */ {
  public:
   inline GetContainerTypesResponse() : GetContainerTypesResponse(nullptr) {}
   virtual ~GetContainerTypesResponse();
@@ -1218,7 +1221,7 @@ class GetContainerTypesResponse PROTOBUF_FINAL :
   void InternalSwap(GetContainerTypesResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetContainerTypesResponse";
+    return "mruv.items.GetContainerTypesResponse";
   }
   protected:
   explicit GetContainerTypesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1243,39 +1246,39 @@ class GetContainerTypesResponse PROTOBUF_FINAL :
   enum : int {
     kContainerTypesFieldNumber = 1,
   };
-  // repeated .mruv.ContainerType container_types = 1;
+  // repeated .mruv.items.ContainerType container_types = 1;
   int container_types_size() const;
   private:
   int _internal_container_types_size() const;
   public:
   void clear_container_types();
-  ::mruv::ContainerType* mutable_container_types(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ContainerType >*
+  ::mruv::items::ContainerType* mutable_container_types(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ContainerType >*
       mutable_container_types();
   private:
-  const ::mruv::ContainerType& _internal_container_types(int index) const;
-  ::mruv::ContainerType* _internal_add_container_types();
+  const ::mruv::items::ContainerType& _internal_container_types(int index) const;
+  ::mruv::items::ContainerType* _internal_add_container_types();
   public:
-  const ::mruv::ContainerType& container_types(int index) const;
-  ::mruv::ContainerType* add_container_types();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ContainerType >&
+  const ::mruv::items::ContainerType& container_types(int index) const;
+  ::mruv::items::ContainerType* add_container_types();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ContainerType >&
       container_types() const;
 
-  // @@protoc_insertion_point(class_scope:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetContainerTypesResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ContainerType > container_types_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ContainerType > container_types_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class PutItemRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.PutItemRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.PutItemRequest) */ {
  public:
   inline PutItemRequest() : PutItemRequest(nullptr) {}
   virtual ~PutItemRequest();
@@ -1369,7 +1372,7 @@ class PutItemRequest PROTOBUF_FINAL :
   void InternalSwap(PutItemRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.PutItemRequest";
+    return "mruv.items.PutItemRequest";
   }
   protected:
   explicit PutItemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1428,7 +1431,7 @@ class PutItemRequest PROTOBUF_FINAL :
 
   void clear_where();
   WhereCase where_case() const;
-  // @@protoc_insertion_point(class_scope:mruv.PutItemRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.PutItemRequest)
  private:
   class _Internal;
   void set_has_slot();
@@ -1453,7 +1456,7 @@ class PutItemRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class PutItemResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.PutItemResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.PutItemResponse) */ {
  public:
   inline PutItemResponse() : PutItemResponse(nullptr) {}
   virtual ~PutItemResponse();
@@ -1542,7 +1545,7 @@ class PutItemResponse PROTOBUF_FINAL :
   void InternalSwap(PutItemResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.PutItemResponse";
+    return "mruv.items.PutItemResponse";
   }
   protected:
   explicit PutItemResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1567,39 +1570,39 @@ class PutItemResponse PROTOBUF_FINAL :
   enum : int {
     kInsideItemFieldNumber = 1,
   };
-  // .mruv.InsideItem inside_item = 1;
+  // .mruv.items.InsideItem inside_item = 1;
   bool has_inside_item() const;
   private:
   bool _internal_has_inside_item() const;
   public:
   void clear_inside_item();
-  const ::mruv::InsideItem& inside_item() const;
-  ::mruv::InsideItem* release_inside_item();
-  ::mruv::InsideItem* mutable_inside_item();
-  void set_allocated_inside_item(::mruv::InsideItem* inside_item);
+  const ::mruv::items::InsideItem& inside_item() const;
+  ::mruv::items::InsideItem* release_inside_item();
+  ::mruv::items::InsideItem* mutable_inside_item();
+  void set_allocated_inside_item(::mruv::items::InsideItem* inside_item);
   private:
-  const ::mruv::InsideItem& _internal_inside_item() const;
-  ::mruv::InsideItem* _internal_mutable_inside_item();
+  const ::mruv::items::InsideItem& _internal_inside_item() const;
+  ::mruv::items::InsideItem* _internal_mutable_inside_item();
   public:
   void unsafe_arena_set_allocated_inside_item(
-      ::mruv::InsideItem* inside_item);
-  ::mruv::InsideItem* unsafe_arena_release_inside_item();
+      ::mruv::items::InsideItem* inside_item);
+  ::mruv::items::InsideItem* unsafe_arena_release_inside_item();
 
-  // @@protoc_insertion_point(class_scope:mruv.PutItemResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.PutItemResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::mruv::InsideItem* inside_item_;
+  ::mruv::items::InsideItem* inside_item_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetContainerItemsRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetContainerItemsRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetContainerItemsRequest) */ {
  public:
   inline GetContainerItemsRequest() : GetContainerItemsRequest(nullptr) {}
   virtual ~GetContainerItemsRequest();
@@ -1688,7 +1691,7 @@ class GetContainerItemsRequest PROTOBUF_FINAL :
   void InternalSwap(GetContainerItemsRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetContainerItemsRequest";
+    return "mruv.items.GetContainerItemsRequest";
   }
   protected:
   explicit GetContainerItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1732,7 +1735,7 @@ class GetContainerItemsRequest PROTOBUF_FINAL :
   void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetContainerItemsRequest)
  private:
   class _Internal;
 
@@ -1747,7 +1750,7 @@ class GetContainerItemsRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetContainerItemsResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetContainerItemsResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetContainerItemsResponse) */ {
  public:
   inline GetContainerItemsResponse() : GetContainerItemsResponse(nullptr) {}
   virtual ~GetContainerItemsResponse();
@@ -1836,7 +1839,7 @@ class GetContainerItemsResponse PROTOBUF_FINAL :
   void InternalSwap(GetContainerItemsResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetContainerItemsResponse";
+    return "mruv.items.GetContainerItemsResponse";
   }
   protected:
   explicit GetContainerItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1861,39 +1864,39 @@ class GetContainerItemsResponse PROTOBUF_FINAL :
   enum : int {
     kItemsFieldNumber = 1,
   };
-  // repeated .mruv.InsideItem items = 1;
+  // repeated .mruv.items.InsideItem items = 1;
   int items_size() const;
   private:
   int _internal_items_size() const;
   public:
   void clear_items();
-  ::mruv::InsideItem* mutable_items(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >*
+  ::mruv::items::InsideItem* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >*
       mutable_items();
   private:
-  const ::mruv::InsideItem& _internal_items(int index) const;
-  ::mruv::InsideItem* _internal_add_items();
+  const ::mruv::items::InsideItem& _internal_items(int index) const;
+  ::mruv::items::InsideItem* _internal_add_items();
   public:
-  const ::mruv::InsideItem& items(int index) const;
-  ::mruv::InsideItem* add_items();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >&
+  const ::mruv::items::InsideItem& items(int index) const;
+  ::mruv::items::InsideItem* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >&
       items() const;
 
-  // @@protoc_insertion_point(class_scope:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetContainerItemsResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem > items_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem > items_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class PullItemRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.PullItemRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.PullItemRequest) */ {
  public:
   inline PullItemRequest() : PullItemRequest(nullptr) {}
   virtual ~PullItemRequest();
@@ -1982,7 +1985,7 @@ class PullItemRequest PROTOBUF_FINAL :
   void InternalSwap(PullItemRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.PullItemRequest";
+    return "mruv.items.PullItemRequest";
   }
   protected:
   explicit PullItemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2026,7 +2029,7 @@ class PullItemRequest PROTOBUF_FINAL :
   void _internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.PullItemRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.PullItemRequest)
  private:
   class _Internal;
 
@@ -2041,7 +2044,7 @@ class PullItemRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class SortItemsRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.SortItemsRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.SortItemsRequest) */ {
  public:
   inline SortItemsRequest() : SortItemsRequest(nullptr) {}
   virtual ~SortItemsRequest();
@@ -2130,7 +2133,7 @@ class SortItemsRequest PROTOBUF_FINAL :
   void InternalSwap(SortItemsRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.SortItemsRequest";
+    return "mruv.items.SortItemsRequest";
   }
   protected:
   explicit SortItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2165,16 +2168,16 @@ class SortItemsRequest PROTOBUF_FINAL :
   void _internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .mruv.SortingMode sort_by = 2;
+  // .mruv.items.SortingMode sort_by = 2;
   void clear_sort_by();
-  ::mruv::SortingMode sort_by() const;
-  void set_sort_by(::mruv::SortingMode value);
+  ::mruv::items::SortingMode sort_by() const;
+  void set_sort_by(::mruv::items::SortingMode value);
   private:
-  ::mruv::SortingMode _internal_sort_by() const;
-  void _internal_set_sort_by(::mruv::SortingMode value);
+  ::mruv::items::SortingMode _internal_sort_by() const;
+  void _internal_set_sort_by(::mruv::items::SortingMode value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.SortItemsRequest)
  private:
   class _Internal;
 
@@ -2189,7 +2192,7 @@ class SortItemsRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class SortItemsResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.SortItemsResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.SortItemsResponse) */ {
  public:
   inline SortItemsResponse() : SortItemsResponse(nullptr) {}
   virtual ~SortItemsResponse();
@@ -2278,7 +2281,7 @@ class SortItemsResponse PROTOBUF_FINAL :
   void InternalSwap(SortItemsResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.SortItemsResponse";
+    return "mruv.items.SortItemsResponse";
   }
   protected:
   explicit SortItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2303,39 +2306,39 @@ class SortItemsResponse PROTOBUF_FINAL :
   enum : int {
     kContainerFieldNumber = 1,
   };
-  // .mruv.Container container = 1;
+  // .mruv.items.Container container = 1;
   bool has_container() const;
   private:
   bool _internal_has_container() const;
   public:
   void clear_container();
-  const ::mruv::Container& container() const;
-  ::mruv::Container* release_container();
-  ::mruv::Container* mutable_container();
-  void set_allocated_container(::mruv::Container* container);
+  const ::mruv::items::Container& container() const;
+  ::mruv::items::Container* release_container();
+  ::mruv::items::Container* mutable_container();
+  void set_allocated_container(::mruv::items::Container* container);
   private:
-  const ::mruv::Container& _internal_container() const;
-  ::mruv::Container* _internal_mutable_container();
+  const ::mruv::items::Container& _internal_container() const;
+  ::mruv::items::Container* _internal_mutable_container();
   public:
   void unsafe_arena_set_allocated_container(
-      ::mruv::Container* container);
-  ::mruv::Container* unsafe_arena_release_container();
+      ::mruv::items::Container* container);
+  ::mruv::items::Container* unsafe_arena_release_container();
 
-  // @@protoc_insertion_point(class_scope:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.SortItemsResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::mruv::Container* container_;
+  ::mruv::items::Container* container_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetNearestItemsRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetNearestItemsRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetNearestItemsRequest) */ {
  public:
   inline GetNearestItemsRequest() : GetNearestItemsRequest(nullptr) {}
   virtual ~GetNearestItemsRequest();
@@ -2424,7 +2427,7 @@ class GetNearestItemsRequest PROTOBUF_FINAL :
   void InternalSwap(GetNearestItemsRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetNearestItemsRequest";
+    return "mruv.items.GetNearestItemsRequest";
   }
   protected:
   explicit GetNearestItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2451,23 +2454,23 @@ class GetNearestItemsRequest PROTOBUF_FINAL :
     kDistanceLimitFieldNumber = 3,
     kContainerIdFieldNumber = 2,
   };
-  // .mruv.Position position = 1;
+  // .mruv.common.Position position = 1;
   bool has_position() const;
   private:
   bool _internal_has_position() const;
   public:
   void clear_position();
-  const ::mruv::Position& position() const;
-  ::mruv::Position* release_position();
-  ::mruv::Position* mutable_position();
-  void set_allocated_position(::mruv::Position* position);
+  const ::mruv::common::Position& position() const;
+  ::mruv::common::Position* release_position();
+  ::mruv::common::Position* mutable_position();
+  void set_allocated_position(::mruv::common::Position* position);
   private:
-  const ::mruv::Position& _internal_position() const;
-  ::mruv::Position* _internal_mutable_position();
+  const ::mruv::common::Position& _internal_position() const;
+  ::mruv::common::Position* _internal_mutable_position();
   public:
   void unsafe_arena_set_allocated_position(
-      ::mruv::Position* position);
-  ::mruv::Position* unsafe_arena_release_position();
+      ::mruv::common::Position* position);
+  ::mruv::common::Position* unsafe_arena_release_position();
 
   // double distance_limit = 3;
   void clear_distance_limit();
@@ -2487,14 +2490,14 @@ class GetNearestItemsRequest PROTOBUF_FINAL :
   void _internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetNearestItemsRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::mruv::Position* position_;
+  ::mruv::common::Position* position_;
   double distance_limit_;
   ::PROTOBUF_NAMESPACE_ID::uint32 container_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2503,7 +2506,7 @@ class GetNearestItemsRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class GetNearestItemsResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.GetNearestItemsResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.GetNearestItemsResponse) */ {
  public:
   inline GetNearestItemsResponse() : GetNearestItemsResponse(nullptr) {}
   virtual ~GetNearestItemsResponse();
@@ -2592,7 +2595,7 @@ class GetNearestItemsResponse PROTOBUF_FINAL :
   void InternalSwap(GetNearestItemsResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.GetNearestItemsResponse";
+    return "mruv.items.GetNearestItemsResponse";
   }
   protected:
   explicit GetNearestItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2617,39 +2620,39 @@ class GetNearestItemsResponse PROTOBUF_FINAL :
   enum : int {
     kItemFieldNumber = 1,
   };
-  // repeated .mruv.InsideItem item = 1;
+  // repeated .mruv.items.InsideItem item = 1;
   int item_size() const;
   private:
   int _internal_item_size() const;
   public:
   void clear_item();
-  ::mruv::InsideItem* mutable_item(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >*
+  ::mruv::items::InsideItem* mutable_item(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >*
       mutable_item();
   private:
-  const ::mruv::InsideItem& _internal_item(int index) const;
-  ::mruv::InsideItem* _internal_add_item();
+  const ::mruv::items::InsideItem& _internal_item(int index) const;
+  ::mruv::items::InsideItem* _internal_add_item();
   public:
-  const ::mruv::InsideItem& item(int index) const;
-  ::mruv::InsideItem* add_item();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >&
+  const ::mruv::items::InsideItem& item(int index) const;
+  ::mruv::items::InsideItem* add_item();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >&
       item() const;
 
-  // @@protoc_insertion_point(class_scope:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.GetNearestItemsResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem > item_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem > item_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_items_2fitems_2eproto;
 };
 // -------------------------------------------------------------------
 
 class UseItemRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.UseItemRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.UseItemRequest) */ {
  public:
   inline UseItemRequest() : UseItemRequest(nullptr) {}
   virtual ~UseItemRequest();
@@ -2738,7 +2741,7 @@ class UseItemRequest PROTOBUF_FINAL :
   void InternalSwap(UseItemRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.UseItemRequest";
+    return "mruv.items.UseItemRequest";
   }
   protected:
   explicit UseItemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2772,7 +2775,7 @@ class UseItemRequest PROTOBUF_FINAL :
   void _internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.UseItemRequest)
+  // @@protoc_insertion_point(class_scope:mruv.items.UseItemRequest)
  private:
   class _Internal;
 
@@ -2786,7 +2789,7 @@ class UseItemRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class UseItemResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.UseItemResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.UseItemResponse) */ {
  public:
   inline UseItemResponse() : UseItemResponse(nullptr) {}
   virtual ~UseItemResponse();
@@ -2875,7 +2878,7 @@ class UseItemResponse PROTOBUF_FINAL :
   void InternalSwap(UseItemResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.UseItemResponse";
+    return "mruv.items.UseItemResponse";
   }
   protected:
   explicit UseItemResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2909,7 +2912,7 @@ class UseItemResponse PROTOBUF_FINAL :
   void _internal_set_success(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.UseItemResponse)
+  // @@protoc_insertion_point(class_scope:mruv.items.UseItemResponse)
  private:
   class _Internal;
 
@@ -2939,7 +2942,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetItemsRequest::_internal_limit() const 
   return limit_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetItemsRequest::limit() const {
-  // @@protoc_insertion_point(field_get:mruv.GetItemsRequest.limit)
+  // @@protoc_insertion_point(field_get:mruv.items.GetItemsRequest.limit)
   return _internal_limit();
 }
 inline void GetItemsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2948,46 +2951,46 @@ inline void GetItemsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32
 }
 inline void GetItemsRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_limit(value);
-  // @@protoc_insertion_point(field_set:mruv.GetItemsRequest.limit)
+  // @@protoc_insertion_point(field_set:mruv.items.GetItemsRequest.limit)
 }
 
 // -------------------------------------------------------------------
 
 // GetItemsResponse
 
-// repeated .mruv.Item items = 1;
+// repeated .mruv.items.Item items = 1;
 inline int GetItemsResponse::_internal_items_size() const {
   return items_.size();
 }
 inline int GetItemsResponse::items_size() const {
   return _internal_items_size();
 }
-inline ::mruv::Item* GetItemsResponse::mutable_items(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetItemsResponse.items)
+inline ::mruv::items::Item* GetItemsResponse::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetItemsResponse.items)
   return items_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Item >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Item >*
 GetItemsResponse::mutable_items() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetItemsResponse.items)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.GetItemsResponse.items)
   return &items_;
 }
-inline const ::mruv::Item& GetItemsResponse::_internal_items(int index) const {
+inline const ::mruv::items::Item& GetItemsResponse::_internal_items(int index) const {
   return items_.Get(index);
 }
-inline const ::mruv::Item& GetItemsResponse::items(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetItemsResponse.items)
+inline const ::mruv::items::Item& GetItemsResponse::items(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetItemsResponse.items)
   return _internal_items(index);
 }
-inline ::mruv::Item* GetItemsResponse::_internal_add_items() {
+inline ::mruv::items::Item* GetItemsResponse::_internal_add_items() {
   return items_.Add();
 }
-inline ::mruv::Item* GetItemsResponse::add_items() {
-  // @@protoc_insertion_point(field_add:mruv.GetItemsResponse.items)
+inline ::mruv::items::Item* GetItemsResponse::add_items() {
+  // @@protoc_insertion_point(field_add:mruv.items.GetItemsResponse.items)
   return _internal_add_items();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Item >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Item >&
 GetItemsResponse::items() const {
-  // @@protoc_insertion_point(field_list:mruv.GetItemsResponse.items)
+  // @@protoc_insertion_point(field_list:mruv.items.GetItemsResponse.items)
   return items_;
 }
 
@@ -3003,7 +3006,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetItemTypesRequest::_internal_limit() co
   return limit_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetItemTypesRequest::limit() const {
-  // @@protoc_insertion_point(field_get:mruv.GetItemTypesRequest.limit)
+  // @@protoc_insertion_point(field_get:mruv.items.GetItemTypesRequest.limit)
   return _internal_limit();
 }
 inline void GetItemTypesRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3012,46 +3015,46 @@ inline void GetItemTypesRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::ui
 }
 inline void GetItemTypesRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_limit(value);
-  // @@protoc_insertion_point(field_set:mruv.GetItemTypesRequest.limit)
+  // @@protoc_insertion_point(field_set:mruv.items.GetItemTypesRequest.limit)
 }
 
 // -------------------------------------------------------------------
 
 // GetItemTypesResponse
 
-// repeated .mruv.ItemType item_types = 1;
+// repeated .mruv.items.ItemType item_types = 1;
 inline int GetItemTypesResponse::_internal_item_types_size() const {
   return item_types_.size();
 }
 inline int GetItemTypesResponse::item_types_size() const {
   return _internal_item_types_size();
 }
-inline ::mruv::ItemType* GetItemTypesResponse::mutable_item_types(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetItemTypesResponse.item_types)
+inline ::mruv::items::ItemType* GetItemTypesResponse::mutable_item_types(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetItemTypesResponse.item_types)
   return item_types_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ItemType >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ItemType >*
 GetItemTypesResponse::mutable_item_types() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetItemTypesResponse.item_types)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.GetItemTypesResponse.item_types)
   return &item_types_;
 }
-inline const ::mruv::ItemType& GetItemTypesResponse::_internal_item_types(int index) const {
+inline const ::mruv::items::ItemType& GetItemTypesResponse::_internal_item_types(int index) const {
   return item_types_.Get(index);
 }
-inline const ::mruv::ItemType& GetItemTypesResponse::item_types(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetItemTypesResponse.item_types)
+inline const ::mruv::items::ItemType& GetItemTypesResponse::item_types(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetItemTypesResponse.item_types)
   return _internal_item_types(index);
 }
-inline ::mruv::ItemType* GetItemTypesResponse::_internal_add_item_types() {
+inline ::mruv::items::ItemType* GetItemTypesResponse::_internal_add_item_types() {
   return item_types_.Add();
 }
-inline ::mruv::ItemType* GetItemTypesResponse::add_item_types() {
-  // @@protoc_insertion_point(field_add:mruv.GetItemTypesResponse.item_types)
+inline ::mruv::items::ItemType* GetItemTypesResponse::add_item_types() {
+  // @@protoc_insertion_point(field_add:mruv.items.GetItemTypesResponse.item_types)
   return _internal_add_item_types();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ItemType >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ItemType >&
 GetItemTypesResponse::item_types() const {
-  // @@protoc_insertion_point(field_list:mruv.GetItemTypesResponse.item_types)
+  // @@protoc_insertion_point(field_list:mruv.items.GetItemTypesResponse.item_types)
   return item_types_;
 }
 
@@ -3067,7 +3070,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainersRequest::_internal_limit() c
   return limit_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainersRequest::limit() const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainersRequest.limit)
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainersRequest.limit)
   return _internal_limit();
 }
 inline void GetContainersRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3076,46 +3079,46 @@ inline void GetContainersRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::u
 }
 inline void GetContainersRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_limit(value);
-  // @@protoc_insertion_point(field_set:mruv.GetContainersRequest.limit)
+  // @@protoc_insertion_point(field_set:mruv.items.GetContainersRequest.limit)
 }
 
 // -------------------------------------------------------------------
 
 // GetContainersResponse
 
-// repeated .mruv.Container containers = 1;
+// repeated .mruv.items.Container containers = 1;
 inline int GetContainersResponse::_internal_containers_size() const {
   return containers_.size();
 }
 inline int GetContainersResponse::containers_size() const {
   return _internal_containers_size();
 }
-inline ::mruv::Container* GetContainersResponse::mutable_containers(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetContainersResponse.containers)
+inline ::mruv::items::Container* GetContainersResponse::mutable_containers(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetContainersResponse.containers)
   return containers_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Container >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Container >*
 GetContainersResponse::mutable_containers() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetContainersResponse.containers)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.GetContainersResponse.containers)
   return &containers_;
 }
-inline const ::mruv::Container& GetContainersResponse::_internal_containers(int index) const {
+inline const ::mruv::items::Container& GetContainersResponse::_internal_containers(int index) const {
   return containers_.Get(index);
 }
-inline const ::mruv::Container& GetContainersResponse::containers(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainersResponse.containers)
+inline const ::mruv::items::Container& GetContainersResponse::containers(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainersResponse.containers)
   return _internal_containers(index);
 }
-inline ::mruv::Container* GetContainersResponse::_internal_add_containers() {
+inline ::mruv::items::Container* GetContainersResponse::_internal_add_containers() {
   return containers_.Add();
 }
-inline ::mruv::Container* GetContainersResponse::add_containers() {
-  // @@protoc_insertion_point(field_add:mruv.GetContainersResponse.containers)
+inline ::mruv::items::Container* GetContainersResponse::add_containers() {
+  // @@protoc_insertion_point(field_add:mruv.items.GetContainersResponse.containers)
   return _internal_add_containers();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::Container >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::Container >&
 GetContainersResponse::containers() const {
-  // @@protoc_insertion_point(field_list:mruv.GetContainersResponse.containers)
+  // @@protoc_insertion_point(field_list:mruv.items.GetContainersResponse.containers)
   return containers_;
 }
 
@@ -3131,7 +3134,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainerTypesRequest::_internal_limit
   return limit_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainerTypesRequest::limit() const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainerTypesRequest.limit)
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainerTypesRequest.limit)
   return _internal_limit();
 }
 inline void GetContainerTypesRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3140,46 +3143,46 @@ inline void GetContainerTypesRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_I
 }
 inline void GetContainerTypesRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_limit(value);
-  // @@protoc_insertion_point(field_set:mruv.GetContainerTypesRequest.limit)
+  // @@protoc_insertion_point(field_set:mruv.items.GetContainerTypesRequest.limit)
 }
 
 // -------------------------------------------------------------------
 
 // GetContainerTypesResponse
 
-// repeated .mruv.ContainerType container_types = 1;
+// repeated .mruv.items.ContainerType container_types = 1;
 inline int GetContainerTypesResponse::_internal_container_types_size() const {
   return container_types_.size();
 }
 inline int GetContainerTypesResponse::container_types_size() const {
   return _internal_container_types_size();
 }
-inline ::mruv::ContainerType* GetContainerTypesResponse::mutable_container_types(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetContainerTypesResponse.container_types)
+inline ::mruv::items::ContainerType* GetContainerTypesResponse::mutable_container_types(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetContainerTypesResponse.container_types)
   return container_types_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ContainerType >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ContainerType >*
 GetContainerTypesResponse::mutable_container_types() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetContainerTypesResponse.container_types)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.GetContainerTypesResponse.container_types)
   return &container_types_;
 }
-inline const ::mruv::ContainerType& GetContainerTypesResponse::_internal_container_types(int index) const {
+inline const ::mruv::items::ContainerType& GetContainerTypesResponse::_internal_container_types(int index) const {
   return container_types_.Get(index);
 }
-inline const ::mruv::ContainerType& GetContainerTypesResponse::container_types(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainerTypesResponse.container_types)
+inline const ::mruv::items::ContainerType& GetContainerTypesResponse::container_types(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainerTypesResponse.container_types)
   return _internal_container_types(index);
 }
-inline ::mruv::ContainerType* GetContainerTypesResponse::_internal_add_container_types() {
+inline ::mruv::items::ContainerType* GetContainerTypesResponse::_internal_add_container_types() {
   return container_types_.Add();
 }
-inline ::mruv::ContainerType* GetContainerTypesResponse::add_container_types() {
-  // @@protoc_insertion_point(field_add:mruv.GetContainerTypesResponse.container_types)
+inline ::mruv::items::ContainerType* GetContainerTypesResponse::add_container_types() {
+  // @@protoc_insertion_point(field_add:mruv.items.GetContainerTypesResponse.container_types)
   return _internal_add_container_types();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::ContainerType >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::ContainerType >&
 GetContainerTypesResponse::container_types() const {
-  // @@protoc_insertion_point(field_list:mruv.GetContainerTypesResponse.container_types)
+  // @@protoc_insertion_point(field_list:mruv.items.GetContainerTypesResponse.container_types)
   return container_types_;
 }
 
@@ -3195,7 +3198,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 PutItemRequest::_internal_container_id() 
   return container_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 PutItemRequest::container_id() const {
-  // @@protoc_insertion_point(field_get:mruv.PutItemRequest.container_id)
+  // @@protoc_insertion_point(field_get:mruv.items.PutItemRequest.container_id)
   return _internal_container_id();
 }
 inline void PutItemRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3204,7 +3207,7 @@ inline void PutItemRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::
 }
 inline void PutItemRequest::set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_id(value);
-  // @@protoc_insertion_point(field_set:mruv.PutItemRequest.container_id)
+  // @@protoc_insertion_point(field_set:mruv.items.PutItemRequest.container_id)
 }
 
 // uint32 item_id = 2;
@@ -3215,7 +3218,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 PutItemRequest::_internal_item_id() const
   return item_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 PutItemRequest::item_id() const {
-  // @@protoc_insertion_point(field_get:mruv.PutItemRequest.item_id)
+  // @@protoc_insertion_point(field_get:mruv.items.PutItemRequest.item_id)
   return _internal_item_id();
 }
 inline void PutItemRequest::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3224,7 +3227,7 @@ inline void PutItemRequest::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void PutItemRequest::set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_item_id(value);
-  // @@protoc_insertion_point(field_set:mruv.PutItemRequest.item_id)
+  // @@protoc_insertion_point(field_set:mruv.items.PutItemRequest.item_id)
 }
 
 // int32 slot = 3;
@@ -3254,12 +3257,12 @@ inline void PutItemRequest::_internal_set_slot(::PROTOBUF_NAMESPACE_ID::int32 va
   where_.slot_ = value;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 PutItemRequest::slot() const {
-  // @@protoc_insertion_point(field_get:mruv.PutItemRequest.slot)
+  // @@protoc_insertion_point(field_get:mruv.items.PutItemRequest.slot)
   return _internal_slot();
 }
 inline void PutItemRequest::set_slot(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_slot(value);
-  // @@protoc_insertion_point(field_set:mruv.PutItemRequest.slot)
+  // @@protoc_insertion_point(field_set:mruv.items.PutItemRequest.slot)
 }
 
 inline bool PutItemRequest::has_where() const {
@@ -3275,24 +3278,24 @@ inline PutItemRequest::WhereCase PutItemRequest::where_case() const {
 
 // PutItemResponse
 
-// .mruv.InsideItem inside_item = 1;
+// .mruv.items.InsideItem inside_item = 1;
 inline bool PutItemResponse::_internal_has_inside_item() const {
   return this != internal_default_instance() && inside_item_ != nullptr;
 }
 inline bool PutItemResponse::has_inside_item() const {
   return _internal_has_inside_item();
 }
-inline const ::mruv::InsideItem& PutItemResponse::_internal_inside_item() const {
-  const ::mruv::InsideItem* p = inside_item_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::InsideItem*>(
-      &::mruv::_InsideItem_default_instance_);
+inline const ::mruv::items::InsideItem& PutItemResponse::_internal_inside_item() const {
+  const ::mruv::items::InsideItem* p = inside_item_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::items::InsideItem*>(
+      &::mruv::items::_InsideItem_default_instance_);
 }
-inline const ::mruv::InsideItem& PutItemResponse::inside_item() const {
-  // @@protoc_insertion_point(field_get:mruv.PutItemResponse.inside_item)
+inline const ::mruv::items::InsideItem& PutItemResponse::inside_item() const {
+  // @@protoc_insertion_point(field_get:mruv.items.PutItemResponse.inside_item)
   return _internal_inside_item();
 }
 inline void PutItemResponse::unsafe_arena_set_allocated_inside_item(
-    ::mruv::InsideItem* inside_item) {
+    ::mruv::items::InsideItem* inside_item) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(inside_item_);
   }
@@ -3302,37 +3305,37 @@ inline void PutItemResponse::unsafe_arena_set_allocated_inside_item(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.PutItemResponse.inside_item)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.items.PutItemResponse.inside_item)
 }
-inline ::mruv::InsideItem* PutItemResponse::release_inside_item() {
+inline ::mruv::items::InsideItem* PutItemResponse::release_inside_item() {
   
-  ::mruv::InsideItem* temp = inside_item_;
+  ::mruv::items::InsideItem* temp = inside_item_;
   inside_item_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::mruv::InsideItem* PutItemResponse::unsafe_arena_release_inside_item() {
-  // @@protoc_insertion_point(field_release:mruv.PutItemResponse.inside_item)
+inline ::mruv::items::InsideItem* PutItemResponse::unsafe_arena_release_inside_item() {
+  // @@protoc_insertion_point(field_release:mruv.items.PutItemResponse.inside_item)
   
-  ::mruv::InsideItem* temp = inside_item_;
+  ::mruv::items::InsideItem* temp = inside_item_;
   inside_item_ = nullptr;
   return temp;
 }
-inline ::mruv::InsideItem* PutItemResponse::_internal_mutable_inside_item() {
+inline ::mruv::items::InsideItem* PutItemResponse::_internal_mutable_inside_item() {
   
   if (inside_item_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::InsideItem>(GetArena());
+    auto* p = CreateMaybeMessage<::mruv::items::InsideItem>(GetArena());
     inside_item_ = p;
   }
   return inside_item_;
 }
-inline ::mruv::InsideItem* PutItemResponse::mutable_inside_item() {
-  // @@protoc_insertion_point(field_mutable:mruv.PutItemResponse.inside_item)
+inline ::mruv::items::InsideItem* PutItemResponse::mutable_inside_item() {
+  // @@protoc_insertion_point(field_mutable:mruv.items.PutItemResponse.inside_item)
   return _internal_mutable_inside_item();
 }
-inline void PutItemResponse::set_allocated_inside_item(::mruv::InsideItem* inside_item) {
+inline void PutItemResponse::set_allocated_inside_item(::mruv::items::InsideItem* inside_item) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(inside_item_);
@@ -3349,7 +3352,7 @@ inline void PutItemResponse::set_allocated_inside_item(::mruv::InsideItem* insid
     
   }
   inside_item_ = inside_item;
-  // @@protoc_insertion_point(field_set_allocated:mruv.PutItemResponse.inside_item)
+  // @@protoc_insertion_point(field_set_allocated:mruv.items.PutItemResponse.inside_item)
 }
 
 // -------------------------------------------------------------------
@@ -3364,7 +3367,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainerItemsRequest::_internal_conta
   return container_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainerItemsRequest::container_id() const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainerItemsRequest.container_id)
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainerItemsRequest.container_id)
   return _internal_container_id();
 }
 inline void GetContainerItemsRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3373,7 +3376,7 @@ inline void GetContainerItemsRequest::_internal_set_container_id(::PROTOBUF_NAME
 }
 inline void GetContainerItemsRequest::set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_id(value);
-  // @@protoc_insertion_point(field_set:mruv.GetContainerItemsRequest.container_id)
+  // @@protoc_insertion_point(field_set:mruv.items.GetContainerItemsRequest.container_id)
 }
 
 // uint32 limit = 2;
@@ -3384,7 +3387,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainerItemsRequest::_internal_limit
   return limit_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetContainerItemsRequest::limit() const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainerItemsRequest.limit)
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainerItemsRequest.limit)
   return _internal_limit();
 }
 inline void GetContainerItemsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3393,46 +3396,46 @@ inline void GetContainerItemsRequest::_internal_set_limit(::PROTOBUF_NAMESPACE_I
 }
 inline void GetContainerItemsRequest::set_limit(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_limit(value);
-  // @@protoc_insertion_point(field_set:mruv.GetContainerItemsRequest.limit)
+  // @@protoc_insertion_point(field_set:mruv.items.GetContainerItemsRequest.limit)
 }
 
 // -------------------------------------------------------------------
 
 // GetContainerItemsResponse
 
-// repeated .mruv.InsideItem items = 1;
+// repeated .mruv.items.InsideItem items = 1;
 inline int GetContainerItemsResponse::_internal_items_size() const {
   return items_.size();
 }
 inline int GetContainerItemsResponse::items_size() const {
   return _internal_items_size();
 }
-inline ::mruv::InsideItem* GetContainerItemsResponse::mutable_items(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetContainerItemsResponse.items)
+inline ::mruv::items::InsideItem* GetContainerItemsResponse::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetContainerItemsResponse.items)
   return items_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >*
 GetContainerItemsResponse::mutable_items() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetContainerItemsResponse.items)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.GetContainerItemsResponse.items)
   return &items_;
 }
-inline const ::mruv::InsideItem& GetContainerItemsResponse::_internal_items(int index) const {
+inline const ::mruv::items::InsideItem& GetContainerItemsResponse::_internal_items(int index) const {
   return items_.Get(index);
 }
-inline const ::mruv::InsideItem& GetContainerItemsResponse::items(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetContainerItemsResponse.items)
+inline const ::mruv::items::InsideItem& GetContainerItemsResponse::items(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetContainerItemsResponse.items)
   return _internal_items(index);
 }
-inline ::mruv::InsideItem* GetContainerItemsResponse::_internal_add_items() {
+inline ::mruv::items::InsideItem* GetContainerItemsResponse::_internal_add_items() {
   return items_.Add();
 }
-inline ::mruv::InsideItem* GetContainerItemsResponse::add_items() {
-  // @@protoc_insertion_point(field_add:mruv.GetContainerItemsResponse.items)
+inline ::mruv::items::InsideItem* GetContainerItemsResponse::add_items() {
+  // @@protoc_insertion_point(field_add:mruv.items.GetContainerItemsResponse.items)
   return _internal_add_items();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >&
 GetContainerItemsResponse::items() const {
-  // @@protoc_insertion_point(field_list:mruv.GetContainerItemsResponse.items)
+  // @@protoc_insertion_point(field_list:mruv.items.GetContainerItemsResponse.items)
   return items_;
 }
 
@@ -3448,7 +3451,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 PullItemRequest::_internal_container_id()
   return container_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 PullItemRequest::container_id() const {
-  // @@protoc_insertion_point(field_get:mruv.PullItemRequest.container_id)
+  // @@protoc_insertion_point(field_get:mruv.items.PullItemRequest.container_id)
   return _internal_container_id();
 }
 inline void PullItemRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3457,7 +3460,7 @@ inline void PullItemRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID:
 }
 inline void PullItemRequest::set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_id(value);
-  // @@protoc_insertion_point(field_set:mruv.PullItemRequest.container_id)
+  // @@protoc_insertion_point(field_set:mruv.items.PullItemRequest.container_id)
 }
 
 // uint32 item_id = 2;
@@ -3468,7 +3471,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 PullItemRequest::_internal_item_id() cons
   return item_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 PullItemRequest::item_id() const {
-  // @@protoc_insertion_point(field_get:mruv.PullItemRequest.item_id)
+  // @@protoc_insertion_point(field_get:mruv.items.PullItemRequest.item_id)
   return _internal_item_id();
 }
 inline void PullItemRequest::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3477,7 +3480,7 @@ inline void PullItemRequest::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint
 }
 inline void PullItemRequest::set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_item_id(value);
-  // @@protoc_insertion_point(field_set:mruv.PullItemRequest.item_id)
+  // @@protoc_insertion_point(field_set:mruv.items.PullItemRequest.item_id)
 }
 
 // -------------------------------------------------------------------
@@ -3492,7 +3495,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 SortItemsRequest::_internal_container_id(
   return container_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 SortItemsRequest::container_id() const {
-  // @@protoc_insertion_point(field_get:mruv.SortItemsRequest.container_id)
+  // @@protoc_insertion_point(field_get:mruv.items.SortItemsRequest.container_id)
   return _internal_container_id();
 }
 inline void SortItemsRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3501,51 +3504,51 @@ inline void SortItemsRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID
 }
 inline void SortItemsRequest::set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_id(value);
-  // @@protoc_insertion_point(field_set:mruv.SortItemsRequest.container_id)
+  // @@protoc_insertion_point(field_set:mruv.items.SortItemsRequest.container_id)
 }
 
-// .mruv.SortingMode sort_by = 2;
+// .mruv.items.SortingMode sort_by = 2;
 inline void SortItemsRequest::clear_sort_by() {
   sort_by_ = 0;
 }
-inline ::mruv::SortingMode SortItemsRequest::_internal_sort_by() const {
-  return static_cast< ::mruv::SortingMode >(sort_by_);
+inline ::mruv::items::SortingMode SortItemsRequest::_internal_sort_by() const {
+  return static_cast< ::mruv::items::SortingMode >(sort_by_);
 }
-inline ::mruv::SortingMode SortItemsRequest::sort_by() const {
-  // @@protoc_insertion_point(field_get:mruv.SortItemsRequest.sort_by)
+inline ::mruv::items::SortingMode SortItemsRequest::sort_by() const {
+  // @@protoc_insertion_point(field_get:mruv.items.SortItemsRequest.sort_by)
   return _internal_sort_by();
 }
-inline void SortItemsRequest::_internal_set_sort_by(::mruv::SortingMode value) {
+inline void SortItemsRequest::_internal_set_sort_by(::mruv::items::SortingMode value) {
   
   sort_by_ = value;
 }
-inline void SortItemsRequest::set_sort_by(::mruv::SortingMode value) {
+inline void SortItemsRequest::set_sort_by(::mruv::items::SortingMode value) {
   _internal_set_sort_by(value);
-  // @@protoc_insertion_point(field_set:mruv.SortItemsRequest.sort_by)
+  // @@protoc_insertion_point(field_set:mruv.items.SortItemsRequest.sort_by)
 }
 
 // -------------------------------------------------------------------
 
 // SortItemsResponse
 
-// .mruv.Container container = 1;
+// .mruv.items.Container container = 1;
 inline bool SortItemsResponse::_internal_has_container() const {
   return this != internal_default_instance() && container_ != nullptr;
 }
 inline bool SortItemsResponse::has_container() const {
   return _internal_has_container();
 }
-inline const ::mruv::Container& SortItemsResponse::_internal_container() const {
-  const ::mruv::Container* p = container_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::Container*>(
-      &::mruv::_Container_default_instance_);
+inline const ::mruv::items::Container& SortItemsResponse::_internal_container() const {
+  const ::mruv::items::Container* p = container_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::items::Container*>(
+      &::mruv::items::_Container_default_instance_);
 }
-inline const ::mruv::Container& SortItemsResponse::container() const {
-  // @@protoc_insertion_point(field_get:mruv.SortItemsResponse.container)
+inline const ::mruv::items::Container& SortItemsResponse::container() const {
+  // @@protoc_insertion_point(field_get:mruv.items.SortItemsResponse.container)
   return _internal_container();
 }
 inline void SortItemsResponse::unsafe_arena_set_allocated_container(
-    ::mruv::Container* container) {
+    ::mruv::items::Container* container) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(container_);
   }
@@ -3555,37 +3558,37 @@ inline void SortItemsResponse::unsafe_arena_set_allocated_container(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.SortItemsResponse.container)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.items.SortItemsResponse.container)
 }
-inline ::mruv::Container* SortItemsResponse::release_container() {
+inline ::mruv::items::Container* SortItemsResponse::release_container() {
   
-  ::mruv::Container* temp = container_;
+  ::mruv::items::Container* temp = container_;
   container_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::mruv::Container* SortItemsResponse::unsafe_arena_release_container() {
-  // @@protoc_insertion_point(field_release:mruv.SortItemsResponse.container)
+inline ::mruv::items::Container* SortItemsResponse::unsafe_arena_release_container() {
+  // @@protoc_insertion_point(field_release:mruv.items.SortItemsResponse.container)
   
-  ::mruv::Container* temp = container_;
+  ::mruv::items::Container* temp = container_;
   container_ = nullptr;
   return temp;
 }
-inline ::mruv::Container* SortItemsResponse::_internal_mutable_container() {
+inline ::mruv::items::Container* SortItemsResponse::_internal_mutable_container() {
   
   if (container_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::Container>(GetArena());
+    auto* p = CreateMaybeMessage<::mruv::items::Container>(GetArena());
     container_ = p;
   }
   return container_;
 }
-inline ::mruv::Container* SortItemsResponse::mutable_container() {
-  // @@protoc_insertion_point(field_mutable:mruv.SortItemsResponse.container)
+inline ::mruv::items::Container* SortItemsResponse::mutable_container() {
+  // @@protoc_insertion_point(field_mutable:mruv.items.SortItemsResponse.container)
   return _internal_mutable_container();
 }
-inline void SortItemsResponse::set_allocated_container(::mruv::Container* container) {
+inline void SortItemsResponse::set_allocated_container(::mruv::items::Container* container) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(container_);
@@ -3602,31 +3605,31 @@ inline void SortItemsResponse::set_allocated_container(::mruv::Container* contai
     
   }
   container_ = container;
-  // @@protoc_insertion_point(field_set_allocated:mruv.SortItemsResponse.container)
+  // @@protoc_insertion_point(field_set_allocated:mruv.items.SortItemsResponse.container)
 }
 
 // -------------------------------------------------------------------
 
 // GetNearestItemsRequest
 
-// .mruv.Position position = 1;
+// .mruv.common.Position position = 1;
 inline bool GetNearestItemsRequest::_internal_has_position() const {
   return this != internal_default_instance() && position_ != nullptr;
 }
 inline bool GetNearestItemsRequest::has_position() const {
   return _internal_has_position();
 }
-inline const ::mruv::Position& GetNearestItemsRequest::_internal_position() const {
-  const ::mruv::Position* p = position_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::Position*>(
-      &::mruv::_Position_default_instance_);
+inline const ::mruv::common::Position& GetNearestItemsRequest::_internal_position() const {
+  const ::mruv::common::Position* p = position_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::mruv::common::Position*>(
+      &::mruv::common::_Position_default_instance_);
 }
-inline const ::mruv::Position& GetNearestItemsRequest::position() const {
-  // @@protoc_insertion_point(field_get:mruv.GetNearestItemsRequest.position)
+inline const ::mruv::common::Position& GetNearestItemsRequest::position() const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetNearestItemsRequest.position)
   return _internal_position();
 }
 inline void GetNearestItemsRequest::unsafe_arena_set_allocated_position(
-    ::mruv::Position* position) {
+    ::mruv::common::Position* position) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(position_);
   }
@@ -3636,37 +3639,37 @@ inline void GetNearestItemsRequest::unsafe_arena_set_allocated_position(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.GetNearestItemsRequest.position)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.items.GetNearestItemsRequest.position)
 }
-inline ::mruv::Position* GetNearestItemsRequest::release_position() {
+inline ::mruv::common::Position* GetNearestItemsRequest::release_position() {
   
-  ::mruv::Position* temp = position_;
+  ::mruv::common::Position* temp = position_;
   position_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::mruv::Position* GetNearestItemsRequest::unsafe_arena_release_position() {
-  // @@protoc_insertion_point(field_release:mruv.GetNearestItemsRequest.position)
+inline ::mruv::common::Position* GetNearestItemsRequest::unsafe_arena_release_position() {
+  // @@protoc_insertion_point(field_release:mruv.items.GetNearestItemsRequest.position)
   
-  ::mruv::Position* temp = position_;
+  ::mruv::common::Position* temp = position_;
   position_ = nullptr;
   return temp;
 }
-inline ::mruv::Position* GetNearestItemsRequest::_internal_mutable_position() {
+inline ::mruv::common::Position* GetNearestItemsRequest::_internal_mutable_position() {
   
   if (position_ == nullptr) {
-    auto* p = CreateMaybeMessage<::mruv::Position>(GetArena());
+    auto* p = CreateMaybeMessage<::mruv::common::Position>(GetArena());
     position_ = p;
   }
   return position_;
 }
-inline ::mruv::Position* GetNearestItemsRequest::mutable_position() {
-  // @@protoc_insertion_point(field_mutable:mruv.GetNearestItemsRequest.position)
+inline ::mruv::common::Position* GetNearestItemsRequest::mutable_position() {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetNearestItemsRequest.position)
   return _internal_mutable_position();
 }
-inline void GetNearestItemsRequest::set_allocated_position(::mruv::Position* position) {
+inline void GetNearestItemsRequest::set_allocated_position(::mruv::common::Position* position) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(position_);
@@ -3683,7 +3686,7 @@ inline void GetNearestItemsRequest::set_allocated_position(::mruv::Position* pos
     
   }
   position_ = position;
-  // @@protoc_insertion_point(field_set_allocated:mruv.GetNearestItemsRequest.position)
+  // @@protoc_insertion_point(field_set_allocated:mruv.items.GetNearestItemsRequest.position)
 }
 
 // uint32 container_id = 2;
@@ -3694,7 +3697,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 GetNearestItemsRequest::_internal_contain
   return container_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 GetNearestItemsRequest::container_id() const {
-  // @@protoc_insertion_point(field_get:mruv.GetNearestItemsRequest.container_id)
+  // @@protoc_insertion_point(field_get:mruv.items.GetNearestItemsRequest.container_id)
   return _internal_container_id();
 }
 inline void GetNearestItemsRequest::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3703,7 +3706,7 @@ inline void GetNearestItemsRequest::_internal_set_container_id(::PROTOBUF_NAMESP
 }
 inline void GetNearestItemsRequest::set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_id(value);
-  // @@protoc_insertion_point(field_set:mruv.GetNearestItemsRequest.container_id)
+  // @@protoc_insertion_point(field_set:mruv.items.GetNearestItemsRequest.container_id)
 }
 
 // double distance_limit = 3;
@@ -3714,7 +3717,7 @@ inline double GetNearestItemsRequest::_internal_distance_limit() const {
   return distance_limit_;
 }
 inline double GetNearestItemsRequest::distance_limit() const {
-  // @@protoc_insertion_point(field_get:mruv.GetNearestItemsRequest.distance_limit)
+  // @@protoc_insertion_point(field_get:mruv.items.GetNearestItemsRequest.distance_limit)
   return _internal_distance_limit();
 }
 inline void GetNearestItemsRequest::_internal_set_distance_limit(double value) {
@@ -3723,46 +3726,46 @@ inline void GetNearestItemsRequest::_internal_set_distance_limit(double value) {
 }
 inline void GetNearestItemsRequest::set_distance_limit(double value) {
   _internal_set_distance_limit(value);
-  // @@protoc_insertion_point(field_set:mruv.GetNearestItemsRequest.distance_limit)
+  // @@protoc_insertion_point(field_set:mruv.items.GetNearestItemsRequest.distance_limit)
 }
 
 // -------------------------------------------------------------------
 
 // GetNearestItemsResponse
 
-// repeated .mruv.InsideItem item = 1;
+// repeated .mruv.items.InsideItem item = 1;
 inline int GetNearestItemsResponse::_internal_item_size() const {
   return item_.size();
 }
 inline int GetNearestItemsResponse::item_size() const {
   return _internal_item_size();
 }
-inline ::mruv::InsideItem* GetNearestItemsResponse::mutable_item(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.GetNearestItemsResponse.item)
+inline ::mruv::items::InsideItem* GetNearestItemsResponse::mutable_item(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.GetNearestItemsResponse.item)
   return item_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >*
 GetNearestItemsResponse::mutable_item() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.GetNearestItemsResponse.item)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.GetNearestItemsResponse.item)
   return &item_;
 }
-inline const ::mruv::InsideItem& GetNearestItemsResponse::_internal_item(int index) const {
+inline const ::mruv::items::InsideItem& GetNearestItemsResponse::_internal_item(int index) const {
   return item_.Get(index);
 }
-inline const ::mruv::InsideItem& GetNearestItemsResponse::item(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.GetNearestItemsResponse.item)
+inline const ::mruv::items::InsideItem& GetNearestItemsResponse::item(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.GetNearestItemsResponse.item)
   return _internal_item(index);
 }
-inline ::mruv::InsideItem* GetNearestItemsResponse::_internal_add_item() {
+inline ::mruv::items::InsideItem* GetNearestItemsResponse::_internal_add_item() {
   return item_.Add();
 }
-inline ::mruv::InsideItem* GetNearestItemsResponse::add_item() {
-  // @@protoc_insertion_point(field_add:mruv.GetNearestItemsResponse.item)
+inline ::mruv::items::InsideItem* GetNearestItemsResponse::add_item() {
+  // @@protoc_insertion_point(field_add:mruv.items.GetNearestItemsResponse.item)
   return _internal_add_item();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >&
 GetNearestItemsResponse::item() const {
-  // @@protoc_insertion_point(field_list:mruv.GetNearestItemsResponse.item)
+  // @@protoc_insertion_point(field_list:mruv.items.GetNearestItemsResponse.item)
   return item_;
 }
 
@@ -3778,7 +3781,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 UseItemRequest::_internal_item_id() const
   return item_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 UseItemRequest::item_id() const {
-  // @@protoc_insertion_point(field_get:mruv.UseItemRequest.item_id)
+  // @@protoc_insertion_point(field_get:mruv.items.UseItemRequest.item_id)
   return _internal_item_id();
 }
 inline void UseItemRequest::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -3787,7 +3790,7 @@ inline void UseItemRequest::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void UseItemRequest::set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_item_id(value);
-  // @@protoc_insertion_point(field_set:mruv.UseItemRequest.item_id)
+  // @@protoc_insertion_point(field_set:mruv.items.UseItemRequest.item_id)
 }
 
 // -------------------------------------------------------------------
@@ -3802,7 +3805,7 @@ inline bool UseItemResponse::_internal_success() const {
   return success_;
 }
 inline bool UseItemResponse::success() const {
-  // @@protoc_insertion_point(field_get:mruv.UseItemResponse.success)
+  // @@protoc_insertion_point(field_get:mruv.items.UseItemResponse.success)
   return _internal_success();
 }
 inline void UseItemResponse::_internal_set_success(bool value) {
@@ -3811,7 +3814,7 @@ inline void UseItemResponse::_internal_set_success(bool value) {
 }
 inline void UseItemResponse::set_success(bool value) {
   _internal_set_success(value);
-  // @@protoc_insertion_point(field_set:mruv.UseItemResponse.success)
+  // @@protoc_insertion_point(field_set:mruv.items.UseItemResponse.success)
 }
 
 #ifdef __GNUC__
@@ -3856,6 +3859,7 @@ inline void UseItemResponse::set_success(bool value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace items
 }  // namespace mruv
 
 // @@protoc_insertion_point(global_scope)

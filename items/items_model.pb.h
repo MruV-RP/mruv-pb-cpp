@@ -56,6 +56,7 @@ struct TableStruct_items_2fitems_5fmodel_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_items_2fitems_5fmodel_2eproto;
 namespace mruv {
+namespace items {
 class Container;
 class ContainerDefaultTypeInternal;
 extern ContainerDefaultTypeInternal _Container_default_instance_;
@@ -83,19 +84,21 @@ extern ItemTypeDefaultTypeInternal _ItemType_default_instance_;
 class ItemTypeID;
 class ItemTypeIDDefaultTypeInternal;
 extern ItemTypeIDDefaultTypeInternal _ItemTypeID_default_instance_;
+}  // namespace items
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> ::mruv::Container* Arena::CreateMaybeMessage<::mruv::Container>(Arena*);
-template<> ::mruv::ContainerID* Arena::CreateMaybeMessage<::mruv::ContainerID>(Arena*);
-template<> ::mruv::ContainerType* Arena::CreateMaybeMessage<::mruv::ContainerType>(Arena*);
-template<> ::mruv::ContainerTypeID* Arena::CreateMaybeMessage<::mruv::ContainerTypeID>(Arena*);
-template<> ::mruv::InsideItem* Arena::CreateMaybeMessage<::mruv::InsideItem>(Arena*);
-template<> ::mruv::Item* Arena::CreateMaybeMessage<::mruv::Item>(Arena*);
-template<> ::mruv::ItemID* Arena::CreateMaybeMessage<::mruv::ItemID>(Arena*);
-template<> ::mruv::ItemType* Arena::CreateMaybeMessage<::mruv::ItemType>(Arena*);
-template<> ::mruv::ItemTypeID* Arena::CreateMaybeMessage<::mruv::ItemTypeID>(Arena*);
+template<> ::mruv::items::Container* Arena::CreateMaybeMessage<::mruv::items::Container>(Arena*);
+template<> ::mruv::items::ContainerID* Arena::CreateMaybeMessage<::mruv::items::ContainerID>(Arena*);
+template<> ::mruv::items::ContainerType* Arena::CreateMaybeMessage<::mruv::items::ContainerType>(Arena*);
+template<> ::mruv::items::ContainerTypeID* Arena::CreateMaybeMessage<::mruv::items::ContainerTypeID>(Arena*);
+template<> ::mruv::items::InsideItem* Arena::CreateMaybeMessage<::mruv::items::InsideItem>(Arena*);
+template<> ::mruv::items::Item* Arena::CreateMaybeMessage<::mruv::items::Item>(Arena*);
+template<> ::mruv::items::ItemID* Arena::CreateMaybeMessage<::mruv::items::ItemID>(Arena*);
+template<> ::mruv::items::ItemType* Arena::CreateMaybeMessage<::mruv::items::ItemType>(Arena*);
+template<> ::mruv::items::ItemTypeID* Arena::CreateMaybeMessage<::mruv::items::ItemTypeID>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace mruv {
+namespace items {
 
 enum SortingMode : int {
   UNKNOWN = 0,
@@ -128,7 +131,7 @@ inline bool SortingMode_Parse(
 // ===================================================================
 
 class ItemType PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ItemType) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.ItemType) */ {
  public:
   inline ItemType() : ItemType(nullptr) {}
   virtual ~ItemType();
@@ -217,7 +220,7 @@ class ItemType PROTOBUF_FINAL :
   void InternalSwap(ItemType* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ItemType";
+    return "mruv.items.ItemType";
   }
   protected:
   explicit ItemType(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -332,7 +335,7 @@ class ItemType PROTOBUF_FINAL :
   void _internal_set_model_hash(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ItemType)
+  // @@protoc_insertion_point(class_scope:mruv.items.ItemType)
  private:
   class _Internal;
 
@@ -352,7 +355,7 @@ class ItemType PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ItemTypeID PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ItemTypeID) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.ItemTypeID) */ {
  public:
   inline ItemTypeID() : ItemTypeID(nullptr) {}
   virtual ~ItemTypeID();
@@ -441,7 +444,7 @@ class ItemTypeID PROTOBUF_FINAL :
   void InternalSwap(ItemTypeID* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ItemTypeID";
+    return "mruv.items.ItemTypeID";
   }
   protected:
   explicit ItemTypeID(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -475,7 +478,7 @@ class ItemTypeID PROTOBUF_FINAL :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ItemTypeID)
+  // @@protoc_insertion_point(class_scope:mruv.items.ItemTypeID)
  private:
   class _Internal;
 
@@ -489,7 +492,7 @@ class ItemTypeID PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class Item PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.Item) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.Item) */ {
  public:
   inline Item() : Item(nullptr) {}
   virtual ~Item();
@@ -578,7 +581,7 @@ class Item PROTOBUF_FINAL :
   void InternalSwap(Item* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.Item";
+    return "mruv.items.Item";
   }
   protected:
   explicit Item(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -642,7 +645,7 @@ class Item PROTOBUF_FINAL :
   void _internal_set_volume(float value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.Item)
+  // @@protoc_insertion_point(class_scope:mruv.items.Item)
  private:
   class _Internal;
 
@@ -659,7 +662,7 @@ class Item PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ItemID PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ItemID) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.ItemID) */ {
  public:
   inline ItemID() : ItemID(nullptr) {}
   virtual ~ItemID();
@@ -748,7 +751,7 @@ class ItemID PROTOBUF_FINAL :
   void InternalSwap(ItemID* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ItemID";
+    return "mruv.items.ItemID";
   }
   protected:
   explicit ItemID(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -782,7 +785,7 @@ class ItemID PROTOBUF_FINAL :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ItemID)
+  // @@protoc_insertion_point(class_scope:mruv.items.ItemID)
  private:
   class _Internal;
 
@@ -796,7 +799,7 @@ class ItemID PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ContainerType PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ContainerType) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.ContainerType) */ {
  public:
   inline ContainerType() : ContainerType(nullptr) {}
   virtual ~ContainerType();
@@ -885,7 +888,7 @@ class ContainerType PROTOBUF_FINAL :
   void InternalSwap(ContainerType* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ContainerType";
+    return "mruv.items.ContainerType";
   }
   protected:
   explicit ContainerType(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -982,7 +985,7 @@ class ContainerType PROTOBUF_FINAL :
   void _internal_set_max_weight(float value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ContainerType)
+  // @@protoc_insertion_point(class_scope:mruv.items.ContainerType)
  private:
   class _Internal;
 
@@ -1002,7 +1005,7 @@ class ContainerType PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ContainerTypeID PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ContainerTypeID) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.ContainerTypeID) */ {
  public:
   inline ContainerTypeID() : ContainerTypeID(nullptr) {}
   virtual ~ContainerTypeID();
@@ -1091,7 +1094,7 @@ class ContainerTypeID PROTOBUF_FINAL :
   void InternalSwap(ContainerTypeID* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ContainerTypeID";
+    return "mruv.items.ContainerTypeID";
   }
   protected:
   explicit ContainerTypeID(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1125,7 +1128,7 @@ class ContainerTypeID PROTOBUF_FINAL :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ContainerTypeID)
+  // @@protoc_insertion_point(class_scope:mruv.items.ContainerTypeID)
  private:
   class _Internal;
 
@@ -1139,7 +1142,7 @@ class ContainerTypeID PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class Container PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.Container) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.Container) */ {
  public:
   inline Container() : Container(nullptr) {}
   virtual ~Container();
@@ -1228,7 +1231,7 @@ class Container PROTOBUF_FINAL :
   void InternalSwap(Container* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.Container";
+    return "mruv.items.Container";
   }
   protected:
   explicit Container(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1257,22 +1260,22 @@ class Container PROTOBUF_FINAL :
     kItemIdFieldNumber = 3,
     kItemsInsideFieldNumber = 4,
   };
-  // repeated .mruv.InsideItem items = 5;
+  // repeated .mruv.items.InsideItem items = 5;
   int items_size() const;
   private:
   int _internal_items_size() const;
   public:
   void clear_items();
-  ::mruv::InsideItem* mutable_items(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >*
+  ::mruv::items::InsideItem* mutable_items(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >*
       mutable_items();
   private:
-  const ::mruv::InsideItem& _internal_items(int index) const;
-  ::mruv::InsideItem* _internal_add_items();
+  const ::mruv::items::InsideItem& _internal_items(int index) const;
+  ::mruv::items::InsideItem* _internal_add_items();
   public:
-  const ::mruv::InsideItem& items(int index) const;
-  ::mruv::InsideItem* add_items();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >&
+  const ::mruv::items::InsideItem& items(int index) const;
+  ::mruv::items::InsideItem* add_items();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >&
       items() const;
 
   // uint32 id = 1;
@@ -1311,14 +1314,14 @@ class Container PROTOBUF_FINAL :
   void _internal_set_items_inside(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.Container)
+  // @@protoc_insertion_point(class_scope:mruv.items.Container)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem > items_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem > items_;
   ::PROTOBUF_NAMESPACE_ID::uint32 id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 type_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 item_id_;
@@ -1329,7 +1332,7 @@ class Container PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ContainerID PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.ContainerID) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.ContainerID) */ {
  public:
   inline ContainerID() : ContainerID(nullptr) {}
   virtual ~ContainerID();
@@ -1418,7 +1421,7 @@ class ContainerID PROTOBUF_FINAL :
   void InternalSwap(ContainerID* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.ContainerID";
+    return "mruv.items.ContainerID";
   }
   protected:
   explicit ContainerID(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1452,7 +1455,7 @@ class ContainerID PROTOBUF_FINAL :
   void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:mruv.ContainerID)
+  // @@protoc_insertion_point(class_scope:mruv.items.ContainerID)
  private:
   class _Internal;
 
@@ -1466,7 +1469,7 @@ class ContainerID PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class InsideItem PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.InsideItem) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:mruv.items.InsideItem) */ {
  public:
   inline InsideItem() : InsideItem(nullptr) {}
   virtual ~InsideItem();
@@ -1561,7 +1564,7 @@ class InsideItem PROTOBUF_FINAL :
   void InternalSwap(InsideItem* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "mruv.InsideItem";
+    return "mruv.items.InsideItem";
   }
   protected:
   explicit InsideItem(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1619,27 +1622,27 @@ class InsideItem PROTOBUF_FINAL :
   void _internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .mruv.Item item = 3;
+  // .mruv.items.Item item = 3;
   bool has_item() const;
   private:
   bool _internal_has_item() const;
   public:
   void clear_item();
-  const ::mruv::Item& item() const;
-  ::mruv::Item* release_item();
-  ::mruv::Item* mutable_item();
-  void set_allocated_item(::mruv::Item* item);
+  const ::mruv::items::Item& item() const;
+  ::mruv::items::Item* release_item();
+  ::mruv::items::Item* mutable_item();
+  void set_allocated_item(::mruv::items::Item* item);
   private:
-  const ::mruv::Item& _internal_item() const;
-  ::mruv::Item* _internal_mutable_item();
+  const ::mruv::items::Item& _internal_item() const;
+  ::mruv::items::Item* _internal_mutable_item();
   public:
   void unsafe_arena_set_allocated_item(
-      ::mruv::Item* item);
-  ::mruv::Item* unsafe_arena_release_item();
+      ::mruv::items::Item* item);
+  ::mruv::items::Item* unsafe_arena_release_item();
 
   void clear_item_or_id();
   ItemOrIdCase item_or_id_case() const;
-  // @@protoc_insertion_point(class_scope:mruv.InsideItem)
+  // @@protoc_insertion_point(class_scope:mruv.items.InsideItem)
  private:
   class _Internal;
   void set_has_item_id();
@@ -1656,7 +1659,7 @@ class InsideItem PROTOBUF_FINAL :
   union ItemOrIdUnion {
     ItemOrIdUnion() {}
     ::PROTOBUF_NAMESPACE_ID::uint32 item_id_;
-    ::mruv::Item* item_;
+    ::mruv::items::Item* item_;
   } item_or_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1682,7 +1685,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ItemType::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ItemType::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.id)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.id)
   return _internal_id();
 }
 inline void ItemType::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1691,7 +1694,7 @@ inline void ItemType::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 }
 inline void ItemType::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.id)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.id)
 }
 
 // string name = 2;
@@ -1699,15 +1702,15 @@ inline void ItemType::clear_name() {
   name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ItemType::name() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.name)
   return _internal_name();
 }
 inline void ItemType::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.name)
 }
 inline std::string* ItemType::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_mutable:mruv.items.ItemType.name)
   return _internal_mutable_name();
 }
 inline const std::string& ItemType::_internal_name() const {
@@ -1721,28 +1724,28 @@ inline void ItemType::set_name(std::string&& value) {
   
   name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.items.ItemType.name)
 }
 inline void ItemType::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_set_char:mruv.items.ItemType.name)
 }
 inline void ItemType::set_name(const char* value,
     size_t size) {
   
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.items.ItemType.name)
 }
 inline std::string* ItemType::_internal_mutable_name() {
   
   return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ItemType::release_name() {
-  // @@protoc_insertion_point(field_release:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_release:mruv.items.ItemType.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ItemType::set_allocated_name(std::string* name) {
@@ -1753,7 +1756,7 @@ inline void ItemType::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.ItemType.name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.items.ItemType.name)
 }
 
 // string description = 3;
@@ -1761,15 +1764,15 @@ inline void ItemType::clear_description() {
   description_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ItemType::description() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.description)
   return _internal_description();
 }
 inline void ItemType::set_description(const std::string& value) {
   _internal_set_description(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.description)
 }
 inline std::string* ItemType::mutable_description() {
-  // @@protoc_insertion_point(field_mutable:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_mutable:mruv.items.ItemType.description)
   return _internal_mutable_description();
 }
 inline const std::string& ItemType::_internal_description() const {
@@ -1783,28 +1786,28 @@ inline void ItemType::set_description(std::string&& value) {
   
   description_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.items.ItemType.description)
 }
 inline void ItemType::set_description(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_set_char:mruv.items.ItemType.description)
 }
 inline void ItemType::set_description(const char* value,
     size_t size) {
   
   description_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_set_pointer:mruv.items.ItemType.description)
 }
 inline std::string* ItemType::_internal_mutable_description() {
   
   return description_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ItemType::release_description() {
-  // @@protoc_insertion_point(field_release:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_release:mruv.items.ItemType.description)
   return description_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ItemType::set_allocated_description(std::string* description) {
@@ -1815,7 +1818,7 @@ inline void ItemType::set_allocated_description(std::string* description) {
   }
   description_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), description,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.ItemType.description)
+  // @@protoc_insertion_point(field_set_allocated:mruv.items.ItemType.description)
 }
 
 // float base_weight = 4;
@@ -1826,7 +1829,7 @@ inline float ItemType::_internal_base_weight() const {
   return base_weight_;
 }
 inline float ItemType::base_weight() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.base_weight)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.base_weight)
   return _internal_base_weight();
 }
 inline void ItemType::_internal_set_base_weight(float value) {
@@ -1835,7 +1838,7 @@ inline void ItemType::_internal_set_base_weight(float value) {
 }
 inline void ItemType::set_base_weight(float value) {
   _internal_set_base_weight(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.base_weight)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.base_weight)
 }
 
 // float base_volume = 5;
@@ -1846,7 +1849,7 @@ inline float ItemType::_internal_base_volume() const {
   return base_volume_;
 }
 inline float ItemType::base_volume() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.base_volume)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.base_volume)
   return _internal_base_volume();
 }
 inline void ItemType::_internal_set_base_volume(float value) {
@@ -1855,7 +1858,7 @@ inline void ItemType::_internal_set_base_volume(float value) {
 }
 inline void ItemType::set_base_volume(float value) {
   _internal_set_base_volume(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.base_volume)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.base_volume)
 }
 
 // string model_name = 6;
@@ -1863,15 +1866,15 @@ inline void ItemType::clear_model_name() {
   model_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ItemType::model_name() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.model_name)
   return _internal_model_name();
 }
 inline void ItemType::set_model_name(const std::string& value) {
   _internal_set_model_name(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.model_name)
 }
 inline std::string* ItemType::mutable_model_name() {
-  // @@protoc_insertion_point(field_mutable:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_mutable:mruv.items.ItemType.model_name)
   return _internal_mutable_model_name();
 }
 inline const std::string& ItemType::_internal_model_name() const {
@@ -1885,28 +1888,28 @@ inline void ItemType::set_model_name(std::string&& value) {
   
   model_name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_set_rvalue:mruv.items.ItemType.model_name)
 }
 inline void ItemType::set_model_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_set_char:mruv.items.ItemType.model_name)
 }
 inline void ItemType::set_model_name(const char* value,
     size_t size) {
   
   model_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_set_pointer:mruv.items.ItemType.model_name)
 }
 inline std::string* ItemType::_internal_mutable_model_name() {
   
   return model_name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ItemType::release_model_name() {
-  // @@protoc_insertion_point(field_release:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_release:mruv.items.ItemType.model_name)
   return model_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ItemType::set_allocated_model_name(std::string* model_name) {
@@ -1917,7 +1920,7 @@ inline void ItemType::set_allocated_model_name(std::string* model_name) {
   }
   model_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), model_name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:mruv.ItemType.model_name)
+  // @@protoc_insertion_point(field_set_allocated:mruv.items.ItemType.model_name)
 }
 
 // int32 model_hash = 7;
@@ -1928,7 +1931,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 ItemType::_internal_model_hash() const {
   return model_hash_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 ItemType::model_hash() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemType.model_hash)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemType.model_hash)
   return _internal_model_hash();
 }
 inline void ItemType::_internal_set_model_hash(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -1937,7 +1940,7 @@ inline void ItemType::_internal_set_model_hash(::PROTOBUF_NAMESPACE_ID::int32 va
 }
 inline void ItemType::set_model_hash(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_model_hash(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemType.model_hash)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemType.model_hash)
 }
 
 // -------------------------------------------------------------------
@@ -1952,7 +1955,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ItemTypeID::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ItemTypeID::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemTypeID.id)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemTypeID.id)
   return _internal_id();
 }
 inline void ItemTypeID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1961,7 +1964,7 @@ inline void ItemTypeID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) 
 }
 inline void ItemTypeID::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemTypeID.id)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemTypeID.id)
 }
 
 // -------------------------------------------------------------------
@@ -1976,7 +1979,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Item::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Item::id() const {
-  // @@protoc_insertion_point(field_get:mruv.Item.id)
+  // @@protoc_insertion_point(field_get:mruv.items.Item.id)
   return _internal_id();
 }
 inline void Item::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1985,7 +1988,7 @@ inline void Item::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 }
 inline void Item::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.Item.id)
+  // @@protoc_insertion_point(field_set:mruv.items.Item.id)
 }
 
 // uint32 item_type_id = 2;
@@ -1996,7 +1999,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Item::_internal_item_type_id() const {
   return item_type_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Item::item_type_id() const {
-  // @@protoc_insertion_point(field_get:mruv.Item.item_type_id)
+  // @@protoc_insertion_point(field_get:mruv.items.Item.item_type_id)
   return _internal_item_type_id();
 }
 inline void Item::_internal_set_item_type_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2005,7 +2008,7 @@ inline void Item::_internal_set_item_type_id(::PROTOBUF_NAMESPACE_ID::uint32 val
 }
 inline void Item::set_item_type_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_item_type_id(value);
-  // @@protoc_insertion_point(field_set:mruv.Item.item_type_id)
+  // @@protoc_insertion_point(field_set:mruv.items.Item.item_type_id)
 }
 
 // float weight = 3;
@@ -2016,7 +2019,7 @@ inline float Item::_internal_weight() const {
   return weight_;
 }
 inline float Item::weight() const {
-  // @@protoc_insertion_point(field_get:mruv.Item.weight)
+  // @@protoc_insertion_point(field_get:mruv.items.Item.weight)
   return _internal_weight();
 }
 inline void Item::_internal_set_weight(float value) {
@@ -2025,7 +2028,7 @@ inline void Item::_internal_set_weight(float value) {
 }
 inline void Item::set_weight(float value) {
   _internal_set_weight(value);
-  // @@protoc_insertion_point(field_set:mruv.Item.weight)
+  // @@protoc_insertion_point(field_set:mruv.items.Item.weight)
 }
 
 // float volume = 4;
@@ -2036,7 +2039,7 @@ inline float Item::_internal_volume() const {
   return volume_;
 }
 inline float Item::volume() const {
-  // @@protoc_insertion_point(field_get:mruv.Item.volume)
+  // @@protoc_insertion_point(field_get:mruv.items.Item.volume)
   return _internal_volume();
 }
 inline void Item::_internal_set_volume(float value) {
@@ -2045,7 +2048,7 @@ inline void Item::_internal_set_volume(float value) {
 }
 inline void Item::set_volume(float value) {
   _internal_set_volume(value);
-  // @@protoc_insertion_point(field_set:mruv.Item.volume)
+  // @@protoc_insertion_point(field_set:mruv.items.Item.volume)
 }
 
 // -------------------------------------------------------------------
@@ -2060,7 +2063,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ItemID::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ItemID::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ItemID.id)
+  // @@protoc_insertion_point(field_get:mruv.items.ItemID.id)
   return _internal_id();
 }
 inline void ItemID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2069,7 +2072,7 @@ inline void ItemID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 }
 inline void ItemID::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ItemID.id)
+  // @@protoc_insertion_point(field_set:mruv.items.ItemID.id)
 }
 
 // -------------------------------------------------------------------
@@ -2084,7 +2087,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerType::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerType::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerType.id)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerType.id)
   return _internal_id();
 }
 inline void ContainerType::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2093,7 +2096,7 @@ inline void ContainerType::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 valu
 }
 inline void ContainerType::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerType.id)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerType.id)
 }
 
 // uint32 container_item_type_id = 2;
@@ -2104,7 +2107,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerType::_internal_container_item_t
   return container_item_type_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerType::container_item_type_id() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerType.container_item_type_id)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerType.container_item_type_id)
   return _internal_container_item_type_id();
 }
 inline void ContainerType::_internal_set_container_item_type_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2113,7 +2116,7 @@ inline void ContainerType::_internal_set_container_item_type_id(::PROTOBUF_NAMES
 }
 inline void ContainerType::set_container_item_type_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_item_type_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerType.container_item_type_id)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerType.container_item_type_id)
 }
 
 // uint32 max_number = 3;
@@ -2124,7 +2127,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerType::_internal_max_number() con
   return max_number_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerType::max_number() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerType.max_number)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerType.max_number)
   return _internal_max_number();
 }
 inline void ContainerType::_internal_set_max_number(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2133,7 +2136,7 @@ inline void ContainerType::_internal_set_max_number(::PROTOBUF_NAMESPACE_ID::uin
 }
 inline void ContainerType::set_max_number(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_max_number(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerType.max_number)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerType.max_number)
 }
 
 // float max_volume = 4;
@@ -2144,7 +2147,7 @@ inline float ContainerType::_internal_max_volume() const {
   return max_volume_;
 }
 inline float ContainerType::max_volume() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerType.max_volume)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerType.max_volume)
   return _internal_max_volume();
 }
 inline void ContainerType::_internal_set_max_volume(float value) {
@@ -2153,7 +2156,7 @@ inline void ContainerType::_internal_set_max_volume(float value) {
 }
 inline void ContainerType::set_max_volume(float value) {
   _internal_set_max_volume(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerType.max_volume)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerType.max_volume)
 }
 
 // float max_weight = 5;
@@ -2164,7 +2167,7 @@ inline float ContainerType::_internal_max_weight() const {
   return max_weight_;
 }
 inline float ContainerType::max_weight() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerType.max_weight)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerType.max_weight)
   return _internal_max_weight();
 }
 inline void ContainerType::_internal_set_max_weight(float value) {
@@ -2173,7 +2176,7 @@ inline void ContainerType::_internal_set_max_weight(float value) {
 }
 inline void ContainerType::set_max_weight(float value) {
   _internal_set_max_weight(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerType.max_weight)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerType.max_weight)
 }
 
 // repeated int64 valid_item_types = 8;
@@ -2190,19 +2193,19 @@ inline ::PROTOBUF_NAMESPACE_ID::int64 ContainerType::_internal_valid_item_types(
   return valid_item_types_.Get(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::int64 ContainerType::valid_item_types(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerType.valid_item_types)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerType.valid_item_types)
   return _internal_valid_item_types(index);
 }
 inline void ContainerType::set_valid_item_types(int index, ::PROTOBUF_NAMESPACE_ID::int64 value) {
   valid_item_types_.Set(index, value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerType.valid_item_types)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerType.valid_item_types)
 }
 inline void ContainerType::_internal_add_valid_item_types(::PROTOBUF_NAMESPACE_ID::int64 value) {
   valid_item_types_.Add(value);
 }
 inline void ContainerType::add_valid_item_types(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_add_valid_item_types(value);
-  // @@protoc_insertion_point(field_add:mruv.ContainerType.valid_item_types)
+  // @@protoc_insertion_point(field_add:mruv.items.ContainerType.valid_item_types)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
 ContainerType::_internal_valid_item_types() const {
@@ -2210,7 +2213,7 @@ ContainerType::_internal_valid_item_types() const {
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >&
 ContainerType::valid_item_types() const {
-  // @@protoc_insertion_point(field_list:mruv.ContainerType.valid_item_types)
+  // @@protoc_insertion_point(field_list:mruv.items.ContainerType.valid_item_types)
   return _internal_valid_item_types();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
@@ -2219,7 +2222,7 @@ ContainerType::_internal_mutable_valid_item_types() {
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int64 >*
 ContainerType::mutable_valid_item_types() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.ContainerType.valid_item_types)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.ContainerType.valid_item_types)
   return _internal_mutable_valid_item_types();
 }
 
@@ -2235,7 +2238,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerTypeID::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerTypeID::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerTypeID.id)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerTypeID.id)
   return _internal_id();
 }
 inline void ContainerTypeID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2244,7 +2247,7 @@ inline void ContainerTypeID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 va
 }
 inline void ContainerTypeID::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerTypeID.id)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerTypeID.id)
 }
 
 // -------------------------------------------------------------------
@@ -2259,7 +2262,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::id() const {
-  // @@protoc_insertion_point(field_get:mruv.Container.id)
+  // @@protoc_insertion_point(field_get:mruv.items.Container.id)
   return _internal_id();
 }
 inline void Container::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2268,7 +2271,7 @@ inline void Container::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
 }
 inline void Container::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.Container.id)
+  // @@protoc_insertion_point(field_set:mruv.items.Container.id)
 }
 
 // uint32 type_id = 2;
@@ -2279,7 +2282,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::_internal_type_id() const {
   return type_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::type_id() const {
-  // @@protoc_insertion_point(field_get:mruv.Container.type_id)
+  // @@protoc_insertion_point(field_get:mruv.items.Container.type_id)
   return _internal_type_id();
 }
 inline void Container::_internal_set_type_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2288,7 +2291,7 @@ inline void Container::_internal_set_type_id(::PROTOBUF_NAMESPACE_ID::uint32 val
 }
 inline void Container::set_type_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_type_id(value);
-  // @@protoc_insertion_point(field_set:mruv.Container.type_id)
+  // @@protoc_insertion_point(field_set:mruv.items.Container.type_id)
 }
 
 // uint32 item_id = 3;
@@ -2299,7 +2302,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::_internal_item_id() const {
   return item_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::item_id() const {
-  // @@protoc_insertion_point(field_get:mruv.Container.item_id)
+  // @@protoc_insertion_point(field_get:mruv.items.Container.item_id)
   return _internal_item_id();
 }
 inline void Container::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2308,7 +2311,7 @@ inline void Container::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 val
 }
 inline void Container::set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_item_id(value);
-  // @@protoc_insertion_point(field_set:mruv.Container.item_id)
+  // @@protoc_insertion_point(field_set:mruv.items.Container.item_id)
 }
 
 // uint32 items_inside = 4;
@@ -2319,7 +2322,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::_internal_items_inside() const
   return items_inside_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 Container::items_inside() const {
-  // @@protoc_insertion_point(field_get:mruv.Container.items_inside)
+  // @@protoc_insertion_point(field_get:mruv.items.Container.items_inside)
   return _internal_items_inside();
 }
 inline void Container::_internal_set_items_inside(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2328,10 +2331,10 @@ inline void Container::_internal_set_items_inside(::PROTOBUF_NAMESPACE_ID::uint3
 }
 inline void Container::set_items_inside(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_items_inside(value);
-  // @@protoc_insertion_point(field_set:mruv.Container.items_inside)
+  // @@protoc_insertion_point(field_set:mruv.items.Container.items_inside)
 }
 
-// repeated .mruv.InsideItem items = 5;
+// repeated .mruv.items.InsideItem items = 5;
 inline int Container::_internal_items_size() const {
   return items_.size();
 }
@@ -2341,32 +2344,32 @@ inline int Container::items_size() const {
 inline void Container::clear_items() {
   items_.Clear();
 }
-inline ::mruv::InsideItem* Container::mutable_items(int index) {
-  // @@protoc_insertion_point(field_mutable:mruv.Container.items)
+inline ::mruv::items::InsideItem* Container::mutable_items(int index) {
+  // @@protoc_insertion_point(field_mutable:mruv.items.Container.items)
   return items_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >*
 Container::mutable_items() {
-  // @@protoc_insertion_point(field_mutable_list:mruv.Container.items)
+  // @@protoc_insertion_point(field_mutable_list:mruv.items.Container.items)
   return &items_;
 }
-inline const ::mruv::InsideItem& Container::_internal_items(int index) const {
+inline const ::mruv::items::InsideItem& Container::_internal_items(int index) const {
   return items_.Get(index);
 }
-inline const ::mruv::InsideItem& Container::items(int index) const {
-  // @@protoc_insertion_point(field_get:mruv.Container.items)
+inline const ::mruv::items::InsideItem& Container::items(int index) const {
+  // @@protoc_insertion_point(field_get:mruv.items.Container.items)
   return _internal_items(index);
 }
-inline ::mruv::InsideItem* Container::_internal_add_items() {
+inline ::mruv::items::InsideItem* Container::_internal_add_items() {
   return items_.Add();
 }
-inline ::mruv::InsideItem* Container::add_items() {
-  // @@protoc_insertion_point(field_add:mruv.Container.items)
+inline ::mruv::items::InsideItem* Container::add_items() {
+  // @@protoc_insertion_point(field_add:mruv.items.Container.items)
   return _internal_add_items();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::InsideItem >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::mruv::items::InsideItem >&
 Container::items() const {
-  // @@protoc_insertion_point(field_list:mruv.Container.items)
+  // @@protoc_insertion_point(field_list:mruv.items.Container.items)
   return items_;
 }
 
@@ -2382,7 +2385,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerID::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ContainerID::id() const {
-  // @@protoc_insertion_point(field_get:mruv.ContainerID.id)
+  // @@protoc_insertion_point(field_get:mruv.items.ContainerID.id)
   return _internal_id();
 }
 inline void ContainerID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2391,7 +2394,7 @@ inline void ContainerID::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value)
 }
 inline void ContainerID::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:mruv.ContainerID.id)
+  // @@protoc_insertion_point(field_set:mruv.items.ContainerID.id)
 }
 
 // -------------------------------------------------------------------
@@ -2406,7 +2409,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 InsideItem::_internal_container_id() cons
   return container_id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 InsideItem::container_id() const {
-  // @@protoc_insertion_point(field_get:mruv.InsideItem.container_id)
+  // @@protoc_insertion_point(field_get:mruv.items.InsideItem.container_id)
   return _internal_container_id();
 }
 inline void InsideItem::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2415,7 +2418,7 @@ inline void InsideItem::_internal_set_container_id(::PROTOBUF_NAMESPACE_ID::uint
 }
 inline void InsideItem::set_container_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_container_id(value);
-  // @@protoc_insertion_point(field_set:mruv.InsideItem.container_id)
+  // @@protoc_insertion_point(field_set:mruv.items.InsideItem.container_id)
 }
 
 // uint32 item_id = 2;
@@ -2445,15 +2448,15 @@ inline void InsideItem::_internal_set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 va
   item_or_id_.item_id_ = value;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 InsideItem::item_id() const {
-  // @@protoc_insertion_point(field_get:mruv.InsideItem.item_id)
+  // @@protoc_insertion_point(field_get:mruv.items.InsideItem.item_id)
   return _internal_item_id();
 }
 inline void InsideItem::set_item_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_item_id(value);
-  // @@protoc_insertion_point(field_set:mruv.InsideItem.item_id)
+  // @@protoc_insertion_point(field_set:mruv.items.InsideItem.item_id)
 }
 
-// .mruv.Item item = 3;
+// .mruv.items.Item item = 3;
 inline bool InsideItem::_internal_has_item() const {
   return item_or_id_case() == kItem;
 }
@@ -2471,11 +2474,11 @@ inline void InsideItem::clear_item() {
     clear_has_item_or_id();
   }
 }
-inline ::mruv::Item* InsideItem::release_item() {
-  // @@protoc_insertion_point(field_release:mruv.InsideItem.item)
+inline ::mruv::items::Item* InsideItem::release_item() {
+  // @@protoc_insertion_point(field_release:mruv.items.InsideItem.item)
   if (_internal_has_item()) {
     clear_has_item_or_id();
-      ::mruv::Item* temp = item_or_id_.item_;
+      ::mruv::items::Item* temp = item_or_id_.item_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
@@ -2485,44 +2488,44 @@ inline ::mruv::Item* InsideItem::release_item() {
     return nullptr;
   }
 }
-inline const ::mruv::Item& InsideItem::_internal_item() const {
+inline const ::mruv::items::Item& InsideItem::_internal_item() const {
   return _internal_has_item()
       ? *item_or_id_.item_
-      : *reinterpret_cast< ::mruv::Item*>(&::mruv::_Item_default_instance_);
+      : *reinterpret_cast< ::mruv::items::Item*>(&::mruv::items::_Item_default_instance_);
 }
-inline const ::mruv::Item& InsideItem::item() const {
-  // @@protoc_insertion_point(field_get:mruv.InsideItem.item)
+inline const ::mruv::items::Item& InsideItem::item() const {
+  // @@protoc_insertion_point(field_get:mruv.items.InsideItem.item)
   return _internal_item();
 }
-inline ::mruv::Item* InsideItem::unsafe_arena_release_item() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:mruv.InsideItem.item)
+inline ::mruv::items::Item* InsideItem::unsafe_arena_release_item() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:mruv.items.InsideItem.item)
   if (_internal_has_item()) {
     clear_has_item_or_id();
-    ::mruv::Item* temp = item_or_id_.item_;
+    ::mruv::items::Item* temp = item_or_id_.item_;
     item_or_id_.item_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void InsideItem::unsafe_arena_set_allocated_item(::mruv::Item* item) {
+inline void InsideItem::unsafe_arena_set_allocated_item(::mruv::items::Item* item) {
   clear_item_or_id();
   if (item) {
     set_has_item();
     item_or_id_.item_ = item;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.InsideItem.item)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:mruv.items.InsideItem.item)
 }
-inline ::mruv::Item* InsideItem::_internal_mutable_item() {
+inline ::mruv::items::Item* InsideItem::_internal_mutable_item() {
   if (!_internal_has_item()) {
     clear_item_or_id();
     set_has_item();
-    item_or_id_.item_ = CreateMaybeMessage< ::mruv::Item >(GetArena());
+    item_or_id_.item_ = CreateMaybeMessage< ::mruv::items::Item >(GetArena());
   }
   return item_or_id_.item_;
 }
-inline ::mruv::Item* InsideItem::mutable_item() {
-  // @@protoc_insertion_point(field_mutable:mruv.InsideItem.item)
+inline ::mruv::items::Item* InsideItem::mutable_item() {
+  // @@protoc_insertion_point(field_mutable:mruv.items.InsideItem.item)
   return _internal_mutable_item();
 }
 
@@ -2534,7 +2537,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 InsideItem::_internal_position() const {
   return position_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 InsideItem::position() const {
-  // @@protoc_insertion_point(field_get:mruv.InsideItem.position)
+  // @@protoc_insertion_point(field_get:mruv.items.InsideItem.position)
   return _internal_position();
 }
 inline void InsideItem::_internal_set_position(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -2543,7 +2546,7 @@ inline void InsideItem::_internal_set_position(::PROTOBUF_NAMESPACE_ID::int32 va
 }
 inline void InsideItem::set_position(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_position(value);
-  // @@protoc_insertion_point(field_set:mruv.InsideItem.position)
+  // @@protoc_insertion_point(field_set:mruv.items.InsideItem.position)
 }
 
 inline bool InsideItem::has_item_or_id() const {
@@ -2577,14 +2580,15 @@ inline InsideItem::ItemOrIdCase InsideItem::item_or_id_case() const {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace items
 }  // namespace mruv
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::mruv::SortingMode> : ::std::true_type {};
+template <> struct is_proto_enum< ::mruv::items::SortingMode> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::mruv::SortingMode>() {
-  return ::mruv::SortingMode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::mruv::items::SortingMode>() {
+  return ::mruv::items::SortingMode_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

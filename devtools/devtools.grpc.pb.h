@@ -103,20 +103,20 @@ class MruVDevToolsService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::devtools::SaveAnimationResponse>>(PrepareAsyncSaveAnimationRaw(context, request, cq));
     }
     // Get service status.
-    virtual ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
+    virtual ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::mruv::common::ServiceStatusResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
     }
     // Get service version.
-    virtual ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
+    virtual ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::mruv::common::VersionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
@@ -178,18 +178,18 @@ class MruVDevToolsService final {
       virtual void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get service status.
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get service version.
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -216,10 +216,10 @@ class MruVDevToolsService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::devtools::GetAnimationResponse>* PrepareAsyncGetAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::devtools::SaveAnimationResponse>* AsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::devtools::SaveAnimationResponse>* PrepareAsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -280,19 +280,19 @@ class MruVDevToolsService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>> PrepareAsyncSaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>>(PrepareAsyncSaveAnimationRaw(context, request, cq));
     }
-    ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
+    ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::mruv::common::ServiceStatusResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
     }
-    ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
+    ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::mruv::common::VersionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
@@ -345,17 +345,17 @@ class MruVDevToolsService final {
       #else
       void SaveAnimation(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -384,10 +384,10 @@ class MruVDevToolsService final {
     ::grpc::ClientAsyncResponseReader< ::mruv::devtools::GetAnimationResponse>* PrepareAsyncGetAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::GetAnimationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>* AsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::mruv::devtools::SaveAnimationResponse>* PrepareAsyncSaveAnimationRaw(::grpc::ClientContext* context, const ::mruv::devtools::SaveAnimationRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetPositions_;
     const ::grpc::internal::RpcMethod rpcmethod_SavePosition_;
     const ::grpc::internal::RpcMethod rpcmethod_DeletePosition_;
@@ -422,9 +422,9 @@ class MruVDevToolsService final {
     // Save animation.
     virtual ::grpc::Status SaveAnimation(::grpc::ServerContext* context, const ::mruv::devtools::SaveAnimationRequest* request, ::mruv::devtools::SaveAnimationResponse* response);
     // Get service status.
-    virtual ::grpc::Status GetServiceStatus(::grpc::ServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response);
+    virtual ::grpc::Status GetServiceStatus(::grpc::ServerContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response);
     // Get service version.
-    virtual ::grpc::Status GetServiceVersion(::grpc::ServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response);
+    virtual ::grpc::Status GetServiceVersion(::grpc::ServerContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetPositions : public BaseClass {
@@ -598,11 +598,11 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServiceStatus(::grpc::ServerContext* context, ::mruv::ServiceStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::ServiceStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetServiceStatus(::grpc::ServerContext* context, ::mruv::common::ServiceStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::common::ServiceStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -618,11 +618,11 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServiceVersion(::grpc::ServerContext* context, ::mruv::VersionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::VersionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetServiceVersion(::grpc::ServerContext* context, ::mruv::common::VersionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::common::VersionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1015,38 +1015,38 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
+                     context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceStatus(
-        ::grpc::experimental::MessageAllocator< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1062,38 +1062,38 @@ class MruVDevToolsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
+                     context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceVersion(
-        ::grpc::experimental::MessageAllocator< ::mruv::VersionRequest, ::mruv::VersionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1250,7 +1250,7 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1267,7 +1267,7 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1444,7 +1444,7 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1464,7 +1464,7 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1801,7 +1801,7 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1839,7 +1839,7 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2076,10 +2076,10 @@ class MruVDevToolsService final {
     WithStreamedUnaryMethod_GetServiceStatus() {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+          ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
+                     ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>* streamer) {
                        return this->StreamedGetServiceStatus(context,
                          streamer);
                   }));
@@ -2088,12 +2088,12 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetServiceStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::ServiceStatusRequest,::mruv::ServiceStatusResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetServiceStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::common::ServiceStatusRequest,::mruv::common::ServiceStatusResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetServiceVersion : public BaseClass {
@@ -2103,10 +2103,10 @@ class MruVDevToolsService final {
     WithStreamedUnaryMethod_GetServiceVersion() {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::VersionRequest, ::mruv::VersionResponse>(
+          ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
+                     ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>* streamer) {
                        return this->StreamedGetServiceVersion(context,
                          streamer);
                   }));
@@ -2115,12 +2115,12 @@ class MruVDevToolsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetServiceVersion(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::VersionRequest,::mruv::VersionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetServiceVersion(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::common::VersionRequest,::mruv::common::VersionResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_GetPositions<WithStreamedUnaryMethod_SavePosition<WithStreamedUnaryMethod_DeletePosition<WithStreamedUnaryMethod_GetOutfits<WithStreamedUnaryMethod_SaveOutfit<WithStreamedUnaryMethod_GetAnimations<WithStreamedUnaryMethod_GetAnimation<WithStreamedUnaryMethod_SaveAnimation<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;

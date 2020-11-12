@@ -14,13 +14,14 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_common_2fspatial_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Position_common_2fspatial_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_items_2fitems_5fmodel_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Container_items_2fitems_5fmodel_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_items_2fitems_5fmodel_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ContainerType_items_2fitems_5fmodel_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_items_2fitems_5fmodel_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_InsideItem_items_2fitems_5fmodel_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_items_2fitems_5fmodel_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Item_items_2fitems_5fmodel_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_items_2fitems_5fmodel_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ItemType_items_2fitems_5fmodel_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_common_2fspatial_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Position_common_2fspatial_2eproto;
 namespace mruv {
+namespace items {
 class GetItemsRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetItemsRequest> _instance;
@@ -98,16 +99,17 @@ class UseItemResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<UseItemResponse> _instance;
 } _UseItemResponse_default_instance_;
+}  // namespace items
 }  // namespace mruv
 static void InitDefaultsscc_info_GetContainerItemsRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetContainerItemsRequest_default_instance_;
-    new (ptr) ::mruv::GetContainerItemsRequest();
+    void* ptr = &::mruv::items::_GetContainerItemsRequest_default_instance_;
+    new (ptr) ::mruv::items::GetContainerItemsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetContainerItemsRequest::InitAsDefaultInstance();
+  ::mruv::items::GetContainerItemsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetContainerItemsRequest_items_2fitems_2eproto =
@@ -117,11 +119,11 @@ static void InitDefaultsscc_info_GetContainerItemsResponse_items_2fitems_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetContainerItemsResponse_default_instance_;
-    new (ptr) ::mruv::GetContainerItemsResponse();
+    void* ptr = &::mruv::items::_GetContainerItemsResponse_default_instance_;
+    new (ptr) ::mruv::items::GetContainerItemsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetContainerItemsResponse::InitAsDefaultInstance();
+  ::mruv::items::GetContainerItemsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetContainerItemsResponse_items_2fitems_2eproto =
@@ -132,11 +134,11 @@ static void InitDefaultsscc_info_GetContainerTypesRequest_items_2fitems_2eproto(
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetContainerTypesRequest_default_instance_;
-    new (ptr) ::mruv::GetContainerTypesRequest();
+    void* ptr = &::mruv::items::_GetContainerTypesRequest_default_instance_;
+    new (ptr) ::mruv::items::GetContainerTypesRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetContainerTypesRequest::InitAsDefaultInstance();
+  ::mruv::items::GetContainerTypesRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetContainerTypesRequest_items_2fitems_2eproto =
@@ -146,11 +148,11 @@ static void InitDefaultsscc_info_GetContainerTypesResponse_items_2fitems_2eproto
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetContainerTypesResponse_default_instance_;
-    new (ptr) ::mruv::GetContainerTypesResponse();
+    void* ptr = &::mruv::items::_GetContainerTypesResponse_default_instance_;
+    new (ptr) ::mruv::items::GetContainerTypesResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetContainerTypesResponse::InitAsDefaultInstance();
+  ::mruv::items::GetContainerTypesResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetContainerTypesResponse_items_2fitems_2eproto =
@@ -161,11 +163,11 @@ static void InitDefaultsscc_info_GetContainersRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetContainersRequest_default_instance_;
-    new (ptr) ::mruv::GetContainersRequest();
+    void* ptr = &::mruv::items::_GetContainersRequest_default_instance_;
+    new (ptr) ::mruv::items::GetContainersRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetContainersRequest::InitAsDefaultInstance();
+  ::mruv::items::GetContainersRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetContainersRequest_items_2fitems_2eproto =
@@ -175,11 +177,11 @@ static void InitDefaultsscc_info_GetContainersResponse_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetContainersResponse_default_instance_;
-    new (ptr) ::mruv::GetContainersResponse();
+    void* ptr = &::mruv::items::_GetContainersResponse_default_instance_;
+    new (ptr) ::mruv::items::GetContainersResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetContainersResponse::InitAsDefaultInstance();
+  ::mruv::items::GetContainersResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetContainersResponse_items_2fitems_2eproto =
@@ -190,11 +192,11 @@ static void InitDefaultsscc_info_GetItemTypesRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetItemTypesRequest_default_instance_;
-    new (ptr) ::mruv::GetItemTypesRequest();
+    void* ptr = &::mruv::items::_GetItemTypesRequest_default_instance_;
+    new (ptr) ::mruv::items::GetItemTypesRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetItemTypesRequest::InitAsDefaultInstance();
+  ::mruv::items::GetItemTypesRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetItemTypesRequest_items_2fitems_2eproto =
@@ -204,11 +206,11 @@ static void InitDefaultsscc_info_GetItemTypesResponse_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetItemTypesResponse_default_instance_;
-    new (ptr) ::mruv::GetItemTypesResponse();
+    void* ptr = &::mruv::items::_GetItemTypesResponse_default_instance_;
+    new (ptr) ::mruv::items::GetItemTypesResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetItemTypesResponse::InitAsDefaultInstance();
+  ::mruv::items::GetItemTypesResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetItemTypesResponse_items_2fitems_2eproto =
@@ -219,11 +221,11 @@ static void InitDefaultsscc_info_GetItemsRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetItemsRequest_default_instance_;
-    new (ptr) ::mruv::GetItemsRequest();
+    void* ptr = &::mruv::items::_GetItemsRequest_default_instance_;
+    new (ptr) ::mruv::items::GetItemsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetItemsRequest::InitAsDefaultInstance();
+  ::mruv::items::GetItemsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetItemsRequest_items_2fitems_2eproto =
@@ -233,11 +235,11 @@ static void InitDefaultsscc_info_GetItemsResponse_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetItemsResponse_default_instance_;
-    new (ptr) ::mruv::GetItemsResponse();
+    void* ptr = &::mruv::items::_GetItemsResponse_default_instance_;
+    new (ptr) ::mruv::items::GetItemsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetItemsResponse::InitAsDefaultInstance();
+  ::mruv::items::GetItemsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetItemsResponse_items_2fitems_2eproto =
@@ -248,11 +250,11 @@ static void InitDefaultsscc_info_GetNearestItemsRequest_items_2fitems_2eproto() 
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetNearestItemsRequest_default_instance_;
-    new (ptr) ::mruv::GetNearestItemsRequest();
+    void* ptr = &::mruv::items::_GetNearestItemsRequest_default_instance_;
+    new (ptr) ::mruv::items::GetNearestItemsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetNearestItemsRequest::InitAsDefaultInstance();
+  ::mruv::items::GetNearestItemsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetNearestItemsRequest_items_2fitems_2eproto =
@@ -263,11 +265,11 @@ static void InitDefaultsscc_info_GetNearestItemsResponse_items_2fitems_2eproto()
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_GetNearestItemsResponse_default_instance_;
-    new (ptr) ::mruv::GetNearestItemsResponse();
+    void* ptr = &::mruv::items::_GetNearestItemsResponse_default_instance_;
+    new (ptr) ::mruv::items::GetNearestItemsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::GetNearestItemsResponse::InitAsDefaultInstance();
+  ::mruv::items::GetNearestItemsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetNearestItemsResponse_items_2fitems_2eproto =
@@ -278,11 +280,11 @@ static void InitDefaultsscc_info_PullItemRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_PullItemRequest_default_instance_;
-    new (ptr) ::mruv::PullItemRequest();
+    void* ptr = &::mruv::items::_PullItemRequest_default_instance_;
+    new (ptr) ::mruv::items::PullItemRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::PullItemRequest::InitAsDefaultInstance();
+  ::mruv::items::PullItemRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PullItemRequest_items_2fitems_2eproto =
@@ -292,11 +294,11 @@ static void InitDefaultsscc_info_PutItemRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_PutItemRequest_default_instance_;
-    new (ptr) ::mruv::PutItemRequest();
+    void* ptr = &::mruv::items::_PutItemRequest_default_instance_;
+    new (ptr) ::mruv::items::PutItemRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::PutItemRequest::InitAsDefaultInstance();
+  ::mruv::items::PutItemRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PutItemRequest_items_2fitems_2eproto =
@@ -306,11 +308,11 @@ static void InitDefaultsscc_info_PutItemResponse_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_PutItemResponse_default_instance_;
-    new (ptr) ::mruv::PutItemResponse();
+    void* ptr = &::mruv::items::_PutItemResponse_default_instance_;
+    new (ptr) ::mruv::items::PutItemResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::PutItemResponse::InitAsDefaultInstance();
+  ::mruv::items::PutItemResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PutItemResponse_items_2fitems_2eproto =
@@ -321,11 +323,11 @@ static void InitDefaultsscc_info_SortItemsRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_SortItemsRequest_default_instance_;
-    new (ptr) ::mruv::SortItemsRequest();
+    void* ptr = &::mruv::items::_SortItemsRequest_default_instance_;
+    new (ptr) ::mruv::items::SortItemsRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::SortItemsRequest::InitAsDefaultInstance();
+  ::mruv::items::SortItemsRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SortItemsRequest_items_2fitems_2eproto =
@@ -335,11 +337,11 @@ static void InitDefaultsscc_info_SortItemsResponse_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_SortItemsResponse_default_instance_;
-    new (ptr) ::mruv::SortItemsResponse();
+    void* ptr = &::mruv::items::_SortItemsResponse_default_instance_;
+    new (ptr) ::mruv::items::SortItemsResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::SortItemsResponse::InitAsDefaultInstance();
+  ::mruv::items::SortItemsResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_SortItemsResponse_items_2fitems_2eproto =
@@ -350,11 +352,11 @@ static void InitDefaultsscc_info_UseItemRequest_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_UseItemRequest_default_instance_;
-    new (ptr) ::mruv::UseItemRequest();
+    void* ptr = &::mruv::items::_UseItemRequest_default_instance_;
+    new (ptr) ::mruv::items::UseItemRequest();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::UseItemRequest::InitAsDefaultInstance();
+  ::mruv::items::UseItemRequest::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UseItemRequest_items_2fitems_2eproto =
@@ -364,11 +366,11 @@ static void InitDefaultsscc_info_UseItemResponse_items_2fitems_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::mruv::_UseItemResponse_default_instance_;
-    new (ptr) ::mruv::UseItemResponse();
+    void* ptr = &::mruv::items::_UseItemResponse_default_instance_;
+    new (ptr) ::mruv::items::UseItemResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::mruv::UseItemResponse::InitAsDefaultInstance();
+  ::mruv::items::UseItemResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UseItemResponse_items_2fitems_2eproto =
@@ -380,260 +382,269 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_items_2fitems_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemsRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemsRequest, limit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemsResponse, items_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemsResponse, items_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemTypesRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemTypesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemTypesRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemTypesRequest, limit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemTypesResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemTypesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetItemTypesResponse, item_types_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetItemTypesResponse, item_types_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainersRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainersRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainersRequest, limit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainersResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainersResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainersResponse, containers_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainersResponse, containers_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerTypesRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerTypesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerTypesRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerTypesRequest, limit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerTypesResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerTypesResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerTypesResponse, container_types_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerTypesResponse, container_types_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemRequest, _internal_metadata_),
   ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemRequest, _oneof_case_[0]),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemRequest, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemRequest, container_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemRequest, item_id_),
-  offsetof(::mruv::PutItemRequestDefaultTypeInternal, slot_),
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemRequest, where_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemRequest, container_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemRequest, item_id_),
+  offsetof(::mruv::items::PutItemRequestDefaultTypeInternal, slot_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemRequest, where_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::PutItemResponse, inside_item_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerItemsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerItemsRequest, container_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerItemsRequest, limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PutItemResponse, inside_item_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerItemsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerItemsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetContainerItemsResponse, items_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerItemsRequest, container_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerItemsRequest, limit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::PullItemRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerItemsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::PullItemRequest, container_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::PullItemRequest, item_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetContainerItemsResponse, items_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::SortItemsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PullItemRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::SortItemsRequest, container_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::SortItemsRequest, sort_by_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PullItemRequest, container_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::PullItemRequest, item_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::SortItemsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::SortItemsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::SortItemsResponse, container_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::SortItemsRequest, container_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::SortItemsRequest, sort_by_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetNearestItemsRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::SortItemsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetNearestItemsRequest, position_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetNearestItemsRequest, container_id_),
-  PROTOBUF_FIELD_OFFSET(::mruv::GetNearestItemsRequest, distance_limit_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::SortItemsResponse, container_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetNearestItemsResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetNearestItemsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::GetNearestItemsResponse, item_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetNearestItemsRequest, position_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetNearestItemsRequest, container_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetNearestItemsRequest, distance_limit_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::UseItemRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetNearestItemsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::UseItemRequest, item_id_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::GetNearestItemsResponse, item_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::mruv::UseItemResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::UseItemRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::mruv::UseItemResponse, success_),
+  PROTOBUF_FIELD_OFFSET(::mruv::items::UseItemRequest, item_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::mruv::items::UseItemResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::mruv::items::UseItemResponse, success_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::mruv::GetItemsRequest)},
-  { 6, -1, sizeof(::mruv::GetItemsResponse)},
-  { 12, -1, sizeof(::mruv::GetItemTypesRequest)},
-  { 18, -1, sizeof(::mruv::GetItemTypesResponse)},
-  { 24, -1, sizeof(::mruv::GetContainersRequest)},
-  { 30, -1, sizeof(::mruv::GetContainersResponse)},
-  { 36, -1, sizeof(::mruv::GetContainerTypesRequest)},
-  { 42, -1, sizeof(::mruv::GetContainerTypesResponse)},
-  { 48, -1, sizeof(::mruv::PutItemRequest)},
-  { 57, -1, sizeof(::mruv::PutItemResponse)},
-  { 63, -1, sizeof(::mruv::GetContainerItemsRequest)},
-  { 70, -1, sizeof(::mruv::GetContainerItemsResponse)},
-  { 76, -1, sizeof(::mruv::PullItemRequest)},
-  { 83, -1, sizeof(::mruv::SortItemsRequest)},
-  { 90, -1, sizeof(::mruv::SortItemsResponse)},
-  { 96, -1, sizeof(::mruv::GetNearestItemsRequest)},
-  { 104, -1, sizeof(::mruv::GetNearestItemsResponse)},
-  { 110, -1, sizeof(::mruv::UseItemRequest)},
-  { 116, -1, sizeof(::mruv::UseItemResponse)},
+  { 0, -1, sizeof(::mruv::items::GetItemsRequest)},
+  { 6, -1, sizeof(::mruv::items::GetItemsResponse)},
+  { 12, -1, sizeof(::mruv::items::GetItemTypesRequest)},
+  { 18, -1, sizeof(::mruv::items::GetItemTypesResponse)},
+  { 24, -1, sizeof(::mruv::items::GetContainersRequest)},
+  { 30, -1, sizeof(::mruv::items::GetContainersResponse)},
+  { 36, -1, sizeof(::mruv::items::GetContainerTypesRequest)},
+  { 42, -1, sizeof(::mruv::items::GetContainerTypesResponse)},
+  { 48, -1, sizeof(::mruv::items::PutItemRequest)},
+  { 57, -1, sizeof(::mruv::items::PutItemResponse)},
+  { 63, -1, sizeof(::mruv::items::GetContainerItemsRequest)},
+  { 70, -1, sizeof(::mruv::items::GetContainerItemsResponse)},
+  { 76, -1, sizeof(::mruv::items::PullItemRequest)},
+  { 83, -1, sizeof(::mruv::items::SortItemsRequest)},
+  { 90, -1, sizeof(::mruv::items::SortItemsResponse)},
+  { 96, -1, sizeof(::mruv::items::GetNearestItemsRequest)},
+  { 104, -1, sizeof(::mruv::items::GetNearestItemsResponse)},
+  { 110, -1, sizeof(::mruv::items::UseItemRequest)},
+  { 116, -1, sizeof(::mruv::items::UseItemResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetItemsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetItemsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetItemTypesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetItemTypesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetContainersRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetContainersResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetContainerTypesRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetContainerTypesResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_PutItemRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_PutItemResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetContainerItemsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetContainerItemsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_PullItemRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_SortItemsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_SortItemsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetNearestItemsRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_GetNearestItemsResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_UseItemRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::_UseItemResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetItemsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetItemsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetItemTypesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetItemTypesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetContainersRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetContainersResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetContainerTypesRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetContainerTypesResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_PutItemRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_PutItemResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetContainerItemsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetContainerItemsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_PullItemRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_SortItemsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_SortItemsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetNearestItemsRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_GetNearestItemsResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_UseItemRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::mruv::items::_UseItemResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_items_2fitems_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021items/items.proto\022\004mruv\032\034google/api/an"
-  "notations.proto\032\023common/health.proto\032\027it"
-  "ems/items_model.proto\032\024common/spatial.pr"
-  "oto\" \n\017GetItemsRequest\022\r\n\005limit\030\001 \001(\r\"-\n"
-  "\020GetItemsResponse\022\031\n\005items\030\001 \003(\0132\n.mruv."
-  "Item\"$\n\023GetItemTypesRequest\022\r\n\005limit\030\001 \001"
-  "(\r\":\n\024GetItemTypesResponse\022\"\n\nitem_types"
-  "\030\001 \003(\0132\016.mruv.ItemType\"%\n\024GetContainersR"
-  "equest\022\r\n\005limit\030\001 \001(\r\"<\n\025GetContainersRe"
-  "sponse\022#\n\ncontainers\030\001 \003(\0132\017.mruv.Contai"
-  "ner\")\n\030GetContainerTypesRequest\022\r\n\005limit"
-  "\030\001 \001(\r\"I\n\031GetContainerTypesResponse\022,\n\017c"
-  "ontainer_types\030\001 \003(\0132\023.mruv.ContainerTyp"
-  "e\"P\n\016PutItemRequest\022\024\n\014container_id\030\001 \001("
-  "\r\022\017\n\007item_id\030\002 \001(\r\022\016\n\004slot\030\003 \001(\005H\000B\007\n\005wh"
-  "ere\"8\n\017PutItemResponse\022%\n\013inside_item\030\001 "
-  "\001(\0132\020.mruv.InsideItem\"\?\n\030GetContainerIte"
-  "msRequest\022\024\n\014container_id\030\001 \001(\r\022\r\n\005limit"
-  "\030\002 \001(\r\"<\n\031GetContainerItemsResponse\022\037\n\005i"
-  "tems\030\001 \003(\0132\020.mruv.InsideItem\"8\n\017PullItem"
-  "Request\022\024\n\014container_id\030\001 \001(\r\022\017\n\007item_id"
-  "\030\002 \001(\r\"L\n\020SortItemsRequest\022\024\n\014container_"
-  "id\030\001 \001(\r\022\"\n\007sort_by\030\002 \001(\0162\021.mruv.Sorting"
-  "Mode\"7\n\021SortItemsResponse\022\"\n\tcontainer\030\001"
-  " \001(\0132\017.mruv.Container\"h\n\026GetNearestItems"
-  "Request\022 \n\010position\030\001 \001(\0132\016.mruv.Positio"
-  "n\022\024\n\014container_id\030\002 \001(\r\022\026\n\016distance_limi"
-  "t\030\003 \001(\001\"9\n\027GetNearestItemsResponse\022\036\n\004it"
-  "em\030\001 \003(\0132\020.mruv.InsideItem\"!\n\016UseItemReq"
-  "uest\022\017\n\007item_id\030\001 \001(\r\"\"\n\017UseItemResponse"
-  "\022\017\n\007success\030\001 \001(\0102\364\021\n\017MruVItemService\0229\n"
-  "\nCreateItem\022\n.mruv.Item\032\014.mruv.ItemID\"\021\202"
-  "\323\344\223\002\013\"\t/v1/items\022;\n\007GetItem\022\014.mruv.ItemI"
-  "D\032\n.mruv.Item\"\026\202\323\344\223\002\020\022\016/v1/items/{id}\022@\n"
-  "\nDeleteItem\022\014.mruv.ItemID\032\014.mruv.ItemID\""
-  "\026\202\323\344\223\002\020*\016/v1/items/{id}\022L\n\010GetItems\022\025.mr"
-  "uv.GetItemsRequest\032\026.mruv.GetItemsRespon"
-  "se\"\021\202\323\344\223\002\013\022\t/v1/items\022I\n\016CreateItemType\022"
-  "\016.mruv.ItemType\032\020.mruv.ItemTypeID\"\025\202\323\344\223\002"
-  "\017\"\r/v1/itemTypes\022K\n\013GetItemType\022\020.mruv.I"
-  "temTypeID\032\016.mruv.ItemType\"\032\202\323\344\223\002\024\022\022/v1/i"
-  "temTypes/{id}\022P\n\016DeleteItemType\022\020.mruv.I"
-  "temTypeID\032\020.mruv.ItemTypeID\"\032\202\323\344\223\002\024*\022/v1"
-  "/itemTypes/{id}\022\\\n\014GetItemTypes\022\031.mruv.G"
-  "etItemTypesRequest\032\032.mruv.GetItemTypesRe"
-  "sponse\"\025\202\323\344\223\002\017\022\r/v1/itemTypes\022M\n\017CreateC"
-  "ontainer\022\017.mruv.Container\032\021.mruv.Contain"
-  "erID\"\026\202\323\344\223\002\020\"\016/v1/containers\022O\n\014GetConta"
-  "iner\022\021.mruv.ContainerID\032\017.mruv.Container"
-  "\"\033\202\323\344\223\002\025\022\023/v1/containers/{id}\022T\n\017DeleteC"
-  "ontainer\022\021.mruv.ContainerID\032\021.mruv.Conta"
-  "inerID\"\033\202\323\344\223\002\025*\023/v1/containers/{id}\022`\n\rG"
-  "etContainers\022\032.mruv.GetContainersRequest"
-  "\032\033.mruv.GetContainersResponse\"\026\202\323\344\223\002\020\022\016/"
-  "v1/containers\022]\n\023CreateContainerType\022\023.m"
-  "ruv.ContainerType\032\025.mruv.ContainerTypeID"
-  "\"\032\202\323\344\223\002\024\"\022/v1/containerTypes\022_\n\020GetConta"
-  "inerType\022\025.mruv.ContainerTypeID\032\023.mruv.C"
-  "ontainerType\"\037\202\323\344\223\002\031\022\027/v1/containerTypes"
-  "/{id}\022d\n\023DeleteContainerType\022\025.mruv.Cont"
-  "ainerTypeID\032\025.mruv.ContainerTypeID\"\037\202\323\344\223"
-  "\002\031*\027/v1/containerTypes/{id}\022p\n\021GetContai"
-  "nerTypes\022\036.mruv.GetContainerTypesRequest"
-  "\032\037.mruv.GetContainerTypesResponse\"\032\202\323\344\223\002"
-  "\024\022\022/v1/containerTypes\022\201\001\n\021GetContainerIt"
-  "ems\022\036.mruv.GetContainerItemsRequest\032\037.mr"
-  "uv.GetContainerItemsResponse\"+\202\323\344\223\002%\022#/v"
-  "1/containers/{container_id}/items\022d\n\010Pul"
-  "lItem\022\025.mruv.PullItemRequest\032\n.mruv.Item"
-  "\"5\202\323\344\223\002/*-/v1/containers/{container_id}/"
-  "items/{item_id}\022m\n\007PutItem\022\024.mruv.PutIte"
-  "mRequest\032\025.mruv.PutItemResponse\"5\202\323\344\223\002/\032"
-  "-/v1/containers/{container_id}/items/{it"
-  "em_id}\022x\n\tSortItems\022\026.mruv.SortItemsRequ"
-  "est\032\027.mruv.SortItemsResponse\":\202\323\344\223\0024\0222/v"
-  "1/containers/{container_id}/items/sort/{"
-  "sort_by}\022\260\001\n\017GetNearestItems\022\034.mruv.GetN"
-  "earestItemsRequest\032\035.mruv.GetNearestItem"
+  "\n\021items/items.proto\022\nmruv.items\032\034google/"
+  "api/annotations.proto\032\023common/health.pro"
+  "to\032\027items/items_model.proto\032\024common/spat"
+  "ial.proto\" \n\017GetItemsRequest\022\r\n\005limit\030\001 "
+  "\001(\r\"3\n\020GetItemsResponse\022\037\n\005items\030\001 \003(\0132\020"
+  ".mruv.items.Item\"$\n\023GetItemTypesRequest\022"
+  "\r\n\005limit\030\001 \001(\r\"@\n\024GetItemTypesResponse\022("
+  "\n\nitem_types\030\001 \003(\0132\024.mruv.items.ItemType"
+  "\"%\n\024GetContainersRequest\022\r\n\005limit\030\001 \001(\r\""
+  "B\n\025GetContainersResponse\022)\n\ncontainers\030\001"
+  " \003(\0132\025.mruv.items.Container\")\n\030GetContai"
+  "nerTypesRequest\022\r\n\005limit\030\001 \001(\r\"O\n\031GetCon"
+  "tainerTypesResponse\0222\n\017container_types\030\001"
+  " \003(\0132\031.mruv.items.ContainerType\"P\n\016PutIt"
+  "emRequest\022\024\n\014container_id\030\001 \001(\r\022\017\n\007item_"
+  "id\030\002 \001(\r\022\016\n\004slot\030\003 \001(\005H\000B\007\n\005where\">\n\017Put"
+  "ItemResponse\022+\n\013inside_item\030\001 \001(\0132\026.mruv"
+  ".items.InsideItem\"\?\n\030GetContainerItemsRe"
+  "quest\022\024\n\014container_id\030\001 \001(\r\022\r\n\005limit\030\002 \001"
+  "(\r\"B\n\031GetContainerItemsResponse\022%\n\005items"
+  "\030\001 \003(\0132\026.mruv.items.InsideItem\"8\n\017PullIt"
+  "emRequest\022\024\n\014container_id\030\001 \001(\r\022\017\n\007item_"
+  "id\030\002 \001(\r\"R\n\020SortItemsRequest\022\024\n\014containe"
+  "r_id\030\001 \001(\r\022(\n\007sort_by\030\002 \001(\0162\027.mruv.items"
+  ".SortingMode\"=\n\021SortItemsResponse\022(\n\tcon"
+  "tainer\030\001 \001(\0132\025.mruv.items.Container\"o\n\026G"
+  "etNearestItemsRequest\022\'\n\010position\030\001 \001(\0132"
+  "\025.mruv.common.Position\022\024\n\014container_id\030\002"
+  " \001(\r\022\026\n\016distance_limit\030\003 \001(\001\"\?\n\027GetNeare"
+  "stItemsResponse\022$\n\004item\030\001 \003(\0132\026.mruv.ite"
+  "ms.InsideItem\"!\n\016UseItemRequest\022\017\n\007item_"
+  "id\030\001 \001(\r\"\"\n\017UseItemResponse\022\017\n\007success\030\001"
+  " \001(\0102\231\024\n\017MruVItemService\022E\n\nCreateItem\022\020"
+  ".mruv.items.Item\032\022.mruv.items.ItemID\"\021\202\323"
+  "\344\223\002\013\"\t/v1/items\022G\n\007GetItem\022\022.mruv.items."
+  "ItemID\032\020.mruv.items.Item\"\026\202\323\344\223\002\020\022\016/v1/it"
+  "ems/{id}\022L\n\nDeleteItem\022\022.mruv.items.Item"
+  "ID\032\022.mruv.items.ItemID\"\026\202\323\344\223\002\020*\016/v1/item"
+  "s/{id}\022X\n\010GetItems\022\033.mruv.items.GetItems"
+  "Request\032\034.mruv.items.GetItemsResponse\"\021\202"
+  "\323\344\223\002\013\022\t/v1/items\022U\n\016CreateItemType\022\024.mru"
+  "v.items.ItemType\032\026.mruv.items.ItemTypeID"
+  "\"\025\202\323\344\223\002\017\"\r/v1/itemTypes\022W\n\013GetItemType\022\026"
+  ".mruv.items.ItemTypeID\032\024.mruv.items.Item"
+  "Type\"\032\202\323\344\223\002\024\022\022/v1/itemTypes/{id}\022\\\n\016Dele"
+  "teItemType\022\026.mruv.items.ItemTypeID\032\026.mru"
+  "v.items.ItemTypeID\"\032\202\323\344\223\002\024*\022/v1/itemType"
+  "s/{id}\022h\n\014GetItemTypes\022\037.mruv.items.GetI"
+  "temTypesRequest\032 .mruv.items.GetItemType"
+  "sResponse\"\025\202\323\344\223\002\017\022\r/v1/itemTypes\022Y\n\017Crea"
+  "teContainer\022\025.mruv.items.Container\032\027.mru"
+  "v.items.ContainerID\"\026\202\323\344\223\002\020\"\016/v1/contain"
+  "ers\022[\n\014GetContainer\022\027.mruv.items.Contain"
+  "erID\032\025.mruv.items.Container\"\033\202\323\344\223\002\025\022\023/v1"
+  "/containers/{id}\022`\n\017DeleteContainer\022\027.mr"
+  "uv.items.ContainerID\032\027.mruv.items.Contai"
+  "nerID\"\033\202\323\344\223\002\025*\023/v1/containers/{id}\022l\n\rGe"
+  "tContainers\022 .mruv.items.GetContainersRe"
+  "quest\032!.mruv.items.GetContainersResponse"
+  "\"\026\202\323\344\223\002\020\022\016/v1/containers\022i\n\023CreateContai"
+  "nerType\022\031.mruv.items.ContainerType\032\033.mru"
+  "v.items.ContainerTypeID\"\032\202\323\344\223\002\024\"\022/v1/con"
+  "tainerTypes\022k\n\020GetContainerType\022\033.mruv.i"
+  "tems.ContainerTypeID\032\031.mruv.items.Contai"
+  "nerType\"\037\202\323\344\223\002\031\022\027/v1/containerTypes/{id}"
+  "\022p\n\023DeleteContainerType\022\033.mruv.items.Con"
+  "tainerTypeID\032\033.mruv.items.ContainerTypeI"
+  "D\"\037\202\323\344\223\002\031*\027/v1/containerTypes/{id}\022|\n\021Ge"
+  "tContainerTypes\022$.mruv.items.GetContaine"
+  "rTypesRequest\032%.mruv.items.GetContainerT"
+  "ypesResponse\"\032\202\323\344\223\002\024\022\022/v1/containerTypes"
+  "\022\215\001\n\021GetContainerItems\022$.mruv.items.GetC"
+  "ontainerItemsRequest\032%.mruv.items.GetCon"
+  "tainerItemsResponse\"+\202\323\344\223\002%\022#/v1/contain"
+  "ers/{container_id}/items\022p\n\010PullItem\022\033.m"
+  "ruv.items.PullItemRequest\032\020.mruv.items.I"
+  "tem\"5\202\323\344\223\002/*-/v1/containers/{container_i"
+  "d}/items/{item_id}\022y\n\007PutItem\022\032.mruv.ite"
+  "ms.PutItemRequest\032\033.mruv.items.PutItemRe"
+  "sponse\"5\202\323\344\223\002/\032-/v1/containers/{containe"
+  "r_id}/items/{item_id}\022\204\001\n\tSortItems\022\034.mr"
+  "uv.items.SortItemsRequest\032\035.mruv.items.S"
+  "ortItemsResponse\":\202\323\344\223\0024\0222/v1/containers"
+  "/{container_id}/items/sort/{sort_by}\022\274\001\n"
+  "\017GetNearestItems\022\".mruv.items.GetNearest"
+  "ItemsRequest\032#.mruv.items.GetNearestItem"
   "sResponse\"`\202\323\344\223\002Z\022X/v1/containers/{conta"
   "iner_id}/items/nearest/x/{position.x}/y/"
-  "{position.y}/z/{position.z}\022W\n\007UseItem\022\024"
-  ".mruv.UseItemRequest\032\025.mruv.UseItemRespo"
-  "nse\"\037\202\323\344\223\002\031\022\027/v1/items/{item_id}/use\022e\n\020"
-  "GetServiceStatus\022\032.mruv.ServiceStatusReq"
-  "uest\032\033.mruv.ServiceStatusResponse\"\030\202\323\344\223\002"
-  "\022\022\020/v1/items/status\022[\n\021GetServiceVersion"
-  "\022\024.mruv.VersionRequest\032\025.mruv.VersionRes"
+  "{position.y}/z/{position.z}\022c\n\007UseItem\022\032"
+  ".mruv.items.UseItemRequest\032\033.mruv.items."
+  "UseItemResponse\"\037\202\323\344\223\002\031\022\027/v1/items/{item"
+  "_id}/use\022s\n\020GetServiceStatus\022!.mruv.comm"
+  "on.ServiceStatusRequest\032\".mruv.common.Se"
+  "rviceStatusResponse\"\030\202\323\344\223\002\022\022\020/v1/items/s"
+  "tatus\022i\n\021GetServiceVersion\022\033.mruv.common"
+  ".VersionRequest\032\034.mruv.common.VersionRes"
   "ponse\"\031\202\323\344\223\002\023\022\021/v1/items/versionB%Z#gith"
   "ub.com/MruV-RP/mruv-pb-go/itemsb\006proto3"
   ;
@@ -666,7 +677,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ite
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_items_2fitems_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_items_2fitems_2eproto = {
-  false, false, descriptor_table_protodef_items_2fitems_2eproto, "items/items.proto", 3559,
+  false, false, descriptor_table_protodef_items_2fitems_2eproto, "items/items.proto", 3919,
   &descriptor_table_items_2fitems_2eproto_once, descriptor_table_items_2fitems_2eproto_sccs, descriptor_table_items_2fitems_2eproto_deps, 19, 4,
   schemas, file_default_instances, TableStruct_items_2fitems_2eproto::offsets,
   file_level_metadata_items_2fitems_2eproto, 19, file_level_enum_descriptors_items_2fitems_2eproto, file_level_service_descriptors_items_2fitems_2eproto,
@@ -675,6 +686,7 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_items_
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_items_2fitems_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_items_2fitems_2eproto)), true);
 namespace mruv {
+namespace items {
 
 // ===================================================================
 
@@ -688,13 +700,13 @@ GetItemsRequest::GetItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetItemsRequest)
 }
 GetItemsRequest::GetItemsRequest(const GetItemsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   limit_ = from.limit_;
-  // @@protoc_insertion_point(copy_constructor:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetItemsRequest)
 }
 
 void GetItemsRequest::SharedCtor() {
@@ -702,7 +714,7 @@ void GetItemsRequest::SharedCtor() {
 }
 
 GetItemsRequest::~GetItemsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.GetItemsRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -727,7 +739,7 @@ const GetItemsRequest& GetItemsRequest::default_instance() {
 
 
 void GetItemsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetItemsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -775,7 +787,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetItemsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -789,12 +801,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetItemsRequest)
   return target;
 }
 
 size_t GetItemsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetItemsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetItemsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -818,22 +830,22 @@ size_t GetItemsRequest::ByteSizeLong() const {
 }
 
 void GetItemsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetItemsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetItemsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetItemsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetItemsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetItemsRequest)
     MergeFrom(*source);
   }
 }
 
 void GetItemsRequest::MergeFrom(const GetItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetItemsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -845,14 +857,14 @@ void GetItemsRequest::MergeFrom(const GetItemsRequest& from) {
 }
 
 void GetItemsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetItemsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetItemsRequest::CopyFrom(const GetItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetItemsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -889,13 +901,13 @@ GetItemsResponse::GetItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   items_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetItemsResponse)
 }
 GetItemsResponse::GetItemsResponse(const GetItemsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       items_(from.items_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetItemsResponse)
 }
 
 void GetItemsResponse::SharedCtor() {
@@ -903,7 +915,7 @@ void GetItemsResponse::SharedCtor() {
 }
 
 GetItemsResponse::~GetItemsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.GetItemsResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -928,7 +940,7 @@ const GetItemsResponse& GetItemsResponse::default_instance() {
 
 
 void GetItemsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetItemsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -945,7 +957,7 @@ const char* GetItemsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.Item items = 1;
+      // repeated .mruv.items.Item items = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -981,11 +993,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetItemsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.Item items = 1;
+  // repeated .mruv.items.Item items = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_items_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -997,19 +1009,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetItemsResponse)
   return target;
 }
 
 size_t GetItemsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetItemsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetItemsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Item items = 1;
+  // repeated .mruv.items.Item items = 1;
   total_size += 1UL * this->_internal_items_size();
   for (const auto& msg : this->items_) {
     total_size +=
@@ -1026,22 +1038,22 @@ size_t GetItemsResponse::ByteSizeLong() const {
 }
 
 void GetItemsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetItemsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetItemsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetItemsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetItemsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetItemsResponse)
     MergeFrom(*source);
   }
 }
 
 void GetItemsResponse::MergeFrom(const GetItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetItemsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1051,14 +1063,14 @@ void GetItemsResponse::MergeFrom(const GetItemsResponse& from) {
 }
 
 void GetItemsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetItemsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetItemsResponse::CopyFrom(const GetItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetItemsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1091,13 +1103,13 @@ GetItemTypesRequest::GetItemTypesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetItemTypesRequest)
 }
 GetItemTypesRequest::GetItemTypesRequest(const GetItemTypesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   limit_ = from.limit_;
-  // @@protoc_insertion_point(copy_constructor:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetItemTypesRequest)
 }
 
 void GetItemTypesRequest::SharedCtor() {
@@ -1105,7 +1117,7 @@ void GetItemTypesRequest::SharedCtor() {
 }
 
 GetItemTypesRequest::~GetItemTypesRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.GetItemTypesRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1130,7 +1142,7 @@ const GetItemTypesRequest& GetItemTypesRequest::default_instance() {
 
 
 void GetItemTypesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetItemTypesRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetItemTypesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1178,7 +1190,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetItemTypesRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetItemTypesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1192,12 +1204,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetItemTypesRequest)
   return target;
 }
 
 size_t GetItemTypesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetItemTypesRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetItemTypesRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1221,22 +1233,22 @@ size_t GetItemTypesRequest::ByteSizeLong() const {
 }
 
 void GetItemTypesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetItemTypesRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetItemTypesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetItemTypesRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetItemTypesRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetItemTypesRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetItemTypesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetItemTypesRequest)
     MergeFrom(*source);
   }
 }
 
 void GetItemTypesRequest::MergeFrom(const GetItemTypesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetItemTypesRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetItemTypesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1248,14 +1260,14 @@ void GetItemTypesRequest::MergeFrom(const GetItemTypesRequest& from) {
 }
 
 void GetItemTypesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetItemTypesRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetItemTypesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetItemTypesRequest::CopyFrom(const GetItemTypesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetItemTypesRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetItemTypesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1292,13 +1304,13 @@ GetItemTypesResponse::GetItemTypesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena
   item_types_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetItemTypesResponse)
 }
 GetItemTypesResponse::GetItemTypesResponse(const GetItemTypesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       item_types_(from.item_types_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetItemTypesResponse)
 }
 
 void GetItemTypesResponse::SharedCtor() {
@@ -1306,7 +1318,7 @@ void GetItemTypesResponse::SharedCtor() {
 }
 
 GetItemTypesResponse::~GetItemTypesResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.GetItemTypesResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1331,7 +1343,7 @@ const GetItemTypesResponse& GetItemTypesResponse::default_instance() {
 
 
 void GetItemTypesResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetItemTypesResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetItemTypesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1348,7 +1360,7 @@ const char* GetItemTypesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.ItemType item_types = 1;
+      // repeated .mruv.items.ItemType item_types = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1384,11 +1396,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetItemTypesResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetItemTypesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.ItemType item_types = 1;
+  // repeated .mruv.items.ItemType item_types = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_item_types_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1400,19 +1412,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetItemTypesResponse)
   return target;
 }
 
 size_t GetItemTypesResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetItemTypesResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetItemTypesResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.ItemType item_types = 1;
+  // repeated .mruv.items.ItemType item_types = 1;
   total_size += 1UL * this->_internal_item_types_size();
   for (const auto& msg : this->item_types_) {
     total_size +=
@@ -1429,22 +1441,22 @@ size_t GetItemTypesResponse::ByteSizeLong() const {
 }
 
 void GetItemTypesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetItemTypesResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetItemTypesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetItemTypesResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetItemTypesResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetItemTypesResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetItemTypesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetItemTypesResponse)
     MergeFrom(*source);
   }
 }
 
 void GetItemTypesResponse::MergeFrom(const GetItemTypesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetItemTypesResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetItemTypesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1454,14 +1466,14 @@ void GetItemTypesResponse::MergeFrom(const GetItemTypesResponse& from) {
 }
 
 void GetItemTypesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetItemTypesResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetItemTypesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetItemTypesResponse::CopyFrom(const GetItemTypesResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetItemTypesResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetItemTypesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1494,13 +1506,13 @@ GetContainersRequest::GetContainersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetContainersRequest)
 }
 GetContainersRequest::GetContainersRequest(const GetContainersRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   limit_ = from.limit_;
-  // @@protoc_insertion_point(copy_constructor:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetContainersRequest)
 }
 
 void GetContainersRequest::SharedCtor() {
@@ -1508,7 +1520,7 @@ void GetContainersRequest::SharedCtor() {
 }
 
 GetContainersRequest::~GetContainersRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.GetContainersRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1533,7 +1545,7 @@ const GetContainersRequest& GetContainersRequest::default_instance() {
 
 
 void GetContainersRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetContainersRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetContainersRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1581,7 +1593,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetContainersRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetContainersRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1595,12 +1607,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetContainersRequest)
   return target;
 }
 
 size_t GetContainersRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetContainersRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetContainersRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1624,22 +1636,22 @@ size_t GetContainersRequest::ByteSizeLong() const {
 }
 
 void GetContainersRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetContainersRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetContainersRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetContainersRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetContainersRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetContainersRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetContainersRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetContainersRequest)
     MergeFrom(*source);
   }
 }
 
 void GetContainersRequest::MergeFrom(const GetContainersRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetContainersRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetContainersRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1651,14 +1663,14 @@ void GetContainersRequest::MergeFrom(const GetContainersRequest& from) {
 }
 
 void GetContainersRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetContainersRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetContainersRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetContainersRequest::CopyFrom(const GetContainersRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetContainersRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetContainersRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1695,13 +1707,13 @@ GetContainersResponse::GetContainersResponse(::PROTOBUF_NAMESPACE_ID::Arena* are
   containers_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetContainersResponse)
 }
 GetContainersResponse::GetContainersResponse(const GetContainersResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       containers_(from.containers_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetContainersResponse)
 }
 
 void GetContainersResponse::SharedCtor() {
@@ -1709,7 +1721,7 @@ void GetContainersResponse::SharedCtor() {
 }
 
 GetContainersResponse::~GetContainersResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.GetContainersResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1734,7 +1746,7 @@ const GetContainersResponse& GetContainersResponse::default_instance() {
 
 
 void GetContainersResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetContainersResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetContainersResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1751,7 +1763,7 @@ const char* GetContainersResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.Container containers = 1;
+      // repeated .mruv.items.Container containers = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1787,11 +1799,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetContainersResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetContainersResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.Container containers = 1;
+  // repeated .mruv.items.Container containers = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_containers_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1803,19 +1815,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetContainersResponse)
   return target;
 }
 
 size_t GetContainersResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetContainersResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetContainersResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.Container containers = 1;
+  // repeated .mruv.items.Container containers = 1;
   total_size += 1UL * this->_internal_containers_size();
   for (const auto& msg : this->containers_) {
     total_size +=
@@ -1832,22 +1844,22 @@ size_t GetContainersResponse::ByteSizeLong() const {
 }
 
 void GetContainersResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetContainersResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetContainersResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetContainersResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetContainersResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetContainersResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetContainersResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetContainersResponse)
     MergeFrom(*source);
   }
 }
 
 void GetContainersResponse::MergeFrom(const GetContainersResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetContainersResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetContainersResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1857,14 +1869,14 @@ void GetContainersResponse::MergeFrom(const GetContainersResponse& from) {
 }
 
 void GetContainersResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetContainersResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetContainersResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetContainersResponse::CopyFrom(const GetContainersResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetContainersResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetContainersResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1897,13 +1909,13 @@ GetContainerTypesRequest::GetContainerTypesRequest(::PROTOBUF_NAMESPACE_ID::Aren
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetContainerTypesRequest)
 }
 GetContainerTypesRequest::GetContainerTypesRequest(const GetContainerTypesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   limit_ = from.limit_;
-  // @@protoc_insertion_point(copy_constructor:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetContainerTypesRequest)
 }
 
 void GetContainerTypesRequest::SharedCtor() {
@@ -1911,7 +1923,7 @@ void GetContainerTypesRequest::SharedCtor() {
 }
 
 GetContainerTypesRequest::~GetContainerTypesRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.GetContainerTypesRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1936,7 +1948,7 @@ const GetContainerTypesRequest& GetContainerTypesRequest::default_instance() {
 
 
 void GetContainerTypesRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetContainerTypesRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetContainerTypesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1984,7 +1996,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetContainerTypesRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetContainerTypesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1998,12 +2010,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetContainerTypesRequest)
   return target;
 }
 
 size_t GetContainerTypesRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetContainerTypesRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetContainerTypesRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2027,22 +2039,22 @@ size_t GetContainerTypesRequest::ByteSizeLong() const {
 }
 
 void GetContainerTypesRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetContainerTypesRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetContainerTypesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetContainerTypesRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetContainerTypesRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetContainerTypesRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetContainerTypesRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetContainerTypesRequest)
     MergeFrom(*source);
   }
 }
 
 void GetContainerTypesRequest::MergeFrom(const GetContainerTypesRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetContainerTypesRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetContainerTypesRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2054,14 +2066,14 @@ void GetContainerTypesRequest::MergeFrom(const GetContainerTypesRequest& from) {
 }
 
 void GetContainerTypesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetContainerTypesRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetContainerTypesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetContainerTypesRequest::CopyFrom(const GetContainerTypesRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetContainerTypesRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetContainerTypesRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2098,13 +2110,13 @@ GetContainerTypesResponse::GetContainerTypesResponse(::PROTOBUF_NAMESPACE_ID::Ar
   container_types_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetContainerTypesResponse)
 }
 GetContainerTypesResponse::GetContainerTypesResponse(const GetContainerTypesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       container_types_(from.container_types_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetContainerTypesResponse)
 }
 
 void GetContainerTypesResponse::SharedCtor() {
@@ -2112,7 +2124,7 @@ void GetContainerTypesResponse::SharedCtor() {
 }
 
 GetContainerTypesResponse::~GetContainerTypesResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.GetContainerTypesResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2137,7 +2149,7 @@ const GetContainerTypesResponse& GetContainerTypesResponse::default_instance() {
 
 
 void GetContainerTypesResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetContainerTypesResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetContainerTypesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2154,7 +2166,7 @@ const char* GetContainerTypesResponse::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.ContainerType container_types = 1;
+      // repeated .mruv.items.ContainerType container_types = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -2190,11 +2202,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetContainerTypesResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetContainerTypesResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.ContainerType container_types = 1;
+  // repeated .mruv.items.ContainerType container_types = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_container_types_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -2206,19 +2218,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetContainerTypesResponse)
   return target;
 }
 
 size_t GetContainerTypesResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetContainerTypesResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetContainerTypesResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.ContainerType container_types = 1;
+  // repeated .mruv.items.ContainerType container_types = 1;
   total_size += 1UL * this->_internal_container_types_size();
   for (const auto& msg : this->container_types_) {
     total_size +=
@@ -2235,22 +2247,22 @@ size_t GetContainerTypesResponse::ByteSizeLong() const {
 }
 
 void GetContainerTypesResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetContainerTypesResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetContainerTypesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetContainerTypesResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetContainerTypesResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetContainerTypesResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetContainerTypesResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetContainerTypesResponse)
     MergeFrom(*source);
   }
 }
 
 void GetContainerTypesResponse::MergeFrom(const GetContainerTypesResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetContainerTypesResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetContainerTypesResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2260,14 +2272,14 @@ void GetContainerTypesResponse::MergeFrom(const GetContainerTypesResponse& from)
 }
 
 void GetContainerTypesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetContainerTypesResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetContainerTypesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetContainerTypesResponse::CopyFrom(const GetContainerTypesResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetContainerTypesResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetContainerTypesResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2291,7 +2303,7 @@ void GetContainerTypesResponse::InternalSwap(GetContainerTypesResponse* other) {
 // ===================================================================
 
 void PutItemRequest::InitAsDefaultInstance() {
-  ::mruv::_PutItemRequest_default_instance_.slot_ = 0;
+  ::mruv::items::_PutItemRequest_default_instance_.slot_ = 0;
 }
 class PutItemRequest::_Internal {
  public:
@@ -2301,7 +2313,7 @@ PutItemRequest::PutItemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.PutItemRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.PutItemRequest)
 }
 PutItemRequest::PutItemRequest(const PutItemRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2319,7 +2331,7 @@ PutItemRequest::PutItemRequest(const PutItemRequest& from)
       break;
     }
   }
-  // @@protoc_insertion_point(copy_constructor:mruv.PutItemRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.PutItemRequest)
 }
 
 void PutItemRequest::SharedCtor() {
@@ -2330,7 +2342,7 @@ void PutItemRequest::SharedCtor() {
 }
 
 PutItemRequest::~PutItemRequest() {
-  // @@protoc_insertion_point(destructor:mruv.PutItemRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.PutItemRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2358,7 +2370,7 @@ const PutItemRequest& PutItemRequest::default_instance() {
 
 
 void PutItemRequest::clear_where() {
-// @@protoc_insertion_point(one_of_clear_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(one_of_clear_start:mruv.items.PutItemRequest)
   switch (where_case()) {
     case kSlot: {
       // No need to clear
@@ -2373,7 +2385,7 @@ void PutItemRequest::clear_where() {
 
 
 void PutItemRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.PutItemRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2438,7 +2450,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PutItemRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.PutItemRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.PutItemRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2464,12 +2476,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.PutItemRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.PutItemRequest)
   return target;
 }
 
 size_t PutItemRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.PutItemRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2512,22 +2524,22 @@ size_t PutItemRequest::ByteSizeLong() const {
 }
 
 void PutItemRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.PutItemRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const PutItemRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PutItemRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.PutItemRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.PutItemRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.PutItemRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.PutItemRequest)
     MergeFrom(*source);
   }
 }
 
 void PutItemRequest::MergeFrom(const PutItemRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.PutItemRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2551,14 +2563,14 @@ void PutItemRequest::MergeFrom(const PutItemRequest& from) {
 }
 
 void PutItemRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.PutItemRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PutItemRequest::CopyFrom(const PutItemRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.PutItemRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.PutItemRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2589,15 +2601,15 @@ void PutItemRequest::InternalSwap(PutItemRequest* other) {
 // ===================================================================
 
 void PutItemResponse::InitAsDefaultInstance() {
-  ::mruv::_PutItemResponse_default_instance_._instance.get_mutable()->inside_item_ = const_cast< ::mruv::InsideItem*>(
-      ::mruv::InsideItem::internal_default_instance());
+  ::mruv::items::_PutItemResponse_default_instance_._instance.get_mutable()->inside_item_ = const_cast< ::mruv::items::InsideItem*>(
+      ::mruv::items::InsideItem::internal_default_instance());
 }
 class PutItemResponse::_Internal {
  public:
-  static const ::mruv::InsideItem& inside_item(const PutItemResponse* msg);
+  static const ::mruv::items::InsideItem& inside_item(const PutItemResponse* msg);
 };
 
-const ::mruv::InsideItem&
+const ::mruv::items::InsideItem&
 PutItemResponse::_Internal::inside_item(const PutItemResponse* msg) {
   return *msg->inside_item_;
 }
@@ -2611,17 +2623,17 @@ PutItemResponse::PutItemResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.PutItemResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.PutItemResponse)
 }
 PutItemResponse::PutItemResponse(const PutItemResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_inside_item()) {
-    inside_item_ = new ::mruv::InsideItem(*from.inside_item_);
+    inside_item_ = new ::mruv::items::InsideItem(*from.inside_item_);
   } else {
     inside_item_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:mruv.PutItemResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.PutItemResponse)
 }
 
 void PutItemResponse::SharedCtor() {
@@ -2630,7 +2642,7 @@ void PutItemResponse::SharedCtor() {
 }
 
 PutItemResponse::~PutItemResponse() {
-  // @@protoc_insertion_point(destructor:mruv.PutItemResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.PutItemResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2656,7 +2668,7 @@ const PutItemResponse& PutItemResponse::default_instance() {
 
 
 void PutItemResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.PutItemResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.PutItemResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2676,7 +2688,7 @@ const char* PutItemResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .mruv.InsideItem inside_item = 1;
+      // .mruv.items.InsideItem inside_item = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_inside_item(), ptr);
@@ -2707,11 +2719,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PutItemResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.PutItemResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.PutItemResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mruv.InsideItem inside_item = 1;
+  // .mruv.items.InsideItem inside_item = 1;
   if (this->has_inside_item()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2723,19 +2735,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.PutItemResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.PutItemResponse)
   return target;
 }
 
 size_t PutItemResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.PutItemResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.PutItemResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mruv.InsideItem inside_item = 1;
+  // .mruv.items.InsideItem inside_item = 1;
   if (this->has_inside_item()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -2752,41 +2764,41 @@ size_t PutItemResponse::ByteSizeLong() const {
 }
 
 void PutItemResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.PutItemResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.PutItemResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const PutItemResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PutItemResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.PutItemResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.PutItemResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.PutItemResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.PutItemResponse)
     MergeFrom(*source);
   }
 }
 
 void PutItemResponse::MergeFrom(const PutItemResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.PutItemResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.PutItemResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_inside_item()) {
-    _internal_mutable_inside_item()->::mruv::InsideItem::MergeFrom(from._internal_inside_item());
+    _internal_mutable_inside_item()->::mruv::items::InsideItem::MergeFrom(from._internal_inside_item());
   }
 }
 
 void PutItemResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.PutItemResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.PutItemResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PutItemResponse::CopyFrom(const PutItemResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.PutItemResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.PutItemResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2819,7 +2831,7 @@ GetContainerItemsRequest::GetContainerItemsRequest(::PROTOBUF_NAMESPACE_ID::Aren
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetContainerItemsRequest)
 }
 GetContainerItemsRequest::GetContainerItemsRequest(const GetContainerItemsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2827,7 +2839,7 @@ GetContainerItemsRequest::GetContainerItemsRequest(const GetContainerItemsReques
   ::memcpy(&container_id_, &from.container_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&limit_) -
     reinterpret_cast<char*>(&container_id_)) + sizeof(limit_));
-  // @@protoc_insertion_point(copy_constructor:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetContainerItemsRequest)
 }
 
 void GetContainerItemsRequest::SharedCtor() {
@@ -2837,7 +2849,7 @@ void GetContainerItemsRequest::SharedCtor() {
 }
 
 GetContainerItemsRequest::~GetContainerItemsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.GetContainerItemsRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2862,7 +2874,7 @@ const GetContainerItemsRequest& GetContainerItemsRequest::default_instance() {
 
 
 void GetContainerItemsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetContainerItemsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetContainerItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2919,7 +2931,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetContainerItemsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetContainerItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2939,12 +2951,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetContainerItemsRequest)
   return target;
 }
 
 size_t GetContainerItemsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetContainerItemsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetContainerItemsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2975,22 +2987,22 @@ size_t GetContainerItemsRequest::ByteSizeLong() const {
 }
 
 void GetContainerItemsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetContainerItemsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetContainerItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetContainerItemsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetContainerItemsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetContainerItemsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetContainerItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetContainerItemsRequest)
     MergeFrom(*source);
   }
 }
 
 void GetContainerItemsRequest::MergeFrom(const GetContainerItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetContainerItemsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetContainerItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3005,14 +3017,14 @@ void GetContainerItemsRequest::MergeFrom(const GetContainerItemsRequest& from) {
 }
 
 void GetContainerItemsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetContainerItemsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetContainerItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetContainerItemsRequest::CopyFrom(const GetContainerItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetContainerItemsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetContainerItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3054,13 +3066,13 @@ GetContainerItemsResponse::GetContainerItemsResponse(::PROTOBUF_NAMESPACE_ID::Ar
   items_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetContainerItemsResponse)
 }
 GetContainerItemsResponse::GetContainerItemsResponse(const GetContainerItemsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       items_(from.items_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetContainerItemsResponse)
 }
 
 void GetContainerItemsResponse::SharedCtor() {
@@ -3068,7 +3080,7 @@ void GetContainerItemsResponse::SharedCtor() {
 }
 
 GetContainerItemsResponse::~GetContainerItemsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.GetContainerItemsResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3093,7 +3105,7 @@ const GetContainerItemsResponse& GetContainerItemsResponse::default_instance() {
 
 
 void GetContainerItemsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetContainerItemsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetContainerItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3110,7 +3122,7 @@ const char* GetContainerItemsResponse::_InternalParse(const char* ptr, ::PROTOBU
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.InsideItem items = 1;
+      // repeated .mruv.items.InsideItem items = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -3146,11 +3158,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetContainerItemsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetContainerItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.InsideItem items = 1;
+  // repeated .mruv.items.InsideItem items = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_items_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -3162,19 +3174,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetContainerItemsResponse)
   return target;
 }
 
 size_t GetContainerItemsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetContainerItemsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetContainerItemsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.InsideItem items = 1;
+  // repeated .mruv.items.InsideItem items = 1;
   total_size += 1UL * this->_internal_items_size();
   for (const auto& msg : this->items_) {
     total_size +=
@@ -3191,22 +3203,22 @@ size_t GetContainerItemsResponse::ByteSizeLong() const {
 }
 
 void GetContainerItemsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetContainerItemsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetContainerItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetContainerItemsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetContainerItemsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetContainerItemsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetContainerItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetContainerItemsResponse)
     MergeFrom(*source);
   }
 }
 
 void GetContainerItemsResponse::MergeFrom(const GetContainerItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetContainerItemsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetContainerItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3216,14 +3228,14 @@ void GetContainerItemsResponse::MergeFrom(const GetContainerItemsResponse& from)
 }
 
 void GetContainerItemsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetContainerItemsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetContainerItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetContainerItemsResponse::CopyFrom(const GetContainerItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetContainerItemsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetContainerItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3256,7 +3268,7 @@ PullItemRequest::PullItemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.PullItemRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.PullItemRequest)
 }
 PullItemRequest::PullItemRequest(const PullItemRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -3264,7 +3276,7 @@ PullItemRequest::PullItemRequest(const PullItemRequest& from)
   ::memcpy(&container_id_, &from.container_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&item_id_) -
     reinterpret_cast<char*>(&container_id_)) + sizeof(item_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.PullItemRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.PullItemRequest)
 }
 
 void PullItemRequest::SharedCtor() {
@@ -3274,7 +3286,7 @@ void PullItemRequest::SharedCtor() {
 }
 
 PullItemRequest::~PullItemRequest() {
-  // @@protoc_insertion_point(destructor:mruv.PullItemRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.PullItemRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3299,7 +3311,7 @@ const PullItemRequest& PullItemRequest::default_instance() {
 
 
 void PullItemRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.PullItemRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.PullItemRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3356,7 +3368,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PullItemRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.PullItemRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.PullItemRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3376,12 +3388,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.PullItemRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.PullItemRequest)
   return target;
 }
 
 size_t PullItemRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.PullItemRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.PullItemRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3412,22 +3424,22 @@ size_t PullItemRequest::ByteSizeLong() const {
 }
 
 void PullItemRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.PullItemRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.PullItemRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const PullItemRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PullItemRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.PullItemRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.PullItemRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.PullItemRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.PullItemRequest)
     MergeFrom(*source);
   }
 }
 
 void PullItemRequest::MergeFrom(const PullItemRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.PullItemRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.PullItemRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3442,14 +3454,14 @@ void PullItemRequest::MergeFrom(const PullItemRequest& from) {
 }
 
 void PullItemRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.PullItemRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.PullItemRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PullItemRequest::CopyFrom(const PullItemRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.PullItemRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.PullItemRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3487,7 +3499,7 @@ SortItemsRequest::SortItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.SortItemsRequest)
 }
 SortItemsRequest::SortItemsRequest(const SortItemsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -3495,7 +3507,7 @@ SortItemsRequest::SortItemsRequest(const SortItemsRequest& from)
   ::memcpy(&container_id_, &from.container_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&sort_by_) -
     reinterpret_cast<char*>(&container_id_)) + sizeof(sort_by_));
-  // @@protoc_insertion_point(copy_constructor:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.SortItemsRequest)
 }
 
 void SortItemsRequest::SharedCtor() {
@@ -3505,7 +3517,7 @@ void SortItemsRequest::SharedCtor() {
 }
 
 SortItemsRequest::~SortItemsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.SortItemsRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3530,7 +3542,7 @@ const SortItemsRequest& SortItemsRequest::default_instance() {
 
 
 void SortItemsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.SortItemsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.SortItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3556,12 +3568,12 @@ const char* SortItemsRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .mruv.SortingMode sort_by = 2;
+      // .mruv.items.SortingMode sort_by = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_sort_by(static_cast<::mruv::SortingMode>(val));
+          _internal_set_sort_by(static_cast<::mruv::items::SortingMode>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3588,7 +3600,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* SortItemsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.SortItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3598,7 +3610,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_container_id(), target);
   }
 
-  // .mruv.SortingMode sort_by = 2;
+  // .mruv.items.SortingMode sort_by = 2;
   if (this->sort_by() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -3609,12 +3621,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.SortItemsRequest)
   return target;
 }
 
 size_t SortItemsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.SortItemsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.SortItemsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3628,7 +3640,7 @@ size_t SortItemsRequest::ByteSizeLong() const {
         this->_internal_container_id());
   }
 
-  // .mruv.SortingMode sort_by = 2;
+  // .mruv.items.SortingMode sort_by = 2;
   if (this->sort_by() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_sort_by());
@@ -3644,22 +3656,22 @@ size_t SortItemsRequest::ByteSizeLong() const {
 }
 
 void SortItemsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.SortItemsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.SortItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const SortItemsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SortItemsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.SortItemsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.SortItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.SortItemsRequest)
     MergeFrom(*source);
   }
 }
 
 void SortItemsRequest::MergeFrom(const SortItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.SortItemsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.SortItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3674,14 +3686,14 @@ void SortItemsRequest::MergeFrom(const SortItemsRequest& from) {
 }
 
 void SortItemsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.SortItemsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.SortItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void SortItemsRequest::CopyFrom(const SortItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.SortItemsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.SortItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3710,15 +3722,15 @@ void SortItemsRequest::InternalSwap(SortItemsRequest* other) {
 // ===================================================================
 
 void SortItemsResponse::InitAsDefaultInstance() {
-  ::mruv::_SortItemsResponse_default_instance_._instance.get_mutable()->container_ = const_cast< ::mruv::Container*>(
-      ::mruv::Container::internal_default_instance());
+  ::mruv::items::_SortItemsResponse_default_instance_._instance.get_mutable()->container_ = const_cast< ::mruv::items::Container*>(
+      ::mruv::items::Container::internal_default_instance());
 }
 class SortItemsResponse::_Internal {
  public:
-  static const ::mruv::Container& container(const SortItemsResponse* msg);
+  static const ::mruv::items::Container& container(const SortItemsResponse* msg);
 };
 
-const ::mruv::Container&
+const ::mruv::items::Container&
 SortItemsResponse::_Internal::container(const SortItemsResponse* msg) {
   return *msg->container_;
 }
@@ -3732,17 +3744,17 @@ SortItemsResponse::SortItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.SortItemsResponse)
 }
 SortItemsResponse::SortItemsResponse(const SortItemsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_container()) {
-    container_ = new ::mruv::Container(*from.container_);
+    container_ = new ::mruv::items::Container(*from.container_);
   } else {
     container_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.SortItemsResponse)
 }
 
 void SortItemsResponse::SharedCtor() {
@@ -3751,7 +3763,7 @@ void SortItemsResponse::SharedCtor() {
 }
 
 SortItemsResponse::~SortItemsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.SortItemsResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3777,7 +3789,7 @@ const SortItemsResponse& SortItemsResponse::default_instance() {
 
 
 void SortItemsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.SortItemsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.SortItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3797,7 +3809,7 @@ const char* SortItemsResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .mruv.Container container = 1;
+      // .mruv.items.Container container = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_container(), ptr);
@@ -3828,11 +3840,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* SortItemsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.SortItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mruv.Container container = 1;
+  // .mruv.items.Container container = 1;
   if (this->has_container()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3844,19 +3856,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.SortItemsResponse)
   return target;
 }
 
 size_t SortItemsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.SortItemsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.SortItemsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mruv.Container container = 1;
+  // .mruv.items.Container container = 1;
   if (this->has_container()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3873,41 +3885,41 @@ size_t SortItemsResponse::ByteSizeLong() const {
 }
 
 void SortItemsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.SortItemsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.SortItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const SortItemsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<SortItemsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.SortItemsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.SortItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.SortItemsResponse)
     MergeFrom(*source);
   }
 }
 
 void SortItemsResponse::MergeFrom(const SortItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.SortItemsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.SortItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_container()) {
-    _internal_mutable_container()->::mruv::Container::MergeFrom(from._internal_container());
+    _internal_mutable_container()->::mruv::items::Container::MergeFrom(from._internal_container());
   }
 }
 
 void SortItemsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.SortItemsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.SortItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void SortItemsResponse::CopyFrom(const SortItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.SortItemsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.SortItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3931,15 +3943,15 @@ void SortItemsResponse::InternalSwap(SortItemsResponse* other) {
 // ===================================================================
 
 void GetNearestItemsRequest::InitAsDefaultInstance() {
-  ::mruv::_GetNearestItemsRequest_default_instance_._instance.get_mutable()->position_ = const_cast< ::mruv::Position*>(
-      ::mruv::Position::internal_default_instance());
+  ::mruv::items::_GetNearestItemsRequest_default_instance_._instance.get_mutable()->position_ = const_cast< ::mruv::common::Position*>(
+      ::mruv::common::Position::internal_default_instance());
 }
 class GetNearestItemsRequest::_Internal {
  public:
-  static const ::mruv::Position& position(const GetNearestItemsRequest* msg);
+  static const ::mruv::common::Position& position(const GetNearestItemsRequest* msg);
 };
 
-const ::mruv::Position&
+const ::mruv::common::Position&
 GetNearestItemsRequest::_Internal::position(const GetNearestItemsRequest* msg) {
   return *msg->position_;
 }
@@ -3953,20 +3965,20 @@ GetNearestItemsRequest::GetNearestItemsRequest(::PROTOBUF_NAMESPACE_ID::Arena* a
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetNearestItemsRequest)
 }
 GetNearestItemsRequest::GetNearestItemsRequest(const GetNearestItemsRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_position()) {
-    position_ = new ::mruv::Position(*from.position_);
+    position_ = new ::mruv::common::Position(*from.position_);
   } else {
     position_ = nullptr;
   }
   ::memcpy(&distance_limit_, &from.distance_limit_,
     static_cast<size_t>(reinterpret_cast<char*>(&container_id_) -
     reinterpret_cast<char*>(&distance_limit_)) + sizeof(container_id_));
-  // @@protoc_insertion_point(copy_constructor:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetNearestItemsRequest)
 }
 
 void GetNearestItemsRequest::SharedCtor() {
@@ -3977,7 +3989,7 @@ void GetNearestItemsRequest::SharedCtor() {
 }
 
 GetNearestItemsRequest::~GetNearestItemsRequest() {
-  // @@protoc_insertion_point(destructor:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.GetNearestItemsRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4003,7 +4015,7 @@ const GetNearestItemsRequest& GetNearestItemsRequest::default_instance() {
 
 
 void GetNearestItemsRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetNearestItemsRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetNearestItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4026,7 +4038,7 @@ const char* GetNearestItemsRequest::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .mruv.Position position = 1;
+      // .mruv.common.Position position = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_position(), ptr);
@@ -4071,11 +4083,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetNearestItemsRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetNearestItemsRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .mruv.Position position = 1;
+  // .mruv.common.Position position = 1;
   if (this->has_position()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -4099,19 +4111,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetNearestItemsRequest)
   return target;
 }
 
 size_t GetNearestItemsRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetNearestItemsRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetNearestItemsRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .mruv.Position position = 1;
+  // .mruv.common.Position position = 1;
   if (this->has_position()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -4140,29 +4152,29 @@ size_t GetNearestItemsRequest::ByteSizeLong() const {
 }
 
 void GetNearestItemsRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetNearestItemsRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetNearestItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const GetNearestItemsRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetNearestItemsRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetNearestItemsRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetNearestItemsRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetNearestItemsRequest)
     MergeFrom(*source);
   }
 }
 
 void GetNearestItemsRequest::MergeFrom(const GetNearestItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetNearestItemsRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetNearestItemsRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_position()) {
-    _internal_mutable_position()->::mruv::Position::MergeFrom(from._internal_position());
+    _internal_mutable_position()->::mruv::common::Position::MergeFrom(from._internal_position());
   }
   if (!(from.distance_limit() <= 0 && from.distance_limit() >= 0)) {
     _internal_set_distance_limit(from._internal_distance_limit());
@@ -4173,14 +4185,14 @@ void GetNearestItemsRequest::MergeFrom(const GetNearestItemsRequest& from) {
 }
 
 void GetNearestItemsRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetNearestItemsRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetNearestItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetNearestItemsRequest::CopyFrom(const GetNearestItemsRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetNearestItemsRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetNearestItemsRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4222,13 +4234,13 @@ GetNearestItemsResponse::GetNearestItemsResponse(::PROTOBUF_NAMESPACE_ID::Arena*
   item_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.GetNearestItemsResponse)
 }
 GetNearestItemsResponse::GetNearestItemsResponse(const GetNearestItemsResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       item_(from.item_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.GetNearestItemsResponse)
 }
 
 void GetNearestItemsResponse::SharedCtor() {
@@ -4236,7 +4248,7 @@ void GetNearestItemsResponse::SharedCtor() {
 }
 
 GetNearestItemsResponse::~GetNearestItemsResponse() {
-  // @@protoc_insertion_point(destructor:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.GetNearestItemsResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4261,7 +4273,7 @@ const GetNearestItemsResponse& GetNearestItemsResponse::default_instance() {
 
 
 void GetNearestItemsResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.GetNearestItemsResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.GetNearestItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4278,7 +4290,7 @@ const char* GetNearestItemsResponse::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .mruv.InsideItem item = 1;
+      // repeated .mruv.items.InsideItem item = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -4314,11 +4326,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* GetNearestItemsResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.GetNearestItemsResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .mruv.InsideItem item = 1;
+  // repeated .mruv.items.InsideItem item = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_item_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -4330,19 +4342,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.GetNearestItemsResponse)
   return target;
 }
 
 size_t GetNearestItemsResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.GetNearestItemsResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.GetNearestItemsResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .mruv.InsideItem item = 1;
+  // repeated .mruv.items.InsideItem item = 1;
   total_size += 1UL * this->_internal_item_size();
   for (const auto& msg : this->item_) {
     total_size +=
@@ -4359,22 +4371,22 @@ size_t GetNearestItemsResponse::ByteSizeLong() const {
 }
 
 void GetNearestItemsResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.GetNearestItemsResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.GetNearestItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const GetNearestItemsResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetNearestItemsResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.GetNearestItemsResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.GetNearestItemsResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.GetNearestItemsResponse)
     MergeFrom(*source);
   }
 }
 
 void GetNearestItemsResponse::MergeFrom(const GetNearestItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.GetNearestItemsResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.GetNearestItemsResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4384,14 +4396,14 @@ void GetNearestItemsResponse::MergeFrom(const GetNearestItemsResponse& from) {
 }
 
 void GetNearestItemsResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.GetNearestItemsResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.GetNearestItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void GetNearestItemsResponse::CopyFrom(const GetNearestItemsResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.GetNearestItemsResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.GetNearestItemsResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4424,13 +4436,13 @@ UseItemRequest::UseItemRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.UseItemRequest)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.UseItemRequest)
 }
 UseItemRequest::UseItemRequest(const UseItemRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   item_id_ = from.item_id_;
-  // @@protoc_insertion_point(copy_constructor:mruv.UseItemRequest)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.UseItemRequest)
 }
 
 void UseItemRequest::SharedCtor() {
@@ -4438,7 +4450,7 @@ void UseItemRequest::SharedCtor() {
 }
 
 UseItemRequest::~UseItemRequest() {
-  // @@protoc_insertion_point(destructor:mruv.UseItemRequest)
+  // @@protoc_insertion_point(destructor:mruv.items.UseItemRequest)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4463,7 +4475,7 @@ const UseItemRequest& UseItemRequest::default_instance() {
 
 
 void UseItemRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.UseItemRequest)
+// @@protoc_insertion_point(message_clear_start:mruv.items.UseItemRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4511,7 +4523,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UseItemRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.UseItemRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.UseItemRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4525,12 +4537,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.UseItemRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.UseItemRequest)
   return target;
 }
 
 size_t UseItemRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.UseItemRequest)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.UseItemRequest)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4554,22 +4566,22 @@ size_t UseItemRequest::ByteSizeLong() const {
 }
 
 void UseItemRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.UseItemRequest)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.UseItemRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const UseItemRequest* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UseItemRequest>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.UseItemRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.UseItemRequest)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.UseItemRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.UseItemRequest)
     MergeFrom(*source);
   }
 }
 
 void UseItemRequest::MergeFrom(const UseItemRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.UseItemRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.UseItemRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4581,14 +4593,14 @@ void UseItemRequest::MergeFrom(const UseItemRequest& from) {
 }
 
 void UseItemRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.UseItemRequest)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.UseItemRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UseItemRequest::CopyFrom(const UseItemRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.UseItemRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.UseItemRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4621,13 +4633,13 @@ UseItemResponse::UseItemResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:mruv.UseItemResponse)
+  // @@protoc_insertion_point(arena_constructor:mruv.items.UseItemResponse)
 }
 UseItemResponse::UseItemResponse(const UseItemResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   success_ = from.success_;
-  // @@protoc_insertion_point(copy_constructor:mruv.UseItemResponse)
+  // @@protoc_insertion_point(copy_constructor:mruv.items.UseItemResponse)
 }
 
 void UseItemResponse::SharedCtor() {
@@ -4635,7 +4647,7 @@ void UseItemResponse::SharedCtor() {
 }
 
 UseItemResponse::~UseItemResponse() {
-  // @@protoc_insertion_point(destructor:mruv.UseItemResponse)
+  // @@protoc_insertion_point(destructor:mruv.items.UseItemResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4660,7 +4672,7 @@ const UseItemResponse& UseItemResponse::default_instance() {
 
 
 void UseItemResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:mruv.UseItemResponse)
+// @@protoc_insertion_point(message_clear_start:mruv.items.UseItemResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4708,7 +4720,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* UseItemResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:mruv.UseItemResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:mruv.items.UseItemResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4722,12 +4734,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:mruv.UseItemResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:mruv.items.UseItemResponse)
   return target;
 }
 
 size_t UseItemResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:mruv.UseItemResponse)
+// @@protoc_insertion_point(message_byte_size_start:mruv.items.UseItemResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4749,22 +4761,22 @@ size_t UseItemResponse::ByteSizeLong() const {
 }
 
 void UseItemResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:mruv.UseItemResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:mruv.items.UseItemResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const UseItemResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<UseItemResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.UseItemResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:mruv.items.UseItemResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.UseItemResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:mruv.items.UseItemResponse)
     MergeFrom(*source);
   }
 }
 
 void UseItemResponse::MergeFrom(const UseItemResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:mruv.UseItemResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:mruv.items.UseItemResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -4776,14 +4788,14 @@ void UseItemResponse::MergeFrom(const UseItemResponse& from) {
 }
 
 void UseItemResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:mruv.UseItemResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:mruv.items.UseItemResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void UseItemResponse::CopyFrom(const UseItemResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:mruv.UseItemResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:mruv.items.UseItemResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4805,64 +4817,65 @@ void UseItemResponse::InternalSwap(UseItemResponse* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace items
 }  // namespace mruv
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::mruv::GetItemsRequest* Arena::CreateMaybeMessage< ::mruv::GetItemsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetItemsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetItemsRequest* Arena::CreateMaybeMessage< ::mruv::items::GetItemsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetItemsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetItemsResponse* Arena::CreateMaybeMessage< ::mruv::GetItemsResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetItemsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetItemsResponse* Arena::CreateMaybeMessage< ::mruv::items::GetItemsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetItemsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetItemTypesRequest* Arena::CreateMaybeMessage< ::mruv::GetItemTypesRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetItemTypesRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetItemTypesRequest* Arena::CreateMaybeMessage< ::mruv::items::GetItemTypesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetItemTypesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetItemTypesResponse* Arena::CreateMaybeMessage< ::mruv::GetItemTypesResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetItemTypesResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetItemTypesResponse* Arena::CreateMaybeMessage< ::mruv::items::GetItemTypesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetItemTypesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetContainersRequest* Arena::CreateMaybeMessage< ::mruv::GetContainersRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetContainersRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetContainersRequest* Arena::CreateMaybeMessage< ::mruv::items::GetContainersRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetContainersRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetContainersResponse* Arena::CreateMaybeMessage< ::mruv::GetContainersResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetContainersResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetContainersResponse* Arena::CreateMaybeMessage< ::mruv::items::GetContainersResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetContainersResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetContainerTypesRequest* Arena::CreateMaybeMessage< ::mruv::GetContainerTypesRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetContainerTypesRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetContainerTypesRequest* Arena::CreateMaybeMessage< ::mruv::items::GetContainerTypesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetContainerTypesRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetContainerTypesResponse* Arena::CreateMaybeMessage< ::mruv::GetContainerTypesResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetContainerTypesResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetContainerTypesResponse* Arena::CreateMaybeMessage< ::mruv::items::GetContainerTypesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetContainerTypesResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::PutItemRequest* Arena::CreateMaybeMessage< ::mruv::PutItemRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::PutItemRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::PutItemRequest* Arena::CreateMaybeMessage< ::mruv::items::PutItemRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::PutItemRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::PutItemResponse* Arena::CreateMaybeMessage< ::mruv::PutItemResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::PutItemResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::PutItemResponse* Arena::CreateMaybeMessage< ::mruv::items::PutItemResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::PutItemResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetContainerItemsRequest* Arena::CreateMaybeMessage< ::mruv::GetContainerItemsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetContainerItemsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetContainerItemsRequest* Arena::CreateMaybeMessage< ::mruv::items::GetContainerItemsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetContainerItemsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetContainerItemsResponse* Arena::CreateMaybeMessage< ::mruv::GetContainerItemsResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetContainerItemsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetContainerItemsResponse* Arena::CreateMaybeMessage< ::mruv::items::GetContainerItemsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetContainerItemsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::PullItemRequest* Arena::CreateMaybeMessage< ::mruv::PullItemRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::PullItemRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::PullItemRequest* Arena::CreateMaybeMessage< ::mruv::items::PullItemRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::PullItemRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::SortItemsRequest* Arena::CreateMaybeMessage< ::mruv::SortItemsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::SortItemsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::SortItemsRequest* Arena::CreateMaybeMessage< ::mruv::items::SortItemsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::SortItemsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::SortItemsResponse* Arena::CreateMaybeMessage< ::mruv::SortItemsResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::SortItemsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::SortItemsResponse* Arena::CreateMaybeMessage< ::mruv::items::SortItemsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::SortItemsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetNearestItemsRequest* Arena::CreateMaybeMessage< ::mruv::GetNearestItemsRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetNearestItemsRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetNearestItemsRequest* Arena::CreateMaybeMessage< ::mruv::items::GetNearestItemsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetNearestItemsRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::GetNearestItemsResponse* Arena::CreateMaybeMessage< ::mruv::GetNearestItemsResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::GetNearestItemsResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::GetNearestItemsResponse* Arena::CreateMaybeMessage< ::mruv::items::GetNearestItemsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::GetNearestItemsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::UseItemRequest* Arena::CreateMaybeMessage< ::mruv::UseItemRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::UseItemRequest >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::UseItemRequest* Arena::CreateMaybeMessage< ::mruv::items::UseItemRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::UseItemRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::mruv::UseItemResponse* Arena::CreateMaybeMessage< ::mruv::UseItemResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::mruv::UseItemResponse >(arena);
+template<> PROTOBUF_NOINLINE ::mruv::items::UseItemResponse* Arena::CreateMaybeMessage< ::mruv::items::UseItemResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::mruv::items::UseItemResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

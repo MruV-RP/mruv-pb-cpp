@@ -27,301 +27,302 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 
 namespace mruv {
+namespace groups {
 
 // The MruV groups service provides procedures for managing groups.
 class MruVGroupsService final {
  public:
   static constexpr char const* service_full_name() {
-    return "mruv.MruVGroupsService";
+    return "mruv.groups.MruVGroupsService";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
     // Create a group.
-    virtual ::grpc::Status CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::mruv::CreateGroupResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CreateGroupResponse>> AsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CreateGroupResponse>>(AsyncCreateGroupRaw(context, request, cq));
+    virtual ::grpc::Status CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::mruv::groups::CreateGroupResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::CreateGroupResponse>> AsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::CreateGroupResponse>>(AsyncCreateGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CreateGroupResponse>> PrepareAsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CreateGroupResponse>>(PrepareAsyncCreateGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::CreateGroupResponse>> PrepareAsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::CreateGroupResponse>>(PrepareAsyncCreateGroupRaw(context, request, cq));
     }
     // Get a  group.
-    virtual ::grpc::Status GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::mruv::GetGroupResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupResponse>> AsyncGetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupResponse>>(AsyncGetGroupRaw(context, request, cq));
+    virtual ::grpc::Status GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::mruv::groups::GetGroupResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupResponse>> AsyncGetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupResponse>>(AsyncGetGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupResponse>> PrepareAsyncGetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupResponse>>(PrepareAsyncGetGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupResponse>> PrepareAsyncGetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupResponse>>(PrepareAsyncGetGroupRaw(context, request, cq));
     }
     // Update a group.
-    virtual ::grpc::Status UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::mruv::UpdateGroupResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UpdateGroupResponse>> AsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UpdateGroupResponse>>(AsyncUpdateGroupRaw(context, request, cq));
+    virtual ::grpc::Status UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::mruv::groups::UpdateGroupResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::UpdateGroupResponse>> AsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::UpdateGroupResponse>>(AsyncUpdateGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UpdateGroupResponse>> PrepareAsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UpdateGroupResponse>>(PrepareAsyncUpdateGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::UpdateGroupResponse>> PrepareAsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::UpdateGroupResponse>>(PrepareAsyncUpdateGroupRaw(context, request, cq));
     }
     // Delete a group.
-    virtual ::grpc::Status DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::mruv::DeleteGroupResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteGroupResponse>> AsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteGroupResponse>>(AsyncDeleteGroupRaw(context, request, cq));
+    virtual ::grpc::Status DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::mruv::groups::DeleteGroupResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::DeleteGroupResponse>> AsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::DeleteGroupResponse>>(AsyncDeleteGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteGroupResponse>> PrepareAsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteGroupResponse>>(PrepareAsyncDeleteGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::DeleteGroupResponse>> PrepareAsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::DeleteGroupResponse>>(PrepareAsyncDeleteGroupRaw(context, request, cq));
     }
     // Get all groups.
-    virtual ::grpc::Status GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::mruv::GetGroupsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupsResponse>> AsyncGetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupsResponse>>(AsyncGetGroupsRaw(context, request, cq));
+    virtual ::grpc::Status GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::mruv::groups::GetGroupsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupsResponse>> AsyncGetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupsResponse>>(AsyncGetGroupsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupsResponse>> PrepareAsyncGetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupsResponse>>(PrepareAsyncGetGroupsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupsResponse>> PrepareAsyncGetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupsResponse>>(PrepareAsyncGetGroupsRaw(context, request, cq));
     }
     // Assign an owner. Group can have only one owner. Owner can be a player, a group or an account.
-    virtual ::grpc::Status AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::mruv::AssignOwnerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AssignOwnerResponse>> AsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AssignOwnerResponse>>(AsyncAssignOwnerRaw(context, request, cq));
+    virtual ::grpc::Status AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::mruv::groups::AssignOwnerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AssignOwnerResponse>> AsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AssignOwnerResponse>>(AsyncAssignOwnerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AssignOwnerResponse>> PrepareAsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AssignOwnerResponse>>(PrepareAsyncAssignOwnerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AssignOwnerResponse>> PrepareAsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AssignOwnerResponse>>(PrepareAsyncAssignOwnerRaw(context, request, cq));
     }
     // Get group owner.
-    virtual ::grpc::Status GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::mruv::GetOwnerResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetOwnerResponse>> AsyncGetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetOwnerResponse>>(AsyncGetOwnerRaw(context, request, cq));
+    virtual ::grpc::Status GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::mruv::groups::GetOwnerResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetOwnerResponse>> AsyncGetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetOwnerResponse>>(AsyncGetOwnerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetOwnerResponse>> PrepareAsyncGetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetOwnerResponse>>(PrepareAsyncGetOwnerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetOwnerResponse>> PrepareAsyncGetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetOwnerResponse>>(PrepareAsyncGetOwnerRaw(context, request, cq));
     }
     // Add a group member.
-    virtual ::grpc::Status AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::mruv::AddMemberResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddMemberResponse>> AsyncAddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddMemberResponse>>(AsyncAddMemberRaw(context, request, cq));
+    virtual ::grpc::Status AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::mruv::groups::AddMemberResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddMemberResponse>> AsyncAddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddMemberResponse>>(AsyncAddMemberRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddMemberResponse>> PrepareAsyncAddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddMemberResponse>>(PrepareAsyncAddMemberRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddMemberResponse>> PrepareAsyncAddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddMemberResponse>>(PrepareAsyncAddMemberRaw(context, request, cq));
     }
     // Get a group member.
-    virtual ::grpc::Status GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::mruv::GetMembersResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetMembersResponse>> AsyncGetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetMembersResponse>>(AsyncGetMembersRaw(context, request, cq));
+    virtual ::grpc::Status GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::mruv::groups::GetMembersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetMembersResponse>> AsyncGetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetMembersResponse>>(AsyncGetMembersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetMembersResponse>> PrepareAsyncGetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetMembersResponse>>(PrepareAsyncGetMembersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetMembersResponse>> PrepareAsyncGetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetMembersResponse>>(PrepareAsyncGetMembersRaw(context, request, cq));
     }
     // Remove a group member.
-    virtual ::grpc::Status RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::mruv::RemoveMemberResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveMemberResponse>> AsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveMemberResponse>>(AsyncRemoveMemberRaw(context, request, cq));
+    virtual ::grpc::Status RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::mruv::groups::RemoveMemberResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveMemberResponse>> AsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveMemberResponse>>(AsyncRemoveMemberRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveMemberResponse>> PrepareAsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveMemberResponse>>(PrepareAsyncRemoveMemberRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveMemberResponse>> PrepareAsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveMemberResponse>>(PrepareAsyncRemoveMemberRaw(context, request, cq));
     }
     // Add a permission to a group.
-    virtual ::grpc::Status AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::mruv::AddPermissionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddPermissionResponse>> AsyncAddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddPermissionResponse>>(AsyncAddPermissionRaw(context, request, cq));
+    virtual ::grpc::Status AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::mruv::groups::AddPermissionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddPermissionResponse>> AsyncAddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddPermissionResponse>>(AsyncAddPermissionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddPermissionResponse>> PrepareAsyncAddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddPermissionResponse>>(PrepareAsyncAddPermissionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddPermissionResponse>> PrepareAsyncAddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddPermissionResponse>>(PrepareAsyncAddPermissionRaw(context, request, cq));
     }
     // Get all group permissions.
-    virtual ::grpc::Status GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::mruv::GetPermissionsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetPermissionsResponse>> AsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetPermissionsResponse>>(AsyncGetPermissionsRaw(context, request, cq));
+    virtual ::grpc::Status GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::mruv::groups::GetPermissionsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetPermissionsResponse>> AsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetPermissionsResponse>>(AsyncGetPermissionsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetPermissionsResponse>> PrepareAsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetPermissionsResponse>>(PrepareAsyncGetPermissionsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetPermissionsResponse>> PrepareAsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetPermissionsResponse>>(PrepareAsyncGetPermissionsRaw(context, request, cq));
     }
     // Remove group permission.
-    virtual ::grpc::Status RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::mruv::RemovePermissionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemovePermissionResponse>> AsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemovePermissionResponse>>(AsyncRemovePermissionRaw(context, request, cq));
+    virtual ::grpc::Status RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::mruv::groups::RemovePermissionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemovePermissionResponse>> AsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemovePermissionResponse>>(AsyncRemovePermissionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemovePermissionResponse>> PrepareAsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemovePermissionResponse>>(PrepareAsyncRemovePermissionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemovePermissionResponse>> PrepareAsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemovePermissionResponse>>(PrepareAsyncRemovePermissionRaw(context, request, cq));
     }
     // Add a subgroup to a group.
-    virtual ::grpc::Status AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::mruv::AddSubgroupResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddSubgroupResponse>> AsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddSubgroupResponse>>(AsyncAddSubgroupRaw(context, request, cq));
+    virtual ::grpc::Status AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::mruv::groups::AddSubgroupResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddSubgroupResponse>> AsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddSubgroupResponse>>(AsyncAddSubgroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddSubgroupResponse>> PrepareAsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddSubgroupResponse>>(PrepareAsyncAddSubgroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddSubgroupResponse>> PrepareAsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddSubgroupResponse>>(PrepareAsyncAddSubgroupRaw(context, request, cq));
     }
     // Get all subgroups.
-    virtual ::grpc::Status GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::mruv::GetSubgroupsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetSubgroupsResponse>> AsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetSubgroupsResponse>>(AsyncGetSubgroupsRaw(context, request, cq));
+    virtual ::grpc::Status GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::mruv::groups::GetSubgroupsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetSubgroupsResponse>> AsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetSubgroupsResponse>>(AsyncGetSubgroupsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetSubgroupsResponse>> PrepareAsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetSubgroupsResponse>>(PrepareAsyncGetSubgroupsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetSubgroupsResponse>> PrepareAsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetSubgroupsResponse>>(PrepareAsyncGetSubgroupsRaw(context, request, cq));
     }
     // Remove a subgroup from group.
-    virtual ::grpc::Status RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::mruv::RemoveSubgroupResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveSubgroupResponse>> AsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveSubgroupResponse>>(AsyncRemoveSubgroupRaw(context, request, cq));
+    virtual ::grpc::Status RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::mruv::groups::RemoveSubgroupResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveSubgroupResponse>> AsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveSubgroupResponse>>(AsyncRemoveSubgroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveSubgroupResponse>> PrepareAsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveSubgroupResponse>>(PrepareAsyncRemoveSubgroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveSubgroupResponse>> PrepareAsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveSubgroupResponse>>(PrepareAsyncRemoveSubgroupRaw(context, request, cq));
     }
     // Check is member of a group is permitted to do specific action.
-    virtual ::grpc::Status IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::mruv::IsPermittedResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsPermittedResponse>> AsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsPermittedResponse>>(AsyncIsPermittedRaw(context, request, cq));
+    virtual ::grpc::Status IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::mruv::groups::IsPermittedResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::IsPermittedResponse>> AsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::IsPermittedResponse>>(AsyncIsPermittedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsPermittedResponse>> PrepareAsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsPermittedResponse>>(PrepareAsyncIsPermittedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::IsPermittedResponse>> PrepareAsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::IsPermittedResponse>>(PrepareAsyncIsPermittedRaw(context, request, cq));
     }
     // Service status
-    virtual ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
+    virtual ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::mruv::common::ServiceStatusResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
+    virtual ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::mruv::common::VersionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       // Create a group.
-      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get a  group.
-      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Update a group.
-      virtual void UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Delete a group.
-      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all groups.
-      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Assign an owner. Group can have only one owner. Owner can be a player, a group or an account.
-      virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get group owner.
-      virtual void GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Add a group member.
-      virtual void AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get a group member.
-      virtual void GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Remove a group member.
-      virtual void RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Add a permission to a group.
-      virtual void AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all group permissions.
-      virtual void GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Remove group permission.
-      virtual void RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Add a subgroup to a group.
-      virtual void AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Get all subgroups.
-      virtual void GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Remove a subgroup from group.
-      virtual void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Check is member of a group is permitted to do specific action.
-      virtual void IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
       // Service status
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -332,297 +333,297 @@ class MruVGroupsService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CreateGroupResponse>* AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::CreateGroupResponse>* PrepareAsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupResponse>* AsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupResponse>* PrepareAsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UpdateGroupResponse>* AsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::UpdateGroupResponse>* PrepareAsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteGroupResponse>* AsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::DeleteGroupResponse>* PrepareAsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupsResponse>* AsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetGroupsResponse>* PrepareAsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AssignOwnerResponse>* AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AssignOwnerResponse>* PrepareAsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetOwnerResponse>* AsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetOwnerResponse>* PrepareAsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddMemberResponse>* AsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddMemberResponse>* PrepareAsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetMembersResponse>* AsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetMembersResponse>* PrepareAsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveMemberResponse>* AsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveMemberResponse>* PrepareAsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddPermissionResponse>* AsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddPermissionResponse>* PrepareAsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetPermissionsResponse>* AsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetPermissionsResponse>* PrepareAsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemovePermissionResponse>* AsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemovePermissionResponse>* PrepareAsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddSubgroupResponse>* AsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::AddSubgroupResponse>* PrepareAsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetSubgroupsResponse>* AsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::GetSubgroupsResponse>* PrepareAsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveSubgroupResponse>* AsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::RemoveSubgroupResponse>* PrepareAsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsPermittedResponse>* AsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::IsPermittedResponse>* PrepareAsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::CreateGroupResponse>* AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::CreateGroupResponse>* PrepareAsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupResponse>* AsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupResponse>* PrepareAsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::UpdateGroupResponse>* AsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::UpdateGroupResponse>* PrepareAsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::DeleteGroupResponse>* AsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::DeleteGroupResponse>* PrepareAsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupsResponse>* AsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetGroupsResponse>* PrepareAsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AssignOwnerResponse>* AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AssignOwnerResponse>* PrepareAsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetOwnerResponse>* AsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetOwnerResponse>* PrepareAsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddMemberResponse>* AsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddMemberResponse>* PrepareAsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetMembersResponse>* AsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetMembersResponse>* PrepareAsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveMemberResponse>* AsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveMemberResponse>* PrepareAsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddPermissionResponse>* AsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddPermissionResponse>* PrepareAsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetPermissionsResponse>* AsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetPermissionsResponse>* PrepareAsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemovePermissionResponse>* AsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemovePermissionResponse>* PrepareAsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddSubgroupResponse>* AsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::AddSubgroupResponse>* PrepareAsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetSubgroupsResponse>* AsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::GetSubgroupsResponse>* PrepareAsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveSubgroupResponse>* AsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::RemoveSubgroupResponse>* PrepareAsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::IsPermittedResponse>* AsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::groups::IsPermittedResponse>* PrepareAsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::mruv::common::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::mruv::CreateGroupResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>> AsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>>(AsyncCreateGroupRaw(context, request, cq));
+    ::grpc::Status CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::mruv::groups::CreateGroupResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::CreateGroupResponse>> AsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::CreateGroupResponse>>(AsyncCreateGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>> PrepareAsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>>(PrepareAsyncCreateGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::CreateGroupResponse>> PrepareAsyncCreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::CreateGroupResponse>>(PrepareAsyncCreateGroupRaw(context, request, cq));
     }
-    ::grpc::Status GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::mruv::GetGroupResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>> AsyncGetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>>(AsyncGetGroupRaw(context, request, cq));
+    ::grpc::Status GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::mruv::groups::GetGroupResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupResponse>> AsyncGetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupResponse>>(AsyncGetGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>> PrepareAsyncGetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>>(PrepareAsyncGetGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupResponse>> PrepareAsyncGetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupResponse>>(PrepareAsyncGetGroupRaw(context, request, cq));
     }
-    ::grpc::Status UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::mruv::UpdateGroupResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>> AsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>>(AsyncUpdateGroupRaw(context, request, cq));
+    ::grpc::Status UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::mruv::groups::UpdateGroupResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::UpdateGroupResponse>> AsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::UpdateGroupResponse>>(AsyncUpdateGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>> PrepareAsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>>(PrepareAsyncUpdateGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::UpdateGroupResponse>> PrepareAsyncUpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::UpdateGroupResponse>>(PrepareAsyncUpdateGroupRaw(context, request, cq));
     }
-    ::grpc::Status DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::mruv::DeleteGroupResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>> AsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>>(AsyncDeleteGroupRaw(context, request, cq));
+    ::grpc::Status DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::mruv::groups::DeleteGroupResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::DeleteGroupResponse>> AsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::DeleteGroupResponse>>(AsyncDeleteGroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>> PrepareAsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>>(PrepareAsyncDeleteGroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::DeleteGroupResponse>> PrepareAsyncDeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::DeleteGroupResponse>>(PrepareAsyncDeleteGroupRaw(context, request, cq));
     }
-    ::grpc::Status GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::mruv::GetGroupsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupsResponse>> AsyncGetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupsResponse>>(AsyncGetGroupsRaw(context, request, cq));
+    ::grpc::Status GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::mruv::groups::GetGroupsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupsResponse>> AsyncGetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupsResponse>>(AsyncGetGroupsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupsResponse>> PrepareAsyncGetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupsResponse>>(PrepareAsyncGetGroupsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupsResponse>> PrepareAsyncGetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupsResponse>>(PrepareAsyncGetGroupsRaw(context, request, cq));
     }
-    ::grpc::Status AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::mruv::AssignOwnerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>> AsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>>(AsyncAssignOwnerRaw(context, request, cq));
+    ::grpc::Status AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::mruv::groups::AssignOwnerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AssignOwnerResponse>> AsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AssignOwnerResponse>>(AsyncAssignOwnerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>> PrepareAsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>>(PrepareAsyncAssignOwnerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AssignOwnerResponse>> PrepareAsyncAssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AssignOwnerResponse>>(PrepareAsyncAssignOwnerRaw(context, request, cq));
     }
-    ::grpc::Status GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::mruv::GetOwnerResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>> AsyncGetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>>(AsyncGetOwnerRaw(context, request, cq));
+    ::grpc::Status GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::mruv::groups::GetOwnerResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetOwnerResponse>> AsyncGetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetOwnerResponse>>(AsyncGetOwnerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>> PrepareAsyncGetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>>(PrepareAsyncGetOwnerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetOwnerResponse>> PrepareAsyncGetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetOwnerResponse>>(PrepareAsyncGetOwnerRaw(context, request, cq));
     }
-    ::grpc::Status AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::mruv::AddMemberResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>> AsyncAddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>>(AsyncAddMemberRaw(context, request, cq));
+    ::grpc::Status AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::mruv::groups::AddMemberResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddMemberResponse>> AsyncAddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddMemberResponse>>(AsyncAddMemberRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>> PrepareAsyncAddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>>(PrepareAsyncAddMemberRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddMemberResponse>> PrepareAsyncAddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddMemberResponse>>(PrepareAsyncAddMemberRaw(context, request, cq));
     }
-    ::grpc::Status GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::mruv::GetMembersResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>> AsyncGetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>>(AsyncGetMembersRaw(context, request, cq));
+    ::grpc::Status GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::mruv::groups::GetMembersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetMembersResponse>> AsyncGetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetMembersResponse>>(AsyncGetMembersRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>> PrepareAsyncGetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>>(PrepareAsyncGetMembersRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetMembersResponse>> PrepareAsyncGetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetMembersResponse>>(PrepareAsyncGetMembersRaw(context, request, cq));
     }
-    ::grpc::Status RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::mruv::RemoveMemberResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>> AsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>>(AsyncRemoveMemberRaw(context, request, cq));
+    ::grpc::Status RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::mruv::groups::RemoveMemberResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveMemberResponse>> AsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveMemberResponse>>(AsyncRemoveMemberRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>> PrepareAsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>>(PrepareAsyncRemoveMemberRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveMemberResponse>> PrepareAsyncRemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveMemberResponse>>(PrepareAsyncRemoveMemberRaw(context, request, cq));
     }
-    ::grpc::Status AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::mruv::AddPermissionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>> AsyncAddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>>(AsyncAddPermissionRaw(context, request, cq));
+    ::grpc::Status AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::mruv::groups::AddPermissionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddPermissionResponse>> AsyncAddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddPermissionResponse>>(AsyncAddPermissionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>> PrepareAsyncAddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>>(PrepareAsyncAddPermissionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddPermissionResponse>> PrepareAsyncAddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddPermissionResponse>>(PrepareAsyncAddPermissionRaw(context, request, cq));
     }
-    ::grpc::Status GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::mruv::GetPermissionsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>> AsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>>(AsyncGetPermissionsRaw(context, request, cq));
+    ::grpc::Status GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::mruv::groups::GetPermissionsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetPermissionsResponse>> AsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetPermissionsResponse>>(AsyncGetPermissionsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>> PrepareAsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>>(PrepareAsyncGetPermissionsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetPermissionsResponse>> PrepareAsyncGetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetPermissionsResponse>>(PrepareAsyncGetPermissionsRaw(context, request, cq));
     }
-    ::grpc::Status RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::mruv::RemovePermissionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>> AsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>>(AsyncRemovePermissionRaw(context, request, cq));
+    ::grpc::Status RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::mruv::groups::RemovePermissionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemovePermissionResponse>> AsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemovePermissionResponse>>(AsyncRemovePermissionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>> PrepareAsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>>(PrepareAsyncRemovePermissionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemovePermissionResponse>> PrepareAsyncRemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemovePermissionResponse>>(PrepareAsyncRemovePermissionRaw(context, request, cq));
     }
-    ::grpc::Status AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::mruv::AddSubgroupResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>> AsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>>(AsyncAddSubgroupRaw(context, request, cq));
+    ::grpc::Status AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::mruv::groups::AddSubgroupResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddSubgroupResponse>> AsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddSubgroupResponse>>(AsyncAddSubgroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>> PrepareAsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>>(PrepareAsyncAddSubgroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddSubgroupResponse>> PrepareAsyncAddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddSubgroupResponse>>(PrepareAsyncAddSubgroupRaw(context, request, cq));
     }
-    ::grpc::Status GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::mruv::GetSubgroupsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>> AsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>>(AsyncGetSubgroupsRaw(context, request, cq));
+    ::grpc::Status GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::mruv::groups::GetSubgroupsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetSubgroupsResponse>> AsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetSubgroupsResponse>>(AsyncGetSubgroupsRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>> PrepareAsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>>(PrepareAsyncGetSubgroupsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetSubgroupsResponse>> PrepareAsyncGetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetSubgroupsResponse>>(PrepareAsyncGetSubgroupsRaw(context, request, cq));
     }
-    ::grpc::Status RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::mruv::RemoveSubgroupResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>> AsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>>(AsyncRemoveSubgroupRaw(context, request, cq));
+    ::grpc::Status RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::mruv::groups::RemoveSubgroupResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveSubgroupResponse>> AsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveSubgroupResponse>>(AsyncRemoveSubgroupRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>> PrepareAsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>>(PrepareAsyncRemoveSubgroupRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveSubgroupResponse>> PrepareAsyncRemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveSubgroupResponse>>(PrepareAsyncRemoveSubgroupRaw(context, request, cq));
     }
-    ::grpc::Status IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::mruv::IsPermittedResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>> AsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>>(AsyncIsPermittedRaw(context, request, cq));
+    ::grpc::Status IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::mruv::groups::IsPermittedResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::IsPermittedResponse>> AsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::IsPermittedResponse>>(AsyncIsPermittedRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>> PrepareAsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>>(PrepareAsyncIsPermittedRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::IsPermittedResponse>> PrepareAsyncIsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::groups::IsPermittedResponse>>(PrepareAsyncIsPermittedRaw(context, request, cq));
     }
-    ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
+    ::grpc::Status GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::mruv::common::ServiceStatusResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>> AsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>>(AsyncGetServiceStatusRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>> PrepareAsyncGetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>>(PrepareAsyncGetServiceStatusRaw(context, request, cq));
     }
-    ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
+    ::grpc::Status GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::mruv::common::VersionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>> AsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>>(AsyncGetServiceVersionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>> PrepareAsyncGetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>>(PrepareAsyncGetServiceVersionRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, std::function<void(::grpc::Status)>) override;
+      void CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void CreateGroup(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void CreateGroup(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetGroup(::grpc::ClientContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetGroup(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void UpdateGroup(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void UpdateGroup(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, std::function<void(::grpc::Status)>) override;
+      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void DeleteGroup(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetGroups(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetGroups(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) override;
+      void AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void AssignOwner(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AssignOwner(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetOwner(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetOwner(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void AddMember(::grpc::ClientContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AddMember(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetMembers(::grpc::ClientContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetMembers(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void RemoveMember(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RemoveMember(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void AddPermission(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AddPermission(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetPermissions(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetPermissions(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void RemovePermission(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RemovePermission(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void AddSubgroup(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void AddSubgroup(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetSubgroups(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetSubgroups(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void RemoveSubgroup(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, std::function<void(::grpc::Status)>) override;
+      void IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void IsPermitted(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void IsPermitted(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
-      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -635,44 +636,44 @@ class MruVGroupsService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>* AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::CreateGroupResponse>* PrepareAsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>* AsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupResponse>* PrepareAsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::GetGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>* AsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::UpdateGroupResponse>* PrepareAsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>* AsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::DeleteGroupResponse>* PrepareAsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupsResponse>* AsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetGroupsResponse>* PrepareAsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>* AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AssignOwnerResponse>* PrepareAsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>* AsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetOwnerResponse>* PrepareAsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>* AsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AddMemberResponse>* PrepareAsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::AddMemberRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>* AsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetMembersResponse>* PrepareAsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::GetMembersRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>* AsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RemoveMemberResponse>* PrepareAsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>* AsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AddPermissionResponse>* PrepareAsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>* AsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetPermissionsResponse>* PrepareAsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>* AsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RemovePermissionResponse>* PrepareAsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>* AsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::AddSubgroupResponse>* PrepareAsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>* AsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::GetSubgroupsResponse>* PrepareAsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>* AsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::RemoveSubgroupResponse>* PrepareAsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>* AsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::IsPermittedResponse>* PrepareAsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::CreateGroupResponse>* AsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::CreateGroupResponse>* PrepareAsyncCreateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::CreateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupResponse>* AsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupResponse>* PrepareAsyncGetGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::UpdateGroupResponse>* AsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::UpdateGroupResponse>* PrepareAsyncUpdateGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::UpdateGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::DeleteGroupResponse>* AsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::DeleteGroupResponse>* PrepareAsyncDeleteGroupRaw(::grpc::ClientContext* context, const ::mruv::groups::DeleteGroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupsResponse>* AsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetGroupsResponse>* PrepareAsyncGetGroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetGroupsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AssignOwnerResponse>* AsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AssignOwnerResponse>* PrepareAsyncAssignOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::AssignOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetOwnerResponse>* AsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetOwnerResponse>* PrepareAsyncGetOwnerRaw(::grpc::ClientContext* context, const ::mruv::groups::GetOwnerRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddMemberResponse>* AsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddMemberResponse>* PrepareAsyncAddMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::AddMemberRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetMembersResponse>* AsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetMembersResponse>* PrepareAsyncGetMembersRaw(::grpc::ClientContext* context, const ::mruv::groups::GetMembersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveMemberResponse>* AsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveMemberResponse>* PrepareAsyncRemoveMemberRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveMemberRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddPermissionResponse>* AsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddPermissionResponse>* PrepareAsyncAddPermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::AddPermissionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetPermissionsResponse>* AsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetPermissionsResponse>* PrepareAsyncGetPermissionsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetPermissionsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemovePermissionResponse>* AsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemovePermissionResponse>* PrepareAsyncRemovePermissionRaw(::grpc::ClientContext* context, const ::mruv::groups::RemovePermissionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddSubgroupResponse>* AsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::AddSubgroupResponse>* PrepareAsyncAddSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::AddSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetSubgroupsResponse>* AsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::GetSubgroupsResponse>* PrepareAsyncGetSubgroupsRaw(::grpc::ClientContext* context, const ::mruv::groups::GetSubgroupsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveSubgroupResponse>* AsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::RemoveSubgroupResponse>* PrepareAsyncRemoveSubgroupRaw(::grpc::ClientContext* context, const ::mruv::groups::RemoveSubgroupRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::IsPermittedResponse>* AsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::groups::IsPermittedResponse>* PrepareAsyncIsPermittedRaw(::grpc::ClientContext* context, const ::mruv::groups::IsPermittedRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateGroup_;
     const ::grpc::internal::RpcMethod rpcmethod_GetGroup_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateGroup_;
@@ -700,42 +701,42 @@ class MruVGroupsService final {
     Service();
     virtual ~Service();
     // Create a group.
-    virtual ::grpc::Status CreateGroup(::grpc::ServerContext* context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response);
+    virtual ::grpc::Status CreateGroup(::grpc::ServerContext* context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response);
     // Get a  group.
-    virtual ::grpc::Status GetGroup(::grpc::ServerContext* context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response);
+    virtual ::grpc::Status GetGroup(::grpc::ServerContext* context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response);
     // Update a group.
-    virtual ::grpc::Status UpdateGroup(::grpc::ServerContext* context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response);
+    virtual ::grpc::Status UpdateGroup(::grpc::ServerContext* context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response);
     // Delete a group.
-    virtual ::grpc::Status DeleteGroup(::grpc::ServerContext* context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response);
+    virtual ::grpc::Status DeleteGroup(::grpc::ServerContext* context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response);
     // Get all groups.
-    virtual ::grpc::Status GetGroups(::grpc::ServerContext* context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response);
+    virtual ::grpc::Status GetGroups(::grpc::ServerContext* context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response);
     // Assign an owner. Group can have only one owner. Owner can be a player, a group or an account.
-    virtual ::grpc::Status AssignOwner(::grpc::ServerContext* context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response);
+    virtual ::grpc::Status AssignOwner(::grpc::ServerContext* context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response);
     // Get group owner.
-    virtual ::grpc::Status GetOwner(::grpc::ServerContext* context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response);
+    virtual ::grpc::Status GetOwner(::grpc::ServerContext* context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response);
     // Add a group member.
-    virtual ::grpc::Status AddMember(::grpc::ServerContext* context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response);
+    virtual ::grpc::Status AddMember(::grpc::ServerContext* context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response);
     // Get a group member.
-    virtual ::grpc::Status GetMembers(::grpc::ServerContext* context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response);
+    virtual ::grpc::Status GetMembers(::grpc::ServerContext* context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response);
     // Remove a group member.
-    virtual ::grpc::Status RemoveMember(::grpc::ServerContext* context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response);
+    virtual ::grpc::Status RemoveMember(::grpc::ServerContext* context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response);
     // Add a permission to a group.
-    virtual ::grpc::Status AddPermission(::grpc::ServerContext* context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response);
+    virtual ::grpc::Status AddPermission(::grpc::ServerContext* context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response);
     // Get all group permissions.
-    virtual ::grpc::Status GetPermissions(::grpc::ServerContext* context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response);
+    virtual ::grpc::Status GetPermissions(::grpc::ServerContext* context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response);
     // Remove group permission.
-    virtual ::grpc::Status RemovePermission(::grpc::ServerContext* context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response);
+    virtual ::grpc::Status RemovePermission(::grpc::ServerContext* context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response);
     // Add a subgroup to a group.
-    virtual ::grpc::Status AddSubgroup(::grpc::ServerContext* context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response);
+    virtual ::grpc::Status AddSubgroup(::grpc::ServerContext* context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response);
     // Get all subgroups.
-    virtual ::grpc::Status GetSubgroups(::grpc::ServerContext* context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response);
+    virtual ::grpc::Status GetSubgroups(::grpc::ServerContext* context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response);
     // Remove a subgroup from group.
-    virtual ::grpc::Status RemoveSubgroup(::grpc::ServerContext* context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response);
+    virtual ::grpc::Status RemoveSubgroup(::grpc::ServerContext* context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response);
     // Check is member of a group is permitted to do specific action.
-    virtual ::grpc::Status IsPermitted(::grpc::ServerContext* context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response);
+    virtual ::grpc::Status IsPermitted(::grpc::ServerContext* context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response);
     // Service status
-    virtual ::grpc::Status GetServiceStatus(::grpc::ServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response);
-    virtual ::grpc::Status GetServiceVersion(::grpc::ServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response);
+    virtual ::grpc::Status GetServiceStatus(::grpc::ServerContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response);
+    virtual ::grpc::Status GetServiceVersion(::grpc::ServerContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_CreateGroup : public BaseClass {
@@ -749,11 +750,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/) override {
+    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestCreateGroup(::grpc::ServerContext* context, ::mruv::CreateGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::CreateGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestCreateGroup(::grpc::ServerContext* context, ::mruv::groups::CreateGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::CreateGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -769,11 +770,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/) override {
+    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetGroup(::grpc::ServerContext* context, ::mruv::GetGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetGroup(::grpc::ServerContext* context, ::mruv::groups::GetGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::GetGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -789,11 +790,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/) override {
+    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateGroup(::grpc::ServerContext* context, ::mruv::UpdateGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::UpdateGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateGroup(::grpc::ServerContext* context, ::mruv::groups::UpdateGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::UpdateGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -809,11 +810,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/) override {
+    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestDeleteGroup(::grpc::ServerContext* context, ::mruv::DeleteGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::DeleteGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestDeleteGroup(::grpc::ServerContext* context, ::mruv::groups::DeleteGroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::DeleteGroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -829,11 +830,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) override {
+    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetGroups(::grpc::ServerContext* context, ::mruv::GetGroupsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetGroupsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetGroups(::grpc::ServerContext* context, ::mruv::groups::GetGroupsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::GetGroupsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -849,11 +850,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/) override {
+    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAssignOwner(::grpc::ServerContext* context, ::mruv::AssignOwnerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::AssignOwnerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAssignOwner(::grpc::ServerContext* context, ::mruv::groups::AssignOwnerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::AssignOwnerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -869,11 +870,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/) override {
+    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetOwner(::grpc::ServerContext* context, ::mruv::GetOwnerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetOwnerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetOwner(::grpc::ServerContext* context, ::mruv::groups::GetOwnerRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::GetOwnerResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -889,11 +890,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/) override {
+    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAddMember(::grpc::ServerContext* context, ::mruv::AddMemberRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::AddMemberResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAddMember(::grpc::ServerContext* context, ::mruv::groups::AddMemberRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::AddMemberResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -909,11 +910,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/) override {
+    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetMembers(::grpc::ServerContext* context, ::mruv::GetMembersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetMembersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetMembers(::grpc::ServerContext* context, ::mruv::groups::GetMembersRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::GetMembersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -929,11 +930,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/) override {
+    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRemoveMember(::grpc::ServerContext* context, ::mruv::RemoveMemberRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::RemoveMemberResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRemoveMember(::grpc::ServerContext* context, ::mruv::groups::RemoveMemberRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::RemoveMemberResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -949,11 +950,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/) override {
+    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAddPermission(::grpc::ServerContext* context, ::mruv::AddPermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::AddPermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAddPermission(::grpc::ServerContext* context, ::mruv::groups::AddPermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::AddPermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -969,11 +970,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/) override {
+    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetPermissions(::grpc::ServerContext* context, ::mruv::GetPermissionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetPermissionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetPermissions(::grpc::ServerContext* context, ::mruv::groups::GetPermissionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::GetPermissionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -989,11 +990,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/) override {
+    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRemovePermission(::grpc::ServerContext* context, ::mruv::RemovePermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::RemovePermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRemovePermission(::grpc::ServerContext* context, ::mruv::groups::RemovePermissionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::RemovePermissionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1009,11 +1010,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/) override {
+    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestAddSubgroup(::grpc::ServerContext* context, ::mruv::AddSubgroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::AddSubgroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestAddSubgroup(::grpc::ServerContext* context, ::mruv::groups::AddSubgroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::AddSubgroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1029,11 +1030,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/) override {
+    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetSubgroups(::grpc::ServerContext* context, ::mruv::GetSubgroupsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::GetSubgroupsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetSubgroups(::grpc::ServerContext* context, ::mruv::groups::GetSubgroupsRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::GetSubgroupsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1049,11 +1050,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/) override {
+    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestRemoveSubgroup(::grpc::ServerContext* context, ::mruv::RemoveSubgroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::RemoveSubgroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestRemoveSubgroup(::grpc::ServerContext* context, ::mruv::groups::RemoveSubgroupRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::RemoveSubgroupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1069,11 +1070,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/) override {
+    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestIsPermitted(::grpc::ServerContext* context, ::mruv::IsPermittedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::IsPermittedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestIsPermitted(::grpc::ServerContext* context, ::mruv::groups::IsPermittedRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::groups::IsPermittedResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1089,11 +1090,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServiceStatus(::grpc::ServerContext* context, ::mruv::ServiceStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::ServiceStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetServiceStatus(::grpc::ServerContext* context, ::mruv::common::ServiceStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::common::ServiceStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1109,11 +1110,11 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetServiceVersion(::grpc::ServerContext* context, ::mruv::VersionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::VersionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetServiceVersion(::grpc::ServerContext* context, ::mruv::common::VersionRequest* request, ::grpc::ServerAsyncResponseWriter< ::mruv::common::VersionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1130,38 +1131,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::CreateGroupRequest, ::mruv::groups::CreateGroupResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::CreateGroupRequest* request, ::mruv::CreateGroupResponse* response) { return this->CreateGroup(context, request, response); }));}
+                     context, const ::mruv::groups::CreateGroupRequest* request, ::mruv::groups::CreateGroupResponse* response) { return this->CreateGroup(context, request, response); }));}
     void SetMessageAllocatorFor_CreateGroup(
-        ::grpc::experimental::MessageAllocator< ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::CreateGroupRequest, ::mruv::groups::CreateGroupResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::CreateGroupRequest, ::mruv::groups::CreateGroupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_CreateGroup() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/) override {
+    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* CreateGroup(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* CreateGroup(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1177,38 +1178,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(1,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetGroupRequest, ::mruv::groups::GetGroupResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetGroupRequest* request, ::mruv::GetGroupResponse* response) { return this->GetGroup(context, request, response); }));}
+                     context, const ::mruv::groups::GetGroupRequest* request, ::mruv::groups::GetGroupResponse* response) { return this->GetGroup(context, request, response); }));}
     void SetMessageAllocatorFor_GetGroup(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::GetGroupRequest, ::mruv::groups::GetGroupResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(1);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetGroupRequest, ::mruv::groups::GetGroupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetGroup() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/) override {
+    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetGroup(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetGroup(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1224,38 +1225,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(2,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::UpdateGroupRequest, ::mruv::groups::UpdateGroupResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::UpdateGroupRequest* request, ::mruv::UpdateGroupResponse* response) { return this->UpdateGroup(context, request, response); }));}
+                     context, const ::mruv::groups::UpdateGroupRequest* request, ::mruv::groups::UpdateGroupResponse* response) { return this->UpdateGroup(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateGroup(
-        ::grpc::experimental::MessageAllocator< ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::UpdateGroupRequest, ::mruv::groups::UpdateGroupResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(2);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::UpdateGroupRequest, ::mruv::groups::UpdateGroupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_UpdateGroup() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/) override {
+    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* UpdateGroup(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* UpdateGroup(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1271,38 +1272,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(3,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::DeleteGroupRequest, ::mruv::groups::DeleteGroupResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::DeleteGroupRequest* request, ::mruv::DeleteGroupResponse* response) { return this->DeleteGroup(context, request, response); }));}
+                     context, const ::mruv::groups::DeleteGroupRequest* request, ::mruv::groups::DeleteGroupResponse* response) { return this->DeleteGroup(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteGroup(
-        ::grpc::experimental::MessageAllocator< ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::DeleteGroupRequest, ::mruv::groups::DeleteGroupResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(3);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::DeleteGroupRequest, ::mruv::groups::DeleteGroupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_DeleteGroup() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/) override {
+    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* DeleteGroup(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* DeleteGroup(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1318,38 +1319,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(4,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetGroupsRequest, ::mruv::groups::GetGroupsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetGroupsRequest* request, ::mruv::GetGroupsResponse* response) { return this->GetGroups(context, request, response); }));}
+                     context, const ::mruv::groups::GetGroupsRequest* request, ::mruv::groups::GetGroupsResponse* response) { return this->GetGroups(context, request, response); }));}
     void SetMessageAllocatorFor_GetGroups(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::GetGroupsRequest, ::mruv::groups::GetGroupsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(4);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetGroupsRequest, ::mruv::groups::GetGroupsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetGroups() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) override {
+    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetGroups(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetGroups(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1365,38 +1366,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AssignOwnerRequest, ::mruv::groups::AssignOwnerResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::AssignOwnerRequest* request, ::mruv::AssignOwnerResponse* response) { return this->AssignOwner(context, request, response); }));}
+                     context, const ::mruv::groups::AssignOwnerRequest* request, ::mruv::groups::AssignOwnerResponse* response) { return this->AssignOwner(context, request, response); }));}
     void SetMessageAllocatorFor_AssignOwner(
-        ::grpc::experimental::MessageAllocator< ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::AssignOwnerRequest, ::mruv::groups::AssignOwnerResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(5);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AssignOwnerRequest, ::mruv::groups::AssignOwnerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AssignOwner() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/) override {
+    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* AssignOwner(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* AssignOwner(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1412,38 +1413,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetOwnerRequest, ::mruv::groups::GetOwnerResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetOwnerRequest* request, ::mruv::GetOwnerResponse* response) { return this->GetOwner(context, request, response); }));}
+                     context, const ::mruv::groups::GetOwnerRequest* request, ::mruv::groups::GetOwnerResponse* response) { return this->GetOwner(context, request, response); }));}
     void SetMessageAllocatorFor_GetOwner(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::GetOwnerRequest, ::mruv::groups::GetOwnerResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(6);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetOwnerRequest, ::mruv::groups::GetOwnerResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetOwner() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/) override {
+    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetOwner(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetOwner(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1459,38 +1460,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(7,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AddMemberRequest, ::mruv::groups::AddMemberResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::AddMemberRequest* request, ::mruv::AddMemberResponse* response) { return this->AddMember(context, request, response); }));}
+                     context, const ::mruv::groups::AddMemberRequest* request, ::mruv::groups::AddMemberResponse* response) { return this->AddMember(context, request, response); }));}
     void SetMessageAllocatorFor_AddMember(
-        ::grpc::experimental::MessageAllocator< ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::AddMemberRequest, ::mruv::groups::AddMemberResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(7);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AddMemberRequest, ::mruv::groups::AddMemberResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AddMember() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/) override {
+    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* AddMember(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* AddMember(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1506,38 +1507,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetMembersRequest, ::mruv::groups::GetMembersResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetMembersRequest* request, ::mruv::GetMembersResponse* response) { return this->GetMembers(context, request, response); }));}
+                     context, const ::mruv::groups::GetMembersRequest* request, ::mruv::groups::GetMembersResponse* response) { return this->GetMembers(context, request, response); }));}
     void SetMessageAllocatorFor_GetMembers(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::GetMembersRequest, ::mruv::groups::GetMembersResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(8);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetMembersRequest, ::mruv::groups::GetMembersResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetMembers() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/) override {
+    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetMembers(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetMembers(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1553,38 +1554,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::RemoveMemberRequest, ::mruv::groups::RemoveMemberResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::RemoveMemberRequest* request, ::mruv::RemoveMemberResponse* response) { return this->RemoveMember(context, request, response); }));}
+                     context, const ::mruv::groups::RemoveMemberRequest* request, ::mruv::groups::RemoveMemberResponse* response) { return this->RemoveMember(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveMember(
-        ::grpc::experimental::MessageAllocator< ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::RemoveMemberRequest, ::mruv::groups::RemoveMemberResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(9);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::RemoveMemberRequest, ::mruv::groups::RemoveMemberResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemoveMember() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/) override {
+    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* RemoveMember(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* RemoveMember(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1600,38 +1601,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(10,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AddPermissionRequest, ::mruv::groups::AddPermissionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::AddPermissionRequest* request, ::mruv::AddPermissionResponse* response) { return this->AddPermission(context, request, response); }));}
+                     context, const ::mruv::groups::AddPermissionRequest* request, ::mruv::groups::AddPermissionResponse* response) { return this->AddPermission(context, request, response); }));}
     void SetMessageAllocatorFor_AddPermission(
-        ::grpc::experimental::MessageAllocator< ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::AddPermissionRequest, ::mruv::groups::AddPermissionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(10);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AddPermissionRequest, ::mruv::groups::AddPermissionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AddPermission() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/) override {
+    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* AddPermission(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* AddPermission(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1647,38 +1648,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(11,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetPermissionsRequest, ::mruv::groups::GetPermissionsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetPermissionsRequest* request, ::mruv::GetPermissionsResponse* response) { return this->GetPermissions(context, request, response); }));}
+                     context, const ::mruv::groups::GetPermissionsRequest* request, ::mruv::groups::GetPermissionsResponse* response) { return this->GetPermissions(context, request, response); }));}
     void SetMessageAllocatorFor_GetPermissions(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::GetPermissionsRequest, ::mruv::groups::GetPermissionsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(11);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetPermissionsRequest, ::mruv::groups::GetPermissionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetPermissions() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/) override {
+    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetPermissions(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetPermissions(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1694,38 +1695,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(12,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::RemovePermissionRequest, ::mruv::groups::RemovePermissionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::RemovePermissionRequest* request, ::mruv::RemovePermissionResponse* response) { return this->RemovePermission(context, request, response); }));}
+                     context, const ::mruv::groups::RemovePermissionRequest* request, ::mruv::groups::RemovePermissionResponse* response) { return this->RemovePermission(context, request, response); }));}
     void SetMessageAllocatorFor_RemovePermission(
-        ::grpc::experimental::MessageAllocator< ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::RemovePermissionRequest, ::mruv::groups::RemovePermissionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(12);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::RemovePermissionRequest, ::mruv::groups::RemovePermissionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemovePermission() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/) override {
+    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* RemovePermission(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* RemovePermission(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1741,38 +1742,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(13,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AddSubgroupRequest, ::mruv::groups::AddSubgroupResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::AddSubgroupRequest* request, ::mruv::AddSubgroupResponse* response) { return this->AddSubgroup(context, request, response); }));}
+                     context, const ::mruv::groups::AddSubgroupRequest* request, ::mruv::groups::AddSubgroupResponse* response) { return this->AddSubgroup(context, request, response); }));}
     void SetMessageAllocatorFor_AddSubgroup(
-        ::grpc::experimental::MessageAllocator< ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::AddSubgroupRequest, ::mruv::groups::AddSubgroupResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::AddSubgroupRequest, ::mruv::groups::AddSubgroupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_AddSubgroup() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/) override {
+    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* AddSubgroup(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* AddSubgroup(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1788,38 +1789,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(14,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetSubgroupsRequest, ::mruv::groups::GetSubgroupsResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::GetSubgroupsRequest* request, ::mruv::GetSubgroupsResponse* response) { return this->GetSubgroups(context, request, response); }));}
+                     context, const ::mruv::groups::GetSubgroupsRequest* request, ::mruv::groups::GetSubgroupsResponse* response) { return this->GetSubgroups(context, request, response); }));}
     void SetMessageAllocatorFor_GetSubgroups(
-        ::grpc::experimental::MessageAllocator< ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::GetSubgroupsRequest, ::mruv::groups::GetSubgroupsResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::GetSubgroupsRequest, ::mruv::groups::GetSubgroupsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetSubgroups() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/) override {
+    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetSubgroups(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetSubgroups(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1835,38 +1836,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(15,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::RemoveSubgroupRequest, ::mruv::groups::RemoveSubgroupResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::RemoveSubgroupRequest* request, ::mruv::RemoveSubgroupResponse* response) { return this->RemoveSubgroup(context, request, response); }));}
+                     context, const ::mruv::groups::RemoveSubgroupRequest* request, ::mruv::groups::RemoveSubgroupResponse* response) { return this->RemoveSubgroup(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveSubgroup(
-        ::grpc::experimental::MessageAllocator< ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::RemoveSubgroupRequest, ::mruv::groups::RemoveSubgroupResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::RemoveSubgroupRequest, ::mruv::groups::RemoveSubgroupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_RemoveSubgroup() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/) override {
+    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* RemoveSubgroup(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* RemoveSubgroup(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1882,38 +1883,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(16,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::groups::IsPermittedRequest, ::mruv::groups::IsPermittedResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::IsPermittedRequest* request, ::mruv::IsPermittedResponse* response) { return this->IsPermitted(context, request, response); }));}
+                     context, const ::mruv::groups::IsPermittedRequest* request, ::mruv::groups::IsPermittedResponse* response) { return this->IsPermitted(context, request, response); }));}
     void SetMessageAllocatorFor_IsPermitted(
-        ::grpc::experimental::MessageAllocator< ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::groups::IsPermittedRequest, ::mruv::groups::IsPermittedResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::groups::IsPermittedRequest, ::mruv::groups::IsPermittedResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_IsPermitted() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/) override {
+    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* IsPermitted(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* IsPermitted(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1929,38 +1930,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(17,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
+                     context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response) { return this->GetServiceStatus(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceStatus(
-        ::grpc::experimental::MessageAllocator< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceStatus() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetServiceStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetServiceStatus(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -1976,38 +1977,38 @@ class MruVGroupsService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(18,
-          new ::grpc::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
+                     context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response) { return this->GetServiceVersion(context, request, response); }));}
     void SetMessageAllocatorFor_GetServiceVersion(
-        ::grpc::experimental::MessageAllocator< ::mruv::VersionRequest, ::mruv::VersionResponse>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::VersionRequest, ::mruv::VersionResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetServiceVersion() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetServiceVersion(
-      ::grpc::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetServiceVersion(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -2028,7 +2029,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/) override {
+    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2045,7 +2046,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/) override {
+    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2062,7 +2063,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/) override {
+    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2079,7 +2080,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/) override {
+    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2096,7 +2097,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) override {
+    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2113,7 +2114,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/) override {
+    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2130,7 +2131,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/) override {
+    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2147,7 +2148,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/) override {
+    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2164,7 +2165,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/) override {
+    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2181,7 +2182,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/) override {
+    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2198,7 +2199,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/) override {
+    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2215,7 +2216,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/) override {
+    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2232,7 +2233,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/) override {
+    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2249,7 +2250,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/) override {
+    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2266,7 +2267,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/) override {
+    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2283,7 +2284,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/) override {
+    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2300,7 +2301,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/) override {
+    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2317,7 +2318,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2334,7 +2335,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2351,7 +2352,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/) override {
+    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2371,7 +2372,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/) override {
+    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2391,7 +2392,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/) override {
+    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2411,7 +2412,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/) override {
+    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2431,7 +2432,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) override {
+    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2451,7 +2452,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/) override {
+    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2471,7 +2472,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/) override {
+    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2491,7 +2492,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/) override {
+    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2511,7 +2512,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/) override {
+    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2531,7 +2532,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/) override {
+    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2551,7 +2552,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/) override {
+    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2571,7 +2572,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/) override {
+    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2591,7 +2592,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/) override {
+    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2611,7 +2612,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/) override {
+    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2631,7 +2632,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/) override {
+    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2651,7 +2652,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/) override {
+    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2671,7 +2672,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/) override {
+    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2691,7 +2692,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2711,7 +2712,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2744,7 +2745,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/) override {
+    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2782,7 +2783,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/) override {
+    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2820,7 +2821,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/) override {
+    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2858,7 +2859,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/) override {
+    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2896,7 +2897,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) override {
+    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2934,7 +2935,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/) override {
+    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -2972,7 +2973,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/) override {
+    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3010,7 +3011,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/) override {
+    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3048,7 +3049,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/) override {
+    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3086,7 +3087,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/) override {
+    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3124,7 +3125,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/) override {
+    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3162,7 +3163,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/) override {
+    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3200,7 +3201,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/) override {
+    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3238,7 +3239,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/) override {
+    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3276,7 +3277,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/) override {
+    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3314,7 +3315,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/) override {
+    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3352,7 +3353,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/) override {
+    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3390,7 +3391,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3428,7 +3429,7 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3449,10 +3450,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_CreateGroup() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>(
+          ::mruv::groups::CreateGroupRequest, ::mruv::groups::CreateGroupResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::CreateGroupRequest, ::mruv::CreateGroupResponse>* streamer) {
+                     ::mruv::groups::CreateGroupRequest, ::mruv::groups::CreateGroupResponse>* streamer) {
                        return this->StreamedCreateGroup(context,
                          streamer);
                   }));
@@ -3461,12 +3462,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::CreateGroupRequest* /*request*/, ::mruv::CreateGroupResponse* /*response*/) override {
+    ::grpc::Status CreateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::CreateGroupRequest* /*request*/, ::mruv::groups::CreateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedCreateGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::CreateGroupRequest,::mruv::CreateGroupResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedCreateGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::CreateGroupRequest,::mruv::groups::CreateGroupResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetGroup : public BaseClass {
@@ -3476,10 +3477,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetGroup() {
       ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>(
+          ::mruv::groups::GetGroupRequest, ::mruv::groups::GetGroupResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::GetGroupRequest, ::mruv::GetGroupResponse>* streamer) {
+                     ::mruv::groups::GetGroupRequest, ::mruv::groups::GetGroupResponse>* streamer) {
                        return this->StreamedGetGroup(context,
                          streamer);
                   }));
@@ -3488,12 +3489,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupRequest* /*request*/, ::mruv::GetGroupResponse* /*response*/) override {
+    ::grpc::Status GetGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupRequest* /*request*/, ::mruv::groups::GetGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetGroupRequest,::mruv::GetGroupResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::GetGroupRequest,::mruv::groups::GetGroupResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_UpdateGroup : public BaseClass {
@@ -3503,10 +3504,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_UpdateGroup() {
       ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>(
+          ::mruv::groups::UpdateGroupRequest, ::mruv::groups::UpdateGroupResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::UpdateGroupRequest, ::mruv::UpdateGroupResponse>* streamer) {
+                     ::mruv::groups::UpdateGroupRequest, ::mruv::groups::UpdateGroupResponse>* streamer) {
                        return this->StreamedUpdateGroup(context,
                          streamer);
                   }));
@@ -3515,12 +3516,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::UpdateGroupRequest* /*request*/, ::mruv::UpdateGroupResponse* /*response*/) override {
+    ::grpc::Status UpdateGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::UpdateGroupRequest* /*request*/, ::mruv::groups::UpdateGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::UpdateGroupRequest,::mruv::UpdateGroupResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUpdateGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::UpdateGroupRequest,::mruv::groups::UpdateGroupResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_DeleteGroup : public BaseClass {
@@ -3530,10 +3531,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_DeleteGroup() {
       ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>(
+          ::mruv::groups::DeleteGroupRequest, ::mruv::groups::DeleteGroupResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::DeleteGroupRequest, ::mruv::DeleteGroupResponse>* streamer) {
+                     ::mruv::groups::DeleteGroupRequest, ::mruv::groups::DeleteGroupResponse>* streamer) {
                        return this->StreamedDeleteGroup(context,
                          streamer);
                   }));
@@ -3542,12 +3543,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::DeleteGroupRequest* /*request*/, ::mruv::DeleteGroupResponse* /*response*/) override {
+    ::grpc::Status DeleteGroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::DeleteGroupRequest* /*request*/, ::mruv::groups::DeleteGroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedDeleteGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::DeleteGroupRequest,::mruv::DeleteGroupResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedDeleteGroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::DeleteGroupRequest,::mruv::groups::DeleteGroupResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetGroups : public BaseClass {
@@ -3557,10 +3558,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetGroups() {
       ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>(
+          ::mruv::groups::GetGroupsRequest, ::mruv::groups::GetGroupsResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::GetGroupsRequest, ::mruv::GetGroupsResponse>* streamer) {
+                     ::mruv::groups::GetGroupsRequest, ::mruv::groups::GetGroupsResponse>* streamer) {
                        return this->StreamedGetGroups(context,
                          streamer);
                   }));
@@ -3569,12 +3570,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::GetGroupsRequest* /*request*/, ::mruv::GetGroupsResponse* /*response*/) override {
+    ::grpc::Status GetGroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetGroupsRequest* /*request*/, ::mruv::groups::GetGroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetGroups(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetGroupsRequest,::mruv::GetGroupsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetGroups(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::GetGroupsRequest,::mruv::groups::GetGroupsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_AssignOwner : public BaseClass {
@@ -3584,10 +3585,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_AssignOwner() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>(
+          ::mruv::groups::AssignOwnerRequest, ::mruv::groups::AssignOwnerResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::AssignOwnerRequest, ::mruv::AssignOwnerResponse>* streamer) {
+                     ::mruv::groups::AssignOwnerRequest, ::mruv::groups::AssignOwnerResponse>* streamer) {
                        return this->StreamedAssignOwner(context,
                          streamer);
                   }));
@@ -3596,12 +3597,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::AssignOwnerRequest* /*request*/, ::mruv::AssignOwnerResponse* /*response*/) override {
+    ::grpc::Status AssignOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::AssignOwnerRequest* /*request*/, ::mruv::groups::AssignOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAssignOwner(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::AssignOwnerRequest,::mruv::AssignOwnerResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAssignOwner(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::AssignOwnerRequest,::mruv::groups::AssignOwnerResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetOwner : public BaseClass {
@@ -3611,10 +3612,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetOwner() {
       ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>(
+          ::mruv::groups::GetOwnerRequest, ::mruv::groups::GetOwnerResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::GetOwnerRequest, ::mruv::GetOwnerResponse>* streamer) {
+                     ::mruv::groups::GetOwnerRequest, ::mruv::groups::GetOwnerResponse>* streamer) {
                        return this->StreamedGetOwner(context,
                          streamer);
                   }));
@@ -3623,12 +3624,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::GetOwnerRequest* /*request*/, ::mruv::GetOwnerResponse* /*response*/) override {
+    ::grpc::Status GetOwner(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetOwnerRequest* /*request*/, ::mruv::groups::GetOwnerResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetOwner(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetOwnerRequest,::mruv::GetOwnerResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetOwner(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::GetOwnerRequest,::mruv::groups::GetOwnerResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_AddMember : public BaseClass {
@@ -3638,10 +3639,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_AddMember() {
       ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>(
+          ::mruv::groups::AddMemberRequest, ::mruv::groups::AddMemberResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::AddMemberRequest, ::mruv::AddMemberResponse>* streamer) {
+                     ::mruv::groups::AddMemberRequest, ::mruv::groups::AddMemberResponse>* streamer) {
                        return this->StreamedAddMember(context,
                          streamer);
                   }));
@@ -3650,12 +3651,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::AddMemberRequest* /*request*/, ::mruv::AddMemberResponse* /*response*/) override {
+    ::grpc::Status AddMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddMemberRequest* /*request*/, ::mruv::groups::AddMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAddMember(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::AddMemberRequest,::mruv::AddMemberResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAddMember(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::AddMemberRequest,::mruv::groups::AddMemberResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetMembers : public BaseClass {
@@ -3665,10 +3666,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetMembers() {
       ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>(
+          ::mruv::groups::GetMembersRequest, ::mruv::groups::GetMembersResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::GetMembersRequest, ::mruv::GetMembersResponse>* streamer) {
+                     ::mruv::groups::GetMembersRequest, ::mruv::groups::GetMembersResponse>* streamer) {
                        return this->StreamedGetMembers(context,
                          streamer);
                   }));
@@ -3677,12 +3678,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::GetMembersRequest* /*request*/, ::mruv::GetMembersResponse* /*response*/) override {
+    ::grpc::Status GetMembers(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetMembersRequest* /*request*/, ::mruv::groups::GetMembersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetMembers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetMembersRequest,::mruv::GetMembersResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetMembers(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::GetMembersRequest,::mruv::groups::GetMembersResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_RemoveMember : public BaseClass {
@@ -3692,10 +3693,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_RemoveMember() {
       ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>(
+          ::mruv::groups::RemoveMemberRequest, ::mruv::groups::RemoveMemberResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::RemoveMemberRequest, ::mruv::RemoveMemberResponse>* streamer) {
+                     ::mruv::groups::RemoveMemberRequest, ::mruv::groups::RemoveMemberResponse>* streamer) {
                        return this->StreamedRemoveMember(context,
                          streamer);
                   }));
@@ -3704,12 +3705,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::RemoveMemberRequest* /*request*/, ::mruv::RemoveMemberResponse* /*response*/) override {
+    ::grpc::Status RemoveMember(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveMemberRequest* /*request*/, ::mruv::groups::RemoveMemberResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRemoveMember(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::RemoveMemberRequest,::mruv::RemoveMemberResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRemoveMember(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::RemoveMemberRequest,::mruv::groups::RemoveMemberResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_AddPermission : public BaseClass {
@@ -3719,10 +3720,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_AddPermission() {
       ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>(
+          ::mruv::groups::AddPermissionRequest, ::mruv::groups::AddPermissionResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::AddPermissionRequest, ::mruv::AddPermissionResponse>* streamer) {
+                     ::mruv::groups::AddPermissionRequest, ::mruv::groups::AddPermissionResponse>* streamer) {
                        return this->StreamedAddPermission(context,
                          streamer);
                   }));
@@ -3731,12 +3732,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::AddPermissionRequest* /*request*/, ::mruv::AddPermissionResponse* /*response*/) override {
+    ::grpc::Status AddPermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddPermissionRequest* /*request*/, ::mruv::groups::AddPermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAddPermission(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::AddPermissionRequest,::mruv::AddPermissionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAddPermission(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::AddPermissionRequest,::mruv::groups::AddPermissionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetPermissions : public BaseClass {
@@ -3746,10 +3747,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetPermissions() {
       ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>(
+          ::mruv::groups::GetPermissionsRequest, ::mruv::groups::GetPermissionsResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::GetPermissionsRequest, ::mruv::GetPermissionsResponse>* streamer) {
+                     ::mruv::groups::GetPermissionsRequest, ::mruv::groups::GetPermissionsResponse>* streamer) {
                        return this->StreamedGetPermissions(context,
                          streamer);
                   }));
@@ -3758,12 +3759,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::GetPermissionsRequest* /*request*/, ::mruv::GetPermissionsResponse* /*response*/) override {
+    ::grpc::Status GetPermissions(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetPermissionsRequest* /*request*/, ::mruv::groups::GetPermissionsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetPermissions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetPermissionsRequest,::mruv::GetPermissionsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetPermissions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::GetPermissionsRequest,::mruv::groups::GetPermissionsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_RemovePermission : public BaseClass {
@@ -3773,10 +3774,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_RemovePermission() {
       ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>(
+          ::mruv::groups::RemovePermissionRequest, ::mruv::groups::RemovePermissionResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::RemovePermissionRequest, ::mruv::RemovePermissionResponse>* streamer) {
+                     ::mruv::groups::RemovePermissionRequest, ::mruv::groups::RemovePermissionResponse>* streamer) {
                        return this->StreamedRemovePermission(context,
                          streamer);
                   }));
@@ -3785,12 +3786,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::RemovePermissionRequest* /*request*/, ::mruv::RemovePermissionResponse* /*response*/) override {
+    ::grpc::Status RemovePermission(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemovePermissionRequest* /*request*/, ::mruv::groups::RemovePermissionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRemovePermission(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::RemovePermissionRequest,::mruv::RemovePermissionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRemovePermission(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::RemovePermissionRequest,::mruv::groups::RemovePermissionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_AddSubgroup : public BaseClass {
@@ -3800,10 +3801,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_AddSubgroup() {
       ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>(
+          ::mruv::groups::AddSubgroupRequest, ::mruv::groups::AddSubgroupResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::AddSubgroupRequest, ::mruv::AddSubgroupResponse>* streamer) {
+                     ::mruv::groups::AddSubgroupRequest, ::mruv::groups::AddSubgroupResponse>* streamer) {
                        return this->StreamedAddSubgroup(context,
                          streamer);
                   }));
@@ -3812,12 +3813,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::AddSubgroupRequest* /*request*/, ::mruv::AddSubgroupResponse* /*response*/) override {
+    ::grpc::Status AddSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::AddSubgroupRequest* /*request*/, ::mruv::groups::AddSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedAddSubgroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::AddSubgroupRequest,::mruv::AddSubgroupResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedAddSubgroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::AddSubgroupRequest,::mruv::groups::AddSubgroupResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetSubgroups : public BaseClass {
@@ -3827,10 +3828,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetSubgroups() {
       ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>(
+          ::mruv::groups::GetSubgroupsRequest, ::mruv::groups::GetSubgroupsResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::GetSubgroupsRequest, ::mruv::GetSubgroupsResponse>* streamer) {
+                     ::mruv::groups::GetSubgroupsRequest, ::mruv::groups::GetSubgroupsResponse>* streamer) {
                        return this->StreamedGetSubgroups(context,
                          streamer);
                   }));
@@ -3839,12 +3840,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::GetSubgroupsRequest* /*request*/, ::mruv::GetSubgroupsResponse* /*response*/) override {
+    ::grpc::Status GetSubgroups(::grpc::ServerContext* /*context*/, const ::mruv::groups::GetSubgroupsRequest* /*request*/, ::mruv::groups::GetSubgroupsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetSubgroups(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::GetSubgroupsRequest,::mruv::GetSubgroupsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetSubgroups(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::GetSubgroupsRequest,::mruv::groups::GetSubgroupsResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_RemoveSubgroup : public BaseClass {
@@ -3854,10 +3855,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_RemoveSubgroup() {
       ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>(
+          ::mruv::groups::RemoveSubgroupRequest, ::mruv::groups::RemoveSubgroupResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::RemoveSubgroupRequest, ::mruv::RemoveSubgroupResponse>* streamer) {
+                     ::mruv::groups::RemoveSubgroupRequest, ::mruv::groups::RemoveSubgroupResponse>* streamer) {
                        return this->StreamedRemoveSubgroup(context,
                          streamer);
                   }));
@@ -3866,12 +3867,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::RemoveSubgroupRequest* /*request*/, ::mruv::RemoveSubgroupResponse* /*response*/) override {
+    ::grpc::Status RemoveSubgroup(::grpc::ServerContext* /*context*/, const ::mruv::groups::RemoveSubgroupRequest* /*request*/, ::mruv::groups::RemoveSubgroupResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedRemoveSubgroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::RemoveSubgroupRequest,::mruv::RemoveSubgroupResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedRemoveSubgroup(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::RemoveSubgroupRequest,::mruv::groups::RemoveSubgroupResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_IsPermitted : public BaseClass {
@@ -3881,10 +3882,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_IsPermitted() {
       ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>(
+          ::mruv::groups::IsPermittedRequest, ::mruv::groups::IsPermittedResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::IsPermittedRequest, ::mruv::IsPermittedResponse>* streamer) {
+                     ::mruv::groups::IsPermittedRequest, ::mruv::groups::IsPermittedResponse>* streamer) {
                        return this->StreamedIsPermitted(context,
                          streamer);
                   }));
@@ -3893,12 +3894,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::IsPermittedRequest* /*request*/, ::mruv::IsPermittedResponse* /*response*/) override {
+    ::grpc::Status IsPermitted(::grpc::ServerContext* /*context*/, const ::mruv::groups::IsPermittedRequest* /*request*/, ::mruv::groups::IsPermittedResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedIsPermitted(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::IsPermittedRequest,::mruv::IsPermittedResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedIsPermitted(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::groups::IsPermittedRequest,::mruv::groups::IsPermittedResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetServiceStatus : public BaseClass {
@@ -3908,10 +3909,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetServiceStatus() {
       ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+          ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>* streamer) {
+                     ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>* streamer) {
                        return this->StreamedGetServiceStatus(context,
                          streamer);
                   }));
@@ -3920,12 +3921,12 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::ServiceStatusRequest* /*request*/, ::mruv::ServiceStatusResponse* /*response*/) override {
+    ::grpc::Status GetServiceStatus(::grpc::ServerContext* /*context*/, const ::mruv::common::ServiceStatusRequest* /*request*/, ::mruv::common::ServiceStatusResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetServiceStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::ServiceStatusRequest,::mruv::ServiceStatusResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetServiceStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::common::ServiceStatusRequest,::mruv::common::ServiceStatusResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetServiceVersion : public BaseClass {
@@ -3935,10 +3936,10 @@ class MruVGroupsService final {
     WithStreamedUnaryMethod_GetServiceVersion() {
       ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::mruv::VersionRequest, ::mruv::VersionResponse>(
+          ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::mruv::VersionRequest, ::mruv::VersionResponse>* streamer) {
+                     ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>* streamer) {
                        return this->StreamedGetServiceVersion(context,
                          streamer);
                   }));
@@ -3947,18 +3948,19 @@ class MruVGroupsService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::VersionRequest* /*request*/, ::mruv::VersionResponse* /*response*/) override {
+    ::grpc::Status GetServiceVersion(::grpc::ServerContext* /*context*/, const ::mruv::common::VersionRequest* /*request*/, ::mruv::common::VersionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetServiceVersion(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::VersionRequest,::mruv::VersionResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetServiceVersion(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::mruv::common::VersionRequest,::mruv::common::VersionResponse>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_CreateGroup<WithStreamedUnaryMethod_GetGroup<WithStreamedUnaryMethod_UpdateGroup<WithStreamedUnaryMethod_DeleteGroup<WithStreamedUnaryMethod_GetGroups<WithStreamedUnaryMethod_AssignOwner<WithStreamedUnaryMethod_GetOwner<WithStreamedUnaryMethod_AddMember<WithStreamedUnaryMethod_GetMembers<WithStreamedUnaryMethod_RemoveMember<WithStreamedUnaryMethod_AddPermission<WithStreamedUnaryMethod_GetPermissions<WithStreamedUnaryMethod_RemovePermission<WithStreamedUnaryMethod_AddSubgroup<WithStreamedUnaryMethod_GetSubgroups<WithStreamedUnaryMethod_RemoveSubgroup<WithStreamedUnaryMethod_IsPermitted<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
   typedef WithStreamedUnaryMethod_CreateGroup<WithStreamedUnaryMethod_GetGroup<WithStreamedUnaryMethod_UpdateGroup<WithStreamedUnaryMethod_DeleteGroup<WithStreamedUnaryMethod_GetGroups<WithStreamedUnaryMethod_AssignOwner<WithStreamedUnaryMethod_GetOwner<WithStreamedUnaryMethod_AddMember<WithStreamedUnaryMethod_GetMembers<WithStreamedUnaryMethod_RemoveMember<WithStreamedUnaryMethod_AddPermission<WithStreamedUnaryMethod_GetPermissions<WithStreamedUnaryMethod_RemovePermission<WithStreamedUnaryMethod_AddSubgroup<WithStreamedUnaryMethod_GetSubgroups<WithStreamedUnaryMethod_RemoveSubgroup<WithStreamedUnaryMethod_IsPermitted<WithStreamedUnaryMethod_GetServiceStatus<WithStreamedUnaryMethod_GetServiceVersion<Service > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
+}  // namespace groups
 }  // namespace mruv
 
 

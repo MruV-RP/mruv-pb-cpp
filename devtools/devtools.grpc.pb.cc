@@ -238,46 +238,46 @@ void MruVDevToolsService::Stub::experimental_async::SaveAnimation(::grpc::Client
   return result;
 }
 
-::grpc::Status MruVDevToolsService::Stub::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::mruv::ServiceStatusResponse* response) {
+::grpc::Status MruVDevToolsService::Stub::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::mruv::common::ServiceStatusResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetServiceStatus_, context, request, response);
 }
 
-void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, std::move(f));
 }
 
-void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVDevToolsService::Stub::experimental_async::GetServiceStatus(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceStatus_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVDevToolsService::Stub::PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* MruVDevToolsService::Stub::PrepareAsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::common::ServiceStatusResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceStatus_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::ServiceStatusResponse>* MruVDevToolsService::Stub::AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::common::ServiceStatusResponse>* MruVDevToolsService::Stub::AsyncGetServiceStatusRaw(::grpc::ClientContext* context, const ::mruv::common::ServiceStatusRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetServiceStatusRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status MruVDevToolsService::Stub::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::mruv::VersionResponse* response) {
+::grpc::Status MruVDevToolsService::Stub::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::mruv::common::VersionResponse* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetServiceVersion_, context, request, response);
 }
 
-void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, std::function<void(::grpc::Status)> f) {
+void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, std::move(f));
 }
 
-void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void MruVDevToolsService::Stub::experimental_async::GetServiceVersion(::grpc::ClientContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_GetServiceVersion_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVDevToolsService::Stub::PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* MruVDevToolsService::Stub::PrepareAsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::mruv::common::VersionResponse>::Create(channel_.get(), cq, rpcmethod_GetServiceVersion_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::mruv::VersionResponse>* MruVDevToolsService::Stub::AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::VersionRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::mruv::common::VersionResponse>* MruVDevToolsService::Stub::AsyncGetServiceVersionRaw(::grpc::ClientContext* context, const ::mruv::common::VersionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetServiceVersionRaw(context, request, cq);
   result->StartCall();
@@ -368,21 +368,21 @@ MruVDevToolsService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::ServiceStatusRequest, ::mruv::ServiceStatusResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::common::ServiceStatusRequest, ::mruv::common::ServiceStatusResponse>(
           [](MruVDevToolsService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::ServiceStatusRequest* req,
-             ::mruv::ServiceStatusResponse* resp) {
+             const ::mruv::common::ServiceStatusRequest* req,
+             ::mruv::common::ServiceStatusResponse* resp) {
                return service->GetServiceStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       MruVDevToolsService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::VersionRequest, ::mruv::VersionResponse>(
+      new ::grpc::internal::RpcMethodHandler< MruVDevToolsService::Service, ::mruv::common::VersionRequest, ::mruv::common::VersionResponse>(
           [](MruVDevToolsService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::mruv::VersionRequest* req,
-             ::mruv::VersionResponse* resp) {
+             const ::mruv::common::VersionRequest* req,
+             ::mruv::common::VersionResponse* resp) {
                return service->GetServiceVersion(ctx, req, resp);
              }, this)));
 }
@@ -446,14 +446,14 @@ MruVDevToolsService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVDevToolsService::Service::GetServiceStatus(::grpc::ServerContext* context, const ::mruv::ServiceStatusRequest* request, ::mruv::ServiceStatusResponse* response) {
+::grpc::Status MruVDevToolsService::Service::GetServiceStatus(::grpc::ServerContext* context, const ::mruv::common::ServiceStatusRequest* request, ::mruv::common::ServiceStatusResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status MruVDevToolsService::Service::GetServiceVersion(::grpc::ServerContext* context, const ::mruv::VersionRequest* request, ::mruv::VersionResponse* response) {
+::grpc::Status MruVDevToolsService::Service::GetServiceVersion(::grpc::ServerContext* context, const ::mruv::common::VersionRequest* request, ::mruv::common::VersionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
