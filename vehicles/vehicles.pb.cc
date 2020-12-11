@@ -241,20 +241,20 @@ const char descriptor_table_protodef_vehicles_2fvehicles_2eproto[] PROTOBUF_SECT
   "ehicleResponse\"\"\n\024UpdateVehicleRequest\022\n"
   "\n\002id\030\001 \001(\r\"\027\n\025UpdateVehicleResponse\"\"\n\024D"
   "eleteVehicleRequest\022\n\n\002id\030\001 \001(\r\"\027\n\025Delet"
-  "eVehicleResponse2\343\003\n\023MruVVehiclesService"
-  "\022p\n\rCreateVehicle\022#.mruv.vehicles.Create"
+  "eVehicleResponse2\351\003\n\023MruVVehiclesService"
+  "\022s\n\rCreateVehicle\022#.mruv.vehicles.Create"
   "VehicleRequest\032$.mruv.vehicles.CreateVeh"
-  "icleResponse\"\024\202\323\344\223\002\016\"\014/v1/vehicles\022l\n\nGe"
-  "tVehicle\022 .mruv.vehicles.GetVehicleReque"
-  "st\032!.mruv.vehicles.GetVehicleResponse\"\031\202"
-  "\323\344\223\002\023\022\021/v1/vehicles/{id}\022u\n\rUpdateVehicl"
-  "e\022#.mruv.vehicles.UpdateVehicleRequest\032$"
-  ".mruv.vehicles.UpdateVehicleResponse\"\031\202\323"
-  "\344\223\002\0232\021/v1/vehicles/{id}\022u\n\rDeleteVehicle"
-  "\022#.mruv.vehicles.DeleteVehicleRequest\032$."
-  "mruv.vehicles.DeleteVehicleResponse\"\031\202\323\344"
-  "\223\002\023*\021/v1/vehicles/{id}B(Z&github.com/Mru"
-  "V-RP/mruv-pb-go/vehiclesb\006proto3"
+  "icleResponse\"\027\202\323\344\223\002\021\"\014/v1/vehicles:\001*\022l\n"
+  "\nGetVehicle\022 .mruv.vehicles.GetVehicleRe"
+  "quest\032!.mruv.vehicles.GetVehicleResponse"
+  "\"\031\202\323\344\223\002\023\022\021/v1/vehicles/{id}\022x\n\rUpdateVeh"
+  "icle\022#.mruv.vehicles.UpdateVehicleReques"
+  "t\032$.mruv.vehicles.UpdateVehicleResponse\""
+  "\034\202\323\344\223\002\0262\021/v1/vehicles/{id}:\001*\022u\n\rDeleteV"
+  "ehicle\022#.mruv.vehicles.DeleteVehicleRequ"
+  "est\032$.mruv.vehicles.DeleteVehicleRespons"
+  "e\"\031\202\323\344\223\002\023*\021/v1/vehicles/{id}B(Z&github.c"
+  "om/MruV-RP/mruv-pb-go/vehiclesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_vehicles_2fvehicles_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -271,7 +271,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_veh
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_vehicles_2fvehicles_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_vehicles_2fvehicles_2eproto = {
-  false, false, descriptor_table_protodef_vehicles_2fvehicles_2eproto, "vehicles/vehicles.proto", 832,
+  false, false, descriptor_table_protodef_vehicles_2fvehicles_2eproto, "vehicles/vehicles.proto", 838,
   &descriptor_table_vehicles_2fvehicles_2eproto_once, descriptor_table_vehicles_2fvehicles_2eproto_sccs, descriptor_table_vehicles_2fvehicles_2eproto_deps, 8, 1,
   schemas, file_default_instances, TableStruct_vehicles_2fvehicles_2eproto::offsets,
   file_level_metadata_vehicles_2fvehicles_2eproto, 8, file_level_enum_descriptors_vehicles_2fvehicles_2eproto, file_level_service_descriptors_vehicles_2fvehicles_2eproto,

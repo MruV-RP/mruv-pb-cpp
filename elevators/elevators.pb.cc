@@ -295,25 +295,25 @@ const char descriptor_table_protodef_elevators_2felevators_2eproto[] PROTOBUF_SE
   "ElevatorResponse\"#\n\025DeleteElevatorReques"
   "t\022\n\n\002id\030\001 \001(\r\"\030\n\026DeleteElevatorResponse\""
   "&\n\030GetElevatorFloorsRequest\022\n\n\002id\030\001 \001(\r\""
-  "\033\n\031GetElevatorFloorsResponse2\212\005\n\024MruVEle"
-  "vatorsService\022v\n\016CreateElevator\022%.mruv.e"
+  "\033\n\031GetElevatorFloorsResponse2\220\005\n\024MruVEle"
+  "vatorsService\022y\n\016CreateElevator\022%.mruv.e"
   "levators.CreateElevatorRequest\032&.mruv.el"
-  "evators.CreateElevatorResponse\"\025\202\323\344\223\002\017\"\r"
-  "/v1/elevators\022r\n\013GetElevator\022\".mruv.elev"
-  "ators.GetElevatorRequest\032#.mruv.elevator"
-  "s.GetElevatorResponse\"\032\202\323\344\223\002\024\022\022/v1/eleva"
-  "tors/{id}\022{\n\016UpdateElevator\022%.mruv.eleva"
-  "tors.UpdateElevatorRequest\032&.mruv.elevat"
-  "ors.UpdateElevatorResponse\"\032\202\323\344\223\002\0242\022/v1/"
-  "elevators/{id}\022{\n\016DeleteElevator\022%.mruv."
-  "elevators.DeleteElevatorRequest\032&.mruv.e"
-  "levators.DeleteElevatorResponse\"\032\202\323\344\223\002\024*"
-  "\022/v1/elevators/{id}\022\213\001\n\021GetElevatorFloor"
-  "s\022(.mruv.elevators.GetElevatorFloorsRequ"
-  "est\032).mruv.elevators.GetElevatorFloorsRe"
-  "sponse\"!\202\323\344\223\002\033\022\031/v1/elevators/{id}/floor"
-  "sB)Z\'github.com/MruV-RP/mruv-pb-go/eleva"
-  "torsb\006proto3"
+  "evators.CreateElevatorResponse\"\030\202\323\344\223\002\022\"\r"
+  "/v1/elevators:\001*\022r\n\013GetElevator\022\".mruv.e"
+  "levators.GetElevatorRequest\032#.mruv.eleva"
+  "tors.GetElevatorResponse\"\032\202\323\344\223\002\024\022\022/v1/el"
+  "evators/{id}\022~\n\016UpdateElevator\022%.mruv.el"
+  "evators.UpdateElevatorRequest\032&.mruv.ele"
+  "vators.UpdateElevatorResponse\"\035\202\323\344\223\002\0272\022/"
+  "v1/elevators/{id}:\001*\022{\n\016DeleteElevator\022%"
+  ".mruv.elevators.DeleteElevatorRequest\032&."
+  "mruv.elevators.DeleteElevatorResponse\"\032\202"
+  "\323\344\223\002\024*\022/v1/elevators/{id}\022\213\001\n\021GetElevato"
+  "rFloors\022(.mruv.elevators.GetElevatorFloo"
+  "rsRequest\032).mruv.elevators.GetElevatorFl"
+  "oorsResponse\"!\202\323\344\223\002\033\022\031/v1/elevators/{id}"
+  "/floorsB)Z\'github.com/MruV-RP/mruv-pb-go"
+  "/elevatorsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_elevators_2felevators_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -332,7 +332,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ele
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_elevators_2felevators_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_elevators_2felevators_2eproto = {
-  false, false, descriptor_table_protodef_elevators_2felevators_2eproto, "elevators/elevators.proto", 1092,
+  false, false, descriptor_table_protodef_elevators_2felevators_2eproto, "elevators/elevators.proto", 1098,
   &descriptor_table_elevators_2felevators_2eproto_once, descriptor_table_elevators_2felevators_2eproto_sccs, descriptor_table_elevators_2felevators_2eproto_deps, 10, 1,
   schemas, file_default_instances, TableStruct_elevators_2felevators_2eproto::offsets,
   file_level_metadata_elevators_2felevators_2eproto, 10, file_level_enum_descriptors_elevators_2felevators_2eproto, file_level_service_descriptors_elevators_2felevators_2eproto,

@@ -659,33 +659,33 @@ const char descriptor_table_protodef_gates_2fgates_2eproto[] PROTOBUF_SECTION_VA
   "atesResponse\022;\n\005gates\030\001 \003(\0132,.mruv.gates"
   ".FetchAllGatesResponse.GatesEntry\032>\n\nGat"
   "esEntry\022\013\n\003key\030\001 \001(\r\022\037\n\005value\030\002 \001(\0132\020.mr"
-  "uv.gates.Gate:\0028\0012\320\007\n\020MruVGatesService\022^"
+  "uv.gates.Gate:\0028\0012\342\007\n\020MruVGatesService\022a"
   "\n\nCreateGate\022\035.mruv.gates.CreateGateRequ"
-  "est\032\036.mruv.gates.CreateGateResponse\"\021\202\323\344"
-  "\223\002\013\"\t/v1/gates\022Z\n\007GetGate\022\032.mruv.gates.G"
-  "etGateRequest\032\033.mruv.gates.GetGateRespon"
-  "se\"\026\202\323\344\223\002\020\022\016/v1/gates/{id}\022c\n\nUpdateGate"
-  "\022\035.mruv.gates.UpdateGateRequest\032\036.mruv.g"
-  "ates.UpdateGateResponse\"\026\202\323\344\223\002\0202\016/v1/gat"
-  "es/{id}\022c\n\nDeleteGate\022\035.mruv.gates.Delet"
-  "eGateRequest\032\036.mruv.gates.DeleteGateResp"
-  "onse\"\026\202\323\344\223\002\020*\016/v1/gates/{id}\022V\n\004Lock\022\027.m"
-  "ruv.gates.LockRequest\032\030.mruv.gates.LockR"
-  "esponse\"\033\202\323\344\223\002\025\"\023/v1/gates/{id}/lock\022^\n\006"
-  "Unlock\022\031.mruv.gates.UnlockRequest\032\032.mruv"
-  ".gates.UnlockResponse\"\035\202\323\344\223\002\027\"\025/v1/gates"
-  "/{id}/unlock\022V\n\004Open\022\027.mruv.gates.OpenRe"
-  "quest\032\030.mruv.gates.OpenResponse\"\033\202\323\344\223\002\025\""
-  "\023/v1/gates/{id}/open\022Z\n\005Close\022\030.mruv.gat"
-  "es.CloseRequest\032\031.mruv.gates.CloseRespon"
-  "se\"\034\202\323\344\223\002\026\"\024/v1/gates/{id}/close\022u\n\017Find"
-  "NearestGate\022\".mruv.gates.FindNearestGate"
-  "Request\032#.mruv.gates.FindNearestGateResp"
-  "onse\"\031\202\323\344\223\002\023\022\021/v1/gates/nearest\022S\n\010Fetch"
-  "All\022 .mruv.gates.FetchAllGatesRequest\032!."
-  "mruv.gates.FetchAllGatesResponse\"\0000\001B%Z#"
-  "github.com/MruV-RP/mruv-pb-go/gatesb\006pro"
-  "to3"
+  "est\032\036.mruv.gates.CreateGateResponse\"\024\202\323\344"
+  "\223\002\016\"\t/v1/gates:\001*\022Z\n\007GetGate\022\032.mruv.gate"
+  "s.GetGateRequest\032\033.mruv.gates.GetGateRes"
+  "ponse\"\026\202\323\344\223\002\020\022\016/v1/gates/{id}\022f\n\nUpdateG"
+  "ate\022\035.mruv.gates.UpdateGateRequest\032\036.mru"
+  "v.gates.UpdateGateResponse\"\031\202\323\344\223\002\0232\016/v1/"
+  "gates/{id}:\001*\022c\n\nDeleteGate\022\035.mruv.gates"
+  ".DeleteGateRequest\032\036.mruv.gates.DeleteGa"
+  "teResponse\"\026\202\323\344\223\002\020*\016/v1/gates/{id}\022Y\n\004Lo"
+  "ck\022\027.mruv.gates.LockRequest\032\030.mruv.gates"
+  ".LockResponse\"\036\202\323\344\223\002\030\"\023/v1/gates/{id}/lo"
+  "ck:\001*\022a\n\006Unlock\022\031.mruv.gates.UnlockReque"
+  "st\032\032.mruv.gates.UnlockResponse\" \202\323\344\223\002\032\"\025"
+  "/v1/gates/{id}/unlock:\001*\022Y\n\004Open\022\027.mruv."
+  "gates.OpenRequest\032\030.mruv.gates.OpenRespo"
+  "nse\"\036\202\323\344\223\002\030\"\023/v1/gates/{id}/open:\001*\022]\n\005C"
+  "lose\022\030.mruv.gates.CloseRequest\032\031.mruv.ga"
+  "tes.CloseResponse\"\037\202\323\344\223\002\031\"\024/v1/gates/{id"
+  "}/close:\001*\022u\n\017FindNearestGate\022\".mruv.gat"
+  "es.FindNearestGateRequest\032#.mruv.gates.F"
+  "indNearestGateResponse\"\031\202\323\344\223\002\023\022\021/v1/gate"
+  "s/nearest\022S\n\010FetchAll\022 .mruv.gates.Fetch"
+  "AllGatesRequest\032!.mruv.gates.FetchAllGat"
+  "esResponse\"\0000\001B%Z#github.com/MruV-RP/mru"
+  "v-pb-go/gatesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_gates_2fgates_2eproto_deps[3] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -718,7 +718,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_gat
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_gates_2fgates_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_gates_2fgates_2eproto = {
-  false, false, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 2283,
+  false, false, descriptor_table_protodef_gates_2fgates_2eproto, "gates/gates.proto", 2301,
   &descriptor_table_gates_2fgates_2eproto_once, descriptor_table_gates_2fgates_2eproto_sccs, descriptor_table_gates_2fgates_2eproto_deps, 22, 3,
   schemas, file_default_instances, TableStruct_gates_2fgates_2eproto::offsets,
   file_level_metadata_gates_2fgates_2eproto, 22, file_level_enum_descriptors_gates_2fgates_2eproto, file_level_service_descriptors_gates_2fgates_2eproto,

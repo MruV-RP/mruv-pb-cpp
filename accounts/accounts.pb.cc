@@ -312,25 +312,25 @@ const char descriptor_table_protodef_accounts_2faccounts_2eproto[] PROTOBUF_SECT
   "\001 \001(\t\"5\n\034GetAccountCharactersResponse\022\025\n"
   "\rcharacter_ids\030\001 \003(\r\"&\n\025IsAccountExistRe"
   "quest\022\r\n\005login\030\001 \001(\t\"4\n\026IsAccountExistRe"
-  "sponse\022\016\n\006exists\030\001 \001(\010\022\n\n\002id\030\002 \001(\r2\213\005\n\023M"
-  "ruVAccountsService\022\177\n\017RegisterAccount\022%."
-  "mruv.accounts.RegisterAccountRequest\032&.m"
-  "ruv.accounts.RegisterAccountResponse\"\035\202\323"
-  "\344\223\002\027\"\025/v1/accounts/register\022^\n\005LogIn\022\033.m"
-  "ruv.accounts.LogInRequest\032\034.mruv.account"
-  "s.LogInResponse\"\032\202\323\344\223\002\024\"\022/v1/accounts/lo"
-  "gin\022\206\001\n\016IsAccountExist\022$.mruv.accounts.I"
-  "sAccountExistRequest\032%.mruv.accounts.IsA"
-  "ccountExistResponse\"\'\202\323\344\223\002!\022\037/v1/account"
-  "s/{login}/registered\022o\n\nGetAccount\022 .mru"
-  "v.accounts.GetAccountRequest\032!.mruv.acco"
-  "unts.GetAccountResponse\"\034\202\323\344\223\002\026\022\024/v1/acc"
-  "ounts/{login}\022\230\001\n\024GetAccountCharacters\022*"
-  ".mruv.accounts.GetAccountCharactersReque"
-  "st\032+.mruv.accounts.GetAccountCharactersR"
-  "esponse\"\'\202\323\344\223\002!\022\037/v1/accounts/{login}/ch"
-  "aractersB(Z&github.com/MruV-RP/mruv-pb-g"
-  "o/accountsb\006proto3"
+  "sponse\022\016\n\006exists\030\001 \001(\010\022\n\n\002id\030\002 \001(\r2\222\005\n\023M"
+  "ruVAccountsService\022\202\001\n\017RegisterAccount\022%"
+  ".mruv.accounts.RegisterAccountRequest\032&."
+  "mruv.accounts.RegisterAccountResponse\" \202"
+  "\323\344\223\002\032\"\025/v1/accounts/register:\001*\022a\n\005LogIn"
+  "\022\033.mruv.accounts.LogInRequest\032\034.mruv.acc"
+  "ounts.LogInResponse\"\035\202\323\344\223\002\027\"\022/v1/account"
+  "s/login:\001*\022\206\001\n\016IsAccountExist\022$.mruv.acc"
+  "ounts.IsAccountExistRequest\032%.mruv.accou"
+  "nts.IsAccountExistResponse\"\'\202\323\344\223\002!\022\037/v1/"
+  "accounts/{login}/registered\022o\n\nGetAccoun"
+  "t\022 .mruv.accounts.GetAccountRequest\032!.mr"
+  "uv.accounts.GetAccountResponse\"\034\202\323\344\223\002\026\022\024"
+  "/v1/accounts/{login}\022\230\001\n\024GetAccountChara"
+  "cters\022*.mruv.accounts.GetAccountCharacte"
+  "rsRequest\032+.mruv.accounts.GetAccountChar"
+  "actersResponse\"\'\202\323\344\223\002!\022\037/v1/accounts/{lo"
+  "gin}/charactersB(Z&github.com/MruV-RP/mr"
+  "uv-pb-go/accountsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_accounts_2faccounts_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -349,7 +349,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_acc
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_accounts_2faccounts_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_accounts_2faccounts_2eproto = {
-  false, false, descriptor_table_protodef_accounts_2faccounts_2eproto, "accounts/accounts.proto", 1298,
+  false, false, descriptor_table_protodef_accounts_2faccounts_2eproto, "accounts/accounts.proto", 1305,
   &descriptor_table_accounts_2faccounts_2eproto_once, descriptor_table_accounts_2faccounts_2eproto_sccs, descriptor_table_accounts_2faccounts_2eproto_deps, 10, 1,
   schemas, file_default_instances, TableStruct_accounts_2faccounts_2eproto::offsets,
   file_level_metadata_accounts_2faccounts_2eproto, 10, file_level_enum_descriptors_accounts_2faccounts_2eproto, file_level_service_descriptors_accounts_2faccounts_2eproto,

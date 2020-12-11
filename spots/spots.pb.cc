@@ -376,20 +376,21 @@ const char descriptor_table_protodef_spots_2fspots_2eproto[] PROTOBUF_SECTION_VA
   "Response\022;\n\005spots\030\001 \003(\0132,.mruv.spots.Fet"
   "chAllSpotsResponse.SpotsEntry\032>\n\nSpotsEn"
   "try\022\013\n\003key\030\001 \001(\r\022\037\n\005value\030\002 \001(\0132\020.mruv.s"
-  "pots.Spot:\0028\0012\355\003\n\020MruVSpotsService\022^\n\nCr"
+  "pots.Spot:\0028\0012\363\003\n\020MruVSpotsService\022a\n\nCr"
   "eateSpot\022\035.mruv.spots.CreateSpotRequest\032"
-  "\036.mruv.spots.CreateSpotResponse\"\021\202\323\344\223\002\013\""
-  "\t/v1/spots\022Z\n\007GetSpot\022\032.mruv.spots.GetSp"
-  "otRequest\032\033.mruv.spots.GetSpotResponse\"\026"
-  "\202\323\344\223\002\020\022\016/v1/spots/{id}\022c\n\nUpdateSpot\022\035.m"
-  "ruv.spots.UpdateSpotRequest\032\036.mruv.spots"
-  ".UpdateSpotResponse\"\026\202\323\344\223\002\0202\016/v1/spots/{"
-  "id}\022c\n\nDeleteSpot\022\035.mruv.spots.DeleteSpo"
-  "tRequest\032\036.mruv.spots.DeleteSpotResponse"
-  "\"\026\202\323\344\223\002\020*\016/v1/spots/{id}\022S\n\010FetchAll\022 .m"
-  "ruv.spots.FetchAllSpotsRequest\032!.mruv.sp"
-  "ots.FetchAllSpotsResponse\"\0000\001B%Z#github."
-  "com/MruV-RP/mruv-pb-go/spotsb\006proto3"
+  "\036.mruv.spots.CreateSpotResponse\"\024\202\323\344\223\002\016\""
+  "\t/v1/spots:\001*\022Z\n\007GetSpot\022\032.mruv.spots.Ge"
+  "tSpotRequest\032\033.mruv.spots.GetSpotRespons"
+  "e\"\026\202\323\344\223\002\020\022\016/v1/spots/{id}\022f\n\nUpdateSpot\022"
+  "\035.mruv.spots.UpdateSpotRequest\032\036.mruv.sp"
+  "ots.UpdateSpotResponse\"\031\202\323\344\223\002\0232\016/v1/spot"
+  "s/{id}:\001*\022c\n\nDeleteSpot\022\035.mruv.spots.Del"
+  "eteSpotRequest\032\036.mruv.spots.DeleteSpotRe"
+  "sponse\"\026\202\323\344\223\002\020*\016/v1/spots/{id}\022S\n\010FetchA"
+  "ll\022 .mruv.spots.FetchAllSpotsRequest\032!.m"
+  "ruv.spots.FetchAllSpotsResponse\"\0000\001B%Z#g"
+  "ithub.com/MruV-RP/mruv-pb-go/spotsb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_spots_2fspots_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -410,7 +411,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_spo
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_spots_2fspots_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_spots_2fspots_2eproto = {
-  false, false, descriptor_table_protodef_spots_2fspots_2eproto, "spots/spots.proto", 1236,
+  false, false, descriptor_table_protodef_spots_2fspots_2eproto, "spots/spots.proto", 1242,
   &descriptor_table_spots_2fspots_2eproto_once, descriptor_table_spots_2fspots_2eproto_sccs, descriptor_table_spots_2fspots_2eproto_deps, 12, 1,
   schemas, file_default_instances, TableStruct_spots_2fspots_2eproto::offsets,
   file_level_metadata_spots_2fspots_2eproto, 12, file_level_enum_descriptors_spots_2fspots_2eproto, file_level_service_descriptors_spots_2fspots_2eproto,

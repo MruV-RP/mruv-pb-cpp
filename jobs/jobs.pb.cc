@@ -240,18 +240,18 @@ const char descriptor_table_protodef_jobs_2fjobs_2eproto[] PROTOBUF_SECTION_VARI
   "id\030\001 \001(\r\"\020\n\016GetJobResponse\"\036\n\020UpdateJobR"
   "equest\022\n\n\002id\030\001 \001(\r\"\023\n\021UpdateJobResponse\""
   "\036\n\020DeleteJobRequest\022\n\n\002id\030\001 \001(\r\"\023\n\021Delet"
-  "eJobResponse2\377\002\n\017MruVJobsService\022X\n\tCrea"
+  "eJobResponse2\205\003\n\017MruVJobsService\022[\n\tCrea"
   "teJob\022\033.mruv.jobs.CreateJobRequest\032\034.mru"
-  "v.jobs.CreateJobResponse\"\020\202\323\344\223\002\n\"\010/v1/jo"
-  "bs\022T\n\006GetJob\022\030.mruv.jobs.GetJobRequest\032\031"
-  ".mruv.jobs.GetJobResponse\"\025\202\323\344\223\002\017\022\r/v1/j"
-  "obs/{id}\022]\n\tUpdateJob\022\033.mruv.jobs.Update"
-  "JobRequest\032\034.mruv.jobs.UpdateJobResponse"
-  "\"\025\202\323\344\223\002\0172\r/v1/jobs/{id}\022]\n\tDeleteJob\022\033.m"
-  "ruv.jobs.DeleteJobRequest\032\034.mruv.jobs.De"
-  "leteJobResponse\"\025\202\323\344\223\002\017*\r/v1/jobs/{id}B$"
-  "Z\"github.com/MruV-RP/mruv-pb-go/jobsb\006pr"
-  "oto3"
+  "v.jobs.CreateJobResponse\"\023\202\323\344\223\002\r\"\010/v1/jo"
+  "bs:\001*\022T\n\006GetJob\022\030.mruv.jobs.GetJobReques"
+  "t\032\031.mruv.jobs.GetJobResponse\"\025\202\323\344\223\002\017\022\r/v"
+  "1/jobs/{id}\022`\n\tUpdateJob\022\033.mruv.jobs.Upd"
+  "ateJobRequest\032\034.mruv.jobs.UpdateJobRespo"
+  "nse\"\030\202\323\344\223\002\0222\r/v1/jobs/{id}:\001*\022]\n\tDeleteJ"
+  "ob\022\033.mruv.jobs.DeleteJobRequest\032\034.mruv.j"
+  "obs.DeleteJobResponse\"\025\202\323\344\223\002\017*\r/v1/jobs/"
+  "{id}B$Z\"github.com/MruV-RP/mruv-pb-go/jo"
+  "bsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_jobs_2fjobs_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -268,7 +268,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_job
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_jobs_2fjobs_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_jobs_2fjobs_2eproto = {
-  false, false, descriptor_table_protodef_jobs_2fjobs_2eproto, "jobs/jobs.proto", 684,
+  false, false, descriptor_table_protodef_jobs_2fjobs_2eproto, "jobs/jobs.proto", 690,
   &descriptor_table_jobs_2fjobs_2eproto_once, descriptor_table_jobs_2fjobs_2eproto_sccs, descriptor_table_jobs_2fjobs_2eproto_deps, 8, 1,
   schemas, file_default_instances, TableStruct_jobs_2fjobs_2eproto::offsets,
   file_level_metadata_jobs_2fjobs_2eproto, 8, file_level_enum_descriptors_jobs_2fjobs_2eproto, file_level_service_descriptors_jobs_2fjobs_2eproto,

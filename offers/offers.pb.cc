@@ -306,21 +306,22 @@ const char descriptor_table_protodef_offers_2foffers_2eproto[] PROTOBUF_SECTION_
   "uest\022\n\n\002id\030\001 \001(\r\"\025\n\023DeleteOfferResponse\""
   " \n\022AcceptOfferRequest\022\n\n\002id\030\001 \001(\r\"\025\n\023Acc"
   "eptOfferResponse*\030\n\tOfferType\022\013\n\007UNKNOWN"
-  "\020\0002\243\004\n\021MruVOffersService\022d\n\013CreateOffer\022"
+  "\020\0002\254\004\n\021MruVOffersService\022g\n\013CreateOffer\022"
   "\037.mruv.offers.CreateOfferRequest\032 .mruv."
-  "offers.CreateOfferResponse\"\022\202\323\344\223\002\014\"\n/v1/"
-  "offers\022`\n\010GetOffer\022\034.mruv.offers.GetOffe"
-  "rRequest\032\035.mruv.offers.GetOfferResponse\""
-  "\027\202\323\344\223\002\021\022\017/v1/offers/{id}\022i\n\013UpdateOffer\022"
-  "\037.mruv.offers.UpdateOfferRequest\032 .mruv."
-  "offers.UpdateOfferResponse\"\027\202\323\344\223\002\0212\017/v1/"
-  "offers/{id}\022i\n\013DeleteOffer\022\037.mruv.offers"
-  ".DeleteOfferRequest\032 .mruv.offers.Delete"
-  "OfferResponse\"\027\202\323\344\223\002\021*\017/v1/offers/{id}\022p"
-  "\n\013AcceptOffer\022\037.mruv.offers.AcceptOfferR"
-  "equest\032 .mruv.offers.AcceptOfferResponse"
-  "\"\036\202\323\344\223\002\030\"\026/v1/offers/{id}/acceptB&Z$gith"
-  "ub.com/MruV-RP/mruv-pb-go/offersb\006proto3"
+  "offers.CreateOfferResponse\"\025\202\323\344\223\002\017\"\n/v1/"
+  "offers:\001*\022`\n\010GetOffer\022\034.mruv.offers.GetO"
+  "fferRequest\032\035.mruv.offers.GetOfferRespon"
+  "se\"\027\202\323\344\223\002\021\022\017/v1/offers/{id}\022l\n\013UpdateOff"
+  "er\022\037.mruv.offers.UpdateOfferRequest\032 .mr"
+  "uv.offers.UpdateOfferResponse\"\032\202\323\344\223\002\0242\017/"
+  "v1/offers/{id}:\001*\022i\n\013DeleteOffer\022\037.mruv."
+  "offers.DeleteOfferRequest\032 .mruv.offers."
+  "DeleteOfferResponse\"\027\202\323\344\223\002\021*\017/v1/offers/"
+  "{id}\022s\n\013AcceptOffer\022\037.mruv.offers.Accept"
+  "OfferRequest\032 .mruv.offers.AcceptOfferRe"
+  "sponse\"!\202\323\344\223\002\033\"\026/v1/offers/{id}/accept:\001"
+  "*B&Z$github.com/MruV-RP/mruv-pb-go/offer"
+  "sb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_offers_2foffers_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -339,7 +340,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_off
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_offers_2foffers_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_offers_2foffers_2eproto = {
-  false, false, descriptor_table_protodef_offers_2foffers_2eproto, "offers/offers.proto", 1120,
+  false, false, descriptor_table_protodef_offers_2foffers_2eproto, "offers/offers.proto", 1129,
   &descriptor_table_offers_2foffers_2eproto_once, descriptor_table_offers_2foffers_2eproto_sccs, descriptor_table_offers_2foffers_2eproto_deps, 10, 1,
   schemas, file_default_instances, TableStruct_offers_2foffers_2eproto::offsets,
   file_level_metadata_offers_2foffers_2eproto, 10, file_level_enum_descriptors_offers_2foffers_2eproto, file_level_service_descriptors_offers_2foffers_2eproto,

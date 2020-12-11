@@ -240,19 +240,20 @@ const char descriptor_table_protodef_houses_2fhouses_2eproto[] PROTOBUF_SECTION_
   "eRequest\022\n\n\002id\030\001 \001(\r\"\022\n\020GetHouseResponse"
   "\" \n\022UpdateHouseRequest\022\n\n\002id\030\001 \001(\r\"\025\n\023Up"
   "dateHouseResponse\" \n\022DeleteHouseRequest\022"
-  "\n\n\002id\030\001 \001(\r\"\025\n\023DeleteHouseResponse2\261\003\n\021M"
-  "ruVHousesService\022d\n\013CreateHouse\022\037.mruv.h"
+  "\n\n\002id\030\001 \001(\r\"\025\n\023DeleteHouseResponse2\267\003\n\021M"
+  "ruVHousesService\022g\n\013CreateHouse\022\037.mruv.h"
   "ouses.CreateHouseRequest\032 .mruv.houses.C"
-  "reateHouseResponse\"\022\202\323\344\223\002\014\"\n/v1/houses\022`"
-  "\n\010GetHouse\022\034.mruv.houses.GetHouseRequest"
-  "\032\035.mruv.houses.GetHouseResponse\"\027\202\323\344\223\002\021\022"
-  "\017/v1/houses/{id}\022i\n\013UpdateHouse\022\037.mruv.h"
-  "ouses.UpdateHouseRequest\032 .mruv.houses.U"
-  "pdateHouseResponse\"\027\202\323\344\223\002\0212\017/v1/houses/{"
-  "id}\022i\n\013DeleteHouse\022\037.mruv.houses.DeleteH"
-  "ouseRequest\032 .mruv.houses.DeleteHouseRes"
-  "ponse\"\027\202\323\344\223\002\021*\017/v1/houses/{id}B&Z$github"
-  ".com/MruV-RP/mruv-pb-go/housesb\006proto3"
+  "reateHouseResponse\"\025\202\323\344\223\002\017\"\n/v1/houses:\001"
+  "*\022`\n\010GetHouse\022\034.mruv.houses.GetHouseRequ"
+  "est\032\035.mruv.houses.GetHouseResponse\"\027\202\323\344\223"
+  "\002\021\022\017/v1/houses/{id}\022l\n\013UpdateHouse\022\037.mru"
+  "v.houses.UpdateHouseRequest\032 .mruv.house"
+  "s.UpdateHouseResponse\"\032\202\323\344\223\002\0242\017/v1/house"
+  "s/{id}:\001*\022i\n\013DeleteHouse\022\037.mruv.houses.D"
+  "eleteHouseRequest\032 .mruv.houses.DeleteHo"
+  "useResponse\"\027\202\323\344\223\002\021*\017/v1/houses/{id}B&Z$"
+  "github.com/MruV-RP/mruv-pb-go/housesb\006pr"
+  "oto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_houses_2fhouses_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -269,7 +270,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_hou
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_houses_2fhouses_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_houses_2fhouses_2eproto = {
-  false, false, descriptor_table_protodef_houses_2fhouses_2eproto, "houses/houses.proto", 758,
+  false, false, descriptor_table_protodef_houses_2fhouses_2eproto, "houses/houses.proto", 764,
   &descriptor_table_houses_2fhouses_2eproto_once, descriptor_table_houses_2fhouses_2eproto_sccs, descriptor_table_houses_2fhouses_2eproto_deps, 8, 1,
   schemas, file_default_instances, TableStruct_houses_2fhouses_2eproto::offsets,
   file_level_metadata_houses_2fhouses_2eproto, 8, file_level_enum_descriptors_houses_2fhouses_2eproto, file_level_service_descriptors_houses_2fhouses_2eproto,

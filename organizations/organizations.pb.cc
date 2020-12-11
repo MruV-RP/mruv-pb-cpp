@@ -347,31 +347,31 @@ const char descriptor_table_protodef_organizations_2forganizations_2eproto[] PRO
   "\r\"\034\n\032DeleteOrganizationResponse\"!\n\023Assig"
   "nLeaderRequest\022\n\n\002id\030\001 \001(\r\"\026\n\024AssignLead"
   "erResponse\"#\n\025UnassignLeaderRequest\022\n\n\002i"
-  "d\030\001 \001(\r\"\030\n\026UnassignLeaderResponse2\200\007\n\030Mr"
-  "uVOrganizationsService\022\216\001\n\022CreateOrganiz"
+  "d\030\001 \001(\r\"\030\n\026UnassignLeaderResponse2\211\007\n\030Mr"
+  "uVOrganizationsService\022\221\001\n\022CreateOrganiz"
   "ation\022-.mruv.organizations.CreateOrganiz"
   "ationRequest\032..mruv.organizations.Create"
-  "OrganizationResponse\"\031\202\323\344\223\002\023\"\021/v1/organi"
-  "zations\022\212\001\n\017GetOrganization\022*.mruv.organ"
-  "izations.GetOrganizationRequest\032+.mruv.o"
-  "rganizations.GetOrganizationResponse\"\036\202\323"
-  "\344\223\002\030\022\026/v1/organizations/{id}\022\223\001\n\022UpdateO"
-  "rganization\022-.mruv.organizations.UpdateO"
-  "rganizationRequest\032..mruv.organizations."
-  "UpdateOrganizationResponse\"\036\202\323\344\223\002\0302\026/v1/"
-  "organizations/{id}\022\223\001\n\022DeleteOrganizatio"
-  "n\022-.mruv.organizations.DeleteOrganizatio"
-  "nRequest\032..mruv.organizations.DeleteOrga"
-  "nizationResponse\"\036\202\323\344\223\002\030*\026/v1/organizati"
-  "ons/{id}\022\210\001\n\014AssignLeader\022\'.mruv.organiz"
-  "ations.AssignLeaderRequest\032(.mruv.organi"
-  "zations.AssignLeaderResponse\"%\202\323\344\223\002\037\032\035/v"
-  "1/organizations/{id}/leader\022\216\001\n\016Unassign"
-  "Leader\022).mruv.organizations.UnassignLead"
-  "erRequest\032*.mruv.organizations.UnassignL"
-  "eaderResponse\"%\202\323\344\223\002\037*\035/v1/organizations"
-  "/{id}/leaderB-Z+github.com/MruV-RP/mruv-"
-  "pb-go/organizationsb\006proto3"
+  "OrganizationResponse\"\034\202\323\344\223\002\026\"\021/v1/organi"
+  "zations:\001*\022\212\001\n\017GetOrganization\022*.mruv.or"
+  "ganizations.GetOrganizationRequest\032+.mru"
+  "v.organizations.GetOrganizationResponse\""
+  "\036\202\323\344\223\002\030\022\026/v1/organizations/{id}\022\226\001\n\022Upda"
+  "teOrganization\022-.mruv.organizations.Upda"
+  "teOrganizationRequest\032..mruv.organizatio"
+  "ns.UpdateOrganizationResponse\"!\202\323\344\223\002\0332\026/"
+  "v1/organizations/{id}:\001*\022\223\001\n\022DeleteOrgan"
+  "ization\022-.mruv.organizations.DeleteOrgan"
+  "izationRequest\032..mruv.organizations.Dele"
+  "teOrganizationResponse\"\036\202\323\344\223\002\030*\026/v1/orga"
+  "nizations/{id}\022\213\001\n\014AssignLeader\022\'.mruv.o"
+  "rganizations.AssignLeaderRequest\032(.mruv."
+  "organizations.AssignLeaderResponse\"(\202\323\344\223"
+  "\002\"\032\035/v1/organizations/{id}/leader:\001*\022\216\001\n"
+  "\016UnassignLeader\022).mruv.organizations.Una"
+  "ssignLeaderRequest\032*.mruv.organizations."
+  "UnassignLeaderResponse\"%\202\323\344\223\002\037*\035/v1/orga"
+  "nizations/{id}/leaderB-Z+github.com/MruV"
+  "-RP/mruv-pb-go/organizationsb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_organizations_2forganizations_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -392,7 +392,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_org
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_organizations_2forganizations_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_organizations_2forganizations_2eproto = {
-  false, false, descriptor_table_protodef_organizations_2forganizations_2eproto, "organizations/organizations.proto", 1427,
+  false, false, descriptor_table_protodef_organizations_2forganizations_2eproto, "organizations/organizations.proto", 1436,
   &descriptor_table_organizations_2forganizations_2eproto_once, descriptor_table_organizations_2forganizations_2eproto_sccs, descriptor_table_organizations_2forganizations_2eproto_deps, 12, 1,
   schemas, file_default_instances, TableStruct_organizations_2forganizations_2eproto::offsets,
   file_level_metadata_organizations_2forganizations_2eproto, 12, file_level_enum_descriptors_organizations_2forganizations_2eproto, file_level_service_descriptors_organizations_2forganizations_2eproto,

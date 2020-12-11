@@ -297,26 +297,26 @@ const char descriptor_table_protodef_texturestudio_2ftexturestudio_5fmanage_2epr
   "\001 \001(\r\"\?\n\030TransferOwnershipRequest\022\021\n\tser"
   "ver_id\030\001 \001(\r\022\020\n\010owner_id\030\002 \001(\r\"\033\n\031Transf"
   "erOwnershipResponse\"!\n\023DeleteServerReque"
-  "st\022\n\n\002id\030\001 \001(\r\"\026\n\024DeleteServerResponse2\246"
-  "\005\n\033TextureStudioManagerService\022|\n\014Create"
+  "st\022\n\n\002id\030\001 \001(\r\"\026\n\024DeleteServerResponse2\254"
+  "\005\n\033TextureStudioManagerService\022\177\n\014Create"
   "Server\022#.texture_studio.CreateServerRequ"
   "est\032$.texture_studio.CreateServerRespons"
-  "e\"!\202\323\344\223\002\033\"\031/v1/texturestudio/servers\022v\n\n"
-  "GetServers\022!.texture_studio.GetServersRe"
-  "quest\032\".texture_studio.GetServersRespons"
-  "e\"!\202\323\344\223\002\033\022\031/v1/texturestudio/servers\022s\n\010"
-  "MyServer\022\037.texture_studio.MyServerReques"
-  "t\032 .texture_studio.MyServerResponse\"$\202\323\344"
-  "\223\002\036\022\034/v1/texturestudio/servers/my\022\227\001\n\021Tr"
-  "ansferOwnership\022(.texture_studio.Transfe"
-  "rOwnershipRequest\032).texture_studio.Trans"
-  "ferOwnershipResponse\"-\202\323\344\223\002\'2%/v1/textur"
-  "estudio/servers/{server_id}\022\201\001\n\014DeleteSe"
-  "rver\022#.texture_studio.DeleteServerReques"
-  "t\032$.texture_studio.DeleteServerResponse\""
-  "&\202\323\344\223\002 *\036/v1/texturestudio/servers/{id}B"
-  "-Z+github.com/MruV-RP/mruv-pb-go/texture"
-  "studiob\006proto3"
+  "e\"$\202\323\344\223\002\036\"\031/v1/texturestudio/servers:\001*\022"
+  "v\n\nGetServers\022!.texture_studio.GetServer"
+  "sRequest\032\".texture_studio.GetServersResp"
+  "onse\"!\202\323\344\223\002\033\022\031/v1/texturestudio/servers\022"
+  "s\n\010MyServer\022\037.texture_studio.MyServerReq"
+  "uest\032 .texture_studio.MyServerResponse\"$"
+  "\202\323\344\223\002\036\022\034/v1/texturestudio/servers/my\022\232\001\n"
+  "\021TransferOwnership\022(.texture_studio.Tran"
+  "sferOwnershipRequest\032).texture_studio.Tr"
+  "ansferOwnershipResponse\"0\202\323\344\223\002*2%/v1/tex"
+  "turestudio/servers/{server_id}:\001*\022\201\001\n\014De"
+  "leteServer\022#.texture_studio.DeleteServer"
+  "Request\032$.texture_studio.DeleteServerRes"
+  "ponse\"&\202\323\344\223\002 *\036/v1/texturestudio/servers"
+  "/{id}B-Z+github.com/MruV-RP/mruv-pb-go/t"
+  "exturestudiob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto_deps[1] = {
   &::descriptor_table_google_2fapi_2fannotations_2eproto,
@@ -335,7 +335,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_tex
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto = {
-  false, false, descriptor_table_protodef_texturestudio_2ftexturestudio_5fmanage_2eproto, "texturestudio/texturestudio_manage.proto", 1174,
+  false, false, descriptor_table_protodef_texturestudio_2ftexturestudio_5fmanage_2eproto, "texturestudio/texturestudio_manage.proto", 1180,
   &descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto_once, descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto_sccs, descriptor_table_texturestudio_2ftexturestudio_5fmanage_2eproto_deps, 10, 1,
   schemas, file_default_instances, TableStruct_texturestudio_2ftexturestudio_5fmanage_2eproto::offsets,
   file_level_metadata_texturestudio_2ftexturestudio_5fmanage_2eproto, 10, file_level_enum_descriptors_texturestudio_2ftexturestudio_5fmanage_2eproto, file_level_service_descriptors_texturestudio_2ftexturestudio_5fmanage_2eproto,
